@@ -1,0 +1,30 @@
+docker-compose-yaml: docker-compose.yml
+
+project: content-vic
+endpoint: api-lagoon-master.lagoon.vicsdp.amazee.io:30454
+api: api-lagoon-master.lagoon.vicsdp.amazee.io:80
+
+tasks:
+  post-rollout:
+    - run:
+        name: env variables
+        command: env
+        service: cli
+    - run:
+        name: Install site
+        command: ./scripts/drupal/site-install.sh
+        service: cli
+
+    - run:
+        name: Post deployed URL to JIRA
+        command: |
+          if [[ "$LAGOON_GIT_BRANCH" != "production" ]]; then
+            . scripts/jira-post-comment.sh "https://digital-engagement.atlassian.net/" sdp.devs@dpc.vic.gov.au rXSTRbvPf9pkDpnREYrb $LAGOON_GIT_BRANCH sdpa
+          fi
+        service: cli
+
+cronjobs:
+  - name: drush cron
+    schedule: "*/15 * * * *"
+    command: '[[ "$LAGOON_GIT_BRANCH" = "production" ]] || [[ "$LAGOON_GIT_BRANCH" = "sandbox" ]] && drush cron'
+    service: cli

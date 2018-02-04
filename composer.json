@@ -1,0 +1,222 @@
+{
+  "name": "dpc-sdp/vicgovau",
+  "description": "Drupal 8 site for Vicgovau",
+  "license": "proprietary",
+  "require": {
+    "composer/installers": "^1.2.0",
+    "cweagans/composer-patches": "^1.6.0",
+    "dpc-sdp/tide": "^0.0.1",
+    "dpc-sdp/tide_article": "0.0.1",
+    "dpc-sdp/bay": "0.0.1",
+    "dpc-sdp/tide_core": "0.0.1",
+    "drupal-composer/drupal-scaffold": "^2.3",
+    "drupal/admin_toolbar": "^1.20",
+    "drupal/coffee": "^1.0@beta",
+    "drupal/devel": "^1.2",
+    "drupal/environment_indicator": "^3.2",
+    "drupal/shield": "^1.1",
+    "drupal/stage_file_proxy": "^1.0@alpha",
+    "drush/drush": "^8.1",
+    "library/dropzone": "^4.3",
+    "webflo/drupal-finder": "^1.1",
+    "webmozart/path-util": "^2.3"
+  },
+  "require-dev": {
+    "behat/behat": "3.3.1",
+    "behat/gherkin": "4.4.5",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
+    "drupal/coder": "^8.2",
+    "drupal/console": "^1.0",
+    "drupal/drupal-extension": "~3.3.0",
+    "integratedexperts/behat-format-progress-fail": "^0.2.1",
+    "integratedexperts/behat-relativity": "^0.3",
+    "integratedexperts/behat-screenshot": "^0.6.1",
+    "phpunit/phpunit": "^5.7.19",
+    "symfony/filesystem": "^3.2.8"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "classmap": [
+      "scripts/composer/"
+    ]
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/unit/"
+    ]
+  },
+  "config": {
+    "platform": {
+      "php": "7.1"
+    },
+    "process-timeout": 0,
+    "sort-packages": true
+  },
+  "conflict": {
+    "drupal/drupal": "*"
+  },
+  "repositories": {
+    "asset-packagist": {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    },
+    "drupal": {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    "dpc-sdp/tide": {
+      "type": "path",
+      "url": "dpc-sdp/tide"
+    },
+    "dpc-sdp/tide_article": {
+      "type": "path",
+      "url": "dpc-sdp/tide_article"
+    },
+    "dpc-sdp/bay": {
+      "type": "path",
+      "url": "dpc-sdp/bay"
+    },
+    "dpc-sdp/tide_core": {
+      "type": "path",
+      "url": "dpc-sdp/tide_core"
+    },
+    "library/dropzone": {
+      "type": "package",
+      "package": {
+        "name": "library/dropzone",
+        "version": "4.3.0",
+        "type": "drupal-library",
+        "dist": {
+          "url": "https://github.com/enyo/dropzone/archive/v4.3.0.zip",
+          "type": "zip"
+        }
+      }
+    },
+    "package/ckeditor-iframe": {
+      "type": "package",
+      "package": {
+        "name": "ckeditor/iframe",
+        "type": "drupal-library",
+        "version": "4.5.11",
+        "dist": {
+          "type": "zip",
+          "url": "https://download.ckeditor.com/iframe/releases/iframe_4.5.11.zip",
+          "reference": "master"
+        },
+        "require": {
+          "composer/installers": "~1.0"
+        }
+      }
+    },
+    "package/ckeditor-fakeobjects": {
+      "type": "package",
+      "package": {
+        "name": "ckeditor/fakeobjects",
+        "type": "drupal-library",
+        "version": "4.5.11",
+        "dist": {
+          "type": "zip",
+          "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.5.11.zip",
+          "reference": "master"
+        },
+        "require": {
+          "composer/installers": "~1.0"
+        }
+      }
+    },
+    "package/ckeditor-templates": {
+      "type": "package",
+      "package": {
+        "name": "ckeditor/templates",
+        "type": "drupal-library",
+        "version": "4.5.7",
+        "dist": {
+          "type": "zip",
+          "url": "https://download.ckeditor.com/templates/releases/templates_4.5.7.zip",
+          "reference": "master"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "up": "docker-compose up -d --build",
+    "restart": "docker-compose restart",
+    "down": "docker-compose stop",
+    "destroy": "docker-compose down",
+    "build": [
+      "@up",
+      "@composer install -n --ansi --prefer-dist",
+      "@site-install"
+    ],
+    "cli": "docker exec -i $(docker-compose ps -q cli)",
+    "pull": "docker image ls --format \"{{.Repository}}:{{.Tag}}\" | grep amazeeio | grep -v none | xargs -n1 docker pull | cat",
+    "debug-drush": "docker exec -i $(docker-compose ps -q cli) /app/scripts/xdebug.sh /app/vendor/bin/drush -r /app/docroot",
+    "site-install": "@composer cli -- ./scripts/drupal/site-install.sh",
+    "cs": [
+      "phpcs --colors"
+    ],
+    "test": "@composer cli -- vendor/bin/behat --format=progress_fail --colors",
+    "test-wip": "@composer cli -- vendor/bin/behat --format=progress_fail --colors --tags wip",
+    "login": "@composer cli -- drush uli -r /app/docroot -l http://content-vicgovau.docker.amazee.io/ | xargs open",
+    "logs": "docker-compose logs",
+    "docker-prune": "docker system prune -af",
+    "rebuild": [
+      "@cleanup",
+      "@build"
+    ],
+    "cleanup": [
+      "rm -Rf vendor",
+      "rm -Rf node_modules",
+      "chmod -Rf 777 docroot/sites/default",
+      "git ls-files --directory --other -i --exclude-from=.gitignore docroot|xargs rm -Rf"
+    ],
+    "doctor": "./scripts/doctor.sh",
+    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+    "pre-install-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+    ],
+    "pre-update-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+    ],
+    "post-install-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    ],
+    "post-update-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    ]
+  },
+  "extra": {
+    "drupal-scaffold": {
+      "source": "http://cgit.drupalcode.org/drupal/plain/{path}?h={version}",
+      "includes": [
+        ".editorconfig",
+        ".eslintignore",
+        ".gitattributes",
+        ".htaccess",
+        "index.php",
+        "robots.txt",
+        "update.php"
+      ],
+      "omit-defaults": true
+    },
+    "enable-patching": true,
+    "composer-exit-on-patch-failure": true,
+    "installer-paths": {
+      "docroot/core": ["type:drupal-core"],
+      "docroot/modules/contrib/{$name}": ["type:drupal-module"],
+      "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
+      "docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
+      "docroot/libraries/{$name}": ["type:drupal-library"],
+      "drush/contrib/{$name}": ["type:drupal-drush"]
+    },
+    "preserve-paths": [
+      "docroot/modules/custom",
+      "docroot/themes/custom",
+      "docroot/drush",
+      "docroot/sites/default/settings.php",
+      "docroot/sites/default/default.settings.local.php",
+      "docroot/sites/default/files"
+    ]
+  }
+}

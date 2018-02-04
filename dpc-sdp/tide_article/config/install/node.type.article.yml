@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  wysiwyg_template:
+    default_template: ''
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+name: Article
+type: article
+description: 'Use <em>Article</em> content type for basic pages.'
+help: ''
+new_revision: false
+preview_mode: 2
+display_submitted: false

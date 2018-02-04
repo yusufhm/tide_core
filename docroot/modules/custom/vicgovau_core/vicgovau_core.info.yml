@@ -1,0 +1,18 @@
+name: Vicgovau Core
+type: module
+description: Core feature for site settings.
+core: 8.x
+version: 8.x-1.0
+package: vicgovau
+dependencies:
+  - tide:bay
+  - admin_toolbar:admin_toolbar
+  - admin_toolbar:admin_toolbar_tools
+  - coffee:coffee
+  - drupal:field_ui
+  - drupal:inline_form_errors
+  - drupal:syslog
+  - drupal:views_ui
+  - environment_indicator:environment_indicator
+  - shield:shield
+  - stage_file_proxy:stage_file_proxy

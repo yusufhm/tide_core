@@ -1,0 +1,53 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: 8thom/circle-dpc
+        environment:
+          COMPOSER_ALLOW_SUPERUSER: 1
+          COMPOSE_FILE: docker-compose.yml:docker-compose.ci.yml
+    working_directory: /app
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          name: Composer validate.
+          command: composer validate --ansi --strict
+      - run:
+          name: Docker pull newest images.
+          command: |
+            composer pull
+      - run:
+          name: Docker compose up.
+          command: |
+            composer up
+            sleep 10 # wait for mariadb to startup
+      - run:
+          name: Site setup.
+          command: |
+            composer site-install
+            composer cli -- mkdir -p /app/screenshots
+      - run:
+          name: Install dev dependencies.
+          command: |
+            composer cli -- composer install --ansi
+      - run:
+          name: Lint code.
+          command: composer cli -- composer cs
+      - run:
+          name: Run tests.
+          command: |
+            if [ "$CIRCLE_NODE_TOTAL" -gt "1" ] ; then
+              composer cli -- vendor/bin/behat --format=progress_fail --colors --profile=p$CIRCLE_NODE_INDEX || composer cli -- vendor/bin/behat --format=progress_fail --colors --profile=p$CIRCLE_NODE_INDEX --rerun
+            else
+              composer cli -- vendor/bin/behat --format=progress_fail --colors || composer cli -- vendor/bin/behat --format=progress_fail --colors --rerun
+            fi
+
+      - run:
+          name: Copy artifacts.
+          command: |
+            mkdir -p /tmp/artifacts/behat
+            docker cp $(docker-compose ps -q cli):/app/screenshots /tmp/artifacts/behat
+      - store_artifacts:
+          path: /tmp/artifacts

@@ -1,0 +1,43 @@
+name: 'Tide Core'
+description: 'Provides core components required by other features.'
+type: module
+package: Tide
+core: 8.x
+dependencies:
+  - allowed_formats:allowed_formats
+  - better_exposed_filters:better_exposed_filters
+  - ckeditor_iframe:ckeditor_iframe
+  - config_split:config_split
+  - config_update:config_update
+  - drupal:block
+  - drupal:block_content
+  - drupal:ckeditor
+  - drupal:dynamic_page_cache
+  - drupal:entity_embed
+  - drupal:node
+  - drupal:options
+  - drupal:path
+  - drupal:page_cache
+  - drupal:taxonomy
+  - drupal:text
+  - drupal:user
+  - events_log_track:event_log_track
+  - editor_advanced_link:editor_advanced_link
+  - fakeobjects:fakeobjects
+  - fast_404:fast404
+  - linkit:linkit
+  - m4032404:m4032404
+  - maxlength:maxlength
+  - media_entity_audio:media_entity_audio
+  - override_node_options:override_node_options
+  - redirect:redirect
+  - simple_sitemap:simple_sitemap
+  - seckit:seckit
+  - simple_sitemap:simple_sitemap
+  - token_conditions:token_conditions
+  - token_filter:token_filter
+  - twig_field_value:twig_field_value
+  - views_menu_children_filter:views_menu_children_filter
+  - viewsreference:viewsreference
+  - wysiwyg_template:wysiwyg_template
+  - wysiwyg_template:wysiwyg_template_core

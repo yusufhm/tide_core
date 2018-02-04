@@ -1,0 +1,104 @@
+default:
+  autoload: [ %paths.base%/tests/behat/bootstrap ]
+  gherkin:
+    filters:
+      # Allow skipping tests by tagging them with "@skipped"
+      tags: "~@skipped"
+  suites:
+    default:
+      paths:
+        - %paths.base%/tests/behat/features
+        - %paths.base%/dpc-sdp/tide_article/tests/behat/features
+        - %paths.base%/dpc-sdp/tide_core/tests/behat/features
+        - %paths.base%/docroot/modules/custom/vicgovau_core/tests/behat/features
+      contexts:
+        - VicgovauDrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - VicgovauMinkContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - IntegratedExperts\BehatScreenshotExtension\Context\ScreenshotContext
+        - IntegratedExperts\BehatRelativityExtension\Context\RelativityContext
+
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      base_url: http://nginx:8080
+      browser_name: chrome
+      selenium2:
+        wd_host: "http://selenium:4444/wd/hub"
+        capabilities: { "browser": "chrome", "version": "*", "marionette": true }
+      javascript_session: selenium2
+      files_path: %paths.base%/tests/test_data
+    # Provides integration with Drupal APIs.
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: drupal
+      drush_driver: drush
+      drupal:
+        drupal_root: %paths.base%/docroot
+      drush:
+        root: %paths.base%/docroot
+      selectors:
+        message_selector: '.messages'
+        error_message_selector: '.messages.messages--error'
+        success_message_selector: '.messages.messages--status'
+        warning_message_selector: '.messages.messages--warning'
+      region_map:
+        alert: '.region-alert'
+        header: '.region-header'
+        header_search: '.region-header-search'
+        menu: '.region-menu'
+        breadcrumb: '.region-breadcrumb'
+        feature: '.region-feature'
+        above_content: '.region-above-content'
+        content: '.region-content'
+        sidebar: '.region-sidebar'
+        above_footer: '.region-above-footer'
+        footer_first: '.region-footer-first'
+        footer_second: '.region-footer-second'
+        footer_third: '.region-footer-third'
+        footer_fourth: '.region-footer-fourth'
+        footer_fifth: '.region-footer-fifth'
+        footer_sixth: '.region-footer-sixth'
+        splash: '.region-splash'
+        disabled: '.region-disabled'
+    # Allows to capture HTML and JPG screenshots (based on the driver used).
+    IntegratedExperts\BehatScreenshotExtension:
+      dir: %paths.base%/screenshots
+      fail: true
+      purge: false
+    # Show explicit fail information and continue the test run.
+    IntegratedExperts\BehatFormatProgressFail\FormatExtension: ~
+    IntegratedExperts\BehatRelativityExtension:
+      breakpoints:
+        mobile:
+          width: 320
+          height: 480
+        tablet:
+          width: 768
+          height: 1024
+        desktop:
+          width: 1024
+          height: 1024
+          default: true
+      # Vertical offset - document will be scrolled to the element with this offset.
+      # Useful when fixed elements may cover part of pages making it impossible to click on components.
+      offset: 60
+      # List of site-wide components.
+      components:
+        'header-container': ".header-container"
+        'page': ".layout-container"
+        'header': "header"
+        'main': "main"
+        'footer': "footer"
+        'content-rating-comments': "#block-webform-content-rating .form-item-comments"
+p0:
+  gherkin:
+    filters:
+      tags: "@p0&&~@skipped"
+p1:
+  gherkin:
+    filters:
+      tags: "@p1&&~@skipped"

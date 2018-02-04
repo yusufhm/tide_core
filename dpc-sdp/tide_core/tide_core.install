@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @file
+ * Installation functions for Tide Core.
+ */
+
+use Drupal\taxonomy\Entity\Term;
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_install().
+ */
+function tide_core_install() {
+  // Assign user 1 the "administrator" role.
+  $user = User::load(1);
+  $user->roles[] = 'administrator';
+  $user->save();
+
+  // Don't do anything else during config sync.
+  if (\Drupal::isConfigSyncing()) {
+    return;
+  }
+
+  // Restrict user registration to admin role creation.
+  \Drupal::configFactory()
+    ->getEditable('user.settings')
+    ->set('register', USER_REGISTER_ADMINISTRATORS_ONLY)
+    ->save(TRUE);
+
+  $functions = get_defined_functions();
+  foreach ($functions['user'] as $function) {
+    if (strpos($function, 'tide_core_update_') === 0) {
+      call_user_func($function);
+    }
+  }
+}
+
+/**
+ * Creates terms for Topic vocabulary.
+ */
+function tide_core_update_8000() {
+  $vid = 'topic';
+
+  $terms = [
+    'Arts',
+    'Business',
+    'Education',
+  ];
+  foreach ($terms as $term) {
+    Term::create([
+      'name' => $term,
+      'vid' => $vid,
+      'parent' => [],
+    ])->save();
+  }
+}
