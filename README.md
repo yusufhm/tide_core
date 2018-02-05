@@ -4,6 +4,8 @@ Drupal 8 implementation of VIC.GOV.AU
 [![CircleCI](https://circleci.com/gh/dpc-sdp/vic-gov-au.svg?style=svg&circle-token=619001ceda795d221a96315242e2782f621612d4)](https://circleci.com/gh/dpc-sdp/vic-gov-au)
 
 ## Install Docker
+
+## Local environment setup
 1   - Install [Homebrew](https://brew.sh/)
    ```bash
    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -11,57 +13,61 @@ Drupal 8 implementation of VIC.GOV.AU
     - Install docker `brew cask install docker`
     (You can also install it manually if you prefer - https://www.docker.com/docker-mac)
 2. Start docker and you should be able to run `docker ps`
-
-## Local environment setup
-1. Checkout project repo and confirm the path is in docker's file sharing config - https://docs.docker.com/docker-for-mac/#file-sharing
-2. Make sure that `composer` & `pygmy` are installed
+3. Checkout project repo and confirm the path is in docker's file sharing config - https://docs.docker.com/docker-for-mac/#file-sharing
+4. Make sure that `composer` & `pygmy` are installed
    - Install pygmy `gem install pygmy` (you might need sudo for this depending on your ruby configuration)
    - Run `brew bundle` or install each package manually:
       - Install composer `brew install composer`
-3. Make sure you don't have anything running on port 80 on the host machine (like a web server) then run `pygmy up` 
-5. Run `composer build`
-5. Once build has completed, you can run `composer login` to `drush uli` into the local site.
+5. Make sure you don't have anything running on port 80 on the host machine (like a web server) then run `pygmy up` 
+6. Run `composer app:build`
+7. Once build has completed, you can run `composer app:login` to `drush uli` into the local site.
 
 * If any steps fail you're safe to rerun from any point, 
 starting again from the beginning will just reconfirm the changes.
 
 Local URL -- http://content-vicgovau.docker.amazee.io/
 
-## Running drush commands.
-
-You'll need to connect to the CLI container to run any drush commands.
-
-`docker-compose exec cli bash`
-
-From here you can run any commands against the local environment.
-We're in the process of implementing drush alias support so this is only temporary.
-
 ## Available `composer` commands
-- `composer up` - bring up the project.
-- `composer build` - bring up and build out branch.
-- `composer db-import` - import prod db, run updates and config import.
-- `composer test` - run tests.
-- `composer login` - run drush uli on the CLI container.
-- `composer logs` - get logs from running containers.
-- `composer stop` - stop project containers.
-- `composer destroy` - stop and remove all project containers.
-- `composer cleanup` - remove all dependencies.
-- `composer rebuild` - remove all dependencies and run `build`.
-- `composer doctor` - helps to find the cause of any issues with a local setup.
+
+**Application**
+- `composer app:build` - build application and local development environment.
+- `composer app:rebuild` - rebuild application and local development environment with removing all dependencies.
+- `composer app:cleanup` - remove all dependencies.
+- `composer app:login` - login into locally built website (run `drush uli` on the `cli` container).
+- `composer app:test` - run tests.
+- `composer app:cs` - lint code.
+- `composer app:cr` - rebuild application cache.
+- `composer app:site-install` - run site installation from profile.
+- `composer app:db-import` - download and re-import DB.
+  
+**Bay**
+- `composer bay:start` - build and start local development environment.
+- `composer bay:restart` - restart local development environment.
+- `composer bay:stop` - stop all Bay containers.
+- `composer bay:destroy` - stop and remove all Bay containers.
+- `composer bay:doctor` - helps to find the cause of any issues with a local setup.
+- `composer bay:logs` - get logs from all running Bay containers.
+- `composer bay:cli` - run a command in `cli` container. Example: `composer bay:cli -- ls -al`.
+- `composer bay:pull` - pull latest Bay containers.
 
 ## Logs.
 
 Using the composer helper script you can get logs from any running container.
 
-`composer logs`
+`composer bay:logs`
 
 You can also filter the output to show only logs from a particular service.
-For example `composer logs -- php` will show the log output from the php container.
+For example `composer bay:logs -- php` will show the log output from the php container.
 The full list of services can be found in the `docker-compose.yml`
+
+## SSHing into CLI container 
+
+`docker-compose exec cli bash`
+
 
 ## Mailhog.
 
-Mailhog is included with pygmy and is available @ http://mailhog.docker.amazee.io/
+Mailhog is included with `pygmy` and is available @ http://mailhog.docker.amazee.io/
 Documentation for mailhog is available of the project page -- https://github.com/mailhog/MailHog
 
 ## Stage file proxy.
@@ -99,8 +105,8 @@ Behat configuration uses multiple extensions:
 - `VicgovauDrupalContext` - Site-specific Drupal context with custom step definitions.
 
 ### Run tests locally:
-- Run all tests: `composer test`
-- Run specific test feature: `composer cli -- vendor/bin/behat --format=progress_fail --colors tests/behat/features/homepage.feature`
+- Run all tests: `composer app:test`
+- Run specific test feature: `composer app:cli -- vendor/bin/behat --format=progress_fail --colors tests/behat/features/homepage.feature`
 
 Read more information in [the wiki page](https://digital-engagement.atlassian.net/wiki/spaces/SDP/pages/134906009/Behat+testing).
 
@@ -123,7 +129,7 @@ If the build has inconsistent results (build fails in CI but passes locally), tr
 ### Test artifacts
 Test artifacts (screenshots etc.) are available under 'Artifacts' tab in Circle CI UI.
 
-### Debugging
+## Debugging PHP scripts
 1. Make sure `scripts/xdebug.sh` is executable.
 2. Trigger xDebug from web browser so that PHPStorm recognises the server `content-vicgovau.docker.amazee.io` and configures the path mapping. Alternatively, you can create the server in PHPStorm Settings.
     * Make sure `serverName` to be `content-vicgovau.docker.amazee.io`
@@ -138,12 +144,12 @@ Test artifacts (screenshots etc.) are available under 'Artifacts' tab in Circle 
 
 ### Pre deployment database backups
 
-An automatic backup is made of the production database before any new deployment.
+An automatic backup of the production database is taken before any new deployment.
 This is currently stored in the private files directory and overridden on each deployment.
 
 #### Restoring a backup
 
-1. Access production `cli` container on bay.
+1. Access production `cli` container on Bay.
 2. Take a backup of failed deployment db for debugging.
   `drush sql-dump --gzip --result-file=/app/docroot/sites/default/files/private/failed_deployment.sql`
 3. Import pre-deployment backup.

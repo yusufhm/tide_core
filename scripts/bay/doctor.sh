@@ -40,7 +40,7 @@ main() {
   if curl -L -s -N $URL | grep -q "name=\"Generator\" content=\"Drupal 8"; then
     success "Successfully bootstrapped $URL"
   else
-    error "Website is running, but cannot be bootstrapped. Try pulling latest container images with 'composer pull'" && exit 1
+    error "Website is running, but cannot be bootstrapped. Try pulling latest container images with 'composer bay:pull'" && exit 1
   fi
 }
 

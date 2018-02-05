@@ -12,38 +12,35 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true
       - run:
-          name: Composer validate.
+          name: Validate composer config.
           command: composer validate --ansi --strict
       - run:
-          name: Docker pull newest images.
-          command: |
-            composer pull
+          name: Pull newest Bay images.
+          command: composer bay:pull
       - run:
-          name: Docker compose up.
+          name: Start Bay stack.
           command: |
-            composer up
+            composer bay:start
             sleep 10 # wait for mariadb to startup
       - run:
-          name: Site setup.
+          name: Setup app.
           command: |
-            composer site-install
-            composer cli -- mkdir -p /app/screenshots
+            composer app:site-install
+            composer bay:cli -- mkdir -p /app/screenshots
       - run:
           name: Install dev dependencies.
-          command: |
-            composer cli -- composer install --ansi
+          command: composer bay:cli -- composer install --ansi
       - run:
           name: Lint code.
-          command: composer cli -- composer cs
+          command: composer bay:cli -- composer app:cs
       - run:
           name: Run tests.
           command: |
             if [ "$CIRCLE_NODE_TOTAL" -gt "1" ] ; then
-              composer cli -- vendor/bin/behat --format=progress_fail --colors --profile=p$CIRCLE_NODE_INDEX || composer cli -- vendor/bin/behat --format=progress_fail --colors --profile=p$CIRCLE_NODE_INDEX --rerun
+              composer bay:cli -- vendor/bin/behat --format=progress_fail --colors --profile=p$CIRCLE_NODE_INDEX || composer bay:cli -- vendor/bin/behat --format=progress_fail --colors --profile=p$CIRCLE_NODE_INDEX --rerun
             else
-              composer cli -- vendor/bin/behat --format=progress_fail --colors || composer cli -- vendor/bin/behat --format=progress_fail --colors --rerun
+              composer bay:cli -- vendor/bin/behat --format=progress_fail --colors || composer bay:cli -- vendor/bin/behat --format=progress_fail --colors --rerun
             fi
-
       - run:
           name: Copy artifacts.
           command: |
