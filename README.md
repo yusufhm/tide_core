@@ -1,17 +1,17 @@
-# VIC.GOV.AU
-Drupal 8 implementation of VIC.GOV.AU
+# CONTENT.VIC.GOV.AU
+Drupal 8 implementation of Content API for VIC.GOV.AU
 
-[![CircleCI](https://circleci.com/gh/dpc-sdp/vic-gov-au.svg?style=svg&circle-token=619001ceda795d221a96315242e2782f621612d4)](https://circleci.com/gh/dpc-sdp/vic-gov-au)
-
-## Install Docker
+[![CircleCI](https://circleci.com/gh/dpc-sdp/content-vic-gov-au.svg?style=shield&circle-token=619001ceda795d221a96315242e2782f621612d4)](https://circleci.com/gh/dpc-sdp/content-vic-gov-au)
+![Release](https://img.shields.io/github/release/dpc-sdp/content-vic-gov-au.svg)
 
 ## Local environment setup
-1   - Install [Homebrew](https://brew.sh/)
+1. Install Docker
+   - Install [Homebrew](https://brew.sh/)
    ```bash
    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
    ```
-    - Install docker `brew cask install docker`
-    (You can also install it manually if you prefer - https://www.docker.com/docker-mac)
+   - Install docker `brew cask install docker`
+   (You can also install it manually if you prefer - https://www.docker.com/docker-mac)
 2. Start docker and you should be able to run `docker ps`
 3. Checkout project repo and confirm the path is in docker's file sharing config - https://docs.docker.com/docker-for-mac/#file-sharing
 4. Make sure that `composer` & `pygmy` are installed
