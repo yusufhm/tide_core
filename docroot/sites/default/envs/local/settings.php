@@ -1,17 +1,14 @@
 <?php
+
 /**
  * @file
- * lagoon Drupal 8 development environment configuration file.
- *
- * This file will only be included on development environments.
- *
- * It contains some defaults that the lagoon team suggests, please edit them as required.
+ * Settings file for local environment.
  */
 
 // Show all error messages on the site
 $config['system.logging']['error_level'] = 'all';
 
- // Disable Google Analytics from sending dev GA data.
+// Disable Google Analytics from sending dev GA data.
 $config['google_analytics.settings']['account'] = 'UA-XXXXXXXX-YY';
 
 // Expiration of cached pages to 0
@@ -32,3 +29,6 @@ $config['config_split.config_split.local']['status'] = TRUE;
 
 // Environment indicator color override.
 $config['environment_indicator.indicator']['name'] = 'LOCAL';
+
+// Skip permissions hardening.
+$settings['skip_permissions_hardening'] = TRUE;

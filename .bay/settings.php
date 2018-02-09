@@ -1,25 +1,48 @@
 <?php
+
 /**
  * @file
- * lagoon Drupal 8 all environment configuration file.
- *
- * This file should contain all settings.php configurations that are needed by all environments.
- *
- * It contains some defaults that the lagoon team suggests, please edit them as required.
+ * Bay Drupal 8 configuration file.
  */
 
-// Contrib path.
-$contrib_path = is_dir('modules/contrib') ? 'modules/contrib' : 'modules';
+$bay_settings_path = __DIR__;
+$settings_path = $app_root . DIRECTORY_SEPARATOR . 'sites/default';
+$contrib_path = $app_root . DIRECTORY_SEPARATOR . (is_dir('modules/contrib') ? 'modules/contrib' : 'modules');
 
-// Installation profile.
-$settings['install_profile'] = 'tide';
+// Database connection.
+$databases['default']['default'] = [
+  'driver' => 'mysql',
+  'database' => getenv('DB_DATABASE') ?: 'drupal',
+  'username' => getenv('DB_USERNAME') ?: 'drupal',
+  'password' => getenv('DB_PASSWORD') ?: 'drupal',
+  'host' => getenv('DB_HOST') ?: 'mariadb',
+  'port' => getenv('DB_PORT') ?: '3306',
+  'prefix' => '',
+];
+
+// Solr connection.
+// WARNING: you have to create a search_api server having "solr" machine name at
+// /admin/config/search/search-api/add-server to make this work.
+$config['search_api.server.solr']['backend_config']['connector_config']['host'] = getenv('SOLR_HOST') ?: 'solr';
+$config['search_api.server.solr']['backend_config']['connector_config']['path'] = '/solr/';
+$config['search_api.server.solr']['backend_config']['connector_config']['core'] = getenv('SOLR_CORE') ?: 'drupal';
+$config['search_api.server.solr']['backend_config']['connector_config']['port'] = getenv('SOLR_PORT') ?: '8983';
+$config['search_api.server.solr']['backend_config']['connector_config']['http_user'] = (getenv('SOLR_USER') ?: '');
+$config['search_api.server.solr']['backend_config']['connector_config']['http']['http_user'] = (getenv('SOLR_USER') ?: '');
+$config['search_api.server.solr']['backend_config']['connector_config']['http_pass'] = (getenv('SOLR_PASSWORD') ?: '');
+$config['search_api.server.solr']['backend_config']['connector_config']['http']['http_pass'] = (getenv('SOLR_PASSWORD') ?: '');
+$config['search_api.server.solr']['name'] = 'Lagoon Solr - Environment: ' . getenv('LAGOON_PROJECT');
+
+// Varnish & Reverse proxy settings.
+$settings['reverse_proxy'] = TRUE;
 
 $settings['update_free_access'] = FALSE;
 
-// Defines where the sync folder of your configuration lives. In this case it's inside
-// the Drupal root, which is protected by lagoon nginx configs, so it cannot be read
-// via the browser. If your Drupal root is inside a subfolder (like 'web') you can put the config
-// folder outside this subfolder for an advanced security measure: '../config/sync'.
+// Defines where the sync folder of your configuration lives. In this case it's
+// inside the Drupal root, which is protected by lagoon nginx configs,
+// so it cannot be read via the browser. If your Drupal root is inside a
+// subfolder (like 'web') you can put the config folder outside this subfolder
+// for an advanced security measure: '../config/sync'.
 $config_directories[CONFIG_SYNC_DIRECTORY] = '../config/sync';
 
 // The default list of directories that will be ignored by Drupal's file API.
@@ -34,18 +57,8 @@ $settings['entity_update_batch_size'] = 50;
 $config['environment_indicator.indicator']['name'] = $config['environment'];
 $config['environment_indicator.indicator']['bg_color'] = !empty($config['environment_indicator.indicator']['bg_color']) ? $config['environment_indicator.indicator']['bg_color'] : 'green';
 
-// Skip permissions hardening.
-$settings['skip_permissions_hardening'] = FALSE;
-
-// Shield config.
-$config['shield.settings']['user'] = 'dpc';
-$config['shield.settings']['pass'] = 'sdp';
-
 // Disable local split.
 $config['config_split.config_split.local']['status'] = FALSE;
-
-// Stage file proxy
-$config['stage_file_proxy.settings']['origin'] = 'http://dpc:sdp@nginx-php-vicgovau-production.lagoon.vicsdp.amazee.io';
 
 // Redis.
 if (!drupal_installation_attempted()) {
@@ -58,7 +71,7 @@ if (!drupal_installation_attempted()) {
   $settings['cache']['bins']['bootstrap'] = 'cache.backend.chainedfast';
   $settings['cache']['bins']['discovery'] = 'cache.backend.chainedfast';
   $settings['cache']['bins']['config'] = 'cache.backend.chainedfast';
-  $settings['container_yamls'][] = $app_root . '/' . $contrib_path . '/redis/example.services.yml';
+  $settings['container_yamls'][] = $contrib_path . '/redis/example.services.yml';
 }
 
 // Expiration of cached pages on Varnish to 15 min
@@ -120,7 +133,34 @@ $settings['fast404_string_whitelisting'] = ['/advagg_'];
 $settings['fast404_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL "@path" was not found on this server.</p></body></html>';
 // Load the fast404.inc file. This is needed if you wish to do extension
 // checking in settings.php.
-if (file_exists($app_root . '/' . $contrib_path . '/fast404/fast404.inc')) {
-  include_once $app_root . '/' . $contrib_path . '/fast404/fast404.inc';
+if (file_exists($contrib_path . '/fast404/fast404.inc')) {
+  include_once $contrib_path . '/fast404/fast404.inc';
   fast404_preboot($settings);
+}
+
+// Temp directory.
+if (getenv('TMP')) {
+  $config['system.file']['path']['temporary'] = getenv('TMP');
+}
+
+// Hash Salt.
+$settings['hash_salt'] = hash('sha256', getenv('LAGOON_PROJECT'));
+
+////////////////////////////////////////////////////////////////////////////////
+//////////////////////// PER-ENVIRONMENT SETTINGS //////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+// Include Bay services.
+if (file_exists($bay_settings_path . '/services.yml')) {
+  $settings['container_yamls'][] = $bay_settings_path . '/services.yml';
+}
+
+// Include environment specific settings and services files.
+if (getenv('LAGOON_ENVIRONMENT_TYPE')) {
+  if (file_exists($settings_path . '/envs/' . getenv('LAGOON_ENVIRONMENT_TYPE') . '/settings.php')) {
+    include $settings_path . '/envs/' . getenv('LAGOON_ENVIRONMENT_TYPE') . '/settings.php';
+  }
+  if (file_exists($settings_path . '/envs/' . getenv('LAGOON_ENVIRONMENT_TYPE') . '/services.yml')) {
+    $settings['container_yamls'][] = $settings_path . '/envs/' . getenv('LAGOON_ENVIRONMENT_TYPE') . '/services.yml';
+  }
 }

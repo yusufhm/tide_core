@@ -13,7 +13,12 @@
   <file>tests</file>
   <file>docroot/modules/custom</file>
   <file>docroot/themes/custom</file>
+  <file>docroot/sites/default</file>
   <file>dpc-sdp</file>
+  <file>.bay</file>
+
+  <!-- Exclude files. -->
+  <exclude-pattern>docroot\/sites\/default\/files\/.*</exclude-pattern>
 
   <!-- Exclude circleci config files. -->
   <exclude-pattern>circle\.yml</exclude-pattern>
