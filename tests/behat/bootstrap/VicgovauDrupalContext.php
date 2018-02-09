@@ -208,4 +208,14 @@ class VicgovauDrupalContext extends DrupalContext {
     sleep($sec);
   }
 
+  /**
+   * @Given no :type content type
+   */
+  public function removeContentType($type) {
+    $content_type_entity = \Drupal::entityManager()->getStorage('node_type')->load($type);
+    if ($content_type_entity) {
+      $content_type_entity->delete();
+    }
+  }
+
 }

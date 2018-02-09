@@ -1,0 +1,12 @@
+name: 'Tide site'
+description: 'Functionality to allow post content to multiple sites and sections.'
+type: module
+package: Tide
+core: 8.x
+dependencies:
+  - drupal:field
+  - drupal:node
+  - drupal:path
+  - drupal:taxonomy
+  - drupal:text
+  - drupal:user

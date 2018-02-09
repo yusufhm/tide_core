@@ -1,0 +1,194 @@
+<?php
+
+/**
+ * @file
+ * Tide Site module functionality.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Implements hook_entity_bundle_create().
+ */
+function tide_site_entity_bundle_create($entity_type_id, $bundle) {
+  // Create 2 fields on new node type creation.
+  // Configuration of the fields is explicitly defined here as their
+  // configuration is different for each field.
+  if ($entity_type_id == 'node') {
+    // 'Site' field.
+    $field_config = FieldConfig::loadByName('node', $bundle, 'field_site');
+    if (empty($field_config)) {
+      try {
+        // Create field config.
+        $field_config = FieldConfig::create([
+          'field_name' => 'field_site',
+          'entity_type' => 'node',
+          'bundle' => $bundle,
+          'label' => 'Site',
+          'settings' => [
+            'handler' => 'default:taxonomy_term',
+            'handler_settings' => [
+              'target_bundles' => [
+                'sites' => 'sites',
+              ],
+            ],
+          ],
+          'required' => TRUE,
+        ]);
+        $field_config->save();
+
+        // Create/update form display. View display is not created to avoid
+        // unexpected fields appearing in UI.
+        /** @var \Drupal\Core\Entity\EntityDisplayBase $form_display */
+        $form_display = \Drupal::entityTypeManager()
+          ->getStorage('entity_form_display')
+          ->load('node.' . $bundle . '.default');
+        if (!$form_display) {
+          $form_display = \Drupal::entityTypeManager()
+            ->getStorage('entity_form_display')
+            ->create([
+              'targetEntityType' => 'node',
+              'bundle' => $bundle,
+              'mode' => 'default',
+              'status' => TRUE,
+            ]);
+        }
+        $form_display->setComponent('field_site', [
+          'type' => 'options_buttons',
+        ])->save();
+
+        drupal_set_message(t('Added field %name to the %bundle content type and form display.', [
+          '%name' => 'field_site',
+          '%bundle' => $bundle,
+        ]));
+      }
+      catch (\Exception $e) {
+        drupal_set_message(t('Unable to add a field %name to the %bundle content type: @message', [
+          '%name' => 'field_site',
+          '%bundle' => $bundle,
+          '@message' => $e->getMessage(),
+        ]), 'error');
+      }
+    }
+
+    // 'Primary Site' field.
+    $field_config = FieldConfig::loadByName('node', $bundle, 'field_primary_site');
+    if (empty($field_config)) {
+      try {
+        // Create field config.
+        $field_config = FieldConfig::create([
+          'field_name' => 'field_primary_site',
+          'entity_type' => 'node',
+          'bundle' => $bundle,
+          'label' => 'Primary Site',
+          'settings' => [
+            'handler' => 'default:taxonomy_term',
+            'handler_settings' => [
+              'target_bundles' => [
+                'sites' => 'sites',
+              ],
+            ],
+          ],
+          'required' => TRUE,
+        ]);
+        $field_config->save();
+
+        // Create/update form display. View display is not created to avoid
+        // unexpected fields appearing in UI.
+        /** @var \Drupal\Core\Entity\EntityDisplayBase $form_display */
+        $form_display = \Drupal::entityTypeManager()
+          ->getStorage('entity_form_display')
+          ->load('node.' . $bundle . '.default');
+        if (!$form_display) {
+          $form_display = \Drupal::entityTypeManager()
+            ->getStorage('entity_form_display')
+            ->create([
+              'targetEntityType' => 'node',
+              'bundle' => $bundle,
+              'mode' => 'default',
+              'status' => TRUE,
+            ]);
+        }
+        $form_display->setComponent('field_primary_site', [
+          'type' => 'options_buttons',
+        ])->save();
+
+        drupal_set_message(t('Added field %name to the %bundle content type and form display.', [
+          '%name' => 'field_primary_site',
+          '%bundle' => $bundle,
+        ]));
+      }
+      catch (\Exception $e) {
+        drupal_set_message(t('Unable to add a field %name to the %bundle content type: @message', [
+          '%name' => 'field_primary_site',
+          '%bundle' => $bundle,
+          '@message' => $e->getMessage(),
+        ]), 'error');
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function tide_site_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+  $field_definition = $context['items']->getFieldDefinition();
+
+  // Restrict options to 2 levels of depth for Site field.
+  if ($field_definition->getName() == 'field_site') {
+    $tree = \Drupal::entityManager()->getStorage('taxonomy_term')->loadTree('sites', 0, 2);
+    $element['#options'] = array_intersect_key($element['#options'], array_flip(array_column($tree, 'tid')));
+  }
+
+  // Restrict options to 1 level of depth for Primary Site field.
+  if ($field_definition->getName() == 'field_primary_site') {
+    $tree = \Drupal::entityManager()->getStorage('taxonomy_term')->loadTree('sites', 0, 1);
+    $element['#options'] = array_intersect_key($element['#options'], array_flip(array_column($tree, 'tid')));
+  }
+}
+
+/**
+ * Implements hook_form_taxonomy_overview_terms_alter().
+ */
+function tide_site_form_taxonomy_overview_terms_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['#validate'][] = '_tide_site_form_taxonomy_overview_terms_validate';
+}
+
+/**
+ * Validation handler for taxonomy term overview form.
+ */
+function _tide_site_form_taxonomy_overview_terms_validate(&$form, FormStateInterface $form_state) {
+  $max_depth = 1;
+
+  $vocabulary = $form_state->get(['taxonomy', 'vocabulary']);
+  if ($vocabulary->id() == 'sites') {
+    $invalid_tids = [];
+    $terms = $form_state->getValue('terms');
+    foreach ($terms as $term) {
+      if ($term['term']['depth'] > $max_depth) {
+        $invalid_tids[] = $term['term']['tid'];
+      }
+    }
+
+    if (!empty($invalid_tids)) {
+      $invalid_terms = Term::loadMultiple($invalid_tids);
+      $names = [];
+      /** @var \Drupal\taxonomy\Entity\Term $invalid_term */
+      foreach ($invalid_terms as $invalid_term) {
+        $names[] = $invalid_term->getName();
+      }
+
+      $form_state->setError($form, \Drupal::translation()->formatPlural(
+        count($names),
+        'Term %items cannot reside deeper than @max levels.',
+        'Terms %items cannot reside deeper than @max levels.', [
+          '%items' => implode(', ', $names),
+          '@max' => $max_depth + 1,
+        ]
+      ));
+    }
+  }
+}

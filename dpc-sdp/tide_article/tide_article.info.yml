@@ -11,5 +11,6 @@ dependencies:
   - drupal:text
   - drupal:user
   - maxlength:maxlength
-  - tide:tide_core
+  - dpc-sdp:tide_core
+  - dpc-sdp:tide_site
   - drupal:datetime

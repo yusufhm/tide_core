@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bcab2e803c49756ec47dfea08b4c6f54",
+    "content-hash": "b3f17dab37666f566d47dbc56f408e80",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1062,12 +1062,11 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_article",
-                "reference": "b210fd3e56b86c02e83470869238513d9a9c0a9d",
+                "reference": "d0d44dd97aa72da99f1498b6068de7639cbc0716",
                 "shasum": null
             },
             "require": {
-                "dpc-sdp/tide_core": "0.0.1",
-                "drupal/maxlength": "^1.0@beta"
+                "dpc-sdp/tide_core": "0.0.1"
             },
             "type": "drupal-module",
             "license": [
@@ -1150,6 +1149,21 @@
                 "GPL-2.0+"
             ],
             "description": "Core functionality for Tide Drupal 8 distribution"
+        },
+        {
+            "name": "dpc-sdp/tide_site",
+            "version": "0.0.1",
+            "dist": {
+                "type": "path",
+                "url": "dpc-sdp/tide_site",
+                "reference": "c0fb1222c0ae3d27ff8d7d70b6926dd9382313b5",
+                "shasum": null
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Post content to multiple sites and sections."
         },
         {
             "name": "drupal-composer/drupal-scaffold",

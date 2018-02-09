@@ -10,6 +10,7 @@ default:
         - %paths.base%/tests/behat/features
         - %paths.base%/dpc-sdp/tide_article/tests/behat/features
         - %paths.base%/dpc-sdp/tide_core/tests/behat/features
+        - %paths.base%/dpc-sdp/tide_site/tests/behat/features
         - %paths.base%/docroot/modules/custom/vicgovau_core/tests/behat/features
       contexts:
         - VicgovauDrupalContext

@@ -103,10 +103,11 @@ Behat configuration uses multiple extensions:
 - [Behat Screenshot Extension](https://github.com/integratedexperts/behat-screenshot) - Behat extension and a step definition to create HTML and image screenshots on demand or test fail.
 - [Behat Progress Fail Output Extension](https://github.com/integratedexperts/behat-format-progress-fail) - Behat output formatter to show progress as TAP and fail messages inline. Useful to get feedback about failed tests while continuing test run.
 - `VicgovauDrupalContext` - Site-specific Drupal context with custom step definitions.
+- `VicgovauMinkContext` - Site-specific Mink context with custom step definitions.
 
 ### Run tests locally:
 - Run all tests: `composer app:test`
-- Run specific test feature: `composer app:cli -- vendor/bin/behat --format=progress_fail --colors tests/behat/features/homepage.feature`
+- Run specific test feature: `composer app:test tests/behat/features/homepage.feature`
 
 Read more information in [the wiki page](https://digital-engagement.atlassian.net/wiki/spaces/SDP/pages/134906009/Behat+testing).
 
@@ -129,10 +130,20 @@ If the build has inconsistent results (build fails in CI but passes locally), tr
 ### Test artifacts
 Test artifacts (screenshots etc.) are available under 'Artifacts' tab in Circle CI UI.
 
-## Debugging PHP scripts
+## Debugging
+
+### PHP application from browser 
+1. Trigger xDebug from web browser (using one of the browser extensions) so that PHPStorm recognises the server `content-vicgovau.docker.amazee.io` and configures the path mapping. Alternatively, you can create the server in PHPStorm Settings.
+  * Make sure `serverName` to be `content-vicgovau.docker.amazee.io`
+ 
+  
+### PHP scripts
 1. Make sure `scripts/xdebug.sh` is executable.
-2. Trigger xDebug from web browser so that PHPStorm recognises the server `content-vicgovau.docker.amazee.io` and configures the path mapping. Alternatively, you can create the server in PHPStorm Settings.
-    * Make sure `serverName` to be `content-vicgovau.docker.amazee.io`
+2. SSH into CLI container: `docker-compose exec cli bash`
+3. Run your PHP script: `scripts/xdebug.sh path/to/script`.
+    * Example running a single Behat test: `scripts/xdebug.sh vendor/bin/behat path/to/test.feature`
+
+### Drush commands
 3. To debug `drush` commands:
     * SSH to CLI container: `docker-compose exec cli bash`
         + `cd docroot`
@@ -140,7 +151,16 @@ Test artifacts (screenshots etc.) are available under 'Artifacts' tab in Circle 
             - Example: `../scripts/xdebug.sh ../vendor/bin/drush updb -y`
     * Debug directly from host machine: `composer debug-drush -- <DRUSH_COMMAND>`
         + Example: `composer debug-drush -- updb -y`
-4. To connect to the local database, connect to 127.0.0.1 on port 13306.  
+
+### DB connection details
+
+```
+  Host:     127.0.0.1
+  Username: drupal
+  Password: drupal
+  Database: drupal
+  Port:     13306
+```  
 
 ### Pre deployment database backups
 

@@ -5,10 +5,11 @@
     "require": {
         "composer/installers": "^1.2.0",
         "cweagans/composer-patches": "^1.6.0",
+        "dpc-sdp/bay": "0.0.1",
         "dpc-sdp/tide": "^0.0.1",
         "dpc-sdp/tide_article": "0.0.1",
-        "dpc-sdp/bay": "0.0.1",
         "dpc-sdp/tide_core": "0.0.1",
+        "dpc-sdp/tide_site": "^0.0.1",
         "drupal-composer/drupal-scaffold": "^2.3",
         "drupal/admin_toolbar": "^1.20",
         "drupal/coffee": "^1.0@beta",
@@ -65,6 +66,10 @@
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
+        "dpc-sdp/bay": {
+            "type": "path",
+            "url": "dpc-sdp/bay"
+        },
         "dpc-sdp/tide": {
             "type": "path",
             "url": "dpc-sdp/tide"
@@ -73,13 +78,13 @@
             "type": "path",
             "url": "dpc-sdp/tide_article"
         },
-        "dpc-sdp/bay": {
-            "type": "path",
-            "url": "dpc-sdp/bay"
-        },
         "dpc-sdp/tide_core": {
             "type": "path",
             "url": "dpc-sdp/tide_core"
+        },
+        "dpc-sdp/tide_site": {
+            "type": "path",
+            "url": "dpc-sdp/tide_site"
         },
         "library/dropzone": {
             "type": "package",
@@ -152,7 +157,7 @@
         "app:cs": [
             "phpcs --colors"
         ],
-        "app:test": "@composer bay:cli -- vendor/bin/behat --format=progress_fail --colors",
+        "app:test": "docker exec -i $(docker-compose ps -q cli) vendor/bin/behat --format=progress_fail --colors",
         "app:login": "@composer bay:cli -- drush uli -r /app/docroot -l http://content-vicgovau.docker.amazee.io/ | xargs open",
         "app:cr": "@composer bay:cli -- drush cr -r /app/docroot -y",
         "app:cleanup": [

@@ -5,6 +5,7 @@
  * Install file for core.
  */
 
+use Drupal\taxonomy\Entity\Term;
 use Drupal\user\Entity\Role;
 use Drupal\user\Entity\User;
 
@@ -53,4 +54,38 @@ function vicgovau_core_create_demo_users() {
       }
     }
   }
+}
+
+/**
+ * Creates sites and sections.
+ */
+function vicgovau_core_update_8000() {
+  $sites = [
+    'vic.gov.au' => [
+      'section1',
+      'section2',
+    ],
+    'other.gov.au' => [],
+  ];
+
+  $weight = 0;
+  foreach ($sites as $site => $sections) {
+    $term_site = Term::create([
+      'name' => $site,
+      'vid' => 'sites',
+      'weight' => $weight,
+    ]);
+    $term_site->save();
+
+    foreach ($sections as $section) {
+      $term_section = Term::create([
+        'name' => $section,
+        'vid' => 'sites',
+        'parent' => [$term_site->id()],
+      ]);
+      $term_section->save();
+    }
+    $weight++;
+  }
+
 }
