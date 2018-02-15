@@ -4,6 +4,7 @@ type: profile
 package: Tide
 core: '8.x'
 dependencies:
+  - dpc-sdp:tide_api
   - dpc-sdp:tide_article
   - dpc-sdp:tide_core
   - dpc-sdp:tide_site

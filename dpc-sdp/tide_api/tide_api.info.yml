@@ -1,0 +1,10 @@
+name: 'Tide API'
+description: 'Content API functionality.'
+type: module
+package: Tide
+core: 8.x
+dependencies:
+  - drupal:jsonapi
+  - drupal:jsonapi_extras
+  - drupal:schemata
+  - drupal:schemata_json_schema

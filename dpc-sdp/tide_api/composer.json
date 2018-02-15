@@ -1,0 +1,14 @@
+{
+    "name": "dpc-sdp/tide_api",
+    "description": "Content API for Tide distribution.",
+    "type": "drupal-module",
+    "license": "GPL-2.0+",
+    "version": "0.0.1",
+    "minimum-stability": "alpha",
+    "prefer-stable": true,
+    "require": {
+        "drupal/jsonapi": "^1.7",
+        "drupal/jsonapi_extras": "1.0-rc1",
+        "drupal/schemata": "1.0-alpha2"
+    }
+}

@@ -37,6 +37,7 @@ Local URL -- http://content-vicgovau.docker.amazee.io/
 - `composer app:test` - run tests.
 - `composer app:cs` - lint code.
 - `composer app:cr` - rebuild application cache.
+- `composer app:drush` - run drush commands. Example: `composer app:drush -- status` 
 - `composer app:site-install` - run site installation from profile.
 - `composer app:db-import` - download and re-import DB.
   

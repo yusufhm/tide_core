@@ -8,6 +8,7 @@ default:
     default:
       paths:
         - %paths.base%/tests/behat/features
+        - %paths.base%/dpc-sdp/tide_api/tests/behat/features
         - %paths.base%/dpc-sdp/tide_article/tests/behat/features
         - %paths.base%/dpc-sdp/tide_core/tests/behat/features
         - %paths.base%/dpc-sdp/tide_site/tests/behat/features
@@ -21,6 +22,8 @@ default:
         - Drupal\DrupalExtension\Context\DrushContext
         - IntegratedExperts\BehatScreenshotExtension\Context\ScreenshotContext
         - IntegratedExperts\BehatRelativityExtension\Context\RelativityContext
+        - Ubirak\RestApiBehatExtension\RestApiContext
+        - Ubirak\RestApiBehatExtension\Json\JsonContext
 
   extensions:
     Behat\MinkExtension:
@@ -95,6 +98,10 @@ default:
         'main': "main"
         'footer': "footer"
         'content-rating-comments': "#block-webform-content-rating .form-item-comments"
+    Ubirak\RestApiBehatExtension\Extension:
+      rest:
+        base_url: http://nginx:8080
+        store_response: true
 p0:
   gherkin:
     filters:

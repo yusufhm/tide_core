@@ -1,0 +1,11 @@
+services:
+  tide_api_version_subscriber:
+    class: Drupal\tide_api\EventSubscriber\TideApiVersionSubscriber
+    tags:
+      - {name: event_subscriber}
+  tide_api_route_alter_subscriber:
+    class: Drupal\tide_api\EventSubscriber\TideApiRouteAlterSubscriber
+    arguments:
+      - '@config.factory'
+    tags:
+      - {name: event_subscriber}
