@@ -5,12 +5,8 @@
     "require": {
         "composer/installers": "^1.2.0",
         "cweagans/composer-patches": "^1.6.0",
-        "dpc-sdp/bay": "0.0.1",
+        "dpc-sdp/bay": "^0.0.1",
         "dpc-sdp/tide": "^0.0.1",
-        "dpc-sdp/tide_api": "^0.0.1",
-        "dpc-sdp/tide_article": "0.0.1",
-        "dpc-sdp/tide_core": "0.0.1",
-        "dpc-sdp/tide_site": "^0.0.1",
         "drupal-composer/drupal-scaffold": "^2.3",
         "drupal/admin_toolbar": "^1.20",
         "drupal/coffee": "^1.0@beta",
@@ -89,6 +85,10 @@
         "dpc-sdp/tide_core": {
             "type": "path",
             "url": "dpc-sdp/tide_core"
+        },
+        "dpc-sdp/tide_page": {
+            "type": "path",
+            "url": "dpc-sdp/tide_page"
         },
         "dpc-sdp/tide_site": {
             "type": "path",

@@ -7,6 +7,7 @@ dependencies:
   - dpc-sdp:tide_api
   - dpc-sdp:tide_article
   - dpc-sdp:tide_core
+  - dpc-sdp:tide_page
   - dpc-sdp:tide_site
 
 themes:

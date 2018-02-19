@@ -1,5 +1,5 @@
-name: Tide Article
-description: 'Provides Article content type and related configuration. '
+name: Tide Page
+description: 'Provides Page content type and related configuration. '
 type: module
 package: Tide
 core: 8.x
@@ -14,3 +14,4 @@ dependencies:
   - dpc-sdp:tide_site
   - drupal:datetime
   - maxlength:maxlength
+  - paragraphs:paragraphs

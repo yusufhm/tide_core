@@ -1,0 +1,59 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_page_layout
+field_name: field_page_layout
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '1'
+      label: 'One column'
+    -
+      value: '2'
+      label: 'Two columns'
+    -
+      value: '3'
+      label: 'Three columns'
+    -
+      value: '4'
+      label: 'Four columns'
+    -
+      value: 1-2
+      label: 'One, two columns'
+    -
+      value: 1-3
+      label: 'One, three columns'
+    -
+      value: 1-4
+      label: 'One, four columns'
+    -
+      value: 1-2-3
+      label: 'One, two, tree columns'
+    -
+      value: 1-2-4
+      label: 'One, two, four columns'
+    -
+      value: 1-3-2
+      label: 'One, three, two columns'
+    -
+      value: 1-3-4
+      label: 'One, three, four columns'
+    -
+      value: 1-4-2
+      label: 'One, four, two columns'
+    -
+      value: 1-4-3
+      label: 'One, four, three columns'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
