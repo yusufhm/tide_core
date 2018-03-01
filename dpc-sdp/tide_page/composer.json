@@ -5,8 +5,7 @@
     "license": "GPL-2.0+",
     "version": "0.0.1",
     "require": {
-        "dpc-sdp/tide_core": "0.0.1",
-        "drupal/paragraphs": "^1.2"
+        "dpc-sdp/tide_core": "0.0.1"
     },
     "repositories": {
         "tide_core": {

@@ -48,17 +48,17 @@ Feature: Route lookup
 
   @api
   Scenario: Request to route lookup API to find a route by existing alias
-    Given article content:
+    Given page content:
       | title                | path                |
-      | [TEST] Article title | /test-article-alias |
+      | [TEST] Page title | /test-page-alias |
     And I am an anonymous user
-    When I send a GET request to "api/v1/route?alias=/test-article-alias"
+    When I send a GET request to "api/v1/route?alias=/test-page-alias"
     Then the rest response status code should be 200
     And the response should be in JSON
     And the JSON node "links" should exist
     And the JSON node "links.self" should contain "api/v1/route"
     And the JSON node "data" should exist
-    And the JSON node "data.alias" should be equal to "/test-article-alias"
+    And the JSON node "data.alias" should be equal to "/test-page-alias"
     And the JSON node "data.source" should contain "/node/"
-    And the JSON node "data.endpoint" should contain "api/v1/article/"
+    And the JSON node "data.endpoint" should contain "api/v1/page/"
     And the JSON node "error" should not exist

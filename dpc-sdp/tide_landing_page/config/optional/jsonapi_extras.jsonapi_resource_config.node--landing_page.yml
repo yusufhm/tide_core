@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - node.type.article
-id: node--article
+    - node.type.landing_page
+id: node--landing_page
 disabled: false
-path: article
-resourceType: article
+path: landing_page
+resourceType: landing_page
 resourceFields:
   nid:
     fieldName: nid

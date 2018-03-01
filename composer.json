@@ -78,17 +78,17 @@
             "type": "path",
             "url": "dpc-sdp/tide_api"
         },
-        "dpc-sdp/tide_article": {
+        "dpc-sdp/tide_page": {
             "type": "path",
-            "url": "dpc-sdp/tide_article"
+            "url": "dpc-sdp/tide_page"
         },
         "dpc-sdp/tide_core": {
             "type": "path",
             "url": "dpc-sdp/tide_core"
         },
-        "dpc-sdp/tide_page": {
+        "dpc-sdp/tide_landing_page": {
             "type": "path",
-            "url": "dpc-sdp/tide_page"
+            "url": "dpc-sdp/tide_landing_page"
         },
         "dpc-sdp/tide_site": {
             "type": "path",

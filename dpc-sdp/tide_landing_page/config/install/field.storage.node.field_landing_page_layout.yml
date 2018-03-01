@@ -4,8 +4,8 @@ dependencies:
   module:
     - node
     - options
-id: node.field_page_layout
-field_name: field_page_layout
+id: node.field_landing_page_layout
+field_name: field_landing_page_layout
 entity_type: node
 type: list_string
 settings:

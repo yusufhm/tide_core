@@ -1,12 +1,12 @@
-Feature: Access to Article content type
+Feature: Access to Landing Page content type
 
-  Ensure that Article content access permissions are set correctly
+  Ensure that Landing Page content access permissions are set correctly
   for designated roles.
 
   @api
-  Scenario Outline: Users have access to create Article content
+  Scenario Outline: Users have access to create Landing Page content
     Given I am logged in as a user with the "<role>" role
-    When I go to "node/add/article"
+    When I go to "node/add/landing_page"
     Then I should get a "<response>" HTTP response
     And save screenshot
     Examples:

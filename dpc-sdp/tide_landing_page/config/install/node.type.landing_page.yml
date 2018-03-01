@@ -11,9 +11,9 @@ third_party_settings:
     parent: 'main:'
   wysiwyg_template:
     default_template: ''
-name: Article
-type: article
-description: 'Use <em>Article</em> content type for basic pages.'
+name: Landing Page
+type: landing_page
+description: 'Use <em>Landing Page</em> content type for custom landing pages.'
 help: ''
 new_revision: false
 preview_mode: 2

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd8ae04eafc68682cc76ae2f730ef4eb",
+    "content-hash": "e3587be00a311fb087a4e24acb4fa86d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1026,14 +1026,14 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide",
-                "reference": "20d3f2b7572a21e4d2bb3f2f871e42a1692f8b2b",
+                "reference": "e2cdd57536eeba38a99bb084f4269cf0ed972803",
                 "shasum": null
             },
             "require": {
                 "dpc-sdp/tide_api": "0.0.1",
-                "dpc-sdp/tide_article": "0.0.1",
                 "dpc-sdp/tide_core": "0.0.1",
-                "dpc-sdp/tide_page": "^0.0.1",
+                "dpc-sdp/tide_landing_page": "^0.0.1",
+                "dpc-sdp/tide_page": "0.0.1",
                 "dpc-sdp/tide_site": "^0.0.1",
                 "drupal/core": "8.4.4"
             },
@@ -1078,24 +1078,6 @@
                 "GPL-2.0+"
             ],
             "description": "Content API for Tide distribution."
-        },
-        {
-            "name": "dpc-sdp/tide_article",
-            "version": "0.0.1",
-            "dist": {
-                "type": "path",
-                "url": "dpc-sdp/tide_article",
-                "reference": "d0d44dd97aa72da99f1498b6068de7639cbc0716",
-                "shasum": null
-            },
-            "require": {
-                "dpc-sdp/tide_core": "0.0.1"
-            },
-            "type": "drupal-module",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "Article content type and related configuration for Tide Drupal 8 distribution"
         },
         {
             "name": "dpc-sdp/tide_core",
@@ -1174,17 +1156,35 @@
             "description": "Core functionality for Tide Drupal 8 distribution"
         },
         {
-            "name": "dpc-sdp/tide_page",
+            "name": "dpc-sdp/tide_landing_page",
             "version": "0.0.1",
             "dist": {
                 "type": "path",
-                "url": "dpc-sdp/tide_page",
-                "reference": "bef4707e40bc57ed0d05a13482015f7b51101639",
+                "url": "dpc-sdp/tide_landing_page",
+                "reference": "cd5050a8be3c36a64c8574b128f473fc27eaff51",
                 "shasum": null
             },
             "require": {
                 "dpc-sdp/tide_core": "0.0.1",
                 "drupal/paragraphs": "^1.2"
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Page content type and related configuration for Tide Drupal 8 distribution"
+        },
+        {
+            "name": "dpc-sdp/tide_page",
+            "version": "0.0.1",
+            "dist": {
+                "type": "path",
+                "url": "dpc-sdp/tide_page",
+                "reference": "2bddf1fe3a093254891ac54d0136491cdb9b61f4",
+                "shasum": null
+            },
+            "require": {
+                "dpc-sdp/tide_core": "0.0.1"
             },
             "type": "drupal-module",
             "license": [
@@ -2783,7 +2783,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.7",
-                    "datestamp": "1514646784",
+                    "datestamp": "1519244521",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2843,7 +2843,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-rc1",
-                    "datestamp": "1514674084",
+                    "datestamp": "1519342984",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -3628,7 +3628,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.1",
-                    "datestamp": "1498511042",
+                    "datestamp": "1519345980",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

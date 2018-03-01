@@ -1,11 +1,12 @@
 {
-    "name": "dpc-sdp/tide_article",
-    "description": "Article content type and related configuration for Tide Drupal 8 distribution",
+    "name": "dpc-sdp/tide_landing_page",
+    "description": "Page content type and related configuration for Tide Drupal 8 distribution",
     "type": "drupal-module",
     "license": "GPL-2.0+",
     "version": "0.0.1",
     "require": {
-        "dpc-sdp/tide_core": "0.0.1"
+        "dpc-sdp/tide_core": "0.0.1",
+        "drupal/paragraphs": "^1.2"
     },
     "repositories": {
         "tide_core": {
