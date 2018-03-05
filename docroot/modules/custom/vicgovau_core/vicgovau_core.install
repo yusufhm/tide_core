@@ -5,6 +5,7 @@
  * Install file for core.
  */
 
+use Drupal\Core\Site\Settings;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\user\Entity\Role;
 use Drupal\user\Entity\User;
@@ -18,6 +19,11 @@ function vicgovau_core_install() {
     if (strpos($function, 'vicgovau_core_update_') === 0) {
       call_user_func($function);
     }
+  }
+
+  // Enable 'config_devel' in local environment only.
+  if (Settings::get('environment') == 'local') {
+    \Drupal::service('module_installer')->install(['config_devel']);
   }
 }
 

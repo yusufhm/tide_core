@@ -5,6 +5,8 @@
  * Settings file for development environment.
  */
 
+$settings['environment'] = 'development';
+
 // Shield config.
 $config['shield.settings']['user'] = 'dpc';
 $config['shield.settings']['pass'] = 'sdp';

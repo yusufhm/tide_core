@@ -24,6 +24,7 @@
         "behat/gherkin": "4.4.5",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
         "drupal/coder": "^8.2",
+        "drupal/config_devel": "^1.2",
         "drupal/console": "^1.0",
         "drupal/drupal-extension": "~3.3.0",
         "guzzlehttp/psr7": "^1.4",

@@ -5,6 +5,8 @@
  * Settings file for production environment.
  */
 
+$settings['environment'] = 'production';
+
 // Don't show any error messages on the site (will still be shown in watchdog).
 $config['system.logging']['error_level'] = 'hide';
 

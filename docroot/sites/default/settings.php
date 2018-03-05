@@ -5,6 +5,9 @@
  * VICGOVAU Drupal 8 configuration file.
  */
 
+// Environment settings. Each environment is expected to override this.
+$settings['environment'] = 'local';
+
 // Trusted Host Patterns.
 // @see https://www.drupal.org/node/2410395 for more information.
 $settings['trusted_host_patterns'] = [
