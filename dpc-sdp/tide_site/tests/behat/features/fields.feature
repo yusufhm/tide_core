@@ -4,7 +4,7 @@ Feature: Site and Primary Site fields
   automatically added to new content types upon creation.
 
   @api
-  Scenario: Site and Primary Site fields are aded to content types upon creation.
+  Scenario: Site and Primary Site fields are added to content types upon creation.
     Given no "test" content type
     When I am logged in as a user with the "administer content types, administer node fields, administer node display, administer node form display" permission
     And I go to "admin/structure/types/add"
