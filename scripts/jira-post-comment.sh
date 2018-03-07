@@ -8,19 +8,12 @@ USER=$2
 PASSWORD=$3
 BRANCH=$4
 PREFIX=$5
+PR=$6
 
 extract_issue() {
-  local branch=$1
+  local branch=$(echo $1 | tr '[:upper:]' '[:lower:]')
   local prefix=$2
   echo $branch|sed -n "s/feature\/\($prefix-[0-9]\{1,\}\).*/\1/p"
-}
-
-branch_url() {
-  local branch=$1
-  branch="${branch// /-}"
-  branch="${branch//_/-}"
-  branch="${branch//\//-}"
-  echo $branch | tr '[:upper:]' '[:lower:]'
 }
 
 generate_data() {
@@ -34,8 +27,7 @@ EOF
 ISSUE=$(extract_issue "$BRANCH" $PREFIX)
 [ "$ISSUE" == "" ] && echo "Branch does not contain issue number" && exit 0
 
-BRANCH_URL=$(branch_url "$BRANCH")
-COMMENT="Deployed to http://nginx-php-vicgovau-$BRANCH_URL.lagoon.vicsdp.amazee.io"
+COMMENT="Deployed to http://nginx-php-vicgovau-$PR.lagoon.vicsdp.amazee.io"
 
 echo "Posting comment \"$COMMENT\" for issue \"$ISSUE\""
 

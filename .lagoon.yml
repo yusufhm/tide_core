@@ -19,7 +19,7 @@ tasks:
         name: Post deployed URL to JIRA
         command: |
           if [[ "$LAGOON_PR_HEAD_BRANCH" != "production" ]]; then
-            . scripts/jira-post-comment.sh "https://digital-engagement.atlassian.net/" sdp.devs@dpc.vic.gov.au rXSTRbvPf9pkDpnREYrb $LAGOON_GIT_BRANCH sdpa
+            . scripts/jira-post-comment.sh "https://digital-engagement.atlassian.net/" sdp.devs@dpc.vic.gov.au rXSTRbvPf9pkDpnREYrb $LAGOON_GIT_BRANCH sdpa $LAGOON_GIT_BRANCH
           fi
         service: cli
 
