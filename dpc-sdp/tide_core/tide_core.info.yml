@@ -9,6 +9,7 @@ dependencies:
   - ckeditor_iframe:ckeditor_iframe
   - config_split:config_split
   - config_update:config_update
+  - diff:diff
   - drupal:block
   - drupal:block_content
   - drupal:ckeditor
