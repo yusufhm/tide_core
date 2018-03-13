@@ -2,24 +2,24 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_topic
+    - field.storage.node.field_site
     - node.type.page
-    - taxonomy.vocabulary.topic
-id: node.page.field_topic
-field_name: field_topic
+    - taxonomy.vocabulary.sites
+id: node.page.field_site
+field_name: field_site
 entity_type: node
 bundle: page
-label: Topic
-description: 'Use <em>Topic</em> field to categorise pages by Topic.'
+label: Site
+description: 'Add site for this page.'
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      topic: topic
+      sites: sites
     sort:
       field: name
       direction: asc
