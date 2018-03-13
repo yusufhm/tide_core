@@ -9,11 +9,19 @@ PASSWORD=$3
 BRANCH=$4
 PREFIX=$5
 PR=$6
+PR_TITLE=$7
 
 extract_issue() {
-  local branch=$(echo $1 | tr '[:upper:]' '[:lower:]')
-  local prefix=$2
-  echo $branch|sed -n "s/feature\/\($prefix-[0-9]\{1,\}\).*/\1/p"
+  local prefix=$1
+  local branch=$(echo $2 | tr '[:upper:]' '[:lower:]')
+  local title=$(echo $3 | tr '[:upper:]' '[:lower:]')
+  # Extracting from branch.
+  local issue=$(echo $branch|sed -n "s/feature\/\($prefix-[0-9]\{1,\}\).*/\1/p")
+  if [ "$issue" == "" ]; then
+    # Extracting from title.
+    issue=$(echo $title|sed -n "s/.*\($prefix-[0-9]\{1,\}\).*/\1/p")
+  fi
+  echo $issue
 }
 
 generate_data() {
@@ -24,7 +32,7 @@ generate_data() {
 EOF
 }
 
-ISSUE=$(extract_issue "$BRANCH" $PREFIX)
+ISSUE=$(extract_issue $PREFIX "$BRANCH" "$PR_TITLE")
 [ "$ISSUE" == "" ] && echo "Branch does not contain issue number" && exit 0
 
 COMMENT="Deployed to http://nginx-php-vicgovau-$PR.lagoon.vicsdp.amazee.io"
