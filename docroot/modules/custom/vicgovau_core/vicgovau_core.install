@@ -63,7 +63,7 @@ function vicgovau_core_create_demo_users() {
 }
 
 /**
- * Creates sites and sections.
+ * Creates sites and sections. Also creates demo users.
  */
 function vicgovau_core_update_8000() {
   $sites = [
@@ -93,5 +93,8 @@ function vicgovau_core_update_8000() {
     }
     $weight++;
   }
+
+  // Create demo users.
+  vicgovau_core_create_demo_users();
 
 }
