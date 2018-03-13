@@ -14,9 +14,37 @@ Feature: Fields for Landing Page content type
     And I should see a "textarea#edit-field-landing-page-paragraph-0-subform-field-paragraph-body-0-value" element
     And I should see a "textarea#edit-field-landing-page-paragraph-0-subform-field-paragraph-body-0-value.required" element
 
-    And I see field "Topic"
-    And I should see an "input#edit-field-topic-0-target-id" element
-    And I should not see an "input#edit-field-topic-0-target-id.required" element
+    And I see field "Feature Image"
+    And I should see an "input#edit-field-landing-page-feature-image-0-target-id" element
+    And I should not see an "input#edit-field-landing-page-feature-image-0-target-id.required" element
+
+    And I see field "Introduction Text"
+    And I should see an "textarea#edit-field-landing-page-intro-text-0-value" element
+    And I should not see an "textarea#edit-field-landing-page-intro-text-0-value.required" element
+
+    # And I see field "Components" - does not work for Paragraphs
+    And I should see an "div#edit-field-landing-page-paragraph-0" element
+    And I should see an "#field-landing-page-paragraph-values .form-required" element
+
+    And I see field "Layout"
+    And I should see an "select#edit-field-landing-page-layout" element
+    And I should see an "select#edit-field-landing-page-layout.required" element
+
+    And I see field "Show Content Rating?"
+    And I should see an "input#edit-field-landing-page-show-rating-value" element
+    And I should not see an "input#edit-field-landing-page-show-rating-value.required" element
+
+    And I see field "Show Social Sharing?"
+    And I should see an "input#edit-field-landing-page-show-social-value" element
+    And I should not see an "input#edit-field-landing-page-show-social-value.required" element
+
+    And I see field "Primary Site"
+    And I should see an "input#edit-field-primary-site-0-target-id" element
+    And I should see a "input#edit-field-primary-site-0-target-id.required" element
+
+    And I see field "Site"
+    And I should see an "input#edit-field-site-0-target-id" element
+    And I should see a "input#edit-field-site-0-target-id.required" element
 
   @api
   Scenario: The content type has the menu settings.
