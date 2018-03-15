@@ -3,8 +3,10 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.sites.field_site_domains
+    - field.field.taxonomy_term.sites.field_site_footer_menu
     - field.field.taxonomy_term.sites.field_site_footer_text
     - field.field.taxonomy_term.sites.field_site_logo
+    - field.field.taxonomy_term.sites.field_site_main_menu
     - field.field.taxonomy_term.sites.field_site_slogan
     - image.style.thumbnail
     - taxonomy.vocabulary.sites
@@ -30,6 +32,15 @@ content:
         maxlength_js_truncate_html: false
     type: string_textarea
     region: content
+  field_site_footer_menu:
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_site_footer_text:
     weight: 3
     settings:
@@ -45,6 +56,15 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  field_site_main_menu:
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_site_slogan:
     weight: 1

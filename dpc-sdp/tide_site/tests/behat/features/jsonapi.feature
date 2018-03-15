@@ -26,3 +26,5 @@ Feature: JSONAPI exposure
     And the JSON node "data[0].attributes.field_site_domains" should be equal to "www.example.com"
     And the JSON node "data[0].attributes.field_site_slogan.value" should be equal to "Test site slogan"
     And the JSON node "data[0].attributes.field_site_footer_text.value" should be equal to "test site footer"
+    And the JSON node "data[0].relationships.field_site_main_menu" should exist
+    And the JSON node "data[0].relationships.field_site_footer_menu" should exist

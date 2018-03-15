@@ -202,3 +202,40 @@ function _tide_site_form_taxonomy_overview_terms_validate(&$form, FormStateInter
     }
   }
 }
+
+/**
+ * Implements hook_form_taxonomy_term_form_alter().
+ */
+function tide_site_form_taxonomy_term_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'taxonomy_term_sites_form') {
+    /** @var \Drupal\tide_site\TideSiteMenuAutocreate $menu_helper */
+    $menu_helper = \Drupal::service('tide_site.menu_autocreate');
+    $altered = $menu_helper->alterFormFields($form, [
+      'field_site_main_menu',
+      'field_site_footer_menu',
+    ]);
+
+    if (!empty($altered)) {
+      $form['actions']['submit']['#submit'][] = 'tide_site_form_taxonomy_term_form_submit';
+    }
+  }
+}
+
+/**
+ * Submit handler for term page.
+ *
+ * Handles auto creation of menus.
+ */
+function tide_site_form_taxonomy_term_form_submit(array $form, FormStateInterface $form_state) {
+  $values = $form_state->getValues();
+
+  /** @var \Drupal\tide_site\TideSiteMenuAutocreate $menu_helper */
+  $menu_helper = \Drupal::service('tide_site.menu_autocreate');
+
+  $messages = $menu_helper->processFormValues($form, $values);
+  foreach ($messages as $type => $messages) {
+    foreach ($messages as $message) {
+      drupal_set_message($message, $type);
+    }
+  }
+}

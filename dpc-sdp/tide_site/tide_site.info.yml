@@ -19,10 +19,14 @@ config_devel:
     - field.field.taxonomy_term.sites.field_site_footer_text
     - field.field.taxonomy_term.sites.field_site_logo
     - field.field.taxonomy_term.sites.field_site_slogan
+    - field.field.taxonomy_term.sites.field_site_main_menu
+    - field.field.taxonomy_term.sites.field_site_footer_menu
     - field.storage.taxonomy_term.field_site_domains
     - field.storage.taxonomy_term.field_site_footer_text
     - field.storage.taxonomy_term.field_site_logo
     - field.storage.taxonomy_term.field_site_slogan
+    - field.storage.taxonomy_term.field_site_main_menu
+    - field.storage.taxonomy_term.field_site_footer_menu
     - taxonomy.vocabulary.sites
 
   optional:

@@ -12,4 +12,6 @@ Feature: Sites taxonomy vocabulary
     And I see field "Logo"
     And I see field "Footer text"
     And I see field "Domains"
+    And I see field "Main menu"
+    And I see field "Footer menu"
     And I don't see field "Description"

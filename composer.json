@@ -45,6 +45,8 @@
     },
     "autoload-dev": {
         "classmap": [
+            "docroot/core",
+            "dpc-sdp",
             "tests/unit/"
         ]
     },
@@ -170,8 +172,14 @@
         "app:cs": [
             "phpcs --colors"
         ],
-        "app:test": "docker exec -i $(docker-compose ps -q cli) vendor/bin/behat --format=progress_fail --colors",
-        "app:login": "@composer bay:cli -- drush uli -r /app/docroot -l http://content-vicgovau.docker.amazee.io/ | xargs open",
+        "app:test": [
+            "docker exec -i $(docker-compose ps -q cli) vendor/bin/phpunit",
+            "docker exec -i $(docker-compose ps -q cli) vendor/bin/behat --format=progress_fail --colors"
+        ],
+        "app:login": [
+            "@composer bay:cli -- drush uublk 1 -r /app/docroot",
+            "@composer bay:cli -- drush uli -r /app/docroot -l http://content-vicgovau.docker.amazee.io/ | xargs open"
+        ],
         "app:drush": "docker exec -i $(docker-compose ps -q cli) drush -r /app/docroot",
         "app:cr": "@composer bay:cli -- drush cr -r /app/docroot -y",
         "app:cleanup": [
