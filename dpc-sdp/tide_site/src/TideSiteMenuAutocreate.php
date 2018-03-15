@@ -2,6 +2,7 @@
 
 namespace Drupal\tide_site;
 
+use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\StringTranslation\TranslationInterface;
@@ -39,7 +40,7 @@ class TideSiteMenuAutocreate {
   protected $entityTypeManager;
 
   /**
-   * SalsaHelper constructor.
+   * Constructor.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The entity type manager.
@@ -226,7 +227,7 @@ class TideSiteMenuAutocreate {
    */
   protected static function filterAutocreateFieldNames($values) {
     return array_filter($values, function ($k) {
-      return strpos($k, self::AUTOCREATE_FIELD_PREFIX) === 0 && strpos($k, 'menu') !== FALSE;
+      return Unicode::strpos($k, self::AUTOCREATE_FIELD_PREFIX) === 0 && Unicode::strpos($k, 'menu') !== FALSE;
     }, ARRAY_FILTER_USE_KEY);
   }
 
@@ -250,11 +251,11 @@ class TideSiteMenuAutocreate {
    *   If provided string does not contain expected field prefix.
    */
   protected static function extractMenuName($string) {
-    if (strpos($string, self::AUTOCREATE_FIELD_PREFIX) === FALSE) {
+    if (Unicode::strpos($string, self::AUTOCREATE_FIELD_PREFIX) === FALSE) {
       throw new \Exception('Unable to extract menu name from provided value');
     }
 
-    return substr($string, strlen(self::AUTOCREATE_FIELD_PREFIX));
+    return Unicode::substr($string, Unicode::strlen(self::AUTOCREATE_FIELD_PREFIX));
   }
 
   /**
@@ -348,7 +349,7 @@ class TideSiteMenuAutocreate {
    */
   protected static function toMachineName($string, $delimiter = '_') {
     $string = trim($string);
-    $string = strtolower($string);
+    $string = Unicode::strtolower($string);
     // Replace spaces and hyphens, preserving existing delimiters.
     $string = str_replace([$delimiter, ' ', '-'], $delimiter, $string);
     // Remove all other non-alphanumeric characters.
