@@ -12,10 +12,10 @@ Feature: Sites menu autocreate
     And no "sites" terms:
       | [TEST] Site name |
     And no menus:
-      | main_menu_site_test_site_name                            |
-      | main_menu_site_test_parent_site_name_test_section_name   |
-      | footer_menu_site_test_site_name                          |
-      | footer_menu_site_test_parent_site_name_test_section_name |
+      | main-menu-site-test-site-name                            |
+      | main-menu-site-test-parent-site-name-test-section-name   |
+      | footer-menu-site-test-site-name                          |
+      | footer-menu-site-test-parent-site-name-test-section-name |
 
   @api
   Scenario: Menu autocreate - new and existing sites
@@ -41,9 +41,9 @@ Feature: Sites menu autocreate
     And I click "Edit"
     Then the "Name" field should contain "[TEST] Site name"
     And the "Domains" field should contain "test.example.com"
-    And the "Main menu" field should contain "Main menu - [TEST] Site name (main_menu_site_test_site_name)"
+    And the "Main menu" field should contain "Main menu - [TEST] Site name (main-menu-site-test-site-name)"
     And I don't see field "autocreate_main_menu"
-    And the "Footer menu" field should contain "Footer menu - [TEST] Site name (footer_menu_site_test_site_name)"
+    And the "Footer menu" field should contain "Footer menu - [TEST] Site name (footer-menu-site-test-site-name)"
     And I don't see field "autocreate_footer_menu"
 
     # Assert that menus are not auto-created again.
@@ -62,19 +62,19 @@ Feature: Sites menu autocreate
     And I click "Edit"
     Then the "Name" field should contain "[TEST] Site name"
     And the "Domains" field should contain "test2.example.com"
-    And the "Main menu" field should contain "Main menu - [TEST] Site name (main_menu_site_test_site_name)"
+    And the "Main menu" field should contain "Main menu - [TEST] Site name (main-menu-site-test-site-name)"
     And I don't see field "autocreate_main_menu"
-    And the "Footer menu" field should contain "Footer menu - [TEST] Site name (footer_menu_site_test_site_name)"
+    And the "Footer menu" field should contain "Footer menu - [TEST] Site name (footer-menu-site-test-site-name)"
     And I don't see field "autocreate_footer_menu"
 
     # Cleanup. Doing this manually since entities were created through UI.
     And no "sites" terms:
       | [TEST] Site name |
     And no menus:
-      | main_menu_site_test_site_name                            |
-      | main_menu_site_test_parent_site_name_test_section_name   |
-      | footer_menu_site_test_site_name                          |
-      | footer_menu_site_test_parent_site_name_test_section_name |
+      | main-menu-site-test-site-name                            |
+      | main-menu-site-test-parent-site-name-test-section-name   |
+      | footer-menu-site-test-site-name                          |
+      | footer-menu-site-test-parent-site-name-test-section-name |
 
   @api
   Scenario: Menu autocreate - new and existing sections
@@ -109,9 +109,9 @@ Feature: Sites menu autocreate
     And I click "Edit"
     Then the "Name" field should contain "[TEST] Section name"
     And the "Domains" field should contain "test.example.com"
-    And the "Main menu" field should contain "Main menu - [TEST] Parent site name - [TEST] Section name (main_menu_site_test_parent_site_name_test_section_name)"
+    And the "Main menu" field should contain "Main menu - [TEST] Parent site name - [TEST] Section name (main-menu-site-test-parent-site-name-test-section-name)"
     And I don't see field "autocreate_main_menu"
-    And the "Footer menu" field should not contain "Footer menu - [TEST] Parent site name - [TEST] Section name (footer_menu_site_test_parent_site_name_test_section_name)"
+    And the "Footer menu" field should not contain "Footer menu - [TEST] Parent site name - [TEST] Section name (footer-menu-site-test-parent-site-name-test-section-name)"
     And I see field "autocreate_footer_menu"
     # Assert that for sections menus are not set to be created by default.
     And the "autocreate_footer_menu" checkbox should not be checked
@@ -132,16 +132,16 @@ Feature: Sites menu autocreate
     And I click "Edit"
     Then the "Name" field should contain "[TEST] Section name"
     And the "Domains" field should contain "test.example.com"
-    And the "Main menu" field should contain "Main menu - [TEST] Parent site name - [TEST] Section name (main_menu_site_test_parent_site_name_test_section_name)"
+    And the "Main menu" field should contain "Main menu - [TEST] Parent site name - [TEST] Section name (main-menu-site-test-parent-site-name-test-section-name)"
     And I don't see field "autocreate_main_menu"
-    And the "Footer menu" field should contain "Footer menu - [TEST] Parent site name - [TEST] Section name (footer_menu_site_test_parent_site_name_test_section_name)"
+    And the "Footer menu" field should contain "Footer menu - [TEST] Parent site name - [TEST] Section name (footer-menu-site-test-parent-site-name-test-section-name)"
     And I don't see field "autocreate_footer_menu"
 
     # Cleanup. Doing this manually since entities were created through UI.
     And no "sites" terms:
       | [TEST] Site name |
     And no menus:
-      | main_menu_site_test_site_name                            |
-      | main_menu_site_test_parent_site_name_test_section_name   |
-      | footer_menu_site_test_site_name                          |
-      | footer_menu_site_test_parent_site_name_test_section_name |
+      | main-menu-site-test-site-name                            |
+      | main-menu-site-test-parent-site-name-test-section-name   |
+      | footer-menu-site-test-site-name                          |
+      | footer-menu-site-test-parent-site-name-test-section-name |

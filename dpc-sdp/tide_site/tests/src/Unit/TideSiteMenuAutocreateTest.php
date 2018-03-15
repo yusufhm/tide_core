@@ -16,9 +16,9 @@ class TideSiteMenuAutocreateTest extends UnitTestCase {
    * @covers ::toMachineName
    * @dataProvider providerToMachineName
    */
-  public function testToMachineName($input, $expected) {
+  public function testToMachineName($input, $delimiter, $expected) {
     $mock = self::createMock('Drupal\tide_site\TideSiteMenuAutocreate');
-    $actual = $this->callProtectedMethod($mock, 'toMachineName', [$input]);
+    $actual = $this->callProtectedMethod($mock, 'toMachineName', [$input, $delimiter]);
     $this->assertEquals($expected, $actual);
   }
 
@@ -27,16 +27,17 @@ class TideSiteMenuAutocreateTest extends UnitTestCase {
    */
   public function providerToMachineName() {
     return [
-      ['', ''],
-      ['abc', 'abc'],
-      ['123', '123'],
-      ['abc123', 'abc123'],
-      ['abc 123', 'abc_123'],
-      ['abc-123', 'abc_123'],
-      ['abc_123', 'abc_123'],
-      ['abc_123 def', 'abc_123_def'],
-      ['[abc] 123 def', 'abc_123_def'],
-      ['**[abc] 123 def  ', 'abc_123_def'],
+      ['', '_', ''],
+      ['abc', '_', 'abc'],
+      ['123', '_', '123'],
+      ['abc123', '_', 'abc123'],
+      ['abc 123', '_', 'abc_123'],
+      ['abc-123', '_', 'abc_123'],
+      ['abc_123', '_', 'abc_123'],
+      ['abc_123 def', '_', 'abc_123_def'],
+      ['[abc] 123 def', '_', 'abc_123_def'],
+      ['**[abc] 123 def  ', '_', 'abc_123_def'],
+      ['**[abc] 123 def  ', '-', 'abc-123-def'],
     ];
   }
 
@@ -82,10 +83,11 @@ class TideSiteMenuAutocreateTest extends UnitTestCase {
    */
   public function providerMakeMenuName() {
     return [
-      ['abc', [], 'abc_site'],
-      ['abc', ['t1'], 'abc_site_t1'],
-      ['abc', ['t1', 'p1'], 'abc_site_p1_t1'],
-      ['abc', ['t1', 'p1', 'p2'], 'abc_site_p2_p1_t1'],
+      ['abc', [], 'abc-site'],
+      ['abc', ['t1'], 'abc-site-t1'],
+      ['abc', ['t1', 'p1'], 'abc-site-p1-t1'],
+      ['abc', ['t1', 'p1', 'p2'], 'abc-site-p2-p1-t1'],
+      ['abc', ['t1', 'p1 p11', 'p2 p21'], 'abc-site-p2-p21-p1-p11-t1'],
     ];
   }
 

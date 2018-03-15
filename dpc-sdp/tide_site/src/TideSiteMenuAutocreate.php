@@ -25,7 +25,7 @@ class TideSiteMenuAutocreate {
   /**
    * Suffix to add for each generated menu.
    */
-  const SITE_MENU_SUFFIX = '_site';
+  const SITE_MENU_SUFFIX = '-site';
 
   /**
    * Prefix for the autocreate form element.
@@ -308,10 +308,10 @@ class TideSiteMenuAutocreate {
     $parents = $this->loadTermParents($tid);
     $parents = array_reverse($parents, TRUE);
 
-    $machine_name = self::toMachineName($menu_title) . self::SITE_MENU_SUFFIX;
+    $machine_name = self::toMachineName($menu_title . self::SITE_MENU_SUFFIX, '-');
     /** @var \Drupal\taxonomy\Entity\Term $parent */
     foreach ($parents as $parent) {
-      $machine_name .= '_' . self::toMachineName($parent->getName());
+      $machine_name .= '-' . self::toMachineName($parent->getName(), '-');
     }
 
     return $machine_name;
@@ -351,7 +351,7 @@ class TideSiteMenuAutocreate {
     $string = trim($string);
     $string = Unicode::strtolower($string);
     // Replace spaces and hyphens, preserving existing delimiters.
-    $string = str_replace([$delimiter, ' ', '-'], $delimiter, $string);
+    $string = str_replace([$delimiter, ' ', '-', '_'], $delimiter, $string);
     // Remove all other non-alphanumeric characters.
     $string = preg_replace('/[^a-z0-9\s\-' . preg_quote($delimiter) . ']/', '', $string);
 
