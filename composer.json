@@ -81,10 +81,6 @@
             "type": "path",
             "url": "dpc-sdp/tide_api"
         },
-        "dpc-sdp/tide_page": {
-            "type": "path",
-            "url": "dpc-sdp/tide_page"
-        },
         "dpc-sdp/tide_core": {
             "type": "path",
             "url": "dpc-sdp/tide_core"
@@ -93,9 +89,17 @@
             "type": "path",
             "url": "dpc-sdp/tide_landing_page"
         },
+        "dpc-sdp/tide_page": {
+            "type": "path",
+            "url": "dpc-sdp/tide_page"
+        },
         "dpc-sdp/tide_site": {
             "type": "path",
             "url": "dpc-sdp/tide_site"
+        },
+        "dpc-sdp/tide_test": {
+            "type": "path",
+            "url": "dpc-sdp/tide_test"
         },
         "library/dropzone": {
             "type": "package",

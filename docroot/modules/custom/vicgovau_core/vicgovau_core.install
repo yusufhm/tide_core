@@ -21,9 +21,37 @@ function vicgovau_core_install() {
     }
   }
 
+  $environment = Settings::get('environment');
+
   // Enable 'config_devel' in local environment only.
-  if (Settings::get('environment') == 'local') {
-    \Drupal::service('module_installer')->install(['config_devel']);
+  if ($environment == 'local') {
+    vicgovau_core_install_module('config_devel');
+  }
+
+  // Enable 'tide_test' in local and CI environments.
+  if ($environment == 'local' || $environment == 'ci') {
+    vicgovau_core_install_module('tide_test');
+  }
+}
+
+/**
+ * Helper to install a module.
+ *
+ * @param string $module
+ *   Module name.
+ *
+ * @throws \Exception
+ *   When module was not installed.
+ */
+function vicgovau_core_install_module($module) {
+  $result = \Drupal::service('module_installer')->install([$module]);
+  if (!$result) {
+    throw new \Exception(sprintf('Unable to install module %s', $module));
+  }
+
+  $moduleHandler = \Drupal::service('module_handler');
+  if (!$moduleHandler->moduleExists($module)) {
+    throw new \Exception(sprintf('Unable to validate install for module %s', $module));
   }
 }
 

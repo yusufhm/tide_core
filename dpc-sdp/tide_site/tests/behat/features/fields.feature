@@ -5,37 +5,37 @@ Feature: Site and Primary Site fields
 
   @api
   Scenario: Site and Primary Site fields are added to content types upon creation.
-    Given no "test" content type
+    Given no "site_test" content type
     When I am logged in as a user with the "administer content types, administer node fields, administer node display, administer node form display" permission
     And I go to "admin/structure/types/add"
     Then the response status code should be 200
 
-    When I fill in "Name" with "test"
-    And I fill in "Machine-readable name" with "test"
+    When I fill in "Name" with "site_test"
+    And I fill in "Machine-readable name" with "site_test"
     And I press "Save and manage fields"
     And I should see the text "Site" in the "field_site" row
     And I should see the text "Primary Site" in the "field_primary_site" row
     And I should see the following success messages:
       | success messages                                                          |
-      | The content type test has been added.                                     |
-      | Added field field_site to the test content type and form display.         |
-      | Added field field_primary_site to the test content type and form display. |
+      | The content type site_test has been added.                                     |
+      | Added field field_site to the site_test content type and form display.         |
+      | Added field field_primary_site to the site_test content type and form display. |
 
-    When I go to "admin/structure/types/manage/test/form-display"
+    When I go to "admin/structure/types/manage/site_test/form-display"
     Then the response status code should be 200
     And the "#edit-fields-field-site-region option[selected='selected']" element should contain "Content"
     And the "#edit-fields-field-primary-site-region option[selected='selected']" element should contain "Content"
 
-    When I go to "admin/structure/types/manage/test/display"
+    When I go to "admin/structure/types/manage/site_test/display"
     Then the response status code should be 200
     And the "#edit-fields-field-site-region option[selected='selected']" element should contain "Disabled"
     And the "#edit-fields-field-primary-site-region option[selected='selected']" element should contain "Disabled"
 
-    And no "test" content type
+    And no "site_test" content type
 
   @api
   Scenario: Site and Primary Site fields show terms only from specific depths.
-    Given no "test" content type
+    Given no "site_test" content type
     And vocabulary "sites" with name "Sites" exists
     And sites terms:
       | name                 | parent          |
@@ -51,14 +51,14 @@ Feature: Site and Primary Site fields
     And I go to "admin/structure/types/add"
     Then the response status code should be 200
 
-    When I fill in "Name" with "test"
-    And I fill in "Machine-readable name" with "test"
+    When I fill in "Name" with "site_test"
+    And I fill in "Machine-readable name" with "site_test"
     And I press "Save and manage fields"
     And I should see the following success messages:
       | success messages                      |
-      | The content type test has been added. |
+      | The content type site_test has been added. |
 
-    When I go to "node/add/test"
+    When I go to "node/add/site_test"
     And the response status code should be 200
 
     Then the "#edit-field-site" element should contain "Test Site 1"
@@ -75,4 +75,4 @@ Feature: Site and Primary Site fields
     Then the "#edit-field-primary-site" element should contain "Test Site 2"
     Then the "#edit-field-primary-site" element should contain "Test Site 3"
 
-    And no "test" content type
+    And no "site_test" content type

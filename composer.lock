@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6a6233e7f76babee6bb845d888fab8eb",
+    "content-hash": "393250698ccbff2fbf35b4db94ffd7f9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1082,7 +1082,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide",
-                "reference": "e2cdd57536eeba38a99bb084f4269cf0ed972803",
+                "reference": "5c64317b1139750016fc7c2fae0227dd70c129ac",
                 "shasum": null
             },
             "require": {
@@ -1091,6 +1091,7 @@
                 "dpc-sdp/tide_landing_page": "^0.0.1",
                 "dpc-sdp/tide_page": "0.0.1",
                 "dpc-sdp/tide_site": "^0.0.1",
+                "dpc-sdp/tide_test": "^0.0.1",
                 "drupal/core": "8.4.4"
             },
             "type": "drupal-profile",
@@ -1263,6 +1264,24 @@
                 "GPL-2.0+"
             ],
             "description": "Post content to multiple sites and sections."
+        },
+        {
+            "name": "dpc-sdp/tide_test",
+            "version": "0.0.1",
+            "dist": {
+                "type": "path",
+                "url": "dpc-sdp/tide_test",
+                "reference": "124ab31851bdd592ff45a35396813e44d4aa72c4",
+                "shasum": null
+            },
+            "require": {
+                "dpc-sdp/tide_core": "0.0.1"
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Test content type and related configuration for Tide Drupal 8 distribution"
         },
         {
             "name": "drupal-composer/drupal-scaffold",
