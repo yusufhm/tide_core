@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content
+label: Content
+description: ''
+attributes:
+  title:
+    id: title
+    weight: -10
+    settings:
+      automatic_title: true
+  target:
+    id: target
+    weight: -9
+    settings:
+      widget_type: simple_checkbox
+matchers:
+  e14685b6-5e09-4985-ba8e-052b6630fc12:
+    uuid: e14685b6-5e09-4985-ba8e-052b6630fc12
+    id: 'entity:node'
+    weight: 0
+    settings:
+      result_description: ''
+      bundles: {  }
+      group_by_bundle: true
+      include_unpublished: true

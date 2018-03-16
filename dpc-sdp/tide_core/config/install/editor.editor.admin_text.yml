@@ -70,7 +70,7 @@ settings:
     language:
       language_list: un
     stylescombo:
-      styles: p.wysiwyg-callout|Callout
+      styles: "p.wysiwyg-callout|Callout\r\nol.wysiwyg-callout|Callout (Ordered list)\r\nul.wysiwyg-callout|Callout (Unordered list)"
     linkit:
       linkit_profile: content
 image_upload:
