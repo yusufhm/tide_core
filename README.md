@@ -137,9 +137,14 @@ Behat configuration uses multiple extensions:
 - `VicgovauDrupalContext` - Site-specific Drupal context with custom step definitions.
 - `VicgovauMinkContext` - Site-specific Mink context with custom step definitions.
 
+Generic Behat tests should be written against the test entities from the Tide Test module. If a new test entity (node, block, etc.) is added to the Tide Test module, the relevant permissions must be also granted to Approver and Editor via the hook `tide_test_entity_bundle_create()`.
+
 ### Run tests locally:
 - Run all tests: `composer app:test`
-- Run specific test feature: `composer app:test tests/behat/features/homepage.feature`
+- Run PHPUnit tests: `composer app:test-phpunit`
+- Run Behat tests: `composer app:test-behat`
+    - Run specific test feature: `composer app:test-behat tests/behat/features/homepage.feature`
+    - Run specific test tag: `composer app:test-behat -- --tags=wip`
 
 Read more information in [the wiki page](https://digital-engagement.atlassian.net/wiki/spaces/SDP/pages/134906009/Behat+testing).
 
@@ -182,7 +187,7 @@ Test artifacts (screenshots etc.) are available under 'Artifacts' tab in Circle 
         + `../scripts/xdebug.sh ../vendor/bin/drush <DRUSH_COMMAND>`
             - Example: `../scripts/xdebug.sh ../vendor/bin/drush updb -y`
     * Debug directly from host machine: `composer debug-drush -- <DRUSH_COMMAND>`
-        + Example: `composer debug-drush -- updb -y`
+        + Example: `composer app:debug-drush -- updb -y`
 
 ### DB connection details
 

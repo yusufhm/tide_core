@@ -181,7 +181,13 @@
             "phpcs --colors"
         ],
         "app:test": [
-            "docker exec -i $(docker-compose ps -q cli) vendor/bin/phpunit",
+            "@app:test-phpunit",
+            "@app:test-behat"
+        ],
+        "app:test-phpunit": [
+            "docker exec -i $(docker-compose ps -q cli) vendor/bin/phpunit"
+        ],
+        "app:test-behat": [
             "docker exec -i $(docker-compose ps -q cli) vendor/bin/behat --format=progress_fail --colors"
         ],
         "app:login": [
