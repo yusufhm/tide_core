@@ -2,15 +2,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_primary_site
-    - node.type.page
+    - field.storage.node.field_node_primary_site
+    - node.type.landing_page
     - taxonomy.vocabulary.sites
-id: node.page.field_primary_site
-field_name: field_primary_site
+id: node.landing_page.field_node_primary_site
+field_name: field_node_primary_site
 entity_type: node
-bundle: page
+bundle: landing_page
 label: 'Primary Site'
-description: 'Add Primary Site for this page.'
+description: ''
 required: true
 translatable: true
 default_value: {  }
@@ -20,9 +20,4 @@ settings:
   handler_settings:
     target_bundles:
       sites: sites
-    sort:
-      field: name
-      direction: asc
-    auto_create: false
-    auto_create_bundle: ''
 field_type: entity_reference

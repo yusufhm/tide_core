@@ -221,6 +221,16 @@ class VicgovauDrupalContext extends DrupalContext {
   }
 
   /**
+   * @Given no :type media type
+   */
+  public function removeMediaType($type) {
+    $type_entity = \Drupal::entityManager()->getStorage('media_type')->load($type);
+    if ($type_entity) {
+      $type_entity->delete();
+    }
+  }
+
+  /**
    * @Given no :vocabulary terms:
    */
   public function removeTerms($vocabulary, TableNode $termsTable) {

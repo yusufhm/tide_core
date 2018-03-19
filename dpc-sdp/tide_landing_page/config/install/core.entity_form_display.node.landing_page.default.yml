@@ -9,8 +9,8 @@ dependencies:
     - field.field.node.landing_page.field_landing_page_paragraph
     - field.field.node.landing_page.field_landing_page_show_rating
     - field.field.node.landing_page.field_landing_page_show_social
-    - field.field.node.landing_page.field_primary_site
-    - field.field.node.landing_page.field_site
+    - field.field.node.landing_page.field_node_primary_site
+    - field.field.node.landing_page.field_node_site
     - node.type.landing_page
   module:
     - maxlength
@@ -86,7 +86,7 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
-  field_primary_site:
+  field_node_primary_site:
     type: entity_reference_autocomplete
     weight: 9
     region: content
@@ -95,7 +95,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_site:
+  field_node_site:
     type: entity_reference_autocomplete
     weight: 10
     region: content

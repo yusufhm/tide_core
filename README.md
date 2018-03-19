@@ -76,9 +76,40 @@ Documentation for mailhog is available of the project page -- https://github.com
 Stage File Proxy is enabled on all non production environments so files are automatically downloaded directly from prod on demand.
 
 ## Adding Drupal modules
+Modules needs to be added in 2 steps:
+1. Require module code installation (through composer).
+2. Enable module during site installation.
+
+### Step 1. Adding contrib modules
 `composer require drupal/module_name`
 or for specific versions
 `composer require drupal/module_name:1.2`
+
+OR
+
+### Step 1. Adding modules as local packages
+1. Add local package information to root `composer.json`:
+```
+    "repositories": {
+        "dpc-sdp/tide_page": {
+            "type": "path",
+            "url": "dpc-sdp/tide_page"
+        },
+    }
+```
+2. Assess if package is required for distribution (Tide) or site (content.vic.gov.au) and add to relevant `composer.json`:
+  - for distribution - `dpc-sdp/tide/composer.json`
+  - for site - `composer.json`
+3. To make sure that composer trigger dependency tree rebuild, run `composer app:cleanup`.
+4. Run `composer update --lock`. This will install all dependencies and update root `composer.lock` file with newly added module. 
+
+### Step 2. Enable module
+1. Assess if module is a part of distribution or site-specific and add to appropriate `info.yml` file:
+  - for distribution - `dpc-sdp/tide/tide.info.yml`
+  - for site - `docroot/modules/custom/vicgovau_core/vicgovau_core.info.yml`
+
+If module is a dev-only module (required to be enabled for development only),
+use `vicgovau_core_install()` in `docroot/modules/custom/vicgovau_core/vicgovau_core.install` to enable it programmatically. This is required as we are using site install and not storing exported configuration.
 
 ## Adding patches for drupal modules
 1. Add `title` and `url` to patch on drupal.org to the `patches` array in `extra` section in `composer.json`.

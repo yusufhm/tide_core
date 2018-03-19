@@ -27,6 +27,9 @@ config_devel:
     - field.storage.taxonomy_term.field_site_slogan
     - field.storage.taxonomy_term.field_site_main_menu
     - field.storage.taxonomy_term.field_site_footer_menu
+    - field.storage.media.field_media_site
+    - field.storage.node.field_node_site
+    - field.storage.node.field_node_primary_site
     - taxonomy.vocabulary.sites
 
   optional:

@@ -39,12 +39,12 @@ Feature: Fields for Page content type
     And I should not see an "input#edit-field-page-show-related-value.required" element
 
     And I see field "Primary Site"
-    And I should see an "input#edit-field-primary-site-0-target-id" element
-    And I should see a "input#edit-field-primary-site-0-target-id.required" element
+    And I should see an "input#edit-field-node-primary-site-0-target-id" element
+    And I should see a "input#edit-field-node-primary-site-0-target-id.required" element
 
     And I see field "Site"
-    And I should see an "input#edit-field-site-0-target-id" element
-    And I should see a "input#edit-field-site-0-target-id.required" element
+    And I should see an "input#edit-field-node-site-0-target-id" element
+    And I should see a "input#edit-field-node-site-0-target-id.required" element
 
 
   @api

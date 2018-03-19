@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "393250698ccbff2fbf35b4db94ffd7f9",
+    "content-hash": "19f026f6ad9203ff3cedca887c9e3453",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1082,13 +1082,14 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide",
-                "reference": "5c64317b1139750016fc7c2fae0227dd70c129ac",
+                "reference": "a15dfc30b2f528d5519b2271efcf77d88cdd3a4c",
                 "shasum": null
             },
             "require": {
                 "dpc-sdp/tide_api": "0.0.1",
                 "dpc-sdp/tide_core": "0.0.1",
                 "dpc-sdp/tide_landing_page": "^0.0.1",
+                "dpc-sdp/tide_media": "^0.0.1",
                 "dpc-sdp/tide_page": "0.0.1",
                 "dpc-sdp/tide_site": "^0.0.1",
                 "dpc-sdp/tide_test": "^0.0.1",
@@ -1231,6 +1232,24 @@
                 "GPL-2.0+"
             ],
             "description": "Page content type and related configuration for Tide Drupal 8 distribution"
+        },
+        {
+            "name": "dpc-sdp/tide_media",
+            "version": "0.0.1",
+            "dist": {
+                "type": "path",
+                "url": "dpc-sdp/tide_media",
+                "reference": "c3fa4c761f11f02fbd6d96625f3baf77663850fc",
+                "shasum": null
+            },
+            "require": {
+                "dpc-sdp/tide_core": "0.0.1"
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Media and related configuration for Tide Drupal 8 distribution"
         },
         {
             "name": "dpc-sdp/tide_page",

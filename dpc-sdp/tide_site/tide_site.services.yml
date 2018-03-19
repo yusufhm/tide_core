@@ -2,3 +2,6 @@ services:
   tide_site.menu_autocreate:
     class: Drupal\tide_site\TideSiteMenuAutocreate
     arguments: ['@entity_type.manager', '@string_translation']
+  tide_site.fields:
+    class: Drupal\tide_site\TideSiteFields
+    arguments: ['@entity_type.manager']

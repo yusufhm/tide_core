@@ -26,8 +26,8 @@ config_devel:
     - field.field.node.landing_page.field_landing_page_paragraph
     - field.field.node.landing_page.field_landing_page_show_rating
     - field.field.node.landing_page.field_landing_page_show_social
-    - field.field.node.landing_page.field_primary_site
-    - field.field.node.landing_page.field_site
+    - field.field.node.landing_page.field_node_primary_site
+    - field.field.node.landing_page.field_node_site
     - field.storage.node.field_landing_page_feature_image
     - field.storage.node.field_landing_page_intro_text
     - field.storage.node.field_landing_page_show_rating
