@@ -38,14 +38,6 @@ Feature: Fields for Landing Page content type
     And I should see an "input#edit-field-landing-page-show-social-value" element
     And I should not see an "input#edit-field-landing-page-show-social-value.required" element
 
-    And I see field "Primary Site"
-    And I should see an "input#edit-field-node-primary-site-0-target-id" element
-    And I should see a "input#edit-field-node-primary-site-0-target-id.required" element
-
-    And I see field "Site"
-    And I should see an "input#edit-field-node-site-0-target-id" element
-    And I should see a "input#edit-field-node-site-0-target-id.required" element
-
   @api
   Scenario: The content type has the menu settings.
     Given I am logged in as a user with the "create landing_page content, administer menu" permission

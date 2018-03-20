@@ -173,8 +173,8 @@ class TideSiteFields {
       // If field config was not found, use generic config.
       $field_name_generic = self::normaliseFieldName($field_name_generic);
       $config = $this->callOwnGetter($field_name_generic, 'Config');
-      $config['field_name'] = $field_name;
     }
+    $config['field_name'] = $field_name;
 
     return $config;
   }
@@ -191,8 +191,8 @@ class TideSiteFields {
       // If field config was not found, use generic config.
       $field_name_generic = self::normaliseFieldName($field_name_generic);
       $config = $this->callOwnGetter($field_name_generic, 'FormDisplayComponents');
-      $config['field_name'] = $field_name;
     }
+    $config['field_name'] = $field_name;
 
     return $config;
   }
@@ -248,6 +248,13 @@ class TideSiteFields {
       ],
       'required' => TRUE,
     ];
+  }
+
+  /**
+   * Config for 'Site' filed on media entity type.
+   */
+  protected function getFieldMediaSiteConfig() {
+    return ['required' => FALSE] + $this->getFieldSiteConfig();
   }
 
   /**

@@ -11,7 +11,6 @@ dependencies:
   - drupal:text
   - drupal:user
   - dpc-sdp:tide_core
-  - dpc-sdp:tide_site
   - drupal:datetime
   - maxlength:maxlength
 config_devel:
@@ -25,8 +24,6 @@ config_devel:
     - field.field.node.page.field_page_show_rating
     - field.field.node.page.field_page_show_related
     - field.field.node.page.field_page_show_social
-    - field.field.node.page.field_node_primary_site
-    - field.field.node.page.field_node_site
     - field.field.node.page.field_topic
     - field.storage.node.field_page_feature_image
     - field.storage.node.field_page_intro_text

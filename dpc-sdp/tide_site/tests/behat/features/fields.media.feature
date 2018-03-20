@@ -27,7 +27,14 @@ Feature: Site fields on media
     And the "#edit-fields-field-media-site-type option[selected='selected']" element should contain "Check boxes/radio buttons"
 
     When I go to "admin/structure/media/manage/mymediatest/display"
-    When I go to "admin/structure/media/manage/mymediatest/display"
     And the "#edit-fields-field-media-site-region option[selected='selected']" element should contain "Disabled"
+
+    When I go to "media/add/mymediatest"
+    And I should see an "input#edit-name-0-value" element
+    And I should see an "input#edit-name-0-value.required" element
+    And I should see an "#edit-field-media-site--wrapper" element
+    And I should not see an "#edit-field-media-site--wrapper.required" element
+    And I should not see an "#edit-field-media-primary-site--wrapper" element
+    And I should not see a "#edit-field-media-primary-site--wrapper.required" element
 
     And no "mymediatest" media type
