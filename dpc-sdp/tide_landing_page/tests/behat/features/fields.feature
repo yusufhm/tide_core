@@ -14,7 +14,7 @@ Feature: Fields for Landing Page content type
     And I should see a "textarea#edit-field-landing-page-paragraph-0-subform-field-paragraph-body-0-value" element
     And I should see a "textarea#edit-field-landing-page-paragraph-0-subform-field-paragraph-body-0-value.required" element
 
-    And I see field "Feature Image"
+    And the "#edit-field-landing-page-feature-image" element should contain "Feature Image"
     And I should see an "input#edit-field-landing-page-feature-image-0-target-id" element
     And I should not see an "input#edit-field-landing-page-feature-image-0-target-id.required" element
 

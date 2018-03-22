@@ -11,9 +11,12 @@ Feature: Site fields on media
     Then I should see "Add media type"
 
     When I fill in "Name" with "mymediatest"
+    And I wait for "10" seconds
     And I select "File" from "Media source"
     And I wait for AJAX to finish
+    And I wait for "10" seconds
     And I press "Save"
+    And save screenshot
     Then I should see the following success messages:
       | success messages                                                               |
       | The media type mymediatest has been added.                                     |

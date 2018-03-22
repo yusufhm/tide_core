@@ -4,9 +4,6 @@ dependencies:
   enforced:
     module:
       - media
-  module:
-    - media
-    - file
 id: testmedia
 label: 'Test media'
 description: 'Test media'

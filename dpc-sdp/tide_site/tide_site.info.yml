@@ -10,7 +10,7 @@ dependencies:
   - drupal:taxonomy
   - drupal:text
   - drupal:user
-
+  - dpc-sdp:tide_core
 config_devel:
   install:
     - core.entity_view_display.taxonomy_term.sites.default

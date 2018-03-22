@@ -22,4 +22,4 @@ Feature: Embedded Maps Feature
     And I press "Save"
     # With Moderation.
     # And I press "Save and Published"
-    Then the response should contain "<iframe width=\"500\" height=\"500\" src=\"//maps.google.com/maps?q=159 Victoria Pde, Collingwood, Victoria, Australia&amp;num=1&amp;t=m&amp;ie=UTF8&amp;z=14&amp;output=embed\" frameborder=\"0\" scrolling=\"no\"></iframe>"
+    Then the response should contain "<iframe frameborder=\"0\" height=\"500\" scrolling=\"no\" src=\"//maps.google.com/maps?q=159 Victoria Pde, Collingwood, Victoria, Australia&amp;num=1&amp;t=m&amp;ie=UTF8&amp;z=14&amp;output=embed\" width=\"500\"></iframe>"
