@@ -7,6 +7,7 @@
 
 use Drupal\taxonomy\Entity\Term;
 use Drupal\user\Entity\User;
+use Drupal\workflows\Entity\Workflow;
 
 /**
  * Implements hook_install().
@@ -28,6 +29,12 @@ function tide_core_install() {
     ->set('register', USER_REGISTER_ADMINISTRATORS_ONLY)
     ->save(TRUE);
 
+  // Creates terms for Topic vocabulary.
+  _tide_core_create_topic_terms();
+
+  // Update default Editorial workflow of Content Moderation.
+  _tide_core_update_editorial_workflow();
+
   $functions = get_defined_functions();
   foreach ($functions['user'] as $function) {
     if (strpos($function, 'tide_core_update_') === 0) {
@@ -39,7 +46,7 @@ function tide_core_install() {
 /**
  * Creates terms for Topic vocabulary.
  */
-function tide_core_update_8000() {
+function _tide_core_create_topic_terms() {
   $vid = 'topic';
 
   $terms = [
@@ -53,5 +60,89 @@ function tide_core_update_8000() {
       'vid' => $vid,
       'parent' => [],
     ])->save();
+  }
+}
+
+/**
+ * Update default Editorial workflow of Content Moderation.
+ */
+function _tide_core_update_editorial_workflow() {
+  $editorial_workflow = Workflow::load('editorial');
+  if ($editorial_workflow) {
+    $type_settings = [
+      'states' => [
+        'draft' => [
+          'label' => 'Draft',
+          'published' => FALSE,
+          'default_revision' => FALSE,
+          'weight' => -10,
+        ],
+        'needs_review' => [
+          'published' => FALSE,
+          'default_revision' => FALSE,
+          'label' => 'Needs Review',
+          'weight' => -9,
+        ],
+        'published' => [
+          'label' => 'Published',
+          'published' => TRUE,
+          'default_revision' => TRUE,
+          'weight' => -8,
+        ],
+        'archived' => [
+          'label' => 'Archived',
+          'weight' => -7,
+          'published' => FALSE,
+          'default_revision' => TRUE,
+        ],
+      ],
+      'transitions' => [
+        'create_new_draft' => [
+          'label' => 'Create New Draft',
+          'from' => ['draft', 'published'],
+          'to' => 'draft',
+          'weight' => -10,
+        ],
+        'needs_review' => [
+          'label' => 'Needs Review',
+          'from' => ['draft'],
+          'to' => 'needs_review',
+          'weight' => -9,
+        ],
+        'needs_review_draft' => [
+          'label' => 'Send back to Draft',
+          'from' => ['needs_review'],
+          'to' => 'draft',
+          'weight' => -8,
+        ],
+        'publish' => [
+          'label' => 'Publish',
+          'from' => ['draft', 'needs_review', 'published'],
+          'to' => 'published',
+          'weight' => -7,
+        ],
+        'archive' => [
+          'label' => 'Archive',
+          'from' => ['published'],
+          'to' => 'archived',
+          'weight' => -6,
+        ],
+        'archived_draft' => [
+          'label' => 'Restore to Draft',
+          'from' => ['archived'],
+          'to' => 'draft',
+          'weight' => -5,
+        ],
+        'archived_published' => [
+          'label' => 'Restore',
+          'from' => ['archived'],
+          'to' => 'published',
+          'weight' => -4,
+        ],
+      ],
+      'entity_types' => [],
+    ];
+    $editorial_workflow->set('type_settings', $type_settings);
+    $editorial_workflow->save();
   }
 }

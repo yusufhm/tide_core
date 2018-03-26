@@ -6,6 +6,7 @@
  */
 
 use Drupal\user\Entity\Role;
+use Drupal\workflows\Entity\Workflow;
 
 /**
  * Implements hook_entity_bundle_create().
@@ -33,6 +34,13 @@ function tide_test_entity_bundle_create($entity_type_id, $bundle) {
         }
         $role->save();
       }
+    }
+
+    // Enable Editorial workflow.
+    $editorial_workflow = Workflow::load('editorial');
+    if ($editorial_workflow) {
+      $editorial_workflow->getTypePlugin()->addEntityTypeAndBundle($entity_type_id, $bundle);
+      $editorial_workflow->save();
     }
   }
 }
