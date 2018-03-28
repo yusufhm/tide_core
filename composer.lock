@@ -1089,7 +1089,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide",
-                "reference": "8363eee9ba83490c540e0ec6cb181f0501b5a0d5",
+                "reference": "16c46cc7d96145d318f5003175859d3ba508d1ee",
                 "shasum": null
             },
             "require": {
@@ -1100,7 +1100,7 @@
                 "dpc-sdp/tide_page": "0.0.1",
                 "dpc-sdp/tide_site": "^0.0.1",
                 "dpc-sdp/tide_test": "^0.0.1",
-                "drupal/core": "8.5.0"
+                "drupal/core": "8.5.1"
             },
             "type": "drupal-profile",
             "extra": {
@@ -2022,16 +2022,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "8.5.0",
+            "version": "8.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "0b9070370e272da441b4be52561c559c05f4553d"
+                "reference": "2aeca7dfa2661296602ac16bf9fd6085f0a121be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/0b9070370e272da441b4be52561c559c05f4553d",
-                "reference": "0b9070370e272da441b4be52561c559c05f4553d",
+                "url": "https://api.github.com/repos/drupal/core/zipball/2aeca7dfa2661296602ac16bf9fd6085f0a121be",
+                "reference": "2aeca7dfa2661296602ac16bf9fd6085f0a121be",
                 "shasum": ""
             },
             "require": {
@@ -2261,7 +2261,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2018-03-07T21:10:20+00:00"
+            "time": "2018-03-27T09:58:42+00:00"
         },
         {
             "name": "drupal/ctools",
@@ -3728,7 +3728,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-alpha2",
-                    "datestamp": "1498495443",
+                    "datestamp": "1521868984",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -4175,7 +4175,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-beta1",
-                    "datestamp": "1459376639",
+                    "datestamp": "1521720480",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -4187,6 +4187,10 @@
                 "GPL-2.0+"
             ],
             "authors": [
+                {
+                    "name": "Darvanen",
+                    "homepage": "https://www.drupal.org/user/1068770"
+                },
                 {
                     "name": "Dave Reid",
                     "homepage": "https://www.drupal.org/user/53892"
