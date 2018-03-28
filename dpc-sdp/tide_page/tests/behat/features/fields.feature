@@ -16,7 +16,27 @@ Feature: Fields for Page content type
 
     And I see field "Topic"
     And I should see an "input#edit-field-topic-0-target-id" element
-    And I should not see an "input#edit-field-topic-0-target-id.required" element
+    And I should see an "input#edit-field-topic-0-target-id.required" element
+
+    And the "#edit-field-page-feature-image" element should contain "Feature Image"
+    And I should see an "input#edit-field-page-feature-image-0-target-id" element
+    And I should not see an "input#edit-field-page-feature-image-0-target-id.required" element
+
+    And I see field "Introduction Text"
+    And I should see an "textarea#edit-field-page-intro-text-0-value" element
+    And I should not see an "textarea#edit-field-page-intro-text-0-value.required" element
+
+    And I see field "Show Content Rating?"
+    And I should see an "input#edit-field-page-show-rating-value" element
+    And I should not see an "input#edit-field-page-show-rating-value.required" element
+
+    And I see field "Show Social Sharing?"
+    And I should see an "input#edit-field-page-show-social-value" element
+    And I should not see an "input#edit-field-page-show-social-value.required" element
+
+    And I see field "Show Related Content?"
+    And I should see an "input#edit-field-page-show-related-value" element
+    And I should not see an "input#edit-field-page-show-related-value.required" element
 
   @api
   Scenario: The content type has the menu settings.

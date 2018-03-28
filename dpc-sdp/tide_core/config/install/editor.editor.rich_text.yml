@@ -44,8 +44,6 @@ settings:
             - Blockquote
             - Table
             - HorizontalRule
-            - media_browser
-            - embed_image_gallery
         -
           name: Format
           items:
@@ -65,13 +63,11 @@ settings:
             - ShowBlocks
             - Source
             - TemplateSelector
-            - Iframe
-            - wenzgmap
   plugins:
+    stylescombo:
+      styles: "p.wysiwyg-callout|Callout\r\nol.wysiwyg-callout|Callout (Ordered list)\r\nul.wysiwyg-callout|Callout (Unordered list)"
     language:
       language_list: un
-    stylescombo:
-      styles: p.wysiwyg-callout|Callout
     linkit:
       linkit_profile: content
 image_upload:

@@ -15,6 +15,6 @@ name: Page
 type: page
 description: 'Use <em>Page</em> content type for basic pages.'
 help: ''
-new_revision: false
-preview_mode: 2
+new_revision: true
+preview_mode: 1
 display_submitted: false

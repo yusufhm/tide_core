@@ -76,9 +76,40 @@ Documentation for mailhog is available of the project page -- https://github.com
 Stage File Proxy is enabled on all non production environments so files are automatically downloaded directly from prod on demand.
 
 ## Adding Drupal modules
+Modules needs to be added in 2 steps:
+1. Require module code installation (through composer).
+2. Enable module during site installation.
+
+### Step 1. Adding contrib modules
 `composer require drupal/module_name`
 or for specific versions
 `composer require drupal/module_name:1.2`
+
+OR
+
+### Step 1. Adding modules as local packages
+1. Add local package information to root `composer.json`:
+```
+    "repositories": {
+        "dpc-sdp/tide_page": {
+            "type": "path",
+            "url": "dpc-sdp/tide_page"
+        },
+    }
+```
+2. Assess if package is required for distribution (Tide) or site (content.vic.gov.au) and add to relevant `composer.json`:
+  - for distribution - `dpc-sdp/tide/composer.json`
+  - for site - `composer.json`
+3. To make sure that composer trigger dependency tree rebuild, run `composer app:cleanup`.
+4. Run `composer update --lock`. This will install all dependencies and update root `composer.lock` file with newly added module. 
+
+### Step 2. Enable module
+1. Assess if module is a part of distribution or site-specific and add to appropriate `info.yml` file:
+  - for distribution - `dpc-sdp/tide/tide.info.yml`
+  - for site - `docroot/modules/custom/vicgovau_core/vicgovau_core.info.yml`
+
+If module is a dev-only module (required to be enabled for development only),
+use `vicgovau_core_install()` in `docroot/modules/custom/vicgovau_core/vicgovau_core.install` to enable it programmatically. This is required as we are using site install and not storing exported configuration.
 
 ## Adding patches for drupal modules
 1. Add `title` and `url` to patch on drupal.org to the `patches` array in `extra` section in `composer.json`.
@@ -106,9 +137,14 @@ Behat configuration uses multiple extensions:
 - `VicgovauDrupalContext` - Site-specific Drupal context with custom step definitions.
 - `VicgovauMinkContext` - Site-specific Mink context with custom step definitions.
 
+Generic Behat tests should be written against the test entities from the Tide Test module. If a new test entity (node, block, etc.) is added to the Tide Test module, the relevant permissions must be also granted to Approver and Editor via the hook `tide_test_entity_bundle_create()`.
+
 ### Run tests locally:
 - Run all tests: `composer app:test`
-- Run specific test feature: `composer app:test tests/behat/features/homepage.feature`
+- Run PHPUnit tests: `composer app:test-phpunit`
+- Run Behat tests: `composer app:test-behat`
+    - Run specific test feature: `composer app:test-behat tests/behat/features/homepage.feature`
+    - Run specific test tag: `composer app:test-behat -- --tags=wip`
 
 Read more information in [the wiki page](https://digital-engagement.atlassian.net/wiki/spaces/SDP/pages/134906009/Behat+testing).
 
@@ -151,7 +187,7 @@ Test artifacts (screenshots etc.) are available under 'Artifacts' tab in Circle 
         + `../scripts/xdebug.sh ../vendor/bin/drush <DRUSH_COMMAND>`
             - Example: `../scripts/xdebug.sh ../vendor/bin/drush updb -y`
     * Debug directly from host machine: `composer debug-drush -- <DRUSH_COMMAND>`
-        + Example: `composer debug-drush -- updb -y`
+        + Example: `composer app:debug-drush -- updb -y`
 
 ### DB connection details
 

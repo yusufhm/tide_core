@@ -6,147 +6,79 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\field\Entity\FieldConfig;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\tide_site\TideSiteFields;
 
 /**
  * Implements hook_entity_bundle_create().
  */
 function tide_site_entity_bundle_create($entity_type_id, $bundle) {
-  // Create 2 fields on new node type creation.
-  // Configuration of the fields is explicitly defined here as their
-  // configuration is different for each field.
-  if ($entity_type_id == 'node') {
-    // 'Site' field.
-    $field_config = FieldConfig::loadByName('node', $bundle, 'field_site');
-    if (empty($field_config)) {
-      try {
-        // Create field config.
-        $field_config = FieldConfig::create([
-          'field_name' => 'field_site',
-          'entity_type' => 'node',
-          'bundle' => $bundle,
-          'label' => 'Site',
-          'settings' => [
-            'handler' => 'default:taxonomy_term',
-            'handler_settings' => [
-              'target_bundles' => [
-                'sites' => 'sites',
-              ],
-            ],
-          ],
-          'required' => TRUE,
-        ]);
-        $field_config->save();
+  /** @var \Drupal\tide_site\TideSiteFields $fields_helper */
+  $fields_helper = \Drupal::service('tide_site.fields');
 
-        // Create/update form display. View display is not created to avoid
-        // unexpected fields appearing in UI.
-        /** @var \Drupal\Core\Entity\EntityDisplayBase $form_display */
-        $form_display = \Drupal::entityTypeManager()
-          ->getStorage('entity_form_display')
-          ->load('node.' . $bundle . '.default');
-        if (!$form_display) {
-          $form_display = \Drupal::entityTypeManager()
-            ->getStorage('entity_form_display')
-            ->create([
-              'targetEntityType' => 'node',
-              'bundle' => $bundle,
-              'mode' => 'default',
-              'status' => TRUE,
-            ]);
-        }
-        $form_display->setComponent('field_site', [
-          'type' => 'options_buttons',
-        ])->save();
+  // Map of which fields should be created for which entity types.
+  $map = [
+    'node' => [$fields_helper::FIELD_SITE, $fields_helper::FIELD_PRIMARY_SITE],
+    'media' => [$fields_helper::FIELD_SITE],
+  ];
 
-        drupal_set_message(t('Added field %name to the %bundle content type and form display.', [
-          '%name' => 'field_site',
-          '%bundle' => $bundle,
-        ]));
-      }
-      catch (\Exception $e) {
-        drupal_set_message(t('Unable to add a field %name to the %bundle content type: @message', [
-          '%name' => 'field_site',
-          '%bundle' => $bundle,
-          '@message' => $e->getMessage(),
-        ]), 'error');
-      }
+  foreach ($map as $entity_type_map => $fields_list) {
+    if ($entity_type_id != $entity_type_map) {
+      continue;
     }
 
-    // 'Primary Site' field.
-    $field_config = FieldConfig::loadByName('node', $bundle, 'field_primary_site');
-    if (empty($field_config)) {
+    foreach ($fields_list as $field_name) {
       try {
-        // Create field config.
-        $field_config = FieldConfig::create([
-          'field_name' => 'field_primary_site',
-          'entity_type' => 'node',
-          'bundle' => $bundle,
-          'label' => 'Primary Site',
-          'settings' => [
-            'handler' => 'default:taxonomy_term',
-            'handler_settings' => [
-              'target_bundles' => [
-                'sites' => 'sites',
-              ],
-            ],
-          ],
-          'required' => TRUE,
-        ]);
-        $field_config->save();
-
         // Create/update form display. View display is not created to avoid
         // unexpected fields appearing in UI.
-        /** @var \Drupal\Core\Entity\EntityDisplayBase $form_display */
-        $form_display = \Drupal::entityTypeManager()
-          ->getStorage('entity_form_display')
-          ->load('node.' . $bundle . '.default');
-        if (!$form_display) {
-          $form_display = \Drupal::entityTypeManager()
-            ->getStorage('entity_form_display')
-            ->create([
-              'targetEntityType' => 'node',
-              'bundle' => $bundle,
-              'mode' => 'default',
-              'status' => TRUE,
-            ]);
-        }
-        $form_display->setComponent('field_primary_site', [
-          'type' => 'options_buttons',
-        ])->save();
-
-        drupal_set_message(t('Added field %name to the %bundle content type and form display.', [
-          '%name' => 'field_primary_site',
+        $field_config = $fields_helper->provisionField($field_name, $entity_type_id, $bundle);
+        drupal_set_message(t('Added field %name to the %bundle %entity_type entity and form display.', [
+          '%name' => $field_config['field_name'],
+          '%entity_type' => $entity_type_id,
           '%bundle' => $bundle,
         ]));
       }
       catch (\Exception $e) {
-        drupal_set_message(t('Unable to add a field %name to the %bundle content type: @message', [
-          '%name' => 'field_primary_site',
+        drupal_set_message(t('Unable to add a field %name to the %bundle %entity_type entity: @message', [
+          '%name' => $field_name,
+          '%entity_type' => $entity_type_id,
           '%bundle' => $bundle,
           '@message' => $e->getMessage(),
         ]), 'error');
       }
     }
   }
+
 }
 
 /**
  * Implements hook_field_widget_form_alter().
+ *
+ * @todo: Extract into a service.
  */
 function tide_site_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
   $field_definition = $context['items']->getFieldDefinition();
 
   // Restrict options to 2 levels of depth for Site field.
-  if ($field_definition->getName() == 'field_site') {
+  if (TideSiteFields::isSiteField($field_definition->getName(), TideSiteFields::FIELD_SITE)) {
     $tree = \Drupal::entityManager()->getStorage('taxonomy_term')->loadTree('sites', 0, 2);
-    $element['#options'] = array_intersect_key($element['#options'], array_flip(array_column($tree, 'tid')));
+    if (isset($element['#options'])) {
+      $element['#options'] = array_intersect_key($element['#options'], array_flip(array_column($tree, 'tid')));
+    }
+    else {
+      $element['#options'] = array_flip(array_column($tree, 'tid'));
+    }
   }
 
   // Restrict options to 1 level of depth for Primary Site field.
-  if ($field_definition->getName() == 'field_primary_site') {
+  if (TideSiteFields::isSiteField($field_definition->getName(), TideSiteFields::FIELD_PRIMARY_SITE)) {
     $tree = \Drupal::entityManager()->getStorage('taxonomy_term')->loadTree('sites', 0, 1);
-    $element['#options'] = array_intersect_key($element['#options'], array_flip(array_column($tree, 'tid')));
+    if (isset($element['#options'])) {
+      $element['#options'] = array_intersect_key($element['#options'], array_flip(array_column($tree, 'tid')));
+    }
+    else {
+      $element['#options'] = array_flip(array_column($tree, 'tid'));
+    }
   }
 }
 
@@ -159,6 +91,8 @@ function tide_site_form_taxonomy_overview_terms_alter(&$form, FormStateInterface
 
 /**
  * Validation handler for taxonomy term overview form.
+ *
+ * @todo: Extract into a service.
  */
 function _tide_site_form_taxonomy_overview_terms_validate(&$form, FormStateInterface $form_state) {
   $max_depth = 1;
@@ -189,6 +123,43 @@ function _tide_site_form_taxonomy_overview_terms_validate(&$form, FormStateInter
           '@max' => $max_depth + 1,
         ]
       ));
+    }
+  }
+}
+
+/**
+ * Implements hook_form_taxonomy_term_form_alter().
+ */
+function tide_site_form_taxonomy_term_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'taxonomy_term_sites_form') {
+    /** @var \Drupal\tide_site\TideSiteMenuAutocreate $menu_helper */
+    $menu_helper = \Drupal::service('tide_site.menu_autocreate');
+    $altered = $menu_helper->alterFormFields($form, [
+      'field_site_main_menu',
+      'field_site_footer_menu',
+    ]);
+
+    if (!empty($altered)) {
+      $form['actions']['submit']['#submit'][] = 'tide_site_form_taxonomy_term_form_submit';
+    }
+  }
+}
+
+/**
+ * Submit handler for term page.
+ *
+ * Handles auto creation of menus.
+ */
+function tide_site_form_taxonomy_term_form_submit(array $form, FormStateInterface $form_state) {
+  $values = $form_state->getValues();
+
+  /** @var \Drupal\tide_site\TideSiteMenuAutocreate $menu_helper */
+  $menu_helper = \Drupal::service('tide_site.menu_autocreate');
+
+  $message_list = $menu_helper->processFormValues($form, $values);
+  foreach ($message_list as $type => $messages) {
+    foreach ($messages as $message) {
+      drupal_set_message($message, $type);
     }
   }
 }

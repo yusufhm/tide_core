@@ -1,0 +1,27 @@
+name: Tide Test
+description: 'Provides Test content type and related configuration. '
+type: module
+package: Tide
+core: 8.x
+dependencies:
+  - drupal:field
+  - drupal:menu_ui
+  - drupal:node
+  - drupal:path
+  - drupal:text
+  - drupal:user
+  - dpc-sdp:tide_core
+  - drupal:datetime
+  - maxlength:maxlength
+config_devel:
+  install:
+    - node.type.test
+    - core.entity_form_display.node.test.default
+    - core.entity_view_display.node.test.default
+    - field.field.node.test.body
+  optional:
+    - media.type.testmedia
+    - field.field.media.testmedia.field_media_file_test
+    - field.storage.media.field_media_file_test
+    - core.entity_form_display.media.testmedia.default
+    - core.entity_view_display.media.testmedia.default

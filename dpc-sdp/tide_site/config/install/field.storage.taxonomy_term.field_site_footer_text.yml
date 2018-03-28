@@ -2,15 +2,14 @@ langcode: en
 status: true
 dependencies:
   module:
-    - node
     - taxonomy
-id: node.field_primary_site
-field_name: field_primary_site
-entity_type: node
-type: entity_reference
-settings:
-  target_type: taxonomy_term
-module: core
+    - text
+id: taxonomy_term.field_site_footer_text
+field_name: field_site_footer_text
+entity_type: taxonomy_term
+type: text_long
+settings: {  }
+module: text
 locked: false
 cardinality: 1
 translatable: true

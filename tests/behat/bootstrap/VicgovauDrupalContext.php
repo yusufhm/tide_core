@@ -5,9 +5,11 @@
  * Vicgovau Drupal context for Behat testing.
  */
 
+use Behat\Gherkin\Node\TableNode;
 use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Exception\ExpectationException;
 use Drupal\DrupalExtension\Context\DrupalContext;
+use Drupal\system\Entity\Menu;
 
 /**
  * Defines application features from the specific context.
@@ -215,6 +217,42 @@ class VicgovauDrupalContext extends DrupalContext {
     $content_type_entity = \Drupal::entityManager()->getStorage('node_type')->load($type);
     if ($content_type_entity) {
       $content_type_entity->delete();
+    }
+  }
+
+  /**
+   * @Given no :type media type
+   */
+  public function removeMediaType($type) {
+    $type_entity = \Drupal::entityManager()->getStorage('media_type')->load($type);
+    if ($type_entity) {
+      $type_entity->delete();
+    }
+  }
+
+  /**
+   * @Given no :vocabulary terms:
+   */
+  public function removeTerms($vocabulary, TableNode $termsTable) {
+    foreach ($termsTable->getColumn(0) as $name) {
+      $terms = \Drupal::service('entity_type.manager')->getStorage('taxonomy_term')->loadByProperties(['name' => $name, 'vid' => $vocabulary]);
+      /** @var \Drupal\taxonomy\Entity\Term $term */
+      foreach ($terms as $term) {
+        $term->delete();
+      }
+    }
+  }
+
+  /**
+   * @Given no menus:
+   */
+  public function removeMenus(TableNode $menusTable) {
+    foreach ($menusTable->getColumn(0) as $name) {
+
+      $menu = Menu::load($name);
+      if ($menu) {
+        $menu->delete();
+      }
     }
   }
 

@@ -4,5 +4,5 @@ dependencies: {  }
 name: Sites
 vid: sites
 description: 'Sites and sections'
-hierarchy: 1
+hierarchy: 0
 weight: 0

@@ -10,8 +10,8 @@ field_name: field_topic
 entity_type: node
 bundle: page
 label: Topic
-description: 'Use <em>Topic</em> field to categorise pages by Topics.'
-required: false
+description: 'Use <em>Topic</em> field to categorise pages by Topic.'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

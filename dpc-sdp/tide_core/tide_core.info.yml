@@ -9,11 +9,14 @@ dependencies:
   - ckeditor_iframe:ckeditor_iframe
   - config_split:config_split
   - config_update:config_update
+  - diff:diff
   - drupal:block
   - drupal:block_content
+  - drupal:content_moderation
   - drupal:ckeditor
   - drupal:dynamic_page_cache
   - drupal:entity_embed
+  - drupal:media
   - drupal:node
   - drupal:options
   - drupal:path
@@ -21,6 +24,7 @@ dependencies:
   - drupal:taxonomy
   - drupal:text
   - drupal:user
+  - drupal:workflows
   - events_log_track:event_log_track
   - editor_advanced_link:editor_advanced_link
   - fakeobjects:fakeobjects

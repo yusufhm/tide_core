@@ -4,3 +4,34 @@
  * @file
  * Contains tide_core.module.
  */
+
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_views_data_alter().
+ *
+ * @see \Drupal\node\NodeViewsData::getViewsData()
+ * @see \Drupal\tide_core\Plugin\views\filter\StatusModerated
+ */
+function tide_core_views_data_alter(array &$data) {
+  // Add Moderation support to Node 'status_extra' filter.
+  // Content Overview view uses the filter 'Published status or admin user'
+  // without any consideration of Content Moderation. We override this filter
+  // to add an extra check for the 'view any unpublished content' permission
+  // provided by the Content Moderation module.
+  $data['node_field_data']['status_extra']['filter']['id'] = 'node_status_moderated';
+}
+
+/**
+ * Implements hook_views_query_substitutions().
+ *
+ * @see node_views_query_substitutions()
+ * @see \Drupal\node\Plugin\views\filter\Status::query()
+ * @see \Drupal\tide_core\Plugin\views\filter\StatusModerated::query()
+ */
+function tide_core_views_query_substitutions(ViewExecutable $view) {
+  $account = \Drupal::currentUser();
+  return [
+    '***VIEW_ANY_UNPUBLISHED_NODES***' => intval($account->hasPermission('view any unpublished content')),
+  ];
+}

@@ -128,18 +128,6 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  field_primary_site:
-    fieldName: field_primary_site
-    publicName: field_primary_site
-    enhancer:
-      id: ''
-    disabled: false
-  field_site:
-    fieldName: field_site
-    publicName: field_site
-    enhancer:
-      id: ''
-    disabled: false
   field_topic:
     fieldName: field_topic
     publicName: field_topic

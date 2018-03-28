@@ -34,17 +34,17 @@ jobs:
           name: Lint code.
           command: composer bay:cli -- composer app:cs
       - run:
-          name: Run tests.
+          name: Run unit tests.
+          command: composer bay:cli -- vendor/bin/phpunit
+      - run:
+          name: Run behat tests.
           command: |
+            mkdir -p /tmp/artifacts/behat
             if [ "$CIRCLE_NODE_TOTAL" -gt "1" ] ; then
               composer bay:cli -- vendor/bin/behat --format=progress_fail --colors --profile=p$CIRCLE_NODE_INDEX || composer bay:cli -- vendor/bin/behat --format=progress_fail --colors --profile=p$CIRCLE_NODE_INDEX --rerun
             else
               composer bay:cli -- vendor/bin/behat --format=progress_fail --colors || composer bay:cli -- vendor/bin/behat --format=progress_fail --colors --rerun
             fi
-      - run:
-          name: Copy artifacts.
-          command: |
-            mkdir -p /tmp/artifacts/behat
             docker cp $(docker-compose ps -q cli):/app/screenshots /tmp/artifacts/behat
       - store_artifacts:
           path: /tmp/artifacts

@@ -11,6 +11,22 @@ dependencies:
   - drupal:text
   - drupal:user
   - dpc-sdp:tide_core
-  - dpc-sdp:tide_site
   - drupal:datetime
   - maxlength:maxlength
+config_devel:
+  install:
+    - node.type.page
+    - core.entity_form_display.node.page.default
+    - core.entity_view_display.node.page.default
+    - field.field.node.page.body
+    - field.field.node.page.field_page_feature_image
+    - field.field.node.page.field_page_intro_text
+    - field.field.node.page.field_page_show_rating
+    - field.field.node.page.field_page_show_related
+    - field.field.node.page.field_page_show_social
+    - field.field.node.page.field_topic
+    - field.storage.node.field_page_feature_image
+    - field.storage.node.field_page_intro_text
+    - field.storage.node.field_page_show_rating
+    - field.storage.node.field_page_show_related
+    - field.storage.node.field_page_show_social

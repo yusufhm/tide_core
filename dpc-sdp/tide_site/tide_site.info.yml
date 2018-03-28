@@ -10,3 +10,27 @@ dependencies:
   - drupal:taxonomy
   - drupal:text
   - drupal:user
+  - dpc-sdp:tide_core
+config_devel:
+  install:
+    - core.entity_view_display.taxonomy_term.sites.default
+    - core.entity_form_display.taxonomy_term.sites.default
+    - field.field.taxonomy_term.sites.field_site_domains
+    - field.field.taxonomy_term.sites.field_site_footer_text
+    - field.field.taxonomy_term.sites.field_site_logo
+    - field.field.taxonomy_term.sites.field_site_slogan
+    - field.field.taxonomy_term.sites.field_site_main_menu
+    - field.field.taxonomy_term.sites.field_site_footer_menu
+    - field.storage.taxonomy_term.field_site_domains
+    - field.storage.taxonomy_term.field_site_footer_text
+    - field.storage.taxonomy_term.field_site_logo
+    - field.storage.taxonomy_term.field_site_slogan
+    - field.storage.taxonomy_term.field_site_main_menu
+    - field.storage.taxonomy_term.field_site_footer_menu
+    - field.storage.media.field_media_site
+    - field.storage.node.field_node_site
+    - field.storage.node.field_node_primary_site
+    - taxonomy.vocabulary.sites
+
+  optional:
+    - jsonapi_extras.jsonapi_resource_config.taxonomy_term--sites

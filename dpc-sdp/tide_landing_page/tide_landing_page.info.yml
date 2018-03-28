@@ -1,5 +1,5 @@
 name: Tide Landing Page
-description: 'Provides Page content type and related configuration. '
+description: 'Provides Landing Page content type and related configuration. '
 type: module
 package: Tide
 core: 8.x
@@ -11,7 +11,29 @@ dependencies:
   - drupal:text
   - drupal:user
   - dpc-sdp:tide_core
-  - dpc-sdp:tide_site
   - drupal:datetime
   - maxlength:maxlength
   - paragraphs:paragraphs
+config_devel:
+  install:
+    - core.entity_form_display.node.landing_page.default
+    - core.entity_view_display.node.landing_page.default
+    - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_landing_page_feature_image
+    - field.field.node.landing_page.field_landing_page_intro_text
+    - field.field.node.landing_page.field_landing_page_layout
+    - field.field.node.landing_page.field_landing_page_paragraph
+    - field.field.node.landing_page.field_landing_page_show_rating
+    - field.field.node.landing_page.field_landing_page_show_social
+    - field.storage.node.field_landing_page_feature_image
+    - field.storage.node.field_landing_page_intro_text
+    - field.storage.node.field_landing_page_show_rating
+    - field.storage.node.field_landing_page_show_social
+    - field.storage.node.field_landing_page_paragraph
+    - field.storage.node.field_landing_page_layout
+    - node.type.landing_page
+    - field.field.paragraph.text.field_paragraph_body
+    - core.entity_form_display.paragraph.text.default
+    - core.entity_view_display.paragraph.text.default
+    - field.storage.paragraph.field_paragraph_body
+    - paragraphs.paragraphs_type.text

@@ -30,7 +30,7 @@
         "guzzlehttp/psr7": "^1.4",
         "integratedexperts/behat-format-progress-fail": "^0.2.1",
         "integratedexperts/behat-relativity": "^0.3",
-        "integratedexperts/behat-screenshot": "^0.6.1",
+        "integratedexperts/behat-screenshot": "^0.7",
         "php-http/curl-client": "^1.7",
         "phpunit/phpunit": "^5.7.19",
         "symfony/filesystem": "^3.2.8",
@@ -45,6 +45,8 @@
     },
     "autoload-dev": {
         "classmap": [
+            "docroot/core",
+            "dpc-sdp",
             "tests/unit/"
         ]
     },
@@ -79,10 +81,6 @@
             "type": "path",
             "url": "dpc-sdp/tide_api"
         },
-        "dpc-sdp/tide_page": {
-            "type": "path",
-            "url": "dpc-sdp/tide_page"
-        },
         "dpc-sdp/tide_core": {
             "type": "path",
             "url": "dpc-sdp/tide_core"
@@ -91,9 +89,21 @@
             "type": "path",
             "url": "dpc-sdp/tide_landing_page"
         },
+        "dpc-sdp/tide_media": {
+            "type": "path",
+            "url": "dpc-sdp/tide_media"
+        },
+        "dpc-sdp/tide_page": {
+            "type": "path",
+            "url": "dpc-sdp/tide_page"
+        },
         "dpc-sdp/tide_site": {
             "type": "path",
             "url": "dpc-sdp/tide_site"
+        },
+        "dpc-sdp/tide_test": {
+            "type": "path",
+            "url": "dpc-sdp/tide_test"
         },
         "library/dropzone": {
             "type": "package",
@@ -170,8 +180,20 @@
         "app:cs": [
             "phpcs --colors"
         ],
-        "app:test": "docker exec -i $(docker-compose ps -q cli) vendor/bin/behat --format=progress_fail --colors",
-        "app:login": "@composer bay:cli -- drush uli -r /app/docroot -l http://content-vicgovau.docker.amazee.io/ | xargs open",
+        "app:test": [
+            "@app:test-phpunit",
+            "@app:test-behat"
+        ],
+        "app:test-phpunit": [
+            "docker exec -i $(docker-compose ps -q cli) vendor/bin/phpunit"
+        ],
+        "app:test-behat": [
+            "docker exec -i $(docker-compose ps -q cli) vendor/bin/behat --format=progress_fail --colors"
+        ],
+        "app:login": [
+            "@composer bay:cli -- drush uublk 1 -r /app/docroot",
+            "@composer bay:cli -- drush uli -r /app/docroot -l http://content-vicgovau.docker.amazee.io/ | xargs open"
+        ],
         "app:drush": "docker exec -i $(docker-compose ps -q cli) drush -r /app/docroot",
         "app:cr": "@composer bay:cli -- drush cr -r /app/docroot -y",
         "app:cleanup": [

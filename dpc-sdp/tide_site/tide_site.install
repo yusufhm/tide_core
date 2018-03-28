@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Install file for tide_site.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function tide_site_install() {
+  // Retroactively create fields on existing entities.
+  $info = \Drupal::service('entity_type.bundle.info')->getAllBundleInfo();
+  foreach ($info as $type => $bundles) {
+    foreach (array_keys($bundles) as $bundle) {
+      tide_site_entity_bundle_create($type, $bundle);
+    }
+  }
+}
