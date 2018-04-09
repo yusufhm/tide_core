@@ -22,6 +22,7 @@ jobs:
           command: |
             composer bay:start
             sleep 10 # wait for mariadb to startup
+            docker ps -a
       - run:
           name: Setup app.
           command: |

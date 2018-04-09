@@ -13,6 +13,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.nginx
+    environment:
+      - FASTCGI_BUFFERS=16 16k
     networks:
       - default
     labels:
@@ -36,9 +38,7 @@ services:
     depends_on:
       - cli
   mariadb:
-    build:
-      context: .
-      dockerfile: Dockerfile.mariadb
+    image: quay.io/dpc_sdp/mariadb
     labels:
       lagoon.type: mariadb
   redis:
