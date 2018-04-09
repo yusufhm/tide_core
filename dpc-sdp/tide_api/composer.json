@@ -7,7 +7,7 @@
     "minimum-stability": "alpha",
     "prefer-stable": true,
     "require": {
-        "drupal/jsonapi": "^1.17",
+        "drupal/jsonapi": "^1.15",
         "drupal/jsonapi_extras": "2.0-rc1",
         "drupal/schemata": "1.0-alpha2"
     }
