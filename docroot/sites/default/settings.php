@@ -32,8 +32,8 @@ if (file_exists('/bay')) {
 }
 
 // Include local settings and services files.
-if (file_exists('settings.local.php')) {
-  include 'settings.local.php';
+if (file_exists(dirname(__FILE__) . '/settings.local.php')) {
+  include dirname(__FILE__) . '/settings.local.php';
 }
 if (file_exists('services.local.yml')) {
   $settings['container_yamls'][] = 'services.local.yml';
