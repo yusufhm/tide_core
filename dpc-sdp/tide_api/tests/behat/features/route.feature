@@ -46,8 +46,6 @@ Feature: Route lookup
     And the response should be in JSON
     And the JSON node "links" should exist
     And the JSON node "links.self" should contain "api/v1/route"
-    And the JSON node "data.alias" should be equal to "/test-api-published-article"
-    And the JSON node "data.source" should contain "/node/"
     And the JSON node "data.bundle" should contain "test"
     And the JSON node "data.endpoint" should contain "api/v1/test/"
     And the JSON node "errors" should not exist
@@ -73,5 +71,5 @@ Feature: Route lookup
 
     Then I send a GET request to "api/v1/route?path=/test-api-draft-article"
     Then the rest response status code should be 200
-    And the JSON node "data.alias" should be equal to "/test-api-draft-article"
+    And the JSON node "data" should exist
     And the JSON node "errors" should not exist

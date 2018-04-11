@@ -9,7 +9,10 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\Core\Url;
 use Drupal\jsonapi\ResourceType\ResourceTypeRepository;
+use Drupal\tide_api\Event\GetRouteEvent;
+use Drupal\tide_api\TideApiEvents;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -43,6 +46,13 @@ class TideApiController extends ControllerBase {
   protected $resourceTypeRepository;
 
   /**
+   * The system event dispatcher service.
+   *
+   * @var \Symfony\Component\EventDispatcher\EventDispatcherInterface
+   */
+  protected $eventDispatcher;
+
+  /**
    * Constructs a new PathController.
    *
    * @param \Drupal\Core\Path\AliasManagerInterface $alias_manager
@@ -51,11 +61,14 @@ class TideApiController extends ControllerBase {
    *   The entity type manager.
    * @param \Drupal\jsonapi\ResourceType\ResourceTypeRepository $resource_type_repository
    *   JSONAPI resource type repository.
+   * @param \Symfony\Component\EventDispatcher\EventDispatcherInterface $event_dispatcher
+   *   The event dispatcher service.
    */
-  public function __construct(AliasManagerInterface $alias_manager, EntityTypeManagerInterface $entity_type_manager, ResourceTypeRepository $resource_type_repository) {
+  public function __construct(AliasManagerInterface $alias_manager, EntityTypeManagerInterface $entity_type_manager, ResourceTypeRepository $resource_type_repository, EventDispatcherInterface $event_dispatcher) {
     $this->aliasManager = $alias_manager;
     $this->entityTypeManager = $entity_type_manager;
     $this->resourceTypeRepository = $resource_type_repository;
+    $this->eventDispatcher = $event_dispatcher;
   }
 
   /**
@@ -65,7 +78,8 @@ class TideApiController extends ControllerBase {
     return new static(
       $container->get('path.alias_manager'),
       $container->get('entity_type.manager'),
-      $container->get('jsonapi.resource_type.repository')
+      $container->get('jsonapi.resource_type.repository'),
+      $container->get('event_dispatcher')
     );
   }
 
@@ -79,13 +93,14 @@ class TideApiController extends ControllerBase {
    *   JSON response.
    */
   public function getRoute(Request $request) {
+    $code = Response::HTTP_NOT_FOUND;
     $json_response = [
       'links' => [
         'self' => Url::fromRoute('tide_api.jsonapi.alias')->setAbsolute()->toString(),
       ],
     ];
-    $code = Response::HTTP_NOT_FOUND;
     $json_response['errors'] = [$this->t('Path not found.')];
+    $entity = NULL;
 
     $path = $request->query->get('path');
 
@@ -110,11 +125,7 @@ class TideApiController extends ControllerBase {
         }
         // Cache miss.
         else {
-          $alias = $path;
           $source = $this->aliasManager->getPathByAlias($path);
-          if ($source == $path) {
-            $alias = $this->aliasManager->getAliasByPath($source);
-          }
 
           $url = $this->findUrlFromPath($source);
           if ($url) {
@@ -125,8 +136,6 @@ class TideApiController extends ControllerBase {
                 $endpoint = $this->findEndpointFromEntity($entity);
                 $entity_type = $entity->getEntityTypeId();
                 $json_response['data'] = [
-                  'alias' => $alias,
-                  'source' => $source,
                   'entity_type' => $entity_type,
                   'bundle' => $entity->bundle(),
                   'uuid' => $entity->uuid(),
@@ -149,6 +158,22 @@ class TideApiController extends ControllerBase {
               $code = Response::HTTP_FORBIDDEN;
               $json_response['errors'] = [$this->t('Permission denied.')];
             }
+          }
+        }
+
+        // Dispatch a GET_ROUTE event so that other modules can modify it.
+        if ($code == Response::HTTP_OK) {
+          $event_entity = NULL;
+          if ($entity) {
+            $event_entity = clone $entity;
+          }
+          $event = new GetRouteEvent(clone $request, $json_response, $event_entity);
+          $this->eventDispatcher->dispatch(TideApiEvents::GET_ROUTE, $event);
+          // Update the response.
+          $code = $event->getCode();
+          $json_response = $event->getJsonResponse();
+          if (!$event->isOk()) {
+            unset($json_response['data']);
           }
         }
       }

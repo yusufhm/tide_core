@@ -33,7 +33,7 @@ class TideApiVersionSubscriber implements EventSubscriberInterface {
    * Note that this is not JSONAPI spec version (such version added to each
    * response automatically).
    *
-   * @see Drupal\jsonapi\Controller::index()
+   * @see \Drupal\jsonapi\Controller\EntryPoint::index()
    * @see http://jsonapi.org/format/
    */
   public function setApiVersion(FilterResponseEvent $event) {
