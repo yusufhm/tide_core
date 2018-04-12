@@ -34,6 +34,8 @@ dependencies:
   - maxlength:maxlength
   - media_entity_audio:media_entity_audio
   - override_node_options:override_node_options
+  - password_policy:password_policy
+  - password_strength:password_strength
   - redirect:redirect
   - simple_sitemap:simple_sitemap
   - seckit:seckit

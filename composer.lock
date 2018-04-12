@@ -139,6 +139,51 @@
             "time": "2018-03-21T21:17:52+00:00"
         },
         {
+            "name": "bjeavons/zxcvbn-php",
+            "version": "0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bjeavons/zxcvbn-php.git",
+                "reference": "331a88932d1a399c989967d3399a4a40eb182fd5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bjeavons/zxcvbn-php/zipball/331a88932d1a399c989967d3399a4a40eb182fd5",
+                "reference": "331a88932d1a399c989967d3399a4a40eb182fd5",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*",
+                "satooshi/php-coveralls": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ZxcvbnPhp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "See contributors",
+                    "homepage": "https://github.com/bjeavons/zxcvbn-php"
+                }
+            ],
+            "description": "Realistic password strength estimation PHP library based on Zxcvbn JS",
+            "homepage": "https://github.com/bjeavons/zxcvbn-php",
+            "keywords": [
+                "password",
+                "zxcvbn"
+            ],
+            "time": "2017-01-06T15:43:33+00:00"
+        },
+        {
             "name": "caxy/php-htmldiff",
             "version": "v0.1.7",
             "source": {
@@ -1128,11 +1173,11 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_api",
-                "reference": "7b16f224b4c1cbddc71b4eb84ede6f0ad7f3a59a",
+                "reference": "95726e902c17ea99e00df6ed07a74723283c2e55",
                 "shasum": null
             },
             "require": {
-                "drupal/jsonapi": "^1.15",
+                "drupal/jsonapi": "^1.17",
                 "drupal/jsonapi_extras": "2.0-rc1",
                 "drupal/schemata": "1.0-alpha2"
             },
@@ -1148,7 +1193,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_core",
-                "reference": "43fa2a85de47fc65e746939bb086abff0cdbff02",
+                "reference": "4e3172114d70a3f77f9650680b726b5784c34298",
                 "shasum": null
             },
             "require": {
@@ -1171,6 +1216,8 @@
                 "drupal/maxlength": "^1.0@beta",
                 "drupal/media_entity_audio": "^2.0@alpha",
                 "drupal/override_node_options": "^2.3",
+                "drupal/password_policy": "dev-3.x",
+                "drupal/password_strength": "^2.0",
                 "drupal/redirect": "^1.0@beta",
                 "drupal/seckit": "^1.0@alpha",
                 "drupal/simple_sitemap": "^2.11",
@@ -1203,6 +1250,9 @@
                     },
                     "drupal/maxlength": {
                         "Maxlength only for summary field - https://www.drupal.org/project/maxlength/issues/2798903": "https://www.drupal.org/files/issues/maxlength-limit_only_summary-2798903-2.patch"
+                    },
+                    "drupal/password_policy": {
+                        "password expired message still shows upon resetting password via email - https://www.drupal.org/project/password_policy/issues/2856878": "https://www.drupal.org/files/issues/2018-04-09/password_expired-2856878-13.patch"
                     },
                     "drupal/token": {
                         "Node preview button generates useless menu link - https://www.drupal.org/node/2823731#comment-11905884": "https://www.drupal.org/files/issues/token_node_preview_menu_link-2823731-4.patch",
@@ -3489,6 +3539,133 @@
             "homepage": "https://www.drupal.org/project/paragraphs",
             "support": {
                 "source": "http://cgit.drupalcode.org/paragraphs"
+            }
+        },
+        {
+            "name": "drupal/password_policy",
+            "version": "dev-3.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/password_policy",
+                "reference": "ef81a55ad49d7d4e18f493fad2284923d28bfe70"
+            },
+            "require": {
+                "drupal/core": "*",
+                "drupal/ctools": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-3.0-alpha4+4-dev",
+                    "datestamp": "1519657384",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                },
+                "patches_applied": {
+                    "password expired message still shows upon resetting password via email - https://www.drupal.org/project/password_policy/issues/2856878": "https://www.drupal.org/files/issues/2018-04-09/password_expired-2856878-13.patch"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "AohRveTPV",
+                    "homepage": "https://www.drupal.org/user/2760115"
+                },
+                {
+                    "name": "deekayen",
+                    "homepage": "https://www.drupal.org/user/972"
+                },
+                {
+                    "name": "miglius",
+                    "homepage": "https://www.drupal.org/user/18741"
+                },
+                {
+                    "name": "nerdstein",
+                    "homepage": "https://www.drupal.org/user/1557710"
+                },
+                {
+                    "name": "shrop",
+                    "homepage": "https://www.drupal.org/user/14767"
+                }
+            ],
+            "description": "Sets up constraints and expiration of passwords.",
+            "homepage": "https://www.drupal.org/project/password_policy",
+            "support": {
+                "source": "http://cgit.drupalcode.org/password_policy"
+            },
+            "time": "2018-03-08T21:48:13+00:00"
+        },
+        {
+            "name": "drupal/password_strength",
+            "version": "2.0.0-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/password_strength",
+                "reference": "8.x-2.0-alpha2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/password_strength-8.x-2.0-alpha2.zip",
+                "reference": "8.x-2.0-alpha2",
+                "shasum": "9f4b309731c396306880b1085a87841ca8323ac4"
+            },
+            "require": {
+                "bjeavons/zxcvbn-php": "*",
+                "drupal/core": "~8.0",
+                "drupal/password_policy": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0-alpha2",
+                    "datestamp": "1490306283",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "coltrane",
+                    "homepage": "https://www.drupal.org/user/91990"
+                },
+                {
+                    "name": "greggles",
+                    "homepage": "https://www.drupal.org/user/36762"
+                },
+                {
+                    "name": "jrbeeman",
+                    "homepage": "https://www.drupal.org/user/16734"
+                },
+                {
+                    "name": "nerdstein",
+                    "homepage": "https://www.drupal.org/user/1557710"
+                },
+                {
+                    "name": "scor",
+                    "homepage": "https://www.drupal.org/user/52142"
+                }
+            ],
+            "description": "Integrates the Password Strength into Drupal's Password Policy module.",
+            "homepage": "https://www.drupal.org/project/password_strength",
+            "support": {
+                "source": "http://cgit.drupalcode.org/password_strength"
             }
         },
         {

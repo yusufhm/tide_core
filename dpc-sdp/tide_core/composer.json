@@ -24,6 +24,8 @@
         "drupal/maxlength": "^1.0@beta",
         "drupal/media_entity_audio": "^2.0@alpha",
         "drupal/override_node_options": "^2.3",
+        "drupal/password_policy": "dev-3.x",
+        "drupal/password_strength": "^2.0",
         "drupal/redirect": "^1.0@beta",
         "drupal/seckit": "^1.0@alpha",
         "drupal/simple_sitemap": "^2.11",
@@ -109,6 +111,9 @@
             },
             "drupal/maxlength": {
                 "Maxlength only for summary field - https://www.drupal.org/project/maxlength/issues/2798903": "https://www.drupal.org/files/issues/maxlength-limit_only_summary-2798903-2.patch"
+            },
+            "drupal/password_policy": {
+                "password expired message still shows upon resetting password via email - https://www.drupal.org/project/password_policy/issues/2856878": "https://www.drupal.org/files/issues/2018-04-09/password_expired-2856878-13.patch"
             },
             "drupal/token": {
                 "Node preview button generates useless menu link - https://www.drupal.org/node/2823731#comment-11905884": "https://www.drupal.org/files/issues/token_node_preview_menu_link-2823731-4.patch",
