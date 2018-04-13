@@ -47,7 +47,7 @@ Feature: Route lookup
     And the JSON node "links" should exist
     And the JSON node "links.self" should contain "api/v1/route"
     And the JSON node "data.bundle" should contain "test"
-    And the JSON node "data.endpoint" should contain "api/v1/test/"
+    And the JSON node "data.endpoint" should contain "api/v1/node/test/"
     And the JSON node "errors" should not exist
 
     # A published node is unpublished, and anonymous users no longer have access to it.

@@ -3,6 +3,7 @@
 namespace Drupal\tide_site;
 
 use Drupal\Core\Cache\Cache;
+use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\FieldableEntityInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
@@ -30,13 +31,23 @@ class TideSiteHelper {
   protected $entityTypeManager;
 
   /**
+   * The Entity Repository service.
+   *
+   * @var \Drupal\Core\Entity\EntityRepositoryInterface
+   */
+  protected $entityRepository;
+
+  /**
    * Constructor.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The entity type manager.
+   * @param \Drupal\Core\Entity\EntityRepositoryInterface $entity_repository
+   *   The entity repository service.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, EntityRepositoryInterface $entity_repository) {
     $this->entityTypeManager = $entity_type_manager;
+    $this->entityRepository = $entity_repository;
   }
 
   /**
@@ -121,6 +132,7 @@ class TideSiteHelper {
    *     - sections : List of sections: site_id => section_id.
    */
   public function getEntitySites(FieldableEntityInterface $entity) {
+    // Static cache as this method maybe called multiple times per request.
     $static_cache = &drupal_static(__FUNCTION__, []);
     if (isset($static_cache[$entity->id()])) {
       return $static_cache[$entity->id()];
@@ -131,16 +143,21 @@ class TideSiteHelper {
 
     if ($this->isSupportedEntityType($entity_type)) {
       $cid = 'tide_site:entity:' . $entity_type . ':' . $entity->id() . ':sites';
+      // Attempt to load from data cache.
       $cached_sites = $this->cache('data')->get($cid);
       if ($cached_sites) {
         $sites = $cached_sites->data;
       }
+      // Cache miss.
       else {
         $field_site_field_name = TideSiteFields::normaliseFieldName(TideSiteFields::FIELD_SITE, $entity_type);
+        // Only process if the entity has Site field.
         if ($entity->hasField($field_site_field_name)) {
           $field_site = $entity->get($field_site_field_name);
+          // Only process if its Site field has values.
           if (!$field_site->isEmpty()) {
             $cache_tags = [];
+            // Fetch the trail of every term.
             $trails = [];
             foreach ($field_site->getValue() as $value) {
               $term_id = $value['target_id'];
@@ -153,7 +170,7 @@ class TideSiteHelper {
               }
               $cache_tags[] = 'taxonomy_term:' . $term_id;
             }
-            // Build the sections.
+            // Build the sections. Each Site should only have one section.
             foreach ($sites['ids'] as $site_id) {
               $sites['sections'][$site_id] = $site_id;
               foreach ($trails as $trail) {
@@ -165,6 +182,7 @@ class TideSiteHelper {
               }
             }
 
+            // Cache the results.
             $this->cache('data')->set($cid, $sites, Cache::PERMANENT, Cache::mergeTags($cache_tags, $entity->getCacheTags()));
             $static_cache[$entity->id()] = $sites;
           }
@@ -211,17 +229,11 @@ class TideSiteHelper {
    */
   public function getEntityByUuid($uuid, $entity_type) {
     try {
-      $entities = $this->entityTypeManager->getStorage($entity_type)
-        ->loadByProperties(['uuid' => $uuid]);
-      if ($entities && count($entities)) {
-        return reset($entities);
-      }
+      return $this->entityRepository->loadEntityByUuid($entity_type, $uuid);
     }
     catch (\Exception $e) {
-      // Do nothing.
+      return NULL;
     }
-
-    return NULL;
   }
 
   /**

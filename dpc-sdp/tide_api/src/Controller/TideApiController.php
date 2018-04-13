@@ -278,6 +278,9 @@ class TideApiController extends ControllerBase {
     /** @var \Drupal\jsonapi_extras\ResourceType\ConfigurableResourceType $resource_type */
     $resource_config = $resource_type->getJsonapiResourceConfig();
     $config_path = $resource_config->get('path');
+    if (!$config_path) {
+      $config_path = $resource_type->getTypeName();
+    }
 
     return $config_path;
   }

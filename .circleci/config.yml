@@ -5,6 +5,7 @@ jobs:
       - image: 8thom/circle-dpc
         environment:
           COMPOSER_ALLOW_SUPERUSER: 1
+          COMPOSE_PATH_SEPARATOR: ":"
           COMPOSE_FILE: docker-compose.yml:docker-compose.ci.yml
     working_directory: /app
     steps:
