@@ -95,6 +95,25 @@ class TideSiteHelper {
   }
 
   /**
+   * Check if a Site ID is valid.
+   *
+   * Section ID is not valid.
+   *
+   * @param int $tid
+   *   The Site ID.
+   *
+   * @return bool
+   *   TRUE if the Site ID is valid.
+   */
+  public function isValidSite($tid) {
+    $trail = $this->getSiteTrail($tid);
+    if ($trail && count($trail) == 1) {
+      return TRUE;
+    }
+    return FALSE;
+  }
+
+  /**
    * Returns the term trail of a Site or Section.
    *
    * @param int $tid

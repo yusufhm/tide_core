@@ -2,6 +2,8 @@
 
 namespace Drupal\tide_site\EventSubscriber;
 
+use Drupal\Core\Cache\Cache;
+use Drupal\Core\Cache\CacheableResponseInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Url;
@@ -13,6 +15,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 
@@ -67,6 +70,9 @@ class TideSiteRequestEventSubscriber implements EventSubscriberInterface {
     // Our subscriber must have very low priority,
     // as it relies on route resolver to parse all params.
     $events[KernelEvents::REQUEST][] = ['onRequestAddSiteFilter', -10000];
+    // Run after JSON API ResourceResponseSubscriber (priority 128) and
+    // before DynamicPageCacheSubscriber (priority 100).
+    $events[KernelEvents::RESPONSE][] = ['onResponseAddSiteFilterCacheContext', 127];
 
     return $events;
   }
@@ -130,8 +136,8 @@ class TideSiteRequestEventSubscriber implements EventSubscriberInterface {
               // We add Site filter.
               $site_filter = [
                 'condition' => [
-                  'path' => $field_site_name,
-                  'operator' => 'CONTAINS',
+                  'path' => $field_site_name . '.tid',
+                  'operator' => '=',
                   'value' => $site_id,
                 ],
               ];
@@ -150,22 +156,52 @@ class TideSiteRequestEventSubscriber implements EventSubscriberInterface {
     else {
       // Site ID is provided, we filter the collection using the site ID.
       if ($site_id) {
-        $site_filter = [
-          'condition' => [
-            'path' => $field_site_name,
-            'operator' => 'CONTAINS',
-            'value' => $site_id,
-          ],
-        ];
+        if ($this->helper->isValidSite($site_id)) {
+          $site_filter = [
+            'condition' => [
+              'path' => $field_site_name . '.tid',
+              'operator' => '=',
+              'value' => $site_id,
+            ],
+          ];
+        }
+        else {
+          $this->setEventErrorResponse($event, $this->t('Invalid Site ID.'), Response::HTTP_BAD_REQUEST);
+          return;
+        }
       }
       // No Site ID, JSON API should only return entities without a Site.
       else {
         $site_filter = [
-          'condition' => ['path' => $field_site_name, 'operator' => 'IS NULL'],
+          'condition' => ['path' => $field_site_name . '.tid', 'operator' => 'IS NULL'],
         ];
       }
 
       $this->setSiteFilterToJsonApi($request, $site_filter, $resource_type);
+    }
+  }
+
+  /**
+   * Add Site to cache context and tags of JSON API response.
+   *
+   * @param \Symfony\Component\HttpKernel\Event\FilterResponseEvent $event
+   *   The event object.
+   */
+  public function onResponseAddSiteFilterCacheContext(FilterResponseEvent $event) {
+    $response = $event->getResponse();
+    if (!$response instanceof CacheableResponseInterface) {
+      return;
+    }
+
+    $site_id = $event->getRequest()->query->get('site');
+    if ($site_id) {
+      $context = $response->getCacheableMetadata()->getCacheContexts();
+      $context = Cache::mergeContexts($context, ['url.query_args:site']);
+      $response->getCacheableMetadata()->setCacheContexts($context);
+
+      $cache_tags = $response->getCacheableMetadata()->getCacheTags();
+      $cache_tags = Cache::mergeTags($cache_tags, ['taxonomy_term:' . $site_id]);
+      $response->getCacheableMetadata()->setCacheTags($cache_tags);
     }
   }
 
