@@ -10,26 +10,6 @@ Feature: Fields for Landing Page content type
     Then I see field "Title"
     And I should see an "input#edit-title-0-value.required" element
 
-    And I see field "Body"
-    And I should see a "textarea#edit-field-landing-page-paragraph-0-subform-field-paragraph-body-0-value" element
-    And I should see a "textarea#edit-field-landing-page-paragraph-0-subform-field-paragraph-body-0-value.required" element
-
-    And the "#edit-field-landing-page-feature-image" element should contain "Feature Image"
-    And I should see an "input#edit-field-landing-page-feature-image-0-target-id" element
-    And I should not see an "input#edit-field-landing-page-feature-image-0-target-id.required" element
-
-    And I see field "Introduction Text"
-    And I should see an "textarea#edit-field-landing-page-intro-text-0-value" element
-    And I should not see an "textarea#edit-field-landing-page-intro-text-0-value.required" element
-
-    # And I see field "Components" - does not work for Paragraphs
-    And I should see an "div#edit-field-landing-page-paragraph-0" element
-    And I should see an "#field-landing-page-paragraph-values .form-required" element
-
-    And I see field "Layout"
-    And I should see an "select#edit-field-landing-page-layout" element
-    And I should see an "select#edit-field-landing-page-layout.required" element
-
     And I see field "Show Content Rating?"
     And I should see an "input#edit-field-landing-page-show-rating-value" element
     And I should not see an "input#edit-field-landing-page-show-rating-value.required" element
@@ -37,6 +17,45 @@ Feature: Fields for Landing Page content type
     And I see field "Show Social Sharing?"
     And I should see an "input#edit-field-landing-page-show-social-value" element
     And I should not see an "input#edit-field-landing-page-show-social-value.required" element
+
+    And I see field "Introduction Text"
+    And I should see an "textarea#edit-field-landing-page-intro-text-0-value" element
+    And I should not see an "textarea#edit-field-landing-page-intro-text-0-value.required" element
+
+    And I should see text matching "Banner"
+    And I should see an "input#edit-field-landing-page-banner-top-0-subform-field-paragraph-title-0-value" element
+    And I should not see an "input#edit-field-landing-page-banner-top-0-subform-field-paragraph-title-0-value.required" element
+    And I should see an "input#edit-field-landing-page-banner-bottom-0-subform-field-paragraph-title-0-value" element
+    And I should not see an "input#edit-field-landing-page-banner-bottom-0-subform-field-paragraph-title-0-value.required" element
+
+    And I should see text matching "Key journey link"
+    And I should see an "input#edit-field-landing-page-key-link-0-uri" element
+    And I should not see an "input#edit-field-landing-page-key-link-0-uri.required" element
+    And I should see an "input#edit-field-landing-page-key-link-0-title" element
+    And I should not see an "input#edit-field-landing-page-key-link-0-title.required" element
+
+    And I should see text matching "Key journey CTA"
+    And I should see an "input#edit-field-landing-page-key-cta-0-uri" element
+    And I should not see an "input#edit-field-landing-page-key-cta-0-uri.required" element
+    And I should see an "input#edit-field-landing-page-key-cta-0-title" element
+    And I should not see an "input#edit-field-landing-page-key-cta-0-title.required" element
+
+    And I should see text matching "Popular links"
+    And I should see an "input#edit-field-popular-links-0-subform-field-paragraph-link-0-uri" element
+    And I should not see an "input#edit-field-popular-links-0-subform-field-paragraph-link-0-uri.required" element
+    And I should see an "input#edit-field-popular-links-0-subform-field-paragraph-link-0-title" element
+    And I should not see an "input#edit-field-popular-links-0-subform-field-paragraph-link-0-title.required" element
+
+    And I should see text matching "Related links"
+    And I should see an "input#edit-field-related-links-0-subform-field-paragraph-link-0-uri" element
+    And I should not see an "input#edit-field-related-links-0-subform-field-paragraph-link-0-uri.required" element
+    And I should see an "input#edit-field-related-links-0-subform-field-paragraph-link-0-title" element
+    And I should not see an "input#edit-field-related-links-0-subform-field-paragraph-link-0-title.required" element
+
+    And I should see text matching "Content components"
+    And I should see text matching "No Banner added yet."
+    And I should see an "input#field-landing-page-content-card-event-add-more" element
+    And I should see an "input#field-landing-page-content-card-promotion-add-more" element
 
   @api
   Scenario: The content type has the menu settings.

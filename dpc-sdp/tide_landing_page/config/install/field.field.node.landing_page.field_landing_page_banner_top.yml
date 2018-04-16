@@ -2,19 +2,19 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_landing_page_paragraph
+    - field.storage.node.field_landing_page_banner_top
     - node.type.landing_page
-    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.banner
   module:
     - entity_reference_revisions
-id: node.landing_page.field_landing_page_paragraph
-field_name: field_landing_page_paragraph
+id: node.landing_page.field_landing_page_banner_top
+field_name: field_landing_page_banner_top
 entity_type: node
 bundle: landing_page
-label: Components
+label: 'Top banner'
 description: ''
-required: true
-translatable: true
+required: false
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -22,9 +22,12 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      text: text
+      banner: banner
     target_bundles_drag_drop:
       text:
-        enabled: true
         weight: 2
+        enabled: false
+      banner:
+        enabled: true
+        weight: 3
 field_type: entity_reference_revisions

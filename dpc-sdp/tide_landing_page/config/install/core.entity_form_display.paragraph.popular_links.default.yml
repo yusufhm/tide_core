@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.popular_links.field_paragraph_link
+    - paragraphs.paragraphs_type.popular_links
+  module:
+    - content_moderation
+    - link
+id: paragraph.popular_links.default
+targetEntityType: paragraph
+bundle: popular_links
+mode: default
+content:
+  field_paragraph_link:
+    weight: 101
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -6,7 +6,8 @@
     "version": "0.0.1",
     "require": {
         "dpc-sdp/tide_core": "0.0.1",
-        "drupal/paragraphs": "^1.2"
+        "drupal/paragraphs": "^1.2",
+        "drupal/field_group": "^3.0-beta1"
     },
     "repositories": {
         "tide_core": {

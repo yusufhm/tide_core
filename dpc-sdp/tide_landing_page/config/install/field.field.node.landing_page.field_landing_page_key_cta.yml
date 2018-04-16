@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_landing_page_key_cta
+    - node.type.landing_page
+  module:
+    - link
+id: node.landing_page.field_landing_page_key_cta
+field_name: field_landing_page_key_cta
+entity_type: node
+bundle: landing_page
+label: 'Key journey CTA'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

@@ -2,15 +2,14 @@ langcode: en
 status: true
 dependencies:
   module:
-    - media
+    - link
     - node
-id: node.field_landing_page_feature_image
-field_name: field_landing_page_feature_image
+id: node.field_landing_page_key_cta
+field_name: field_landing_page_key_cta
 entity_type: node
-type: entity_reference
-settings:
-  target_type: media
-module: core
+type: link
+settings: {  }
+module: link
 locked: false
 cardinality: 1
 translatable: true

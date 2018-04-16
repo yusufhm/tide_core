@@ -1,8 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
-id: text
-label: Text
+id: related_links
+label: 'Related links'
 icon_uuid: null
 description: ''
 behavior_plugins: {  }

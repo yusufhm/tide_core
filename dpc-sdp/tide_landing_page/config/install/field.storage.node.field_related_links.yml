@@ -5,8 +5,8 @@ dependencies:
     - entity_reference_revisions
     - node
     - paragraphs
-id: node.field_landing_page_paragraph
-field_name: field_landing_page_paragraph
+id: node.field_related_links
+field_name: field_related_links
 entity_type: node
 type: entity_reference_revisions
 settings:
