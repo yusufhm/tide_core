@@ -82,7 +82,7 @@ class TideSiteGetRouteSubscriber implements EventSubscriberInterface {
       // Fetch the entity and validate its Site.
       else {
         // Attempt to load the response from data cache.
-        $cid = 'tide_site:api:route:path:' . md5($path) . ':site:' . $site_id;
+        $cid = 'tide_site:api:route:path:' . hash('sha256', $path) . ':site:' . $site_id;
         $cache_response = $this->cache('data')->get($cid);
         if ($cache_response) {
           $event->setCode($cache_response->data['code']);

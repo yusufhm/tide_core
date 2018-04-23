@@ -11,6 +11,12 @@ dependencies:
   - drupal:user
   - dpc-sdp:tide_core
   - drupal:datetime
+  - field_group:field_group
+  - inline_entity_form:inline_entity_form
+  - embed:embed
+  - entity_embed:entity_embed
+  - entity_browser:entity_browser
+  - entity_browser:entity_browser_entity_form
 config_devel:
   install:
     - media.type.document

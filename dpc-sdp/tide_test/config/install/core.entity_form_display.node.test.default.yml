@@ -2,9 +2,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.tide_media_browser
     - field.field.node.test.body
+    - field.field.node.test.field_test_media
     - node.type.test
   module:
+    - content_moderation
+    - entity_browser
     - path
     - text
 id: node.test.default
@@ -26,6 +30,26 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_test_media:
+    weight: 124
+    settings:
+      entity_browser: tide_media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: media_browser_preview
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
     third_party_settings: {  }
   path:
     type: path
@@ -74,3 +98,6 @@ content:
   url_redirects:
     weight: 50
     region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:

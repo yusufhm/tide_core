@@ -1,0 +1,61 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.tide_media_browser
+  module:
+    - entity_browser_entity_form
+    - views
+name: tide_media_browser
+label: 'Media browser'
+display: modal
+display_configuration:
+  width: ''
+  height: ''
+  link_text: 'Select media'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  40f63421-1d93-466b-b714-69193356e523:
+    settings:
+      view: tide_media_browser
+      view_display: media_browser
+      submit_text: 'Select media'
+      auto_select: false
+    uuid: 40f63421-1d93-466b-b714-69193356e523
+    weight: 1
+    label: Library
+    id: view
+  b2e8fcf3-d0ab-408a-bc97-423edbf44998:
+    settings:
+      entity_type: media
+      bundle: document
+      form_mode: default
+      submit_text: 'Save document'
+    uuid: b2e8fcf3-d0ab-408a-bc97-423edbf44998
+    weight: 2
+    label: 'Add document'
+    id: entity_form
+  d33cc504-e492-411e-9efe-b08310d0e80c:
+    settings:
+      entity_type: media
+      bundle: image
+      form_mode: default
+      submit_text: 'Save image'
+    uuid: d33cc504-e492-411e-9efe-b08310d0e80c
+    weight: 3
+    label: 'Add image'
+    id: entity_form
+  c8c02ca9-9f1e-44e2-bf90-bc683cdf330c:
+    settings:
+      entity_type: media
+      bundle: video
+      form_mode: default
+      submit_text: 'Save video'
+    uuid: c8c02ca9-9f1e-44e2-bf90-bc683cdf330c
+    weight: 4
+    label: 'Add video'
+    id: entity_form

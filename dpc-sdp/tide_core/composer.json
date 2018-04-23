@@ -120,7 +120,7 @@
                 "Summary token not fully handled in fields": "https://www.drupal.org/files/issues/tokens.body-with-summary.patch"
             },
             "drupal/events_log_track": {
-                "Events Log Track breaks Entity Browser - https://www.drupal.org/project/events_log_track/issues/2934036": "https://www.drupal.org/files/issues/2934036-check_empty_submit-1.patch",
+                "Events Log Track breaks Entity Browser #5 - https://www.drupal.org/project/events_log_track/issues/2934036": "https://www.drupal.org/files/issues/2018-04-19/2934036-check_empty_submit-5.patch",
                 "Entities with title longer than 50 characters - https://www.drupal.org/project/events_log_track/issues/2930817": "https://www.drupal.org/files/issues/increase-character-length-2930817-2.patch"
             }
         }

@@ -33,14 +33,14 @@ function tide_site_entity_bundle_create($entity_type_id, $bundle) {
         // Create/update form display. View display is not created to avoid
         // unexpected fields appearing in UI.
         $field_config = $fields_helper->provisionField($field_name, $entity_type_id, $bundle);
-        drupal_set_message(t('Added field %name to the %bundle %entity_type entity and form display.', [
+        \Drupal::messenger()->addMessage(t('Added field %name to the %bundle %entity_type entity and form display.', [
           '%name' => $field_config['field_name'],
           '%entity_type' => $entity_type_id,
           '%bundle' => $bundle,
         ]));
       }
       catch (\Exception $e) {
-        drupal_set_message(t('Unable to add a field %name to the %bundle %entity_type entity: @message', [
+        \Drupal::messenger()->addMessage(t('Unable to add a field %name to the %bundle %entity_type entity: @message', [
           '%name' => $field_name,
           '%entity_type' => $entity_type_id,
           '%bundle' => $bundle,
@@ -160,7 +160,7 @@ function tide_site_form_taxonomy_term_form_submit(array $form, FormStateInterfac
   $message_list = $menu_helper->processFormValues($form, $values);
   foreach ($message_list as $type => $messages) {
     foreach ($messages as $message) {
-      drupal_set_message($message, $type);
+      \Drupal::messenger()->addMessage($message, $type);
     }
   }
 }
@@ -169,13 +169,25 @@ function tide_site_form_taxonomy_term_form_submit(array $form, FormStateInterfac
  * Implements hook_views_pre_view().
  */
 function tide_site_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
-  if ($view->id() == 'media') {
-    // Add Site field as a filter to the view.
-    $expose_array = [
+  // Add Site field and exposed filter to the supported views.
+  $views = [
+    'media' => [
+      'media_page_list',
+    ],
+    'tide_media_browser' => [
+      'media_browser',
+      'image_browser',
+      'document_browser',
+    ],
+  ];
+
+  $view_id = $view->id();
+  if (isset($views[$view_id]) && in_array($display_id, $views[$view_id])) {
+    $site_filter = [
       'exposed' => TRUE,
       'expose' => [
         'operator_id' => 'field_media_site_target_id_op',
-        'label' => 'Site',
+        'label' => t('Site'),
         'id' => 'media__field_media_site',
         'use_operator' => FALSE,
         'operator' => 'field_media_site_target_id_op',
@@ -189,10 +201,18 @@ function tide_site_views_pre_view(ViewExecutable $view, $display_id, array &$arg
       'group' => 1,
       'vid' => 'sites',
       'type' => 'select',
+      'reduce_duplicates' => TRUE,
+      'limit' => TRUE,
+      'hierarchy' => TRUE,
     ];
-    $view->addHandler('media_page_list', 'filter', 'media__field_media_site', 'field_media_site_target_id', $expose_array);
+    $view->addHandler($display_id, 'filter', 'media__field_media_site', 'field_media_site_target_id', $site_filter, 'field_media_site_target_id');
 
-    // Add Site field as a field to the view.
-    $view->addHandler('media_page_list', 'field', 'media__field_media_site', 'field_media_site');
+    $site_field = [
+      'label' => t('Site'),
+      'group_rows' => TRUE,
+      'multi_type' => 'ul',
+      'plugin_id' => 'field',
+    ];
+    $view->addHandler($display_id, 'field', 'media__field_media_site', 'field_media_site', $site_field, 'field_media_site');
   }
 }
