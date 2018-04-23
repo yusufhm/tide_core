@@ -2,12 +2,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.landing_page.field_landing_page_intro_text
-    - field.field.node.landing_page.field_landing_page_banner_top
     - field.field.node.landing_page.field_landing_page_banner_bottom
+    - field.field.node.landing_page.field_landing_page_banner_top
+    - field.field.node.landing_page.field_landing_page_content
+    - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_key_cta
     - field.field.node.landing_page.field_landing_page_key_link
-    - field.field.node.landing_page.field_landing_page_content
     - field.field.node.landing_page.field_landing_page_show_rating
     - field.field.node.landing_page.field_landing_page_show_social
     - field.field.node.landing_page.field_popular_links
@@ -22,13 +22,15 @@ targetEntityType: node
 bundle: landing_page
 mode: default
 content:
-  field_landing_page_intro_text:
-      weight: 3
-      label: above
-      settings: {  }
-      third_party_settings: {  }
-      type: basic_string
-      region: content
+  field_landing_page_banner_bottom:
+    type: entity_reference_revisions_entity_view
+    weight: 8
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
   field_landing_page_banner_top:
     type: entity_reference_revisions_entity_view
     weight: 7
@@ -38,14 +40,21 @@ content:
       link: ''
     third_party_settings: {  }
     region: content
-  field_landing_page_banner_bottom:
-    type: entity_reference_revisions_entity_view
-    weight: 8
+  field_landing_page_content:
+    weight: 1
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_landing_page_intro_text:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_landing_page_key_cta:
     weight: 11
@@ -70,15 +79,6 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-    region: content
-  field_landing_page_content:
-    weight: 1
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
     region: content
   field_landing_page_show_rating:
     weight: 5

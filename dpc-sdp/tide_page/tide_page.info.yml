@@ -13,6 +13,7 @@ dependencies:
   - dpc-sdp:tide_core
   - dpc-sdp:tide_media
   - drupal:datetime
+  - entity_reference_revisions:entity_reference_revisions
   - maxlength:maxlength
 config_devel:
   install:
@@ -25,6 +26,7 @@ config_devel:
     - field.field.node.page.field_page_show_rating
     - field.field.node.page.field_page_show_related
     - field.field.node.page.field_page_show_social
+    - field.field.node.page.field_related_links
     - field.field.node.page.field_topic
     - field.storage.node.field_page_feature_image
     - field.storage.node.field_page_intro_text

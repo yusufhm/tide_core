@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: card_event
-label: Card Event
+label: 'Card Event'
 icon_uuid: null
 description: ''
 behavior_plugins: {  }

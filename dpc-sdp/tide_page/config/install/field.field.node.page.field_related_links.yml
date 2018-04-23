@@ -2,19 +2,18 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_landing_page_content
-    - node.type.landing_page
-    - paragraphs.paragraphs_type.card_event
-    - paragraphs.paragraphs_type.card_promotion
+    - field.storage.node.field_related_links
+    - node.type.page
+    - paragraphs.paragraphs_type.related_links
   module:
     - entity_reference_revisions
-id: node.landing_page.field_landing_page_content
-field_name: field_landing_page_content
+id: node.page.field_related_links
+field_name: field_related_links
 entity_type: node
-bundle: landing_page
-label: 'Content components'
-description: ''
-required: true
+bundle: page
+label: 'Related links'
+description: 'Add links related to the content of this page.'
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
@@ -23,25 +22,24 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      card_event: card_event
-      card_promotion: card_promotion
+      related_links: related_links
     target_bundles_drag_drop:
       banner:
         weight: 7
         enabled: false
       card_event:
-        enabled: true
         weight: 8
+        enabled: false
       card_promotion:
-        enabled: true
-        weight: 9
-      key_journeys:
         weight: 9
         enabled: false
-      popular_links:
+      key_journeys:
         weight: 10
         enabled: false
-      related_links:
+      popular_links:
         weight: 11
         enabled: false
+      related_links:
+        enabled: true
+        weight: 12
 field_type: entity_reference_revisions
