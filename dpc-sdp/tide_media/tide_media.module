@@ -5,6 +5,7 @@
  * Tide Media module functionality.
  */
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\ViewExecutable;
 
 /**
@@ -31,5 +32,22 @@ function tide_media_views_pre_view(ViewExecutable $view, $display_id, array &$ar
       'type' => 'select',
     ];
     $view->addHandler('media_page_list', 'filter', 'media__field_media_license', 'field_media_license_value', $expose_array);
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function tide_media_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Hide the "Embedded with Transcript" view mode from non-audio embed.
+  if ($form_id == 'entity_embed_dialog') {
+    $entity_browser = $form_state->getValue('entity_browser');
+    if (!empty($entity_browser['entities'])) {
+      /** @var \Drupal\media\Entity\Media $entity */
+      $entity = reset($entity_browser['entities']);
+      if ($entity && $entity->bundle() != 'audio') {
+        unset($form['attributes']['data-entity-embed-display']['#options']['view_mode:media.embedded_with_transcript']);
+      }
+    }
   }
 }

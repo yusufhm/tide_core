@@ -80,7 +80,7 @@ Feature: Fields for different Media types
     And I should see "Topic" in the "label[for=edit-field-media-topic-0-target-id]" element
     And I should not see an "label[for=edit-field-media-topic-0-target-id].required" element
     And I should see an "input#edit-field-media-topic-0-target-id" element
-    
+
   @api
   Scenario: The Video media type has the expected fields (and labels where we can use them).
     Given I am logged in as a user with the "create media" permission
@@ -174,4 +174,47 @@ Feature: Fields for different Media types
     And I should see "Topic" in the "label[for=edit-field-media-topic-0-target-id]" element
     And I should not see an "label[for=edit-field-media-topic-0-target-id].required" element
     And I should see an "input#edit-field-media-topic-0-target-id" element
-    
+
+  @api
+  Scenario: The Embedded Video media type has the expected fields (and labels where we can use them).
+    Given I am logged in as a user with the "create media" permission
+    When I visit "media/add/embedded_video"
+    Then I see field "Name"
+    And I should see an "input#edit-name-0-value.required" element
+
+    Then I see field "Video URL"
+    And I should see an "input#edit-field-media-video-embed-field-0-value.required" element
+
+    And I should see "Length" in the "label[for=edit-field-media-length-0-value]" element
+    And I should not see an "label[for=edit-field-media-length-0-value].form-required" element
+    And I should see an "input#edit-field-media-length-0-value" element
+
+    And I should see "Summary" in the "label[for=edit-field-media-summary-0-value]" element
+    And I should not see an "label[for=edit-field-media-summary-0-value].form-required" element
+    And I should see an "textarea#edit-field-media-summary-0-value" element
+
+    And I should see "Transcript" in the "label[for=edit-field-media-transcript-0-value]" element
+    And I should not see an "label[for=edit-field-media-transcript-0-value].form-required" element
+    And I should see an "textarea#edit-field-media-transcript-0-value" element
+
+    And I should see "License" in the "label[for=edit-field-media-license]" element
+    And I should see an "label[for=edit-field-media-license].form-required" element
+    And I should see an "select#edit-field-media-license" element
+
+    And I should see "Restricted" in the "label[for=edit-field-media-restricted-value]" element
+    And I should not see an "label[for=edit-field-media-restricted-value].required" element
+    And I should see an "input#edit-field-media-restricted-value" element
+
+    And I should see text matching "Metadata"
+
+    And I should see "Audience" in the "label[for=edit-field-media-audience-0-target-id]" element
+    And I should not see an "label[for=edit-field-media-audience-0-target-id].required" element
+    And I should see an "input#edit-field-media-audience-0-target-id" element
+
+    And I should see "Department" in the "label[for=edit-field-media-department-0-target-id]" element
+    And I should not see an "label[for=edit-field-media-department-0-target-id].required" element
+    And I should see an "input#edit-field-media-department-0-target-id" element
+
+    And I should see "Topic" in the "label[for=edit-field-media-topic-0-target-id]" element
+    And I should not see an "label[for=edit-field-media-topic-0-target-id].required" element
+    And I should see an "input#edit-field-media-topic-0-target-id" element

@@ -3,7 +3,7 @@ status: true
 dependencies: {  }
 id: video
 label: Video
-description: 'Use local and embedded videos for reusable media.'
+description: 'Use local videos for reusable media.'
 source: video_file
 queue_thumbnail_downloads: false
 new_revision: false
