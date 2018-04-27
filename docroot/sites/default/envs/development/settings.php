@@ -8,8 +8,8 @@
 $settings['environment'] = 'development';
 
 // Shield config.
-$config['shield.settings']['user'] = 'dpc';
-$config['shield.settings']['pass'] = 'sdp';
+$config['shield.settings']['credentials']['shield']['user'] = 'dpc';
+$config['shield.settings']['credentials']['shield']['pass'] = 'sdp';
 
 $config['config_split.config_split.dev']['status'] = TRUE;
 

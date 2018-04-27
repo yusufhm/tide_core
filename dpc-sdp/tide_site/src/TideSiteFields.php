@@ -200,7 +200,7 @@ class TideSiteFields {
   /**
    * Helper to convert field name to machine name.
    */
-  protected static function normaliseFieldName($field_name, $entity_type_id = '', $bundle = '') {
+  public static function normaliseFieldName($field_name, $entity_type_id = '', $bundle = '') {
     $field_name = str_replace('ENTITY_TYPE', $entity_type_id, $field_name);
     $field_name = str_replace('BUNDLE', $bundle, $field_name);
     $field_name = str_replace('__', '_', $field_name);

@@ -25,8 +25,9 @@ dependencies:
   - drupal:text
   - drupal:user
   - drupal:workflows
-  - events_log_track:event_log_track
   - editor_advanced_link:editor_advanced_link
+  - entity_reference_revisions:entity_reference_revisions
+  - events_log_track:event_log_track
   - fakeobjects:fakeobjects
   - fast_404:fast404
   - linkit:linkit
@@ -34,6 +35,9 @@ dependencies:
   - maxlength:maxlength
   - media_entity_audio:media_entity_audio
   - override_node_options:override_node_options
+  - paragraphs:paragraphs
+  - password_policy:password_policy
+  - password_strength:password_strength
   - redirect:redirect
   - simple_sitemap:simple_sitemap
   - seckit:seckit
@@ -45,3 +49,14 @@ dependencies:
   - viewsreference:viewsreference
   - wysiwyg_template:wysiwyg_template
   - wysiwyg_template:wysiwyg_template_core
+config_devel:
+  install:
+    - core.entity_form_display.paragraph.related_links.default
+    - core.entity_view_display.paragraph.related_links.default
+    - field.field.paragraph.related_links.field_paragraph_link
+    - field.field.paragraph.related_links.field_paragraph_summary
+    - field.storage.node.field_related_links
+    - field.storage.paragraph.field_paragraph_summary
+    - field.storage.paragraph.field_paragraph_link
+    - field.storage.node.field_related_links
+    - paragraphs.paragraphs_type.related_links

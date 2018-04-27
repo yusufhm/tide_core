@@ -25,9 +25,11 @@ services:
     volumes:
       - .:/app:delegated
   selenium:
-    image: selenium/standalone-chrome
-    depends_on:
-      - cli
+    build:
+      context: .
+      dockerfile: Dockerfile.selenium
+    volumes:
+      - ./tests/test_data:/app/tests/test_data:delegated
   mariadb:
     ports:
       - 13306:3306

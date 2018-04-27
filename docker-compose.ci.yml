@@ -16,6 +16,6 @@ services:
     volumes:
       - .:/app/docroot/sites/default/files
   selenium:
-    image: selenium/standalone-chrome
-    depends_on:
-      - cli
+    build:
+      context: .
+      dockerfile: Dockerfile.selenium

@@ -8,9 +8,11 @@ dependencies:
     - field.field.node.page.field_page_show_rating
     - field.field.node.page.field_page_show_related
     - field.field.node.page.field_page_show_social
+    - field.field.node.page.field_related_links
     - field.field.node.page.field_topic
     - node.type.page
   module:
+    - entity_reference_revisions
     - text
     - user
 id: node.page.default
@@ -69,6 +71,15 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_related_links:
+    weight: 9
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
     region: content
   field_topic:
     type: entity_reference_label

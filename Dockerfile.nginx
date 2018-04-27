@@ -1,11 +1,11 @@
 ARG CLI_IMAGE
 FROM ${CLI_IMAGE:-builder} as builder
 
-FROM amazeeio/nginx-drupal
+FROM quay.io/dpc_sdp/nginx
 
 ENV WEBROOT=docroot
 
-COPY .bay/drupal.conf /etc/nginx/conf.d/app.conf
+COPY .bay/global_redirects.conf /etc/nginx/helpers/global_redirects.conf
 RUN fix-permissions /etc/nginx
 
 COPY --from=builder /app /app

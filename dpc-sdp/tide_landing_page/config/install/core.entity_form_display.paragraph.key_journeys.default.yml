@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.key_journeys.field_paragraph_cta
+    - field.field.paragraph.key_journeys.field_paragraph_link
+    - paragraphs.paragraphs_type.key_journeys
+  module:
+    - link
+id: paragraph.key_journeys.default
+targetEntityType: paragraph
+bundle: key_journeys
+mode: default
+content:
+  field_paragraph_cta:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_paragraph_link:
+    weight: 0
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  moderation_state: true
+  status: true
+  uid: true

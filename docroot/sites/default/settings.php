@@ -15,8 +15,8 @@ $settings['trusted_host_patterns'] = [
 ];
 
 // Shield config.
-$config['shield.settings']['user'] = 'dpc';
-$config['shield.settings']['pass'] = 'sdp';
+$config['shield.settings']['credentials']['shield']['user'] = 'dpc';
+$config['shield.settings']['credentials']['shield']['pass'] = 'sdp';
 
 // Stage file proxy
 $config['stage_file_proxy.settings']['origin'] = 'http://dpc:sdp@nginx-php-content-vic-production.lagoon.vicsdp.amazee.io';
@@ -32,9 +32,11 @@ if (file_exists('/bay')) {
 }
 
 // Include local settings and services files.
-if (file_exists('settings.local.php')) {
-  include 'settings.local.php';
+// Those files should be located outside of `docroot` instead of `sites/default`
+// because `composer app:rebuild` removes them.
+if (file_exists(dirname(DRUPAL_ROOT) . '/local/settings.local.php')) {
+  include dirname(DRUPAL_ROOT) . '/local/settings.local.php';
 }
-if (file_exists('services.local.yml')) {
-  $settings['container_yamls'][] = 'services.local.yml';
+if (file_exists(dirname(DRUPAL_ROOT) . '/local/services.local.yml')) {
+  $settings['container_yamls'][] = dirname(DRUPAL_ROOT) . '/local/services.local.yml';
 }

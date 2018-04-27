@@ -5,6 +5,7 @@ jobs:
       - image: 8thom/circle-dpc
         environment:
           COMPOSER_ALLOW_SUPERUSER: 1
+          COMPOSE_PATH_SEPARATOR: ":"
           COMPOSE_FILE: docker-compose.yml:docker-compose.ci.yml
     working_directory: /app
     steps:
@@ -22,6 +23,7 @@ jobs:
           command: |
             composer bay:start
             sleep 10 # wait for mariadb to startup
+            docker ps -a
       - run:
           name: Setup app.
           command: |
@@ -38,13 +40,12 @@ jobs:
           command: composer bay:cli -- vendor/bin/phpunit
       - run:
           name: Run behat tests.
+          command: composer bay:cli -- vendor/bin/behat --format=progress_fail --colors || composer bay:cli -- vendor/bin/behat --format=progress_fail --colors --rerun
+      - run:
+          name: Copy artifacts.
           command: |
             mkdir -p /tmp/artifacts/behat
-            if [ "$CIRCLE_NODE_TOTAL" -gt "1" ] ; then
-              composer bay:cli -- vendor/bin/behat --format=progress_fail --colors --profile=p$CIRCLE_NODE_INDEX || composer bay:cli -- vendor/bin/behat --format=progress_fail --colors --profile=p$CIRCLE_NODE_INDEX --rerun
-            else
-              composer bay:cli -- vendor/bin/behat --format=progress_fail --colors || composer bay:cli -- vendor/bin/behat --format=progress_fail --colors --rerun
-            fi
             docker cp $(docker-compose ps -q cli):/app/screenshots /tmp/artifacts/behat
+          when: always
       - store_artifacts:
           path: /tmp/artifacts

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: key_journeys
+label: 'Key journeys'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

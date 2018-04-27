@@ -31,6 +31,3 @@ config_devel:
     - field.storage.node.field_node_site
     - field.storage.node.field_node_primary_site
     - taxonomy.vocabulary.sites
-
-  optional:
-    - jsonapi_extras.jsonapi_resource_config.taxonomy_term--sites
