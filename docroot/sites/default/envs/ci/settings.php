@@ -8,5 +8,5 @@
 $settings['environment'] = 'ci';
 
 // Disable shield config.
-$config['shield.settings']['user'] = '';
-$config['shield.settings']['pass'] = '';
+$config['shield.settings']['credentials']['shield']['user'] = '';
+$config['shield.settings']['credentials']['shield']['pass'] = '';

@@ -21,8 +21,8 @@ $config['system.performance']['css']['preprocess'] = 0;
 $config['system.performance']['js']['preprocess'] = 0;
 
 // Disable Shield.
-$config['shield.settings']['user'] = '';
-$config['shield.settings']['pass'] = '';
+$config['shield.settings']['credentials']['shield']['user'] = '';
+$config['shield.settings']['credentials']['shield']['pass'] = '';
 
 // Enable local split.
 $config['config_split.config_split.local']['status'] = TRUE;

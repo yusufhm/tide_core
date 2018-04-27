@@ -15,8 +15,8 @@ $settings['trusted_host_patterns'] = [
 ];
 
 // Shield config.
-$config['shield.settings']['user'] = 'dpc';
-$config['shield.settings']['pass'] = 'sdp';
+$config['shield.settings']['credentials']['shield']['user'] = 'dpc';
+$config['shield.settings']['credentials']['shield']['pass'] = 'sdp';
 
 // Stage file proxy
 $config['stage_file_proxy.settings']['origin'] = 'http://dpc:sdp@nginx-php-content-vic-production.lagoon.vicsdp.amazee.io';

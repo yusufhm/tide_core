@@ -23,8 +23,8 @@ $config['system.performance']['js']['preprocess'] = 1;
 $config['stage_file_proxy.settings']['origin'] = FALSE;
 
 // Shield config.
-$config['shield.settings']['user'] = 'dpc';
-$config['shield.settings']['pass'] = 'sdp';
+$config['shield.settings']['credentials']['shield']['user'] = 'dpc';
+$config['shield.settings']['credentials']['shield']['pass'] = 'sdp';
 
 $config['config_split.config_split.stage']['status'] = TRUE;
 
