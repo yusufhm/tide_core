@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.page.field_page_show_social
     - field.field.node.page.field_related_links
     - field.field.node.page.field_topic
+    - field.field.node.page.field_whats_next
     - node.type.page
   module:
     - entity_reference_revisions
@@ -89,8 +90,18 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+  field_whats_next:
+    type: entity_reference_revisions_entity_view
+    weight: 10
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
   links:
     weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
+hidden: { }
