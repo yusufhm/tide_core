@@ -24,6 +24,9 @@ $config['stage_file_proxy.settings']['origin'] = 'http://dpc:sdp@nginx-php-conte
 // Installation profile.
 $settings['install_profile'] = 'tide';
 
+// Private file system.
+$settings['file_private_path'] = 'sites/default/files/private';
+
 // Include Bay settings.
 // Please note, that a lot of configuration is provided in Bay settings by
 // default. To override this configuration, use per-environment settings files.
