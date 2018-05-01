@@ -1173,7 +1173,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_api",
-                "reference": "7b16f224b4c1cbddc71b4eb84ede6f0ad7f3a59a",
+                "reference": "297d773df225cd6550c21a53e6f03d256c94a571",
                 "shasum": null
             },
             "require": {
@@ -1182,6 +1182,18 @@
                 "drupal/schemata": "1.0-alpha2"
             },
             "type": "drupal-module",
+            "extra": {
+                "enable-patching": true,
+                "composer-exit-on-patch-failure": true,
+                "patches": {
+                    "drupal/core": {
+                        "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
+                    },
+                    "drupal/jsonapi": {
+                        "Menu content is not accessible via jsonapi": "patches/jsonapi/jsonapi_menu_403_fix.patch"
+                    }
+                }
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -1911,7 +1923,7 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.1",
+                    "version": "8.x-1.2",
                     "datestamp": "1522943885",
                     "security-coverage": {
                         "status": "covered",
@@ -2289,6 +2301,7 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
+                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch",
                     "Contextual links should not be added inside another link - https://www.drupal.org/node/2898875": "https://www.drupal.org/files/issues/2018-03-16/contextual_links_should-2898875-6.patch",
                     "No validation on text length for menu description when editing node - https://www.drupal.org/node/2852665#comment-12157856": "https://www.drupal.org/files/issues/fatal_error_remove_menu_add_with_tests-2852665-12.patch",
                     "active-link.js throws JS error if query string parameter contains a single quote - https://www.drupal.org/node/2902769": "https://www.drupal.org/files/issues/active_link_js_throws-2902769-5_0.patch",
@@ -3255,11 +3268,17 @@
         },
         {
             "name": "drupal/jsonapi",
-            "version": "dev-1.x",
+            "version": "1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/jsonapi",
-                "reference": "ca8b91644b14c2c07c6efa86f6af4515872ae8e9"
+                "reference": "8.x-1.16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-1.16.zip",
+                "reference": "8.x-1.16",
+                "shasum": "2750ba9c137ef87da10089bc100d6f88d8ac4342"
             },
             "require": {
                 "drupal/core": "^8.4.3"
@@ -3275,12 +3294,16 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.16+0-dev",
-                    "datestamp": "1524676980",
+                    "version": "8.x-1.16",
+                    "datestamp": "1524692053",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                     "Maxlength only for summary field - https://www.drupal.org/project/maxlength/issues/2798903": "https://www.drupal.org/files/issues/maxlength-limit_only_summary-2798903-2.patch",
+                     "Menu content is not accessible via jsonapi": "patches/jsonapi/jsonapi_menu_403_fix.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
