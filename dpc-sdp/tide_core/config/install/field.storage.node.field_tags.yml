@@ -4,15 +4,15 @@ dependencies:
   module:
     - node
     - taxonomy
-id: node.field_topic
-field_name: field_topic
+id: node.field_tags
+field_name: field_tags
 entity_type: node
 type: entity_reference
 settings:
   target_type: taxonomy_term
 module: core
 locked: false
-cardinality: 1
+cardinality: 3
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

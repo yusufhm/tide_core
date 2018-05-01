@@ -57,6 +57,14 @@ Feature: Fields for Landing Page content type
     And I should see an "input#field-landing-page-content-card-event-add-more" element
     And I should see an "input#field-landing-page-content-card-promotion-add-more" element
 
+    And I see field "Tags"
+    And I should see an "input#edit-field-tags-0-target-id" element
+    And I should not see an "input#edit-field-tags-0-target-id.required" element
+
+    And I see field "Topic"
+    And I should see an "input#edit-field-topic-0-target-id" element
+    And I should see an "input#edit-field-topic-0-target-id.required" element
+
   @api
   Scenario: The content type has the menu settings.
     Given I am logged in as a user with the "create landing_page content, administer menu" permission

@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.page.field_page_show_related
     - field.field.node.page.field_page_show_social
     - field.field.node.page.field_related_links
+    - field.field.node.page.field_tags
     - field.field.node.page.field_topic
     - field.field.node.page.field_whats_next
     - node.type.page
@@ -96,6 +97,15 @@ content:
       default_paragraph_type: related_links
     third_party_settings: {  }
     type: paragraphs
+    region: content
+  field_tags:
+    weight: 109
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_topic:
     type: entity_reference_autocomplete

@@ -42,6 +42,8 @@ config_devel:
     - field.field.node.landing_page.field_landing_page_show_social
     - field.field.node.landing_page.field_popular_links
     - field.field.node.landing_page.field_related_links
+    - field.field.node.landing_page.field_tags
+    - field.field.node.landing_page.field_topic
     - field.field.paragraph.banner.field_paragraph_cta
     - field.field.paragraph.banner.field_paragraph_summary
     - field.field.paragraph.banner.field_paragraph_title
