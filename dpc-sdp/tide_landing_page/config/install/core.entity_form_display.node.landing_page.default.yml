@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_key_cta
     - field.field.node.landing_page.field_landing_page_key_link
-    - field.field.node.landing_page.field_landing_page_show_rating
     - field.field.node.landing_page.field_landing_page_show_social
     - field.field.node.landing_page.field_related_links
     - field.field.node.landing_page.field_tags
@@ -110,7 +109,6 @@ third_party_settings:
       region: content
     group_blocks:
       children:
-        - field_landing_page_show_rating
         - field_landing_page_show_social
       parent_name: group_right_column
       weight: 23
@@ -214,13 +212,6 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
-    region: content
-  field_landing_page_show_rating:
-    weight: 21
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
     region: content
   field_landing_page_show_social:
     weight: 22

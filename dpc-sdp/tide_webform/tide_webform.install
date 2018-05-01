@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Install file for tide_webform.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function tide_webform_install() {
+  // Retroactively create fields on existing entities.
+  $info = \Drupal::service('entity_type.bundle.info')->getAllBundleInfo();
+  foreach ($info as $type => $bundles) {
+    foreach (array_keys($bundles) as $bundle) {
+      if ($type == 'node') {
+        tide_webform_entity_bundle_create($type, $bundle);
+      }
+    }
+  }
+}

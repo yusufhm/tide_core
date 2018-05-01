@@ -10,10 +10,6 @@ Feature: Fields for Landing Page content type
     Then I see field "Title"
     And I should see an "input#edit-title-0-value.required" element
 
-    And I see field "Show Content Rating?"
-    And I should see an "input#edit-field-landing-page-show-rating-value" element
-    And I should not see an "input#edit-field-landing-page-show-rating-value.required" element
-
     And I see field "Show Social Sharing?"
     And I should see an "input#edit-field-landing-page-show-social-value" element
     And I should not see an "input#edit-field-landing-page-show-social-value.required" element

@@ -50,20 +50,9 @@ Feature: Route lookup
     And the JSON node "data.endpoint" should contain "api/v1/node/test/"
     And the JSON node "errors" should not exist
 
-    # A published node is unpublished, and anonymous users no longer have access to it.
-    # An unpublished node is published, and anonymous user can view it.
-    When I am logged in as a user with the Approver role
-    And I edit test "[TEST] Published article"
-    Then the response status code should be 200
-    And I select "Archived" from "Change to"
-    And I press "Save"
+    Then the moderation state of test "[TEST] Published article" changes from "published" to "archived"
+    And the moderation state of test "[TEST] Draft article" changes from "draft" to "published"
 
-    And I edit test "[TEST] Draft article"
-    Then the response status code should be 200
-    And I select "Published" from "Change to"
-    And I press "Save"
-
-    When I am an anonymous user
     Then I send a GET request to "api/v1/route?path=/test-api-published-article"
     Then the rest response status code should be 403
     And the JSON node "errors" should exist

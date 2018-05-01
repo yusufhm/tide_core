@@ -49,6 +49,7 @@ function vicgovau_core_install_module($module) {
     throw new \Exception(sprintf('Unable to install module %s', $module));
   }
 
+  /** @var \Drupal\Core\Extension\ModuleHandler $moduleHandler */
   $moduleHandler = \Drupal::service('module_handler');
   if (!$moduleHandler->moduleExists($module)) {
     throw new \Exception(sprintf('Unable to validate install for module %s', $module));
@@ -93,7 +94,7 @@ function vicgovau_core_create_demo_users() {
 /**
  * Creates sites and sections. Also creates demo users.
  */
-function vicgovau_core_update_8000() {
+function vicgovau_core_update_8001() {
   $sites = [
     'vic.gov.au' => [
       'section1',

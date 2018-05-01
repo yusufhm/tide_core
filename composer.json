@@ -105,6 +105,10 @@
             "type": "path",
             "url": "dpc-sdp/tide_test"
         },
+        "dpc-sdp/tide_webform": {
+            "type": "path",
+            "url": "dpc-sdp/tide_webform"
+        },
         "library/dropzone": {
             "type": "package",
             "package": {

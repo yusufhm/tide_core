@@ -29,10 +29,6 @@ Feature: Fields for Page content type
     And I should see an "textarea#edit-field-page-intro-text-0-value" element
     And I should not see an "textarea#edit-field-page-intro-text-0-value.required" element
 
-    And I see field "Show Content Rating?"
-    And I should see an "input#edit-field-page-show-rating-value" element
-    And I should not see an "input#edit-field-page-show-rating-value.required" element
-
     And I see field "Show Social Sharing?"
     And I should see an "input#edit-field-page-show-social-value" element
     And I should not see an "input#edit-field-page-show-social-value.required" element

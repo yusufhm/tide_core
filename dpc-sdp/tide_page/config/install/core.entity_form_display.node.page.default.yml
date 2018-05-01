@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_page_feature_image
     - field.field.node.page.field_page_intro_text
-    - field.field.node.page.field_page_show_rating
     - field.field.node.page.field_page_show_related
     - field.field.node.page.field_page_show_social
     - field.field.node.page.field_related_links
@@ -62,13 +61,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
-    region: content
-  field_page_show_rating:
-    weight: 5
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
     region: content
   field_page_show_related:
     weight: 7

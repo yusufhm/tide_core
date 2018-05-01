@@ -23,7 +23,6 @@ config_devel:
     - field.field.node.page.body
     - field.field.node.page.field_page_feature_image
     - field.field.node.page.field_page_intro_text
-    - field.field.node.page.field_page_show_rating
     - field.field.node.page.field_whats_next
     - field.field.node.page.field_page_show_related
     - field.field.node.page.field_page_show_social
@@ -32,6 +31,5 @@ config_devel:
     - field.field.node.page.field_topic
     - field.storage.node.field_page_feature_image
     - field.storage.node.field_page_intro_text
-    - field.storage.node.field_page_show_rating
     - field.storage.node.field_page_show_related
     - field.storage.node.field_page_show_social

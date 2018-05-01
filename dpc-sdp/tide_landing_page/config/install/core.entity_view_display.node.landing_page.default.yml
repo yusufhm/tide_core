@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_key_cta
     - field.field.node.landing_page.field_landing_page_key_link
-    - field.field.node.landing_page.field_landing_page_show_rating
     - field.field.node.landing_page.field_landing_page_show_social
     - field.field.node.landing_page.field_related_links
     - field.field.node.landing_page.field_tags
@@ -83,16 +82,6 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-    region: content
-  field_landing_page_show_rating:
-    weight: 5
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
     region: content
   field_landing_page_show_social:
     weight: 6
