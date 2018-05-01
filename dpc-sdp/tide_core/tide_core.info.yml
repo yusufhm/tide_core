@@ -66,3 +66,5 @@ config_devel:
     - paragraphs.paragraphs_type.related_links
     - paragraphs.paragraphs_type.links
     - field.storage.node.field_whats_next
+    - taxonomy.vocabulary.topic
+    - taxonomy.vocabulary.tags
