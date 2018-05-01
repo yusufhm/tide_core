@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.page.field_page_show_related
     - field.field.node.page.field_page_show_social
     - field.field.node.page.field_related_links
+    - field.field.node.page.field_show_whats_next
     - field.field.node.page.field_tags
     - field.field.node.page.field_topic
     - field.field.node.page.field_whats_next
@@ -72,6 +73,15 @@ content:
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
     region: content
+  field_show_whats_next:
+    weight: 11
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_tags:
     weight: 11
     label: above
