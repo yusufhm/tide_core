@@ -40,12 +40,6 @@ Feature: Fields for Landing Page content type
     And I should see an "input#edit-field-landing-page-key-cta-0-title" element
     And I should not see an "input#edit-field-landing-page-key-cta-0-title.required" element
 
-    And I should see text matching "Popular links"
-    And I should see an "input#edit-field-popular-links-0-subform-field-paragraph-link-0-uri" element
-    And I should not see an "input#edit-field-popular-links-0-subform-field-paragraph-link-0-uri.required" element
-    And I should see an "input#edit-field-popular-links-0-subform-field-paragraph-link-0-title" element
-    And I should not see an "input#edit-field-popular-links-0-subform-field-paragraph-link-0-title.required" element
-
     And I should see text matching "Related links"
     And I should see an "input#edit-field-related-links-0-subform-field-paragraph-link-0-uri" element
     And I should not see an "input#edit-field-related-links-0-subform-field-paragraph-link-0-uri.required" element
