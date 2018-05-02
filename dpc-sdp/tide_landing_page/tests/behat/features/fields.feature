@@ -43,9 +43,10 @@ Feature: Fields for Landing Page content type
     And I should not see an "input#edit-field-related-links-0-subform-field-paragraph-link-0-title.required" element
 
     And I should see text matching "Content components"
-    And I should see text matching "No Banner added yet."
-    And I should see an "input#field-landing-page-content-card-event-add-more" element
-    And I should see an "input#field-landing-page-content-card-promotion-add-more" element
+    And I should see text matching "No Component added yet."
+    And I should see "Basic Text" in the "select[name='field_landing_page_content[add_more][add_more_select]']" element
+    And I should see "Card Event" in the "select[name='field_landing_page_content[add_more][add_more_select]']" element
+    And I should see "Card Promotion" in the "select[name='field_landing_page_content[add_more][add_more_select]']" element
 
     And I see field "Tags"
     And I should see an "input#edit-field-tags-0-target-id" element
