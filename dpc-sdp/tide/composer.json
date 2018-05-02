@@ -12,6 +12,7 @@
         "dpc-sdp/tide_page": "0.0.1",
         "dpc-sdp/tide_site": "^0.0.1",
         "dpc-sdp/tide_test": "^0.0.1",
+        "dpc-sdp/tide_webform": "^0.0.1",
         "drupal/core": "8.5.3"
     },
     "repositories": {

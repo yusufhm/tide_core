@@ -2,16 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_popular_links
-    - node.type.landing_page
-    - paragraphs.paragraphs_type.popular_links
+    - field.storage.node.field_whats_next
+    - node.type.page
+    - paragraphs.paragraphs_type.links
   module:
     - entity_reference_revisions
-id: node.landing_page.field_popular_links
-field_name: field_popular_links
+id: node.page.field_whats_next
+field_name: field_whats_next
 entity_type: node
-bundle: landing_page
-label: 'Popular links'
+bundle: page
+label: 'What''s Next'
 description: ''
 required: false
 translatable: false
@@ -22,21 +22,27 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      popular_links: popular_links
+      links: links
     target_bundles_drag_drop:
       banner:
-        weight: 6
-        enabled: false
-      key_journeys:
         weight: 7
         enabled: false
-      popular_links:
+      links:
         enabled: true
         weight: 8
-      related_links:
+      card_event:
+        weight: 8
+        enabled: false
+      card_promotion:
         weight: 9
         enabled: false
-      text:
+      key_journeys:
         weight: 10
+        enabled: false
+      popular_links:
+        weight: 11
+        enabled: false
+      related_links:
+        weight: 12
         enabled: false
 field_type: entity_reference_revisions

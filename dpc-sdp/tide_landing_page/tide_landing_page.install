@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Tide Landing Page install.
+ */
+
+use Drupal\workflows\Entity\Workflow;
+
+/**
+ * Implements hook_install().
+ */
+function tide_landing_page_install() {
+  // Enable Editorial workflow if workflow module is enabled.
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('workflows')) {
+    $editorial_workflow = Workflow::load('editorial');
+    if ($editorial_workflow) {
+      $editorial_workflow->getTypePlugin()->addEntityTypeAndBundle('node', 'landing_page');
+      $editorial_workflow->save();
+    }
+  }
+}

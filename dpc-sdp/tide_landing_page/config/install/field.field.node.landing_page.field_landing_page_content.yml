@@ -38,9 +38,6 @@ settings:
       key_journeys:
         weight: 9
         enabled: false
-      popular_links:
-        weight: 10
-        enabled: false
       related_links:
         weight: 11
         enabled: false

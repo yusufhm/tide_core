@@ -10,10 +10,6 @@ Feature: Fields for Landing Page content type
     Then I see field "Title"
     And I should see an "input#edit-title-0-value.required" element
 
-    And I see field "Show Content Rating?"
-    And I should see an "input#edit-field-landing-page-show-rating-value" element
-    And I should not see an "input#edit-field-landing-page-show-rating-value.required" element
-
     And I see field "Show Social Sharing?"
     And I should see an "input#edit-field-landing-page-show-social-value" element
     And I should not see an "input#edit-field-landing-page-show-social-value.required" element
@@ -40,12 +36,6 @@ Feature: Fields for Landing Page content type
     And I should see an "input#edit-field-landing-page-key-cta-0-title" element
     And I should not see an "input#edit-field-landing-page-key-cta-0-title.required" element
 
-    And I should see text matching "Popular links"
-    And I should see an "input#edit-field-popular-links-0-subform-field-paragraph-link-0-uri" element
-    And I should not see an "input#edit-field-popular-links-0-subform-field-paragraph-link-0-uri.required" element
-    And I should see an "input#edit-field-popular-links-0-subform-field-paragraph-link-0-title" element
-    And I should not see an "input#edit-field-popular-links-0-subform-field-paragraph-link-0-title.required" element
-
     And I should see text matching "Related links"
     And I should see an "input#edit-field-related-links-0-subform-field-paragraph-link-0-uri" element
     And I should not see an "input#edit-field-related-links-0-subform-field-paragraph-link-0-uri.required" element
@@ -56,6 +46,14 @@ Feature: Fields for Landing Page content type
     And I should see text matching "No Banner added yet."
     And I should see an "input#field-landing-page-content-card-event-add-more" element
     And I should see an "input#field-landing-page-content-card-promotion-add-more" element
+
+    And I see field "Tags"
+    And I should see an "input#edit-field-tags-0-target-id" element
+    And I should not see an "input#edit-field-tags-0-target-id.required" element
+
+    And I see field "Topic"
+    And I should see an "input#edit-field-topic-0-target-id" element
+    And I should see an "input#edit-field-topic-0-target-id.required" element
 
   @api
   Scenario: The content type has the menu settings.

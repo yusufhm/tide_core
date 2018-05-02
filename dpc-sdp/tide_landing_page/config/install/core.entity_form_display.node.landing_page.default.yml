@@ -8,10 +8,10 @@ dependencies:
     - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_key_cta
     - field.field.node.landing_page.field_landing_page_key_link
-    - field.field.node.landing_page.field_landing_page_show_rating
     - field.field.node.landing_page.field_landing_page_show_social
-    - field.field.node.landing_page.field_popular_links
     - field.field.node.landing_page.field_related_links
+    - field.field.node.landing_page.field_tags
+    - field.field.node.landing_page.field_topic
     - node.type.landing_page
   module:
     - content_moderation
@@ -39,7 +39,6 @@ third_party_settings:
       region: content
     group_right_column:
       children:
-        - group_popular
         - group_related_links
         - group_blocks
       parent_name: ''
@@ -110,7 +109,6 @@ third_party_settings:
       region: content
     group_blocks:
       children:
-        - field_landing_page_show_rating
         - field_landing_page_show_social
       parent_name: group_right_column
       weight: 23
@@ -123,20 +121,6 @@ third_party_settings:
         id: ''
         classes: ''
       label: Other
-      region: content
-    group_popular:
-      children:
-        - field_popular_links
-      parent_name: group_right_column
-      weight: 21
-      format_type: tab
-      format_settings:
-        id: ''
-        classes: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-      label: 'Popular links'
       region: content
     group_related_links:
       children:
@@ -229,33 +213,12 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
-  field_landing_page_show_rating:
-    weight: 21
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   field_landing_page_show_social:
     weight: 22
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
-    region: content
-  field_popular_links:
-    type: paragraphs
-    weight: 22
-    settings:
-      title: Link
-      title_plural: Links
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-      closed_mode: summary
-      autocollapse: none
-    third_party_settings: {  }
     region: content
   field_related_links:
     type: paragraphs
@@ -270,6 +233,24 @@ content:
       closed_mode: summary
       autocollapse: none
     third_party_settings: {  }
+    region: content
+  field_tags:
+    weight: 30
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_topic:
+    weight: 29
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   moderation_state:
     type: moderation_state_default

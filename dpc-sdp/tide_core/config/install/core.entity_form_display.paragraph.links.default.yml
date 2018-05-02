@@ -2,14 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.popular_links.field_paragraph_link
-    - paragraphs.paragraphs_type.popular_links
+    - field.field.paragraph.links.field_paragraph_link
+    - field.field.paragraph.links.field_paragraph_summary
+    - paragraphs.paragraphs_type.links
   module:
     - content_moderation
     - link
-id: paragraph.popular_links.default
+    - text
+id: paragraph.links.default
 targetEntityType: paragraph
-bundle: popular_links
+bundle: links
 mode: default
 content:
   field_paragraph_link:
@@ -19,6 +21,14 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
+  field_paragraph_summary:
+    weight: 102
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
     region: content
   moderation_state:
     type: moderation_state_default

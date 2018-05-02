@@ -3,13 +3,13 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_paragraph_link
-    - paragraphs.paragraphs_type.popular_links
+    - paragraphs.paragraphs_type.links
   module:
     - link
-id: paragraph.popular_links.field_paragraph_link
+id: paragraph.links.field_paragraph_link
 field_name: field_paragraph_link
 entity_type: paragraph
-bundle: popular_links
+bundle: links
 label: Link
 description: ''
 required: false
@@ -18,5 +18,5 @@ default_value: {  }
 default_value_callback: ''
 settings:
   link_type: 17
-  title: 2
+  title: 1
 field_type: link

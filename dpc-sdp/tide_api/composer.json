@@ -10,5 +10,17 @@
         "drupal/jsonapi": "^1.15",
         "drupal/jsonapi_extras": "2.0-rc1",
         "drupal/schemata": "1.0-alpha2"
+    },
+    "extra": {
+        "enable-patching": true,
+        "composer-exit-on-patch-failure": true,
+        "patches": {
+            "drupal/core": {
+                "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
+            },
+            "drupal/jsonapi": {
+                "Menu content is not accessible via jsonapi": "patches/jsonapi/jsonapi_menu_403_fix.patch"
+            }
+        }
     }
 }

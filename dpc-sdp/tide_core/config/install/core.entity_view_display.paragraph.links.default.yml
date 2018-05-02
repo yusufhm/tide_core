@@ -2,13 +2,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.popular_links.field_paragraph_link
-    - paragraphs.paragraphs_type.popular_links
+    - field.field.paragraph.links.field_paragraph_link
+    - field.field.paragraph.links.field_paragraph_summary
+    - paragraphs.paragraphs_type.links
   module:
     - link
-id: paragraph.popular_links.default
+    - text
+id: paragraph.links.default
 targetEntityType: paragraph
-bundle: popular_links
+bundle: links
 mode: default
 content:
   field_paragraph_link:
@@ -22,5 +24,12 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
+    region: content
+  field_paragraph_summary:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
 hidden: {  }

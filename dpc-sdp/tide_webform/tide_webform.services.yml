@@ -1,0 +1,4 @@
+services:
+  tide_webform.fields:
+    class: Drupal\tide_webform\TideWebformFields
+    arguments: ['@entity_type.manager']

@@ -256,4 +256,32 @@ class VicgovauDrupalContext extends DrupalContext {
     }
   }
 
+  /**
+   * Change moderation state of a content with specified title.
+   *
+   * @When the moderation state of :type :title changes from :old_state to :new_state
+   */
+  public function moderateContentTypePageWithTitle($type, $title, $old_state, $new_state) {
+    $nodes = \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->loadByProperties([
+        'title' => $title,
+        'type' => $type,
+      ]);
+
+    if (empty($nodes)) {
+      throw new Exception(sprintf('Unable to find %s page "%s"', $type, $title));
+    }
+
+    /** @var \Drupal\node\Entity\Node $node */
+    $node = current($nodes);
+    $current_old_state = $node->get('moderation_state')->first()->getString();
+    if ($current_old_state != $old_state) {
+      throw new Exception(sprintf('The current state "%s" is different from "%s"', $current_old_state, $old_state));
+    }
+
+    $node->set('moderation_state', $new_state);
+    $node->save();
+  }
+
 }
