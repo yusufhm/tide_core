@@ -4,7 +4,7 @@ dependencies:
   config:
     - field.field.node.landing_page.field_landing_page_banner_bottom
     - field.field.node.landing_page.field_landing_page_banner_top
-    - field.field.node.landing_page.field_landing_page_content
+    - field.field.node.landing_page.field_landing_page_component
     - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_key_cta
     - field.field.node.landing_page.field_landing_page_key_link
@@ -43,7 +43,7 @@ content:
       link: ''
     third_party_settings: {  }
     region: content
-  field_landing_page_content:
+  field_landing_page_component:
     weight: 1
     label: above
     settings:

@@ -4,7 +4,7 @@ dependencies:
   config:
     - field.field.node.landing_page.field_landing_page_banner_bottom
     - field.field.node.landing_page.field_landing_page_banner_top
-    - field.field.node.landing_page.field_landing_page_content
+    - field.field.node.landing_page.field_landing_page_component
     - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_key_cta
     - field.field.node.landing_page.field_landing_page_key_link
@@ -81,7 +81,7 @@ third_party_settings:
       region: content
     group_components:
       children:
-        - field_landing_page_content
+        - field_landing_page_component
       parent_name: group_content
       weight: 24
       format_type: tab
@@ -175,7 +175,7 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
-  field_landing_page_content:
+  field_landing_page_component:
     type: paragraphs
     weight: 3
     region: content

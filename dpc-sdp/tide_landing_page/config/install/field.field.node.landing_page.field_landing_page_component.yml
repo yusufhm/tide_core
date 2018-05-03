@@ -2,15 +2,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_landing_page_content
+    - field.storage.node.field_landing_page_component
     - node.type.landing_page
     - paragraphs.paragraphs_type.basic_text
     - paragraphs.paragraphs_type.card_event
     - paragraphs.paragraphs_type.card_promotion
   module:
     - entity_reference_revisions
-id: node.landing_page.field_landing_page_content
-field_name: field_landing_page_content
+id: node.landing_page.field_landing_page_component
+field_name: field_landing_page_component
 entity_type: node
 bundle: landing_page
 label: 'Content components'
