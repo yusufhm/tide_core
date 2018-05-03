@@ -10,8 +10,10 @@ dependencies:
     - field.field.node.landing_page.field_landing_page_key_link
     - field.field.node.landing_page.field_landing_page_show_social
     - field.field.node.landing_page.field_related_links
+    - field.field.node.landing_page.field_show_whats_next
     - field.field.node.landing_page.field_tags
     - field.field.node.landing_page.field_topic
+    - field.field.node.landing_page.field_whats_next
     - node.type.landing_page
   module:
     - entity_reference_revisions
@@ -119,4 +121,6 @@ content:
     type: entity_reference_label
     region: content
 hidden:
+  field_show_whats_next: true
+  field_whats_next: true
   links: true

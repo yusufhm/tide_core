@@ -10,8 +10,10 @@ dependencies:
     - field.field.node.landing_page.field_landing_page_key_link
     - field.field.node.landing_page.field_landing_page_show_social
     - field.field.node.landing_page.field_related_links
+    - field.field.node.landing_page.field_show_whats_next
     - field.field.node.landing_page.field_tags
     - field.field.node.landing_page.field_topic
+    - field.field.node.landing_page.field_whats_next
     - node.type.landing_page
   module:
     - content_moderation
@@ -110,6 +112,7 @@ third_party_settings:
     group_blocks:
       children:
         - field_landing_page_show_social
+        - field_show_whats_next
       parent_name: group_right_column
       weight: 23
       format_type: tab
@@ -125,6 +128,7 @@ third_party_settings:
     group_related_links:
       children:
         - field_related_links
+        - field_whats_next
       parent_name: group_right_column
       weight: 22
       format_type: tab
@@ -234,6 +238,13 @@ content:
       autocollapse: none
     third_party_settings: {  }
     region: content
+  field_show_whats_next:
+    type: boolean_checkbox
+    weight: 23
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_tags:
     weight: 30
     settings:
@@ -252,6 +263,18 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  field_whats_next:
+    type: entity_reference_paragraphs
+    weight: 7
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
     weight: 10

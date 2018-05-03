@@ -40,6 +40,8 @@ config_devel:
     - field.field.node.landing_page.field_related_links
     - field.field.node.landing_page.field_tags
     - field.field.node.landing_page.field_topic
+    - field.field.node.landing_page.field_whats_next
+    - field.field.node.landing_page.field_show_whats_next
     - field.field.paragraph.banner.field_paragraph_cta
     - field.field.paragraph.banner.field_paragraph_summary
     - field.field.paragraph.banner.field_paragraph_title

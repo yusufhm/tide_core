@@ -56,6 +56,17 @@ Feature: Fields for Landing Page content type
     And I should see an "input#edit-field-topic-0-target-id" element
     And I should see an "input#edit-field-topic-0-target-id.required" element
 
+    And I should see text matching "What's Next"
+    And I should see an "input#edit-field-whats-next-0-subform-field-paragraph-link-0-uri" element
+    And I should not see an "input#edit-field-whats-next-0-subform-field-paragraph-link-0-uri.required" element
+    And I should see an "input#edit-field-whats-next-0-subform-field-paragraph-link-0-title" element
+    And I should not see an "input#edit-field-whats-next-0-subform-field-paragraph-link-0-title.required" element
+    And I should see a "textarea#edit-field-whats-next-0-subform-field-paragraph-summary-0-value" element
+
+    And I see field "Show What's Next?"
+    And I should see an "input#edit-field-show-whats-next-value" element
+    And I should not see an "input#edit-field-show-whats-next-value.required" element
+
   @api
   Scenario: The content type has the menu settings.
     Given I am logged in as a user with the "create landing_page content, administer menu" permission
