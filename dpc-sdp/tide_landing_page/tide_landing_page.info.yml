@@ -32,8 +32,7 @@ config_devel:
     - core.entity_view_display.paragraph.key_journeys.default
     - field.field.node.landing_page.field_landing_page_banner_top
     - field.field.node.landing_page.field_landing_page_banner_bottom
-    - field.field.node.landing_page.field_landing_page_key_cta
-    - field.field.node.landing_page.field_landing_page_key_link
+    - field.field.node.landing_page.field_landing_page_key_journeys
     - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_component
     - field.field.node.landing_page.field_landing_page_show_social
@@ -57,11 +56,11 @@ config_devel:
     - field.field.paragraph.card_promotion.field_paragraph_summary
     - field.field.paragraph.card_promotion.field_paragraph_title
     - field.field.paragraph.key_journeys.field_paragraph_cta
-    - field.field.paragraph.key_journeys.field_paragraph_link
+    - field.field.paragraph.key_journeys.field_paragraph_links
+    - field.field.paragraph.key_journeys.field_paragraph_title
     - field.storage.node.field_landing_page_banner_top
     - field.storage.node.field_landing_page_banner_bottom
-    - field.storage.node.field_landing_page_key_cta
-    - field.storage.node.field_landing_page_key_link
+    - field.storage.node.field_landing_page_key_journeys
     - field.storage.node.field_landing_page_component
     - field.storage.node.field_landing_page_show_social
     - field.storage.node.field_landing_page_intro_text
@@ -70,6 +69,7 @@ config_devel:
     - field.storage.paragraph.field_paragraph_date
     - field.storage.paragraph.field_paragraph_media
     - field.storage.paragraph.field_paragraph_title
+    - field.storage.paragraph.field_paragraph_links
     - node.type.landing_page
     - paragraphs.paragraphs_type.banner
     - paragraphs.paragraphs_type.card_event

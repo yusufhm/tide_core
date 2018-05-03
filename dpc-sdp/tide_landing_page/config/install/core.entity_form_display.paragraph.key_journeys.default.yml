@@ -3,7 +3,8 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.key_journeys.field_paragraph_cta
-    - field.field.paragraph.key_journeys.field_paragraph_link
+    - field.field.paragraph.key_journeys.field_paragraph_links
+    - field.field.paragraph.key_journeys.field_paragraph_title
     - paragraphs.paragraphs_type.key_journeys
   module:
     - link
@@ -13,6 +14,14 @@ bundle: key_journeys
 mode: default
 content:
   field_paragraph_cta:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_paragraph_links:
     weight: 1
     settings:
       placeholder_url: ''
@@ -20,13 +29,13 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
-  field_paragraph_link:
+  field_paragraph_title:
     weight: 0
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: link_default
+    type: string_textfield
     region: content
 hidden:
   created: true

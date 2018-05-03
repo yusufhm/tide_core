@@ -6,8 +6,7 @@ dependencies:
     - field.field.node.landing_page.field_landing_page_banner_top
     - field.field.node.landing_page.field_landing_page_component
     - field.field.node.landing_page.field_landing_page_intro_text
-    - field.field.node.landing_page.field_landing_page_key_cta
-    - field.field.node.landing_page.field_landing_page_key_link
+    - field.field.node.landing_page.field_landing_page_key_journeys
     - field.field.node.landing_page.field_landing_page_show_social
     - field.field.node.landing_page.field_related_links
     - field.field.node.landing_page.field_show_whats_next
@@ -17,7 +16,6 @@ dependencies:
     - node.type.landing_page
   module:
     - entity_reference_revisions
-    - link
     - user
 id: node.landing_page.default
 targetEntityType: node
@@ -61,29 +59,14 @@ content:
     third_party_settings: {  }
     type: basic_string
     region: content
-  field_landing_page_key_cta:
-    weight: 11
+  field_landing_page_key_journeys:
+    type: entity_reference_revisions_entity_view
+    weight: 16
     label: above
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: link
-    region: content
-  field_landing_page_key_link:
-    weight: 10
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
     region: content
   field_landing_page_show_social:
     weight: 6

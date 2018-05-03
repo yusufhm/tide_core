@@ -6,8 +6,7 @@ dependencies:
     - field.field.node.landing_page.field_landing_page_banner_top
     - field.field.node.landing_page.field_landing_page_component
     - field.field.node.landing_page.field_landing_page_intro_text
-    - field.field.node.landing_page.field_landing_page_key_cta
-    - field.field.node.landing_page.field_landing_page_key_link
+    - field.field.node.landing_page.field_landing_page_key_journeys
     - field.field.node.landing_page.field_landing_page_show_social
     - field.field.node.landing_page.field_related_links
     - field.field.node.landing_page.field_show_whats_next
@@ -18,7 +17,6 @@ dependencies:
   module:
     - content_moderation
     - field_group
-    - link
     - maxlength
     - paragraphs
     - path
@@ -31,7 +29,7 @@ third_party_settings:
         - group_components
         - group_bottom_
       parent_name: ''
-      weight: 1
+      weight: 2
       format_type: tabs
       format_settings:
         id: ''
@@ -44,7 +42,7 @@ third_party_settings:
         - group_related_links
         - group_blocks
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: tabs
       format_settings:
         id: ''
@@ -54,8 +52,7 @@ third_party_settings:
       region: content
     group_key_journeys:
       children:
-        - field_landing_page_key_link
-        - field_landing_page_key_cta
+        - field_landing_page_key_journeys
       parent_name: group_content
       weight: 22
       format_type: tab
@@ -147,7 +144,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -201,21 +198,17 @@ content:
     third_party_settings: {  }
     type: string_textarea
     region: content
-  field_landing_page_key_cta:
-    weight: 4
+  field_landing_page_key_journeys:
+    type: entity_reference_paragraphs
+    weight: 33
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
     third_party_settings: {  }
-    type: link_default
-    region: content
-  field_landing_page_key_link:
-    weight: 2
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
     region: content
   field_landing_page_show_social:
     weight: 22
@@ -246,7 +239,7 @@ content:
       display_label: true
     third_party_settings: {  }
   field_tags:
-    weight: 30
+    weight: 13
     settings:
       match_operator: CONTAINS
       size: 60
@@ -255,7 +248,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_topic:
-    weight: 29
+    weight: 12
     settings:
       match_operator: CONTAINS
       size: 60
@@ -277,13 +270,13 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 10
+    weight: 11
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -291,26 +284,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 6
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 10
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 7
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: 1
     region: content
     settings:
       size: 60
@@ -321,7 +314,7 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
   uid:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60
@@ -329,7 +322,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }

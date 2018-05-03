@@ -15,7 +15,7 @@ entity_type: node
 bundle: landing_page
 label: 'Content components'
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

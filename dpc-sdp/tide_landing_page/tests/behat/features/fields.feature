@@ -24,17 +24,17 @@ Feature: Fields for Landing Page content type
     And I should see an "input#edit-field-landing-page-banner-bottom-0-subform-field-paragraph-title-0-value" element
     And I should not see an "input#edit-field-landing-page-banner-bottom-0-subform-field-paragraph-title-0-value.required" element
 
-    And I should see text matching "Key journey link"
-    And I should see an "input#edit-field-landing-page-key-link-0-uri" element
-    And I should not see an "input#edit-field-landing-page-key-link-0-uri.required" element
-    And I should see an "input#edit-field-landing-page-key-link-0-title" element
-    And I should not see an "input#edit-field-landing-page-key-link-0-title.required" element
-
-    And I should see text matching "Key journey CTA"
-    And I should see an "input#edit-field-landing-page-key-cta-0-uri" element
-    And I should not see an "input#edit-field-landing-page-key-cta-0-uri.required" element
-    And I should see an "input#edit-field-landing-page-key-cta-0-title" element
-    And I should not see an "input#edit-field-landing-page-key-cta-0-title.required" element
+    And I should see text matching "Key journeys"
+    And I should see an "input#edit-field-landing-page-key-journeys-0-subform-field-paragraph-title-0-value" element
+    And I should see an "input#edit-field-landing-page-key-journeys-0-subform-field-paragraph-title-0-value.required" element
+    And I should see an "input#edit-field-landing-page-key-journeys-0-subform-field-paragraph-links-0-uri" element
+    And I should not see an "input#edit-field-landing-page-key-journeys-0-subform-field-paragraph-links-0-uri.required" element
+    And I should see an "input#edit-field-landing-page-key-journeys-0-subform-field-paragraph-links-0-title" element
+    And I should not see an "input#edit-field-landing-page-key-journeys-0-subform-field-paragraph-links-0-title.required" element
+    And I should see an "input#edit-field-landing-page-key-journeys-0-subform-field-paragraph-cta-0-uri" element
+    And I should not see an "input#edit-field-landing-page-key-journeys-0-subform-field-paragraph-cta-0-uri.required" element
+    And I should see an "input#edit-field-landing-page-key-journeys-0-subform-field-paragraph-cta-0-title" element
+    And I should not see an "input#edit-field-landing-page-key-journeys-0-subform-field-paragraph-cta-0-title.required" element
 
     And I should see text matching "Related links"
     And I should see an "input#edit-field-related-links-0-subform-field-paragraph-link-0-uri" element
