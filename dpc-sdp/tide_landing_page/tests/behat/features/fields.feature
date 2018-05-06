@@ -21,8 +21,10 @@ Feature: Fields for Landing Page content type
     And I should see text matching "Banner"
     And I should see an "input#edit-field-landing-page-banner-top-0-subform-field-paragraph-title-0-value" element
     And I should not see an "input#edit-field-landing-page-banner-top-0-subform-field-paragraph-title-0-value.required" element
-    And I should see an "input#edit-field-landing-page-banner-bottom-0-subform-field-paragraph-title-0-value" element
-    And I should not see an "input#edit-field-landing-page-banner-bottom-0-subform-field-paragraph-title-0-value.required" element
+
+    And I should see text matching "Campaign Secondary"
+    And I should see an "input#edit-field-landing-page-c-secondary-0-target-id" element
+    And I should not see an "input#edit-field-landing-page-c-secondary-0-target-id.required" element
 
     And I should see text matching "Key journeys"
     And I should see an "input#edit-field-landing-page-key-journeys-0-subform-field-paragraph-title-0-value" element

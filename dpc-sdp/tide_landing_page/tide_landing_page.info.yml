@@ -20,6 +20,8 @@ dependencies:
   - paragraphs:paragraphs
 config_devel:
   install:
+    - block_content.type.campaign
+    - core.entity_form_display.block_content.campaign.default
     - core.entity_form_display.node.landing_page.default
     - core.entity_form_display.paragraph.banner.default
     - core.entity_form_display.paragraph.card_event.default
@@ -30,8 +32,12 @@ config_devel:
     - core.entity_view_display.paragraph.card_event.default
     - core.entity_view_display.paragraph.card_promotion.default
     - core.entity_view_display.paragraph.key_journeys.default
+    - field.field.block_content.campaign.body
+    - field.field.block_content.campaign.field_block_cta
+    - field.field.block_content.campaign.field_block_image
+    - field.field.block_content.campaign.field_block_title
     - field.field.node.landing_page.field_landing_page_banner_top
-    - field.field.node.landing_page.field_landing_page_banner_bottom
+    - field.field.node.landing_page.field_landing_page_c_secondary
     - field.field.node.landing_page.field_landing_page_key_journeys
     - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_component
@@ -59,7 +65,11 @@ config_devel:
     - field.field.paragraph.key_journeys.field_paragraph_links
     - field.field.paragraph.key_journeys.field_paragraph_title
     - field.storage.node.field_landing_page_banner_top
-    - field.storage.node.field_landing_page_banner_bottom
+    - field.storage.block_content.field_block_cta
+    - field.storage.block_content.field_block_image
+    - field.storage.block_content.field_block_title
+    - field.storage.node.field_landing_page_key_link
+    - field.storage.node.field_landing_page_c_secondary
     - field.storage.node.field_landing_page_key_journeys
     - field.storage.node.field_landing_page_component
     - field.storage.node.field_landing_page_show_social

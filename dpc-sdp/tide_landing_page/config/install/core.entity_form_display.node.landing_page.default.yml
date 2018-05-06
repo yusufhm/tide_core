@@ -2,8 +2,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.landing_page.field_landing_page_banner_bottom
     - field.field.node.landing_page.field_landing_page_banner_top
+    - field.field.node.landing_page.field_landing_page_c_secondary
     - field.field.node.landing_page.field_landing_page_component
     - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_key_journeys
@@ -16,6 +16,7 @@ dependencies:
     - node.type.landing_page
   module:
     - content_moderation
+    - entity_reference_revisions
     - field_group
     - maxlength
     - paragraphs
@@ -94,7 +95,7 @@ third_party_settings:
       region: content
     group_bottom_:
       children:
-        - field_landing_page_banner_bottom
+        - field_landing_page_c_secondary
       parent_name: group_content
       weight: 26
       format_type: tab
@@ -148,20 +149,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_landing_page_banner_bottom:
-    type: paragraphs
-    weight: 25
-    region: content
-    settings:
-      title: Banner
-      title_plural: Banners
-      edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-    third_party_settings: {  }
   field_landing_page_banner_top:
     type: paragraphs
     weight: 0
@@ -176,6 +163,15 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
+  field_landing_page_c_secondary:
+    weight: 33
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_autocomplete
+    region: content
   field_landing_page_component:
     type: paragraphs
     weight: 3
@@ -211,7 +207,7 @@ content:
     third_party_settings: {  }
     region: content
   field_landing_page_show_social:
-    weight: 22
+    weight: 34
     settings:
       display_label: true
     third_party_settings: {  }
