@@ -18,6 +18,7 @@ dependencies:
   - field_group:field_group
   - maxlength:maxlength
   - paragraphs:paragraphs
+  - smart_trim:smart_trim
 config_devel:
   install:
     - block_content.type.campaign

@@ -49,6 +49,10 @@ Feature: Fields for Landing Page content type
     And I should see "Basic Text" in the "select[name='field_landing_page_component[add_more][add_more_select]']" element
     And I should see "Card Event" in the "select[name='field_landing_page_component[add_more][add_more_select]']" element
     And I should see "Card Promotion" in the "select[name='field_landing_page_component[add_more][add_more_select]']" element
+    And I should see "Navigation featured" in the "select[name='field_landing_page_component[add_more][add_more_select]']" element
+    And I should see "Navigation featured Automated" in the "select[name='field_landing_page_component[add_more][add_more_select]']" element
+    And I should see "Navigation" in the "select[name='field_landing_page_component[add_more][add_more_select]']" element
+    And I should see "Navigation Automated" in the "select[name='field_landing_page_component[add_more][add_more_select]']" element
 
     And I see field "Tags"
     And I should see an "input#edit-field-tags-0-target-id" element

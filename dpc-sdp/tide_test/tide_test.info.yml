@@ -13,6 +13,7 @@ dependencies:
   - dpc-sdp:tide_core
   - drupal:datetime
   - maxlength:maxlength
+  - smart_trim:smart_trim
 config_devel:
   install:
     - node.type.test

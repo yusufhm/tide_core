@@ -5,6 +5,7 @@
  * Tide Landing Page install.
  */
 
+use Drupal\field\Entity\FieldConfig;
 use Drupal\workflows\Entity\Workflow;
 
 /**
@@ -18,6 +19,29 @@ function tide_landing_page_install() {
     if ($editorial_workflow) {
       $editorial_workflow->getTypePlugin()->addEntityTypeAndBundle('node', 'landing_page');
       $editorial_workflow->save();
+    }
+  }
+
+  // Retroactively support existing content types in the Referred Content
+  // field of Card automated paragraphs.
+  $supported_paragraph_types = [
+    'card_navigation_featured_auto',
+    'card_navigation_auto',
+  ];
+  foreach ($supported_paragraph_types as $supported_paragraph_type) {
+    $field_config = FieldConfig::loadByName("paragraph", $supported_paragraph_type, "field_paragraph_reference");
+    if ($field_config) {
+      $handler_settings = $field_config->getSetting('handler_settings');
+      $info = \Drupal::service('entity_type.bundle.info')->getAllBundleInfo();
+      foreach ($info as $type => $bundles) {
+        if ($type == 'node') {
+          foreach (array_keys($bundles) as $bundle) {
+            $handler_settings['target_bundles'][$bundle] = $bundle;
+          }
+        }
+      }
+      $field_config->setSetting('handler_settings', $handler_settings);
+      $field_config->save();
     }
   }
 }

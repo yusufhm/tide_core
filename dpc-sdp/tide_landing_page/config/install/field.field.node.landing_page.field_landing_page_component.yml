@@ -6,6 +6,10 @@ dependencies:
     - node.type.landing_page
     - paragraphs.paragraphs_type.basic_text
     - paragraphs.paragraphs_type.card_event
+    - paragraphs.paragraphs_type.card_navigation_featured
+    - paragraphs.paragraphs_type.card_navigation_featured_auto
+    - paragraphs.paragraphs_type.card_navigation
+    - paragraphs.paragraphs_type.card_navigation_auto
     - paragraphs.paragraphs_type.card_promotion
   module:
     - entity_reference_revisions
@@ -27,6 +31,10 @@ settings:
       basic_text: basic_text
       card_event: card_event
       card_promotion: card_promotion
+      card_navigation_featured: card_navigation_featured
+      card_navigation_featured_auto: card_navigation_featured_auto
+      card_navigation: card_navigation
+      card_navigation_auto: card_navigation_auto
     target_bundles_drag_drop:
       banner:
         weight: -17
@@ -49,4 +57,16 @@ settings:
       links:
         weight: -11
         enabled: false
+      card_navigation_featured:
+        enabled: true
+        weight: -10
+      card_navigation_featured_auto:
+        enabled: true
+        weight: -9
+      card_navigation:
+        enabled: true
+        weight: -8
+      card_navigation_auto:
+        enabled: true
+        weight: -7
 field_type: entity_reference_revisions
