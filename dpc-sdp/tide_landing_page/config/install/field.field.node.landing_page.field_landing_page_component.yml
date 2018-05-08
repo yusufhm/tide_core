@@ -6,6 +6,7 @@ dependencies:
     - node.type.landing_page
     - paragraphs.paragraphs_type.basic_text
     - paragraphs.paragraphs_type.card_event
+    - paragraphs.paragraphs_type.card_keydates
     - paragraphs.paragraphs_type.card_navigation_featured
     - paragraphs.paragraphs_type.card_navigation_featured_auto
     - paragraphs.paragraphs_type.card_navigation
@@ -35,6 +36,7 @@ settings:
       card_navigation_featured_auto: card_navigation_featured_auto
       card_navigation: card_navigation
       card_navigation_auto: card_navigation_auto
+      card_keydates: card_keydates
     target_bundles_drag_drop:
       banner:
         weight: -17
@@ -69,4 +71,7 @@ settings:
       card_navigation_auto:
         enabled: true
         weight: -7
+      card_keydates:
+        enabled: true
+        weight: -6
 field_type: entity_reference_revisions
