@@ -27,6 +27,7 @@ function tide_landing_page_install() {
   $supported_paragraph_types = [
     'card_navigation_featured_auto',
     'card_navigation_auto',
+    'card_promotion_auto',
   ];
   foreach ($supported_paragraph_types as $supported_paragraph_type) {
     $field_config = FieldConfig::loadByName("paragraph", $supported_paragraph_type, "field_paragraph_reference");

@@ -3,8 +3,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.featured_card
-    - field.field.node.landing_page.field_landing_page_c_secondary
     - field.field.node.landing_page.field_landing_page_banner_top
+    - field.field.node.landing_page.field_landing_page_c_secondary
     - field.field.node.landing_page.field_landing_page_component
     - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_key_journeys
@@ -48,8 +48,8 @@ content:
       summary_handler: full
     third_party_settings: {  }
 hidden:
-  field_landing_page_c_secondary: true
   field_landing_page_banner_top: true
+  field_landing_page_c_secondary: true
   field_landing_page_component: true
   field_landing_page_key_journeys: true
   field_landing_page_show_social: true

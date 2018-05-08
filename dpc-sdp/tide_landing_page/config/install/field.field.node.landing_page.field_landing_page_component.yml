@@ -7,11 +7,12 @@ dependencies:
     - paragraphs.paragraphs_type.basic_text
     - paragraphs.paragraphs_type.card_event
     - paragraphs.paragraphs_type.card_keydates
-    - paragraphs.paragraphs_type.card_navigation_featured
-    - paragraphs.paragraphs_type.card_navigation_featured_auto
     - paragraphs.paragraphs_type.card_navigation
     - paragraphs.paragraphs_type.card_navigation_auto
+    - paragraphs.paragraphs_type.card_navigation_featured
+    - paragraphs.paragraphs_type.card_navigation_featured_auto
     - paragraphs.paragraphs_type.card_promotion
+    - paragraphs.paragraphs_type.card_promotion_auto
   module:
     - entity_reference_revisions
 id: node.landing_page.field_landing_page_component
@@ -36,6 +37,7 @@ settings:
       card_navigation_featured_auto: card_navigation_featured_auto
       card_navigation: card_navigation
       card_navigation_auto: card_navigation_auto
+      card_promotion_auto: card_promotion_auto
       card_keydates: card_keydates
     target_bundles_drag_drop:
       banner:
