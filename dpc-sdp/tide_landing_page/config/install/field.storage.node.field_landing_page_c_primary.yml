@@ -2,15 +2,15 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_content
     - entity_reference_revisions
     - node
-    - paragraphs
-id: node.field_landing_page_banner_top
-field_name: field_landing_page_banner_top
+id: node.field_landing_page_c_primary
+field_name: field_landing_page_c_primary
 entity_type: node
 type: entity_reference_revisions
 settings:
-  target_type: paragraph
+  target_type: block_content
 module: entity_reference_revisions
 locked: false
 cardinality: 1

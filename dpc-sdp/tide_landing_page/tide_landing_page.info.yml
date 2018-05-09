@@ -56,8 +56,10 @@ config_devel:
     - field.field.block_content.campaign.field_block_cta
     - field.field.block_content.campaign.field_block_image
     - field.field.block_content.campaign.field_block_title
-    - field.field.node.landing_page.field_landing_page_banner_top
     - field.field.node.landing_page.field_landing_page_c_secondary
+    - field.field.node.landing_page.field_landing_page_c_primary
+    - field.field.node.landing_page.field_landing_page_key_journeys
+    - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_component
     - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_key_journeys
@@ -78,8 +80,6 @@ config_devel:
     - field.field.paragraph.card_event.field_paragraph_title
     - field.field.paragraph.card_keydates.field_paragraph_cta
     - field.field.paragraph.card_keydates.field_paragraph_keydates
-    - field.field.paragraph.card_promotion.field_paragraph_date
-    - field.field.paragraph.card_promotion.field_paragraph_link
     - field.field.paragraph.card_navigation.field_paragraph_link
     - field.field.paragraph.card_navigation.field_paragraph_summary
     - field.field.paragraph.card_navigation.field_paragraph_title
@@ -106,12 +106,11 @@ config_devel:
     - field.field.paragraph.keydates.field_paragraph_link
     - field.field.paragraph.keydates.field_paragraph_summary
     - field.field.paragraph.keydates.field_paragraph_title
-    - field.storage.node.field_landing_page_banner_top
     - field.storage.block_content.field_block_cta
     - field.storage.block_content.field_block_image
     - field.storage.block_content.field_block_title
-    - field.storage.node.field_landing_page_banner_top
     - field.storage.node.field_landing_page_c_secondary
+    - field.storage.node.field_landing_page_c_primary
     - field.storage.node.field_landing_page_component
     - field.storage.node.field_landing_page_intro_text
     - field.storage.node.field_landing_page_key_journeys

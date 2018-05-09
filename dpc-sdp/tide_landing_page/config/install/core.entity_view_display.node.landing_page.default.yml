@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.landing_page.field_landing_page_banner_top
+    - field.field.node.landing_page.field_landing_page_c_primary
     - field.field.node.landing_page.field_landing_page_c_secondary
     - field.field.node.landing_page.field_landing_page_component
     - field.field.node.landing_page.field_landing_page_intro_text
@@ -25,14 +25,14 @@ content:
   content_moderation_control:
     weight: -20
     region: content
-  field_landing_page_banner_top:
-    type: entity_reference_revisions_entity_view
-    weight: 7
+  field_landing_page_c_primary:
+    weight: 17
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
     region: content
   field_landing_page_c_secondary:
     weight: 16
