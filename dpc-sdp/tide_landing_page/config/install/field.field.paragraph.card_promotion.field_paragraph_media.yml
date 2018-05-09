@@ -9,7 +9,7 @@ id: paragraph.card_promotion.field_paragraph_media
 field_name: field_paragraph_media
 entity_type: paragraph
 bundle: card_promotion
-label: Media
+label: Image
 description: ''
 required: false
 translatable: true

@@ -15,6 +15,7 @@ dependencies:
   - drupal:datetime
   - entity_reference_revisions:entity_reference_revisions
   - maxlength:maxlength
+  - smart_trim:smart_trim
 config_devel:
   install:
     - node.type.page

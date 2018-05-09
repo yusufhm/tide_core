@@ -2,32 +2,35 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.card_promotion.field_paragraph_author
     - field.field.paragraph.card_promotion.field_paragraph_cta
     - field.field.paragraph.card_promotion.field_paragraph_date
+    - field.field.paragraph.card_promotion.field_paragraph_link
     - field.field.paragraph.card_promotion.field_paragraph_media
     - field.field.paragraph.card_promotion.field_paragraph_summary
     - field.field.paragraph.card_promotion.field_paragraph_title
+    - field.field.paragraph.card_promotion.field_paragraph_topic
     - paragraphs.paragraphs_type.card_promotion
   module:
     - datetime
     - link
-    - text
+    - media
+    - smart_trim
 id: paragraph.card_promotion.default
 targetEntityType: paragraph
 bundle: card_promotion
 mode: default
 content:
-  field_paragraph_author:
-    weight: 2
-    label: above
+  field_paragraph_date:
+    weight: 6
+    label: hidden
     settings:
-      link: true
+      format_type: medium
+      timezone_override: ''
     third_party_settings: {  }
-    type: entity_reference_label
+    type: datetime_default
     region: content
-  field_paragraph_cta:
-    weight: 1
+  field_paragraph_link:
+    weight: 7
     label: above
     settings:
       trim_length: 80
@@ -38,36 +41,60 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  field_paragraph_date:
-    weight: 5
-    label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
   field_paragraph_media:
     weight: 4
-    label: above
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: media_thumbnail
+    region: content
+  field_paragraph_summary:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 200
+      trim_type: chars
+      trim_suffix: ''
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
+      more_link: false
+      summary_handler: full
+    third_party_settings: {  }
+    type: smart_trim
+    region: content
+  field_paragraph_title:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 150
+      trim_type: chars
+      trim_suffix: ''
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
+      more_link: false
+      summary_handler: full
+    third_party_settings: {  }
+    type: smart_trim
+    region: content
+  field_paragraph_topic:
+    weight: 5
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_paragraph_summary:
-    weight: 3
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_paragraph_title:
-    weight: 0
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-hidden: {  }
+hidden:
+  field_paragraph_cta: true

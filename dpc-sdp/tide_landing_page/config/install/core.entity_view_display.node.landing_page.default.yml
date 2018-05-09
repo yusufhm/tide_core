@@ -2,20 +2,20 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.landing_page.field_landing_page_banner_bottom
-    - field.field.node.landing_page.field_landing_page_banner_top
-    - field.field.node.landing_page.field_landing_page_content
+    - field.field.node.landing_page.field_landing_page_c_primary
+    - field.field.node.landing_page.field_landing_page_c_secondary
+    - field.field.node.landing_page.field_landing_page_component
     - field.field.node.landing_page.field_landing_page_intro_text
-    - field.field.node.landing_page.field_landing_page_key_cta
-    - field.field.node.landing_page.field_landing_page_key_link
+    - field.field.node.landing_page.field_landing_page_key_journeys
     - field.field.node.landing_page.field_landing_page_show_social
     - field.field.node.landing_page.field_related_links
+    - field.field.node.landing_page.field_show_whats_next
     - field.field.node.landing_page.field_tags
     - field.field.node.landing_page.field_topic
+    - field.field.node.landing_page.field_whats_next
     - node.type.landing_page
   module:
     - entity_reference_revisions
-    - link
     - user
 id: node.landing_page.default
 targetEntityType: node
@@ -25,25 +25,25 @@ content:
   content_moderation_control:
     weight: -20
     region: content
-  field_landing_page_banner_bottom:
-    type: entity_reference_revisions_entity_view
-    weight: 8
+  field_landing_page_c_primary:
+    weight: 17
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: content
-  field_landing_page_banner_top:
     type: entity_reference_revisions_entity_view
-    weight: 7
+    region: content
+  field_landing_page_c_secondary:
+    weight: 16
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
     region: content
-  field_landing_page_content:
+  field_landing_page_component:
     weight: 1
     label: above
     settings:
@@ -59,29 +59,14 @@ content:
     third_party_settings: {  }
     type: basic_string
     region: content
-  field_landing_page_key_cta:
-    weight: 11
+  field_landing_page_key_journeys:
+    type: entity_reference_revisions_entity_view
+    weight: 16
     label: above
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: link
-    region: content
-  field_landing_page_key_link:
-    weight: 10
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
     region: content
   field_landing_page_show_social:
     weight: 6
@@ -119,4 +104,6 @@ content:
     type: entity_reference_label
     region: content
 hidden:
+  field_show_whats_next: true
+  field_whats_next: true
   links: true
