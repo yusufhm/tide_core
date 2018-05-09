@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.tide_image_browser
+    - field.field.paragraph.card_promotion.field_paragraph_cta
     - field.field.paragraph.card_promotion.field_paragraph_date
     - field.field.paragraph.card_promotion.field_paragraph_link
     - field.field.paragraph.card_promotion.field_paragraph_media
@@ -88,6 +89,7 @@ content:
     region: content
 hidden:
   created: true
+  field_paragraph_cta: true
   moderation_state: true
   status: true
   uid: true

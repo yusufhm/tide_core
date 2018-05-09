@@ -14,6 +14,7 @@ dependencies:
   - drupal:user
   - dpc-sdp:tide_core
   - dpc-sdp:tide_media
+  - address:address
   - entity_reference_revisions:entity_reference_revisions
   - field_group:field_group
   - maxlength:maxlength
@@ -58,8 +59,6 @@ config_devel:
     - field.field.block_content.campaign.field_block_title
     - field.field.node.landing_page.field_landing_page_c_secondary
     - field.field.node.landing_page.field_landing_page_c_primary
-    - field.field.node.landing_page.field_landing_page_key_journeys
-    - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_component
     - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_key_journeys
@@ -75,7 +74,9 @@ config_devel:
     - field.field.paragraph.basic_text.field_paragraph_body
     - field.field.paragraph.card_event.field_paragraph_cta
     - field.field.paragraph.card_event.field_paragraph_date
+    - field.field.paragraph.card_event.field_paragraph_location
     - field.field.paragraph.card_event.field_paragraph_media
+    - field.field.paragraph.card_event.field_paragraph_topic
     - field.field.paragraph.card_event.field_paragraph_summary
     - field.field.paragraph.card_event.field_paragraph_title
     - field.field.paragraph.card_keydates.field_paragraph_cta
@@ -89,7 +90,7 @@ config_devel:
     - field.field.paragraph.card_navigation_featured.field_paragraph_summary
     - field.field.paragraph.card_navigation_featured.field_paragraph_title
     - field.field.paragraph.card_navigation_featured_auto.field_paragraph_reference
-    - field.field.paragraph.card_promotion.field_paragraph_author
+    - field.field.paragraph.card_keydates.field_paragraph_cta
     - field.field.paragraph.card_promotion.field_paragraph_cta
     - field.field.paragraph.card_promotion.field_paragraph_date
     - field.field.paragraph.card_promotion.field_paragraph_media
@@ -115,16 +116,15 @@ config_devel:
     - field.storage.node.field_landing_page_intro_text
     - field.storage.node.field_landing_page_key_journeys
     - field.storage.node.field_landing_page_show_social
-    - field.storage.paragraph.field_paragraph_author
     - field.storage.paragraph.field_paragraph_body
     - field.storage.paragraph.field_paragraph_cta
     - field.storage.paragraph.field_paragraph_cta_text
     - field.storage.paragraph.field_paragraph_date
+    - field.storage.paragraph.field_paragraph_location
     - field.storage.paragraph.field_paragraph_links
     - field.storage.paragraph.field_paragraph_media
     - field.storage.paragraph.field_paragraph_reference
     - field.storage.paragraph.field_paragraph_title
-    - field.storage.paragraph.field_paragraph_links
     - field.storage.paragraph.field_paragraph_keydate
     - field.storage.paragraph.field_paragraph_keydates
     - field.storage.paragraph.field_paragraph_topic

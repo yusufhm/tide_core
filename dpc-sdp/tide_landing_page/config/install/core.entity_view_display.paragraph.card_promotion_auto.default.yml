@@ -2,10 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.card_promotion_auto.field_paragraph_cta_text
     - field.field.paragraph.card_promotion_auto.field_paragraph_reference
     - paragraphs.paragraphs_type.card_promotion_auto
-  module:
-    - link
 id: paragraph.card_promotion_auto.default
 targetEntityType: paragraph
 bundle: card_promotion_auto
@@ -31,4 +30,5 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-hidden: {  }
+hidden:
+  field_paragraph_cta_text: true

@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.key_journeys.field_paragraph_cta
+    - field.field.paragraph.key_journeys.field_paragraph_link
     - field.field.paragraph.key_journeys.field_paragraph_links
     - field.field.paragraph.key_journeys.field_paragraph_title
     - paragraphs.paragraphs_type.key_journeys
@@ -39,6 +40,7 @@ content:
     region: content
 hidden:
   created: true
+  field_paragraph_link: true
   moderation_state: true
   status: true
   uid: true

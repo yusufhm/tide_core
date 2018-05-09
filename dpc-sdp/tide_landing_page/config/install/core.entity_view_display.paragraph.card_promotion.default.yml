@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.card_promotion.field_paragraph_cta
     - field.field.paragraph.card_promotion.field_paragraph_date
     - field.field.paragraph.card_promotion.field_paragraph_link
     - field.field.paragraph.card_promotion.field_paragraph_media
@@ -95,4 +96,5 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-hidden: {  }
+hidden:
+  field_paragraph_cta: true
