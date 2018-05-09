@@ -1,0 +1,11 @@
+uuid: 3c131c22-a1b5-4e83-a512-74cc8215189d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: H6rpadAfxEGBlfBkjPDnA566_uQN38av35xK1A2Gu8s
+name: Topic
+vid: topic
+description: 'Use topic to group content into categories.'
+hierarchy: 0
+weight: 0

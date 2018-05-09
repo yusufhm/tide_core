@@ -1,0 +1,12 @@
+uuid: 956baa3d-833c-4e9d-bb32-3c818e281e6e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: jroV3p9ZzkM3rFF0YvlMVadd0mD8LRpaA6g81y5XH0w
+id: previewer
+label: Previewer
+weight: 5
+is_admin: null
+permissions:
+  - 'view any unpublished content'

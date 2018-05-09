@@ -1,0 +1,24 @@
+uuid: 8fb358b4-c8aa-4625-924a-8def56c01c93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_navigation_auto.field_paragraph_reference
+    - paragraphs.paragraphs_type.card_navigation_auto
+_core:
+  default_config_hash: 4g6AwKa9YDyuWWTZAr21jwUvGul91mm77CtzMhkergo
+id: paragraph.card_navigation_auto.default
+targetEntityType: paragraph
+bundle: card_navigation_auto
+mode: default
+content:
+  field_paragraph_reference:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden: {  }

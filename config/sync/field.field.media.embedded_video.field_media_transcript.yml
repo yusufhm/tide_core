@@ -1,0 +1,21 @@
+uuid: 0a066893-8729-47c5-8fd5-3b7672b3c8e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_transcript
+    - media.type.embedded_video
+_core:
+  default_config_hash: o-J9SiG6UNgvjx2OQJDUAnwWG_FRyc0CTk4fAIrDkHM
+id: media.embedded_video.field_media_transcript
+field_name: field_media_transcript
+entity_type: media
+bundle: embedded_video
+label: Transcript
+description: 'Add video transcript.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

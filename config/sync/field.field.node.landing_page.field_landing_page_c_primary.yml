@@ -1,0 +1,32 @@
+uuid: 0cb89340-4e18-4926-9cff-7aab43af8f92
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.campaign
+    - field.storage.node.field_landing_page_c_primary
+    - node.type.landing_page
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: Da3w1C67fViSZr8r2c08f4l0DzDZKa2-siRV_mGdLTk
+id: node.landing_page.field_landing_page_c_primary
+field_name: field_landing_page_c_primary
+entity_type: node
+bundle: landing_page
+label: 'Campaign Primary'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block_content'
+  handler_settings:
+    target_bundles:
+      campaign: campaign
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference_revisions

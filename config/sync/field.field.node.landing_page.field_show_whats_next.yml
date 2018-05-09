@@ -1,0 +1,25 @@
+uuid: c78f5d76-2315-4f61-9308-9a5935ec1073
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_whats_next
+    - node.type.landing_page
+_core:
+  default_config_hash: mXC2aZU-VMkYfCn_9hLjIMYrHX-p-qUqlBhk36-zXaM
+id: node.landing_page.field_show_whats_next
+field_name: field_show_whats_next
+entity_type: node
+bundle: landing_page
+label: 'Show What''s Next?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

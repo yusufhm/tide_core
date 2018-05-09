@@ -1,0 +1,11 @@
+uuid: 156b7fe6-793b-4d78-a7fc-addfaa39b5b8
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: R13sFAj8QAvrwxOYUjHIMfi53zry3n_D4vsE1RH2Uz0
+id: card_navigation
+label: Navigation
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

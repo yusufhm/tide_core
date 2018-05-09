@@ -14,7 +14,7 @@ jobs:
           docker_layer_caching: true
       - run:
           name: Validate composer config.
-          command: composer validate --ansi --strict
+          command: composer validate --ansi --with-dependencies --strict
       - run:
           name: Pull newest Bay images.
           command: composer bay:pull
@@ -27,6 +27,58 @@ jobs:
       - run:
           name: Setup app.
           command: |
+            docker-compose exec cli bash -c "mkdir -p /home/.ssh && echo -e \"$BAY_KEY\" > /home/.ssh/key && chmod 600 /home/.ssh/key"
+            composer app:db-import
+            composer bay:cli -- mkdir -p /app/screenshots
+      - run:
+          name: Install dev dependencies.
+          command: composer bay:cli -- composer install --ansi
+      - run:
+          name: Lint code.
+          command: composer bay:cli -- composer app:cs
+      - run:
+          name: Run unit tests.
+          command: composer bay:cli -- vendor/bin/phpunit
+      - run:
+          name: Run behat tests.
+          command: composer bay:cli -- vendor/bin/behat --format=progress_fail --colors || composer bay:cli -- vendor/bin/behat --format=progress_fail --colors --rerun
+      - run:
+          name: Copy artifacts.
+          command: |
+            mkdir -p /tmp/artifacts/behat
+            docker cp $(docker-compose ps -q cli):/app/screenshots /tmp/artifacts/behat
+          when: always
+      - store_artifacts:
+          path: /tmp/artifacts
+
+  build-install:
+    docker:
+      - image: 8thom/circle-dpc
+        environment:
+          COMPOSER_ALLOW_SUPERUSER: 1
+          COMPOSE_PATH_SEPARATOR: ":"
+          COMPOSE_FILE: docker-compose.yml:docker-compose.ci.yml
+    working_directory: /app
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          name: Validate composer config.
+          command: composer validate --ansi --with-dependencies --strict
+      - run:
+          name: Pull newest Bay images.
+          command: composer bay:pull
+      - run:
+          name: Start Bay stack.
+          command: |
+            composer bay:start
+            sleep 10 # wait for mariadb to startup
+            docker ps -a
+      - run:
+          name: Setup app.
+          command: |
+            docker-compose exec cli bash -c "mkdir -p /home/.ssh && echo -e \"$BAY_KEY\" > /home/.ssh/key && chmod 600 /home/.ssh/key"
             composer app:site-install
             composer bay:cli -- mkdir -p /app/screenshots
       - run:
@@ -49,3 +101,9 @@ jobs:
           when: always
       - store_artifacts:
           path: /tmp/artifacts
+workflows:
+  version: 2
+  main:
+    jobs:
+      - build
+      - build-install

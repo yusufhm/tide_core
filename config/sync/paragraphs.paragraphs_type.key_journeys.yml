@@ -1,0 +1,11 @@
+uuid: bf376d02-ca0a-42c4-ba5a-88ce78f3294c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: CtvOq2i1_FeY52vZPfNzzMyHSXlg7bnld55mFdMQmqA
+id: key_journeys
+label: 'Key journeys'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

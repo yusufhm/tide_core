@@ -11,10 +11,21 @@ tasks:
         command: env
         service: cli
     - run:
-        name: Install site
-        command: ./scripts/drupal/site-install.sh
+        name: Import or backup DB.
+        command: |
+          if [[ "$LAGOON_GIT_BRANCH" != "production" ]]; then
+            if [[ -z "$PERSIST_DB" ]]; then
+              ./scripts/drush-download-db.sh
+              ./scripts/drupal/import-db.sh
+            fi
+          else
+            ./scripts/drupal/backup.sh
+          fi
         service: cli
-
+    - run:
+        name: Deploy drupal.
+        command: './scripts/drupal/deploy.sh'
+        service: cli
     - run:
         name: Post deployed URL to JIRA
         command: |
@@ -23,8 +34,16 @@ tasks:
           fi
         service: cli
 
-cronjobs:
-  - name: drush cron
-    schedule: "*/15 * * * *"
-    command: '[[ "$LAGOON_PR_HEAD_BRANCH" = "production" ]] || [[ "$LAGOON_PR_HEAD_BRANCH" = "sandbox" ]] && drush cron'
-    service: cli
+environments:
+  production:
+    cronjobs:
+      - name: drush cron
+        schedule: "*/15 * * * *"
+        command: 'drush cron'
+        service: cli
+  sandbox:
+    cronjobs:
+      - name: drush cron
+        schedule: "*/15 * * * *"
+        command: 'drush cron'
+        service: cli

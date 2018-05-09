@@ -1,0 +1,21 @@
+uuid: 60ad9269-b237-43bc-b77e-dc7696261cd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_summary
+    - media.type.embedded_video
+_core:
+  default_config_hash: OpI-iYWsFOD0aR0u9Ptk0cd9tAjBW3_Ql8z2DOJ8kEo
+id: media.embedded_video.field_media_summary
+field_name: field_media_summary
+entity_type: media
+bundle: embedded_video
+label: Summary
+description: 'Add summary of the video.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

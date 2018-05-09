@@ -1,0 +1,24 @@
+uuid: 6ae23d86-54fe-4a91-8a83-988f3fb2a666
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_navigation_featured_auto.field_paragraph_reference
+    - paragraphs.paragraphs_type.card_navigation_featured_auto
+_core:
+  default_config_hash: umeH3xp6MWZq5rEh9Hx4XulPOBSOlw-nbPdvzu8Ll5o
+id: paragraph.card_navigation_featured_auto.default
+targetEntityType: paragraph
+bundle: card_navigation_featured_auto
+mode: default
+content:
+  field_paragraph_reference:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: featured_card
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden: {  }

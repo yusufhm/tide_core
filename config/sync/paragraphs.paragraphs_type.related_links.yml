@@ -1,0 +1,11 @@
+uuid: e2603f51-3156-459f-9341-a1427f349a44
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 0868acg7P7kExRvdx53Zt7Nghqpe7QJF1PSIBQKcrqw
+id: related_links
+label: 'Related links'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

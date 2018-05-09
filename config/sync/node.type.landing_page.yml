@@ -1,0 +1,23 @@
+uuid: 5f00bfea-efad-4b73-a5a5-95c4d0aa5bda
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  wysiwyg_template:
+    default_template: ''
+_core:
+  default_config_hash: JF644xFOfj0o1PTPEa8PmpwF8jAUdyPkn9o2oUFcq3Q
+name: 'Landing Page'
+type: landing_page
+description: 'Use <em>Landing Page</em> content type for custom landing pages.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

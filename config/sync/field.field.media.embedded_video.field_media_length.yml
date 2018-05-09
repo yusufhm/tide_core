@@ -1,0 +1,21 @@
+uuid: 7da71902-d35b-488f-be6d-8a22cfa7b843
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_length
+    - media.type.embedded_video
+_core:
+  default_config_hash: LOEVFmUwS2NytM108QE3ZVURF5sMOAYOzXLy_Rq79Ew
+id: media.embedded_video.field_media_length
+field_name: field_media_length
+entity_type: media
+bundle: embedded_video
+label: Length
+description: 'Add Video length.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

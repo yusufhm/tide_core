@@ -1,0 +1,24 @@
+uuid: 626d980b-8a97-4ba5-8361-4ae597d14113
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_site
+    - media.type.video
+    - taxonomy.vocabulary.sites
+id: media.video.field_media_site
+field_name: field_media_site
+entity_type: media
+bundle: video
+label: Site
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sites: sites
+field_type: entity_reference

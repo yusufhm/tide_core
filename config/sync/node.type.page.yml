@@ -1,0 +1,23 @@
+uuid: ff0a0911-045d-4fb4-b5f5-2628c37573d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  wysiwyg_template:
+    default_template: ''
+_core:
+  default_config_hash: A1677rDgf_2FIMqovxrowMMeT-qUuAyMheDkI3vOcs0
+name: Page
+type: page
+description: 'Use <em>Page</em> content type for basic pages.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

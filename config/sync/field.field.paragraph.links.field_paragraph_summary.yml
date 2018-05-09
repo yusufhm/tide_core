@@ -1,0 +1,29 @@
+uuid: 26fd9cd4-10fc-4693-a382-5833949a55a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_summary
+    - paragraphs.paragraphs_type.links
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    rich_text: rich_text
+    admin_text: '0'
+    plain_text: '0'
+_core:
+  default_config_hash: mY6EgwR-vc04PUwf8kSJxp_n-2aRLIc_KV4jUiHHnTk
+id: paragraph.links.field_paragraph_summary
+field_name: field_paragraph_summary
+entity_type: paragraph
+bundle: links
+label: Summary
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

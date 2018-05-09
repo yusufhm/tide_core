@@ -1,0 +1,13 @@
+uuid: d15b6903-a9f3-49bf-b064-e20cefc52dda
+langcode: en
+status: true
+dependencies:
+  module:
+    - environment_indicator
+_core:
+  default_config_hash: 29j43Svma_5Jto6lB2NyD3aZPvbx1ciWc8YoIwLBBG0
+id: environment_indicator--environment_indicator
+disabled: true
+path: environment_indicator/environment_indicator
+resourceType: environment_indicator--environment_indicator
+resourceFields: ''

@@ -1,0 +1,21 @@
+uuid: f1ebbc98-b3f2-4a30-83a3-5143e12a1feb
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - text
+_core:
+  default_config_hash: E-LMrO5FsUOFyksyPGv9kBl393XXHzh_JAsJf9msufw
+id: taxonomy_term.field_site_footer_text
+field_name: field_site_footer_text
+entity_type: taxonomy_term
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

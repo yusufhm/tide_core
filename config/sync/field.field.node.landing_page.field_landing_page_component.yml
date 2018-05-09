@@ -1,0 +1,82 @@
+uuid: b8b79479-62db-495b-86d5-dc56c43fb5f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_landing_page_component
+    - node.type.landing_page
+    - paragraphs.paragraphs_type.basic_text
+    - paragraphs.paragraphs_type.card_event
+    - paragraphs.paragraphs_type.card_keydates
+    - paragraphs.paragraphs_type.card_navigation
+    - paragraphs.paragraphs_type.card_navigation_auto
+    - paragraphs.paragraphs_type.card_navigation_featured
+    - paragraphs.paragraphs_type.card_navigation_featured_auto
+    - paragraphs.paragraphs_type.card_promotion
+    - paragraphs.paragraphs_type.card_promotion_auto
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: usU0opBuj8P3wPyjQ4tUGqVbrUpIln4wanUUiXoof98
+id: node.landing_page.field_landing_page_component
+field_name: field_landing_page_component
+entity_type: node
+bundle: landing_page
+label: 'Content components'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      basic_text: basic_text
+      card_event: card_event
+      card_promotion: card_promotion
+      card_navigation_featured: card_navigation_featured
+      card_navigation_featured_auto: card_navigation_featured_auto
+      card_navigation: card_navigation
+      card_navigation_auto: card_navigation_auto
+      card_promotion_auto: card_promotion_auto
+      card_keydates: card_keydates
+    target_bundles_drag_drop:
+      banner:
+        weight: -17
+        enabled: false
+      basic_text:
+        enabled: true
+        weight: -16
+      card_event:
+        enabled: true
+        weight: -15
+      card_promotion:
+        enabled: true
+        weight: -14
+      key_journeys:
+        weight: -13
+        enabled: false
+      related_links:
+        weight: -12
+        enabled: false
+      links:
+        weight: -11
+        enabled: false
+      card_navigation_featured:
+        enabled: true
+        weight: -10
+      card_navigation_featured_auto:
+        enabled: true
+        weight: -9
+      card_navigation:
+        enabled: true
+        weight: -8
+      card_navigation_auto:
+        enabled: true
+        weight: -7
+      card_keydates:
+        enabled: true
+        weight: -6
+field_type: entity_reference_revisions

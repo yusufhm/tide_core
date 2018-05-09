@@ -1,0 +1,11 @@
+uuid: 5452ee77-be05-4675-82d9-66740430a601
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: leveLb-dT310xEMxvdpoeRg2FbGOMrRyUP5LxQZFBvE
+name: Department
+vid: department
+description: 'Department for media type.'
+hierarchy: 0
+weight: 0
