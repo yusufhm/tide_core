@@ -3,16 +3,16 @@ status: true
 dependencies:
   module:
     - paragraphs
-    - user
-id: paragraph.field_paragraph_author
-field_name: field_paragraph_author
+    - taxonomy
+id: paragraph.field_paragraph_topic
+field_name: field_paragraph_topic
 entity_type: paragraph
 type: entity_reference
 settings:
-  target_type: user
+  target_type: taxonomy_term
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
