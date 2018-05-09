@@ -1,0 +1,339 @@
+uuid: 12bfcb62-7c72-4462-ae5d-5f397ba71450
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.landing_page.field_landing_page_c_primary
+    - field.field.node.landing_page.field_landing_page_c_secondary
+    - field.field.node.landing_page.field_landing_page_component
+    - field.field.node.landing_page.field_landing_page_intro_text
+    - field.field.node.landing_page.field_landing_page_key_journeys
+    - field.field.node.landing_page.field_landing_page_show_social
+    - field.field.node.landing_page.field_node_primary_site
+    - field.field.node.landing_page.field_node_site
+    - field.field.node.landing_page.field_related_links
+    - field.field.node.landing_page.field_show_whats_next
+    - field.field.node.landing_page.field_tags
+    - field.field.node.landing_page.field_topic
+    - field.field.node.landing_page.field_whats_next
+    - node.type.landing_page
+  module:
+    - content_moderation
+    - entity_reference_revisions
+    - field_group
+    - maxlength
+    - paragraphs
+    - path
+third_party_settings:
+  field_group:
+    group_content:
+      children:
+        - group_key_journeys
+        - group_top_banner
+        - group_components
+        - group_bottom_
+      parent_name: ''
+      weight: 2
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Content
+      region: content
+    group_right_column:
+      children:
+        - group_related_links
+        - group_blocks
+      parent_name: ''
+      weight: 3
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: 'Right column'
+      region: content
+    group_key_journeys:
+      children:
+        - field_landing_page_key_journeys
+      parent_name: group_content
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Key journeys'
+      region: content
+    group_top_banner:
+      children:
+        - field_landing_page_c_primary
+      parent_name: group_content
+      weight: 23
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Top banner'
+      region: content
+    group_components:
+      children:
+        - field_landing_page_component
+      parent_name: group_content
+      weight: 24
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Content components'
+      region: content
+    group_bottom_:
+      children:
+        - field_landing_page_c_secondary
+      parent_name: group_content
+      weight: 26
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Bottom banner'
+      region: content
+    group_blocks:
+      children:
+        - field_show_whats_next
+        - field_landing_page_show_social
+      parent_name: group_right_column
+      weight: 23
+      format_type: tab
+      format_settings:
+        label: Other
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+      label: Other
+      region: content
+    group_related_links:
+      children:
+        - field_related_links
+        - field_whats_next
+      parent_name: group_right_column
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Related links'
+      region: content
+_core:
+  default_config_hash: pN7fy_ZaJVA-sEQWPZUCiV_-5V5W_ZSuZ7Rbql6y5kg
+id: node.landing_page.default
+targetEntityType: node
+bundle: landing_page
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_landing_page_c_primary:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_autocomplete
+    region: content
+  field_landing_page_c_secondary:
+    weight: 33
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_autocomplete
+    region: content
+  field_landing_page_component:
+    type: paragraphs
+    weight: 3
+    region: content
+    settings:
+      title: Component
+      title_plural: Components
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      add_mode: select
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+  field_landing_page_intro_text:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_landing_page_key_journeys:
+    type: entity_reference_paragraphs
+    weight: 33
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_landing_page_show_social:
+    weight: 34
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_node_primary_site:
+    type: options_buttons
+    region: content
+    field_name: field_node_primary_site
+    weight: 36
+    settings: {  }
+    third_party_settings: {  }
+  field_node_site:
+    type: options_buttons
+    region: content
+    field_name: field_node_site
+    weight: 35
+    settings: {  }
+    third_party_settings: {  }
+  field_related_links:
+    type: paragraphs
+    weight: 6
+    settings:
+      title: Link
+      title_plural: Links
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
+    third_party_settings: {  }
+    region: content
+  field_show_whats_next:
+    type: boolean_checkbox
+    weight: 23
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_tags:
+    weight: 13
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_topic:
+    weight: 12
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_whats_next:
+    type: entity_reference_paragraphs
+    weight: 7
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 11
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 10
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: 150
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+  uid:
+    type: entity_reference_autocomplete
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

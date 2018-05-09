@@ -1,0 +1,11 @@
+uuid: f91a9af2-8cb8-4128-8e58-8d3c0201fb2a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: A-heSgFZEdSMxukp4bISwe9HecBU2Bq98GPxY4sUO4E
+id: basic_text
+label: 'Basic Text'
+icon_uuid: null
+description: 'A paragraph type with a WYSIWYG body.'
+behavior_plugins: {  }

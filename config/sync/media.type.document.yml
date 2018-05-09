@@ -1,0 +1,15 @@
+uuid: f5743233-bed2-4a30-a076-c898a7bcb7d9
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 9CTj9y3vkni20y24sSvR8ye8ZQWmE98rAKyBLJyx9Sk
+id: document
+label: Document
+description: 'Use local documents for reusable media.'
+source: file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_file
+field_map: {  }

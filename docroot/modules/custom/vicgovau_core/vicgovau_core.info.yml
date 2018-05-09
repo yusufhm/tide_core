@@ -9,10 +9,13 @@ dependencies:
   - admin_toolbar:admin_toolbar
   - admin_toolbar:admin_toolbar_tools
   - coffee:coffee
+  - config_update:config_filter
+  - config_update:config_ignore
+  - config_update:config_split
+  - config_update:config_update
   - drupal:field_ui
   - drupal:inline_form_errors
   - drupal:syslog
-  - drupal:views_ui
   - environment_indicator:environment_indicator
   - shield:shield
   - stage_file_proxy:stage_file_proxy

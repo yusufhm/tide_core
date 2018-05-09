@@ -1,0 +1,15 @@
+uuid: 0415ebde-effc-44e7-9449-3ca02264c8bf
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: AFAzBRJfZFThd21S0qq9LE9re1LPSIk7EDUp5vO_oHo
+id: video
+label: Video
+description: 'Use local videos for reusable media.'
+source: video_file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_file
+field_map: {  }

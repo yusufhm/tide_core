@@ -1,0 +1,38 @@
+uuid: 6d2497ac-6ede-4ab6-8737-4d53fca48af8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.related_links.field_paragraph_link
+    - field.field.paragraph.related_links.field_paragraph_summary
+    - paragraphs.paragraphs_type.related_links
+  module:
+    - link
+    - text
+_core:
+  default_config_hash: A8Rf-9dFFYkyZcS8MuD9JpcddjVpzYx3_JcHug62tdQ
+id: paragraph.related_links.default
+targetEntityType: paragraph
+bundle: related_links
+mode: default
+content:
+  field_paragraph_link:
+    weight: 0
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_paragraph_summary:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

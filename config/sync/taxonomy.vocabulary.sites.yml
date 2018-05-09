@@ -1,0 +1,11 @@
+uuid: 57a12f6d-7387-4467-a556-41e97a4d96ed
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: l_-OJbNS56QMN32s-Oo18cbN5-r_B4gLtyEmzp4OK60
+name: Sites
+vid: sites
+description: 'Sites and sections'
+hierarchy: 0
+weight: 0

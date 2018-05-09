@@ -1,0 +1,64 @@
+uuid: 5956ce56-363c-4afe-91a1-ce783c0b4c6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.landing_page.field_landing_page_c_primary
+    - field.field.node.landing_page.field_landing_page_c_secondary
+    - field.field.node.landing_page.field_landing_page_component
+    - field.field.node.landing_page.field_landing_page_intro_text
+    - field.field.node.landing_page.field_landing_page_key_journeys
+    - field.field.node.landing_page.field_landing_page_show_social
+    - field.field.node.landing_page.field_related_links
+    - field.field.node.landing_page.field_show_whats_next
+    - field.field.node.landing_page.field_tags
+    - field.field.node.landing_page.field_topic
+    - field.field.node.landing_page.field_whats_next
+    - node.type.landing_page
+  module:
+    - smart_trim
+    - user
+_core:
+  default_config_hash: bh3RopcGMNw0Q2alFj0mM4xCHJ3kkrfnZTpOsixtkOU
+id: node.landing_page.card
+targetEntityType: node
+bundle: landing_page
+mode: card
+content:
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_landing_page_intro_text:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 200
+      trim_type: chars
+      trim_suffix: ''
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
+      more_link: false
+      summary_handler: full
+    third_party_settings: {  }
+    type: smart_trim
+    region: content
+hidden:
+  field_landing_page_c_primary: true
+  field_landing_page_c_secondary: true
+  field_landing_page_component: true
+  field_landing_page_key_journeys: true
+  field_landing_page_show_social: true
+  field_related_links: true
+  field_show_whats_next: true
+  field_tags: true
+  field_topic: true
+  field_whats_next: true
+  links: true

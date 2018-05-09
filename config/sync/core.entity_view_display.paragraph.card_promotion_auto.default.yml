@@ -1,0 +1,37 @@
+uuid: f5c2b70e-bf7e-4b7e-88bf-cce1eb3af27e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_promotion_auto.field_paragraph_cta_text
+    - field.field.paragraph.card_promotion_auto.field_paragraph_reference
+    - paragraphs.paragraphs_type.card_promotion_auto
+_core:
+  default_config_hash: XjpL_kfoQk-6WBLHFl79qV_OYaB8GNmYXIAA3ckIgbw
+id: paragraph.card_promotion_auto.default
+targetEntityType: paragraph
+bundle: card_promotion_auto
+mode: default
+content:
+  field_paragraph_link:
+    weight: 1
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_paragraph_reference:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_paragraph_cta_text: true

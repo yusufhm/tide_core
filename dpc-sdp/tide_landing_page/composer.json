@@ -13,9 +13,9 @@
     },
     "repositories": {
         "tide_core": {
-          "type": "vcs",
-          "no-api": true,
-          "url": "ssh://git@github.com:22/dpc-sdp/tide_core.git"
+            "type": "vcs",
+            "no-api": true,
+            "url": "ssh://git@github.com:22/dpc-sdp/tide_core.git"
         }
     }
 }

@@ -1,0 +1,11 @@
+uuid: 1702db46-7228-4fbc-a594-f2e36e7feae1
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: csm_bOQax6yNo4bf35456FEyqnFeDdLVnnpnlIPDLKc
+id: card_navigation_featured_auto
+label: 'Navigation featured Automated'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

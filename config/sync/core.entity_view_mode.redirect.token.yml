@@ -1,0 +1,10 @@
+uuid: f4348c54-f318-48e3-b102-07e49360ec84
+langcode: en
+status: true
+dependencies:
+  module:
+    - redirect
+id: redirect.token
+label: Token
+targetEntityType: redirect
+cache: true

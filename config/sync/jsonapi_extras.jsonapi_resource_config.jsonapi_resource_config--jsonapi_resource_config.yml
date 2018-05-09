@@ -1,0 +1,11 @@
+uuid: abb7833a-b48c-452c-94bc-81b73b198c3c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Gum3A67Z6iATNf61LtNDiXZyPZtadW6mDw3UPAEtxts
+id: jsonapi_resource_config--jsonapi_resource_config
+disabled: true
+path: jsonapi_resource_config/jsonapi_resource_config
+resourceType: jsonapi_resource_config--jsonapi_resource_config
+resourceFields: ''

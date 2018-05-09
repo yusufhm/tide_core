@@ -4,6 +4,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.builder
+    environment:
+      - PHP_MEMORY_LIMIT=1024M
     image: builder
     labels:
       lagoon.type: cli-persistent

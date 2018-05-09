@@ -1,0 +1,11 @@
+uuid: e2c8185a-2dba-4020-810f-f5f0922ef0e2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: auqzJW3bew1MYqJ_y62gPQRCsZpDb7360oepyl7l2Bw
+id: card_keydates
+label: 'Key dates'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

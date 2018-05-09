@@ -21,6 +21,13 @@ function vicgovau_core_install() {
     }
   }
 
+  vicgovau_core_enable_modules();
+}
+
+/**
+ * Helper to enable modules.
+ */
+function vicgovau_core_enable_modules() {
   $environment = Settings::get('environment');
 
   // Enable 'config_devel' in local environment only.

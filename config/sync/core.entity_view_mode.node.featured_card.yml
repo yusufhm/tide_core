@@ -1,0 +1,12 @@
+uuid: 8c869a8f-9e92-4098-831c-ce9ca1d62467
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: a2Vr6wsXAJbHu-G2d85KSPG6zH8C_wKD5FpDxQSlQdM
+id: node.featured_card
+label: 'Featured Card'
+targetEntityType: node
+cache: true

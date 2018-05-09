@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a6f78ea02ba9dd561437d699c48a7cf",
+    "content-hash": "a7b9710c685f814ee6a26bc0916c2691",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1312,7 +1312,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_core",
-                "reference": "cb1bfca76c631d5ca4728e128e3d8fb771df21a1",
+                "reference": "72572d097c0aa350d1353fdc6b357ae945e2a51a",
                 "shasum": null
             },
             "require": {
@@ -1399,7 +1399,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_landing_page",
-                "reference": "b9c2bfabfcdf205a5fa601179d6f12517cbdc71d",
+                "reference": "66562c01fec8d360f94730ebcfadc26a3e1aace4",
                 "shasum": null
             },
             "require": {
@@ -1445,7 +1445,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_page",
-                "reference": "34a35bd17d0617baeb742ce0c347354565005578",
+                "reference": "d5ace4de9b06b787e97967cdb837062640316d22",
                 "shasum": null
             },
             "require": {
@@ -1453,6 +1453,11 @@
                 "drupal/smart_trim": "^1.1"
             },
             "type": "drupal-module",
+            "extra": {
+                "enable-patching": true,
+                "composer-exit-on-patch-failure": true,
+                "patches": []
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -1479,7 +1484,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_test",
-                "reference": "cab3c468b76aeb3ac8a235b83eb8332ec4502156",
+                "reference": "09a7733a74a2f836dc3c70c5d2b4982c364c6bed",
                 "shasum": null
             },
             "require": {
@@ -1487,6 +1492,11 @@
                 "drupal/smart_trim": "^1.1"
             },
             "type": "drupal-module",
+            "extra": {
+                "enable-patching": true,
+                "composer-exit-on-patch-failure": true,
+                "patches": []
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -2094,17 +2104,17 @@
         },
         {
             "name": "drupal/config_filter",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/config_filter",
-                "reference": "8.x-1.1"
+                "reference": "8.x-1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/config_filter-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "4fffc62f2e1214bc58e7318c780eec04c5cd1d4c"
+                "url": "https://ftp.drupal.org/files/projects/config_filter-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "ba3d76dc6bb1eb8644ce8997ca2890496a50ae0e"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2118,7 +2128,7 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.1",
+                    "version": "8.x-1.2",
                     "datestamp": "1522943885",
                     "security-coverage": {
                         "status": "covered",

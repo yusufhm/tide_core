@@ -18,6 +18,9 @@ $settings['trusted_host_patterns'] = [
 $config['shield.settings']['credentials']['shield']['user'] = 'dpc';
 $config['shield.settings']['credentials']['shield']['pass'] = 'sdp';
 
+// Disable local split.
+$config['config_split.config_split.local']['status'] = FALSE;
+
 // Stage file proxy
 $config['stage_file_proxy.settings']['origin'] = 'http://dpc:sdp@nginx-php-content-vic-production.lagoon.vicsdp.amazee.io';
 

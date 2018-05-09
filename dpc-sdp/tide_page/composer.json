@@ -10,18 +10,15 @@
     },
     "repositories": {
         "tide_core": {
-          "type": "vcs",
-          "no-api": true,
-          "url": "ssh://git@github.com:22/dpc-sdp/tide_core.git"
+            "type": "vcs",
+            "no-api": true,
+            "url": "ssh://git@github.com:22/dpc-sdp/tide_core.git"
         }
     },
     "extra": {
         "enable-patching": true,
         "composer-exit-on-patch-failure": true,
         "patches": {
-            "drupal/smart_trim": {
-                "Additional options checkbox do not appear to save - https://www.drupal.org/project/smart_trim/issues/2941492": "https://www.drupal.org/files/issues/2018-05-04/2941492-4.patch"
-            }
         }
     }
 }

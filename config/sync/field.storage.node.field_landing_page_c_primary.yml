@@ -1,0 +1,23 @@
+uuid: 4b0459f6-9325-44c9-9ded-86b5b75f61c0
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - entity_reference_revisions
+    - node
+_core:
+  default_config_hash: j3gXT-oq2y5yz8uGVkSCmvv-rB00g8LuBr5C29hrMhM
+id: node.field_landing_page_c_primary
+field_name: field_landing_page_c_primary
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: block_content
+module: entity_reference_revisions
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

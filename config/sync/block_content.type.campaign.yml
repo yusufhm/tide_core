@@ -1,0 +1,10 @@
+uuid: ef4496e6-f283-4dee-817b-917d81ff3506
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: O3iUU-SD91OygI7ISNSQ61Uq7GLFt1XxkGiCY3HX8y8
+id: campaign
+label: Campaign
+revision: 1
+description: 'Block type used for Campaigns on landing pages.'
