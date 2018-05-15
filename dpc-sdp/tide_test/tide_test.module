@@ -56,7 +56,7 @@ function tide_test_modules_installed($modules) {
   // Invoke hook_entity_bundle_create again so that other modules can change
   // entity form display of the `test` content type which was reverted by
   // default config import during module installation.
-  if (in_array('tide_test', $modules)) {
+  if (!\Drupal::service('config.installer')->isSyncing() && in_array('tide_test', $modules)) {
     /** @var \Drupal\Core\Extension\ModuleHandler $moduleHandler */
     $moduleHandler = \Drupal::service('module_handler');
     $moduleHandler->invokeAll('entity_bundle_create', ['node', 'test']);
@@ -89,4 +89,16 @@ function tide_test_field_widget_form_alter(&$element, FormStateInterface $form_s
       }
     }
   }
+}
+
+/**
+ * Implements hook_config_ignore_settings_alter().
+ */
+function tide_test_config_ignore_settings_alter(array &$settings) {
+  // Ignore all test config.
+  $settings[] = '*.test';
+  $settings[] = '*.test*';
+  $settings[] = '*.test.*';
+  $settings[] = '*.field_test*';
+  $settings[] = '*_test*';
 }

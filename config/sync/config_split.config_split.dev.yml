@@ -1,0 +1,18 @@
+uuid: b12ce36a-f5b4-427c-b5b7-9cb223b84e66
+langcode: en
+status: false
+dependencies: {  }
+id: dev
+label: dev
+folder: ../config/dev
+module:
+  devel_generate: 0
+  tide_test: 1000
+  vicgovau_demo: 1000
+theme: {  }
+blacklist: {  }
+graylist:
+  - config_ignore.settings
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 1
