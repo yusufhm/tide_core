@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: 8thom/circle-dpc
+      - image: singledigital/bay-circle:latest
         environment:
           COMPOSER_ALLOW_SUPERUSER: 1
           COMPOSE_PATH_SEPARATOR: ":"
@@ -53,7 +53,7 @@ jobs:
 
   build-install:
     docker:
-      - image: 8thom/circle-dpc
+      - image: singledigital/bay-circle:latest
         environment:
           COMPOSER_ALLOW_SUPERUSER: 1
           COMPOSE_PATH_SEPARATOR: ":"

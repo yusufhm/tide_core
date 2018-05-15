@@ -1,4 +1,4 @@
-FROM quay.io/dpc_sdp/builder
+FROM singledigital/bay-cli:latest
 
 ADD patches /app/patches
 ADD scripts /app/scripts

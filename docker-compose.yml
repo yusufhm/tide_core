@@ -40,7 +40,7 @@ services:
     depends_on:
       - cli
   mariadb:
-    image: quay.io/dpc_sdp/mariadb
+    image: singledigital/bay-mariadb:latest
     labels:
       lagoon.type: mariadb
   redis:
