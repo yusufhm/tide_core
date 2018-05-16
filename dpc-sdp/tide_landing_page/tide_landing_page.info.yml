@@ -25,6 +25,8 @@ config_devel:
     - block_content.type.campaign
     - core.entity_form_display.block_content.campaign.default
     - core.entity_form_display.node.landing_page.default
+    - core.entity_form_display.paragraph.accordion.default
+    - core.entity_form_display.paragraph.accordion_content.default
     - core.entity_form_display.paragraph.banner.default
     - core.entity_form_display.paragraph.basic_text.default
     - core.entity_form_display.paragraph.card_event.default
@@ -40,6 +42,10 @@ config_devel:
     - core.entity_view_display.node.landing_page.card
     - core.entity_view_display.node.landing_page.default
     - core.entity_view_display.node.landing_page.featured_card
+    - core.entity_view_display.paragraph.accordion.default
+    - core.entity_view_display.paragraph.accordion.preview
+    - core.entity_view_display.paragraph.accordion_content.default
+    - core.entity_view_display.paragraph.accordion_content.preview
     - core.entity_view_display.paragraph.banner.default
     - core.entity_view_display.paragraph.basic_text.default
     - core.entity_view_display.paragraph.card_event.default
@@ -68,6 +74,11 @@ config_devel:
     - field.field.node.landing_page.field_tags
     - field.field.node.landing_page.field_topic
     - field.field.node.landing_page.field_whats_next
+    - field.field.paragraph.accordion.field_paragraph_accordion
+    - field.field.paragraph.accordion.field_paragraph_accordion_style
+    - field.field.paragraph.accordion.field_paragraph_title
+    - field.field.paragraph.accordion_content.field_paragraph_accordion_body
+    - field.field.paragraph.accordion_content.field_paragraph_accordion_name
     - field.field.paragraph.banner.field_paragraph_cta
     - field.field.paragraph.banner.field_paragraph_summary
     - field.field.paragraph.banner.field_paragraph_title
@@ -116,6 +127,10 @@ config_devel:
     - field.storage.node.field_landing_page_intro_text
     - field.storage.node.field_landing_page_key_journeys
     - field.storage.node.field_landing_page_show_social
+    - field.storage.paragraph.field_paragraph_accordion
+    - field.storage.paragraph.field_paragraph_accordion_body
+    - field.storage.paragraph.field_paragraph_accordion_name
+    - field.storage.paragraph.field_paragraph_accordion_style
     - field.storage.paragraph.field_paragraph_body
     - field.storage.paragraph.field_paragraph_cta
     - field.storage.paragraph.field_paragraph_cta_text
@@ -129,6 +144,8 @@ config_devel:
     - field.storage.paragraph.field_paragraph_keydates
     - field.storage.paragraph.field_paragraph_topic
     - node.type.landing_page
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.accordion_content
     - paragraphs.paragraphs_type.banner
     - paragraphs.paragraphs_type.basic_text
     - paragraphs.paragraphs_type.card_event

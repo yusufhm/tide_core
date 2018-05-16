@@ -88,11 +88,9 @@ module:
   toolbar: 0
   twig_field_value: 0
   user: 0
-  vicgovau_core: 1000
   video_embed_field: 0
   video_embed_media: 0
   views_menu_children_filter: 0
-  views_ui: 0
   viewsreference: 0
   webform: 0
   workflows: 0
@@ -102,6 +100,7 @@ module:
   views: 10
   paragraphs: 11
   tide: 1000
+  vicgovau_core: 1000
 theme:
   stable: 0
   classy: 0

@@ -2,16 +2,18 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.tide_image_browser
     - field.field.paragraph.card_navigation_featured.field_paragraph_link
     - field.field.paragraph.card_navigation_featured.field_paragraph_media
     - field.field.paragraph.card_navigation_featured.field_paragraph_summary
     - field.field.paragraph.card_navigation_featured.field_paragraph_title
     - paragraphs.paragraphs_type.card_navigation_featured
   module:
+    - allowed_formats
     - content_moderation
+    - entity_browser
     - link
     - maxlength
-    - smart_trim
     - text
 id: paragraph.card_navigation_featured.default
 targetEntityType: paragraph
