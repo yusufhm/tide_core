@@ -23,21 +23,36 @@ function vicgovau_core_install() {
 /**
  * Helper to enable modules.
  */
-function vicgovau_core_enable_modules() {
+function vicgovau_core_enable_modules($is_install = FALSE) {
   $environment = Settings::get('environment');
 
-  // Enable 'config_devel' in local environment only.
-  if ($environment == 'local') {
-    vicgovau_core_install_module('config_devel');
-  }
+  if ($is_install) {
+    if ($environment == 'development') {
+      vicgovau_core_install_module('shield');
+    }
 
-  // Enable 'tide_test' in local and CI environments.
-  if ($environment == 'local' || $environment == 'ci') {
-    vicgovau_core_install_module('tide_test');
-  }
+    if ($environment == 'ci') {
+      vicgovau_core_install_module('tide_test');
+    }
 
-  if ($environment == 'local' || $environment == 'ci' || $environment == 'development') {
-    vicgovau_core_install_module('vicgovau_demo');
+    if ($environment == 'ci' || $environment == 'development') {
+      vicgovau_core_install_module('vicgovau_demo');
+    }
+  }
+  else {
+    // Enable 'config_devel' in local environment only.
+    if ($environment == 'local') {
+      vicgovau_core_install_module('config_devel');
+    }
+
+    // Enable 'tide_test' in local and CI environments.
+    if ($environment == 'local' || $environment == 'ci') {
+      vicgovau_core_install_module('tide_test');
+    }
+
+    if ($environment == 'local' || $environment == 'ci' || $environment == 'development') {
+      vicgovau_core_install_module('vicgovau_demo');
+    }
   }
 }
 

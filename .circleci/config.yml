@@ -154,7 +154,11 @@ workflows:
   version: 2
   main:
     jobs:
-      - build
+      - build:
+          filters:
+            branches:
+              ignore: /api|api\-edge/
+
       - build-install
       - push-api:
           requires:

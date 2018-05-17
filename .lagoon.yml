@@ -59,7 +59,7 @@ environments:
         command: 'drush cron'
         service: cli
     routes:
-      - nginx:
+      - nginx-php:
         - "api.content.vic.gov.au"
   api-edge:
     cronjobs:
@@ -68,5 +68,5 @@ environments:
         command: 'drush cron'
         service: cli
     routes:
-      - nginx:
+      - nginx-php:
         - "api-edge.content.vic.gov.au"
