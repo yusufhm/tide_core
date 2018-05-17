@@ -1,4 +1,16 @@
 version: 2
+aliases:
+  # Fingerprint of the SSH key for the Deployer user. The value is found in
+  # CircleCI UI -> SSH Permissions.
+  - &deploy_ssh_fingerprint "88:6b:b6:bc:eb:1a:49:31:30:07:cc:4b:cc:cb:89:35"
+  - &step_configure_git
+    run:
+      name: Configure git
+      command: |
+        git config --global user.email "$DEPLOY_USER_EMAIL" && git config --global user.name "$DEPLOY_USER_NAME"
+        mkdir -p ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+        DEPLOY_SSH_FILE="${DEPLOY_SSH_FINGERPRINT//:}" && DEPLOY_SSH_FILE="id_rsa_${DEPLOY_SSH_FILE//\"}" && ssh-add -D && ssh-add ~/.ssh/$DEPLOY_SSH_FILE
+
 jobs:
   build:
     docker:
@@ -101,9 +113,58 @@ jobs:
           when: always
       - store_artifacts:
           path: /tmp/artifacts
+
+  push-api:
+    docker:
+      - image: singledigital/bay-circle:latest
+    working_directory: /app
+    environment:
+      DEPLOY_SSH_FINGERPRINT: *deploy_ssh_fingerprint
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - *deploy_ssh_fingerprint
+      - *step_configure_git
+      - run:
+          name: Push to remote
+          command: |
+            git checkout -b api
+            git push origin api --force
+
+  push-api-edge:
+    docker:
+      - image: singledigital/bay-circle:latest
+    working_directory: /app
+    environment:
+      DEPLOY_SSH_FINGERPRINT: *deploy_ssh_fingerprint
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - *deploy_ssh_fingerprint
+      - *step_configure_git
+      - run:
+          name: Push to remote
+          command: |
+            git checkout -b api-edge
+            git push origin api-edge --force
+
 workflows:
   version: 2
   main:
     jobs:
       - build
       - build-install
+      - push-api:
+          requires:
+            - build-install
+          filters:
+            branches:
+              only: master
+      - push-api-edge:
+          requires:
+            - build-install
+          filters:
+            branches:
+              only: /develop|ci/
