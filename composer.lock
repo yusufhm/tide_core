@@ -1312,7 +1312,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_core",
-                "reference": "19af7c6fedb522030e98c0cb71297c070457a4c6",
+                "reference": "f188a343bc6e915d98665b97a50a07147a2b70e7",
                 "shasum": null
             },
             "require": {
@@ -1332,6 +1332,7 @@
                 "drupal/events_log_track": "^1.1",
                 "drupal/fakeobjects": "^1.0",
                 "drupal/fast_404": "dev-1.x",
+                "drupal/field_group": "^3.0-beta1",
                 "drupal/linkit": "^4.3",
                 "drupal/m4032404": "^1.0@alpha",
                 "drupal/maxlength": "^1.0@beta",
@@ -1388,6 +1389,9 @@
                     },
                     "drupal/config_ignore": {
                         "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-05-14/config_error-offset-error-2972302-3.patch"
+                    },
+                    "drupal/field_group": {
+                        "Do not translate field group labels using interface translation. - https://www.drupal.org/project/field_group/issues/2846617": "https://www.drupal.org/files/issues/2018-05-10/2846617-16-use-config-translations-for-field-group.patch"
                     }
                 }
             },
@@ -1402,12 +1406,11 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_landing_page",
-                "reference": "66562c01fec8d360f94730ebcfadc26a3e1aace4",
+                "reference": "4584695df5e591a9c7c7d0dc4f036665ea5b122c",
                 "shasum": null
             },
             "require": {
                 "dpc-sdp/tide_core": "0.0.1",
-                "drupal/field_group": "^3.0-beta1",
                 "drupal/maxlength": "^1.0@beta",
                 "drupal/paragraphs": "^1.2",
                 "drupal/smart_trim": "^1.1"
@@ -1448,7 +1451,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_page",
-                "reference": "d5ace4de9b06b787e97967cdb837062640316d22",
+                "reference": "ea0efbd2028bf077160ee927949ded5c026600f3",
                 "shasum": null
             },
             "require": {
@@ -1456,11 +1459,6 @@
                 "drupal/smart_trim": "^1.1"
             },
             "type": "drupal-module",
-            "extra": {
-                "enable-patching": true,
-                "composer-exit-on-patch-failure": true,
-                "patches": []
-            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -3437,6 +3435,9 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Do not translate field group labels using interface translation. - https://www.drupal.org/project/field_group/issues/2846617": "https://www.drupal.org/files/issues/2018-05-10/2846617-16-use-config-translations-for-field-group.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

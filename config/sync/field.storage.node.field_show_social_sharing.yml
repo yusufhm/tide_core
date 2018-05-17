@@ -1,10 +1,11 @@
+uuid: c15d39e2-44a8-44f6-b157-e9730ecc15fa
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_page_show_related
-field_name: field_page_show_related
+id: node.field_show_social_sharing
+field_name: field_show_social_sharing
 entity_type: node
 type: boolean
 settings: {  }

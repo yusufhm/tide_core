@@ -6,9 +6,10 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_page_feature_image
     - field.field.node.page.field_page_intro_text
-    - field.field.node.page.field_page_show_related
-    - field.field.node.page.field_page_show_social
     - field.field.node.page.field_related_links
+    - field.field.node.page.field_show_content_rating
+    - field.field.node.page.field_show_related_content
+    - field.field.node.page.field_show_social_sharing
     - field.field.node.page.field_show_whats_next
     - field.field.node.page.field_tags
     - field.field.node.page.field_topic
@@ -17,10 +18,72 @@ dependencies:
   module:
     - content_moderation
     - entity_browser
+    - field_group
     - maxlength
     - paragraphs
     - path
     - text
+third_party_settings:
+  field_group:
+    group_right_column:
+      children:
+        - group_related_links
+        - group_whats_next
+        - group_other
+      parent_name: ''
+      weight: 5
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: 'Right column'
+      region: content
+    group_related_links:
+      children:
+        - field_show_related_content
+        - field_related_links
+      parent_name: group_right_column
+      weight: 6
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: 'Related links'
+      region: content
+    group_whats_next:
+      children:
+        - field_show_whats_next
+        - field_whats_next
+      parent_name: group_right_column
+      weight: 7
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'What''s Next'
+      region: content
+    group_other:
+      children:
+        - field_show_social_sharing
+        - field_show_content_rating
+      parent_name: group_right_column
+      weight: 8
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Other
+      region: content
 id: node.page.default
 targetEntityType: node
 bundle: page
@@ -37,7 +100,7 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 9
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -63,22 +126,8 @@ content:
     third_party_settings: {  }
     type: string_textarea
     region: content
-  field_page_show_related:
-    weight: 7
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_page_show_social:
-    weight: 6
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   field_related_links:
-    weight: 103
+    weight: 17
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -91,14 +140,37 @@ content:
     third_party_settings: {  }
     type: paragraphs
     region: content
-  field_show_whats_next:
-    weight: 7
+  field_show_content_rating:
+    type: boolean_checkbox
+    region: content
+    field_name: field_show_content_rating
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_show_related_content:
+    weight: 15
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
+  field_show_social_sharing:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_show_whats_next:
+    weight: 11
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_tags:
-    weight: 109
+    weight: 23
     settings:
       match_operator: CONTAINS
       size: 60
@@ -117,7 +189,7 @@ content:
     third_party_settings: {  }
   field_whats_next:
     type: paragraphs
-    weight: 106
+    weight: 12
     settings:
       title: Link
       title_plural: Links
@@ -131,13 +203,13 @@ content:
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 22
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 12
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -145,21 +217,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
+    weight: 17
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 14
+    weight: 21
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 11
+    weight: 18
     region: content
     third_party_settings: {  }
   title:
@@ -175,7 +247,7 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
   uid:
     type: entity_reference_autocomplete
-    weight: 8
+    weight: 15
     settings:
       match_operator: CONTAINS
       size: 60
@@ -183,7 +255,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 13
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }

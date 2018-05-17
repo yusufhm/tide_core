@@ -8,8 +8,10 @@ dependencies:
     - field.field.node.landing_page.field_landing_page_component
     - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_key_journeys
-    - field.field.node.landing_page.field_landing_page_show_social
     - field.field.node.landing_page.field_related_links
+    - field.field.node.landing_page.field_show_content_rating
+    - field.field.node.landing_page.field_show_related_content
+    - field.field.node.landing_page.field_show_social_sharing
     - field.field.node.landing_page.field_show_whats_next
     - field.field.node.landing_page.field_tags
     - field.field.node.landing_page.field_topic
@@ -52,8 +54,10 @@ hidden:
   field_landing_page_c_secondary: true
   field_landing_page_component: true
   field_landing_page_key_journeys: true
-  field_landing_page_show_social: true
   field_related_links: true
+  field_show_content_rating: true
+  field_show_related_content: true
+  field_show_social_sharing: true
   field_show_whats_next: true
   field_tags: true
   field_topic: true

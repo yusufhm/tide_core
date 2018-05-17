@@ -21,6 +21,7 @@
         "drupal/events_log_track": "^1.1",
         "drupal/fakeobjects": "^1.0",
         "drupal/fast_404": "dev-1.x",
+        "drupal/field_group": "^3.0-beta1",
         "drupal/linkit": "^4.3",
         "drupal/m4032404": "^1.0@alpha",
         "drupal/maxlength": "^1.0@beta",
@@ -129,6 +130,9 @@
             },
             "drupal/config_ignore": {
                 "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-05-14/config_error-offset-error-2972302-3.patch"
+            },
+            "drupal/field_group": {
+                "Do not translate field group labels using interface translation. - https://www.drupal.org/project/field_group/issues/2846617": "https://www.drupal.org/files/issues/2018-05-10/2846617-16-use-config-translations-for-field-group.patch"
             }
         }
     }

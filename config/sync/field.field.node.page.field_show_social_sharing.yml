@@ -1,11 +1,12 @@
+uuid: 982128f8-8366-4624-b19e-33e5eecf0076
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_page_show_social
+    - field.storage.node.field_show_social_sharing
     - node.type.page
-id: node.page.field_page_show_social
-field_name: field_page_show_social
+id: node.page.field_show_social_sharing
+field_name: field_show_social_sharing
 entity_type: node
 bundle: page
 label: 'Show Social Sharing?'

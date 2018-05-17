@@ -1,13 +1,11 @@
-uuid: 51b2ea5f-626d-4a4c-b125-6b88fd1889df
+uuid: 3baa3b1d-3237-40ad-8b61-aa33ad577939
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: ic_795VAbui8WwHMyWpK46ViOTKrolmIkT6Lyh2Iabw
-id: node.field_page_show_related
-field_name: field_page_show_related
+id: node.field_show_related_content
+field_name: field_show_related_content
 entity_type: node
 type: boolean
 settings: {  }

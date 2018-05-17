@@ -24,11 +24,11 @@ settings:
   provider: webform
   label_display: '0'
   webform_id: tide_webform_content_rating
-  default_data: "url: \"[current-page:url]\"\n"
+  default_data: "url: \"[current-page:url]\"\r\n"
 visibility:
   request_path:
     id: request_path
-    pages: "<front>\n/admin\n/admin*\n/batch\n/block/add*\n/node/*/*\n/media/add*\n/media/*/*\n/user/*\n/user/*/*\n/entity-browser*"
+    pages: "<front>\r\n/admin\r\n/admin*\r\n/batch\r\n/block/add*\r\n/node/*/*\r\n/media/add*\r\n/media/*/*\r\n/user/*\r\n/user/*/*\r\n/entity-browser*\r\n/taxonomy/term/*/*"
     negate: true
     context_mapping: {  }
   token_matcher:
@@ -42,7 +42,7 @@ visibility:
   webform:
     id: webform
     webforms:
-      content_rating: tide_webform_content_rating
+      tide_webform_content_rating: tide_webform_content_rating
     negate: true
     context_mapping:
       webform: '@webform.webform_route_context:webform'

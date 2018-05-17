@@ -49,8 +49,8 @@ function vicgovau_demo_create_node_page() {
     $node = Node::create($node_data);
 
     $booleanFields = [
-      'field_page_show_related',
-      'field_page_show_social',
+      'field_show_related_content',
+      'field_show_social_sharing',
       'field_show_whats_next',
       'field_show_content_rating',
     ];

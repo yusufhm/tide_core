@@ -4,6 +4,7 @@ dependencies:
   enforced:
     module:
       - media
+      - tide_test
 id: testmedia
 label: 'Test media'
 description: 'Test media'

@@ -5,7 +5,6 @@
 
 echo "Running database updates"
 drush updb -y
-drush cr -y
 echo "Importing Drupal configuration"
 drush cim -y
 drush cr -y

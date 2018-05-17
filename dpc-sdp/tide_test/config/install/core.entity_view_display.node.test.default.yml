@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.node.test.body
+    - field.field.node.test.field_show_content_rating
     - field.field.node.test.field_test_media
     - node.type.test
   module:
@@ -40,3 +41,4 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_show_content_rating: true

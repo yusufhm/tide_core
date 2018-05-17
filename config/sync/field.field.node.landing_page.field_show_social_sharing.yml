@@ -1,16 +1,14 @@
-uuid: f3ab14fb-5901-4e64-b8ce-754279a751f5
+uuid: 421ea4d1-eaba-4b87-bdd3-57be34e87247
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_page_show_social
-    - node.type.page
-_core:
-  default_config_hash: P0eXaqKAJK2dQJi8Ev4PRPlqBAU1ZHWZHlI_acM3y_w
-id: node.page.field_page_show_social
-field_name: field_page_show_social
+    - field.storage.node.field_show_social_sharing
+    - node.type.landing_page
+id: node.landing_page.field_show_social_sharing
+field_name: field_show_social_sharing
 entity_type: node
-bundle: page
+bundle: landing_page
 label: 'Show Social Sharing?'
 description: 'Check this box if you want to show Social Sharing block on this page.'
 required: false
