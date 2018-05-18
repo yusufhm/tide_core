@@ -24,7 +24,7 @@
 # Ignore local dev files.
 .data
 screenshots
-local
+/local
 
 # Ignore dependencies cache files
 vendor

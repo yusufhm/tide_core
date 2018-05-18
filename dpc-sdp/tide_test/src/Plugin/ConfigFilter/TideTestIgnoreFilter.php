@@ -36,7 +36,7 @@ class TideTestIgnoreFilter extends IgnoreFilter implements ContainerFactoryPlugi
    */
   public function filterWrite($name, array $data) {
     // @codingStandardsIgnoreStart Drupal.Functions.DiscouragedFunctions.Discouraged
-    $excluded_modules = ['tide_test'];
+    $excluded_modules = ['tide_test' => 'tide_test'];
     $excluded_permissions = [
       'create test content',
       'delete any test content',
