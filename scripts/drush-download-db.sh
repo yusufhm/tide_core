@@ -39,4 +39,4 @@ if [ ! -f $LOCAL_DB_PATH ]; then
   fi
 fi
 
-[ ! -s $LOCAL_DB_PATH ] && "Invalid file size. Please check production DB" && exit 1
+[ ! -s $LOCAL_DB_PATH ] && rm -r $LOCAL_DB_PATH && "Invalid file size. Please check production DB" && exit 1
