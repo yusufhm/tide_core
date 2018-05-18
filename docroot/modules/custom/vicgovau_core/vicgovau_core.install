@@ -7,8 +7,6 @@
 
 use Drupal\Core\Site\Settings;
 use Drupal\taxonomy\Entity\Term;
-use Drupal\user\Entity\Role;
-use Drupal\user\Entity\User;
 
 /**
  * Implements hook_install().
@@ -20,24 +18,41 @@ function vicgovau_core_install() {
       call_user_func($function);
     }
   }
-
-  vicgovau_core_enable_modules();
 }
 
 /**
  * Helper to enable modules.
  */
-function vicgovau_core_enable_modules() {
+function vicgovau_core_enable_modules($is_install = FALSE) {
   $environment = Settings::get('environment');
 
-  // Enable 'config_devel' in local environment only.
-  if ($environment == 'local') {
-    vicgovau_core_install_module('config_devel');
-  }
+  if ($is_install) {
+    if ($environment == 'development') {
+      vicgovau_core_install_module('shield');
+    }
 
-  // Enable 'tide_test' in local and CI environments.
-  if ($environment == 'local' || $environment == 'ci') {
-    vicgovau_core_install_module('tide_test');
+    if ($environment == 'ci') {
+      vicgovau_core_install_module('tide_test');
+    }
+
+    if ($environment == 'ci' || $environment == 'development') {
+      vicgovau_core_install_module('vicgovau_demo');
+    }
+  }
+  else {
+    // Enable 'config_devel' in local environment only.
+    if ($environment == 'local') {
+      vicgovau_core_install_module('config_devel');
+    }
+
+    // Enable 'tide_test' in local and CI environments.
+    if ($environment == 'local' || $environment == 'ci') {
+      vicgovau_core_install_module('tide_test');
+    }
+
+    if ($environment == 'local' || $environment == 'ci' || $environment == 'development') {
+      vicgovau_core_install_module('vicgovau_demo');
+    }
   }
 }
 
@@ -64,50 +79,11 @@ function vicgovau_core_install_module($module) {
 }
 
 /**
- * Helper to create demo users.
- *
- * Extracted as a standalone function to allow calling from drush.
- */
-function vicgovau_core_create_demo_users() {
-  $roles = [
-    'administrator',
-    'approver',
-    'editor',
-    'previewer',
-  ];
-
-  foreach ($roles as $role) {
-    for ($i = 1; $i <= 2; $i++) {
-      $name = $role . $i . '.test@example.com';
-
-      $existing_user = user_load_by_name($name);
-      if ($existing_user) {
-        user_delete($existing_user->id());
-      }
-      if (Role::load($role)) {
-        $user = User::create();
-        $user->setUsername($name);
-        $user->setPassword($name);
-        $user->setEmail($name);
-        $user->addRole($role);
-        $user->activate();
-        $user->enforceIsNew();
-        $user->save();
-      }
-    }
-  }
-}
-
-/**
  * Creates sites and sections. Also creates demo users.
  */
 function vicgovau_core_update_8001() {
   $sites = [
-    'vic.gov.au' => [
-      'section1',
-      'section2',
-    ],
-    'other.gov.au' => [],
+    'vic.gov.au' => [],
   ];
 
   $weight = 0;
@@ -129,8 +105,5 @@ function vicgovau_core_update_8001() {
     }
     $weight++;
   }
-
-  // Create demo users.
-  vicgovau_core_create_demo_users();
 
 }

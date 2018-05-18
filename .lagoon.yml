@@ -24,7 +24,12 @@ tasks:
         service: cli
     - run:
         name: Deploy drupal.
-        command: './scripts/drupal/deploy.sh'
+        command: |
+          if [[ "$LAGOON_GIT_BRANCH" = "api" ]] || [[ "$LAGOON_GIT_BRANCH" = "api-edge" ]]; then
+            ./scripts/drupal/site-install.sh
+          else
+            ./scripts/drupal/deploy.sh
+          fi
         service: cli
     - run:
         name: Post deployed URL to JIRA
@@ -47,3 +52,21 @@ environments:
         schedule: "*/15 * * * *"
         command: 'drush cron'
         service: cli
+  api:
+    cronjobs:
+      - name: drush cron
+        schedule: "*/15 * * * *"
+        command: 'drush cron'
+        service: cli
+    routes:
+      - nginx-php:
+        - "api.content.vic.gov.au"
+  api-edge:
+    cronjobs:
+      - name: drush cron
+        schedule: "*/15 * * * *"
+        command: 'drush cron'
+        service: cli
+    routes:
+      - nginx-php:
+        - "api-edge.content.vic.gov.au"

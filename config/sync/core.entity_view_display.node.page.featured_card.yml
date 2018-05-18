@@ -5,11 +5,14 @@ dependencies:
   config:
     - core.entity_view_mode.node.featured_card
     - field.field.node.page.body
+    - field.field.node.page.field_node_primary_site
+    - field.field.node.page.field_node_site
     - field.field.node.page.field_page_feature_image
     - field.field.node.page.field_page_intro_text
-    - field.field.node.page.field_page_show_related
-    - field.field.node.page.field_page_show_social
     - field.field.node.page.field_related_links
+    - field.field.node.page.field_show_content_rating
+    - field.field.node.page.field_show_related_content
+    - field.field.node.page.field_show_social_sharing
     - field.field.node.page.field_show_whats_next
     - field.field.node.page.field_tags
     - field.field.node.page.field_topic
@@ -60,10 +63,13 @@ content:
       image_link: ''
     third_party_settings: {  }
 hidden:
+  field_node_primary_site: true
+  field_node_site: true
   field_page_intro_text: true
-  field_page_show_related: true
-  field_page_show_social: true
   field_related_links: true
+  field_show_content_rating: true
+  field_show_related_content: true
+  field_show_social_sharing: true
   field_show_whats_next: true
   field_tags: true
   field_topic: true

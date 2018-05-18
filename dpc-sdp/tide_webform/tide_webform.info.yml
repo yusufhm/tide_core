@@ -9,3 +9,9 @@ dependencies:
   - token_conditions:token_conditions
   - webform:webform
   - dpc-sdp:tide_core
+config_devel:
+  install:
+    - field.storage.node.field_show_content_rating
+    - webform.webform.tide_webform_content_rating
+  optional:
+    - block.block.tide_webform_content_rating

@@ -46,3 +46,33 @@ function tide_landing_page_install() {
     }
   }
 }
+
+/**
+ * Implements hook_update_dependencies().
+ */
+function tide_landing_page_update_dependencies() {
+  $dependencies['tide_landing_page'][8001] = ['tide_core' => 8001];
+  return $dependencies;
+}
+
+/**
+ * Refactor Show Social Sharing field.
+ */
+function tide_landing_page_update_8001() {
+  module_load_include('inc', 'tide_core', 'includes/helpers');
+  $config_location = [drupal_get_path('module', 'tide_landing_page') . '/config/install'];
+  _tide_import_single_config('field.field.node.landing_page.field_show_social_sharing', $config_location);
+
+  $pages = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'landing_page']);
+  if ($pages && count($pages)) {
+    /** @var \Drupal\node\Entity\Node $node */
+    foreach ($pages as $node) {
+      if ($node->hasField('field_show_social_sharing') && $node->hasField('field_landing_page_show_social')) {
+        $node->set('field_show_social_sharing', $node->get('field_landing_page_show_social'));
+      }
+      $node->setNewRevision(FALSE);
+      $node->save();
+    }
+  }
+}

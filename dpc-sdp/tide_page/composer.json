@@ -14,11 +14,5 @@
             "no-api": true,
             "url": "ssh://git@github.com:22/dpc-sdp/tide_core.git"
         }
-    },
-    "extra": {
-        "enable-patching": true,
-        "composer-exit-on-patch-failure": true,
-        "patches": {
-        }
     }
 }

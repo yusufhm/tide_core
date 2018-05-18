@@ -146,3 +146,13 @@ function _tide_core_update_editorial_workflow() {
     $editorial_workflow->save();
   }
 }
+
+/**
+ * Add field storage for Show Related Content and Show Social Sharing.
+ */
+function tide_core_update_8001() {
+  module_load_include('inc', 'tide_core', 'includes/helpers');
+  $config_location = [drupal_get_path('module', 'tide_core') . '/config/install'];
+  _tide_import_single_config('field.storage.node.field_show_related_content', $config_location);
+  _tide_import_single_config('field.storage.node.field_show_social_sharing', $config_location);
+}

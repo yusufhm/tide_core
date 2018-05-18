@@ -1,0 +1,485 @@
+<?php
+
+namespace Drupal\vicgovau_demo;
+
+use Drupal\Component\Utility\Random;
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\smart_trim\Truncate\TruncateHTML;
+
+/**
+ * Class VicgovauDemoHelper.
+ *
+ * @package Drupal\vicgovau_demo
+ */
+class VicgovauDemoHelper {
+
+  /**
+   * Generate a random title.
+   *
+   * @return string
+   *   The title.
+   */
+  public static function randomSentence($min_word_count = 5, $max_word_count = 10) {
+    $randomiser = new Random();
+    $truncator = new TruncateHTML();
+
+    $title = $randomiser->sentences($min_word_count);
+    return $truncator->truncateWords($title, mt_rand($min_word_count, $max_word_count), '');
+  }
+
+  /**
+   * Generate a random plain text paragraph.
+   *
+   * @return string
+   *   The paragraph.
+   */
+  public static function randomPlainParagraph() {
+    $randomiser = new Random();
+    return $randomiser->paragraphs(1);
+  }
+
+  /**
+   * Generate a random HTML paragraph.
+   *
+   * @return string
+   *   The paragraph.
+   */
+  public static function randomHtmlParagraph() {
+    return '<p>' . static::randomPlainParagraph() . '</p>';
+  }
+
+  /**
+   * Generate a random HTML heading.
+   *
+   * @return string
+   *   The heading.
+   */
+  public static function randomHtmlHeading($min_word_count = 5, $max_word_count = 10, $heading_level = 0) {
+    if (!$heading_level) {
+      $heading_level = mt_rand(2, 5);
+    }
+    return '<h' . $heading_level . '>' . static::randomSentence($min_word_count, $max_word_count) . '</h' . $heading_level . '>';
+  }
+
+  /**
+   * Generate random HTML paragraphs.
+   *
+   * @param int $min_paragraph_count
+   *   Minimum number of paragraphs to generate.
+   * @param int $max_paragraph_count
+   *   Maximum number of paragraphs to generate.
+   *
+   * @return string
+   *   Paragraphs.
+   */
+  public static function randomRichText($min_paragraph_count = 3, $max_paragraph_count = 12) {
+    $paragraphs = [];
+    $paragraph_count = mt_rand($min_paragraph_count, $max_paragraph_count);
+    for ($i = 1; $i <= $paragraph_count; $i++) {
+      if ($i % 2) {
+        $paragraphs[] = static::randomHtmlHeading();
+      }
+      $paragraphs[] = static::randomHtmlParagraph();
+    }
+
+    return implode(PHP_EOL, $paragraphs);
+  }
+
+  /**
+   * Generate random HTML paragraphs with embedded media.
+   *
+   * @param int $min_paragraph_count
+   *   Minimum number of paragraphs to generate.
+   * @param int $max_paragraph_count
+   *   Maximum number of paragraphs to generate.
+   *
+   * @return string
+   *   Paragraphs.
+   */
+  public static function randomRichTextWithMedia($min_paragraph_count = 5, $max_paragraph_count = 12) {
+    $paragraphs = [];
+    $paragraph_count = mt_rand($min_paragraph_count, $max_paragraph_count);
+    for ($i = 1; $i <= $paragraph_count; $i++) {
+      if ($i % 2) {
+        $paragraphs[] = static::randomHtmlHeading();
+      }
+      if (!($i % 4)) {
+        $paragraphs[] = static::randomEmbeddedMedia();
+      }
+      $paragraphs[] = static::randomHtmlParagraph();
+    }
+
+    return implode(PHP_EOL, $paragraphs);
+  }
+
+  /**
+   * Generate a random boolean value.
+   *
+   * @return bool
+   *   Random value.
+   */
+  public static function randomBool() {
+    return mt_rand(0, 1000) < 500;
+  }
+
+  /**
+   * Select a random uid.
+   *
+   * @return int
+   *   The uid.
+   */
+  public static function randomUid() {
+    $repository = VicgovauDemoRepository::getInstance();
+
+    $users = [1 => 1];
+    $users += $repository->getDemoEntities('user', 'user');
+    return array_rand($users);
+  }
+
+  /**
+   * Select random sites and site sections.
+   *
+   * @return array
+   *   The sites and section.
+   */
+  public static function randomSiteSections() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $sites = $repository->getDemoEntities('site', 'site');
+    $sections = $repository->getDemoEntities('site_section');
+
+    $site_ids = array_rand($sites, min(2, count($sites)));
+    $section_ids = [];
+    foreach ($site_ids as $site_id) {
+      $section_ids[$site_id] = $site_id;
+      $section_id = array_rand($sections['site:' . $site_id]);
+      $section_ids[$section_id] = $section_id;
+    }
+
+    return $section_ids;
+  }
+
+  /**
+   * Return the array for field value from randomSiteSections().
+   *
+   * @param array $site_section_ids
+   *   The list of IDs.
+   *
+   * @return array
+   *   The array.
+   */
+  public static function getFieldValueForSiteSections(array $site_section_ids) {
+    $values = [];
+    foreach ($site_section_ids as $site_section_id) {
+      $values[] = ['target_id' => $site_section_id];
+    }
+    return $values;
+  }
+
+  /**
+   * Select a random site from randomSiteSections().
+   *
+   * @param array $site_section_ids
+   *   The list of IDs.
+   *
+   * @return int
+   *   The site id.
+   */
+  public static function randomSite(array $site_section_ids) {
+    $repository = VicgovauDemoRepository::getInstance();
+    $sites = $repository->getDemoEntities('site', 'site');
+    $sites = array_keys($sites);
+    $site_ids = array_intersect($sites, $site_section_ids);
+    return $site_ids[array_rand($site_ids)];
+  }
+
+  /**
+   * Select a random Topic.
+   *
+   * @return int
+   *   The topic tid.
+   */
+  public static function randomTopic() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $topics = $repository->getDemoEntities('taxonomy_term', 'topic');
+    return count($topics) ? array_rand($topics) : 0;
+  }
+
+  /**
+   * Select a random image.
+   *
+   * @return int
+   *   The image id.
+   */
+  public static function randomImage() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $images = $repository->getDemoEntities('media', 'image');
+    return count($images) ? array_rand($images) : 0;
+  }
+
+  /**
+   * Select a random media to embed in WYSIWYG.
+   *
+   * @return string
+   *   Embedded media.
+   */
+  public static function randomEmbeddedMedia() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $media = $repository->getDemoEntities('media');
+    if (count($media)) {
+      $bundle = array_rand($media);
+      /** @var \Drupal\media\Entity\Media $embed */
+      $embed = $media[$bundle][array_rand($media[$bundle])];
+
+      return '<drupal-entity data-embed-button="tide_media" data-entity-embed-display="view_mode:media.embedded" data-entity-type="media" data-entity-uuid="' . $embed->uuid() . '"></drupal-entity>';
+    }
+
+    return '';
+  }
+
+  /**
+   * Select a random Page.
+   *
+   * @param bool $return_entity
+   *   Whether to return the full entity or just entity ID.
+   *
+   * @return int|\Drupal\node\Entity\Node
+   *   Entity ID or full entity.
+   */
+  public static function randomPage($return_entity = FALSE) {
+    $repository = VicgovauDemoRepository::getInstance();
+    $pages = $repository->getDemoEntities('node', 'page');
+    if (count($pages)) {
+      $page_id = array_rand($pages);
+      return $return_entity ? $pages[$page_id] : $page_id;
+    }
+    return NULL;
+  }
+
+  /**
+   * Generate a random link field from a random page.
+   *
+   * @return array
+   *   Link field.
+   */
+  public static function randomLinkFieldValue() {
+    $page = static::randomPage(TRUE);
+    if ($page) {
+      return [
+        'uri' => 'entity:node/' . $page->id(),
+        'title' => $page->getTitle(),
+      ];
+    }
+    return [];
+  }
+
+  /**
+   * Generate a random CTA link field from a random page.
+   *
+   * @return array
+   *   CTA Link field.
+   */
+  public static function randomCtaLinkFieldValue() {
+    $page = static::randomPage();
+    if ($page) {
+      return [
+        'uri' => 'entity:node/' . $page,
+        'title' => 'Read more',
+      ];
+    }
+    return [];
+  }
+
+  /**
+   * Return a random timestamp in the range [-1y, +1y].
+   *
+   * @return int
+   *   Timestamp.
+   */
+  public static function randomTimestamp() {
+    $current = time();
+    $one_year = 31536000;
+    return mt_rand($current - $one_year, $current + $one_year);
+  }
+
+  /**
+   * Generate a random date.
+   *
+   * @return string
+   *   Date string.
+   */
+  public static function randomDate() {
+    $random_timestamp = static::randomTimestamp();
+    return date('Y-m-d\TH:i:00', $random_timestamp);
+  }
+
+  /**
+   * Generate a random Keydate paragraph.
+   *
+   * @return \Drupal\paragraphs\Entity\Paragraph
+   *   The Keydate.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  public static function randomKeydate() {
+    $random_timestamp = static::randomTimestamp();
+    $keydate = Paragraph::create([
+      'type' => 'keydates',
+      'field_paragraph_title' => [['value' => static::randomSentence()]],
+      'field_paragraph_keydate' => [['value' => date('F d', $random_timestamp)]],
+      'field_paragraph_link' => [VicgovauDemoHelper::randomLinkFieldValue()],
+      'field_paragraph_summary' => [
+        'value' => static::randomPlainParagraph(),
+      ],
+    ]);
+    $keydate->save();
+    $repository = VicgovauDemoRepository::getInstance();
+    $repository->trackEntity($keydate);
+    return $keydate;
+  }
+
+  /**
+   * Generate random landing page components.
+   *
+   * @param int $component_count
+   *   Number of components to generate.
+   *
+   * @return array
+   *   The components.
+   */
+  public static function randomLandingPageComponents($component_count = 20) {
+    $repository = VicgovauDemoRepository::getInstance();
+
+    $supported_components = [
+      'basic_text',
+      'card_event',
+      'card_promotion',
+      'card_promotion_auto',
+      'card_navigation',
+      'card_navigation_auto',
+      'card_navigation_featured',
+      'card_navigation_featured_auto',
+      'card_keydates',
+    ];
+
+    $components = [];
+    while ($component_count) {
+      $component_type = $supported_components[array_rand($supported_components)];
+      $component_data = [
+        'type' => $component_type,
+      ];
+      switch ($component_type) {
+        case 'basic_text':
+          $component_data['field_paragraph_body'][] = [
+            'value' => static::randomRichText(1, 4),
+            'format' => 'rich_text',
+          ];
+          break;
+
+        case 'card_event':
+          $component_data += [
+            'field_paragraph_title' => [['value' => static::randomSentence()]],
+            'field_paragraph_date' => [['value' => static::randomDate()]],
+            'field_paragraph_media' => [['target_id' => static::randomImage()]],
+            'field_paragraph_summary' => [
+              'value' => static::randomPlainParagraph(),
+            ],
+            'field_paragraph_topic' => [['target_id' => static::randomTopic()]],
+            'field_paragraph_location' => [
+              [
+                'langcode' => '',
+                'country_code' => 'AU',
+                'administrative_area' => 'Victoria',
+                'locality' => 'Melbourne',
+                'postal_code' => 3000,
+                'address_line1' => '1 Spring St',
+              ],
+            ],
+            'field_paragraph_cta' => [VicgovauDemoHelper::randomCtaLinkFieldValue()],
+          ];
+          break;
+
+        case 'card_promotion':
+          $component_data += [
+            'field_paragraph_title' => [['value' => static::randomSentence()]],
+            'field_paragraph_date' => [['value' => static::randomDate()]],
+            'field_paragraph_media' => [['target_id' => static::randomImage()]],
+            'field_paragraph_summary' => [
+              'value' => static::randomPlainParagraph(),
+            ],
+            'field_paragraph_topic' => [['target_id' => static::randomTopic()]],
+            'field_paragraph_link' => [VicgovauDemoHelper::randomLinkFieldValue()],
+          ];
+          break;
+
+        case 'card_navigation':
+          $component_data += [
+            'field_paragraph_title' => [['value' => static::randomSentence()]],
+            'field_paragraph_summary' => [
+              'value' => static::randomPlainParagraph(),
+            ],
+            'field_paragraph_link' => [VicgovauDemoHelper::randomLinkFieldValue()],
+          ];
+          break;
+
+        case 'card_navigation_featured':
+          $component_data += [
+            'field_paragraph_title' => [['value' => static::randomSentence()]],
+            'field_paragraph_summary' => [
+              'value' => static::randomPlainParagraph(),
+            ],
+            'field_paragraph_link' => [VicgovauDemoHelper::randomLinkFieldValue()],
+            'field_paragraph_media' => [['target_id' => static::randomImage()]],
+          ];
+          break;
+
+        case 'card_promotion_auto':
+          $component_data += [
+            'field_paragraph_cta_text' => [['value' => static::randomSentence(2, 5)]],
+            'field_paragraph_reference' => [['target_id' => static::randomPage()]],
+          ];
+          break;
+
+        case 'card_navigation_auto':
+        case 'card_navigation_featured_auto':
+          $component_data += [
+            'field_paragraph_reference' => [['target_id' => static::randomPage()]],
+          ];
+          break;
+
+        case 'card_keydates':
+          $component_data += [
+            'field_paragraph_cta' => [static::randomCtaLinkFieldValue()],
+            'field_paragraph_keydates' => [],
+          ];
+          for ($i = 1; $i <= mt_rand(1, 2); $i++) {
+            try {
+              $keydate = static::randomKeydate();
+              $component_data['field_paragraph_keydates'][] = [
+                'target_id' => $keydate->id(),
+                'target_revision_id' => $keydate->getRevisionId(),
+              ];
+            }
+            catch (\Exception $exception) {
+              watchdog_exception('vicgovau_demo', $exception);
+            }
+          }
+          break;
+      }
+
+      try {
+        $component = Paragraph::create($component_data);
+        $component->save();
+        $components[] = $component;
+        $repository->trackEntity($component);
+      }
+      catch (\Exception $exception) {
+        watchdog_exception('vicgovau_demo', $exception);
+      }
+
+      $component_count--;
+    };
+
+    return $components;
+  }
+
+}

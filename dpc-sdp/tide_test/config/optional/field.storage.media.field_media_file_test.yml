@@ -4,6 +4,7 @@ dependencies:
   enforced:
     module:
       - media
+      - tide_test
   module:
     - file
     - media

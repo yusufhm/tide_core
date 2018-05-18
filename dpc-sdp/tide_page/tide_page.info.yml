@@ -12,8 +12,10 @@ dependencies:
   - drupal:user
   - dpc-sdp:tide_core
   - dpc-sdp:tide_media
+  - dpc-sdp:tide_webform
   - drupal:datetime
   - entity_reference_revisions:entity_reference_revisions
+  - field_group:field_group
   - maxlength:maxlength
   - smart_trim:smart_trim
 config_devel:
@@ -25,13 +27,12 @@ config_devel:
     - field.field.node.page.field_page_feature_image
     - field.field.node.page.field_page_intro_text
     - field.field.node.page.field_whats_next
+    - field.field.node.page.field_show_content_rating
     - field.field.node.page.field_show_whats_next
-    - field.field.node.page.field_page_show_related
-    - field.field.node.page.field_page_show_social
+    - field.field.node.page.field_show_related_content
+    - field.field.node.page.field_show_social_sharing
     - field.field.node.page.field_related_links
     - field.field.node.page.field_tags
     - field.field.node.page.field_topic
     - field.storage.node.field_page_feature_image
     - field.storage.node.field_page_intro_text
-    - field.storage.node.field_page_show_related
-    - field.storage.node.field_page_show_social

@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Main functions.
+ */
+
+use Drupal\Core\Database\Database;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_entity_delete().
+ */
+function vicgovau_demo_entity_delete(EntityInterface $entity) {
+  try {
+    Database::getConnection()->delete('vicgovau_demo')
+      ->condition('entity_type', $entity->getEntityTypeId())
+      ->condition('bundle', $entity->bundle())
+      ->condition('entity_id', $entity->id())
+      ->execute();
+  }
+  catch (Exception $exception) {
+    watchdog_exception('vicgovau_demo', $exception);
+  }
+}
+
+/**
+ * Implements hook_config_ignore_settings_alter().
+ */
+function vicgovau_demo_config_ignore_settings_alter(array &$settings) {
+  // Ignore all demo config.
+  $settings[] = '*vicgovau_demo*';
+}

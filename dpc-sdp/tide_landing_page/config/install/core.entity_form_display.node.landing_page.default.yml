@@ -7,8 +7,10 @@ dependencies:
     - field.field.node.landing_page.field_landing_page_component
     - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_key_journeys
-    - field.field.node.landing_page.field_landing_page_show_social
     - field.field.node.landing_page.field_related_links
+    - field.field.node.landing_page.field_show_content_rating
+    - field.field.node.landing_page.field_show_related_content
+    - field.field.node.landing_page.field_show_social_sharing
     - field.field.node.landing_page.field_show_whats_next
     - field.field.node.landing_page.field_tags
     - field.field.node.landing_page.field_topic
@@ -41,6 +43,7 @@ third_party_settings:
     group_right_column:
       children:
         - group_related_links
+        - group_whats_next
         - group_blocks
       parent_name: ''
       weight: 3
@@ -109,10 +112,10 @@ third_party_settings:
       region: content
     group_blocks:
       children:
-        - field_show_whats_next
-        - field_landing_page_show_social
+        - field_show_social_sharing
+        - field_show_content_rating
       parent_name: group_right_column
-      weight: 23
+      weight: 24
       format_type: tab
       format_settings:
         label: Other
@@ -125,8 +128,8 @@ third_party_settings:
       region: content
     group_related_links:
       children:
+        - field_show_related_content
         - field_related_links
-        - field_whats_next
       parent_name: group_right_column
       weight: 22
       format_type: tab
@@ -137,6 +140,22 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Related links'
+      region: content
+    group_whats_next:
+      children:
+        - field_show_whats_next
+        - field_whats_next
+      parent_name: group_right_column
+      weight: 23
+      format_type: tab
+      format_settings:
+        label: 'What''s Next'
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'What''s Next'
       region: content
 id: node.landing_page.default
 targetEntityType: node
@@ -201,16 +220,9 @@ content:
       default_paragraph_type: ''
     third_party_settings: {  }
     region: content
-  field_landing_page_show_social:
-    weight: 34
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   field_related_links:
     type: paragraphs
-    weight: 6
+    weight: 39
     settings:
       title: Link
       title_plural: Links
@@ -222,6 +234,28 @@ content:
       autocollapse: none
     third_party_settings: {  }
     region: content
+  field_show_content_rating:
+    type: boolean_checkbox
+    region: content
+    field_name: field_show_content_rating
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_show_related_content:
+    weight: 37
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_show_social_sharing:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_show_whats_next:
     type: boolean_checkbox
     weight: 23
@@ -230,7 +264,7 @@ content:
       display_label: true
     third_party_settings: {  }
   field_tags:
-    weight: 13
+    weight: 14
     settings:
       match_operator: CONTAINS
       size: 60
@@ -239,7 +273,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_topic:
-    weight: 12
+    weight: 13
     settings:
       match_operator: CONTAINS
       size: 60
@@ -249,7 +283,7 @@ content:
     region: content
   field_whats_next:
     type: entity_reference_paragraphs
-    weight: 7
+    weight: 24
     region: content
     settings:
       title: Paragraph
@@ -261,13 +295,13 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 11
+    weight: 12
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -282,14 +316,14 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
+    weight: 11
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 8
     region: content
     third_party_settings: {  }
   title:
@@ -313,7 +347,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
