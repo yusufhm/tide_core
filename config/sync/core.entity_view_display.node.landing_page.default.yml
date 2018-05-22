@@ -6,8 +6,10 @@ dependencies:
     - field.field.node.landing_page.field_landing_page_c_primary
     - field.field.node.landing_page.field_landing_page_c_secondary
     - field.field.node.landing_page.field_landing_page_component
+    - field.field.node.landing_page.field_landing_page_contact
     - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_key_journeys
+    - field.field.node.landing_page.field_landing_page_show_contact
     - field.field.node.landing_page.field_node_primary_site
     - field.field.node.landing_page.field_node_site
     - field.field.node.landing_page.field_related_links
@@ -61,6 +63,15 @@ content:
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
     region: content
+  field_landing_page_contact:
+    type: entity_reference_revisions_entity_view
+    weight: 10
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
   field_landing_page_intro_text:
     weight: 2
     label: above
@@ -76,6 +87,16 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_landing_page_show_contact:
+    weight: 9
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_related_links:
     type: entity_reference_revisions_entity_view

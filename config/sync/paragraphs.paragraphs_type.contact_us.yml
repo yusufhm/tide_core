@@ -1,0 +1,9 @@
+uuid: 9cf2fbf5-ccc1-484b-9f86-db3c1f8c3496
+langcode: en
+status: true
+dependencies: {  }
+id: contact_us
+label: 'Contact Us'
+icon_uuid: null
+description: 'Paragraph type to allow the Contact component.'
+behavior_plugins: {  }

@@ -1,0 +1,9 @@
+uuid: cf0ca98d-0ade-4784-96f6-b1bb0d8f6386
+langcode: en
+status: true
+dependencies: {  }
+id: phone
+label: Phone
+icon_uuid: null
+description: 'Provides a phone number field with an option of adding a title to the number.'
+behavior_plugins: {  }

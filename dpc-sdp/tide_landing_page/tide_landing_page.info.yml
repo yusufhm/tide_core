@@ -11,6 +11,7 @@ dependencies:
   - drupal:node
   - drupal:path
   - drupal:text
+  - drupal:telephone
   - drupal:user
   - dpc-sdp:tide_core
   - dpc-sdp:tide_media
@@ -60,6 +61,12 @@ config_devel:
     - core.entity_view_display.paragraph.card_promotion.default
     - core.entity_view_display.paragraph.keydates.default
     - core.entity_view_display.paragraph.key_journeys.default
+    - core.entity_form_display.paragraph.contact_us.default
+    - core.entity_form_display.paragraph.phone.default
+    - core.entity_form_display.paragraph.social_link.default
+    - core.entity_view_display.paragraph.contact_us.default
+    - core.entity_view_display.paragraph.phone.default
+    - core.entity_view_display.paragraph.social_link.default
     - field.field.block_content.campaign.body
     - field.field.block_content.campaign.field_block_cta
     - field.field.block_content.campaign.field_block_image
@@ -121,6 +128,19 @@ config_devel:
     - field.field.paragraph.keydates.field_paragraph_link
     - field.field.paragraph.keydates.field_paragraph_summary
     - field.field.paragraph.keydates.field_paragraph_title
+    - field.field.node.landing_page.field_landing_page_contact
+    - field.field.node.landing_page.field_landing_page_show_contact
+    - field.field.paragraph.contact_us.field_paragraph_body
+    - field.field.paragraph.contact_us.field_paragraph_email
+    - field.field.paragraph.contact_us.field_paragraph_location
+    - field.field.paragraph.contact_us.field_paragraph_name
+    - field.field.paragraph.contact_us.field_paragraph_phones
+    - field.field.paragraph.contact_us.field_paragraph_social_media
+    - field.field.paragraph.contact_us.field_paragraph_title
+    - field.field.paragraph.phone.field_paragraph_phone_number
+    - field.field.paragraph.phone.field_paragraph_phone_title
+    - field.field.paragraph.social_link.field_paragraph_link
+    - field.field.paragraph.social_link.field_paragraph_social_list
     - field.storage.block_content.field_block_cta
     - field.storage.block_content.field_block_image
     - field.storage.block_content.field_block_title
@@ -145,6 +165,15 @@ config_devel:
     - field.storage.paragraph.field_paragraph_keydate
     - field.storage.paragraph.field_paragraph_keydates
     - field.storage.paragraph.field_paragraph_topic
+    - field.storage.node.field_landing_page_contact
+    - field.storage.node.field_landing_page_show_contact
+    - field.storage.paragraph.field_paragraph_email
+    - field.storage.paragraph.field_paragraph_name
+    - field.storage.paragraph.field_paragraph_phone_number
+    - field.storage.paragraph.field_paragraph_phone_title
+    - field.storage.paragraph.field_paragraph_phones
+    - field.storage.paragraph.field_paragraph_social_list
+    - field.storage.paragraph.field_paragraph_social_media
     - node.type.landing_page
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.accordion_content
@@ -160,3 +189,6 @@ config_devel:
     - paragraphs.paragraphs_type.card_promotion_auto
     - paragraphs.paragraphs_type.key_journeys
     - paragraphs.paragraphs_type.keydates
+    - paragraphs.paragraphs_type.contact_us
+    - paragraphs.paragraphs_type.phone
+    - paragraphs.paragraphs_type.social_link
