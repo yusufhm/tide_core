@@ -1,3 +1,4 @@
+@tide
 Feature: Fields for Test content type
 
   Ensure that Test content has the expected fields.

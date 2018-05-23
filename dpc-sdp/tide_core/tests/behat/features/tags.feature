@@ -1,3 +1,4 @@
+@tide
 Feature: Check the Tags taxonomy
 
   Ensure Tags vocabulary exist.

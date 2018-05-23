@@ -1312,7 +1312,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_core",
-                "reference": "f188a343bc6e915d98665b97a50a07147a2b70e7",
+                "reference": "55627a3911628bd77d10b26458bdf750a806c3b8",
                 "shasum": null
             },
             "require": {
@@ -1332,11 +1332,11 @@
                 "drupal/events_log_track": "^1.1",
                 "drupal/fakeobjects": "^1.0",
                 "drupal/fast_404": "dev-1.x",
-                "drupal/field_group": "^3.0-beta1",
                 "drupal/linkit": "^4.3",
                 "drupal/m4032404": "^1.0@alpha",
                 "drupal/maxlength": "^1.0@beta",
                 "drupal/media_entity_audio": "^2.0@alpha",
+                "drupal/metatag": "^1.5",
                 "drupal/override_node_options": "^2.3",
                 "drupal/password_policy": "dev-3.x",
                 "drupal/password_strength": "^2.0",
@@ -1373,6 +1373,9 @@
                     "drupal/maxlength": {
                         "Maxlength only for summary field - https://www.drupal.org/project/maxlength/issues/2798903": "https://www.drupal.org/files/issues/maxlength-limit_only_summary-2798903-2.patch"
                     },
+                    "drupal/metatag": {
+                        "Support json api - https://www.drupal.org/project/metatag/issues/2945817#comment-12614257": "https://www.drupal.org/files/issues/2018-05-15/metatag-jsonapi-2945817-18.patch"
+                    },
                     "drupal/password_policy": {
                         "password expired message still shows upon resetting password via email - https://www.drupal.org/project/password_policy/issues/2856878": "https://www.drupal.org/files/issues/2018-04-09/password_expired-2856878-13.patch"
                     },
@@ -1389,9 +1392,6 @@
                     },
                     "drupal/config_ignore": {
                         "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-05-14/config_error-offset-error-2972302-3.patch"
-                    },
-                    "drupal/field_group": {
-                        "Do not translate field group labels using interface translation. - https://www.drupal.org/project/field_group/issues/2846617": "https://www.drupal.org/files/issues/2018-05-10/2846617-16-use-config-translations-for-field-group.patch"
                     }
                 }
             },
@@ -1406,11 +1406,12 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_landing_page",
-                "reference": "4584695df5e591a9c7c7d0dc4f036665ea5b122c",
+                "reference": "66562c01fec8d360f94730ebcfadc26a3e1aace4",
                 "shasum": null
             },
             "require": {
                 "dpc-sdp/tide_core": "0.0.1",
+                "drupal/field_group": "^3.0-beta1",
                 "drupal/maxlength": "^1.0@beta",
                 "drupal/paragraphs": "^1.2",
                 "drupal/smart_trim": "^1.1"
@@ -1451,7 +1452,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_page",
-                "reference": "ea0efbd2028bf077160ee927949ded5c026600f3",
+                "reference": "d5ace4de9b06b787e97967cdb837062640316d22",
                 "shasum": null
             },
             "require": {
@@ -1459,6 +1460,11 @@
                 "drupal/smart_trim": "^1.1"
             },
             "type": "drupal-module",
+            "extra": {
+                "enable-patching": true,
+                "composer-exit-on-patch-failure": true,
+                "patches": []
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -2567,13 +2573,13 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
-                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch",
                     "Contextual links should not be added inside another link - https://www.drupal.org/node/2898875": "https://www.drupal.org/files/issues/2018-03-16/contextual_links_should-2898875-6.patch",
                     "No validation on text length for menu description when editing node - https://www.drupal.org/node/2852665#comment-12157856": "https://www.drupal.org/files/issues/fatal_error_remove_menu_add_with_tests-2852665-12.patch",
                     "active-link.js throws JS error if query string parameter contains a single quote - https://www.drupal.org/node/2902769": "https://www.drupal.org/files/issues/active_link_js_throws-2902769-5_0.patch",
                     "getUuid() in class MenuLinkContent not returning any value - https://www.drupal.org/node/2737741": "https://www.drupal.org/files/issues/drupal-menulinkcontent-getuuid-return-missing-2737741-2.patch",
                     "RSS view with fields give wrong URL from path field - https://www.drupal.org/node/2673980#comment-12180229": "https://www.drupal.org/files/issues/rss_view_with_fields-2673980-28.patch",
-                    "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch"
+                    "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch",
+                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
                 }
             },
             "autoload": {
@@ -3435,9 +3441,6 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
-                },
-                "patches_applied": {
-                    "Do not translate field group labels using interface translation. - https://www.drupal.org/project/field_group/issues/2846617": "https://www.drupal.org/files/issues/2018-05-10/2846617-16-use-config-translations-for-field-group.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3931,6 +3934,74 @@
             "homepage": "https://www.drupal.org/project/media_entity_audio",
             "support": {
                 "source": "http://cgit.drupalcode.org/media_entity_audio"
+            }
+        },
+        {
+            "name": "drupal/metatag",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/metatag",
+                "reference": "8.x-1.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/metatag-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "48f1c2a4e93ef1af1eb4b5b6cc6321e951fd1002"
+            },
+            "require": {
+                "drupal/core": "*",
+                "drupal/token": "^1.0"
+            },
+            "require-dev": {
+                "drupal/devel": "^1.0",
+                "drupal/metatag_dc": "*",
+                "drupal/metatag_open_graph": "*",
+                "drupal/redirect": "^1.0",
+                "drupal/restui": "^1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.5",
+                    "datestamp": "1522344484",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "patches_applied": {
+                    "Support json api - https://www.drupal.org/project/metatag/issues/2945817#comment-12614257": "https://www.drupal.org/files/issues/2018-05-15/metatag-jsonapi-2945817-18.patch"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "See contributors",
+                    "homepage": "https://www.drupal.org/node/640498/committers",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dave Reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                }
+            ],
+            "description": "Manage meta tags for all entities.",
+            "homepage": "https://www.drupal.org/project/metatag",
+            "keywords": [
+                "Drupal",
+                "seo"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/metatag",
+                "issues": "http://drupal.org/project/issues/metatag"
             }
         },
         {

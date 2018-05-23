@@ -1,3 +1,4 @@
+@tide
 Feature: Fields for Landing Page content type
 
   Ensure that Landing Page content has the expected fields.
@@ -9,6 +10,13 @@ Feature: Fields for Landing Page content type
     And save screenshot
     Then I see field "Title"
     And I should see an "input#edit-title-0-value.required" element
+
+    And I see field "Body"
+    And I should see a "textarea#edit-body-0-value" element
+    And I should not see a "textarea#edit-body-0-value.required" element
+
+    And the "#edit-field-featured-image" element should contain "Feature Image"
+    And I should see an "input#edit-field-featured-image-entity-browser-entity-browser-open-modal" element
 
     And I see field "Show Social Sharing?"
     And I should see an "input#edit-field-show-social-sharing-value" element
@@ -78,6 +86,27 @@ Feature: Fields for Landing Page content type
     And I see field "Show What's Next?"
     And I should see an "input#edit-field-show-whats-next-value" element
     And I should not see an "input#edit-field-show-whats-next-value.required" element
+
+    And I should see text matching "Contact Us"
+    And I should see an "input#edit-field-landing-page-contact-0-subform-field-paragraph-title-0-value" element
+    And I should not see an "input#edit-field-landing-page-contact-0-subform-field-paragraph-title-0-value.required" element
+    And I should see an "textarea#edit-field-landing-page-contact-0-subform-field-paragraph-body-0-value" element
+    And I should not see an "textarea#edit-field-landing-page-contact-0-subform-field-paragraph-body-0-value.required" element
+    And I should see an "input#edit-field-landing-page-contact-0-subform-field-paragraph-name-0-value" element
+    And I should not see an "input#edit-field-landing-page-contact-0-subform-field-paragraph-name-0-value.required" element
+    And I should see text matching "Address"
+    And I should see a "select#edit-field-landing-page-contact-0-subform-field-paragraph-location-0-address-country-code--2" element
+    And I should see an "input#edit-field-landing-page-contact-0-subform-field-paragraph-email-0-value" element
+    And I should not see an "input#edit-field-landing-page-contact-0-subform-field-paragraph-email-0-value.required" element
+    And I should see text matching "Phones"
+    And I should see an "input#edit-field-landing-page-contact-0-subform-field-paragraph-phones-0-subform-field-paragraph-phone-title-0-value" element
+    And I should not see an "input#edit-field-landing-page-contact-0-subform-field-paragraph-phones-0-subform-field-paragraph-phone-title-0-value.required" element
+    And I should see an "input#edit-field-landing-page-contact-0-subform-field-paragraph-phones-0-subform-field-paragraph-phone-number-0-value" element
+    And I should not see an "input#edit-field-landing-page-contact-0-subform-field-paragraph-phones-0-subform-field-paragraph-phone-number-0-value.required" element
+
+    And I see field "Show Contact Us?"
+    And I should see an "input#edit-field-landing-page-show-contact-value" element
+    And I should not see an "input#edit-field-landing-page-show-contact-value.required" element
 
   @api
   Scenario: The content type has the menu settings.

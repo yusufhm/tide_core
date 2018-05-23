@@ -1,3 +1,4 @@
+@tide
 Feature: Roles
 
   Ensure that all roles exist on the site.

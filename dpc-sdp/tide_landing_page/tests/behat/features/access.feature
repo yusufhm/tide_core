@@ -1,3 +1,4 @@
+@tide
 Feature: Access to Landing Page content type
 
   Ensure that Landing Page content access permissions are set correctly

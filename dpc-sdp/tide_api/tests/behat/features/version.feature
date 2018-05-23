@@ -1,3 +1,4 @@
+@tide @jsonapi
 Feature: API version
 
   Scenario: Request to API to get version

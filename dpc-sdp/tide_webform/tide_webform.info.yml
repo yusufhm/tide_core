@@ -8,6 +8,7 @@ dependencies:
   - config_ignore:config_ignore
   - token_conditions:token_conditions
   - webform:webform
+  - webform:webform_ui
   - dpc-sdp:tide_core
 config_devel:
   install:

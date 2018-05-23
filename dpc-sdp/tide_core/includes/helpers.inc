@@ -129,10 +129,12 @@ function _tide_import_single_config($config_name, array $locations = []) {
 
   try {
     $config_importer->import();
+    \Drupal::cache('config')->delete($config_name);
   }
   catch (Exception $exception) {
     foreach ($config_importer->getErrors() as $error) {
       \Drupal::logger('tide')->error($error);
+      \Drupal::messenger()->addError($error);
     }
     throw $exception;
   }

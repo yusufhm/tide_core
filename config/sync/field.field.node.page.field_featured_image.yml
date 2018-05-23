@@ -1,12 +1,15 @@
+uuid: de78bfa1-41ee-45aa-b7bb-593a6fd588b0
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_page_feature_image
+    - field.storage.node.field_featured_image
     - media.type.image
     - node.type.page
-id: node.page.field_page_feature_image
-field_name: field_page_feature_image
+_core:
+  default_config_hash: gAdFHPNSSdNhucu0WRiKRzS0mYBQABRYzqzgYyj2ewQ
+id: node.page.field_featured_image
+field_name: field_featured_image
 entity_type: node
 bundle: page
 label: 'Feature Image'

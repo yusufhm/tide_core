@@ -1,4 +1,4 @@
-@tide @p1
+@tide
 Feature: WYSIWYG Blockquote template
 
   As an Editor, I would like to add text quotes using WYSIWYG editor.

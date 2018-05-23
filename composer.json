@@ -212,7 +212,10 @@
         ],
         "app:debug-drush": "docker exec -i $(docker-compose ps -q cli) /app/scripts/xdebug.sh /app/vendor/bin/drush -r /app/docroot",
         "app:site-install": "@composer bay:cli -- ./scripts/drupal/site-install.sh",
-        "app:db-import": "@composer bay:cli -- ./scripts/rebuild-env.sh",
+        "app:db-import": [
+            "docker exec -i $(docker-compose ps -q redis) redis-cli flushall",
+            "@composer bay:cli -- ./scripts/rebuild-env.sh"
+        ],
         "bay:start": "docker-compose up -d --build",
         "bay:restart": "docker-compose restart",
         "bay:stop": "docker-compose stop",

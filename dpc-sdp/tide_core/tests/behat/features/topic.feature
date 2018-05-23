@@ -1,3 +1,4 @@
+@tide
 Feature: Check the Topic taxonomy
 
   Ensure Topic vocabulary exist.

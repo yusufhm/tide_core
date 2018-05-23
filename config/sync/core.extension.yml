@@ -52,6 +52,8 @@ module:
   media: 0
   media_entity_audio: 0
   menu_ui: 0
+  metatag: 0
+  metatag_open_graph: 0
   node: 0
   options: 0
   override_node_options: 0
@@ -74,6 +76,7 @@ module:
   syslog: 0
   system: 0
   taxonomy: 0
+  telephone: 0
   text: 0
   tide_api: 0
   tide_core: 0
@@ -93,6 +96,7 @@ module:
   views_menu_children_filter: 0
   viewsreference: 0
   webform: 0
+  webform_ui: 0
   workflows: 0
   wysiwyg_template: 0
   wysiwyg_template_core: 0

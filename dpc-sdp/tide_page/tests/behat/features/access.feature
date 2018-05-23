@@ -1,3 +1,4 @@
+@tide
 Feature: Access to Page content type
 
   Ensure that Page content access permissions are set correctly

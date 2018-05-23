@@ -30,7 +30,7 @@ class VicgovauDemoIgnoreFilter extends IgnoreFilter implements ContainerFactoryP
    */
   public function filterWrite($name, array $data) {
     if ($name === 'core.extension') {
-      $excluded_modules = ['vicgovau_demo'];
+      $excluded_modules = ['vicgovau_demo' => 'vicgovau_demo'];
       $data['module'] = array_diff_key($data['module'], $excluded_modules);
     }
     elseif ($this->matchConfigName($name)) {

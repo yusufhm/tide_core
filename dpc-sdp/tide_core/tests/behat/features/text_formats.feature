@@ -1,3 +1,4 @@
+@tide
 Feature: Text formats
 
   Ensure that text formats are configured as expected.

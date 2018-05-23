@@ -1,3 +1,4 @@
+@tide
 Feature: Site and Primary Site fields on nodes
 
   As a site administrator, I want to know that Site and Primary Site fields

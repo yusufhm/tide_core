@@ -5,9 +5,10 @@ dependencies:
   config:
     - entity_browser.browser.tide_image_browser
     - field.field.node.page.body
+    - field.field.node.page.field_metatags
     - field.field.node.page.field_node_primary_site
     - field.field.node.page.field_node_site
-    - field.field.node.page.field_page_feature_image
+    - field.field.node.page.field_featured_image
     - field.field.node.page.field_page_intro_text
     - field.field.node.page.field_related_links
     - field.field.node.page.field_show_content_rating
@@ -23,6 +24,7 @@ dependencies:
     - entity_browser
     - field_group
     - maxlength
+    - metatag
     - paragraphs
     - path
     - text
@@ -109,6 +111,26 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_featured_image:
+    type: entity_browser_entity_reference
+    weight: 1
+    region: content
+    settings:
+      entity_browser: tide_image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: media_browser_preview
+      open: false
+    third_party_settings: {  }
+  field_metatags:
+    weight: 112
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
   field_node_primary_site:
     type: options_buttons
     region: content
@@ -122,20 +144,6 @@ content:
     field_name: field_node_site
     weight: 24
     settings: {  }
-    third_party_settings: {  }
-  field_page_feature_image:
-    type: entity_browser_entity_reference
-    weight: 1
-    region: content
-    settings:
-      entity_browser: tide_image_browser
-      field_widget_display: rendered_entity
-      field_widget_edit: true
-      field_widget_remove: true
-      selection_mode: selection_append
-      field_widget_display_settings:
-        view_mode: media_browser_preview
-      open: false
     third_party_settings: {  }
   field_page_intro_text:
     weight: 2
