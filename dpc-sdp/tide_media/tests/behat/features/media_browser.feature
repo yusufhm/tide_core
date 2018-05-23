@@ -1,3 +1,4 @@
+@tide
 Feature: Media browser
 
   As a privileged user, I want to use media browser.

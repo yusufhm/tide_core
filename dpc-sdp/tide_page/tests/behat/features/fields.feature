@@ -1,3 +1,4 @@
+@tide
 Feature: Fields for Page content type
 
   Ensure that Page content has the expected fields.

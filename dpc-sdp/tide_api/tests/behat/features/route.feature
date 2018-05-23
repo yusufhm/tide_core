@@ -1,3 +1,4 @@
+@tide @jsonapi
 Feature: Route lookup
 
   @api

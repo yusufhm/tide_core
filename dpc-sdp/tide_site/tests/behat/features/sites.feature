@@ -1,3 +1,4 @@
+@tide
 Feature: Sites taxonomy vocabulary
 
   As a site administrator, I want to know that Sites vocabulary exists.

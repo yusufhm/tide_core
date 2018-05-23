@@ -1,11 +1,11 @@
 uuid: 53d4cbc2-b140-43d0-8ef1-fbd3389fc989
-name: Site-Install
-mail: admin@example.com
+name: 'DPC Content Repository'
+mail: sdp.siteadmin@dpc.vic.gov.au
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node/1
+  front: /node/221
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en

@@ -1,3 +1,4 @@
+@tide
 Feature: Media view filter addition
 
   As a site admin, I want to be able to filter media based on License.

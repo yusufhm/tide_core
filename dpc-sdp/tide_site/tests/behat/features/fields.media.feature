@@ -1,3 +1,4 @@
+@tide
 Feature: Site fields on media
 
   As a site administrator, I want to know that Site field automatically added

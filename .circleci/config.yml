@@ -104,7 +104,7 @@ jobs:
           command: composer bay:cli -- vendor/bin/phpunit
       - run:
           name: Run behat tests.
-          command: composer bay:cli -- vendor/bin/behat --format=progress_fail --colors || composer bay:cli -- vendor/bin/behat --format=progress_fail --colors --rerun
+          command: composer bay:cli -- vendor/bin/behat --format=progress_fail --colors --profile=tide || composer bay:cli -- vendor/bin/behat --format=progress_fail --colors --profile=tide --rerun
       - run:
           name: Copy artifacts.
           command: |

@@ -1,3 +1,4 @@
+@tide
 Feature: Access permissions
 
   Ensure that configuration permissions are set correctly for designated roles.

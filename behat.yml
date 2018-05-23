@@ -114,3 +114,7 @@ p1:
   gherkin:
     filters:
       tags: "@p1&&~@skipped"
+tide:
+  gherkin:
+    filters:
+      tags: "~@vicgovau&&~@skipped"

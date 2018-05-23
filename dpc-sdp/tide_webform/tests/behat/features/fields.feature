@@ -1,3 +1,4 @@
+@tide
 Feature: 'Show Content Rating?' field
 
   Ensure that the 'Show Content Rating?' field exist

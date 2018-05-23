@@ -1,3 +1,4 @@
+@tide
 Feature: Content Rating block.
 
   Ensure that the Content Rating block visibility is correct

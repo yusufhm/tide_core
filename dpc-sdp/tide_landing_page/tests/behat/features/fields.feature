@@ -1,3 +1,4 @@
+@tide
 Feature: Fields for Landing Page content type
 
   Ensure that Landing Page content has the expected fields.

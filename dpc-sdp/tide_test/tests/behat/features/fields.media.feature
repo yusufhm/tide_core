@@ -1,3 +1,4 @@
+@tide
 Feature: Fields for Test media entity
 
   Ensure that Test media has the expected fields.

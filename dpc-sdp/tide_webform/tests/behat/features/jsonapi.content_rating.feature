@@ -1,3 +1,4 @@
+@tide @jsonapi
 Feature: JSON API Webform submission
 
   Ensure that the Content Rating form receive submissions via API.

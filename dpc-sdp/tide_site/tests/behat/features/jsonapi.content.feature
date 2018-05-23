@@ -1,3 +1,4 @@
+@tide
 Feature: Page
 
   @api
