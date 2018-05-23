@@ -10,7 +10,7 @@ entity_type: paragraph
 bundle: contact_us
 label: Title
 description: ''
-required: true
+required: false
 translatable: true
 default_value:
   -

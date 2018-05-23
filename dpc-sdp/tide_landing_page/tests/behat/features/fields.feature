@@ -81,7 +81,7 @@ Feature: Fields for Landing Page content type
 
     And I should see text matching "Contact Us"
     And I should see an "input#edit-field-landing-page-contact-0-subform-field-paragraph-title-0-value" element
-    And I should see an "input#edit-field-landing-page-contact-0-subform-field-paragraph-title-0-value.required" element
+    And I should not see an "input#edit-field-landing-page-contact-0-subform-field-paragraph-title-0-value.required" element
     And I should see an "textarea#edit-field-landing-page-contact-0-subform-field-paragraph-body-0-value" element
     And I should not see an "textarea#edit-field-landing-page-contact-0-subform-field-paragraph-body-0-value.required" element
     And I should see an "input#edit-field-landing-page-contact-0-subform-field-paragraph-name-0-value" element
@@ -94,7 +94,7 @@ Feature: Fields for Landing Page content type
     And I should see an "input#edit-field-landing-page-contact-0-subform-field-paragraph-phones-0-subform-field-paragraph-phone-title-0-value" element
     And I should not see an "input#edit-field-landing-page-contact-0-subform-field-paragraph-phones-0-subform-field-paragraph-phone-title-0-value.required" element
     And I should see an "input#edit-field-landing-page-contact-0-subform-field-paragraph-phones-0-subform-field-paragraph-phone-number-0-value" element
-    And I should see an "input#edit-field-landing-page-contact-0-subform-field-paragraph-phones-0-subform-field-paragraph-phone-number-0-value.required" element
+    And I should not see an "input#edit-field-landing-page-contact-0-subform-field-paragraph-phones-0-subform-field-paragraph-phone-number-0-value.required" element
 
     And I see field "Show Contact Us?"
     And I should see an "input#edit-field-landing-page-show-contact-value" element
