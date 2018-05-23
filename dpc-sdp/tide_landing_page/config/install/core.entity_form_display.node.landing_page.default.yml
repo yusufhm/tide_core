@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.landing_page.field_landing_page_key_journeys
     - field.field.node.landing_page.field_featured_image
     - field.field.node.landing_page.field_landing_page_show_contact
+    - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_related_links
     - field.field.node.landing_page.field_show_content_rating
     - field.field.node.landing_page.field_show_related_content
@@ -29,6 +30,7 @@ dependencies:
     - entity_reference_revisions
     - field_group
     - maxlength
+    - metatag
     - paragraphs
     - path
     - text
@@ -297,6 +299,12 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
+  field_metatags:
+    weight: 37
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
     region: content
   field_related_links:
     type: paragraphs

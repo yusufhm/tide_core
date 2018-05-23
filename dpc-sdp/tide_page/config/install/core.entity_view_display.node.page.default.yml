@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_featured_image
+    - field.field.node.page.field_metatags
     - field.field.node.page.field_page_intro_text
     - field.field.node.page.field_related_links
     - field.field.node.page.field_show_content_rating
@@ -16,6 +17,7 @@ dependencies:
     - node.type.page
   module:
     - entity_reference_revisions
+    - metatag
     - text
     - user
 id: node.page.default
@@ -35,6 +37,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_metatags:
+    weight: 12
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
   field_featured_image:
     weight: 4
     label: above

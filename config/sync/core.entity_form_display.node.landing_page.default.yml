@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_key_journeys
     - field.field.node.landing_page.field_landing_page_show_contact
+    - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_node_primary_site
     - field.field.node.landing_page.field_node_site
     - field.field.node.landing_page.field_featured_image
@@ -31,6 +32,7 @@ dependencies:
     - entity_reference_revisions
     - field_group
     - maxlength
+    - metatag
     - paragraphs
     - path
     - text
@@ -216,6 +218,20 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_featured_image:
+    weight: 1
+    settings:
+      entity_browser: tide_image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: default
+      open: false
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
   field_landing_page_c_primary:
     weight: 1
     settings:
@@ -287,6 +303,12 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
+  field_metatags:
+    weight: 37
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
   field_node_primary_site:
     type: options_buttons
     region: content
@@ -301,20 +323,6 @@ content:
     weight: 14
     settings: {  }
     third_party_settings: {  }
-  field_featured_image:
-    weight: 1
-    settings:
-      entity_browser: tide_image_browser
-      field_widget_display: rendered_entity
-      field_widget_edit: true
-      field_widget_remove: true
-      selection_mode: selection_append
-      field_widget_display_settings:
-        view_mode: default
-      open: false
-    third_party_settings: {  }
-    type: entity_browser_entity_reference
-    region: content
   field_related_links:
     type: paragraphs
     weight: 39

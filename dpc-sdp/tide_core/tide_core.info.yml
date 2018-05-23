@@ -35,6 +35,8 @@ dependencies:
   - m4032404:m4032404
   - maxlength:maxlength
   - media_entity_audio:media_entity_audio
+  - metatag:metatag
+  - metatag:metatag_open_graph
   - override_node_options:override_node_options
   - paragraphs:paragraphs
   - password_policy:password_policy
@@ -63,6 +65,7 @@ config_devel:
     - field.storage.node.field_related_links
     - field.storage.paragraph.field_paragraph_summary
     - field.storage.paragraph.field_paragraph_link
+    - field.storage.node.field_metatags
     - field.storage.node.field_related_links
     - field.storage.node.field_show_related_content
     - field.storage.node.field_show_social_sharing
@@ -75,3 +78,11 @@ config_devel:
     - paragraphs.paragraphs_type.links
     - taxonomy.vocabulary.topic
     - taxonomy.vocabulary.tags
+  optional:
+    - metatag.metatag_defaults.403
+    - metatag.metatag_defaults.404
+    - metatag.metatag_defaults.front
+    - metatag.metatag_defaults.global
+    - metatag.metatag_defaults.node
+    - metatag.metatag_defaults.taxonomy_term
+    - metatag.metatag_defaults.user

@@ -5,6 +5,7 @@ dependencies:
     - entity_browser.browser.tide_image_browser
     - field.field.node.page.body
     - field.field.node.page.field_featured_image
+    - field.field.node.page.field_metatags
     - field.field.node.page.field_page_intro_text
     - field.field.node.page.field_related_links
     - field.field.node.page.field_show_content_rating
@@ -20,6 +21,7 @@ dependencies:
     - entity_browser
     - field_group
     - maxlength
+    - metatag
     - paragraphs
     - path
     - text
@@ -104,6 +106,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_metatags:
+    weight: 112
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
   field_featured_image:
     type: entity_browser_entity_reference
     weight: 1
