@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.field_page_feature_image
+    - field.field.node.page.field_featured_image
     - field.field.node.page.field_page_intro_text
     - field.field.node.page.field_related_links
     - field.field.node.page.field_show_content_rating
@@ -35,7 +35,7 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_page_feature_image:
+  field_featured_image:
     weight: 4
     label: above
     settings:

@@ -71,7 +71,9 @@ config_devel:
     - field.field.block_content.campaign.field_block_cta
     - field.field.block_content.campaign.field_block_image
     - field.field.block_content.campaign.field_block_title
+    - field.field.node.landing_page.body
     - field.field.node.landing_page.field_landing_page_c_secondary
+    - field.field.node.landing_page.field_featured_image
     - field.field.node.landing_page.field_landing_page_c_primary
     - field.field.node.landing_page.field_landing_page_component
     - field.field.node.landing_page.field_landing_page_intro_text

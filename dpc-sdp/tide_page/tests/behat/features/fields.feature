@@ -22,8 +22,8 @@ Feature: Fields for Page content type
     And I should see an "input#edit-field-topic-0-target-id" element
     And I should see an "input#edit-field-topic-0-target-id.required" element
 
-    And the "#edit-field-page-feature-image" element should contain "Feature Image"
-    And I should see an "input#edit-field-page-feature-image-entity-browser-entity-browser-open-modal" element
+    And the "#edit-field-featured-image" element should contain "Feature Image"
+    And I should see an "input#edit-field-featured-image-entity-browser-entity-browser-open-modal" element
 
     And I see field "Introduction Text"
     And I should see an "textarea#edit-field-page-intro-text-0-value" element

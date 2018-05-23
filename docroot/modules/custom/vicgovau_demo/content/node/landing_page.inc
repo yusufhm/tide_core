@@ -52,6 +52,9 @@ function vicgovau_demo_create_node_landing_page() {
       'field_topic' => [
         ['target_id' => VicgovauDemoHelper::randomTopic()],
       ],
+      'field_featured_image' => [
+        ['target_id' => VicgovauDemoHelper::randomImage()],
+      ],
     ];
 
     // Add Key Journeys.

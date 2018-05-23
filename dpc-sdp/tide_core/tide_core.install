@@ -156,3 +156,12 @@ function tide_core_update_8001() {
   _tide_import_single_config('field.storage.node.field_show_related_content', $config_location);
   _tide_import_single_config('field.storage.node.field_show_social_sharing', $config_location);
 }
+
+/**
+ * Add field storage for Featured Image.
+ */
+function tide_core_update_8002() {
+  module_load_include('inc', 'tide_core', 'includes/helpers');
+  $config_location = [drupal_get_path('module', 'tide_core') . '/config/install'];
+  _tide_import_single_config('field.storage.node.field_featured_image', $config_location);
+}

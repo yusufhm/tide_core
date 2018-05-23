@@ -24,7 +24,7 @@ config_devel:
     - core.entity_form_display.node.page.default
     - core.entity_view_display.node.page.default
     - field.field.node.page.body
-    - field.field.node.page.field_page_feature_image
+    - field.field.node.page.field_featured_image
     - field.field.node.page.field_page_intro_text
     - field.field.node.page.field_whats_next
     - field.field.node.page.field_show_content_rating
@@ -34,5 +34,4 @@ config_devel:
     - field.field.node.page.field_related_links
     - field.field.node.page.field_tags
     - field.field.node.page.field_topic
-    - field.storage.node.field_page_feature_image
     - field.storage.node.field_page_intro_text

@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.field_page_feature_image
+    - field.field.node.page.field_featured_image
     - field.field.node.page.field_page_intro_text
     - field.field.node.page.field_related_links
     - field.field.node.page.field_show_content_rating
@@ -47,7 +47,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_page_feature_image: true
+  field_featured_image: true
   field_page_intro_text: true
   field_show_related_content: true
   field_show_social_sharing: true

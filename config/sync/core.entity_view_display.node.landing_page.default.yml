@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.landing_page.body
     - field.field.node.landing_page.field_landing_page_c_primary
     - field.field.node.landing_page.field_landing_page_c_secondary
     - field.field.node.landing_page.field_landing_page_component
@@ -12,6 +13,7 @@ dependencies:
     - field.field.node.landing_page.field_landing_page_show_contact
     - field.field.node.landing_page.field_node_primary_site
     - field.field.node.landing_page.field_node_site
+    - field.field.node.landing_page.field_featured_image
     - field.field.node.landing_page.field_related_links
     - field.field.node.landing_page.field_show_content_rating
     - field.field.node.landing_page.field_show_related_content
@@ -23,6 +25,7 @@ dependencies:
     - node.type.landing_page
   module:
     - entity_reference_revisions
+    - text
     - user
 _core:
   default_config_hash: sMSNyLAySfCJcMykcHr3cyYRCKXQBAnEd4NySLTql18
@@ -31,6 +34,13 @@ targetEntityType: node
 bundle: landing_page
 mode: default
 content:
+  body:
+    weight: 10
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   content_moderation_control:
     weight: 0
     region: content
@@ -88,6 +98,13 @@ content:
       link: ''
     third_party_settings: {  }
     region: content
+  field_featured_image:
+    weight: 9
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_landing_page_show_contact:
     weight: 9
     label: above

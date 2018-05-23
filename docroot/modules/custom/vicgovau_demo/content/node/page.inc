@@ -41,7 +41,7 @@ function vicgovau_demo_create_node_page() {
       'field_topic' => [
         ['target_id' => VicgovauDemoHelper::randomTopic()],
       ],
-      'field_page_feature_image' => [
+      'field_featured_image' => [
         ['target_id' => VicgovauDemoHelper::randomImage()],
       ],
     ];

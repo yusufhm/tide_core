@@ -10,6 +10,13 @@ Feature: Fields for Landing Page content type
     Then I see field "Title"
     And I should see an "input#edit-title-0-value.required" element
 
+    And I see field "Body"
+    And I should see a "textarea#edit-body-0-value" element
+    And I should not see a "textarea#edit-body-0-value.required" element
+
+    And the "#edit-field-featured-image" element should contain "Feature Image"
+    And I should see an "input#edit-field-featured-image-entity-browser-entity-browser-open-modal" element
+
     And I see field "Show Social Sharing?"
     And I should see an "input#edit-field-show-social-sharing-value" element
     And I should not see an "input#edit-field-show-social-sharing-value.required" element
