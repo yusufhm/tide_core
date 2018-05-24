@@ -1,0 +1,12 @@
+uuid: e61997f0-d817-4698-af05-38b6004b8890
+langcode: en
+status: true
+dependencies: {  }
+id: secondary_button
+label: 'Secondary Button'
+description: ''
+body:
+  value: "<p><a class=\"button button--secondary\" href=\"Secondary-button-link\">Secondary button text</a></p>\r\n"
+  format: rich_text
+weight: null
+node_types: {  }
