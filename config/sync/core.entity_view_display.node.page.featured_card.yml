@@ -63,6 +63,7 @@ content:
       image_link: ''
     third_party_settings: {  }
 hidden:
+  field_metatags: true
   field_node_primary_site: true
   field_node_site: true
   field_page_intro_text: true

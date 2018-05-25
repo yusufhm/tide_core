@@ -49,6 +49,32 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Generate a random Callout paragraph.
+   *
+   * @return string
+   *   The paragraph.
+   */
+  public static function randomCalloutParagraph() {
+    return '<p class="wysiwyg-callout">' . static::randomPlainParagraph() . '</p>';
+  }
+
+  /**
+   * Generate a random Blockquote paragraph.
+   *
+   * @return string
+   *   The paragraph.
+   */
+  public static function randomBlockquoteParagraph() {
+    return '<blockquote class="quotation">
+      <p>' . static::randomPlainParagraph() . '</p>
+      <footer><cite>
+      <span class="quotation__author">' . static::randomSentence(1, 5) . '</span><br />
+      <span class="quotation__author-title">' . static::randomSentence(1, 5) . '</span><br />
+      </cite></footer>
+      </blockquote>';
+  }
+
+  /**
    * Generate a random HTML heading.
    *
    * @return string
@@ -106,7 +132,16 @@ class VicgovauDemoHelper {
       if (!($i % 4)) {
         $paragraphs[] = static::randomEmbeddedMedia();
       }
-      $paragraphs[] = static::randomHtmlParagraph();
+
+      if (!($i % 5)) {
+        $paragraphs[] = static::randomCalloutParagraph();
+      }
+      elseif (!($i % 7)) {
+        $paragraphs[] = static::randomBlockquoteParagraph();
+      }
+      else {
+        $paragraphs[] = static::randomHtmlParagraph();
+      }
     }
 
     return implode(PHP_EOL, $paragraphs);
@@ -351,6 +386,7 @@ class VicgovauDemoHelper {
 
     $supported_components = [
       'basic_text',
+      'call_to_action',
       'card_event',
       'card_promotion',
       'card_promotion_auto',
@@ -372,6 +408,17 @@ class VicgovauDemoHelper {
           $component_data['field_paragraph_body'][] = [
             'value' => static::randomRichText(1, 4),
             'format' => 'rich_text',
+          ];
+          break;
+
+        case 'call_to_action':
+          $component_data += [
+            'field_paragraph_title' => [['value' => static::randomSentence()]],
+            'field_paragraph_media' => [['target_id' => static::randomImage()]],
+            'field_paragraph_body' => [
+              'value' => static::randomPlainParagraph(),
+            ],
+            'field_paragraph_cta' => [VicgovauDemoHelper::randomCtaLinkFieldValue()],
           ];
           break;
 

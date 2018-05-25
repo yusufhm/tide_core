@@ -1,17 +1,16 @@
-uuid: 12bfcb62-7c72-4462-ae5d-5f397ba71450
 langcode: en
 status: true
 dependencies:
   config:
     - entity_browser.browser.tide_image_browser
     - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_featured_image
     - field.field.node.landing_page.field_landing_page_c_primary
     - field.field.node.landing_page.field_landing_page_c_secondary
     - field.field.node.landing_page.field_landing_page_component
     - field.field.node.landing_page.field_landing_page_contact
     - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_key_journeys
-    - field.field.node.landing_page.field_featured_image
     - field.field.node.landing_page.field_landing_page_show_contact
     - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_related_links
@@ -183,9 +182,7 @@ third_party_settings:
         description: ''
         required_fields: false
       label: 'Contact Us'
-      region: hidden
-_core:
-  default_config_hash: pN7fy_ZaJVA-sEQWPZUCiV_-5V5W_ZSuZ7Rbql6y5kg
+      region: content
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page
@@ -212,10 +209,24 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_featured_image:
+    weight: 1
+    settings:
+      entity_browser: tide_image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: media_browser_preview
+      open: false
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
   field_landing_page_c_primary:
     weight: 1
     settings:
@@ -241,7 +252,7 @@ content:
     settings:
       title: Component
       title_plural: Components
-      edit_mode: open
+      edit_mode: closed
       closed_mode: summary
       autocollapse: none
       add_mode: select
@@ -252,12 +263,12 @@ content:
     type: entity_reference_paragraphs
     weight: 18
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
+      title: 'Contact Us block'
+      title_plural: 'Contact Us blocks'
+      edit_mode: closed
+      add_mode: button
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: _none
     third_party_settings: {  }
     region: content
   field_landing_page_intro_text:
@@ -272,27 +283,14 @@ content:
     type: entity_reference_paragraphs
     weight: 33
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
+      title: 'Key journey'
+      title_plural: 'Key journeys'
+      edit_mode: closed
+      add_mode: button
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: _none
     third_party_settings: {  }
     region: content
-  field_featured_image:
-    weight: 1
-    settings:
-      entity_browser: tide_image_browser
-      field_widget_display: rendered_entity
-      field_widget_edit: true
-      field_widget_remove: true
-      selection_mode: selection_append
-      field_widget_display_settings:
-        view_mode: default
-      open: false
-    third_party_settings: {  }
-    type: entity_browser_entity_reference
   field_landing_page_show_contact:
     weight: 17
     settings:
@@ -301,7 +299,7 @@ content:
     type: boolean_checkbox
     region: content
   field_metatags:
-    weight: 37
+    weight: 19
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
@@ -312,12 +310,12 @@ content:
     settings:
       title: Link
       title_plural: Links
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
+      edit_mode: closed
       closed_mode: summary
       autocollapse: none
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
     third_party_settings: {  }
     region: content
   field_show_content_rating:
@@ -350,7 +348,7 @@ content:
       display_label: true
     third_party_settings: {  }
   field_tags:
-    weight: 13
+    weight: 16
     settings:
       match_operator: CONTAINS
       size: 60
@@ -359,7 +357,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_topic:
-    weight: 12
+    weight: 15
     settings:
       match_operator: CONTAINS
       size: 60
@@ -372,22 +370,22 @@ content:
     weight: 24
     region: content
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
+      title: 'What''s Next block'
+      title_plural: 'What''s Next blocks'
+      edit_mode: closed
+      add_mode: button
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: _none
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 11
+    weight: 14
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -395,14 +393,14 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 11
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
+    weight: 13
     region: content
     third_party_settings: {  }
   sticky:
@@ -433,7 +431,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 9
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }

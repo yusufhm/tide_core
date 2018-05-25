@@ -32,7 +32,7 @@ function vicgovau_demo_create_node_landing_page() {
     $site_sections = VicgovauDemoHelper::randomSiteSections();
     $primary_site_id = VicgovauDemoHelper::randomSite($site_sections);
 
-    $status = VicgovauDemoHelper::randomBool();
+    $status = Node::PUBLISHED;
     $node_data = [
       'type' => 'landing_page',
       'title' => VicgovauDemoHelper::randomSentence(),
@@ -78,10 +78,14 @@ function vicgovau_demo_create_node_landing_page() {
 
     // Add Related links.
     for ($j = 1; $j <= mt_rand(1, 5); $j++) {
+      $link_field_value = VicgovauDemoHelper::randomLinkFieldValue();
+      if (!count($link_field_value)) {
+        break;
+      }
       $related_link_data = [
         'type' => 'related_links',
         'field_paragraph_summary' => ['value' => VicgovauDemoHelper::randomPlainParagraph()],
-        'field_paragraph_link' => [VicgovauDemoHelper::randomLinkFieldValue()],
+        'field_paragraph_link' => [$link_field_value],
       ];
       $related_link = Paragraph::create($related_link_data);
       $related_link->save();
@@ -94,10 +98,14 @@ function vicgovau_demo_create_node_landing_page() {
 
     // Add What's Next.
     for ($j = 1; $j <= mt_rand(1, 3); $j++) {
+      $link_field_value = VicgovauDemoHelper::randomLinkFieldValue();
+      if (!count($link_field_value)) {
+        break;
+      }
       $whats_next_data = [
         'type' => 'links',
         'field_paragraph_summary' => [['value' => VicgovauDemoHelper::randomPlainParagraph()]],
-        'field_paragraph_link' => [VicgovauDemoHelper::randomLinkFieldValue()],
+        'field_paragraph_link' => [$link_field_value],
       ];
       $whats_next = Paragraph::create($whats_next_data);
       $whats_next->save();
@@ -107,6 +115,35 @@ function vicgovau_demo_create_node_landing_page() {
         'target_revision_id' => $whats_next->getRevisionId(),
       ];
     }
+
+    // Add Contact Us.
+    $contact_us_data = [
+      'type' => 'contact_us',
+      'field_paragraph_title' => VicgovauDemoHelper::randomSentence(3, 5),
+      'field_paragraph_name' => VicgovauDemoHelper::randomSentence(3, 5),
+      'field_paragraph_email' => 'no-reply@vic.gov.au',
+      'field_paragraph_cta' => [VicgovauDemoHelper::randomCtaLinkFieldValue()],
+      'field_paragraph_body' => ['value' => VicgovauDemoHelper::randomPlainParagraph()],
+      'field_paragraph_location' => [
+        [
+          'langcode' => '',
+          'country_code' => 'AU',
+          'administrative_area' => 'Victoria',
+          'locality' => 'Melbourne',
+          'postal_code' => 3000,
+          'address_line1' => '1 Spring St',
+        ],
+      ],
+    ];
+    $contact_us = Paragraph::create($contact_us_data);
+    $contact_us->save();
+    $repository->trackEntity($contact_us);
+    $node_data['field_landing_page_contact'] = [
+      [
+        'target_id' => $contact_us->id(),
+        'target_revision_id' => $contact_us->getRevisionId(),
+      ],
+    ];
 
     // Add components.
     $components = VicgovauDemoHelper::randomLandingPageComponents();
@@ -125,6 +162,7 @@ function vicgovau_demo_create_node_landing_page() {
       'field_show_social_sharing',
       'field_show_whats_next',
       'field_show_content_rating',
+      'field_landing_page_show_contact',
     ];
     foreach ($booleanFields as $booleanField) {
       if ($node->hasField($booleanField)) {

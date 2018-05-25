@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_featured_image
+    - field.storage.paragraph.field_paragraph_media
     - media.type.image
-    - node.type.landing_page
-id: node.landing_page.field_featured_image
-field_name: field_featured_image
-entity_type: node
-bundle: landing_page
-label: 'Feature Image'
+    - paragraphs.paragraphs_type.call_to_action
+id: paragraph.call_to_action.field_paragraph_media
+field_name: field_paragraph_media
+entity_type: paragraph
+bundle: call_to_action
+label: 'Feature image'
 description: ''
 required: false
 translatable: true

@@ -106,12 +106,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_metatags:
-    weight: 112
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_firehose
-    region: content
   field_featured_image:
     type: entity_browser_entity_reference
     weight: 1
@@ -126,6 +120,12 @@ content:
         view_mode: media_browser_preview
       open: false
     third_party_settings: {  }
+  field_metatags:
+    weight: 112
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
   field_page_intro_text:
     weight: 2
     settings:
@@ -137,14 +137,14 @@ content:
   field_related_links:
     weight: 17
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
+      title: Link
+      title_plural: Links
+      edit_mode: closed
       closed_mode: summary
       autocollapse: none
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: related_links
+      default_paragraph_type: _none
     third_party_settings: {  }
     type: paragraphs
     region: content
@@ -199,14 +199,14 @@ content:
     type: paragraphs
     weight: 12
     settings:
-      title: Link
-      title_plural: Links
-      edit_mode: open
+      title: 'What''s Next block'
+      title_plural: 'What''s Next blocks'
+      edit_mode: closed
       closed_mode: summary
       autocollapse: none
-      add_mode: dropdown
+      add_mode: button
       form_display_mode: default
-      default_paragraph_type: related_links
+      default_paragraph_type: _none
     third_party_settings: {  }
     region: content
   moderation_state:
