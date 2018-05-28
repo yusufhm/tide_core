@@ -9,7 +9,8 @@
     "require": {
         "drupal/jsonapi": "^1.15",
         "drupal/jsonapi_extras": "2.0-rc1",
-        "drupal/schemata": "1.0-alpha2"
+        "drupal/schemata": "1.0-alpha2",
+        "drupal/openapi": "1.0-alpha1"
     },
     "extra": {
         "enable-patching": true,
