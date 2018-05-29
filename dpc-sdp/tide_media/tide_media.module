@@ -51,3 +51,65 @@ function tide_media_form_alter(&$form, FormStateInterface $form_state, $form_id)
     }
   }
 }
+
+/**
+ * Implements template_preprocess_field().
+ */
+function tide_media_preprocess_field(&$variables) {
+  if ($variables['field_name'] == 'field_media_file') {
+    $element = $variables['element'];
+    if ($element['#entity_type'] == 'media' && $element['#bundle'] == 'document' && $element['#view_mode'] == 'embedded') {
+      foreach ($variables['items'] as $delta => &$item) {
+        /** @var \Drupal\media\Entity\Media $media */
+        $media = $element['#object'];
+        $document_name = $media->get('name')->getString();
+        if ($document_name) {
+          $item['content']['#description'] = $document_name;
+          $element[$delta] = $item;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_file_link().
+ */
+function tide_media_preprocess_file_link(&$variables) {
+  /** @var \Drupal\file\Entity\File $file */
+  $file = $variables['file'];
+  /** @var \Drupal\Core\GeneratedLink $link */
+  $link = $variables['link'];
+  $link_html = $link->getGeneratedLink();
+  $file_size = format_size($file->getSize());
+
+  $mime_type = $file->getMimeType();
+  $mime_category = file_icon_class($mime_type);
+  switch ($mime_category) {
+    case 'application-pdf':
+      $file_type = 'PDF';
+      break;
+
+    case 'x-office-document':
+      $file_type = 'Word';
+      break;
+
+    case 'x-office-spreadsheet':
+      $file_type = 'Excel';
+      break;
+
+    case 'x-office-presentation':
+      $file_type = 'PPT';
+      break;
+
+    case 'text':
+      $file_type = 'Text';
+      break;
+
+    default:
+      $file_type = 'Other';
+  }
+
+  $link_html .= ' <span class="file--info">(<span class="file--info--type">' . $file_type . '</span> <span class="file--info-size">' . $file_size . '</span>)</span>';
+  $link->setGeneratedLink($link_html);
+}
