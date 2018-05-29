@@ -74,7 +74,6 @@ config_devel:
     - field.field.block_content.campaign.field_block_cta
     - field.field.block_content.campaign.field_block_image
     - field.field.block_content.campaign.field_block_title
-    - field.field.node.landing_page.body
     - field.field.node.landing_page.field_landing_page_c_secondary
     - field.field.node.landing_page.field_featured_image
     - field.field.node.landing_page.field_landing_page_c_primary
@@ -140,6 +139,7 @@ config_devel:
     - field.field.paragraph.keydates.field_paragraph_title
     - field.field.node.landing_page.field_landing_page_contact
     - field.field.node.landing_page.field_landing_page_show_contact
+    - field.field.node.landing_page.field_landing_page_summary
     - field.field.paragraph.contact_us.field_paragraph_body
     - field.field.paragraph.contact_us.field_paragraph_email
     - field.field.paragraph.contact_us.field_paragraph_location
@@ -159,6 +159,7 @@ config_devel:
     - field.storage.node.field_landing_page_component
     - field.storage.node.field_landing_page_intro_text
     - field.storage.node.field_landing_page_key_journeys
+    - field.storage.node.field_landing_page_summary
     - field.storage.paragraph.field_paragraph_accordion
     - field.storage.paragraph.field_paragraph_accordion_body
     - field.storage.paragraph.field_paragraph_accordion_name

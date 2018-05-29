@@ -41,9 +41,8 @@ function vicgovau_demo_create_node_landing_page() {
       'field_landing_page_intro_text' => [
         'value' => VicgovauDemoHelper::randomPlainParagraph(),
       ],
-      'body' => [
-        'value' => VicgovauDemoHelper::randomRichTextWithMedia(),
-        'format' => 'rich_text',
+      'field_landing_page_summary' => [
+        'value' => VicgovauDemoHelper::randomSentence(10, 20),
       ],
       'field_node_site' => VicgovauDemoHelper::getFieldValueForSiteSections($site_sections),
       'field_node_primary_site' => [

@@ -8,6 +8,7 @@
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\tide_site\TideSiteFields;
+use Drupal\tide_site\TideSiteMenuAutocreate;
 use Drupal\views\ViewExecutable;
 
 /**
@@ -215,4 +216,12 @@ function tide_site_views_pre_view(ViewExecutable $view, $display_id, array &$arg
     ];
     $view->addHandler($display_id, 'field', 'media__field_media_site', 'field_media_site', $site_field, 'field_media_site');
   }
+}
+
+/**
+ * Implements hook_config_ignore_settings_alter().
+ */
+function tide_site_config_ignore_settings_alter(array &$settings) {
+  // Ignore all autocreated site menus.
+  $settings[] = 'system.menu.' . TideSiteMenuAutocreate::SITE_MENU_PREFIX . '*';
 }

@@ -15,27 +15,27 @@ function vicgovau_demo_create_menu_menu() {
 
   $menu_data = [
     'Main menu - demo.vic.gov.au' => [
-      'id' => 'main_menu_vicgovau_demo',
+      'id' => 'main-vicgovau-demo',
       'description' => 'Demo main menu',
     ],
     'Footer menu - demo.vic.gov.au' => [
-      'id' => 'footer_menu_vicgovau_demo',
+      'id' => 'footer-vicgovau-demo',
       'description' => 'Demo footer menu',
     ],
     'Main menu - demo2.vic.gov.au' => [
-      'id' => 'main_menu_vicgovau_demo2',
+      'id' => 'main-vicgovau-demo2',
       'description' => 'Demo 2 main menu',
     ],
     'Footer menu - demo2.vic.gov.au' => [
-      'id' => 'footer_menu_vicgovau_demo2',
+      'id' => 'footer-vicgovau-demo2',
       'description' => 'Demo 2 footer menu',
     ],
     'Main menu - another.demo.vic.gov.au' => [
-      'id' => 'main_menu_vicgovau_demo_another',
+      'id' => 'main-vicgovau-demo-another',
       'description' => 'Another Demo menu',
     ],
     'Footer menu - another.demo.vic.gov.au' => [
-      'id' => 'footer_menu_vicgovau_demo_another',
+      'id' => 'footer-vicgovau-demo-another',
       'description' => 'Another Demo footer menu',
     ],
   ];

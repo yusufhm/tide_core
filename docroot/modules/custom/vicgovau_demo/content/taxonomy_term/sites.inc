@@ -34,16 +34,16 @@ function vicgovau_demo_create_taxonomy_term_sites() {
 
   $site_menus = [
     'demo.vic.gov.au' => [
-      'main' => 'main_menu_vicgovau_demo',
-      'footer' => 'footer_menu_vicgovau_demo',
+      'main' => 'main-vicgovau-demo',
+      'footer' => 'footer-vicgovau-demo',
     ],
     'demo2.vic.gov.au' => [
-      'main' => 'main_menu_vicgovau_demo2',
-      'footer' => 'footer_menu_vicgovau_demo2',
+      'main' => 'main-vicgovau-demo2',
+      'footer' => 'footer-vicgovau-demo2',
     ],
     'another.demo.vic.gov.au' => [
-      'main' => 'main_menu_vicgovau_demo_another',
-      'footer' => 'footer_menu_vicgovau_demo_another',
+      'main' => 'main-vicgovau-demo-another',
+      'footer' => 'footer-vicgovau-demo-another',
     ],
   ];
 

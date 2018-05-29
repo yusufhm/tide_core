@@ -7,8 +7,6 @@ label: dev
 folder: ../config/dev
 module:
   devel_generate: 0
-  tide_test: 1000
-  vicgovau_demo: 1000
 theme: {  }
 blacklist: {  }
 graylist:
