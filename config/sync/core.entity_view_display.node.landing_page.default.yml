@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.landing_page.field_show_content_rating
     - field.field.node.landing_page.field_show_related_content
     - field.field.node.landing_page.field_show_social_sharing
+    - field.field.node.landing_page.field_show_table_of_content
     - field.field.node.landing_page.field_show_topic_term_and_tags
     - field.field.node.landing_page.field_show_whats_next
     - field.field.node.landing_page.field_tags
@@ -160,6 +161,7 @@ hidden:
   field_show_content_rating: true
   field_show_related_content: true
   field_show_social_sharing: true
+  field_show_table_of_content: true
   field_show_whats_next: true
   field_whats_next: true
   links: true

@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.landing_page.field_show_content_rating
     - field.field.node.landing_page.field_show_related_content
     - field.field.node.landing_page.field_show_social_sharing
+    - field.field.node.landing_page.field_show_table_of_content
     - field.field.node.landing_page.field_show_topic_term_and_tags
     - field.field.node.landing_page.field_show_whats_next
     - field.field.node.landing_page.field_tags
@@ -152,6 +153,7 @@ content:
     region: content
 hidden:
   field_landing_page_summary: true
+  field_show_table_of_content: true
   field_show_content_rating: true
   field_show_related_content: true
   field_show_social_sharing: true

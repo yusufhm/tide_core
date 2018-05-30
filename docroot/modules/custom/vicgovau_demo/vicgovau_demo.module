@@ -30,4 +30,5 @@ function vicgovau_demo_entity_delete(EntityInterface $entity) {
 function vicgovau_demo_config_ignore_settings_alter(array &$settings) {
   // Ignore all demo config.
   $settings[] = '*vicgovau_demo*';
+  $settings[] = '*vicgovau-demo*';
 }

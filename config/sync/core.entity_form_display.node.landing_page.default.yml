@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.landing_page.field_show_content_rating
     - field.field.node.landing_page.field_show_related_content
     - field.field.node.landing_page.field_show_social_sharing
+    - field.field.node.landing_page.field_show_table_of_content
     - field.field.node.landing_page.field_show_topic_term_and_tags
     - field.field.node.landing_page.field_show_whats_next
     - field.field.node.landing_page.field_tags
@@ -127,6 +128,7 @@ third_party_settings:
       children:
         - field_show_social_sharing
         - field_show_content_rating
+        - field_show_table_of_content
       parent_name: group_right_column
       weight: 25
       format_type: tab
@@ -352,6 +354,13 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  field_show_table_of_content:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_show_topic_term_and_tags:
     weight: 16
     settings:

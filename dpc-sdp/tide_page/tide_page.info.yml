@@ -34,6 +34,7 @@ config_devel:
     - field.field.node.page.field_show_whats_next
     - field.field.node.page.field_show_related_content
     - field.field.node.page.field_show_social_sharing
+    - field.field.node.page.field_show_table_of_content
     - field.field.node.page.field_related_links
     - field.field.node.page.field_tags
     - field.field.node.page.field_topic
