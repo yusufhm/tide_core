@@ -83,6 +83,8 @@ Feature: Fields for Landing Page content type
     And I should see an "input#edit-field-landing-page-show-contact-value" element
     And I should not see an "input#edit-field-landing-page-show-contact-value.required" element
 
+    And I see field "Show topic term and tags?"
+
   @api
   Scenario: The content type has the menu settings.
     Given I am logged in as a user with the "create landing_page content, administer menu" permission

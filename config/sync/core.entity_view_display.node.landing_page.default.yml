@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.landing_page.field_show_content_rating
     - field.field.node.landing_page.field_show_related_content
     - field.field.node.landing_page.field_show_social_sharing
+    - field.field.node.landing_page.field_show_topic_term_and_tags
     - field.field.node.landing_page.field_show_whats_next
     - field.field.node.landing_page.field_tags
     - field.field.node.landing_page.field_topic
@@ -125,6 +126,16 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_show_topic_term_and_tags:
+    weight: 13
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_tags:
     weight: 5
