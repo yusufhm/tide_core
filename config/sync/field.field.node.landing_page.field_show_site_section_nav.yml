@@ -1,0 +1,23 @@
+uuid: e69794be-a85f-4ee1-adee-4d3c8c7b59c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_site_section_nav
+    - node.type.landing_page
+id: node.landing_page.field_show_site_section_nav
+field_name: field_show_site_section_nav
+entity_type: node
+bundle: landing_page
+label: 'Show Site-section Navigation?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

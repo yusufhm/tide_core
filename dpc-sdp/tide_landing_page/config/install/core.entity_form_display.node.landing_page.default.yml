@@ -10,12 +10,14 @@ dependencies:
     - field.field.node.landing_page.field_landing_page_contact
     - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_key_journeys
+    - field.field.node.landing_page.field_landing_page_nav_title
     - field.field.node.landing_page.field_landing_page_show_contact
     - field.field.node.landing_page.field_landing_page_summary
     - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_related_links
     - field.field.node.landing_page.field_show_content_rating
     - field.field.node.landing_page.field_show_related_content
+    - field.field.node.landing_page.field_show_site_section_nav
     - field.field.node.landing_page.field_show_social_sharing
     - field.field.node.landing_page.field_show_table_of_content
     - field.field.node.landing_page.field_show_topic_term_and_tags
@@ -55,6 +57,7 @@ third_party_settings:
         - group_related_links
         - group_whats_next
         - group_contact_us
+        - group_site_section_navigation
         - group_blocks
       parent_name: ''
       weight: 5
@@ -127,7 +130,7 @@ third_party_settings:
         - field_show_content_rating
         - field_show_table_of_content
       parent_name: group_right_column
-      weight: 25
+      weight: 26
       format_type: tab
       format_settings:
         label: Other
@@ -183,6 +186,21 @@ third_party_settings:
         description: ''
         required_fields: false
       label: 'Contact Us'
+      region: content
+    group_site_section_navigation:
+      children:
+        - field_show_site_section_nav
+        - field_landing_page_nav_title
+      parent_name: group_right_column
+      weight: 25
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Site-section Navigation'
       region: content
 _core:
   default_config_hash: pN7fy_ZaJVA-sEQWPZUCiV_-5V5W_ZSuZ7Rbql6y5kg
@@ -275,6 +293,14 @@ content:
       default_paragraph_type: _none
     third_party_settings: {  }
     region: content
+  field_landing_page_nav_title:
+    weight: 21
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_landing_page_show_contact:
     weight: 17
     settings:
@@ -296,7 +322,7 @@ content:
     type: string_textarea
     region: content
   field_metatags:
-    weight: 19
+    weight: 18
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
@@ -325,6 +351,13 @@ content:
     third_party_settings: {  }
   field_show_related_content:
     weight: 37
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_show_site_section_nav:
+    weight: 20
     settings:
       display_label: true
     third_party_settings: {  }

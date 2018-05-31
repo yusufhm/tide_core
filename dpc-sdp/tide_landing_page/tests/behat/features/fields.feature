@@ -83,6 +83,10 @@ Feature: Fields for Landing Page content type
     And I should see an "input#edit-field-landing-page-show-contact-value" element
     And I should not see an "input#edit-field-landing-page-show-contact-value.required" element
 
+    And I see field "Show Site-section Navigation?"
+    And I should see an "input#edit-field-landing-page-nav-title-0-value" element
+    And I should not see an "input#edit-field-landing-page-nav-title-0-value.required" element
+
     And I see field "Show Table of Content?"
     And I should see an "input#edit-field-show-table-of-content-value" element
     And I should not see an "input#edit-field-show-table-of-content.required" element
