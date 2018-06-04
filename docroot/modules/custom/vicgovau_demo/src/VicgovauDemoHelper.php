@@ -35,7 +35,7 @@ class VicgovauDemoHelper {
    */
   public static function randomPlainParagraph() {
     $randomiser = new Random();
-    return $randomiser->paragraphs(1);
+    return str_replace(["\r", "\n"], '', $randomiser->paragraphs(1));
   }
 
   /**

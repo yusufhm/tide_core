@@ -5,9 +5,11 @@ dependencies:
     - field.field.node.test.body
     - field.field.node.test.field_metatags
     - field.field.node.test.field_show_content_rating
+    - field.field.node.test.field_test_link
     - field.field.node.test.field_test_media
     - node.type.test
   module:
+    - link
     - metatag
     - text
     - user
@@ -34,6 +36,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
+  field_test_link:
+    weight: 104
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
     region: content
   field_test_media:
     type: entity_reference_entity_view

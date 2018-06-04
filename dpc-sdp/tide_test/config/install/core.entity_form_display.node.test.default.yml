@@ -6,11 +6,13 @@ dependencies:
     - field.field.node.test.body
     - field.field.node.test.field_metatags
     - field.field.node.test.field_show_content_rating
+    - field.field.node.test.field_test_link
     - field.field.node.test.field_test_media
     - node.type.test
   module:
     - content_moderation
     - entity_browser
+    - link
     - metatag
     - path
     - text
@@ -34,6 +36,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_metatags:
+    weight: 128
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
   field_show_content_rating:
     type: boolean_checkbox
     region: content
@@ -42,11 +50,13 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
-  field_metatags:
-    weight: 128
-    settings: {  }
+  field_test_link:
+    weight: 131
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
-    type: metatag_firehose
+    type: link_default
     region: content
   field_test_media:
     weight: 124

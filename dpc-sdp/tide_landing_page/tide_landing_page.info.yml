@@ -205,3 +205,14 @@ config_devel:
     - paragraphs.paragraphs_type.contact_us
     - paragraphs.paragraphs_type.phone
     - paragraphs.paragraphs_type.social_link
+  optional:
+    - jsonapi_extras.jsonapi_resource_config.paragraph--banner
+    - jsonapi_extras.jsonapi_resource_config.paragraph--call_to_action
+    - jsonapi_extras.jsonapi_resource_config.paragraph--card_event
+    - jsonapi_extras.jsonapi_resource_config.paragraph--card_keydates
+    - jsonapi_extras.jsonapi_resource_config.paragraph--card_navigation
+    - jsonapi_extras.jsonapi_resource_config.paragraph--card_navigation_featured
+    - jsonapi_extras.jsonapi_resource_config.paragraph--card_promotion
+    - jsonapi_extras.jsonapi_resource_config.paragraph--key_journeys
+    - jsonapi_extras.jsonapi_resource_config.paragraph--keydates
+    - jsonapi_extras.jsonapi_resource_config.paragraph--social_link

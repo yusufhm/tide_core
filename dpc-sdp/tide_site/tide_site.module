@@ -5,6 +5,7 @@
  * Tide Site module functionality.
  */
 
+use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\tide_site\TideSiteFields;
@@ -224,4 +225,60 @@ function tide_site_views_pre_view(ViewExecutable $view, $display_id, array &$arg
 function tide_site_config_ignore_settings_alter(array &$settings) {
   // Ignore all autocreated site menus.
   $settings[] = 'system.menu.' . TideSiteMenuAutocreate::SITE_MENU_PREFIX . '*';
+}
+
+/**
+ * Implements hook_tide_link_enhancer_undo_transform_alter().
+ *
+ * @see \Drupal\tide_api\Plugin\jsonapi\FieldEnhancer\LinkEnhancer::doUndoTransform()
+ */
+function tide_site_tide_link_enhancer_undo_transform_alter(&$data, &$context) {
+  /** @var \Drupal\tide_site\TideSiteHelper $helper */
+  $helper = \Drupal::service('tide_site.helper');
+  try {
+    if (!empty($data['entity']['entity_type']) && $helper->isSupportedEntityType($data['entity']['entity_type'])) {
+      /** @var \Drupal\Core\Entity\FieldableEntityInterface $entity */
+      $entity = \Drupal::entityTypeManager()
+        ->getStorage($data['entity']['entity_type'])
+        ->load($data['entity']['entity_id']);
+      if ($entity && $entity instanceof FieldableEntityInterface) {
+        $site = NULL;
+
+        // Check if the link belongs to the current site.
+        $request = \Drupal::request();
+        $site_id = $request->get('site');
+        if ($site_id && $helper->isEntityBelongToSite($entity, $site_id)) {
+          $site = Term::load($site_id);
+        }
+        // It doesn't. Fetch its primary site instead.
+        else {
+          $site = $helper->getEntityPrimarySite($entity);
+        }
+
+        $domains = $helper->getSiteDomains($site);
+        // The first domain is always for production environment.
+        $domain = reset($domains);
+        if ($domain) {
+          $site_url = $request->getScheme() . '://' . $domain;
+          $data['origin_url'] = $data['url'];
+          $data['url'] = $entity->toUrl('canonical', [
+            'absolute' => TRUE,
+            'base_url' => $site_url,
+          ])->toString();
+        }
+      }
+    }
+  }
+  catch (Exception $exception) {
+    watchdog_exception('tide_site', $exception);
+  }
+}
+
+/**
+ * Implements hook_tide_link_enhancer_transform_alter().
+ *
+ * @see \Drupal\tide_api\Plugin\jsonapi\FieldEnhancer\LinkEnhancer::doTransform()
+ */
+function tide_site_tide_link_enhancer_transform_alter(&$value, &$context) {
+  unset($value['origin_url']);
 }
