@@ -7,6 +7,7 @@ dependencies:
     - node.type.landing_page
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.basic_text
+    - paragraphs.paragraphs_type.call_to_action
     - paragraphs.paragraphs_type.card_event
     - paragraphs.paragraphs_type.card_keydates
     - paragraphs.paragraphs_type.card_navigation
@@ -15,6 +16,7 @@ dependencies:
     - paragraphs.paragraphs_type.card_navigation_featured_auto
     - paragraphs.paragraphs_type.card_promotion
     - paragraphs.paragraphs_type.card_promotion_auto
+    - paragraphs.paragraphs_type.embedded_webform
   module:
     - entity_reference_revisions
 _core:
@@ -44,6 +46,8 @@ settings:
       card_navigation: card_navigation
       card_navigation_auto: card_navigation_auto
       card_keydates: card_keydates
+      call_to_action: call_to_action
+      embedded_webform: embedded_webform
     target_bundles_drag_drop:
       banner:
         weight: -33
@@ -92,5 +96,20 @@ settings:
         enabled: false
       keydates:
         weight: -18
+        enabled: false
+      call_to_action:
+        enabled: true
+        weight: 21
+      embedded_webform:
+        enabled: true
+        weight: 22
+      contact_us:
+        weight: 34
+        enabled: false
+      phone:
+        weight: 38
+        enabled: false
+      social_link:
+        weight: 40
         enabled: false
 field_type: entity_reference_revisions

@@ -92,6 +92,11 @@ function vicgovau_demo_install() {
     $repository->addDemoEntities($demo_entities, $demo['#tracking']);
   }
   \Drupal::messenger()->addMessage('Created all demo content.');
+  \Drupal::cache('data')->deleteAll();
+  \Drupal::cache('dynamic_page_cache')->deleteAll();
+  \Drupal::cache('entity')->deleteAll();
+  \Drupal::cache('page')->deleteAll();
+  \Drupal::cache('render')->deleteAll();
 }
 
 /**

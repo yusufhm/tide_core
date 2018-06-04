@@ -2,7 +2,7 @@ version: 2
 aliases:
   # Fingerprint of the SSH key for the Deployer user. The value is found in
   # CircleCI UI -> SSH Permissions.
-  - &deploy_ssh_fingerprint "88:6b:b6:bc:eb:1a:49:31:30:07:cc:4b:cc:cb:89:35"
+  - &deploy_ssh_fingerprint "36:03:e3:ca:b3:0b:82:18:e2:e9:ae:5d:81:17:86:b1"
   - &step_configure_git
     run:
       name: Configure git

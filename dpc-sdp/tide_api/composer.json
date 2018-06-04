@@ -9,7 +9,8 @@
     "require": {
         "drupal/jsonapi": "^1.15",
         "drupal/jsonapi_extras": "2.0-rc1",
-        "drupal/schemata": "1.0-alpha2"
+        "drupal/schemata": "1.0-alpha2",
+        "drupal/openapi": "1.0-alpha1"
     },
     "extra": {
         "enable-patching": true,
@@ -20,6 +21,9 @@
             },
             "drupal/jsonapi": {
                 "Menu content is not accessible via jsonapi": "patches/jsonapi/jsonapi_menu_403_fix.patch"
+            },
+            "drupal/jsonapi_extras": {
+                "Field enhancer does not work with Config Entities - https://www.drupal.org/project/jsonapi_extras/issues/2975925": "https://www.drupal.org/files/issues/2018-05-30/jsonapi_extras-config_entities_enhancer-2975925-5.patch"
             }
         }
     }

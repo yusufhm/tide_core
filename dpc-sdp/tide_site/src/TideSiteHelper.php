@@ -6,6 +6,7 @@ use Drupal\Core\Cache\Cache;
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\taxonomy\TermInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 
 /**
@@ -140,6 +141,24 @@ class TideSiteHelper {
   }
 
   /**
+   * Returns the domains of a site.
+   *
+   * @param \Drupal\taxonomy\TermInterface|null $site
+   *   The site term.
+   *
+   * @return array
+   *   The list of domains.
+   */
+  public function getSiteDomains(TermInterface $site = NULL) {
+    $domains = [];
+    if ($site && $site->hasField('field_site_domains')) {
+      $domains = $site->get('field_site_domains')->getString();
+      $domains = preg_split('/\R/', $domains) ?: [];
+    }
+    return $domains;
+  }
+
+  /**
    * Returns the Sites of an entity.
    *
    * @param \Drupal\Core\Entity\FieldableEntityInterface $entity
@@ -210,6 +229,39 @@ class TideSiteHelper {
     }
 
     return $sites;
+  }
+
+  /**
+   * Returns the Primary Site of an entity.
+   *
+   * @param \Drupal\Core\Entity\FieldableEntityInterface $entity
+   *   The Entity object.
+   *
+   * @return \Drupal\taxonomy\Entity\Term|null
+   *   The Primary site.
+   */
+  public function getEntityPrimarySite(FieldableEntityInterface $entity) {
+    $entity_type = $entity->getEntityTypeId();
+    $primary_site = NULL;
+
+    try {
+      if ($this->isSupportedEntityType($entity_type)) {
+        $field_primary_site_field_name = TideSiteFields::normaliseFieldName(TideSiteFields::FIELD_PRIMARY_SITE, $entity_type);
+        if ($entity->hasField($field_primary_site_field_name)) {
+          /** @var \Drupal\Core\Field\EntityReferenceFieldItemList $field_value */
+          $field_value = $entity->get($field_primary_site_field_name);
+          if (!$field_value->isEmpty()) {
+            $sites = $field_value->referencedEntities();
+            $primary_site = reset($sites);
+          }
+        }
+      }
+    }
+    catch (\Exception $exception) {
+      watchdog_exception('tide_site', $exception);
+    }
+
+    return $primary_site;
   }
 
   /**

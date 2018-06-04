@@ -45,14 +45,19 @@ function tide_page_update_8001() {
   if ($pages && count($pages)) {
     /** @var \Drupal\node\Entity\Node $node */
     foreach ($pages as $node) {
+      $data_changed = FALSE;
       if ($node->hasField('field_show_related_content') && $node->hasField('field_page_show_related')) {
         $node->set('field_show_related_content', $node->get('field_page_show_related'));
+        $data_changed = TRUE;
       }
       if ($node->hasField('field_show_social_sharing') && $node->hasField('field_page_show_social')) {
         $node->set('field_show_social_sharing', $node->get('field_page_show_social'));
+        $data_changed = TRUE;
       }
-      $node->setNewRevision(FALSE);
-      $node->save();
+      if ($data_changed) {
+        $node->setNewRevision(FALSE);
+        $node->save();
+      }
     }
   }
 }
@@ -72,9 +77,9 @@ function tide_page_update_8002() {
     foreach ($pages as $node) {
       if ($node->hasField('field_featured_image') && $node->hasField('field_page_feature_image')) {
         $node->set('field_featured_image', $node->get('field_page_feature_image'));
+        $node->setNewRevision(FALSE);
+        $node->save();
       }
-      $node->setNewRevision(FALSE);
-      $node->save();
     }
   }
 }

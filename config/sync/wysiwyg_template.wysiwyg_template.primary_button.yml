@@ -1,0 +1,12 @@
+uuid: 64d25473-c0e7-4f30-98cb-e9aa15f98048
+langcode: en
+status: true
+dependencies: {  }
+id: primary_button
+label: 'Primary Button'
+description: ''
+body:
+  value: "<p><a class=\"button\" href=\"Primary-button-link\">Primary button text</a></p>\r\n"
+  format: rich_text
+weight: null
+node_types: {  }

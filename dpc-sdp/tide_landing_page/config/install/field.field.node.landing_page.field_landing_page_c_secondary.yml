@@ -11,7 +11,7 @@ id: node.landing_page.field_landing_page_c_secondary
 field_name: field_landing_page_c_secondary
 entity_type: node
 bundle: landing_page
-label: 'Campaign Secondary'
+label: 'Secondary Campaign'
 description: ''
 required: false
 translatable: false

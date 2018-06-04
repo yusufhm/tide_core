@@ -39,21 +39,20 @@ Feature: Fields for Page content type
     And I should not see an "input#edit-field-show-related-content-value.required" element
 
     And I should see text matching "Related links"
-    And I should see an "input#edit-field-related-links-0-subform-field-paragraph-link-0-uri" element
-    And I should not see an "input#edit-field-related-links-0-subform-field-paragraph-link-0-uri.required" element
-    And I should see an "input#edit-field-related-links-0-subform-field-paragraph-link-0-title" element
-    And I should not see an "input#edit-field-related-links-0-subform-field-paragraph-link-0-title.required" element
+    And I should see text matching "No Link added yet."
+    And I should see the button "Add Related links" in the "content" region
 
     And I should see text matching "What's Next"
-    And I should see an "input#edit-field-whats-next-0-subform-field-paragraph-link-0-uri" element
-    And I should not see an "input#edit-field-whats-next-0-subform-field-paragraph-link-0-uri.required" element
-    And I should see an "input#edit-field-whats-next-0-subform-field-paragraph-link-0-title" element
-    And I should not see an "input#edit-field-whats-next-0-subform-field-paragraph-link-0-title.required" element
-    And I should see a "textarea#edit-field-whats-next-0-subform-field-paragraph-summary-0-value" element
+    And I should see text matching "No What's Next block added yet."
+    And I should see the button "Add Link" in the "content" region
 
     And I see field "Show What's Next?"
     And I should see an "input#edit-field-show-whats-next-value" element
     And I should not see an "input#edit-field-show-whats-next-value.required" element
+
+    And I see field "Show Table of Content?"
+    And I should see an "input#edit-field-show-table-of-content-value" element
+    And I should not see an "input#edit-field-show-table-of-content.required" element
 
   @api
   Scenario: The content type has the menu settings.

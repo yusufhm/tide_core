@@ -1,30 +1,32 @@
-uuid: 12bfcb62-7c72-4462-ae5d-5f397ba71450
 langcode: en
 status: true
 dependencies:
   config:
     - entity_browser.browser.tide_image_browser
-    - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_featured_image
     - field.field.node.landing_page.field_landing_page_c_primary
     - field.field.node.landing_page.field_landing_page_c_secondary
     - field.field.node.landing_page.field_landing_page_component
     - field.field.node.landing_page.field_landing_page_contact
     - field.field.node.landing_page.field_landing_page_intro_text
     - field.field.node.landing_page.field_landing_page_key_journeys
-    - field.field.node.landing_page.field_featured_image
+    - field.field.node.landing_page.field_landing_page_nav_title
     - field.field.node.landing_page.field_landing_page_show_contact
+    - field.field.node.landing_page.field_landing_page_summary
     - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_related_links
     - field.field.node.landing_page.field_show_content_rating
     - field.field.node.landing_page.field_show_related_content
+    - field.field.node.landing_page.field_show_site_section_nav
     - field.field.node.landing_page.field_show_social_sharing
+    - field.field.node.landing_page.field_show_table_of_content
+    - field.field.node.landing_page.field_show_topic_term_and_tags
     - field.field.node.landing_page.field_show_whats_next
     - field.field.node.landing_page.field_tags
     - field.field.node.landing_page.field_topic
     - field.field.node.landing_page.field_whats_next
     - node.type.landing_page
   module:
-    - allowed_formats
     - content_moderation
     - entity_browser
     - entity_reference_revisions
@@ -33,7 +35,6 @@ dependencies:
     - metatag
     - paragraphs
     - path
-    - text
 third_party_settings:
   field_group:
     group_content:
@@ -43,22 +44,24 @@ third_party_settings:
         - group_components
         - group_bottom_
       parent_name: ''
-      weight: 4
+      weight: 0
       format_type: tabs
       format_settings:
+        label: 'Section 1'
+        direction: horizontal
         id: ''
         classes: ''
-        direction: horizontal
-      label: Content
+      label: 'Section 1'
       region: content
     group_right_column:
       children:
+        - group_site_section_navigation
         - group_related_links
         - group_whats_next
         - group_contact_us
         - group_blocks
       parent_name: ''
-      weight: 5
+      weight: 1
       format_type: tabs
       format_settings:
         id: ''
@@ -68,17 +71,22 @@ third_party_settings:
       region: content
     group_key_journeys:
       children:
+        - title
+        - field_featured_image
+        - field_landing_page_intro_text
+        - field_landing_page_summary
         - field_landing_page_key_journeys
       parent_name: group_content
       weight: 22
       format_type: tab
       format_settings:
-        id: ''
-        classes: ''
+        label: 'Page Header'
         formatter: closed
         description: ''
         required_fields: true
-      label: 'Key journeys'
+        id: ''
+        classes: ''
+      label: 'Page Header'
       region: content
     group_top_banner:
       children:
@@ -87,26 +95,29 @@ third_party_settings:
       weight: 23
       format_type: tab
       format_settings:
-        id: ''
-        classes: ''
+        label: 'Primary Campaign'
         formatter: closed
         description: ''
         required_fields: true
-      label: 'Top banner'
+        id: ''
+        classes: ''
+      label: 'Primary Campaign'
       region: content
     group_components:
       children:
+        - field_show_table_of_content
         - field_landing_page_component
       parent_name: group_content
       weight: 24
       format_type: tab
       format_settings:
-        id: ''
-        classes: ''
+        label: 'Body Content'
         formatter: closed
         description: ''
         required_fields: true
-      label: 'Content components'
+        id: ''
+        classes: ''
+      label: 'Body Content'
       region: content
     group_bottom_:
       children:
@@ -115,35 +126,35 @@ third_party_settings:
       weight: 26
       format_type: tab
       format_settings:
-        id: ''
-        classes: ''
+        label: 'Secondary Campaign'
         formatter: closed
         description: ''
         required_fields: true
-      label: 'Bottom banner'
+        id: ''
+        classes: ''
+      label: 'Secondary Campaign'
       region: content
     group_blocks:
       children:
         - field_show_social_sharing
-        - field_show_content_rating
       parent_name: group_right_column
-      weight: 25
+      weight: 29
       format_type: tab
       format_settings:
-        label: Other
+        label: 'Social sharing'
         formatter: closed
         description: ''
         required_fields: true
         id: ''
         classes: ''
-      label: Other
+      label: 'Social sharing'
       region: content
     group_related_links:
       children:
         - field_show_related_content
         - field_related_links
       parent_name: group_right_column
-      weight: 22
+      weight: 26
       format_type: tab
       format_settings:
         id: ''
@@ -158,7 +169,7 @@ third_party_settings:
         - field_show_whats_next
         - field_whats_next
       parent_name: group_right_column
-      weight: 23
+      weight: 27
       format_type: tab
       format_settings:
         label: 'What''s Next'
@@ -174,7 +185,7 @@ third_party_settings:
         - field_landing_page_show_contact
         - field_landing_page_contact
       parent_name: group_right_column
-      weight: 24
+      weight: 28
       format_type: tab
       format_settings:
         id: ''
@@ -182,8 +193,23 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: false
-      label: 'Contact Us'
-      region: hidden
+      label: Contact
+      region: content
+    group_site_section_navigation:
+      children:
+        - field_show_site_section_nav
+        - field_landing_page_nav_title
+      parent_name: group_right_column
+      weight: 25
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Site-section Navigation'
+      region: content
 _core:
   default_config_hash: pN7fy_ZaJVA-sEQWPZUCiV_-5V5W_ZSuZ7Rbql6y5kg
 id: node.landing_page.default
@@ -191,31 +217,26 @@ targetEntityType: node
 bundle: landing_page
 mode: default
 content:
-  body:
-    weight: 3
-    settings:
-      rows: 9
-      placeholder: ''
-      summary_rows: 3
-    third_party_settings:
-      maxlength:
-        maxlength_js: null
-        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-        maxlength_js_summary: 200
-        maxlength_js_label_summary: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-        maxlength_js_enforce: false
-        maxlength_js_truncate_html: false
-      allowed_formats:
-        hide_help: '0'
-        hide_guidelines: '0'
-    type: text_textarea_with_summary
-    region: content
   created:
     type: datetime_timestamp
-    weight: 7
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_featured_image:
+    weight: 1
+    settings:
+      entity_browser: tide_image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: media_browser_preview
+      open: false
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
   field_landing_page_c_primary:
     weight: 1
     settings:
@@ -226,7 +247,7 @@ content:
     type: entity_reference_revisions_autocomplete
     region: content
   field_landing_page_c_secondary:
-    weight: 33
+    weight: 26
     settings:
       match_operator: CONTAINS
       size: 60
@@ -241,7 +262,7 @@ content:
     settings:
       title: Component
       title_plural: Components
-      edit_mode: open
+      edit_mode: closed
       closed_mode: summary
       autocollapse: none
       add_mode: select
@@ -252,12 +273,12 @@ content:
     type: entity_reference_paragraphs
     weight: 18
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
+      title: 'Contact Us block'
+      title_plural: 'Contact Us blocks'
+      edit_mode: closed
+      add_mode: button
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: _none
     third_party_settings: {  }
     region: content
   field_landing_page_intro_text:
@@ -272,27 +293,22 @@ content:
     type: entity_reference_paragraphs
     weight: 33
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
+      title: 'Key journey'
+      title_plural: 'Key journeys'
+      edit_mode: closed
+      add_mode: button
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: _none
     third_party_settings: {  }
     region: content
-  field_featured_image:
-    weight: 1
+  field_landing_page_nav_title:
+    weight: 21
     settings:
-      entity_browser: tide_image_browser
-      field_widget_display: rendered_entity
-      field_widget_edit: true
-      field_widget_remove: true
-      selection_mode: selection_append
-      field_widget_display_settings:
-        view_mode: default
-      open: false
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: entity_browser_entity_reference
+    type: string_textfield
+    region: content
   field_landing_page_show_contact:
     weight: 17
     settings:
@@ -300,8 +316,21 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
+  field_landing_page_summary:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: 200
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+        maxlength_js_truncate_html: false
+    type: string_textarea
+    region: content
   field_metatags:
-    weight: 37
+    weight: 15
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
@@ -312,24 +341,31 @@ content:
     settings:
       title: Link
       title_plural: Links
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
+      edit_mode: closed
       closed_mode: summary
       autocollapse: none
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
     third_party_settings: {  }
     region: content
   field_show_content_rating:
     type: boolean_checkbox
     region: content
     field_name: field_show_content_rating
-    weight: 1
+    weight: 3
     settings:
       display_label: true
     third_party_settings: {  }
   field_show_related_content:
     weight: 37
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_show_site_section_nav:
+    weight: 20
     settings:
       display_label: true
     third_party_settings: {  }
@@ -342,6 +378,20 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  field_show_table_of_content:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_show_topic_term_and_tags:
+    weight: 14
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_show_whats_next:
     type: boolean_checkbox
     weight: 23
@@ -372,12 +422,12 @@ content:
     weight: 24
     region: content
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
+      title: 'What''s Next block'
+      title_plural: 'What''s Next blocks'
+      edit_mode: closed
+      add_mode: button
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: _none
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
@@ -387,7 +437,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -409,7 +459,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 5
     region: content
     third_party_settings: {  }
   title:
@@ -425,7 +475,7 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
   uid:
     type: entity_reference_autocomplete
-    weight: 6
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60

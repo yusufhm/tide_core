@@ -21,7 +21,7 @@ class VicgovauDemoIgnoreFilter extends IgnoreFilter implements ContainerFactoryP
    * {@inheritdoc}
    */
   public function __construct(array $configuration, $plugin_id, array $plugin_definition, StorageInterface $active) {
-    $configuration['ignored'] = ['*vicgovau_demo*'];
+    $configuration['ignored'] = ['*vicgovau_demo*', '*vicgovau-demo*'];
     parent::__construct($configuration, $plugin_id, $plugin_definition, $active);
   }
 

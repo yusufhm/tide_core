@@ -81,11 +81,11 @@ class TideSiteMenuAutocreateTest extends TideSiteTest {
    */
   public function providerMakeMenuName() {
     return [
-      ['abc', [], 'abc-site'],
-      ['abc', ['t1'], 'abc-site-t1'],
-      ['abc', ['t1', 'p1'], 'abc-site-p1-t1'],
-      ['abc', ['t1', 'p1', 'p2'], 'abc-site-p2-p1-t1'],
-      ['abc', ['t1', 'p1 p11', 'p2 p21'], 'abc-site-p2-p21-p1-p11-t1'],
+      ['abc', [], 'site-abc'],
+      ['abc', ['t1'], 'site-abc-t1'],
+      ['abc', ['t1', 'p1'], 'site-abc-p1-t1'],
+      ['abc', ['t1', 'p1', 'p2'], 'site-abc-p2-p1-t1'],
+      ['abc', ['t1', 'p1 p11', 'p2 p21'], 'site-abc-p2-p21-p1-p11-t1'],
     ];
   }
 

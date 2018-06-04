@@ -274,13 +274,9 @@ class TideApiController extends ControllerBase {
    *   JSONAPI path for provided entity or NULL if no path was found.
    */
   protected function getEntityJsonapiPath(EntityInterface $entity) {
-    $resource_type = $this->resourceTypeRepository->get($entity->getEntityTypeId(), $entity->bundle());
     /** @var \Drupal\jsonapi_extras\ResourceType\ConfigurableResourceType $resource_type */
-    $resource_config = $resource_type->getJsonapiResourceConfig();
-    $config_path = $resource_config->get('path');
-    if (!$config_path) {
-      $config_path = $resource_type->getTypeName();
-    }
+    $resource_type = $this->resourceTypeRepository->get($entity->getEntityTypeId(), $entity->bundle());
+    $config_path = $resource_type->getTypeName();
 
     return $config_path;
   }

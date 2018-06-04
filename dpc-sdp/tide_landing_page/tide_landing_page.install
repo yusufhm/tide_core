@@ -71,9 +71,9 @@ function tide_landing_page_update_8001() {
     foreach ($pages as $node) {
       if ($node->hasField('field_show_social_sharing') && $node->hasField('field_landing_page_show_social')) {
         $node->set('field_show_social_sharing', $node->get('field_landing_page_show_social'));
+        $node->setNewRevision(FALSE);
+        $node->save();
       }
-      $node->setNewRevision(FALSE);
-      $node->save();
     }
   }
 }
@@ -93,9 +93,32 @@ function tide_landing_page_update_8002() {
     foreach ($pages as $node) {
       if ($node->hasField('field_featured_image') && $node->hasField('field_page_feature_image')) {
         $node->set('field_featured_image', $node->get('field_page_feature_image'));
+        $node->setNewRevision(FALSE);
+        $node->save();
       }
-      $node->setNewRevision(FALSE);
-      $node->save();
+    }
+  }
+}
+
+/**
+ * Replace body with summary field.
+ */
+function tide_landing_page_update_8003() {
+  module_load_include('inc', 'tide_core', 'includes/helpers');
+  $config_location = [drupal_get_path('module', 'tide_landing_page') . '/config/install'];
+  _tide_import_single_config('field.storage.node.field_landing_page_summary', $config_location);
+  _tide_import_single_config('field.field.node.landing_page.field_landing_page_summary', $config_location);
+
+  $pages = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'landing_page']);
+  if ($pages && count($pages)) {
+    /** @var \Drupal\node\Entity\Node $node */
+    foreach ($pages as $node) {
+      if ($node->hasField('body') && $node->hasField('field_landing_page_summary')) {
+        $node->set('field_landing_page_summary', $node->get('body')->summary);
+        $node->setNewRevision(FALSE);
+        $node->save();
+      }
     }
   }
 }
