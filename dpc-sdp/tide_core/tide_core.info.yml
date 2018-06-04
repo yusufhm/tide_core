@@ -75,11 +75,14 @@ config_devel:
     - field.storage.node.field_topic
     - field.storage.node.field_whats_next
     - field.storage.node.field_featured_image
+    - filter.format.admin_text
+    - filter.format.rich_text
     - paragraphs.paragraphs_type.related_links
     - paragraphs.paragraphs_type.links
     - taxonomy.vocabulary.topic
     - taxonomy.vocabulary.tags
   optional:
+    - filter.format.plain_text
     - metatag.metatag_defaults.403
     - metatag.metatag_defaults.404
     - metatag.metatag_defaults.front
