@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: sSrAIP6meLdFwSpR_gKKbQ8VydeEXHsEaz-f5wzY0Vs
 id: file--file
-disabled: true
+disabled: false
 path: file/file
 resourceType: file--file
 resourceFields:

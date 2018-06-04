@@ -1,5 +1,5 @@
 name: Tide Webform
-description: 'Provides Webform and related configuration. '
+description: 'Provides Webform and related configuration.'
 type: module
 package: Tide
 core: 8.x
@@ -16,3 +16,4 @@ config_devel:
     - webform.webform.tide_webform_content_rating
   optional:
     - block.block.tide_webform_content_rating
+    - jsonapi_extras.jsonapi_resource_config.webform--webform

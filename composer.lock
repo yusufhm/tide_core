@@ -1280,7 +1280,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_api",
-                "reference": "79513290f98f3d3b1795c8b8069ae5ea78149bc7",
+                "reference": "0be9ed9b2877df48612a9d4f4f4cce76b0eaa57e",
                 "shasum": null
             },
             "require": {
@@ -1299,6 +1299,9 @@
                     },
                     "drupal/jsonapi": {
                         "Menu content is not accessible via jsonapi": "patches/jsonapi/jsonapi_menu_403_fix.patch"
+                    },
+                    "drupal/jsonapi_extras": {
+                        "Field enhancer does not work with Config Entities - https://www.drupal.org/project/jsonapi_extras/issues/2975925": "https://www.drupal.org/files/issues/2018-05-30/jsonapi_extras-config_entities_enhancer-2975925-5.patch"
                     }
                 }
             },
@@ -1653,7 +1656,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.23",
-                    "datestamp": "1517936581",
+                    "datestamp": "1527522480",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3160,7 +3163,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.4",
-                    "datestamp": "1515143885",
+                    "datestamp": "1527241084",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3641,6 +3644,9 @@
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Field enhancer does not work with Config Entities - https://www.drupal.org/project/jsonapi_extras/issues/2975925": "https://www.drupal.org/files/issues/2018-05-30/jsonapi_extras-config_entities_enhancer-2975925-5.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -4156,7 +4162,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.2",
-                    "datestamp": "1505802867",
+                    "datestamp": "1527502684",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4503,7 +4509,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-rc2",
-                    "datestamp": "1505390043",
+                    "datestamp": "1527699484",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."

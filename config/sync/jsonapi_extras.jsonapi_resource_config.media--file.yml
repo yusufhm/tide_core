@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: J7HMtpWc49Z7u9Vkm-U_aKEAGUcsrCSft_7lp3_RRX4
 id: media--file
-disabled: true
+disabled: false
 path: media/file
 resourceType: media--file
 resourceFields:

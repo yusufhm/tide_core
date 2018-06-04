@@ -4,7 +4,7 @@ dependencies:
   config:
     - media.type.file
 id: media--file
-disabled: true
+disabled: false
 path: media/file
 resourceType: media--file
 resourceFields:

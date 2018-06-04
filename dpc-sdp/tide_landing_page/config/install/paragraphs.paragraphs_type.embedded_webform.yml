@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: embedded_webform
+label: 'Embedded Webform'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

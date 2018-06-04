@@ -15,6 +15,7 @@ dependencies:
     - paragraphs.paragraphs_type.card_navigation_featured_auto
     - paragraphs.paragraphs_type.card_promotion
     - paragraphs.paragraphs_type.card_promotion_auto
+    - paragraphs.paragraphs_type.embedded_webform
   module:
     - entity_reference_revisions
 id: node.landing_page.field_landing_page_component
@@ -43,6 +44,7 @@ settings:
       card_navigation_auto: card_navigation_auto
       card_keydates: card_keydates
       call_to_action: call_to_action
+      embedded_webform: embedded_webform
     target_bundles_drag_drop:
       banner:
         weight: -33
@@ -95,6 +97,9 @@ settings:
       call_to_action:
         enabled: true
         weight: 21
+      embedded_webform:
+        enabled: true
+        weight: 22
       contact_us:
         weight: 34
         enabled: false
