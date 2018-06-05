@@ -1,0 +1,15 @@
+uuid: c3dbb75a-1d8e-4f55-b135-48168440a543
+langcode: en
+status: false
+dependencies: {  }
+id: ci
+label: ci
+folder: ../config/ci
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist:
+  - tide_media.settings
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 2
