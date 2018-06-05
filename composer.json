@@ -97,6 +97,10 @@
             "type": "path",
             "url": "dpc-sdp/tide_media"
         },
+        "dpc-sdp/tide_monsido": {
+            "type": "path",
+            "url": "dpc-sdp/tide_monsido"
+        },
         "dpc-sdp/tide_page": {
             "type": "path",
             "url": "dpc-sdp/tide_page"

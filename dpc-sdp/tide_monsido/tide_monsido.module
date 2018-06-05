@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains tide_monsido.module.
+ */
+
+/**
+ * Get Monsido settings.
+ *
+ * @return array
+ *   The settings array.
+ */
+function tide_monsido_get_settings() {
+  $settings = (array) \Drupal::config('tide_monsido.settings')->getOriginal();
+  $settings += [
+    'enable_monsido' => TRUE,
+    'domain_token' => NULL,
+    'enable_statistics' => TRUE,
+  ];
+
+  return $settings;
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function tide_monsido_page_attachments(array &$attachments) {
+  $settings = tide_monsido_get_settings();
+  if (!$settings['enable_monsido'] || empty($settings['domain_token'])) {
+    return;
+  }
+
+  $clean_domain_token = json_encode($settings['domain_token'], JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT);
+
+  $monsido_code = <<<MONSIDO
+    var _monsido = _monsido || [];
+    _monsido.push(['_setDomainToken', {$clean_domain_token}]);
+MONSIDO;
+
+  if ($settings['enable_statistics']) {
+    $monsido_code .= <<<MONSIDO
+    _monsido.push(['_withStatistics', 'true']); 
+MONSIDO;
+  }
+
+  $attachments['#attached']['library'][] = 'tide_monsido/monsido';
+  $attachments['#attached']['html_head'][] = [
+    [
+      '#tag' => 'script',
+      '#value' => $monsido_code,
+      '#attributes' => [
+        'type' => 'text/javascript',
+      ],
+    ],
+    'monsido_code',
+  ];
+}
