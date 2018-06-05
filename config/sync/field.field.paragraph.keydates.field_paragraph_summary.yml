@@ -10,9 +10,9 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
+    plain_text: plain_text
     rich_text: '0'
     admin_text: '0'
-    plain_text: '0'
 _core:
   default_config_hash: PgBV-FuqahDH4ro6pZQwb-XNcTOkskvfIgcuxMCjHP4
 id: paragraph.keydates.field_paragraph_summary
