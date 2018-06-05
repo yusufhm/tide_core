@@ -11,6 +11,7 @@ Feature: Roles
     Examples:
       | role          |
       | administrator |
+      | site_admin    |
       | approver      |
       | editor        |
       | previewer     |
