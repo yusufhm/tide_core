@@ -10,7 +10,7 @@ resourceType: node_type--node_type
 resourceFields:
   type:
     fieldName: type
-    publicName: type
+    publicName: entity_type
     enhancer:
       id: ''
     disabled: false

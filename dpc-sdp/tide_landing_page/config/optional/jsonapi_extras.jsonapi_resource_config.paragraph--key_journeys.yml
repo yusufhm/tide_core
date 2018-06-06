@@ -10,7 +10,7 @@ resourceType: paragraph--key_journeys
 resourceFields:
   id:
     fieldName: id
-    publicName: id
+    publicName: entity_id
     enhancer:
       id: ''
     disabled: false
@@ -34,7 +34,7 @@ resourceFields:
     enhancer_label: ''
   type:
     fieldName: type
-    publicName: type
+    publicName: entity_type
     enhancer:
       id: ''
     disabled: false

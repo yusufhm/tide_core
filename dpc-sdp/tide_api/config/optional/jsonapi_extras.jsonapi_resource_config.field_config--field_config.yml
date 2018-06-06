@@ -10,7 +10,7 @@ resourceType: field_config--field_config
 resourceFields:
   id:
     fieldName: id
-    publicName: id
+    publicName: entity_id
     enhancer:
       id: ''
     disabled: false

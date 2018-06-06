@@ -13,7 +13,7 @@ resourceType: block_content_type--block_content_type
 resourceFields:
   id:
     fieldName: id
-    publicName: id
+    publicName: entity_id
     enhancer:
       id: ''
     disabled: false
