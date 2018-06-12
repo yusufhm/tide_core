@@ -133,7 +133,7 @@
                 "Additional options checkbox do not appear to save - https://www.drupal.org/project/smart_trim/issues/2941492": "https://www.drupal.org/files/issues/2018-05-04/2941492-4.patch"
             },
             "drupal/config_ignore": {
-                "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-05-14/config_error-offset-error-2972302-3.patch"
+                "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-06-05/offset-error-within-2972302-6.patch"
             },
             "drupal/field_group": {
                 "Do not translate field group labels using interface translation. - https://www.drupal.org/project/field_group/issues/2846617": "https://www.drupal.org/files/issues/2018-05-10/2846617-16-use-config-translations-for-field-group.patch"
