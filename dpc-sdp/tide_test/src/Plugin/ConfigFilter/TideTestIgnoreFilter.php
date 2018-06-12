@@ -27,6 +27,7 @@ class TideTestIgnoreFilter extends IgnoreFilter implements ContainerFactoryPlugi
       '*.test.*',
       '*_test*',
       '*.field_test*',
+      '*.node--test',
     ];
     parent::__construct($configuration, $plugin_id, $plugin_definition, $active);
   }

@@ -105,4 +105,5 @@ function tide_test_config_ignore_settings_alter(array &$settings) {
   $settings[] = '*.test.*';
   $settings[] = '*.field_test*';
   $settings[] = '*_test*';
+  $settings[] = '*.node--test';
 }

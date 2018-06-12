@@ -5,6 +5,7 @@
  * Installation functions for Tide Core.
  */
 
+use Drupal\filter\Entity\FilterFormat;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\user\Entity\User;
 use Drupal\workflows\Entity\Workflow;
@@ -17,6 +18,18 @@ function tide_core_install() {
   $user = User::load(1);
   $user->roles[] = 'administrator';
   $user->save();
+
+  // Remove the default Plain Text format from Core.
+  try {
+    $plain_text = FilterFormat::load('plain_text');
+    if ($plain_text) {
+      $plain_text->delete();
+      \Drupal::cache('config')->delete('filter.format.plain_text');
+    }
+  }
+  catch (Exception $exception) {
+    watchdog_exception('tide_core', $exception);
+  }
 
   // Don't do anything else during config sync.
   if (\Drupal::isConfigSyncing()) {

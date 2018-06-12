@@ -8,7 +8,7 @@ resourceType: base_field_override--base_field_override
 resourceFields:
   id:
     fieldName: id
-    publicName: id
+    publicName: entity_id
     enhancer:
       id: ''
     disabled: false

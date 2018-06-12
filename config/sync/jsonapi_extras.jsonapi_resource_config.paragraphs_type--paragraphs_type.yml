@@ -13,7 +13,7 @@ resourceType: paragraphs_type--paragraphs_type
 resourceFields:
   id:
     fieldName: id
-    publicName: id
+    publicName: entity_id
     enhancer:
       id: ''
     disabled: false

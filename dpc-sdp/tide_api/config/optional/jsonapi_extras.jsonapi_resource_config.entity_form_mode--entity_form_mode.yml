@@ -8,7 +8,7 @@ resourceType: entity_form_mode--entity_form_mode
 resourceFields:
   id:
     fieldName: id
-    publicName: id
+    publicName: entity_id
     enhancer:
       id: ''
     disabled: false

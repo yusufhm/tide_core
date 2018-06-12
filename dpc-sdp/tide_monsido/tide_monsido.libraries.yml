@@ -1,0 +1,4 @@
+monsido:
+  version: 1.0
+  js:
+    //cdn.monsido.com/tool/javascripts/monsido.js: { type: external, minified: true }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a7b9710c685f814ee6a26bc0916c2691",
+    "content-hash": "b3da0a4ca82e4155cd425428df9209b5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1240,7 +1240,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide",
-                "reference": "0da130fe3ee4f1f0687ad70a4a54d39d71e5d193",
+                "reference": "56d529ca1f2a24f6ea882f3e0b762cc8f74039e9",
                 "shasum": null
             },
             "require": {
@@ -1248,6 +1248,7 @@
                 "dpc-sdp/tide_core": "0.0.1",
                 "dpc-sdp/tide_landing_page": "^0.0.1",
                 "dpc-sdp/tide_media": "^0.0.1",
+                "dpc-sdp/tide_monsido": "^0.0.1",
                 "dpc-sdp/tide_page": "0.0.1",
                 "dpc-sdp/tide_site": "^0.0.1",
                 "dpc-sdp/tide_test": "^0.0.1",
@@ -1316,7 +1317,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_core",
-                "reference": "d118883b2652b4c65a7491d13f7e5c1eb9c36783",
+                "reference": "fa09ce4a230ba221735b083ff928128da557d1ef",
                 "shasum": null
             },
             "require": {
@@ -1396,7 +1397,7 @@
                         "Additional options checkbox do not appear to save - https://www.drupal.org/project/smart_trim/issues/2941492": "https://www.drupal.org/files/issues/2018-05-04/2941492-4.patch"
                     },
                     "drupal/config_ignore": {
-                        "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-05-14/config_error-offset-error-2972302-3.patch"
+                        "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-06-05/offset-error-within-2972302-6.patch"
                     },
                     "drupal/field_group": {
                         "Do not translate field group labels using interface translation. - https://www.drupal.org/project/field_group/issues/2846617": "https://www.drupal.org/files/issues/2018-05-10/2846617-16-use-config-translations-for-field-group.patch"
@@ -1452,6 +1453,27 @@
                 "GPL-2.0+"
             ],
             "description": "Media and related configuration for Tide Drupal 8 distribution"
+        },
+        {
+            "name": "dpc-sdp/tide_monsido",
+            "version": "0.0.1",
+            "dist": {
+                "type": "path",
+                "url": "dpc-sdp/tide_monsido",
+                "reference": "34b8410c45aa2224abf6899ab10ea7f1ac75f0f8",
+                "shasum": null
+            },
+            "require": {
+                "dpc-sdp/tide_core": "0.0.1",
+                "drupal/maxlength": "^1.0@beta",
+                "drupal/paragraphs": "^1.2",
+                "drupal/smart_trim": "^1.1"
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Monsido module for Tide distribution."
         },
         {
             "name": "dpc-sdp/tide_page",
@@ -2212,7 +2234,7 @@
                     }
                 },
                 "patches_applied": {
-                    "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-05-14/config_error-offset-error-2972302-3.patch"
+                    "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-06-05/offset-error-within-2972302-6.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3012,7 +3034,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.4",
-                    "datestamp": "1512033785",
+                    "datestamp": "1528140780",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3795,7 +3817,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-beta1",
-                    "datestamp": "1471873139",
+                    "datestamp": "1527856384",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -5447,7 +5469,7 @@
                 },
                 "drupal": {
                     "version": "8.x-5.0-rc12",
-                    "datestamp": "1524706684",
+                    "datestamp": "1528137480",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."

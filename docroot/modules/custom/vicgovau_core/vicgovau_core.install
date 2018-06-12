@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Site\Settings;
+use Drupal\Core\Utility\UpdateException;
 use Drupal\taxonomy\Entity\Term;
 
 /**
@@ -79,7 +80,7 @@ function vicgovau_core_install_module($module) {
 }
 
 /**
- * Creates sites and sections. Also creates demo users.
+ * Creates sites and sections.
  */
 function vicgovau_core_update_8001() {
   $sites = [
@@ -105,5 +106,27 @@ function vicgovau_core_update_8001() {
     }
     $weight++;
   }
+}
 
+/**
+ * Assigns site_admin role to selected users.
+ */
+function vicgovau_core_update_8003() {
+  $user_names = [
+    'jessica.le',
+  ];
+
+  foreach ($user_names as $user_name) {
+    /** @var \Drupal\user\Entity\User $user */
+    $user = user_load_by_name($user_name);
+    if (!$user) {
+      throw new UpdateException(sprintf('Unable to update role for user "%s"', $user_name));
+    }
+    $user->addRole('site_admin');
+    $user->removeRole('administrator');
+    $user->removeRole('approver');
+    $user->removeRole('editor');
+    $user->removeRole('previewer');
+    $user->save();
+  }
 }

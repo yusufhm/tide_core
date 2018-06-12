@@ -4,7 +4,7 @@ dependencies:
   config:
     - taxonomy.vocabulary.topic
 id: taxonomy_term--topic
-disabled: true
+disabled: false
 path: taxonomy_term/topic
 resourceType: taxonomy_term--topic
 resourceFields:

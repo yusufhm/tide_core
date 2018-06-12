@@ -1,0 +1,5 @@
+tide_monsido.admin_settings_form:
+  title: 'Monsido'
+  description: 'Settings for Monsido integration.'
+  parent: system.admin_config_system
+  route_name: tide_monsido.admin_settings_form

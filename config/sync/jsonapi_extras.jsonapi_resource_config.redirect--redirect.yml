@@ -31,7 +31,7 @@ resourceFields:
     disabled: false
   type:
     fieldName: type
-    publicName: type
+    publicName: entity_type
     enhancer:
       id: ''
     disabled: false

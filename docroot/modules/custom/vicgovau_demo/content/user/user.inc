@@ -21,6 +21,7 @@ function vicgovau_demo_create_user_user_weight() {
 function vicgovau_demo_create_user_user() {
   $roles = [
     'administrator',
+    'site_admin',
     'approver',
     'editor',
     'previewer',

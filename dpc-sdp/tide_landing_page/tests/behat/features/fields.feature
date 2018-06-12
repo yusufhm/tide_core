@@ -94,6 +94,10 @@ Feature: Fields for Landing Page content type
 
     And I see field "Show topic term and tags?"
 
+    And I see field "Background Colour"
+    And I should see an "select#edit-field-landing-page-bg-colour" element
+    And I should see an "select#edit-field-landing-page-bg-colour.required" element
+
   @api
   Scenario: The content type has the menu settings.
     Given I am logged in as a user with the "create landing_page content, administer menu" permission

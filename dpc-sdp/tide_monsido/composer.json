@@ -1,0 +1,20 @@
+{
+    "name": "dpc-sdp/tide_monsido",
+    "description": "Monsido module for Tide distribution.",
+    "type": "drupal-module",
+    "license": "GPL-2.0+",
+    "version": "0.0.1",
+    "require": {
+        "dpc-sdp/tide_core": "0.0.1",
+        "drupal/paragraphs": "^1.2",
+        "drupal/maxlength": "^1.0@beta",
+        "drupal/smart_trim": "^1.1"
+    },
+    "repositories": {
+        "tide_core": {
+            "type": "vcs",
+            "no-api": true,
+            "url": "ssh://git@github.com:22/dpc-sdp/tide_core.git"
+        }
+    }
+}

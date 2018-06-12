@@ -13,7 +13,7 @@ resourceType: action--action
 resourceFields:
   id:
     fieldName: id
-    publicName: id
+    publicName: entity_id
     enhancer:
       id: ''
     disabled: false
@@ -61,7 +61,7 @@ resourceFields:
     disabled: false
   type:
     fieldName: type
-    publicName: type
+    publicName: entity_type
     enhancer:
       id: ''
     disabled: false

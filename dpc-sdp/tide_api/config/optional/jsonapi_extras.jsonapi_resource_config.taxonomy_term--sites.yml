@@ -4,7 +4,7 @@ dependencies:
   config:
     - taxonomy.vocabulary.sites
 id: taxonomy_term--sites
-disabled: true
+disabled: false
 path: taxonomy_term/sites
 resourceType: taxonomy_term--sites
 resourceFields:

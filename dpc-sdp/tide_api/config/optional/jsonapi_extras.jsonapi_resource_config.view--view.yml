@@ -10,7 +10,7 @@ resourceType: view--view
 resourceFields:
   id:
     fieldName: id
-    publicName: id
+    publicName: entity_id
     enhancer:
       id: ''
     disabled: false

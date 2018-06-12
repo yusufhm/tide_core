@@ -11,7 +11,7 @@ Feature: JSON API Webform
     And the JSON node "data" should exist
     And the JSON node "data[0].type" should be equal to "webform--webform"
     And the JSON node "data[0].attributes.uuid" should exist
-    And the JSON node "data[0].attributes.id" should be equal to "tide_webform_content_rating"
+    And the JSON node "data[0].attributes.entity_id" should be equal to "tide_webform_content_rating"
     And the JSON node "data[0].attributes.elements" should exist
     And the JSON node "data[0].attributes.elements.url" should exist
     And the JSON node "data[0].attributes.elements.was_this_page_helpful" should exist

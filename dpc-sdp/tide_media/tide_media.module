@@ -5,6 +5,8 @@
  * Tide Media module functionality.
  */
 
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\ViewExecutable;
 
@@ -112,4 +114,63 @@ function tide_media_preprocess_file_link(&$variables) {
 
   $link_html .= ' <span class="file--info">(<span class="file--info--type">' . $file_type . '</span> <span class="file--info-size">' . $file_size . '</span>)</span>';
   $link->setGeneratedLink($link_html);
+}
+
+/**
+ * Implements hook_entity_base_field_info().
+ *
+ * @see jsonapi_entity_base_field_info()
+ */
+function tide_media_entity_base_field_info(EntityTypeInterface $entity_type) {
+  $fields = [];
+  if ($entity_type->id() == 'file') {
+    if (\Drupal::config('tide_media.settings')->get('file_absolute_url')) {
+      // Return absolute URL for all files, both in fields and wysiwyg.
+      $fields['url'] = BaseFieldDefinition::create('string')
+        ->setLabel(t('Download URL'))
+        ->setDescription(t('The download URL of the file.'))
+        ->setComputed(TRUE)
+        ->setCustomStorage(TRUE)
+        ->setClass('\Drupal\tide_media\Plugin\Field\FileAbsoluteUrl')
+        ->setDisplayOptions('view', [
+          'label' => 'above',
+          'weight' => -5,
+          'region' => 'hidden',
+        ])
+        ->setDisplayConfigurable('view', TRUE);
+    }
+  }
+  return $fields;
+}
+
+/**
+ * Implements hook_entity_base_field_info_alter().
+ *
+ * @see jsonapi_entity_base_field_info()
+ */
+function tide_media_entity_base_field_info_alter(&$fields, EntityTypeInterface $entity_type) {
+  if ($entity_type->id() == 'file') {
+    if (\Drupal::config('tide_media.settings')->get('file_absolute_url')) {
+      // The field maybe changed by jsonapi, reset it here.
+      $fields['url']->setClass('\Drupal\tide_media\Plugin\Field\FileAbsoluteUrl');
+    }
+  }
+}
+
+/**
+ * Implement template_preprocess_image().
+ *
+ * @see template_preprocess_image()
+ */
+function tide_media_preprocess_image(&$variables) {
+  // Return the absolute URL for images.
+  if (!empty($variables['uri'])) {
+    $config = \Drupal::config('tide_media.settings');
+    if ($config->get('file_absolute_url')) {
+      $variables['attributes']['src'] = file_create_url($variables['uri']);
+      if ($config->get('force_https')) {
+        $variables['attributes']['src'] = str_replace('http://', 'https://', $variables['attributes']['src']);
+      }
+    }
+  }
 }

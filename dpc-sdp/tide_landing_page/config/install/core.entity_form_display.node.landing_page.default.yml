@@ -4,6 +4,7 @@ dependencies:
   config:
     - entity_browser.browser.tide_image_browser
     - field.field.node.landing_page.field_featured_image
+    - field.field.node.landing_page.field_landing_page_bg_colour
     - field.field.node.landing_page.field_landing_page_c_primary
     - field.field.node.landing_page.field_landing_page_c_secondary
     - field.field.node.landing_page.field_landing_page_component
@@ -236,6 +237,12 @@ content:
       open: false
     third_party_settings: {  }
     type: entity_browser_entity_reference
+    region: content
+  field_landing_page_bg_colour:
+    weight: 40
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_landing_page_c_primary:
     weight: 1

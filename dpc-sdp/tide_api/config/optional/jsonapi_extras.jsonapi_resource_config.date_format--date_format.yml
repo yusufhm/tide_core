@@ -8,7 +8,7 @@ resourceType: date_format--date_format
 resourceFields:
   id:
     fieldName: id
-    publicName: id
+    publicName: entity_id
     enhancer:
       id: ''
     disabled: false
