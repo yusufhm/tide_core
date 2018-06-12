@@ -248,12 +248,17 @@ function tide_site_tide_link_enhancer_undo_transform_alter(&$data, &$context) {
         $request = \Drupal::request();
         $site_id = $request->get('site');
         if ($site_id && $helper->isEntityBelongToSite($entity, $site_id)) {
-          $site = Term::load($site_id);
+          // Returns the relative URL.
+          $data['origin_url'] = $data['url'];
+          $data['url'] = $entity->toUrl('canonical', [
+            'absolute' => FALSE,
+          ])->toString();
+
+          return;
         }
+
         // It doesn't. Fetch its primary site instead.
-        else {
-          $site = $helper->getEntityPrimarySite($entity);
-        }
+        $site = $helper->getEntityPrimarySite($entity);
 
         $domains = $helper->getSiteDomains($site);
         // The first domain is always for production environment.

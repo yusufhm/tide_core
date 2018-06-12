@@ -37,7 +37,7 @@ Feature: Link Enhancer with Site
     Given I am an anonymous user
 
     # Page 1 (site 1) with a reference to Page 2 (site 1).
-    # Current site is site 1. Link field should have full URL of site 1.
+    # Current site is site 1. Link field should have relative URL.
     When I send a GET request to "api/v1/node/test/99999999-aaaa-bbbb-ccc-000000000001?site=10001"
     Then the rest response status code should be 200
     And the response should be in JSON
@@ -50,12 +50,13 @@ Feature: Link Enhancer with Site
     And the JSON node "data.attributes.field_test_link.uri" should be equal to "entity:node/test/99999999-aaaa-bbbb-ccc-000000000002"
     And the JSON node "data.attributes.field_test_link.title" should be equal to "Page 2"
     And the JSON node "data.attributes.field_test_link.url" should exist
-    And the JSON node "data.attributes.field_test_link.url" should contain "prod.site1.com"
+    And the JSON node "data.attributes.field_test_link.url" should not contain "prod.site1.com"
     And the JSON node "data.attributes.field_test_link.url" should not contain "dev.site1.com"
+    And the JSON node "data.attributes.field_test_link.url" should not contain "http"
     And the JSON node "data.attributes.field_test_link.origin_url" should exist
 
     # Page 2 (site 1) with a reference to Page 3 (site 1, site 2).
-    # Current site is site 1. Link field should have full URL of site 1.
+    # Current site is site 1. Link field should have relative URL.
     When I send a GET request to "api/v1/node/test/99999999-aaaa-bbbb-ccc-000000000002?site=10001"
     Then the rest response status code should be 200
     And the response should be in JSON
@@ -68,8 +69,9 @@ Feature: Link Enhancer with Site
     And the JSON node "data.attributes.field_test_link.uri" should be equal to "entity:node/test/99999999-aaaa-bbbb-ccc-000000000003"
     And the JSON node "data.attributes.field_test_link.title" should be equal to "Page 3"
     And the JSON node "data.attributes.field_test_link.url" should exist
-    And the JSON node "data.attributes.field_test_link.url" should contain "prod.site1.com"
+    And the JSON node "data.attributes.field_test_link.url" should not contain "prod.site1.com"
     And the JSON node "data.attributes.field_test_link.url" should not contain "dev.site1.com"
+    And the JSON node "data.attributes.field_test_link.url" should not contain "http"
     And the JSON node "data.attributes.field_test_link.origin_url" should exist
 
     # Page 3 (site 1, site 2) with a reference to Page 4 (site 2).
@@ -91,7 +93,7 @@ Feature: Link Enhancer with Site
     And the JSON node "data.attributes.field_test_link.origin_url" should exist
 
     # Page 3 (site 1, site 2) with a reference to Page 4 (site 2).
-    # Current site is site 2. Link field should have full URL of site 2.
+    # Current site is site 2. Link field should have relative URL.
     When I send a GET request to "api/v1/node/test/99999999-aaaa-bbbb-ccc-000000000003?site=10002"
     Then the rest response status code should be 200
     And the response should be in JSON
@@ -104,8 +106,9 @@ Feature: Link Enhancer with Site
     And the JSON node "data.attributes.field_test_link.uri" should be equal to "entity:node/test/99999999-aaaa-bbbb-ccc-000000000004"
     And the JSON node "data.attributes.field_test_link.title" should be equal to "Page 4"
     And the JSON node "data.attributes.field_test_link.url" should exist
-    And the JSON node "data.attributes.field_test_link.url" should contain "prod.site2.com"
+    And the JSON node "data.attributes.field_test_link.url" should not contain "prod.site2.com"
     And the JSON node "data.attributes.field_test_link.url" should not contain "dev.site2.com"
+    And the JSON node "data.attributes.field_test_link.url" should not contain "http"
     And the JSON node "data.attributes.field_test_link.origin_url" should exist
 
     # Page 4 (site 2) with a reference to Page 1 (site 1).
@@ -127,7 +130,7 @@ Feature: Link Enhancer with Site
     And the JSON node "data.attributes.field_test_link.origin_url" should exist
 
     # Page 5 (site 2, site 1) with a reference to Page 3 (site 1, site 2).
-    # Current site is site 1. Link field should have full URL of site 1.
+    # Current site is site 1. Link field should have relative URL.
     When I send a GET request to "api/v1/node/test/99999999-aaaa-bbbb-ccc-000000000005?site=10001"
     Then the rest response status code should be 200
     And the response should be in JSON
@@ -140,12 +143,13 @@ Feature: Link Enhancer with Site
     And the JSON node "data.attributes.field_test_link.uri" should be equal to "entity:node/test/99999999-aaaa-bbbb-ccc-000000000003"
     And the JSON node "data.attributes.field_test_link.title" should be equal to "Page 3"
     And the JSON node "data.attributes.field_test_link.url" should exist
-    And the JSON node "data.attributes.field_test_link.url" should contain "prod.site1.com"
+    And the JSON node "data.attributes.field_test_link.url" should not contain "prod.site1.com"
     And the JSON node "data.attributes.field_test_link.url" should not contain "dev.site1.com"
+    And the JSON node "data.attributes.field_test_link.url" should not contain "http"
     And the JSON node "data.attributes.field_test_link.origin_url" should exist
 
     # Page 5 (site 2, site 1) with a reference to Page 3 (site 1, site 2).
-    # Current site is site 2. Link field should have full URL of site 2.
+    # Current site is site 2. Link field should have relative URL.
     When I send a GET request to "api/v1/node/test/99999999-aaaa-bbbb-ccc-000000000005?site=10002"
     Then the rest response status code should be 200
     And the response should be in JSON
@@ -158,6 +162,7 @@ Feature: Link Enhancer with Site
     And the JSON node "data.attributes.field_test_link.uri" should be equal to "entity:node/test/99999999-aaaa-bbbb-ccc-000000000003"
     And the JSON node "data.attributes.field_test_link.title" should be equal to "Page 3"
     And the JSON node "data.attributes.field_test_link.url" should exist
-    And the JSON node "data.attributes.field_test_link.url" should contain "prod.site2.com"
+    And the JSON node "data.attributes.field_test_link.url" should not contain "prod.site2.com"
     And the JSON node "data.attributes.field_test_link.url" should not contain "dev.site2.com"
+    And the JSON node "data.attributes.field_test_link.url" should not contain "http"
     And the JSON node "data.attributes.field_test_link.origin_url" should exist
