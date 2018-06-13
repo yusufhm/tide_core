@@ -5,6 +5,7 @@ dependencies:
     - field.field.media.video.field_media_audience
     - field.field.media.video.field_media_department
     - field.field.media.video.field_media_file
+    - field.field.media.video.field_media_link
     - field.field.media.video.field_media_length
     - field.field.media.video.field_media_license
     - field.field.media.video.field_media_restricted
@@ -17,7 +18,6 @@ dependencies:
     - field_group
     - file
     - path
-    - text
 third_party_settings:
   field_group:
     group_metadata:
@@ -35,6 +35,8 @@ third_party_settings:
         required_fields: true
       label: Metadata
       region: content
+_core:
+  default_config_hash: JyxW_UFVCgnlVI175rgoR0SKPL6EU3ensVCnH9E7qC0
 id: media.video.default
 targetEntityType: media
 bundle: video
@@ -98,7 +100,7 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
+    type: string_textarea
     region: content
   field_media_topic:
     weight: 16
@@ -153,4 +155,5 @@ content:
       placeholder: ''
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_media_link: true

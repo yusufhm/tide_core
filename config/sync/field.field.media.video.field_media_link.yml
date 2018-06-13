@@ -1,0 +1,21 @@
+uuid: 9ef10c4f-4020-44a1-bb29-f390d6584ac3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_link
+    - media.type.video
+id: media.video.field_media_link
+field_name: field_media_link
+entity_type: media
+bundle: video
+label: 'Media Link'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'View Transcript'
+default_value_callback: ''
+settings: {  }
+field_type: string
