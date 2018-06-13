@@ -18,5 +18,6 @@ blacklist:
   - /edit
   - /delete
   - translations
+  - sitemap.xml
 _core:
   default_config_hash: obwk8cp3Gjq7t5qs3lb8DPFDA_u2u-gkTfbpZKvaBfc
