@@ -1,4 +1,4 @@
-queue_paths: false
+queue_paths: true
 host_override: false
 host: ''
 scheme_override: false
