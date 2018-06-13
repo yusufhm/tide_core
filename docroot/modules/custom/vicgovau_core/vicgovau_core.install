@@ -134,7 +134,7 @@ function vicgovau_core_update_8003() {
 /**
  * Remove the sitemap.xml entry from the traffic registry table [SDPA-453].
  */
-function governor_default_content_update_8007() {
+function vicgovau_core_update_8004() {
   db_delete('purge_queuer_url')
     ->condition('url', 'sitemap.xml')
     ->execute();
