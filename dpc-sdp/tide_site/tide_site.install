@@ -17,3 +17,18 @@ function tide_site_install() {
     }
   }
 }
+
+/**
+ * Add existing content types to field_site_homepage.
+ */
+function tide_site_update_8001() {
+  /** @var \Drupal\tide_site\TideSiteFields $helper */
+  $helper = \Drupal::service('tide_site.fields');
+
+  $info = \Drupal::service('entity_type.bundle.info')->getAllBundleInfo();
+  foreach ($info as $type => $bundles) {
+    if ($type == 'node') {
+      $helper->addContentTypesToSiteHomepageField(array_keys($bundles));
+    }
+  }
+}

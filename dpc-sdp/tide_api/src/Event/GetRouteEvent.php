@@ -51,11 +51,14 @@ class GetRouteEvent extends Event {
    *   The JSON Response array.
    * @param \Drupal\Core\Entity\EntityInterface $entity
    *   The Entity object.
+   * @param int $code
+   *   The status code.
    */
-  public function __construct(Request $request, array $json_response, EntityInterface $entity = NULL) {
+  public function __construct(Request $request, array $json_response, EntityInterface $entity = NULL, $code = Response::HTTP_OK) {
     $this->request = $request;
     $this->setJsonResponse($json_response);
     $this->entity = $entity;
+    $this->setCode($code);
   }
 
   /**
@@ -116,6 +119,16 @@ class GetRouteEvent extends Event {
    */
   public function isOk() {
     return $this->code == Response::HTTP_OK;
+  }
+
+  /**
+   * Is the response bad?
+   *
+   * @return bool
+   *   TRUE if bad request.
+   */
+  public function isBadRequest() {
+    return $this->code == Response::HTTP_BAD_REQUEST;
   }
 
   /**

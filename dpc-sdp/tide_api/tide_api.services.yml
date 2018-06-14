@@ -1,9 +1,12 @@
 services:
-  tide_api_version_subscriber:
+  tide_api.helper:
+    class: Drupal\tide_api\TideApiHelper
+    arguments: [ '@path.alias_manager', '@entity_type.manager', '@jsonapi.resource_type.repository', '@config.factory' ]
+  tide_api.version_subscriber:
     class: Drupal\tide_api\EventSubscriber\TideApiVersionSubscriber
     tags:
       - {name: event_subscriber}
-  tide_api_route_alter_subscriber:
+  tide_api.route_alter_subscriber:
     class: Drupal\tide_api\EventSubscriber\TideApiRouteAlterSubscriber
     arguments:
       - '@config.factory'

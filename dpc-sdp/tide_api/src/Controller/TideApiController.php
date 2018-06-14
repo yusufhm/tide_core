@@ -4,13 +4,13 @@ namespace Drupal\tide_api\Controller;
 
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\Core\Url;
 use Drupal\jsonapi\ResourceType\ResourceTypeRepository;
 use Drupal\tide_api\Event\GetRouteEvent;
 use Drupal\tide_api\TideApiEvents;
+use Drupal\tide_api\TideApiHelper;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -53,6 +53,13 @@ class TideApiController extends ControllerBase {
   protected $eventDispatcher;
 
   /**
+   * The API Helper.
+   *
+   * @var \Drupal\tide_api\TideApiHelper
+   */
+  protected $apiHelper;
+
+  /**
    * Constructs a new PathController.
    *
    * @param \Drupal\Core\Path\AliasManagerInterface $alias_manager
@@ -63,12 +70,15 @@ class TideApiController extends ControllerBase {
    *   JSONAPI resource type repository.
    * @param \Symfony\Component\EventDispatcher\EventDispatcherInterface $event_dispatcher
    *   The event dispatcher service.
+   * @param \Drupal\tide_api\TideApiHelper $api_helper
+   *   The Tide API Helper.
    */
-  public function __construct(AliasManagerInterface $alias_manager, EntityTypeManagerInterface $entity_type_manager, ResourceTypeRepository $resource_type_repository, EventDispatcherInterface $event_dispatcher) {
+  public function __construct(AliasManagerInterface $alias_manager, EntityTypeManagerInterface $entity_type_manager, ResourceTypeRepository $resource_type_repository, EventDispatcherInterface $event_dispatcher, TideApiHelper $api_helper) {
     $this->aliasManager = $alias_manager;
     $this->entityTypeManager = $entity_type_manager;
     $this->resourceTypeRepository = $resource_type_repository;
     $this->eventDispatcher = $event_dispatcher;
+    $this->apiHelper = $api_helper;
   }
 
   /**
@@ -79,7 +89,8 @@ class TideApiController extends ControllerBase {
       $container->get('path.alias_manager'),
       $container->get('entity_type.manager'),
       $container->get('jsonapi.resource_type.repository'),
-      $container->get('event_dispatcher')
+      $container->get('event_dispatcher'),
+      $container->get('tide_api.helper')
     );
   }
 
@@ -127,16 +138,17 @@ class TideApiController extends ControllerBase {
         else {
           $source = $this->aliasManager->getPathByAlias($path);
 
-          $url = $this->findUrlFromPath($source);
+          $url = $this->apiHelper->findUrlFromPath($source);
           if ($url) {
             // Check if the current has permission to access the path.
             if ($url->access()) {
-              $entity = $this->findEntityFromUrl($url);
+              $entity = $this->apiHelper->findEntityFromUrl($url);
               if ($entity) {
-                $endpoint = $this->findEndpointFromEntity($entity);
+                $endpoint = $this->apiHelper->findEndpointFromEntity($entity);
                 $entity_type = $entity->getEntityTypeId();
                 $json_response['data'] = [
                   'entity_type' => $entity_type,
+                  'entity_id' => $entity->id(),
                   'bundle' => $entity->bundle(),
                   'uuid' => $entity->uuid(),
                   'endpoint' => $endpoint,
@@ -162,12 +174,12 @@ class TideApiController extends ControllerBase {
         }
 
         // Dispatch a GET_ROUTE event so that other modules can modify it.
-        if ($code == Response::HTTP_OK) {
+        if ($code != Response::HTTP_BAD_REQUEST) {
           $event_entity = NULL;
           if ($entity) {
             $event_entity = clone $entity;
           }
-          $event = new GetRouteEvent(clone $request, $json_response, $event_entity);
+          $event = new GetRouteEvent(clone $request, $json_response, $event_entity, $code);
           $this->eventDispatcher->dispatch(TideApiEvents::GET_ROUTE, $event);
           // Update the response.
           $code = $event->getCode();
@@ -188,97 +200,6 @@ class TideApiController extends ControllerBase {
     }
 
     return new JsonResponse($json_response, $code);
-  }
-
-  /**
-   * Return a URL object from the given path.
-   *
-   * @param string $path
-   *   The path, eg. /node/1 or /about-us.
-   *
-   * @return \Drupal\Core\Url|null
-   *   The URL. NULL if the path has no scheme.
-   */
-  protected function findUrlFromPath($path) {
-    $url = NULL;
-    if ($path) {
-      try {
-        $url = Url::fromUri('internal:' . $path);
-      }
-      catch (\Exception $exception) {
-        return NULL;
-      }
-    }
-
-    return $url;
-  }
-
-  /**
-   * Return an entity from a URL object.
-   *
-   * @param \Drupal\Core\Url $url
-   *   The Url object.
-   *
-   * @return \Drupal\Core\Entity\EntityInterface|null
-   *   The entity. NULL if not found.
-   */
-  protected function findEntityFromUrl(Url $url) {
-    try {
-      // Try to resolve URL to entity-based path.
-      $params = $url->getRouteParameters();
-      $entity_type = key($params);
-      $entity = $this->entityTypeManager->getStorage($entity_type)
-        ->load($params[$entity_type]);
-      return $entity;
-    }
-    catch (\Exception $exception) {
-      return NULL;
-    }
-  }
-
-  /**
-   * Return absolute endpoint for the given entity.
-   *
-   * @param \Drupal\Core\Entity\EntityInterface $entity
-   *   The entity.
-   *
-   * @return string|null
-   *   The endpoint. NULL if not found.
-   */
-  protected function findEndpointFromEntity(EntityInterface $entity) {
-    $endpoint = NULL;
-    try {
-      // Get JSONAPI configured path for this entity.
-      $jsonapi_entity_path = $this->getEntityJsonapiPath($entity);
-      if ($jsonapi_entity_path) {
-        // Build an endpoint as an absolute URL.
-        $endpoint = Url::fromRoute('jsonapi.' . $jsonapi_entity_path . '.individual', [$entity->getEntityTypeId() => $entity->uuid()])
-          ->setAbsolute()
-          ->toString();
-      }
-    }
-    catch (\Exception $exception) {
-      return NULL;
-    }
-
-    return $endpoint;
-  }
-
-  /**
-   * Lookup JSONAPI path for a provided entity.
-   *
-   * @param \Drupal\Core\Entity\EntityInterface $entity
-   *   Drupal entity to lookup the JSONAPI path for.
-   *
-   * @return string|null
-   *   JSONAPI path for provided entity or NULL if no path was found.
-   */
-  protected function getEntityJsonapiPath(EntityInterface $entity) {
-    /** @var \Drupal\jsonapi_extras\ResourceType\ConfigurableResourceType $resource_type */
-    $resource_type = $this->resourceTypeRepository->get($entity->getEntityTypeId(), $entity->bundle());
-    $config_path = $resource_type->getTypeName();
-
-    return $config_path;
   }
 
 }
