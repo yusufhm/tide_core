@@ -47,7 +47,3 @@ services:
     image: amazeeio/redis
     labels:
       lagoon.type: redis
-  elasticsearch:
-    image: amazeeio/elasticsearch
-    labels:
-      lagoon.type: elasticsearch      
