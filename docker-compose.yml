@@ -48,6 +48,6 @@ services:
     labels:
       lagoon.type: redis
   elasticsearch:
-    image: singledigital/bay-elasticsearch
+    image: amazeeio/elasticsearch
     labels:
       lagoon.type: elasticsearch      
