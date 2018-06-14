@@ -47,3 +47,9 @@ services:
     image: amazeeio/redis
     labels:
       lagoon.type: redis
+  elasticsearch:
+    build:
+      context: .
+      dockerfile: Dockerfile.elasticsearch
+    labels:
+      lagoon.type: elasticsearch
