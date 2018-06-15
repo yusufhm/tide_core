@@ -1,0 +1,10 @@
+uuid: 2a17eb1d-885e-4f98-a032-3505af366a3c
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.embedded_with_caption
+label: 'Embedded with caption'
+targetEntityType: media
+cache: true
