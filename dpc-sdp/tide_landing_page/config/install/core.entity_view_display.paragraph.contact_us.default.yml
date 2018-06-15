@@ -2,29 +2,30 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.contact_us.field_paragraph_body
+    - field.field.paragraph.contact_us.field_paragraph_department_name
     - field.field.paragraph.contact_us.field_paragraph_email
     - field.field.paragraph.contact_us.field_paragraph_location
     - field.field.paragraph.contact_us.field_paragraph_name
     - field.field.paragraph.contact_us.field_paragraph_phones
+    - field.field.paragraph.contact_us.field_paragraph_postal_address
     - field.field.paragraph.contact_us.field_paragraph_social_media
     - field.field.paragraph.contact_us.field_paragraph_title
     - paragraphs.paragraphs_type.contact_us
   module:
     - address
     - entity_reference_revisions
-    - text
 id: paragraph.contact_us.default
 targetEntityType: paragraph
 bundle: contact_us
 mode: default
 content:
-  field_paragraph_body:
-    weight: 1
+  field_paragraph_department_name:
+    weight: 8
     label: above
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    type: text_default
+    type: string
     region: content
   field_paragraph_email:
     weight: 4
@@ -56,6 +57,13 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_paragraph_postal_address:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
     region: content
   field_paragraph_social_media:
     type: entity_reference_revisions_entity_view

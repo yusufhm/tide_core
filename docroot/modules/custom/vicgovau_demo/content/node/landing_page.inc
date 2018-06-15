@@ -122,8 +122,18 @@ function vicgovau_demo_create_node_landing_page() {
       'field_paragraph_name' => VicgovauDemoHelper::randomSentence(3, 5),
       'field_paragraph_email' => 'no-reply@vic.gov.au',
       'field_paragraph_cta' => [VicgovauDemoHelper::randomCtaLinkFieldValue()],
-      'field_paragraph_body' => ['value' => VicgovauDemoHelper::randomPlainParagraph()],
+      'field_paragraph_department_name' => VicgovauDemoHelper::randomSentence(3, 5),
       'field_paragraph_location' => [
+        [
+          'langcode' => '',
+          'country_code' => 'AU',
+          'administrative_area' => 'Victoria',
+          'locality' => 'Melbourne',
+          'postal_code' => 3000,
+          'address_line1' => '1 Spring St',
+        ],
+      ],
+      'field_paragraph_postal_address' => [
         [
           'langcode' => '',
           'country_code' => 'AU',

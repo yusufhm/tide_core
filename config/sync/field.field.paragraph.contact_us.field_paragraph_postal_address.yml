@@ -1,31 +1,31 @@
-uuid: 7aae7429-ff83-49bb-8df7-9c224c43b8ba
+uuid: 8b5b20c2-b6f4-40f0-bb0e-681395fe2dda
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_paragraph_location
+    - field.storage.paragraph.field_paragraph_postal_address
     - paragraphs.paragraphs_type.contact_us
   module:
     - address
-id: paragraph.contact_us.field_paragraph_location
-field_name: field_paragraph_location
+id: paragraph.contact_us.field_paragraph_postal_address
+field_name: field_paragraph_postal_address
 entity_type: paragraph
 bundle: contact_us
-label: Address
+label: 'Postal Address'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   available_countries:
     AU: AU
   fields:
+    administrativeArea: administrativeArea
+    locality: locality
     postalCode: postalCode
     addressLine1: addressLine1
     addressLine2: addressLine2
-    administrativeArea: administrativeArea
-    locality: locality
     dependentLocality: '0'
     sortingCode: '0'
     organization: '0'
