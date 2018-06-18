@@ -2,6 +2,7 @@
 
 namespace Drupal\tide_site;
 
+use Drupal\field\Entity\FieldConfig;
 use Drupal\tide_core\TideCoreFields;
 
 /**
@@ -142,6 +143,39 @@ class TideSiteFields extends TideCoreFields {
       'type' => 'options_buttons',
       'region' => 'content',
     ];
+  }
+
+  /**
+   * Add a content type to the field_site_homepage field of Sites taxonomy.
+   *
+   * @param string[] $bundles
+   *   Content types.
+   */
+  public function addContentTypesToSiteHomepageField(array $bundles) {
+    try {
+      $fields = $this->entityTypeManager
+        ->getStorage('field_config')
+        ->loadByProperties([
+          'field_name' => 'field_site_homepage',
+          'entity_type' => 'taxonomy_term',
+        ]);
+      if ($fields) {
+        $field = reset($fields);
+        $field_config = $field->toArray();
+        foreach ($bundles as $bundle) {
+          if (empty($field_config['settings']['handler_settings']['target_bundles'][$bundle])) {
+            $field_config['settings']['handler_settings']['target_bundles'][$bundle] = $bundle;
+          }
+        }
+        $new_field = FieldConfig::create($field_config);
+        $new_field->setOriginalId($field->id());
+        $new_field->enforceIsNew(FALSE);
+        $new_field->save();
+      }
+    }
+    catch (\Exception $exception) {
+      watchdog_exception('tide_site', $exception);
+    }
   }
 
 }

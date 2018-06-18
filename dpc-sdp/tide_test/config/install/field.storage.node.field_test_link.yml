@@ -1,9 +1,11 @@
 langcode: en
 status: true
 dependencies:
-  module:
-    - link
-    - node
+  enforced:
+    module:
+      - link
+      - node
+      - tide_test
 id: node.field_test_link
 field_name: field_test_link
 entity_type: node

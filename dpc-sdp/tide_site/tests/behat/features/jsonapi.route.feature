@@ -59,3 +59,29 @@ Feature: Route lookup
     And the JSON node "data" should exist
     And the JSON node "data.section" should contain "10002"
     And the JSON node "errors" should not exist
+
+  @api
+  Scenario: Request to route lookup API to find the homepage of a site
+    Given sites terms:
+      | name        | parent | tid   | field_site_domains |
+      | Test Site 3 | 0      | 10003 | test.site.local    |
+
+    Given test content:
+      | title           | moderation_state | field_node_primary_site | field_node_site | uuid                                 |
+      | [TEST] Homepage | published        | Test Site 3             | Test Site 3     | 00000000-1111-2222-3333-0123456789ab |
+
+    Given I am logged in as a user with the "administer taxonomy" permission
+    When I visit "/taxonomy/term/10003/edit"
+    Then I fill in "Homepage" with "[TEST] Homepage"
+    And I press the Save button
+
+    Given I am an anonymous user
+    When I send a GET request to "api/v1/route?path=/&site=10003"
+    Then the rest response status code should be 200
+    And the response should be in JSON
+    And the JSON node "data" should exist
+    And the JSON node "data.entity_type" should be equal to "node"
+    And the JSON node "data.bundle" should be equal to "test"
+    And the JSON node "data.uuid" should contain "00000000-1111-2222-3333-0123456789ab"
+    And the JSON node "data.section" should be equal to "10003"
+    And the JSON node "errors" should not exist

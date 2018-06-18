@@ -19,6 +19,11 @@ function tide_site_entity_bundle_create($entity_type_id, $bundle) {
   /** @var \Drupal\tide_site\TideSiteFields $fields_helper */
   $fields_helper = \Drupal::service('tide_site.fields');
 
+  // Add the new bundle to file_site_homepage entity reference of Sites.
+  if ($entity_type_id == 'node') {
+    $fields_helper->addContentTypesToSiteHomepageField([$bundle]);
+  }
+
   // Map of which fields should be created for which entity types.
   $map = [
     'node' => [$fields_helper::FIELD_SITE, $fields_helper::FIELD_PRIMARY_SITE],

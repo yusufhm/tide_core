@@ -41,14 +41,28 @@ function tide_media_views_pre_view(ViewExecutable $view, $display_id, array &$ar
  * Implements hook_form_alter().
  */
 function tide_media_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  // Hide the "Embedded with Transcript" view mode from non-audio embed.
-  if ($form_id == 'entity_embed_dialog') {
+  // Hide the "Embedded with Transcript" view mode from some media embeds.
+  $allowed_entity_types = ["audio", "video", "embedded_video"];
+  if ($form_id == 'entity_embed_dialog' || $form_id == "entity_browser_tide_media_browser_iframe_form") {
     $entity_browser = $form_state->getValue('entity_browser');
     if (!empty($entity_browser['entities'])) {
       /** @var \Drupal\media\Entity\Media $entity */
       $entity = reset($entity_browser['entities']);
-      if ($entity && $entity->bundle() != 'audio') {
+      if ($entity && !in_array($entity->bundle(), $allowed_entity_types)) {
         unset($form['attributes']['data-entity-embed-display']['#options']['view_mode:media.embedded_with_transcript']);
+      }
+    }
+  }
+
+  // Hide the "Embedded with Caption" view mode from some media embeds.
+  $allowed_entity_types = ["image"];
+  if ($form_id == 'entity_embed_dialog' || $form_id == "entity_browser_tide_media_browser_iframe_form") {
+    $entity_browser = $form_state->getValue('entity_browser');
+    if (!empty($entity_browser['entities'])) {
+      /** @var \Drupal\media\Entity\Media $entity */
+      $entity = reset($entity_browser['entities']);
+      if ($entity && !in_array($entity->bundle(), $allowed_entity_types)) {
+        unset($form['attributes']['data-entity-embed-display']['#options']['view_mode:media.embedded_with_caption']);
       }
     }
   }

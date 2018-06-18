@@ -30,7 +30,7 @@
         "drupal/override_node_options": "^2.3",
         "drupal/password_policy": "dev-3.x",
         "drupal/password_strength": "^2.0",
-        "drupal/redirect": "^1.0@beta",
+        "drupal/redirect": "^1.2",
         "drupal/seckit": "^1.0@alpha",
         "drupal/simple_sitemap": "^2.11",
         "drupal/smart_trim": "^1.1",

@@ -159,6 +159,32 @@ class TideSiteHelper {
   }
 
   /**
+   * Get the homepage of a site.
+   *
+   * @param \Drupal\taxonomy\TermInterface|null $site
+   *   The site term.
+   *
+   * @return \Drupal\Core\Entity\EntityInterface|null
+   *   The homepage entity.
+   */
+  public function getSiteHomepage(TermInterface $site = NULL) {
+    $homepage = NULL;
+    if ($site && $site->hasField('field_site_homepage') && !$site->get('field_site_homepage')->isEmpty()) {
+      try {
+        $referencedEntities = $site->get('field_site_homepage')
+          ->referencedEntities();
+        if (!empty($referencedEntities)) {
+          $homepage = reset($referencedEntities);
+        }
+      }
+      catch (\Exception $exception) {
+        watchdog_exception('tide_site', $exception);
+      }
+    }
+    return $homepage;
+  }
+
+  /**
    * Returns the Sites of an entity.
    *
    * @param \Drupal\Core\Entity\FieldableEntityInterface $entity
@@ -301,6 +327,26 @@ class TideSiteHelper {
   public function getEntityByUuid($uuid, $entity_type) {
     try {
       return $this->entityRepository->loadEntityByUuid($entity_type, $uuid);
+    }
+    catch (\Exception $e) {
+      return NULL;
+    }
+  }
+
+  /**
+   * Load an entity by its ID.
+   *
+   * @param string $id
+   *   The ID.
+   * @param string $entity_type
+   *   The entity type, eg. node or media.
+   *
+   * @return \Drupal\Core\Entity\EntityInterface|null
+   *   The Entity. NULL if not found.
+   */
+  public function getEntityById($id, $entity_type) {
+    try {
+      return $this->entityTypeManager->getStorage($entity_type)->load($id);
     }
     catch (\Exception $e) {
       return NULL;

@@ -6,6 +6,7 @@ dependencies:
     - field.field.media.video.field_media_audience
     - field.field.media.video.field_media_department
     - field.field.media.video.field_media_file
+    - field.field.media.video.field_media_link
     - field.field.media.video.field_media_length
     - field.field.media.video.field_media_license
     - field.field.media.video.field_media_restricted
@@ -19,7 +20,6 @@ dependencies:
     - field_group
     - file
     - path
-    - text
 third_party_settings:
   field_group:
     group_metadata:
@@ -100,7 +100,7 @@ content:
     type: options_buttons
     region: content
     field_name: field_media_site
-    weight: 26
+    weight: 13
     settings: {  }
     third_party_settings: {  }
   field_media_summary:
@@ -109,7 +109,7 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
+    type: string_textarea
     region: content
   field_media_topic:
     weight: 16
@@ -164,4 +164,5 @@ content:
       placeholder: ''
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_media_link: true

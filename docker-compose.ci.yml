@@ -19,3 +19,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.selenium
+  elasticsearch:
+    build:
+      context: .
+      dockerfile: Dockerfile.elasticsearch.ci
+    environment:
+      LAGOON_ENVIRONMENT_TYPE: 'ci'

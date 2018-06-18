@@ -35,30 +35,32 @@ class TideSiteGetRouteSubscriber implements EventSubscriberInterface {
    *   The event.
    */
   public function onApiGetRouteAddSiteFilter(GetRouteEvent $event) {
-    // Only process if the status code is 200 OK.
-    if (!$event->isOk()) {
+    // Only process if the status code is not 400 Bad Request.
+    if ($event->isBadRequest()) {
       return;
     }
 
+    $request = $event->getRequest();
+    $path = $request->query->get('path');
+
     $response = $event->getJsonResponse();
-    if (empty($response['data'])) {
+    if (empty($response['data']) && $path !== '/') {
       return;
     }
 
     /** @var \Drupal\tide_site\TideSiteHelper $helper */
     $helper = $this->container->get('tide_site.helper');
+    /** @var \Drupal\tide_api\TideApiHelper $api_helper */
+    $api_helper = $this->container->get('tide_api.helper');
 
     try {
-      $uuid = $response['data']['uuid'];
+      $uuid = isset($response['data']['uuid']) ? $response['data']['uuid'] : NULL;
 
-      $entity_type = $response['data']['entity_type'];
+      $entity_type = isset($response['data']['entity_type']) ? $response['data']['entity_type'] : NULL;
       // Do nothing if this is not an supported entity type.
-      if (!$helper->isSupportedEntityType($entity_type)) {
+      if (!$helper->isSupportedEntityType($entity_type) && $path !== '/') {
         return;
       }
-
-      $request = $event->getRequest();
-      $path = $request->query->get('path');
 
       $site_id = $request->query->get('site');
       // No Site ID provided, should we return a 400 status code?
@@ -75,7 +77,7 @@ class TideSiteGetRouteSubscriber implements EventSubscriberInterface {
           // so we stop processing and return a Bad Request 400 code.
           if ($sites) {
             $event->setCode(Response::HTTP_BAD_REQUEST);
-            $response['errors'][] = $this->t('URL query parameter "site" is required.');
+            $response['errors'] = [$this->t('URL query parameter "site" is required.')];
           }
         }
       }
@@ -90,19 +92,51 @@ class TideSiteGetRouteSubscriber implements EventSubscriberInterface {
         }
         // Cache miss.
         else {
-          $entity = $event->getEntity();
-          // The Entity maybe empty as TideApi loaded its route data from cache.
-          if (!$entity) {
-            $entity = $helper->getEntityByUuid($uuid, $entity_type);
-            // The entity is missing for some reasons.
+          // Ignore the current response because each site has its own homepage.
+          if ($path == '/') {
+            $site_term = $helper->getSiteById($site_id);
+            $entity = $helper->getSiteHomepage($site_term);
+
+            // The site does not have a homepage,
+            // load the global frontpage instead.
             if (!$entity) {
-              $event->setCode(Response::HTTP_NOT_FOUND);
-              $response['errors'][] = $this->t('Path not found.');
+              $frontpage = $api_helper->getFrontPagePath();
+              $frontpage_url = $api_helper->findUrlFromPath($frontpage);
+              if ($frontpage_url) {
+                $entity = $api_helper->findEntityFromUrl($frontpage_url);
+              }
+            }
+
+            // Now we have the homepage entity, override response data.
+            if ($entity) {
+              // Override response data with site homepage.
+              $endpoint = $api_helper->findEndpointFromEntity($entity);
+              $entity_type = $entity->getEntityTypeId();
+              $response['data'] = [
+                'entity_type' => $entity_type,
+                'entity_id' => $entity->id(),
+                'bundle' => $entity->bundle(),
+                'uuid' => $entity->uuid(),
+                'endpoint' => $endpoint,
+              ];
+            }
+          }
+          // Fetch the entity from the response.
+          else {
+            $entity = $event->getEntity();
+            // The Entity maybe empty as TideApi loaded its data from cache.
+            if (!$entity) {
+              $entity = $helper->getEntityByUuid($uuid, $entity_type);
             }
           }
 
+          // The entity is missing for some reasons.
+          if (!$entity) {
+            $event->setCode(Response::HTTP_NOT_FOUND);
+            $response['errors'] = [$this->t('Path not found.')];
+          }
           // Now we have the entity, check if its Site ID matches the request.
-          if ($entity) {
+          else {
             $cache_tags = [$site_id => 'taxonomy_term:' . $site_id];
             $valid = $helper->isEntityBelongToSite($entity, $site_id);
             // It belongs to the right Site.
@@ -112,18 +146,20 @@ class TideSiteGetRouteSubscriber implements EventSubscriberInterface {
               $section_id = $sites['sections'][$site_id];
               $response['data']['section'] = $section_id;
               $cache_tags[$section_id] = 'taxonomy_term:' . $section_id;
+              unset($response['errors']);
+              $event->setCode(Response::HTTP_OK);
             }
             // The entity does not belong to the requested Site.
             else {
               $event->setCode(Response::HTTP_NOT_FOUND);
-              $response['errors'][] = $this->t('Path not found.');
+              $response['errors'] = [$this->t('Path not found.')];
             }
-          }
 
-          $this->cache('data')->set($cid, [
-            'code' => $event->getCode(),
-            'response' => $response,
-          ], Cache::PERMANENT, Cache::mergeTags($entity->getCacheTags(), array_values($cache_tags)));
+            $this->cache('data')->set($cid, [
+              'code' => $event->getCode(),
+              'response' => $response,
+            ], Cache::PERMANENT, Cache::mergeTags($entity->getCacheTags(), array_values($cache_tags)));
+          }
         }
       }
 

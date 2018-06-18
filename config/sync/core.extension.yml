@@ -26,6 +26,7 @@ module:
   dynamic_page_cache: 0
   editor: 0
   editor_advanced_link: 0
+  elasticsearch_connector: 0
   embed: 0
   entity_browser: 0
   entity_browser_entity_form: 0
@@ -64,11 +65,14 @@ module:
   password_strength: 0
   path: 0
   purge: 0
+  purge_processor_cron: 0
+  purge_queuer_coretags: 0
   purge_queuer_url: 0
   redirect: 0
   redis: 0
   schemata: 0
   schemata_json_schema: 0
+  search_api: 0
   seckit: 0
   serialization: 0
   shield: 0
@@ -85,6 +89,7 @@ module:
   tide_landing_page: 0
   tide_media: 0
   tide_page: 0
+  tide_search: 0
   tide_site: 0
   tide_webform: 0
   token: 0
