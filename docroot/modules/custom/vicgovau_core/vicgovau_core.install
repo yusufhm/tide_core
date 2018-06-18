@@ -139,3 +139,10 @@ function vicgovau_core_update_8004() {
     ->condition('url', 'sitemap.xml')
     ->execute();
 }
+
+/**
+ * Clear Traffic registry because of URLs_queuer config changes [SDPA-465].
+ */
+function vicgovau_core_update_8005() {
+  \Drupal::service('purge_queuer_url.registry')->clear();
+}
