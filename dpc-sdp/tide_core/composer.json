@@ -22,6 +22,7 @@
         "drupal/fakeobjects": "^1.0",
         "drupal/fast_404": "dev-1.x",
         "drupal/field_group": "^3.0-beta1",
+        "drupal/hotjar": "^1.2",
         "drupal/linkit": "^4.3",
         "drupal/m4032404": "^1.0@alpha",
         "drupal/maxlength": "^1.0@beta",

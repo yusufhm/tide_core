@@ -1318,7 +1318,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_core",
-                "reference": "fa09ce4a230ba221735b083ff928128da557d1ef",
+                "reference": "9b02703bab9e269e392048dbe3fc11b101177150",
                 "shasum": null
             },
             "require": {
@@ -1339,6 +1339,7 @@
                 "drupal/fakeobjects": "^1.0",
                 "drupal/fast_404": "dev-1.x",
                 "drupal/field_group": "^3.0-beta1",
+                "drupal/hotjar": "^1.2",
                 "drupal/linkit": "^4.3",
                 "drupal/m4032404": "^1.0@alpha",
                 "drupal/maxlength": "^1.0@beta",
@@ -1347,7 +1348,7 @@
                 "drupal/override_node_options": "^2.3",
                 "drupal/password_policy": "dev-3.x",
                 "drupal/password_strength": "^2.0",
-                "drupal/redirect": "^1.0@beta",
+                "drupal/redirect": "^1.2",
                 "drupal/seckit": "^1.0@alpha",
                 "drupal/simple_sitemap": "^2.11",
                 "drupal/smart_trim": "^1.1",
@@ -2627,13 +2628,13 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
+                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch",
                     "Contextual links should not be added inside another link - https://www.drupal.org/node/2898875": "https://www.drupal.org/files/issues/2018-03-16/contextual_links_should-2898875-6.patch",
                     "No validation on text length for menu description when editing node - https://www.drupal.org/node/2852665#comment-12157856": "https://www.drupal.org/files/issues/fatal_error_remove_menu_add_with_tests-2852665-12.patch",
                     "active-link.js throws JS error if query string parameter contains a single quote - https://www.drupal.org/node/2902769": "https://www.drupal.org/files/issues/active_link_js_throws-2902769-5_0.patch",
                     "getUuid() in class MenuLinkContent not returning any value - https://www.drupal.org/node/2737741": "https://www.drupal.org/files/issues/drupal-menulinkcontent-getuuid-return-missing-2737741-2.patch",
                     "RSS view with fields give wrong URL from path field - https://www.drupal.org/node/2673980#comment-12180229": "https://www.drupal.org/files/issues/rss_view_with_fields-2673980-28.patch",
-                    "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch",
-                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
+                    "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch"
                 }
             },
             "autoload": {
@@ -3491,7 +3492,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/fast_404",
-                "reference": "ea186851ad0576717786ef2666825a2a4a0f14b3"
+                "reference": "21f82d2cdfcd50a310b7e5398012806130bd9a23"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -3502,8 +3503,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha2+4-dev",
-                    "datestamp": "1526238480",
+                    "version": "8.x-1.0-alpha3+3-dev",
+                    "datestamp": "1528656780",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -3544,7 +3545,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/fast_404"
             },
-            "time": "2018-05-13T18:21:24+00:00"
+            "time": "2018-06-10T19:33:10+00:00"
         },
         {
             "name": "drupal/field_group",
@@ -3610,6 +3611,57 @@
             "homepage": "https://www.drupal.org/project/field_group",
             "support": {
                 "source": "http://cgit.drupalcode.org/field_group"
+            }
+        },
+        {
+            "name": "drupal/hotjar",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/hotjar",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/hotjar-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "cd56858bf335cf8ba9ce65d28a796e8bd313c67b"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1513139885",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "csakiistvan",
+                    "homepage": "https://www.drupal.org/user/491514"
+                },
+                {
+                    "name": "tikaszvince",
+                    "homepage": "https://www.drupal.org/user/337178"
+                }
+            ],
+            "description": "Allows your site to be tracked by Hotjar by adding a Javascript tracking code to every page.",
+            "homepage": "https://www.drupal.org/project/hotjar",
+            "support": {
+                "source": "http://cgit.drupalcode.org/hotjar"
             }
         },
         {
@@ -4173,7 +4225,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-alpha1",
-                    "datestamp": "1498657743",
+                    "datestamp": "1528645980",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
