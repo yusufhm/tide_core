@@ -187,7 +187,8 @@
         "app:build": [
             "@bay:start",
             "@composer install -n --ansi --prefer-dist",
-            "@app:db-import"
+            "@app:db-import",
+            "@app:search-index"
         ],
         "app:rebuild": [
             "@app:cleanup",
@@ -223,6 +224,11 @@
         "app:db-import": [
             "docker exec -i $(docker-compose ps -q redis) redis-cli flushall",
             "@composer bay:cli -- ./scripts/rebuild-env.sh"
+        ],
+        "app:search-index": [
+            "@composer bay:cli -- drush search-api-enable",
+            "@composer bay:cli -- drush search-api-clear",
+            "@composer bay:cli -- drush search-api-index 0 50"
         ],
         "bay:start": "docker-compose up -d --build",
         "bay:restart": "docker-compose restart",

@@ -41,6 +41,7 @@ jobs:
           command: |
             docker-compose exec cli bash -c "mkdir -p /home/.ssh && echo -e \"$BAY_KEY\" > /home/.ssh/key && chmod 600 /home/.ssh/key"
             composer app:db-import
+            composer app:search-index
             composer bay:cli -- mkdir -p /app/screenshots
       - run:
           name: Install dev dependencies.
