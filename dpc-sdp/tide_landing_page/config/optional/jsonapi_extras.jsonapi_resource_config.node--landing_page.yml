@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - node.type.test
-id: node--test
+    - node.type.landing_page
+id: node--landing_page
 disabled: false
-path: node/test
-resourceType: node--test
+path: node/landing_page
+resourceType: node--landing_page
 resourceFields:
   nid:
     fieldName: nid
@@ -184,9 +184,89 @@ resourceFields:
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
-  body:
-    fieldName: body
-    publicName: body
+  field_featured_image:
+    fieldName: field_featured_image
+    publicName: field_featured_image
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_landing_page_bg_colour:
+    fieldName: field_landing_page_bg_colour
+    publicName: field_landing_page_bg_colour
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_landing_page_component:
+    fieldName: field_landing_page_component
+    publicName: field_landing_page_component
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_landing_page_contact:
+    fieldName: field_landing_page_contact
+    publicName: field_landing_page_contact
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_landing_page_c_primary:
+    fieldName: field_landing_page_c_primary
+    publicName: field_landing_page_c_primary
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_landing_page_c_secondary:
+    fieldName: field_landing_page_c_secondary
+    publicName: field_landing_page_c_secondary
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_landing_page_intro_text:
+    fieldName: field_landing_page_intro_text
+    publicName: field_landing_page_intro_text
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_landing_page_key_journeys:
+    fieldName: field_landing_page_key_journeys
+    publicName: field_landing_page_key_journeys
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_landing_page_nav_title:
+    fieldName: field_landing_page_nav_title
+    publicName: field_landing_page_nav_title
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_landing_page_show_contact:
+    fieldName: field_landing_page_show_contact
+    publicName: field_landing_page_show_contact
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_landing_page_summary:
+    fieldName: field_landing_page_summary
+    publicName: field_landing_page_summary
     enhancer:
       id: ''
     disabled: false
@@ -216,6 +296,14 @@ resourceFields:
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
+  field_related_links:
+    fieldName: field_related_links
+    publicName: field_related_links
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
   field_show_content_rating:
     fieldName: field_show_content_rating
     publicName: field_show_content_rating
@@ -224,17 +312,73 @@ resourceFields:
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
-  field_test_link:
-    fieldName: field_test_link
-    publicName: field_test_link
+  field_show_related_content:
+    fieldName: field_show_related_content
+    publicName: field_show_related_content
     enhancer:
-      id: link_enhancer
+      id: ''
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
-  field_test_media:
-    fieldName: field_test_media
-    publicName: field_test_media
+  field_show_site_section_nav:
+    fieldName: field_show_site_section_nav
+    publicName: field_show_site_section_nav
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_show_social_sharing:
+    fieldName: field_show_social_sharing
+    publicName: field_show_social_sharing
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_show_table_of_content:
+    fieldName: field_show_table_of_content
+    publicName: field_show_table_of_content
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_show_topic_term_and_tags:
+    fieldName: field_show_topic_term_and_tags
+    publicName: field_show_topic_term_and_tags
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_show_whats_next:
+    fieldName: field_show_whats_next
+    publicName: field_show_whats_next
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_tags:
+    fieldName: field_tags
+    publicName: field_tags
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_topic:
+    fieldName: field_topic
+    publicName: field_topic
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_whats_next:
+    fieldName: field_whats_next
+    publicName: field_whats_next
     enhancer:
       id: ''
     disabled: false

@@ -213,6 +213,7 @@ config_devel:
     - paragraphs.paragraphs_type.phone
     - paragraphs.paragraphs_type.social_link
   optional:
+    - jsonapi_extras.jsonapi_resource_config.node--landing_page
     - jsonapi_extras.jsonapi_resource_config.block_content--campaign
     - jsonapi_extras.jsonapi_resource_config.paragraph--banner
     - jsonapi_extras.jsonapi_resource_config.paragraph--call_to_action

@@ -1318,7 +1318,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_core",
-                "reference": "9b02703bab9e269e392048dbe3fc11b101177150",
+                "reference": "6670b172a7f942637689aa1e5ef51268c0ed7e68",
                 "shasum": null
             },
             "require": {
@@ -1340,7 +1340,7 @@
                 "drupal/fast_404": "dev-1.x",
                 "drupal/field_group": "^3.0-beta1",
                 "drupal/hotjar": "^1.2",
-                "drupal/linkit": "^4.3",
+                "drupal/linkit": "^5.0@beta",
                 "drupal/m4032404": "^1.0@alpha",
                 "drupal/maxlength": "^1.0@beta",
                 "drupal/media_entity_audio": "^2.0@alpha",
@@ -1348,6 +1348,7 @@
                 "drupal/override_node_options": "^2.3",
                 "drupal/password_policy": "dev-3.x",
                 "drupal/password_strength": "^2.0",
+                "drupal/pathauto": "^1.2",
                 "drupal/redirect": "^1.2",
                 "drupal/seckit": "^1.0@alpha",
                 "drupal/simple_sitemap": "^2.11",
@@ -1375,8 +1376,7 @@
                         "Allow entities to be generated if none exist - https://www.drupal.org/node/2910326": "https://www.drupal.org/files/issues/entity_reference_revisions-stop_checking_for_entities_before_generating_sample-2910326-2.patch"
                     },
                     "drupal/fast_404": {
-                        "Incompatibility with Redirect module - https://www.drupal.org/node/2838359": "https://www.drupal.org/files/issues/fast_404-redirect-2838359-8.patch",
-                        "Subscribe to NotFoundHttpException event - https://www.drupal.org/node/2930381": "https://www.drupal.org/files/issues/fast_404-subscribe_notfound_exception-2930381-4.patch"
+                        "Incompatibility with Redirect module - https://www.drupal.org/node/2838359": "https://www.drupal.org/files/issues/fast_404-redirect-2838359-8.patch"
                     },
                     "drupal/maxlength": {
                         "Maxlength only for summary field - https://www.drupal.org/project/maxlength/issues/2798903": "https://www.drupal.org/files/issues/maxlength-limit_only_summary-2798903-2.patch"
@@ -3492,7 +3492,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/fast_404",
-                "reference": "21f82d2cdfcd50a310b7e5398012806130bd9a23"
+                "reference": "d91360d026db08be16bd56e02023e81ee041eb88"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -3503,16 +3503,15 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha3+3-dev",
-                    "datestamp": "1528656780",
+                    "version": "8.x-1.0-alpha3+8-dev",
+                    "datestamp": "1529168624",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 },
                 "patches_applied": {
-                    "Incompatibility with Redirect module - https://www.drupal.org/node/2838359": "https://www.drupal.org/files/issues/fast_404-redirect-2838359-8.patch",
-                    "Subscribe to NotFoundHttpException event - https://www.drupal.org/node/2930381": "https://www.drupal.org/files/issues/fast_404-subscribe_notfound_exception-2930381-4.patch"
+                    "Incompatibility with Redirect module - https://www.drupal.org/node/2838359": "https://www.drupal.org/files/issues/fast_404-redirect-2838359-8.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3545,7 +3544,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/fast_404"
             },
-            "time": "2018-06-10T19:33:10+00:00"
+            "time": "2018-06-16T20:57:39+00:00"
         },
         {
             "name": "drupal/field_group",
@@ -3852,32 +3851,35 @@
         },
         {
             "name": "drupal/linkit",
-            "version": "4.3.0",
+            "version": "5.0.0-beta7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/linkit",
-                "reference": "8.x-4.3"
+                "reference": "8.x-5.0-beta7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/linkit-8.x-4.3.zip",
-                "reference": "8.x-4.3",
-                "shasum": "e624ea2f18a6100b76a8337e24f7c08df6e2235e"
+                "url": "https://ftp.drupal.org/files/projects/linkit-8.x-5.0-beta7.zip",
+                "reference": "8.x-5.0-beta7",
+                "shasum": "6ec3496afe8264b3c1de7ec4415d95248f3a31df"
             },
             "require": {
                 "drupal/core": "~8.0"
             },
+            "require-dev": {
+                "drupal/imce": "*"
+            },
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-4.x": "4.x-dev"
+                    "dev-5.x": "5.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-4.3",
-                    "datestamp": "1490205830",
+                    "version": "8.x-5.0-beta7",
+                    "datestamp": "1520552585",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -4510,6 +4512,67 @@
             "homepage": "https://www.drupal.org/project/password_strength",
             "support": {
                 "source": "http://cgit.drupalcode.org/password_strength"
+            }
+        },
+        {
+            "name": "drupal/pathauto",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/pathauto",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/pathauto-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "ba265dbafb27e93d4a61655d783441b653206c73"
+            },
+            "require": {
+                "drupal/core": "*",
+                "drupal/ctools": "*",
+                "drupal/token": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1524421084",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "Dave Reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "Freso",
+                    "homepage": "https://www.drupal.org/user/27504"
+                },
+                {
+                    "name": "greggles",
+                    "homepage": "https://www.drupal.org/user/36762"
+                }
+            ],
+            "description": "Provides a mechanism for modules to automatically generate aliases for the content they manage.",
+            "homepage": "https://www.drupal.org/project/pathauto",
+            "support": {
+                "source": "http://cgit.drupalcode.org/pathauto"
             }
         },
         {

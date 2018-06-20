@@ -10,6 +10,7 @@ dependencies:
   - drupal:taxonomy
   - drupal:text
   - drupal:user
+  - pathauto:pathauto
   - dpc-sdp:tide_core
 config_devel:
   install:

@@ -93,8 +93,28 @@ class TideSiteRequestEventSubscriber implements EventSubscriberInterface {
 
     $request = $event->getRequest();
 
-    // Only works with JSON API routes.
+    $site_id = $request->query->get('site');
+
     $controller = $request->attributes->get('_controller');
+
+    // Prefix path with Site if the controller is TideApiController.
+    if ($controller == '\\Drupal\\tide_api\\Controller\\TideApiController::getRoute' && $site_id) {
+      $path = $request->query->get('path');
+      // Only prefix non-homepage and unrouted path.
+      if ($path !== '/') {
+        try {
+          $url = Url::fromUri('internal:' . $path);
+          if (!$url->isRouted()) {
+            $request->query->set('path', $this->helper->getSitePathPrefix($site_id) . $path);
+          }
+        }
+        catch (\Exception $exception) {
+          // No URI, does nothing.
+        }
+      }
+    }
+
+    // Only works with JSON API routes.
     if ($controller != 'jsonapi.request_handler:handle') {
       return;
     }
@@ -110,7 +130,6 @@ class TideSiteRequestEventSubscriber implements EventSubscriberInterface {
     }
 
     $field_site_name = $this->buildFieldName($entity_type);
-    $site_id = $request->query->get('site');
 
     $entity = $request->get($entity_type);
     // The current route has an entity in its params.

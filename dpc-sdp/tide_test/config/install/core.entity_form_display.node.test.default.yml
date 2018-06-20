@@ -6,9 +6,10 @@ dependencies:
     - field.field.node.test.body
     - field.field.node.test.field_metatags
     - field.field.node.test.field_show_content_rating
+    - field.field.node.test.field_tags
     - field.field.node.test.field_test_link
     - field.field.node.test.field_test_media
-    - field.field.node.test.field_tags
+    - field.field.node.test.field_test_reference
     - field.field.node.test.field_topic
     - node.type.test
   module:
@@ -52,6 +53,15 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  field_tags:
+    weight: 15
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_test_link:
     weight: 131
     settings:
@@ -74,6 +84,24 @@ content:
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
+  field_test_reference:
+    weight: 134
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_topic:
+    type: entity_reference_autocomplete
+    weight: 4
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
     weight: 100
@@ -128,23 +156,5 @@ content:
     weight: 50
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_tags:
-    weight: 15
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_topic:
-    type: entity_reference_autocomplete
-    weight: 4
-    region: content
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
 hidden: {  }

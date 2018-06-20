@@ -4,7 +4,12 @@ dependencies:
   config:
     - core.entity_view_mode.node.card
     - field.field.node.test.body
+    - field.field.node.test.field_metatags
+    - field.field.node.test.field_show_content_rating
+    - field.field.node.test.field_tags
+    - field.field.node.test.field_test_link
     - field.field.node.test.field_test_media
+    - field.field.node.test.field_topic
     - node.type.test
   module:
     - smart_trim
@@ -44,4 +49,9 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_metatags: true
+  field_show_content_rating: true
+  field_tags: true
+  field_test_link: true
   field_test_media: true
+  field_topic: true

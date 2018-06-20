@@ -25,7 +25,9 @@ config_devel:
     - field.field.node.test.body
     - field.field.node.test.field_metatags
     - field.field.node.test.field_test_link
+    - field.field.node.test.field_test_reference
     - field.storage.node.field_test_link
+    - field.storage.node.field_test_reference
   optional:
     - media.type.testmedia
     - field.field.media.testmedia.field_media_file_test
