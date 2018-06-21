@@ -108,6 +108,7 @@ module:
   wysiwyg_template: 0
   wysiwyg_template_core: 0
   menu_link_content: 1
+  pathauto: 1
   views: 10
   paragraphs: 11
   tide: 1000

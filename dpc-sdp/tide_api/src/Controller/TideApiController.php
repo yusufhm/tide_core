@@ -117,7 +117,7 @@ class TideApiController extends ControllerBase {
 
     try {
       if ($path) {
-        $cid = 'tide_api:route:path:' . md5($path);
+        $cid = 'tide_api:route:path:' . hash('sha256', $path);
 
         // First load from cache_data.
         $cached_route_data = $this->cache('data')->get($cid);

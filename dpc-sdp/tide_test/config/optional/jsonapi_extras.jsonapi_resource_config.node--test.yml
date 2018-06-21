@@ -172,7 +172,7 @@ resourceFields:
     fieldName: path
     publicName: path
     enhancer:
-      id: ''
+      id: path_enhancer
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''

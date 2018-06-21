@@ -68,12 +68,13 @@ settings:
             - TemplateSelector
             - tide_media
   plugins:
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: content
     stylescombo:
       styles: "p.wysiwyg-callout|Callout\r\nol.wysiwyg-callout|Callout (Ordered list)\r\nul.wysiwyg-callout|Callout (Unordered list)"
     language:
       language_list: un
-    linkit:
-      linkit_profile: content
 image_upload:
   status: true
   scheme: public

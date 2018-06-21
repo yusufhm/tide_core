@@ -18,7 +18,6 @@ Feature: WYSIWYG toolbar configuration
       | Paste               | #cke_edit-body-0-value .cke_top .cke_button__paste               |
       | Paste text          | #cke_edit-body-0-value .cke_top .cke_button__pastetext           |
       | Link                | #cke_edit-body-0-value .cke_top .cke_button__drupallink          |
-      | Linkit              | #cke_edit-body-0-value .cke_top .cke_button__linkit              |
       | Unlink              | #cke_edit-body-0-value .cke_top .cke_button__drupalunlink        |
       | Bulleted list       | #cke_edit-body-0-value .cke_top .cke_button__bulletedlist_icon   |
       | Numbered list       | #cke_edit-body-0-value .cke_top .cke_button__numberedlist_icon   |
@@ -65,7 +64,6 @@ Feature: WYSIWYG toolbar configuration
     And I see Paste inside of Toolbar
     And I see Paste text inside of Toolbar
     And I see Link inside of Toolbar
-    And I see Linkit inside of Toolbar
     And I see Unlink inside of Toolbar
     And I see Bulleted list inside of Toolbar
     And I see Numbered list inside of Toolbar
@@ -104,7 +102,6 @@ Feature: WYSIWYG toolbar configuration
     And I see Paste inside of Toolbar
     And I see Paste text inside of Toolbar
     And I see Link inside of Toolbar
-    And I see Linkit inside of Toolbar
     And I see Unlink inside of Toolbar
     And I see Bulleted list inside of Toolbar
     And I see Numbered list inside of Toolbar

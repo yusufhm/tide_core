@@ -41,6 +41,7 @@ dependencies:
   - paragraphs:paragraphs
   - password_policy:password_policy
   - password_strength:password_strength
+  - pathauto:pathauto
   - redirect:redirect
   - simple_sitemap:simple_sitemap
   - seckit:seckit
@@ -81,6 +82,7 @@ config_devel:
     - linkit.linkit_profile.content
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.related_links
+    - pathauto.pattern.content_title
     - taxonomy.vocabulary.tags
     - taxonomy.vocabulary.topic
     - user.role.administrator
@@ -108,3 +110,6 @@ config_devel:
     - metatag.metatag_defaults.node
     - metatag.metatag_defaults.taxonomy_term
     - metatag.metatag_defaults.user
+    - pathauto.settings
+    - system.action.pathauto_update_alias_node
+    - system.action.pathauto_update_alias_user

@@ -69,6 +69,13 @@ function tide_media_form_alter(&$form, FormStateInterface $form_state, $form_id)
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function tide_media_form_media_form_alter(&$form, FormStateInterface $form_state) {
+  $form['#attached']['library'][] = 'tide_media/media_form';
+}
+
+/**
  * Implements template_preprocess_field().
  */
 function tide_media_preprocess_field(&$variables) {

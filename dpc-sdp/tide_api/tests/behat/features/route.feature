@@ -27,12 +27,12 @@ Feature: Route lookup
   Scenario: Request to route lookup API to find a route by existing alias
     Given test content:
       | title                    | body | moderation_state | path                        |
-      | [TEST] Draft article     | test | draft            | /test-api-draft-article     |
-      | [TEST] Published article | test | published        | /test-api-published-article |
+      | [TEST] Draft article     | test | draft            | /test-draft-article     |
+      | [TEST] Published article | test | published        | /test-published-article |
     And I am an anonymous user
 
     # Anonymous users should not have access to unpublished nodes.
-    When I send a GET request to "api/v1/route?path=/test-api-draft-article"
+    When I send a GET request to "api/v1/route?path=/test-draft-article"
     Then the rest response status code should be 403
     And the response should be in JSON
     And the JSON node "links" should exist
@@ -41,8 +41,8 @@ Feature: Route lookup
     And the JSON node "errors" should exist
     And the JSON array node "errors" should contain "Permission denied." element
 
-    # Anonymous users should have access to unpublished nodes.
-    When I send a GET request to "api/v1/route?path=/test-api-published-article"
+    # Anonymous users should have access to published nodes.
+    When I send a GET request to "api/v1/route?path=/test-published-article"
     Then the rest response status code should be 200
     And the response should be in JSON
     And the JSON node "links" should exist
@@ -54,12 +54,12 @@ Feature: Route lookup
     Then the moderation state of test "[TEST] Published article" changes from "published" to "archived"
     And the moderation state of test "[TEST] Draft article" changes from "draft" to "published"
 
-    Then I send a GET request to "api/v1/route?path=/test-api-published-article"
+    Then I send a GET request to "api/v1/route?path=/test-published-article"
     Then the rest response status code should be 403
     And the JSON node "errors" should exist
     And the JSON array node "errors" should contain "Permission denied." element
 
-    Then I send a GET request to "api/v1/route?path=/test-api-draft-article"
+    Then I send a GET request to "api/v1/route?path=/test-draft-article"
     Then the rest response status code should be 200
     And the JSON node "data" should exist
     And the JSON node "errors" should not exist

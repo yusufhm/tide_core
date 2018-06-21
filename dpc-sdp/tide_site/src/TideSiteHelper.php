@@ -3,9 +3,11 @@
 namespace Drupal\tide_site;
 
 use Drupal\Core\Cache\Cache;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\node\NodeInterface;
 use Drupal\taxonomy\TermInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 
@@ -185,19 +187,43 @@ class TideSiteHelper {
   }
 
   /**
+   * Returns the site path prefix based on site name.
+   *
+   * @param \Drupal\taxonomy\TermInterface|int $site
+   *   The Site term, or Site ID.
+   *
+   * @return string
+   *   The path prefix.
+   */
+  public function getSitePathPrefix($site) {
+    if ($site instanceof TermInterface) {
+      $site_id = $site->id();
+    }
+    else {
+      $site_id = $site;
+    }
+    return '/site-' . $site_id;
+  }
+
+  /**
    * Returns the Sites of an entity.
    *
    * @param \Drupal\Core\Entity\FieldableEntityInterface $entity
    *   The Entity object.
+   * @param bool $reset
+   *   Whether to reset cache.
    *
    * @return array|null
    *   The Sites array with 2 keys:
    *     - ids      : List of site ids.
    *     - sections : List of sections: site_id => section_id.
    */
-  public function getEntitySites(FieldableEntityInterface $entity) {
+  public function getEntitySites(FieldableEntityInterface $entity, $reset = FALSE) {
     // Static cache as this method maybe called multiple times per request.
     $static_cache = &drupal_static(__FUNCTION__, []);
+    if ($reset) {
+      unset($static_cache[$entity->id()]);
+    }
     if (isset($static_cache[$entity->id()])) {
       return $static_cache[$entity->id()];
     }
@@ -207,6 +233,9 @@ class TideSiteHelper {
 
     if ($this->isSupportedEntityType($entity_type)) {
       $cid = 'tide_site:entity:' . $entity_type . ':' . $entity->id() . ':sites';
+      if ($reset) {
+        $this->cache('data')->delete($cid);
+      }
       // Attempt to load from data cache.
       $cached_sites = $this->cache('data')->get($cid);
       if ($cached_sites) {
@@ -234,6 +263,9 @@ class TideSiteHelper {
               }
               $cache_tags[] = 'taxonomy_term:' . $term_id;
             }
+            if (empty($sites['ids'])) {
+              $sites = ['ids' => [], 'sections' => []];
+            }
             // Build the sections. Each Site should only have one section.
             foreach ($sites['ids'] as $site_id) {
               $sites['sections'][$site_id] = $site_id;
@@ -247,8 +279,10 @@ class TideSiteHelper {
             }
 
             // Cache the results.
-            $this->cache('data')->set($cid, $sites, Cache::PERMANENT, Cache::mergeTags($cache_tags, $entity->getCacheTags()));
-            $static_cache[$entity->id()] = $sites;
+            if (!$reset) {
+              $this->cache('data')->set($cid, $sites, Cache::PERMANENT, Cache::mergeTags($cache_tags, $entity->getCacheTags()));
+              $static_cache[$entity->id()] = $sites;
+            }
           }
         }
       }
@@ -351,6 +385,60 @@ class TideSiteHelper {
     catch (\Exception $e) {
       return NULL;
     }
+  }
+
+  /**
+   * Get the URL of the primary site of an entity.
+   *
+   * @param \Drupal\Core\Entity\EntityInterface $node
+   *   The node.
+   *
+   * @return \Drupal\Core\GeneratedUrl|string
+   *   The URL.
+   */
+  public function getEntityPrimarySiteUrl(EntityInterface $node) {
+    $url = '';
+
+    /** @var \Symfony\Component\HttpFoundation\Request $request */
+    $request = $this->container->get('request_stack')->getCurrentRequest();
+
+    // Fetch its primary site instead.
+    $site = $this->getEntityPrimarySite($node);
+    if ($site) {
+      $domains = $this->getSiteDomains($site);
+      // The first domain is always for production environment.
+      $domain = reset($domains);
+      if ($domain) {
+        $site_url = $request->getScheme() . '://' . $domain;
+        // Remove trailing slash.
+        $url = rtrim($site_url, '/');
+      }
+    }
+    return $url;
+  }
+
+  /**
+   * Get the URL of node using its primary site.
+   *
+   * @param \Drupal\node\NodeInterface $node
+   *   The node.
+   *
+   * @return string
+   *   The URL.
+   */
+  public function getNodeUrlFromPrimarySite(NodeInterface $node) {
+    $url = '/node/' . $node->id();
+
+    $site_url = $this->getEntityPrimarySiteUrl($node);
+    if ($site_url) {
+      // Return the absolute URL.
+      $url = $node->toUrl('canonical', [
+        'absolute' => TRUE,
+        'base_url' => $site_url,
+      ])->toString();
+    }
+
+    return $url;
   }
 
   /**
