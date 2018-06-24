@@ -5,7 +5,6 @@ core: 8.x
 version: 8.x-1.0
 package: vicgovau
 dependencies:
-  - dpc-sdp:bay
   - admin_toolbar:admin_toolbar
   - admin_toolbar:admin_toolbar_tools
   - coffee:coffee
