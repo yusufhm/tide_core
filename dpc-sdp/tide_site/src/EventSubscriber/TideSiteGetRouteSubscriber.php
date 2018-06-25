@@ -57,8 +57,8 @@ class TideSiteGetRouteSubscriber implements EventSubscriberInterface {
       $uuid = isset($response['data']['uuid']) ? $response['data']['uuid'] : NULL;
 
       $entity_type = isset($response['data']['entity_type']) ? $response['data']['entity_type'] : NULL;
-      // Do nothing if this is not an supported entity type.
-      if (!$helper->isSupportedEntityType($entity_type) && $path !== '/') {
+      // Do nothing if this is not a restricted entity type.
+      if (!$helper->isRestrictedEntityType($entity_type) && $path !== '/') {
         return;
       }
 
@@ -71,9 +71,10 @@ class TideSiteGetRouteSubscriber implements EventSubscriberInterface {
         if (!$entity) {
           $entity = $helper->getEntityByUuid($uuid, $entity_type);
         }
-        if ($entity) {
+        if ($entity && $helper->isRestrictedEntityType($entity->getEntityTypeId())) {
           $sites = $helper->getEntitySites($entity);
-          // This entity has Sites but our required parameter is missing,
+          // This entity has Sites and is restricted from being accessed by Site
+          // but our required Site parameter is missing,
           // so we stop processing and return a Bad Request 400 code.
           if ($sites) {
             $event->setCode(Response::HTTP_BAD_REQUEST);
@@ -92,8 +93,10 @@ class TideSiteGetRouteSubscriber implements EventSubscriberInterface {
         }
         // Cache miss.
         else {
-          // Ignore the current response because each site has its own homepage.
+          // Check if the requested path is homepage.
           if ($path == '/') {
+            // Ignore the current response
+            // because each site has its own homepage.
             $site_term = $helper->getSiteById($site_id);
             $entity = $helper->getSiteHomepage($site_term);
 
@@ -121,7 +124,7 @@ class TideSiteGetRouteSubscriber implements EventSubscriberInterface {
               ];
             }
           }
-          // Fetch the entity from the response.
+          // Not homepage, fetch the entity from the response.
           else {
             $entity = $event->getEntity();
             // The Entity maybe empty as TideApi loaded its data from cache.
@@ -136,7 +139,8 @@ class TideSiteGetRouteSubscriber implements EventSubscriberInterface {
             $response['errors'] = [$this->t('Path not found.')];
           }
           // Now we have the entity, check if its Site ID matches the request.
-          else {
+          // Again, only works with restricted entity types.
+          elseif ($helper->isRestrictedEntityType($entity->getEntityTypeId())) {
             $cache_tags = [$site_id => 'taxonomy_term:' . $site_id];
             $valid = $helper->isEntityBelongToSite($entity, $site_id);
             // It belongs to the right Site.
