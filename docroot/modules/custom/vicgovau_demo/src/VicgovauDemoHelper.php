@@ -240,6 +240,18 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Select a random Campaign.
+   *
+   * @return \Drupal\block_content\Entity\BlockContent
+   *   The Campaign block.
+   */
+  public static function randomCampaign() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $campaigns = $repository->getDemoEntities('block_content', 'campaign');
+    return count($campaigns) ? $campaigns[array_rand($campaigns)] : NULL;
+  }
+
+  /**
    * Select a random image.
    *
    * @return int
@@ -373,18 +385,44 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Generate a random Accordion Content paragraph.
+   *
+   * @return \Drupal\paragraphs\Entity\Paragraph
+   *   The Accordion content.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  public static function randomAccordionContent() {
+    $accordion = Paragraph::create([
+      'type' => 'accordion_content',
+      'field_paragraph_accordion_name' => [['value' => static::randomSentence()]],
+      'field_paragraph_accordion_body' => [
+        'value' => static::randomRichText(1, 3),
+        'format' => 'rich_text',
+      ],
+    ]);
+    $accordion->save();
+    $repository = VicgovauDemoRepository::getInstance();
+    $repository->trackEntity($accordion);
+    return $accordion;
+  }
+
+  /**
    * Generate random landing page components.
    *
    * @param int $component_count
    *   Number of components to generate.
+   * @param bool $random
+   *   If FALSE, all component types will be randomly generated.
    *
    * @return array
    *   The components.
    */
-  public static function randomLandingPageComponents($component_count = 20) {
+  public static function randomLandingPageComponents($component_count = 20, $random = TRUE) {
     $repository = VicgovauDemoRepository::getInstance();
 
     $supported_components = [
+      'accordion',
       'basic_text',
       'call_to_action',
       'card_event',
@@ -397,13 +435,50 @@ class VicgovauDemoHelper {
       'card_keydates',
     ];
 
+    $accordion_styles = ['basic', 'numbered'];
+    if (!$random) {
+      // All 2 styles of accordion should be generated.
+      $supported_components[] = 'accordion';
+      $component_count = count($supported_components);
+    }
+
     $components = [];
     while ($component_count) {
-      $component_type = $supported_components[array_rand($supported_components)];
+      if ($random) {
+        $component_type = $supported_components[array_rand($supported_components)];
+      }
+      else {
+        shuffle($supported_components);
+        $component_type = array_pop($supported_components);
+      }
+
       $component_data = [
         'type' => $component_type,
       ];
       switch ($component_type) {
+        case 'accordion':
+          $component_data += [
+            'field_paragraph_title' => [['value' => static::randomSentence()]],
+            'field_paragraph_accordion_style' => [
+              'value' => $random ? $accordion_styles[array_rand($accordion_styles)] : array_pop($accordion_styles),
+            ],
+            'field_paragraph_accordion' => [],
+          ];
+          $count = mt_rand(3, 5);
+          for ($i = 1; $i <= $count; $i++) {
+            try {
+              $accordion_content = static::randomAccordionContent();
+              $component_data['field_paragraph_accordion'][] = [
+                'target_id' => $accordion_content->id(),
+                'target_revision_id' => $accordion_content->getRevisionId(),
+              ];
+            }
+            catch (\Exception $exception) {
+              watchdog_exception('vicgovau_demo', $exception);
+            }
+          }
+          break;
+
         case 'basic_text':
           $component_data['field_paragraph_body'][] = [
             'value' => static::randomRichText(1, 4),
@@ -435,10 +510,11 @@ class VicgovauDemoHelper {
               [
                 'langcode' => '',
                 'country_code' => 'AU',
-                'administrative_area' => 'Victoria',
+                'administrative_area' => 'VIC',
                 'locality' => 'Melbourne',
-                'postal_code' => 3000,
-                'address_line1' => '1 Spring St',
+                'postal_code' => 3001,
+                'address_line1' => 'Department of Premier and Cabinet',
+                'address_line2' => 'GPO Box 4509',
               ],
             ],
             'field_paragraph_cta' => [VicgovauDemoHelper::randomCtaLinkFieldValue()],

@@ -12,6 +12,8 @@ use Drupal\Core\Entity\EntityInterface;
  */
 class VicgovauDemoRepository {
 
+  const SITE_ID_VICGOVAU = 4;
+
   /**
    * The repository singleton.
    *

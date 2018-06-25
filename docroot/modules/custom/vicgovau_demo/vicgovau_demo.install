@@ -55,6 +55,7 @@ function vicgovau_demo_install() {
     'taxonomy_term' => -80,
     'media' => -50,
     'node' => 0,
+    'block_content' => -10,
   ];
   $available_demo = [];
 
