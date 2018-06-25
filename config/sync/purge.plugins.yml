@@ -1,5 +1,0 @@
-purgers:
-  -
-    order_index: 2
-    instance_id: eac20f3bb6
-    plugin_id: cloudfront

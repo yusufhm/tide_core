@@ -124,15 +124,16 @@ class TideSiteRequestEventSubscriber implements EventSubscriberInterface {
     $entity_type = $resource_type->getEntityTypeId();
     $bundle = $resource_type->getBundle();
 
-    // Only works with supported entity types.
-    if (!$this->helper->isSupportedEntityType($entity_type)) {
+    // Only works with restricted entity types.
+    if (!$this->helper->isRestrictedEntityType($entity_type)) {
       return;
     }
 
     $field_site_name = $this->buildFieldName($entity_type);
 
     $entity = $request->get($entity_type);
-    // The current route has an entity in its params.
+    // The current route has an entity in its params,
+    // it's to retrieve an individual entity.
     if ($entity) {
       // Only process if the entity has Sites.
       $sites = $this->helper->getEntitySites($entity);

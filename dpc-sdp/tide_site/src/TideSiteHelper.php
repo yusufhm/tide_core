@@ -27,6 +27,13 @@ class TideSiteHelper {
   protected $supportedEntityTypes = ['node', 'media'];
 
   /**
+   * List of entity types restricted from accessing by Site.
+   *
+   * @var array
+   */
+  protected $restrictedEntityTypes = ['node'];
+
+  /**
    * The Entity Type Manager service.
    *
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
@@ -74,6 +81,19 @@ class TideSiteHelper {
    */
   public function isSupportedEntityType($entity_type) {
     return in_array($entity_type, $this->supportedEntityTypes);
+  }
+
+  /**
+   * Check if an entity type is restricted from being accessed by Site.
+   *
+   * @param string $entity_type
+   *   The entity type.
+   *
+   * @return bool
+   *   TRUE if the entity type is restricted.
+   */
+  public function isRestrictedEntityType($entity_type) {
+    return in_array($entity_type, $this->restrictedEntityTypes);
   }
 
   /**
