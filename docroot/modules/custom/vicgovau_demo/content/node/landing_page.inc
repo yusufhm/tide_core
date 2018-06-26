@@ -26,16 +26,22 @@ function vicgovau_demo_create_node_landing_page() {
   $repository = VicgovauDemoRepository::getInstance();
   $site_menus = $repository->getDemoEntities('site_menu');
 
-  for ($i = 1; $i <= 10; $i++) {
+  $total = 10;
+  for ($i = 1; $i <= $total; $i++) {
+    // Turn off Random mode for the last landing page.
+    // It will be generated with all components.
+    $random = ($i < $total) ? TRUE : FALSE;
     $uid = VicgovauDemoHelper::randomUid();
 
     $site_sections = VicgovauDemoHelper::randomSiteSections();
     $primary_site_id = VicgovauDemoHelper::randomSite($site_sections);
+    /** @var \Drupal\taxonomy\Entity\Term $primary_site */
+    $primary_site = \Drupal::service('tide_site.helper')->getSiteById($primary_site_id);
 
     $status = Node::PUBLISHED;
     $node_data = [
       'type' => 'landing_page',
-      'title' => VicgovauDemoHelper::randomSentence(),
+      'title' => $random ? VicgovauDemoHelper::randomSentence() : 'Demo Landing Page',
       'uid' => $uid,
       'status' => $status,
       'field_landing_page_intro_text' => [
@@ -54,7 +60,20 @@ function vicgovau_demo_create_node_landing_page() {
       'field_featured_image' => [
         ['target_id' => VicgovauDemoHelper::randomImage()],
       ],
+      'field_landing_page_bg_colour' => [
+        'value' => VicgovauDemoHelper::randomBool() ? 'grey' : 'white',
+      ],
+      'field_landing_page_nav_title' => ['value' => 'Site-section Navigation'],
     ];
+
+    if (!$random) {
+      $node_data['field_node_site'][] = ['target_id' => VicgovauDemoRepository::SITE_ID_VICGOVAU];
+
+      // Set path alias in the absence of Pathauto.
+      if (!\Drupal::moduleHandler()->moduleExists('pathauto')) {
+        $node_data['path'] = ['alias' => '/demo-landing-page'];
+      }
+    }
 
     // Add Key Journeys.
     $key_journeys_data = [
@@ -127,20 +146,22 @@ function vicgovau_demo_create_node_landing_page() {
         [
           'langcode' => '',
           'country_code' => 'AU',
-          'administrative_area' => 'Victoria',
+          'administrative_area' => 'VIC',
           'locality' => 'Melbourne',
-          'postal_code' => 3000,
-          'address_line1' => '1 Spring St',
+          'postal_code' => 3001,
+          'address_line1' => 'Department of Premier and Cabinet',
+          'address_line2' => 'GPO Box 4509',
         ],
       ],
       'field_paragraph_postal_address' => [
         [
           'langcode' => '',
           'country_code' => 'AU',
-          'administrative_area' => 'Victoria',
+          'administrative_area' => 'VIC',
           'locality' => 'Melbourne',
-          'postal_code' => 3000,
-          'address_line1' => '1 Spring St',
+          'postal_code' => 3001,
+          'address_line1' => 'Department of Premier and Cabinet',
+          'address_line2' => 'GPO Box 4509',
         ],
       ],
     ];
@@ -155,7 +176,7 @@ function vicgovau_demo_create_node_landing_page() {
     ];
 
     // Add components.
-    $components = VicgovauDemoHelper::randomLandingPageComponents();
+    $components = VicgovauDemoHelper::randomLandingPageComponents(mt_rand(5, 20), $random);
     foreach ($components as $component) {
       /** @var \Drupal\paragraphs\Entity\Paragraph $component */
       $node_data['field_landing_page_component'][] = [
@@ -164,18 +185,40 @@ function vicgovau_demo_create_node_landing_page() {
       ];
     }
 
+    // Add campaigns.
+    if ($random ? VicgovauDemoHelper::randomBool() : TRUE) {
+      $primary_campaign = VicgovauDemoHelper::randomCampaign();
+      if ($primary_campaign) {
+        $node_data['field_landing_page_c_primary'] = [
+          'target_id' => $primary_campaign->id(),
+          'target_revision_id' => $primary_campaign->getRevisionId(),
+        ];
+      }
+    }
+    if ($random ? VicgovauDemoHelper::randomBool() : TRUE) {
+      $secondary_campaign = VicgovauDemoHelper::randomCampaign();
+      if ($secondary_campaign) {
+        $node_data['field_landing_page_c_secondary'] = [
+          'target_id' => $secondary_campaign->id(),
+          'target_revision_id' => $secondary_campaign->getRevisionId(),
+        ];
+      }
+    }
+
     $node = Node::create($node_data);
 
-    $booleanFields = [
+    $boolean_fields = [
       'field_show_related_content',
       'field_show_social_sharing',
       'field_show_whats_next',
       'field_show_content_rating',
       'field_landing_page_show_contact',
+      'field_show_table_of_content',
+      'field_show_site_section_nav',
     ];
-    foreach ($booleanFields as $booleanField) {
-      if ($node->hasField($booleanField)) {
-        $node->set($booleanField, VicgovauDemoHelper::randomBool());
+    foreach ($boolean_fields as $boolean_field) {
+      if ($node->hasField($boolean_field)) {
+        $node->set($boolean_field, $random ? VicgovauDemoHelper::randomBool() : TRUE);
       }
     }
 
@@ -188,6 +231,12 @@ function vicgovau_demo_create_node_landing_page() {
     try {
       $node->save();
       $nodes[] = $node;
+
+      // Set the page as its primary site homepage if necessary.
+      if ($primary_site && $primary_site->hasField('field_site_homepage') && $primary_site->get('field_site_homepage')->isEmpty()) {
+        $primary_site->set('field_site_homepage', [$node->id()]);
+        $primary_site->save();
+      }
 
       // Create menu links.
       foreach ($site_sections as $site_id) {

@@ -262,8 +262,10 @@
                 ".gitattributes",
                 ".htaccess",
                 "index.php",
-                "robots.txt",
                 "update.php"
+            ],
+            "excludes": [
+                "robots.txt"
             ],
             "omit-defaults": true
         },
