@@ -11,6 +11,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\ViewExecutable;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
+use Drupal\Component\Utility\SafeMarkup;
 
 /**
  * Implements hook_views_pre_view().
@@ -144,9 +145,14 @@ function tide_media_preprocess_file_link(&$variables) {
       $file_type = 'Other';
   }
 
-  $link_text = '<span class="file--title">' . $description . '</span>';
-  $link_text .= '<span class="file--type">' . $file_type . '</span>';
-  $link_text .= '<span class="file--size">' . $file_size . '</span>';
+  $link_text = SafeMarkup::format('<span class="file--title">@description</span>' .
+    '<span class="file--type">@file_type</span>' .
+    '<span class="file--size">@file_size</span>',
+    [
+      '@description' => $description,
+      '@file_type' => $file_type,
+      '@file_size' => $file_size,
+    ]);
 
   $attributes['attributes'] = [
     'class' => [
