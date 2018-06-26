@@ -16,5 +16,4 @@ dependencies:
   - drupal:inline_form_errors
   - drupal:syslog
   - environment_indicator:environment_indicator
-  - shield:shield
   - stage_file_proxy:stage_file_proxy

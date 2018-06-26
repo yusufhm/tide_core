@@ -23,8 +23,8 @@ $config['system.performance']['js']['preprocess'] = 1;
 $config['stage_file_proxy.settings']['origin'] = FALSE;
 
 // Disable shield config.
-$config['shield.settings']['credentials']['shield']['user'] = 'dpc';
-$config['shield.settings']['credentials']['shield']['pass'] = 'sdp';
+$config['shield.settings']['credentials']['shield']['user'] = '';
+$config['shield.settings']['credentials']['shield']['pass'] = '';
 
 // Environment indicator color override.
 $config['environment_indicator.indicator']['bg_color'] = 'red';
