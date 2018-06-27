@@ -29,6 +29,14 @@ dependencies:
   - editor_advanced_link:editor_advanced_link
   - entity_reference_revisions:entity_reference_revisions
   - events_log_track:event_log_track
+  - events_log_track:event_log_track_auth
+  - events_log_track:event_log_track_node
+  - events_log_track:event_log_track_taxonomy
+  - events_log_track:event_log_track_menu
+  - events_log_track:event_log_track_file
+  - events_log_track:event_log_track_media
+  - events_log_track:event_log_track_user
+  - events_log_track:event_log_track_workflows
   - fakeobjects:fakeobjects
   - fast_404:fast404
   - linkit:linkit
