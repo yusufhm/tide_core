@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.taxonomy_term.field_site_homepage
     - node.type.landing_page
+    - node.type.news
     - node.type.page
     - taxonomy.vocabulary.sites
 id: taxonomy_term.sites.field_site_homepage
@@ -23,6 +24,7 @@ settings:
     target_bundles:
       landing_page: landing_page
       page: page
+      news: news
     sort:
       field: _none
     auto_create: false

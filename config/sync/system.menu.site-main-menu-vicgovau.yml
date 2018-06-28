@@ -1,0 +1,8 @@
+uuid: ea9f977a-dea5-44d0-a3f0-452daf7e8040
+langcode: en
+status: true
+dependencies: {  }
+id: site-main-menu-vicgovau
+label: 'Main menu - vic.gov.au'
+description: 'Automatically created site menu Main menu - vic.gov.au'
+locked: false

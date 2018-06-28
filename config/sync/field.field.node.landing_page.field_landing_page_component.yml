@@ -17,6 +17,7 @@ dependencies:
     - paragraphs.paragraphs_type.card_promotion
     - paragraphs.paragraphs_type.card_promotion_auto
     - paragraphs.paragraphs_type.embedded_webform
+    - paragraphs.paragraphs_type.featured_news
   module:
     - entity_reference_revisions
 _core:
@@ -48,6 +49,7 @@ settings:
       card_keydates: card_keydates
       call_to_action: call_to_action
       embedded_webform: embedded_webform
+      featured_news: featured_news
     target_bundles_drag_drop:
       banner:
         weight: -33
@@ -103,6 +105,9 @@ settings:
       embedded_webform:
         enabled: true
         weight: 22
+      featured_news:
+        enabled: true
+        weight: 23
       contact_us:
         weight: 34
         enabled: false

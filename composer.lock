@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5077dd08c7841ff3127eb8575e3f583b",
+    "content-hash": "cefc0300552dfff762066a3789b8688a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1240,7 +1240,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide",
-                "reference": "79c55411babb07c7d0b5605d0b9a8e7b9792f2a5",
+                "reference": "1b7394d76424e51085045c660e7dc15e5a108c29",
                 "shasum": null
             },
             "require": {
@@ -1249,6 +1249,7 @@
                 "dpc-sdp/tide_landing_page": "^0.0.1",
                 "dpc-sdp/tide_media": "^0.0.1",
                 "dpc-sdp/tide_monsido": "^0.0.1",
+                "dpc-sdp/tide_news": "^0.0.1",
                 "dpc-sdp/tide_page": "0.0.1",
                 "dpc-sdp/tide_search": "^0.0.1",
                 "dpc-sdp/tide_site": "^0.0.1",
@@ -1479,6 +1480,25 @@
                 "GPL-2.0+"
             ],
             "description": "Monsido module for Tide distribution."
+        },
+        {
+            "name": "dpc-sdp/tide_news",
+            "version": "0.0.1",
+            "dist": {
+                "type": "path",
+                "url": "dpc-sdp/tide_news",
+                "reference": "5f82a46c32b2a9c568e6b3e2637e1d89b481c39d",
+                "shasum": null
+            },
+            "require": {
+                "dpc-sdp/tide_core": "0.0.1",
+                "drupal/smart_trim": "^1.1"
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "News content type and related configuration for Tide Drupal 8 distribution"
         },
         {
             "name": "dpc-sdp/tide_page",

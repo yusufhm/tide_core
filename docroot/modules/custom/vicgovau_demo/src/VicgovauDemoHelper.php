@@ -303,6 +303,31 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Select random News items.
+   *
+   * @param bool $return_entity
+   *   Whether to return the full entity or just entity ID.
+   * @param int $count
+   *   Number of News items to select.
+   *
+   * @return int[]|\Drupal\node\Entity\Node[]
+   *   Array of Entity IDs or full entities.
+   */
+  public static function randomNews($return_entity = FALSE, $count = 3) {
+    $repository = VicgovauDemoRepository::getInstance();
+    $news = $repository->getDemoEntities('node', 'news');
+    if (count($news)) {
+      $news_ids = array_rand($news, $count);
+      $results = [];
+      foreach ($news_ids as $news_id) {
+        $results[$news_id] = $return_entity ? $news[$news_id] : $news_id;
+      }
+      return $results;
+    }
+    return [];
+  }
+
+  /**
    * Generate a random link field from a random page.
    *
    * @return array
@@ -433,6 +458,7 @@ class VicgovauDemoHelper {
       'card_navigation_featured',
       'card_navigation_featured_auto',
       'card_keydates',
+      'featured_news',
     ];
 
     $accordion_styles = ['basic', 'numbered'];
@@ -584,6 +610,18 @@ class VicgovauDemoHelper {
             }
             catch (\Exception $exception) {
               watchdog_exception('vicgovau_demo', $exception);
+            }
+          }
+          break;
+
+        case 'featured_news':
+          $component_data += [
+            'field_paragraph_news_reference' => [],
+          ];
+          $news = static::randomNews();
+          if (!empty($news)) {
+            foreach ($news as $news_id) {
+              $component_data['field_paragraph_news_reference'][] = ['target_id' => $news_id];
             }
           }
           break;

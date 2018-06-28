@@ -1,0 +1,91 @@
+uuid: 76c6797d-96c5-4e9f-af54-07085c5b9a91
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_links
+    - node.type.news
+    - paragraphs.paragraphs_type.related_links
+  module:
+    - entity_reference_revisions
+id: node.news.field_related_links
+field_name: field_related_links
+entity_type: node
+bundle: news
+label: 'Related links'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      related_links: related_links
+    target_bundles_drag_drop:
+      card_navigation_featured_auto:
+        weight: 22
+        enabled: false
+      accordion:
+        weight: 23
+        enabled: false
+      accordion_content:
+        weight: 24
+        enabled: false
+      banner:
+        weight: 25
+        enabled: false
+      basic_text:
+        weight: 26
+        enabled: false
+      call_to_action:
+        weight: 27
+        enabled: false
+      card_event:
+        weight: 28
+        enabled: false
+      card_keydates:
+        weight: 29
+        enabled: false
+      card_navigation:
+        weight: 30
+        enabled: false
+      card_navigation_auto:
+        weight: 31
+        enabled: false
+      card_navigation_featured:
+        weight: 32
+        enabled: false
+      card_promotion:
+        weight: 33
+        enabled: false
+      card_promotion_auto:
+        weight: 34
+        enabled: false
+      contact_us:
+        weight: 35
+        enabled: false
+      embedded_webform:
+        weight: 36
+        enabled: false
+      keydates:
+        weight: 37
+        enabled: false
+      key_journeys:
+        weight: 38
+        enabled: false
+      links:
+        weight: 39
+        enabled: false
+      phone:
+        weight: 40
+        enabled: false
+      related_links:
+        enabled: true
+        weight: 41
+      social_link:
+        weight: 42
+        enabled: false
+field_type: entity_reference_revisions

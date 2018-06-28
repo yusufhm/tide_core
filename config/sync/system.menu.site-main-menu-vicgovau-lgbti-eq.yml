@@ -1,0 +1,8 @@
+uuid: a4763454-e32d-4e44-8c14-efe3aa31c9bd
+langcode: en
+status: true
+dependencies: {  }
+id: site-main-menu-vicgovau-lgbti-eq
+label: 'Main menu - vic.gov.au - LGBTI equality'
+description: 'Automatically created site menu Main menu - vic.gov.au - LGBTI equality'
+locked: false

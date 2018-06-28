@@ -1,0 +1,8 @@
+uuid: 5fc48e5a-8677-4c27-a668-15a77aacd861
+langcode: en
+status: true
+dependencies: {  }
+id: site-footer-menu-vicgovau
+label: 'Footer menu - vic.gov.au'
+description: 'Automatically created site menu Footer menu - vic.gov.au'
+locked: false

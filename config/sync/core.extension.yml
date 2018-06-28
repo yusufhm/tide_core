@@ -90,6 +90,7 @@ module:
   tide_core: 0
   tide_landing_page: 0
   tide_media: 0
+  tide_news: 0
   tide_page: 0
   tide_search: 0
   tide_site: 0
