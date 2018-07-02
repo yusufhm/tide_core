@@ -1,0 +1,8 @@
+uuid: ca1215b4-eeca-4a33-894c-57ce84b065d2
+langcode: en
+status: true
+dependencies: {  }
+id: site-main-menu-vicgovau-veterans
+label: 'Main menu - vic.gov.au - Veterans'
+description: 'Automatically created site menu Main menu - vic.gov.au - Veterans'
+locked: false

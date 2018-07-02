@@ -1,0 +1,8 @@
+uuid: 7dcc695e-43a1-4313-a11a-fab7240717e8
+langcode: en
+status: true
+dependencies: {  }
+id: site-main-menu-vicgovau-housing
+label: 'Main menu - vic.gov.au - Housing'
+description: 'Automatically created site menu Main menu - vic.gov.au - Housing'
+locked: false

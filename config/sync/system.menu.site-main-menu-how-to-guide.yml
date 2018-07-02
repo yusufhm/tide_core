@@ -1,0 +1,8 @@
+uuid: 78558a18-7771-4203-af1c-99515e69271d
+langcode: en
+status: true
+dependencies: {  }
+id: site-main-menu-how-to-guide
+label: 'Main menu - How to guide'
+description: 'Automatically created site menu Main menu - How to guide'
+locked: false

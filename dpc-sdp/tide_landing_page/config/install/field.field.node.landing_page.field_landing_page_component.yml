@@ -16,6 +16,7 @@ dependencies:
     - paragraphs.paragraphs_type.card_promotion
     - paragraphs.paragraphs_type.card_promotion_auto
     - paragraphs.paragraphs_type.embedded_webform
+    - paragraphs.paragraphs_type.featured_news
   module:
     - entity_reference_revisions
 id: node.landing_page.field_landing_page_component
@@ -45,6 +46,7 @@ settings:
       card_keydates: card_keydates
       call_to_action: call_to_action
       embedded_webform: embedded_webform
+      featured_news: featured_news
     target_bundles_drag_drop:
       banner:
         weight: -33
@@ -109,4 +111,7 @@ settings:
       social_link:
         weight: 40
         enabled: false
+      featured_news:
+        weight: 41
+        enabled: true
 field_type: entity_reference_revisions

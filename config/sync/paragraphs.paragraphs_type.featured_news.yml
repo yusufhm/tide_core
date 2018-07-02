@@ -1,0 +1,9 @@
+uuid: 3137be1a-6df5-4d62-96a8-ed929a535338
+langcode: en
+status: true
+dependencies: {  }
+id: featured_news
+label: 'Featured news'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
