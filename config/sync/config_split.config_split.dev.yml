@@ -11,6 +11,7 @@ theme: {  }
 blacklist: {  }
 graylist:
   - config_ignore.settings
+  - simple_sitemap.settings
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 1

@@ -94,6 +94,7 @@ module:
   tide_page: 0
   tide_search: 0
   tide_site: 0
+  tide_site_simple_sitemap: 0
   tide_webform: 0
   token: 0
   token_conditions: 0

@@ -256,7 +256,7 @@ function tide_site_tide_link_enhancer_undo_transform_alter(&$data, &$context) {
     if (!empty($data['uri']) && !empty($data['frontpage'])) {
       $site = $helper->getSiteById($site_id);
       if ($site) {
-        $homepage = $helper->getSiteHomepage($site);
+        $homepage = $helper->getSiteHomepageEntity($site);
         if ($homepage) {
           $data['uri'] = 'entity:node/' . $homepage->bundle() . '/' . $homepage->uuid();
           $data['entity'] = [
@@ -284,7 +284,7 @@ function tide_site_tide_link_enhancer_undo_transform_alter(&$data, &$context) {
           $site_url = '';
         }
         else {
-          $site_url = $helper->getEntityPrimarySiteUrl($entity);
+          $site_url = $helper->getEntityPrimarySiteBaseUrl($entity);
           $data['url'] = $helper->getNodeUrlFromPrimarySite($entity);
         }
         // Remove site prefix from the  URL.
@@ -344,7 +344,7 @@ function tide_site_tide_path_enhancer_undo_transform_alter(&$data, &$context) {
         $site_url = '';
       }
       else {
-        $site_url = $helper->getEntityPrimarySiteUrl($node);
+        $site_url = $helper->getEntityPrimarySiteBaseUrl($node);
         $data['url'] = $helper->getNodeUrlFromPrimarySite($node);
       }
       // Remove site prefix from the  URL.

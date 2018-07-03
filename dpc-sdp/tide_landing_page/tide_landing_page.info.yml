@@ -232,3 +232,4 @@ config_devel:
     - jsonapi_extras.jsonapi_resource_config.paragraph--key_journeys
     - jsonapi_extras.jsonapi_resource_config.paragraph--keydates
     - jsonapi_extras.jsonapi_resource_config.paragraph--social_link
+    - simple_sitemap.bundle_settings.node.landing_page

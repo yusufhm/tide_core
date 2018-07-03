@@ -41,3 +41,4 @@ config_devel:
     - field.storage.node.field_page_intro_text
   optional:
     - jsonapi_extras.jsonapi_resource_config.node--page
+    - simple_sitemap.bundle_settings.node.page
