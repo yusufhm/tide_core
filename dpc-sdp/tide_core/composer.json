@@ -34,6 +34,8 @@
         "drupal/password_strength": "^2.0",
         "drupal/pathauto":"^1.2",
         "drupal/redirect": "^1.2",
+        "drupal/scheduled_updates": "^1.0@alpha",
+        "drupal/content_moderation_scheduled_updates": "^1.0",
         "drupal/seckit": "^1.0@alpha",
         "drupal/simple_sitemap": "^2.11",
         "drupal/smart_trim": "^1.1",
@@ -138,6 +140,9 @@
             },
             "drupal/config_ignore": {
                 "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-06-05/offset-error-within-2972302-6.patch"
+            },
+            "drupal/scheduled_updates": {
+                "Scheduled Updates does not work with Content Moderation - https://www.drupal.org/project/scheduled_updates/issues/2821916": "https://www.drupal.org/files/issues/scheduled_updates_does-2821916-7.patch"
             },
             "drupal/field_group": {
                 "Do not translate field group labels using interface translation. - https://www.drupal.org/project/field_group/issues/2846617": "https://www.drupal.org/files/issues/2018-05-10/2846617-16-use-config-translations-for-field-group.patch"

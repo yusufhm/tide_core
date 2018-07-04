@@ -18,6 +18,7 @@ module:
   config_split: 0
   config_update: 0
   content_moderation: 0
+  content_moderation_scheduled_updates: 0
   ctools: 0
   datetime: 0
   diff: 0
@@ -72,6 +73,7 @@ module:
   path: 0
   redirect: 0
   redis: 0
+  scheduled_updates: 0
   schemata: 0
   schemata_json_schema: 0
   search_api: 0

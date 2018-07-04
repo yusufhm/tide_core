@@ -218,6 +218,8 @@ config_devel:
     - paragraphs.paragraphs_type.contact_us
     - paragraphs.paragraphs_type.phone
     - paragraphs.paragraphs_type.social_link
+    - field.field.node.landing_page.scheduled_archiving
+    - field.field.node.landing_page.scheduled_publishing
   optional:
     - jsonapi_extras.jsonapi_resource_config.node--landing_page
     - jsonapi_extras.jsonapi_resource_config.block_content--campaign

@@ -39,6 +39,8 @@ config_devel:
     - field.field.node.page.field_tags
     - field.field.node.page.field_topic
     - field.storage.node.field_page_intro_text
+    - field.field.node.page.scheduled_archiving
+    - field.field.node.page.scheduled_publishing
   optional:
     - jsonapi_extras.jsonapi_resource_config.node--page
     - simple_sitemap.bundle_settings.node.page
