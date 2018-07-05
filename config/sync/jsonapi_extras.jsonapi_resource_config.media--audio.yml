@@ -111,7 +111,9 @@ resourceFields:
     fieldName: created
     publicName: created
     enhancer:
-      id: ''
+      id: date_time
+      settings:
+        dateTimeFormat: 'Y-m-d\TH:i:sP'
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
@@ -119,7 +121,9 @@ resourceFields:
     fieldName: changed
     publicName: changed
     enhancer:
-      id: ''
+      id: date_time
+      settings:
+        dateTimeFormat: 'Y-m-d\TH:i:sP'
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
