@@ -1,0 +1,192 @@
+<?php
+
+/**
+ * @file
+ * Installation functions for Tide Core.
+ */
+
+use Drupal\filter\Entity\FilterFormat;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\user\Entity\User;
+use Drupal\workflows\Entity\Workflow;
+
+/**
+ * Implements hook_install().
+ */
+function tide_core_install() {
+  // Assign user 1 the "administrator" role.
+  $user = User::load(1);
+  $user->roles[] = 'administrator';
+  $user->save();
+
+  // Remove the default Plain Text format from Core.
+  try {
+    $plain_text = FilterFormat::load('plain_text');
+    if ($plain_text) {
+      $plain_text->delete();
+      \Drupal::cache('config')->delete('filter.format.plain_text');
+    }
+  }
+  catch (Exception $exception) {
+    watchdog_exception('tide_core', $exception);
+  }
+
+  // Don't do anything else during config sync.
+  if (\Drupal::isConfigSyncing()) {
+    return;
+  }
+
+  // Restrict user registration to admin role creation.
+  \Drupal::configFactory()
+    ->getEditable('user.settings')
+    ->set('register', USER_REGISTER_ADMINISTRATORS_ONLY)
+    ->save(TRUE);
+
+  // Creates terms for Topic vocabulary.
+  _tide_core_create_topic_terms();
+
+  // Update default Editorial workflow of Content Moderation.
+  _tide_core_update_editorial_workflow();
+
+  $functions = get_defined_functions();
+  foreach ($functions['user'] as $function) {
+    if (strpos($function, 'tide_core_update_') === 0) {
+      call_user_func($function);
+    }
+  }
+}
+
+/**
+ * Creates terms for Topic vocabulary.
+ */
+function _tide_core_create_topic_terms() {
+  $vid = 'topic';
+
+  $terms = [
+    'Arts',
+    'Business',
+    'Education',
+  ];
+  foreach ($terms as $term) {
+    Term::create([
+      'name' => $term,
+      'vid' => $vid,
+      'parent' => [],
+    ])->save();
+  }
+}
+
+/**
+ * Update default Editorial workflow of Content Moderation.
+ */
+function _tide_core_update_editorial_workflow() {
+  $editorial_workflow = Workflow::load('editorial');
+  if ($editorial_workflow) {
+    $type_settings = [
+      'states' => [
+        'draft' => [
+          'label' => 'Draft',
+          'published' => FALSE,
+          'default_revision' => FALSE,
+          'weight' => -10,
+        ],
+        'needs_review' => [
+          'published' => FALSE,
+          'default_revision' => FALSE,
+          'label' => 'Needs Review',
+          'weight' => -9,
+        ],
+        'published' => [
+          'label' => 'Published',
+          'published' => TRUE,
+          'default_revision' => TRUE,
+          'weight' => -8,
+        ],
+        'archived' => [
+          'label' => 'Archived',
+          'weight' => -7,
+          'published' => FALSE,
+          'default_revision' => TRUE,
+        ],
+      ],
+      'transitions' => [
+        'create_new_draft' => [
+          'label' => 'Create New Draft',
+          'from' => ['draft', 'published'],
+          'to' => 'draft',
+          'weight' => -10,
+        ],
+        'needs_review' => [
+          'label' => 'Needs Review',
+          'from' => ['draft'],
+          'to' => 'needs_review',
+          'weight' => -9,
+        ],
+        'needs_review_draft' => [
+          'label' => 'Send back to Draft',
+          'from' => ['needs_review'],
+          'to' => 'draft',
+          'weight' => -8,
+        ],
+        'publish' => [
+          'label' => 'Publish',
+          'from' => ['draft', 'needs_review', 'published'],
+          'to' => 'published',
+          'weight' => -7,
+        ],
+        'archive' => [
+          'label' => 'Archive',
+          'from' => ['published'],
+          'to' => 'archived',
+          'weight' => -6,
+        ],
+        'archived_draft' => [
+          'label' => 'Restore to Draft',
+          'from' => ['archived'],
+          'to' => 'draft',
+          'weight' => -5,
+        ],
+        'archived_published' => [
+          'label' => 'Restore',
+          'from' => ['archived'],
+          'to' => 'published',
+          'weight' => -4,
+        ],
+      ],
+      'entity_types' => [],
+    ];
+    $editorial_workflow->set('type_settings', $type_settings);
+    $editorial_workflow->save();
+  }
+}
+
+/**
+ * Add field storage for Show Related Content and Show Social Sharing.
+ */
+function tide_core_update_8001() {
+  module_load_include('inc', 'tide_core', 'includes/helpers');
+  $config_location = [drupal_get_path('module', 'tide_core') . '/config/install'];
+  _tide_import_single_config('field.storage.node.field_show_related_content', $config_location);
+  _tide_import_single_config('field.storage.node.field_show_social_sharing', $config_location);
+}
+
+/**
+ * Add field storage for Featured Image.
+ */
+function tide_core_update_8002() {
+  module_load_include('inc', 'tide_core', 'includes/helpers');
+  $config_location = [drupal_get_path('module', 'tide_core') . '/config/install'];
+  _tide_import_single_config('field.storage.node.field_featured_image', $config_location);
+}
+
+/**
+ * Enable Pathauto with default config.
+ */
+function tide_core_update_8003() {
+  /** @var \Drupal\Core\Extension\ModuleInstallerInterface $module_installer */
+  $module_installer = \Drupal::service('module_installer');
+  $module_installer->install(['pathauto']);
+  module_load_include('inc', 'tide_core', 'includes/helpers');
+  $config_location = [drupal_get_path('module', 'tide_core') . '/config/optional'];
+  _tide_import_single_config('pathauto.pattern.content_title', $config_location);
+}

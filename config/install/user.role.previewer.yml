@@ -1,0 +1,7 @@
+id: previewer
+label: Previewer
+langcode: en
+weight: 5
+is_admin: null
+permissions:
+  - 'view any unpublished content'
