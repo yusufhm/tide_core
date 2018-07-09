@@ -51,6 +51,8 @@ dependencies:
   - password_strength:password_strength
   - pathauto:pathauto
   - redirect:redirect
+  - scheduled_updates:scheduled_updates
+  - content_moderation_scheduled_updates:content_moderation_scheduled_updates
   - simple_sitemap:simple_sitemap
   - seckit:seckit
   - simple_sitemap:simple_sitemap
@@ -101,6 +103,14 @@ config_devel:
     - wysiwyg_template.wysiwyg_template.blockquote
     - wysiwyg_template.wysiwyg_template.primary_button
     - wysiwyg_template.wysiwyg_template.secondary_button
+    - field.storage.node.scheduled_archiving
+    - field.storage.node.scheduled_publishing
+    - field.storage.scheduled_update.field_moderation_state_archived
+    - field.storage.scheduled_update.field_moderation_state_published
+    - scheduled_updates.scheduled_update_type.scheduled_archiving
+    - scheduled_updates.scheduled_update_type.scheduled_publishing
+    - scheduled_update.field_moderation_state_published
+    - scheduled_update.field_moderation_state_archived
   optional:
     - core.entity_form_display.media.file.default
     - core.entity_form_display.media.image.default
