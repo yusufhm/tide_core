@@ -156,7 +156,9 @@ resourceFields:
     fieldName: field_paragraph_date
     publicName: field_paragraph_date
     enhancer:
-      id: ''
+      id: date_time_from_string
+      settings:
+        dateTimeFormat: 'Y-m-d\TH:i:sP'
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
