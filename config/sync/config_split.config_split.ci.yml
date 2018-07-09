@@ -9,6 +9,7 @@ module: {  }
 theme: {  }
 blacklist: {  }
 graylist:
+  - simple_sitemap.settings
   - tide_media.settings
 graylist_dependents: true
 graylist_skip_equal: true

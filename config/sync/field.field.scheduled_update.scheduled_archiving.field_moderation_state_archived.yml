@@ -1,0 +1,21 @@
+uuid: 24d0dda3-9d10-4861-97a9-0be3c9e57804
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.scheduled_update.field_moderation_state_archived
+    - scheduled_updates.scheduled_update_type.scheduled_archiving
+id: scheduled_update.scheduled_archiving.field_moderation_state_archived
+field_name: field_moderation_state_archived
+entity_type: scheduled_update
+bundle: scheduled_archiving
+label: 'Moderation state'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: archived
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -39,6 +39,7 @@ function vicgovau_demo_create_media_embedded_video() {
         'field_media_license' => [['value' => 'cc4']],
         'field_media_restricted' => [['value' => VicgovauDemoHelper::randomBool()]],
         'field_media_site' => VicgovauDemoHelper::getFieldValueForSiteSections($site_section),
+        'field_media_link' => [['value' => 'View transcript']],
       ];
 
       $video = Media::create($video_data);

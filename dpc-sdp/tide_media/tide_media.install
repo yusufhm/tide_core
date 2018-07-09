@@ -32,3 +32,51 @@ function tide_media_install() {
       ->save();
   }
 }
+
+/**
+ * Change View transcript text in embedded video.
+ */
+function tide_media_update_8001(&$sandbox) {
+  $ids = [];
+  $videos = \Drupal::entityQuery('media')
+    ->condition('bundle', 'embedded_video')
+    ->execute();
+  if ($videos) {
+    foreach ($videos as $id) {
+      $ids[] = $id;
+    }
+  }
+
+  if (!isset($sandbox['current'])) {
+    $sandbox['current'] = 0;
+    $sandbox['max'] = count($ids);
+  }
+
+  /** @var \Drupal\Core\Entity\EntityStorageInterface $entity_storage */
+  $entity_storage = \Drupal::entityTypeManager()->getStorage('media');
+
+  $limit = 20;
+  $ids = array_slice($ids, $sandbox['current'], $limit);
+  foreach ($ids as $id) {
+    try {
+      /** @var \Drupal\media\Entity\Media $video */
+      $video = $entity_storage->load($id);
+      if ($video->hasField('field_media_link')) {
+        $link_text = $video->get('field_media_link')->getString();
+        if ($link_text !== 'View transcript') {
+          $video->set('field_media_link', 'View transcript');
+          $video->setNewRevision(FALSE);
+          $video->save();
+        }
+      }
+    }
+    catch (Exception $exception) {
+      watchdog_exception('tide_media', $exception);
+    }
+
+    // Update the progress.
+    $sandbox['current']++;
+  }
+
+  $sandbox['#finished'] = empty($sandbox['max']) ? 1 : ($sandbox['current'] / $sandbox['max']);
+}

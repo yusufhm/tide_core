@@ -99,18 +99,18 @@ class AliasStorageHelper {
    *
    * @param array $path
    *   The path.
-   * @param string $site_url
-   *   The site URL with scheme and domain if the path alias is an absolute URL.
+   * @param string $site_base_url
+   *   The site base URL if the path alias is an absolute URL.
    *
    * @return string
    *   The raw internal alias without site prefix.
    */
-  public function getPathAliasWithoutSitePrefix(array $path, $site_url = '') {
+  public function getPathAliasWithoutSitePrefix(array $path, $site_base_url = '') {
     $pattern = '/^\/site\-(\d+)\//';
-    if ($site_url) {
-      $pattern = '/' . preg_quote($site_url, '/') . '\/site\-(\d+)\//';
+    if ($site_base_url) {
+      $pattern = '/' . preg_quote($site_base_url, '/') . '\/site\-(\d+)\//';
     }
-    return preg_replace($pattern, $site_url . '/', $path['alias']);
+    return preg_replace($pattern, $site_base_url . '/', $path['alias']);
   }
 
   /**

@@ -38,6 +38,8 @@ config_devel:
     - field.field.node.news.field_topic
     - field.storage.node.field_news_date
     - field.storage.news.field_news_intro_text
+    - field.field.node.news.scheduled_archiving
+    - field.field.node.news.scheduled_publishing
   optional:
     - jsonapi_extras.jsonapi_resource_config.node--news
     - simple_sitemap.bundle_settings.node.news
