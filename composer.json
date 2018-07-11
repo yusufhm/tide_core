@@ -198,6 +198,13 @@
             "@app:cleanup",
             "@app:build"
         ],
+        "app:rebuild-full": [
+            "@app:cleanup",
+            "@bay:rebuild-full",
+            "@composer install -n --ansi --prefer-dist",
+            "@app:db-import",
+            "@app:search-index"
+        ],
         "app:cs": [
             "phpcs --colors"
         ],
@@ -234,7 +241,8 @@
             "@composer bay:cli -- drush search-api-clear",
             "@composer bay:cli -- drush search-api-index 0 50"
         ],
-        "bay:start": "docker-compose up -d --build",
+        "bay:start": "docker-compose up -d",
+        "bay:rebuild-full": "docker-compose up -d --build --force-recreate",
         "bay:restart": "docker-compose restart",
         "bay:stop": "docker-compose stop",
         "bay:destroy": "docker-compose down -v",
