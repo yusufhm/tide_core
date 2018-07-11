@@ -33,7 +33,7 @@ jobs:
       - run:
           name: Start Bay stack.
           command: |
-            composer bay:start
+            composer bay:start -- --build
             sleep 10 # wait for mariadb to startup
             docker ps -a
       - run:
@@ -85,7 +85,7 @@ jobs:
       - run:
           name: Start Bay stack.
           command: |
-            composer bay:start
+            composer bay:start -- --build
             sleep 10 # wait for mariadb to startup
             docker ps -a
       - run:
