@@ -7,6 +7,7 @@ echo "Running database updates"
 # Use this command to debug during the build process
 # /app/scripts/xdebug.sh /app/vendor/bin/drush -r /app/docroot updb -y
 drush updb -y
+drush entup -y
 echo "Importing Drupal configuration"
 drush cim -y
 drush cr -y
