@@ -32,6 +32,9 @@ services:
   mariadb:
     ports:
       - 13306:3306
+  elasticsearch:
+    ports:
+      - 19200:9200
 networks:
   amazeeio-network:
     external: true
