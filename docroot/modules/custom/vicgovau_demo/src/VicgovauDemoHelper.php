@@ -240,6 +240,30 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Select random Tags.
+   *
+   * @param int $count
+   *   The number of tags to return.
+   *
+   * @return \Drupal\taxonomy\TermInterface[]
+   *   The list of tags, keyed by tag id.
+   */
+  public static function randomTags($count = 3) {
+    $repository = VicgovauDemoRepository::getInstance();
+    $tags = $repository->getDemoEntities('taxonomy_term', 'tags');
+    if (count($tags)) {
+      $random_tags = [];
+      foreach (array_rand($tags, $count) as $id) {
+        /** @var \Drupal\taxonomy\TermInterface $tag */
+        $tag = $tags[$id];
+        $random_tags[$tag->id()] = $tag;
+      }
+      return $random_tags;
+    }
+    return [];
+  }
+
+  /**
    * Select a random Campaign.
    *
    * @return \Drupal\block_content\Entity\BlockContent
