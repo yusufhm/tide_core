@@ -1,20 +1,10 @@
-uuid: 3ba5422b-fd4a-4c4a-8b75-77a426c12077
+uuid: 1386a6e2-b8df-4f5a-b3d7-a3fb8dafbb53
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_paragraph_summary
     - paragraphs.paragraphs_type.card_navigation
-  module:
-    - allowed_formats
-    - text
-third_party_settings:
-  allowed_formats:
-    plain_text: plain_text
-    rich_text: '0'
-    admin_text: '0'
-_core:
-  default_config_hash: tHwfVw8_djKqHqAXS2TwFfGEJ3gpapAZFMpe3dApyug
 id: paragraph.card_navigation.field_paragraph_summary
 field_name: field_paragraph_summary
 entity_type: paragraph
@@ -26,4 +16,4 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text_long
+field_type: string_long

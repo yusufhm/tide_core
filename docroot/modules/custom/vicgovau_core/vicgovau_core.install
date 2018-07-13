@@ -8,6 +8,8 @@
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Utility\UpdateException;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\field\Entity\FieldStorageConfig;
 
 /**
  * Implements hook_install().
@@ -150,5 +152,196 @@ function vicgovau_core_update_8005() {
   $moduleHandler = \Drupal::service('module_handler');
   if ($moduleHandler->moduleExists('purge_queuer_url')) {
     \Drupal::service('purge_queuer_url.registry')->clear();
+  }
+}
+
+/**
+ * Create temporary field and add to paragraph bundle [SDPA-552].
+ */
+function vicgovau_core_update_8006() {
+  // Create temporary field storage.
+  FieldStorageConfig::create([
+    'field_name' => 'field_paragraph_summary_temp',
+    'entity_type' => 'paragraph',
+    'type' => 'string_long',
+    'cardinality' => 1,
+  ])->save();
+
+  // List all bundles that have field_paragraph_summary field.
+  $bundles = \Drupal::service('entity_type.bundle.info')->getBundleInfo('paragraph');
+
+  $entityFieldManager = \Drupal::service('entity_field.manager');
+
+  foreach ($bundles as $bundle_key => $info) {
+    $fields = $entityFieldManager->getFieldDefinitions('paragraph', $bundle_key);
+    // Only add temp field to bundle that have field_paragraph_summary.
+    if (isset($fields['field_paragraph_summary'])) {
+      $field_storage = FieldStorageConfig::loadByName('paragraph', 'field_paragraph_summary_temp');
+      $field = FieldConfig::loadByName('paragraph', $bundle_key, 'field_paragraph_summary_temp');
+
+      if (empty($field)) {
+        $field = FieldConfig::create([
+          'field_storage' => $field_storage,
+          'bundle' => $bundle_key,
+          'label' => 'Summary Temp',
+        ]);
+        $field->save();
+      }
+    }
+  }
+}
+
+/**
+ * Migrating data to the temporary field using Batch API [SDPA-552].
+ */
+function vicgovau_core_update_8007(&$sandbox) {
+  // List all bundles that have field_paragraph_summary field.
+  $bundles = \Drupal::service('entity_type.bundle.info')->getBundleInfo('paragraph');
+
+  $entityFieldManager = \Drupal::service('entity_field.manager');
+  $need_bundles = [];
+  foreach ($bundles as $bundle_key => $info) {
+    $fields = $entityFieldManager->getFieldDefinitions('paragraph', $bundle_key);
+    // Store bundle names that have field_paragraph_summary.
+    if (isset($fields['field_paragraph_summary'])) {
+      $need_bundles[] = $bundle_key;
+    }
+  }
+
+  $query = Drupal::service('entity.query')->get('paragraph');
+
+  if (!isset($sandbox['total'])) {
+    $entity_ids = $query
+      ->condition('type', $need_bundles, 'IN')
+      ->count()
+      ->execute();
+
+    $sandbox['total'] = $entity_ids;
+    $sandbox['current'] = 0;
+  }
+
+  $entity_per_batch = 25;
+
+  $entity_ids = $query
+    ->condition('type', $need_bundles, 'IN')
+    ->range($sandbox['current'], $sandbox['current'] + $entity_per_batch)
+    ->execute();
+
+  if (is_array($entity_ids) && count($entity_ids) > 0) {
+    foreach ($entity_ids as $id) {
+      $entity = \Drupal::entityTypeManager()->getStorage('paragraph')->load($id);
+      $fields = $entity->getFields();
+      if (isset($fields['field_paragraph_summary']) && isset($fields['field_paragraph_summary_temp'])) {
+        $entity->set('field_paragraph_summary_temp', $entity->get('field_paragraph_summary')->value);
+        // We are not going to migrate revisions.
+        $entity->setNewRevision(FALSE);
+        $entity->save();
+        $sandbox['current']++;
+      }
+    }
+  }
+
+  drupal_set_message($sandbox['current'] . ' field_paragraph_summary_temp processed.');
+
+  $sandbox['#finished'] = ($sandbox['current'] / $sandbox['total']);
+}
+
+/**
+ * Delete and re-create the field with new definitions [SDPA-552].
+ */
+function vicgovau_core_update_8008() {
+  // No need to call field_purge_batch() after the field is deleted
+  // as cron will take care of this process for us.
+  $bundles = \Drupal::service('entity_type.bundle.info')->getBundleInfo('paragraph');
+  $entityFieldManager = \Drupal::service('entity_field.manager');
+  foreach ($bundles as $bundle_key => $info) {
+    $fields = $entityFieldManager->getFieldDefinitions('paragraph', $bundle_key);
+    if (isset($fields['field_paragraph_summary'])) {
+      $fields['field_paragraph_summary']->delete();
+    }
+  }
+
+  // Import the field back in using new config.
+  module_load_include('inc', 'tide_core', 'includes/helpers');
+  $config_location = [drupal_get_path('module', 'tide_landing_page') . '/config/install'];
+
+  _tide_import_single_config('field.storage.paragraph.field_paragraph_summary', $config_location);
+  _tide_import_single_config('field.field.paragraph.banner.field_paragraph_summary', $config_location);
+  _tide_import_single_config('field.field.paragraph.card_event.field_paragraph_summary', $config_location);
+  _tide_import_single_config('field.field.paragraph.card_navigation.field_paragraph_summary', $config_location);
+  _tide_import_single_config('field.field.paragraph.card_navigation_featured.field_paragraph_summary', $config_location);
+  _tide_import_single_config('field.field.paragraph.card_promotion.field_paragraph_summary', $config_location);
+  _tide_import_single_config('field.field.paragraph.keydates.field_paragraph_summary', $config_location);
+  _tide_import_single_config('field.field.paragraph.links.field_paragraph_summary', $config_location);
+  _tide_import_single_config('field.field.paragraph.related_links.field_paragraph_summary', $config_location);
+}
+
+/**
+ * Migrating data to new field using Batch API. [SDPA-552].
+ */
+function vicgovau_core_update_8009(&$sandbox) {
+  // List all bundles that have field_paragraph_summary_temp field.
+  $bundles = \Drupal::service('entity_type.bundle.info')->getBundleInfo('paragraph');
+  /* @var $entityFieldManager Drupal\Core\Entity\EntityFieldManager */
+  $entityFieldManager = \Drupal::service('entity_field.manager');
+  $need_bundles = [];
+  foreach ($bundles as $bundle_key => $info) {
+    $fields = $entityFieldManager->getFieldDefinitions('paragraph', $bundle_key);
+    // Store bundle names that have field_paragraph_summary_temp.
+    if (isset($fields['field_paragraph_summary_temp'])) {
+      $need_bundles[] = $bundle_key;
+    }
+  }
+
+  $query = Drupal::service('entity.query')->get('paragraph');
+
+  if (!isset($sandbox['total'])) {
+    $entity_ids = $query
+      ->condition('type', $need_bundles, 'IN')
+      ->count()
+      ->execute();
+
+    $sandbox['total'] = $entity_ids;
+    $sandbox['current'] = 0;
+  }
+
+  $entity_per_batch = 25;
+
+  $entity_ids = $query
+    ->condition('type', $need_bundles, 'IN')
+    ->range($sandbox['current'], $sandbox['current'] + $entity_per_batch)
+    ->execute();
+
+  if (is_array($entity_ids) && count($entity_ids) > 0) {
+    foreach ($entity_ids as $id) {
+      $entity = \Drupal::entityTypeManager()->getStorage('paragraph')->load($id);
+      $fields = $entity->getFields();
+      if (isset($fields['field_paragraph_summary_temp']) && isset($fields['field_paragraph_summary'])) {
+        // Strip out html tags when re-import.
+        $entity->set('field_paragraph_summary', strip_tags($entity->get('field_paragraph_summary_temp')->value));
+        $entity->setNewRevision(FALSE);
+        $entity->save();
+        $sandbox['current']++;
+      }
+    }
+  }
+
+  drupal_set_message($sandbox['current'] . ' field_paragraph_summary processed.');
+
+  $sandbox['#finished'] = ($sandbox['current'] / $sandbox['total']);
+}
+
+/**
+ * Delete temporary field. [SDPA-552].
+ */
+function vicgovau_core_update_8010() {
+  // Still perform the deletion process because we created the temp field.
+  $bundles = \Drupal::service('entity_type.bundle.info')->getBundleInfo('paragraph');
+  $entityFieldManager = \Drupal::service('entity_field.manager');
+  foreach ($bundles as $bundle_key => $info) {
+    $fields = $entityFieldManager->getFieldDefinitions('paragraph', $bundle_key);
+    if (isset($fields['field_paragraph_summary_temp'])) {
+      $fields['field_paragraph_summary_temp']->delete();
+    }
   }
 }

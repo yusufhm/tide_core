@@ -24,7 +24,7 @@ bundle: card_promotion
 mode: default
 content:
   field_paragraph_date:
-    weight: 6
+    weight: 4
     label: hidden
     settings:
       format_type: medium
@@ -33,7 +33,7 @@ content:
     type: datetime_default
     region: content
   field_paragraph_link:
-    weight: 7
+    weight: 5
     label: above
     settings:
       trim_length: 80
@@ -45,7 +45,7 @@ content:
     type: link
     region: content
   field_paragraph_media:
-    weight: 4
+    weight: 2
     label: hidden
     settings:
       image_style: ''
@@ -54,23 +54,11 @@ content:
     type: media_thumbnail
     region: content
   field_paragraph_summary:
-    weight: 3
+    type: basic_string
+    weight: 1
     label: hidden
-    settings:
-      trim_length: 200
-      trim_type: chars
-      trim_suffix: ''
-      wrap_class: trimmed
-      more_text: More
-      more_class: more-link
-      trim_options:
-        text: true
-        trim_zero: false
-      wrap_output: false
-      more_link: false
-      summary_handler: full
+    settings: {  }
     third_party_settings: {  }
-    type: smart_trim
     region: content
   field_paragraph_title:
     weight: 0
@@ -92,7 +80,7 @@ content:
     type: smart_trim
     region: content
   field_paragraph_topic:
-    weight: 5
+    weight: 3
     label: hidden
     settings:
       link: true

@@ -4,14 +4,6 @@ dependencies:
   config:
     - field.storage.paragraph.field_paragraph_summary
     - paragraphs.paragraphs_type.card_event
-  module:
-    - allowed_formats
-    - text
-third_party_settings:
-  allowed_formats:
-    plain_text: plain_text
-    rich_text: '0'
-    admin_text: '0'
 id: paragraph.card_event.field_paragraph_summary
 field_name: field_paragraph_summary
 entity_type: paragraph
@@ -23,4 +15,4 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text_long
+field_type: string_long
