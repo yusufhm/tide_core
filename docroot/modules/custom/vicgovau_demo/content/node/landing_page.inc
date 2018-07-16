@@ -75,6 +75,14 @@ function vicgovau_demo_create_node_landing_page() {
       }
     }
 
+    // Add tags.
+    $tags = VicgovauDemoHelper::randomTags(3);
+    if (!empty($tags)) {
+      foreach ($tags as $tag_id => $tag) {
+        $node_data['field_tags'][] = ['target_id' => $tag_id];
+      }
+    }
+
     // Add Key Journeys.
     $key_journeys_data = [
       'type' => 'key_journeys',

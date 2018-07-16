@@ -12,8 +12,10 @@ Feature: Node path alias with site prefix
       | Test Site 2 | 0      | 999992 |
       | Test Site 3 | 0      | 999993 |
     Given test content:
-      | title               | moderation_state | field_node_site          | field_node_primary_site | field_topic | body | nid    |
-      | [TEST] Test content | published        | Test Site 1, Test Site 2 | Test Site 1             | Test Topic  | Test | 999999 |
+      | title                  | moderation_state | field_node_site          | field_node_primary_site | field_topic | body            | nid    |
+      | [TEST] Test content    | published        | Test Site 1, Test Site 2 | Test Site 1             | Test Topic  | Test            | 999999 |
+      | [TEST] TestUniqueTitle | published        | Test Site 1              | Test Site 1             | Test Topic  | TestUniqueBody1 | 999998 |
+      | [TEST] TestUniqueTitle | published        | Test Site 1              | Test Site 1             | Test Topic  | TestUniqueBody2 | 999997 |
     Given I am logged in as a user with the "approver" role
 
     When I edit test "[TEST] Test content"
@@ -55,3 +57,14 @@ Feature: Node path alias with site prefix
     And I should see the text "/site-999991/another-alias-for-test"
     And I should not see the text "/site-999992/another-alias-for-test"
     And I should see the text "/site-999993/another-alias-for-test"
+
+    # Ensure nodes having same title/site not to have duplicate alias.
+    When I visit "/site-999991/test-testuniquetitle"
+    Then the response status code should be 200
+    And I should see the text "TestUniqueBody1"
+    And I should not see the text "TestUniqueBody2"
+
+    When I visit "/site-999991/test-testuniquetitle-0"
+    Then the response status code should be 200
+    And I should not see the text "TestUniqueBody1"
+    And I should see the text "TestUniqueBody2"

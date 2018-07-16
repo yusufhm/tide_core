@@ -521,9 +521,7 @@ function tide_site_path_update($path) {
       if (!$alias_helper->isPathHasSitePrefix($path)) {
         /** @var \Drupal\tide_site\AliasStorage $alias_storage */
         $alias_storage = \Drupal::service('tide_site.alias_storage');
-        $alias_storage->delete([
-          'pid' => $path['pid'],
-        ], FALSE);
+        $alias_storage->delete(['pid' => $path['pid']], FALSE);
       }
     }
   }
@@ -569,6 +567,7 @@ function tide_site_node_presave($node) {
     $helper = \Drupal::service('tide_site.helper');
     $new_sites = $helper->getEntitySites($node, TRUE) ?: ['ids' => []];
     $old_sites = $helper->getEntitySites($old_node, TRUE) ?: ['ids' => []];
+
     $unassigned_sites = array_diff($old_sites['ids'], $new_sites['ids']);
     if ($unassigned_sites) {
       /** @var \Drupal\tide_site\AliasStorage $alias_storage */
@@ -581,6 +580,13 @@ function tide_site_node_presave($node) {
         ], FALSE, FALSE);
       }
     }
+
+    $new_assigned_sites = array_diff($new_sites['ids'], $old_sites['ids']);
+    if ($new_assigned_sites) {
+      /** @var \Drupal\tide_site\AliasStorageHelper $alias_helper */
+      $alias_helper = \Drupal::service('tide_site.alias_storage_helper');
+      $alias_helper->regenerateNodeSiteAliases($node, $new_assigned_sites);
+    }
   }
 }
 
@@ -589,9 +595,14 @@ function tide_site_node_presave($node) {
  */
 function tide_site_node_update($node) {
   // Regenerate site aliases of the updated node.
-  /** @var \Drupal\tide_site\AliasStorageHelper $alias_helper */
-  $alias_helper = \Drupal::service('tide_site.alias_storage_helper');
-  $alias_helper->regenerateNodeSiteAliases($node);
+  /** @var \Drupal\tide_site\AliasStorage $alias_storage */
+  $alias_storage = \Drupal::service('tide_site.alias_storage');
+  /** @var \Drupal\node\NodeInterface $node */
+  if (!$alias_storage->load(['source' => '/node/' . $node->id()])) {
+    /** @var \Drupal\tide_site\AliasStorageHelper $alias_helper */
+    $alias_helper = \Drupal::service('tide_site.alias_storage_helper');
+    $alias_helper->regenerateNodeSiteAliases($node);
+  }
 }
 
 /**

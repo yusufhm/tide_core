@@ -9,7 +9,6 @@ dependencies:
     - paragraphs.paragraphs_type.banner
   module:
     - link
-    - text
 _core:
   default_config_hash: _NnjV_hpi_faYdehzEDrYmAOhv6LLuQ_1hs247fDDAY
 id: paragraph.banner.default
@@ -30,11 +29,11 @@ content:
     type: link
     region: content
   field_paragraph_summary:
+    type: basic_string
     weight: 1
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
     region: content
   field_paragraph_title:
     weight: 0

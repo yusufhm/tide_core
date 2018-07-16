@@ -1,18 +1,16 @@
-uuid: 2f305f06-a9ae-4e5b-9b0a-e6590f666d95
+uuid: 4c660c06-d59a-4e7a-b8ce-d383cf2bccd5
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-    - text
-_core:
-  default_config_hash: 0fX0Z1gwoiyjNu0Po2YQGP_Q5xAEp9Kb1z0mfom0FVQ
 id: paragraph.field_paragraph_summary
 field_name: field_paragraph_summary
 entity_type: paragraph
-type: text_long
-settings: {  }
-module: text
+type: string_long
+settings:
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

@@ -11,7 +11,6 @@ dependencies:
   module:
     - link
     - media
-    - text
 _core:
   default_config_hash: Uv0ymv7_b3vkySnCAuvw-jtWsiMP5Gu_cVf6SzWj-B4
 id: paragraph.card_navigation_featured.default
@@ -41,11 +40,11 @@ content:
     type: media_thumbnail
     region: content
   field_paragraph_summary:
+    type: basic_string
     weight: 2
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
     region: content
   field_paragraph_title:
     weight: 1

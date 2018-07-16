@@ -26,10 +26,10 @@ content:
     type: link
     region: content
   field_paragraph_summary:
-    weight: 1
+    type: text_default
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
     region: content
 hidden: {  }

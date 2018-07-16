@@ -1,20 +1,10 @@
-uuid: 745ac8f5-7d07-4100-a403-5f5a80fb5025
+uuid: f1db4d1a-5ed5-4f42-94db-651098b9f1ca
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_paragraph_summary
     - paragraphs.paragraphs_type.banner
-  module:
-    - allowed_formats
-    - text
-third_party_settings:
-  allowed_formats:
-    rich_text: '0'
-    admin_text: '0'
-    plain_text: '0'
-_core:
-  default_config_hash: pVAatTE7a9VJ8N97LuGWUX8OHcgWRoD4OUKOEMbHm6I
 id: paragraph.banner.field_paragraph_summary
 field_name: field_paragraph_summary
 entity_type: paragraph
@@ -22,8 +12,8 @@ bundle: banner
 label: Summary
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text_long
+field_type: string_long

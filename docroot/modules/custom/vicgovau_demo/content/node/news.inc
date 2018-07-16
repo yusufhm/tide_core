@@ -57,6 +57,14 @@ function vicgovau_demo_create_node_news() {
       'field_news_date' => [['value' => VicgovauDemoHelper::randomDate()]],
     ];
 
+    // Add tags.
+    $tags = VicgovauDemoHelper::randomTags(3);
+    if (!empty($tags)) {
+      foreach ($tags as $tag_id => $tag) {
+        $node_data['field_tags'][] = ['target_id' => $tag_id];
+      }
+    }
+
     // Add Related links.
     for ($j = 1; $j <= mt_rand(1, 5); $j++) {
       $link_field_value = VicgovauDemoHelper::randomLinkFieldValue();

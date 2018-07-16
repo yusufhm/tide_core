@@ -49,6 +49,14 @@ function vicgovau_demo_create_node_page() {
       ],
     ];
 
+    // Add tags.
+    $tags = VicgovauDemoHelper::randomTags(3);
+    if (!empty($tags)) {
+      foreach ($tags as $tag_id => $tag) {
+        $node_data['field_tags'][] = ['target_id' => $tag_id];
+      }
+    }
+
     // Add What's Next.
     for ($j = 1; $j <= mt_rand(1, 3); $j++) {
       $link_field_value = VicgovauDemoHelper::randomLinkFieldValue();
