@@ -14,7 +14,6 @@ dependencies:
     - address
     - datetime
     - link
-    - text
 id: paragraph.card_event.default
 targetEntityType: paragraph
 bundle: card_event
@@ -42,7 +41,7 @@ content:
     type: datetime_default
     region: content
   field_paragraph_location:
-    weight: 6
+    weight: 5
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -58,11 +57,11 @@ content:
     third_party_settings: {  }
     region: content
   field_paragraph_summary:
+    type: basic_string
     weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
     region: content
   field_paragraph_title:
     weight: 0
@@ -73,7 +72,7 @@ content:
     type: string
     region: content
   field_paragraph_topic:
-    weight: 7
+    weight: 6
     label: above
     settings:
       link: true

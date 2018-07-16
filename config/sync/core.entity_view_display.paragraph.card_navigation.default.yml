@@ -9,7 +9,6 @@ dependencies:
     - paragraphs.paragraphs_type.card_navigation
   module:
     - link
-    - text
 _core:
   default_config_hash: WIvxgZgOJckiqpyWM9o6Xz17xR_7viEMKzG-9SACjhs
 id: paragraph.card_navigation.default
@@ -30,11 +29,11 @@ content:
     type: link
     region: content
   field_paragraph_summary:
+    type: basic_string
     weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
     region: content
   field_paragraph_title:
     weight: 0

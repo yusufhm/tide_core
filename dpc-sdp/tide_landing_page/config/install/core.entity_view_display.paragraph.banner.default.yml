@@ -8,7 +8,6 @@ dependencies:
     - paragraphs.paragraphs_type.banner
   module:
     - link
-    - text
 id: paragraph.banner.default
 targetEntityType: paragraph
 bundle: banner
@@ -27,11 +26,11 @@ content:
     type: link
     region: content
   field_paragraph_summary:
+    type: basic_string
     weight: 1
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
     region: content
   field_paragraph_title:
     weight: 0
