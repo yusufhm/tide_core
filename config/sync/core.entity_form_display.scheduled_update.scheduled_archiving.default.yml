@@ -17,4 +17,4 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_moderation_state_1: true
+  field_moderation_state_archived: true

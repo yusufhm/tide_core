@@ -52,4 +52,5 @@ services:
       context: .
       dockerfile: Dockerfile.elasticsearch
     labels:
-      lagoon.type: elasticsearch
+      lagoon.type: custom
+      lagoon.template: .lagoon.elasticsearch.yml

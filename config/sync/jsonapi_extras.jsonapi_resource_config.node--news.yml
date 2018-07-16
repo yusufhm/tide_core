@@ -217,7 +217,9 @@ resourceFields:
     fieldName: field_news_date
     publicName: field_news_date
     enhancer:
-      id: ''
+      id: date_time_from_string
+      settings:
+        dateTimeFormat: 'Y-m-d\TH:i:sP'
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
@@ -288,6 +290,22 @@ resourceFields:
   field_topic:
     fieldName: field_topic
     publicName: field_topic
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  scheduled_archiving:
+    fieldName: scheduled_archiving
+    publicName: scheduled_archiving
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  scheduled_publishing:
+    fieldName: scheduled_publishing
+    publicName: scheduled_publishing
     enhancer:
       id: ''
     disabled: false
