@@ -3,7 +3,6 @@
     "description": "Core functionality for Tide Drupal 8 distribution",
     "type": "drupal-module",
     "license": "GPL-2.0+",
-    "version": "0.0.1",
     "require": {
         "ckeditor/fakeobjects": "^4.5",
         "ckeditor/iframe": "^4.5",
