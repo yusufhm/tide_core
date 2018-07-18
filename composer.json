@@ -20,7 +20,7 @@
         "drupal/environment_indicator": "^3.2",
         "drupal/events_log_track": "^1.1",
         "drupal/fakeobjects": "^1.0",
-        "drupal/fast_404": "dev-1.x",
+        "drupal/fast_404": "^dev-1.x",
         "drupal/field_group": "^3.0-beta1",
         "drupal/google_analytics": "^2.2",
         "drupal/linkit": "^5.0@beta",
@@ -118,7 +118,7 @@
                 "Allow entities to be generated if none exist - https://www.drupal.org/node/2910326": "https://www.drupal.org/files/issues/entity_reference_revisions-stop_checking_for_entities_before_generating_sample-2910326-2.patch"
             },
             "drupal/fast_404": {
-                "Incompatibility with Redirect module - https://www.drupal.org/node/2838359": "https://www.drupal.org/files/issues/fast_404-redirect-2838359-8.patch"
+                "Incompatibility with Redirect module - https://www.drupal.org/node/2838359": "https://www.drupal.org/files/issues/2018-06-07/fast_404-redirect-2838359-10.patch"
             },
             "drupal/maxlength": {
                 "Maxlength only for summary field - https://www.drupal.org/project/maxlength/issues/2798903": "https://www.drupal.org/files/issues/maxlength-limit_only_summary-2798903-2.patch"
