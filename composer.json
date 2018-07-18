@@ -48,6 +48,9 @@
         "drupal/viewsreference": "^2.0",
         "drupal/wysiwyg_template": "^2.0@beta"
     },
+    "require-dev": {
+        "dpc-sdp/tide_test": "@dev"
+    },
     "repositories": {
         "drupal": {
             "type": "composer",
