@@ -26,6 +26,7 @@ dependencies:
   - drupal:text
   - drupal:user
   - drupal:workflows
+  - dpc-sdp:tide_test
   - editor_advanced_link:editor_advanced_link
   - entity_reference_revisions:entity_reference_revisions
   - events_log_track:event_log_track
