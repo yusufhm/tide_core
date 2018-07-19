@@ -1,46 +1,12 @@
 <?php
 
-/**
- * @file
- * Tide Drupal context for Behat testing.
- */
-
-use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 use Behat\Gherkin\Node\TableNode;
-use Behat\Mink\Exception\ElementNotFoundException;
-use Behat\Mink\Exception\ExpectationException;
-use Drupal\DrupalExtension\Context\RawDrupalContext;
 use Drupal\system\Entity\Menu;
 
 /**
- * Defines application features from the specific context.
+ * Trait TideTrait.
  */
-class TideDrupalContext extends RawDrupalContext {
-
-  use TideTaxonomyTrait;
-
-  /**
-   * @var \Drupal\DrupalExtension\Context\DrupalContext
-   */
-  protected $drupalContext;
-
-  /**
-   * @BeforeScenario
-   */
-  public function getDrupalContext(BeforeScenarioScope $scope) {
-    /** @var \Behat\Behat\Context\Environment\InitializedContextEnvironment $environment */
-    $environment = $scope->getEnvironment();
-    $context_classes = $environment->getContextClasses();
-    $drupal_context_class = '\\Drupal\\DrupalExtension\\Context\\DrupalContext';
-    foreach ($context_classes as $context_class) {
-      $context = $environment->getContext($context_class);
-      if ($context instanceof $drupal_context_class) {
-        $this->drupalContext = $context;
-        return;
-      }
-    }
-    throw new \Exception('DrupalContext not found.');
-  }
+trait TideCommonTrait {
 
   /**
    * @Then I am in the :path path
@@ -118,7 +84,7 @@ class TideDrupalContext extends RawDrupalContext {
       }
     }
     else {
-      $this->drupalContext->assertAuthenticatedByRole($role);
+      $this->assertAuthenticatedByRole($role);
     }
   }
 
@@ -155,79 +121,6 @@ class TideDrupalContext extends RawDrupalContext {
   }
 
   /**
-   * @Then I see field :name
-   */
-  public function assertFieldExists($field_name) {
-    $page = $this->getSession()->getPage();
-    $field = $page->findField($field_name);
-    // Try to resolve by ID.
-    $field = $field ? $field : $page->findById($field_name);
-
-    if ($field === NULL) {
-      throw new ElementNotFoundException($this->getSession()
-        ->getDriver(), 'form field', 'id|name|label|value', $field_name);
-    }
-
-    return $field;
-  }
-
-  /**
-   * @Then I don't see field :name
-   */
-  public function assertFieldNotExists($field_name) {
-    $page = $this->getSession()->getPage();
-    $field = $page->findField($field_name);
-    // Try to resolve by ID.
-    $field = $field ? $field : $page->findById($field_name);
-
-    if ($field !== NULL) {
-      throw new ExpectationException(sprintf('A field "%s" appears on this page, but it should not.', $field_name), $this->getSession()
-        ->getDriver());
-    }
-  }
-
-  /**
-   * @Then field :name :exists on the page
-   */
-  public function assertFieldExistence($field_name, $exists) {
-    if ($exists == 'exists') {
-      $this->assertFieldExists($field_name);
-    }
-    else {
-      $this->assertFieldNotExists($field_name);
-    }
-  }
-
-  /**
-   * @Then field :name :disabled on the page
-   */
-  public function assertFieldState($field_name, $disabled) {
-    $field = $this->assertFieldExists($field_name);
-
-    if ($disabled == 'disabled' && !$field->hasAttribute('disabled')) {
-      throw new ExpectationException(sprintf('A field "%s" should be disabled, but it is not.', $field_name), $this->getSession()
-        ->getDriver());
-    }
-    elseif ($disabled != 'disabled' && $field->hasAttribute('disabled')) {
-      throw new ExpectationException(sprintf('A field "%s" should not be disabled, but it is.', $field_name), $this->getSession()
-        ->getDriver());
-    }
-  }
-
-  /**
-   * @Then field :name should be :presence on the page and have state :state
-   */
-  public function assertFieldExistsState($field_name, $presence, $state = 'enabled') {
-    if ($presence == 'present') {
-      $this->assertFieldExists($field_name);
-      $this->assertFieldState($field_name, $state);
-    }
-    else {
-      $this->assertFieldNotExists($field_name);
-    }
-  }
-
-  /**
    * @Then I wait for :sec second(s)
    */
   public function waitForSeconds($sec) {
@@ -251,19 +144,6 @@ class TideDrupalContext extends RawDrupalContext {
     $type_entity = \Drupal::entityManager()->getStorage('media_type')->load($type);
     if ($type_entity) {
       $type_entity->delete();
-    }
-  }
-
-  /**
-   * @Given no :vocabulary terms:
-   */
-  public function removeTerms($vocabulary, TableNode $termsTable) {
-    foreach ($termsTable->getColumn(0) as $name) {
-      $terms = \Drupal::service('entity_type.manager')->getStorage('taxonomy_term')->loadByProperties(['name' => $name, 'vid' => $vocabulary]);
-      /** @var \Drupal\taxonomy\Entity\Term $term */
-      foreach ($terms as $term) {
-        $term->delete();
-      }
     }
   }
 
@@ -306,6 +186,18 @@ class TideDrupalContext extends RawDrupalContext {
 
     $node->set('moderation_state', $new_state);
     $node->save();
+  }
+
+  /**
+   * Fills in form CKEditor field with specified id.
+   *
+   * Example: When I fill in CKEditor on field "edit-body-0-value" with "Test"
+   * Example: And I fill in CKEditor on field "edit-body-0-value" with "Test"
+   *
+   * @When /^I fill in CKEditor on field "([^"]*)" with "([^"]*)"$/
+   */
+  public function fillCkEditorField($field, $value) {
+    $this->getSession()->executeScript("CKEDITOR.instances[\"$field\"].setData(\"$value\");");
   }
 
 }
