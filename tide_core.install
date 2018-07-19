@@ -19,12 +19,13 @@ function tide_core_install() {
   $user->roles[] = 'administrator';
   $user->save();
 
-  // Remove the default Plain Text format from Core.
+  // Override default Plain Text format from Core.
   try {
     $plain_text = FilterFormat::load('plain_text');
     if ($plain_text) {
-      $plain_text->delete();
-      \Drupal::cache('config')->delete('filter.format.plain_text');
+      module_load_include('inc', 'tide_core', 'includes/helpers');
+      $config_location = [drupal_get_path('module', 'tide_core') . '/config/optional'];
+      _tide_import_single_config('filter.format.plain_text', $config_location);
     }
   }
   catch (Exception $exception) {
