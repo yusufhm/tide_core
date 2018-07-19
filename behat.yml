@@ -36,9 +36,9 @@ default:
         root: build/docroot
       selectors:
         message_selector: '.messages'
-        error_message_selector: '.messages.error'
-        success_message_selector: '.messages.status'
-        warning_message_selector: '.messages.warning'
+        error_message_selector: '.messages.messages--error'
+        success_message_selector: '.messages.messages--status'
+        warning_message_selector: '.messages.messages--warning'
       region_map:
         alert: '.region-alert'
         header: '.region-header'
