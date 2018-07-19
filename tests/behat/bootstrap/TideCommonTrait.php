@@ -1,8 +1,5 @@
 <?php
 
-use Behat\Gherkin\Node\TableNode;
-use Drupal\system\Entity\Menu;
-
 /**
  * Trait TideTrait.
  */
@@ -21,7 +18,6 @@ trait TideCommonTrait {
       throw new \Exception(sprintf('Current path is "%s", but expected is "%s"', $current_path, $path));
     }
   }
-
 
   /**
    * {@inheritdoc}
