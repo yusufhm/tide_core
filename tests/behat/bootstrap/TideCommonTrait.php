@@ -36,7 +36,7 @@ trait TideCommonTrait {
       }
     }
     else {
-      $this->assertAuthenticatedByRole($role);
+      parent::assertAuthenticatedByRole($role);
     }
   }
 
