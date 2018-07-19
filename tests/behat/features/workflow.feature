@@ -36,6 +36,7 @@ Feature: Workflow states and transitions
     And I fill in "Body" with "Test body content"
     And I select "Draft" from "Save as"
     And I press "Save"
+    And I save screenshot
     Then I should see the success message "[TEST] Test title has been created."
     And I should see a "article.node--unpublished" element
 
@@ -140,6 +141,7 @@ Feature: Workflow states and transitions
     And I fill in "Body" with "Test body content"
     And I select "Draft" from "Save as"
     And I press "Save"
+    And I save screenshot
     Then I should see the success message "[TEST] Test title has been created."
     And I should see a "article.node--unpublished" element
 
@@ -178,6 +180,7 @@ Feature: Workflow states and transitions
     And I fill in "Body" with "Test body content"
     And I select "Draft" from "Save as"
     And I press "Save"
+    And I save screenshot
     Then I should see the success message "[TEST] Editor Test title has been created."
     And I should see a "article.node--unpublished" element
 

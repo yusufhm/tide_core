@@ -17,6 +17,7 @@ dependencies:
   - drupal:ckeditor
   - drupal:dynamic_page_cache
   - drupal:entity_embed
+  - drupal:filter
   - drupal:media
   - drupal:node
   - drupal:options
