@@ -9,11 +9,12 @@ default:
       contexts:
         - FeatureContext
         - TideDrupalContext
-        - TideMinkContext
         - Drupal\DrupalExtension\Context\MinkContext
+        - TideMinkContext
         - Drupal\DrupalExtension\Context\MarkupContext
         - Drupal\DrupalExtension\Context\MessageContext
         - IntegratedExperts\BehatScreenshotExtension\Context\ScreenshotContext
+        - IntegratedExperts\BehatRelativityExtension\Context\RelativityContext
         - Ubirak\RestApiBehatExtension\RestApiContext
         - Ubirak\RestApiBehatExtension\Json\JsonContext
 
