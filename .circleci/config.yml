@@ -94,4 +94,3 @@ workflows:
   main:
     jobs:
       - build
-      - build_suggest
