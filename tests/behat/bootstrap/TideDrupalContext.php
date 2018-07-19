@@ -2,21 +2,45 @@
 
 /**
  * @file
- * Vicgovau Drupal context for Behat testing.
+ * Tide Drupal context for Behat testing.
  */
 
+use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 use Behat\Gherkin\Node\TableNode;
 use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Exception\ExpectationException;
-use Drupal\DrupalExtension\Context\DrupalContext;
+use Drupal\DrupalExtension\Context\RawDrupalContext;
 use Drupal\system\Entity\Menu;
 
 /**
  * Defines application features from the specific context.
  */
-class TideDrupalContext extends DrupalContext {
+class TideDrupalContext extends RawDrupalContext {
 
   use TideTaxonomyTrait;
+
+  /**
+   * @var \Drupal\DrupalExtension\Context\DrupalContext
+   */
+  protected $drupalContext;
+
+  /**
+   * @BeforeScenario
+   */
+  public function getDrupalContext(BeforeScenarioScope $scope) {
+    /** @var \Behat\Behat\Context\Environment\InitializedContextEnvironment $environment */
+    $environment = $scope->getEnvironment();
+    $context_classes = $environment->getContextClasses();
+    $drupal_context_class = '\\Drupal\\DrupalExtension\\Context\\DrupalContext';
+    foreach ($context_classes as $context_class) {
+      $context = $environment->getContext($context_class);
+      if ($context instanceof $drupal_context_class) {
+        $this->drupalContext = $context;
+        return;
+      }
+    }
+    throw new \Exception('DrupalContext not found.');
+  }
 
   /**
    * @Then I am in the :path path
@@ -94,7 +118,7 @@ class TideDrupalContext extends DrupalContext {
       }
     }
     else {
-      parent::assertAuthenticatedByRole($role);
+      $this->drupalContext->assertAuthenticatedByRole($role);
     }
   }
 
