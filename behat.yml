@@ -7,7 +7,6 @@ default:
     default:
       paths: [ %paths.base%/tests/behat/features ]
       contexts:
-        - FeatureContext
         - TideDrupalContext
         - Drupal\DrupalExtension\Context\MinkContext
         - TideMinkContext
@@ -69,6 +68,28 @@ default:
       purge: false
     # Show explicit fail information and continue the test run.
     IntegratedExperts\BehatFormatProgressFail\FormatExtension: ~
+    IntegratedExperts\BehatRelativityExtension:
+      breakpoints:
+        mobile:
+          width: 320
+          height: 480
+        tablet:
+          width: 768
+          height: 1024
+        desktop:
+          width: 1024
+          height: 1024
+          default: true
+      # Vertical offset - document will be scrolled to the element with this offset.
+      # Useful when fixed elements may cover part of pages making it impossible to click on components.
+      offset: 60
+      # List of site-wide components.
+      components:
+        'header-container': ".header-container"
+        'page': ".layout-container"
+        'header': "header"
+        'main': "main"
+        'footer': "footer"
     Ubirak\RestApiBehatExtension\Extension:
       rest:
         base_url: http://nginx:8080
