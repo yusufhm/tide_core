@@ -49,8 +49,6 @@
         "drupal/wysiwyg_template": "^2.0@beta"
     },
     "require-dev": {
-        "behat/behat": "3.3.1",
-        "behat/gherkin": "4.4.5",
         "integratedexperts/behat-format-progress-fail": "^0.2.1",
         "integratedexperts/behat-relativity": "^0.3",
         "integratedexperts/behat-screenshot": "^0.7",
