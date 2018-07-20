@@ -19,14 +19,6 @@ function tide_core_install() {
   $user->roles[] = 'administrator';
   $user->save();
 
-  // Set the default and admin theme to Seven. It is important to set themes
-  // only to enabled ones (and we are enabling Seven in profile dependencies).
-  \Drupal::configFactory()
-    ->getEditable('system.theme')
-    ->set('default', 'seven')
-    ->set('admin', 'seven')
-    ->save(TRUE);
-
   // Override default Plain Text format from Core.
   try {
     $plain_text = FilterFormat::load('plain_text');
