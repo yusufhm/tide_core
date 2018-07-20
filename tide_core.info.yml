@@ -64,6 +64,8 @@ dependencies:
   - viewsreference:viewsreference
   - wysiwyg_template:wysiwyg_template
   - wysiwyg_template:wysiwyg_template_core
+themes:
+  - seven
 config_devel:
   install:
     - core.entity_form_display.paragraph.links.default
