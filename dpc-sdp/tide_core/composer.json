@@ -122,9 +122,6 @@
             "drupal/metatag": {
                 "Support json api - https://www.drupal.org/project/metatag/issues/2945817#comment-12614257": "https://www.drupal.org/files/issues/2018-05-15/metatag-jsonapi-2945817-18.patch"
             },
-            "drupal/password_policy": {
-                "password expired message still shows upon resetting password via email - https://www.drupal.org/project/password_policy/issues/2856878": "https://www.drupal.org/files/issues/2018-04-09/password_expired-2856878-13.patch"
-            },
             "drupal/token": {
                 "Node preview button generates useless menu link - https://www.drupal.org/node/2823731#comment-11905884": "https://www.drupal.org/files/issues/token_node_preview_menu_link-2823731-4.patch",
                 "Summary token not fully handled in fields": "https://www.drupal.org/files/issues/tokens.body-with-summary.patch"

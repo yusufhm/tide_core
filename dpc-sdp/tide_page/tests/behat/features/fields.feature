@@ -39,7 +39,6 @@ Feature: Fields for Page content type
     And I should not see an "input#edit-field-show-related-content-value.required" element
 
     And I should see text matching "Related links"
-    And I should see text matching "No Link added yet."
     And I should see the button "Add Related links" in the "content" region
 
     And I should see text matching "What's Next"

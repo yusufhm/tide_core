@@ -6,7 +6,6 @@
     "version": "0.0.1",
     "require": {
         "dpc-sdp/tide_core": "0.0.1",
-        "drupal/paragraphs": "^1.2",
         "drupal/maxlength": "^1.0@beta",
         "drupal/smart_trim": "^1.1"
     },
