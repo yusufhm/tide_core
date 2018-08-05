@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: links
-label: Link
-icon_uuid: null
-description: 'A paragraph type to add links + description of links.'
-behavior_plugins: {  }

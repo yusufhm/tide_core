@@ -78,51 +78,51 @@
             "url": "dpc-sdp/bay"
         },
         "dpc-sdp/tide": {
-            "type": "path",
-            "url": "dpc-sdp/tide"
+            "type": "vcs",
+            "url": "git@github.com:dpc-sdp/tide.git"
         },
         "dpc-sdp/tide_api": {
-            "type": "path",
+            "type": "vcs",
             "url": "git@github.com:dpc-sdp/tide_api.git"
         },
         "dpc-sdp/tide_core": {
-            "type": "path",
+            "type": "vcs",
             "url": "git@github.com:dpc-sdp/tide_core.git"
         },
         "dpc-sdp/tide_landing_page": {
-            "type": "path",
+            "type": "vcs",
             "url": "git@github.com:dpc-sdp/tide_landing_page.git"
         },
         "dpc-sdp/tide_media": {
-            "type": "path",
+            "type": "vcs",
             "url": "git@github.com:dpc-sdp/tide_media.git"
         },
         "dpc-sdp/tide_monsido": {
-            "type": "path",
+            "type": "vcs",
             "url": "git@github.com:dpc-sdp/tide_monsido.git"
         },
         "dpc-sdp/tide_news": {
-            "type": "path",
+            "type": "vcs",
             "url": "git@github.com:dpc-sdp/tide_news.git"
         },
         "dpc-sdp/tide_page": {
-            "type": "github",
+            "type": "vcs",
             "url": "git@github.com:dpc-sdp/tide_page.git"
         },
         "dpc-sdp/tide_search": {
-            "type": "path",
+            "type": "vcs",
             "url": "git@github.com:dpc-sdp/tide_search.git"
         },
         "dpc-sdp/tide_site": {
-            "type": "path",
+            "type": "vcs",
             "url": "git@github.com:dpc-sdp/tide_site.git"
         },
         "dpc-sdp/tide_test": {
-            "type": "path",
+            "type": "vcs",
             "url": "git@github.com:dpc-sdp/tide_test.git"
         },
         "dpc-sdp/tide_webform": {
-            "type": "path",
+            "type": "vcs",
             "url": "git@github.com:dpc-sdp/tide_webform.git"
         },
         "library/dropzone": {

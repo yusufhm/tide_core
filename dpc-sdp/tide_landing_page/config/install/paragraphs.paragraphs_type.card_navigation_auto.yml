@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: card_navigation_auto
-label: 'Navigation Automated'
-icon_uuid: null
-description: ''
-behavior_plugins: {  }
