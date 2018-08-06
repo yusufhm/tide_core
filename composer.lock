@@ -60,16 +60,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.64.4",
+            "version": "3.64.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "f053be09055d43bd60aefd9998440479a45c3da9"
+                "reference": "c1292388910063803cfd7aa73d48ad4df42a526c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f053be09055d43bd60aefd9998440479a45c3da9",
-                "reference": "f053be09055d43bd60aefd9998440479a45c3da9",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c1292388910063803cfd7aa73d48ad4df42a526c",
+                "reference": "c1292388910063803cfd7aa73d48ad4df42a526c",
                 "shasum": ""
             },
             "require": {
@@ -136,7 +136,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-08-02T20:23:36+00:00"
+            "time": "2018-08-03T18:10:54+00:00"
         },
         {
             "name": "bjeavons/zxcvbn-php",
@@ -1479,22 +1479,22 @@
         },
         {
             "name": "dpc-sdp/tide_api",
-            "version": "dev-SDPA-607-video-field-enhancer",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git@github.com:dpc-sdp/tide_api.git",
-                "reference": "dd2d7e7ec6812859642480a7d050300bc658e7d8"
+                "reference": "f4fa58a41bc234fac4bd13cc1767aa7437dc0209"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/dd2d7e7ec6812859642480a7d050300bc658e7d8",
-                "reference": "dd2d7e7ec6812859642480a7d050300bc658e7d8",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/f4fa58a41bc234fac4bd13cc1767aa7437dc0209",
+                "reference": "f4fa58a41bc234fac4bd13cc1767aa7437dc0209",
                 "shasum": ""
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
-                "drupal/jsonapi": "^1.16",
-                "drupal/jsonapi_extras": "^2.3",
+                "drupal/jsonapi": "1.16",
+                "drupal/jsonapi_extras": "2.0-rc1",
                 "drupal/openapi": "1.0-alpha1",
                 "drupal/schemata": "1.0-alpha2"
             },
@@ -1519,10 +1519,10 @@
             ],
             "description": "Content API for Tide distribution.",
             "support": {
-                "source": "https://github.com/dpc-sdp/tide_api/tree/SDPA-607-video-field-enhancer",
+                "source": "https://github.com/dpc-sdp/tide_api/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_api/issues"
             },
-            "time": "2018-08-01T07:00:31+00:00"
+            "time": "2018-08-06T00:31:53+00:00"
         },
         {
             "name": "dpc-sdp/tide_core",
@@ -4230,17 +4230,17 @@
         },
         {
             "name": "drupal/jsonapi",
-            "version": "1.23.0",
+            "version": "1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/jsonapi",
-                "reference": "8.x-1.23"
+                "reference": "8.x-1.16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-1.23.zip",
-                "reference": "8.x-1.23",
-                "shasum": "4fb88736a9ad90a995bdc9c3ab90e7731b6d89e5"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-1.16.zip",
+                "reference": "8.x-1.16",
+                "shasum": "2750ba9c137ef87da10089bc100d6f88d8ac4342"
             },
             "require": {
                 "drupal/core": "^8.4.3"
@@ -4248,7 +4248,7 @@
             "require-dev": {
                 "drupal/schemata": "1.x-dev#8325d172e1d6880aa24073f8f751ef089282cf9a",
                 "drupal/schemata_json_schema": "*",
-                "justinrainbow/json-schema": "^5.2"
+                "justinrainbow/json-schema": "^4.1"
             },
             "type": "drupal-module",
             "extra": {
@@ -4256,8 +4256,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.23",
-                    "datestamp": "1532084496",
+                    "version": "8.x-1.16",
+                    "datestamp": "1525889880",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4297,21 +4297,21 @@
         },
         {
             "name": "drupal/jsonapi_extras",
-            "version": "2.5.0",
+            "version": "2.0.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/jsonapi_extras",
-                "reference": "8.x-2.5"
+                "reference": "8.x-2.0-rc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi_extras-8.x-2.5.zip",
-                "reference": "8.x-2.5",
-                "shasum": "76ce52b467952e6e3d9bb210f61671002bb5b404"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi_extras-8.x-2.0-rc1.zip",
+                "reference": "8.x-2.0-rc1",
+                "shasum": "a876638e2d1810139946f33a5a65944472bdfaf1"
             },
             "require": {
                 "drupal/core": "^8.5",
-                "drupal/jsonapi": "^1.22",
+                "drupal/jsonapi": "^1.13",
                 "e0ipso/shaper": "^1"
             },
             "type": "drupal-module",
@@ -4320,11 +4320,11 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.5",
-                    "datestamp": "1533103380",
+                    "version": "8.x-2.0-rc1",
+                    "datestamp": "1524209880",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -12261,16 +12261,16 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.7.6",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "33a7e3c4fda54e912ff6338c48823bd5c0f0b712"
+                "reference": "4ba436b55987b4bf311cb7c6ba82aa528aac0a06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/33a7e3c4fda54e912ff6338c48823bd5c0f0b712",
-                "reference": "33a7e3c4fda54e912ff6338c48823bd5c0f0b712",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/4ba436b55987b4bf311cb7c6ba82aa528aac0a06",
+                "reference": "4ba436b55987b4bf311cb7c6ba82aa528aac0a06",
                 "shasum": ""
             },
             "require": {
@@ -12282,12 +12282,12 @@
             },
             "require-dev": {
                 "phpspec/phpspec": "^2.5|^3.2",
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5"
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5 || ^7.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.7.x-dev"
+                    "dev-master": "1.8.x-dev"
                 }
             },
             "autoload": {
@@ -12320,7 +12320,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2018-04-18T13:57:24+00:00"
+            "time": "2018-08-05T17:53:17+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
