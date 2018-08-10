@@ -60,16 +60,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.64.6",
+            "version": "3.64.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "b288aaf819a09feb529a73ba37ae2dbf0a0b6964"
+                "reference": "26634b96289847edbf36026ec8aa99d36fc971ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b288aaf819a09feb529a73ba37ae2dbf0a0b6964",
-                "reference": "b288aaf819a09feb529a73ba37ae2dbf0a0b6964",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/26634b96289847edbf36026ec8aa99d36fc971ce",
+                "reference": "26634b96289847edbf36026ec8aa99d36fc971ce",
                 "shasum": ""
             },
             "require": {
@@ -136,7 +136,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-08-06T20:42:41+00:00"
+            "time": "2018-08-09T22:07:36+00:00"
         },
         {
             "name": "bjeavons/zxcvbn-php",
@@ -1530,12 +1530,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:dpc-sdp/tide_core.git",
-                "reference": "8782879c738eb850384f532629b892f21b51ff39"
+                "reference": "de22030275f21612df48d14808cf835d87caccb1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/8782879c738eb850384f532629b892f21b51ff39",
-                "reference": "8782879c738eb850384f532629b892f21b51ff39",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/de22030275f21612df48d14808cf835d87caccb1",
+                "reference": "de22030275f21612df48d14808cf835d87caccb1",
                 "shasum": ""
             },
             "require": {
@@ -1646,7 +1646,7 @@
                 "source": "https://github.com/dpc-sdp/tide_core/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_core/issues"
             },
-            "time": "2018-08-02T23:03:08+00:00"
+            "time": "2018-08-10T03:37:43+00:00"
         },
         {
             "name": "dpc-sdp/tide_landing_page",
@@ -1654,12 +1654,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:dpc-sdp/tide_landing_page.git",
-                "reference": "2bdb6fcf3ab15fbfe084f55d9c69b7aeac6e9638"
+                "reference": "e83d41b1ba4076b3975cd7dd42010563d05acfc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/2bdb6fcf3ab15fbfe084f55d9c69b7aeac6e9638",
-                "reference": "2bdb6fcf3ab15fbfe084f55d9c69b7aeac6e9638",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/e83d41b1ba4076b3975cd7dd42010563d05acfc2",
+                "reference": "e83d41b1ba4076b3975cd7dd42010563d05acfc2",
                 "shasum": ""
             },
             "require": {
@@ -1683,7 +1683,7 @@
                 "source": "https://github.com/dpc-sdp/tide_landing_page/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_landing_page/issues"
             },
-            "time": "2018-08-02T07:29:17+00:00"
+            "time": "2018-08-10T03:57:35+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
@@ -1833,12 +1833,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:dpc-sdp/tide_search.git",
-                "reference": "067a7268a5552e626cc5519c7c28a63d1755d0ee"
+                "reference": "0a3dda4e855eb95d6a621c23a42696407ed65142"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_search/zipball/067a7268a5552e626cc5519c7c28a63d1755d0ee",
-                "reference": "067a7268a5552e626cc5519c7c28a63d1755d0ee",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_search/zipball/0a3dda4e855eb95d6a621c23a42696407ed65142",
+                "reference": "0a3dda4e855eb95d6a621c23a42696407ed65142",
                 "shasum": ""
             },
             "require": {
@@ -1867,7 +1867,7 @@
                 "source": "https://github.com/dpc-sdp/tide_search/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_search/issues"
             },
-            "time": "2018-08-07T00:24:36+00:00"
+            "time": "2018-08-09T23:06:07+00:00"
         },
         {
             "name": "dpc-sdp/tide_site",
@@ -1971,16 +1971,16 @@
         },
         {
             "name": "drupal-composer/drupal-scaffold",
-            "version": "2.5.3",
+            "version": "2.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal-composer/drupal-scaffold.git",
-                "reference": "90f42025acddba70e7f045e069b301013d3d8bbc"
+                "reference": "fc6bf4ceecb5d47327f54d48d4d4f67b17da956d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal-composer/drupal-scaffold/zipball/90f42025acddba70e7f045e069b301013d3d8bbc",
-                "reference": "90f42025acddba70e7f045e069b301013d3d8bbc",
+                "url": "https://api.github.com/repos/drupal-composer/drupal-scaffold/zipball/fc6bf4ceecb5d47327f54d48d4d4f67b17da956d",
+                "reference": "fc6bf4ceecb5d47327f54d48d4d4f67b17da956d",
                 "shasum": ""
             },
             "require": {
@@ -2011,7 +2011,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Composer Plugin for updating the Drupal scaffold files when using drupal/core",
-            "time": "2018-07-21T08:19:20+00:00"
+            "time": "2018-07-27T10:07:07+00:00"
         },
         {
             "name": "drupal/address",
@@ -6334,17 +6334,17 @@
         },
         {
             "name": "drupal/webform",
-            "version": "5.0.0-rc17",
+            "version": "5.0.0-rc18",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/webform",
-                "reference": "8.x-5.0-rc17"
+                "reference": "8.x-5.0-rc18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-rc17.zip",
-                "reference": "8.x-5.0-rc17",
-                "shasum": "a5413bde54b7082e45e8fc3ce3484452611b1f4a"
+                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-rc18.zip",
+                "reference": "8.x-5.0-rc18",
+                "shasum": "f4c1854e8c4c1deaebfd452718d7aa67b01777ac"
             },
             "require": {
                 "drupal/core": "*"
@@ -6363,8 +6363,8 @@
                     "dev-5.x": "5.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-5.0-rc17",
-                    "datestamp": "1533563280",
+                    "version": "8.x-5.0-rc18",
+                    "datestamp": "1533682980",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."

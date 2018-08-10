@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.landing_page.field_node_site
     - field.field.node.landing_page.field_related_links
     - field.field.node.landing_page.field_show_content_rating
+    - field.field.node.landing_page.field_show_news_search
     - field.field.node.landing_page.field_show_related_content
     - field.field.node.landing_page.field_show_site_section_nav
     - field.field.node.landing_page.field_show_social_sharing
@@ -28,6 +29,8 @@ dependencies:
     - field.field.node.landing_page.field_tags
     - field.field.node.landing_page.field_topic
     - field.field.node.landing_page.field_whats_next
+    - field.field.node.landing_page.scheduled_archiving
+    - field.field.node.landing_page.scheduled_publishing
     - node.type.landing_page
   module:
     - entity_reference_revisions
@@ -147,6 +150,16 @@ content:
       link: ''
     third_party_settings: {  }
     region: content
+  field_show_news_search:
+    weight: 16
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_show_site_section_nav:
     weight: 13
     label: above
@@ -194,3 +207,5 @@ hidden:
   field_show_whats_next: true
   field_whats_next: true
   links: true
+  scheduled_archiving: true
+  scheduled_publishing: true
