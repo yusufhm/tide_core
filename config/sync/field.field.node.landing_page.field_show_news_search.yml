@@ -1,0 +1,23 @@
+uuid: 7616dda6-36ba-4864-860e-d794c9b0bfd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_news_search
+    - node.type.landing_page
+id: node.landing_page.field_show_news_search
+field_name: field_show_news_search
+entity_type: node
+bundle: landing_page
+label: 'Show News Search Block?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

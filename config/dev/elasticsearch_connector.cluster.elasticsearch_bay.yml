@@ -4,11 +4,11 @@ status: '1'
 dependencies: {  }
 cluster_id: elasticsearch_bay
 name: 'ElasticSearch on Bay'
-url: 'http://a83890f7a31dea14e1ae83c6f0afacca.nginx.sdp-elastic-master.svc:8080'
+url: 'http://a83890f7a31dea14e1ae83c6f0afacca.nginx.sdp-elastic-nonprod.svc:8080'
 options:
   multiple_nodes_connection: false
   use_authentication: 1
   authentication_type: Basic
   username: dpc
-  password: f8TZfzjx
+  password: ezh7BnY7
   timeout: '3'

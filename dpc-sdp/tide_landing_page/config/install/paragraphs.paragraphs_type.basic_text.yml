@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: basic_text
-label: 'Basic Text'
-icon_uuid: null
-description: 'A paragraph type with a WYSIWYG body.'
-behavior_plugins: {  }

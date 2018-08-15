@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: previewer
-label: Previewer
-weight: 5
-is_admin: null
-permissions:
-  - 'view any unpublished content'
