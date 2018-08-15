@@ -33,6 +33,11 @@ services:
     ports:
       - 13306:3306
   elasticsearch:
+    build:
+      context: .
+      dockerfile: Dockerfile.elasticsearch
+    environment:
+      LAGOON_ENVIRONMENT_TYPE: 'local'
     ports:
       - 19200:9200
 networks:
