@@ -190,7 +190,7 @@
     "scripts": {
         "app:build": [
             "@bay:start",
-            "@composer install -n --ansi --prefer-dist",
+            "docker exec -i $(docker-compose ps -q cli) composer install -n --ansi --prefer-dist",
             "@app:db-import",
             "@app:search-index"
         ],
@@ -201,7 +201,7 @@
         "app:rebuild-full": [
             "@app:cleanup",
             "@bay:rebuild-full",
-            "@composer install -n --ansi --prefer-dist",
+            "docker exec -i $(docker-compose ps -q cli) composer install -n --ansi --prefer-dist",
             "@app:db-import",
             "@app:search-index"
         ],
@@ -310,6 +310,8 @@
             "docroot/sites/default/settings.php",
             "docroot/sites/default/default.settings.local.php",
             "docroot/sites/default/files"
-        ]
+        ],
+        "patches": {
+        }
     }
 }
