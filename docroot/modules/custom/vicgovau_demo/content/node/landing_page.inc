@@ -60,6 +60,12 @@ function vicgovau_demo_create_node_landing_page() {
       'field_featured_image' => [
         ['target_id' => VicgovauDemoHelper::randomImage()],
       ],
+      'field_landing_page_hero_image' => [
+        ['target_id' => VicgovauDemoHelper::randomImage()],
+      ],
+      'field_landing_page_hero_theme' => [
+        'value' => VicgovauDemoHelper::randomBool() ? 'dark' : 'light',
+      ],
       'field_landing_page_bg_colour' => [
         'value' => VicgovauDemoHelper::randomBool() ? 'grey' : 'white',
       ],

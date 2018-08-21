@@ -312,6 +312,9 @@
             "docroot/sites/default/files"
         ],
         "patches": {
+            "dpc-sdp/tide_landing_page": {
+                "[SDPA-735] Hero Banner with Hero Image - Tide": "./patches/SDPA-735-Hero-Banner-with-Hero-Image-Tide.patch"
+            }
         }
     }
 }

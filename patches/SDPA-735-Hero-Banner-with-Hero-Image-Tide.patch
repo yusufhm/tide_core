@@ -1,0 +1,758 @@
+From 9af3377057ac118e684782e47d87d723f481a33e Mon Sep 17 00:00:00 2001
+From: enzo - Eduardo Garcia <enzo@weknowinc.com>
+Date: Fri, 17 Aug 2018 11:24:42 +1000
+Subject: [PATCH 1/7] Add field Hero Image and Theme
+
+---
+ ...form_display.node.landing_page.default.yml | 49 +++++++++++++++++--
+ ...view_display.node.landing_page.default.yml | 39 ++++++++++++---
+ ...ing_page.field_landing_page_hero_image.yml | 28 +++++++++++
+ ...ing_page.field_landing_page_hero_theme.yml | 21 ++++++++
+ ...age.node.field_landing_page_hero_image.yml | 20 ++++++++
+ ...age.node.field_landing_page_hero_theme.yml | 27 ++++++++++
+ ...api_resource_config.node--landing_page.yml | 16 ++++++
+ tide_landing_page.info.yml                    |  2 +
+ 8 files changed, 191 insertions(+), 11 deletions(-)
+ create mode 100644 config/install/field.field.node.landing_page.field_landing_page_hero_image.yml
+ create mode 100644 config/install/field.field.node.landing_page.field_landing_page_hero_theme.yml
+ create mode 100644 config/install/field.storage.node.field_landing_page_hero_image.yml
+ create mode 100644 config/install/field.storage.node.field_landing_page_hero_theme.yml
+
+diff --git a/config/install/core.entity_form_display.node.landing_page.default.yml b/config/install/core.entity_form_display.node.landing_page.default.yml
+index a728778..0ee86eb 100644
+--- a/config/install/core.entity_form_display.node.landing_page.default.yml
++++ b/config/install/core.entity_form_display.node.landing_page.default.yml
+@@ -1,3 +1,4 @@
++uuid: 12bfcb62-7c72-4462-ae5d-5f397ba71450
+ langcode: en
+ status: true
+ dependencies:
+@@ -9,13 +10,18 @@ dependencies:
+     - field.field.node.landing_page.field_landing_page_c_secondary
+     - field.field.node.landing_page.field_landing_page_component
+     - field.field.node.landing_page.field_landing_page_contact
++    - field.field.node.landing_page.field_landing_page_hero_image
++    - field.field.node.landing_page.field_landing_page_hero_theme
+     - field.field.node.landing_page.field_landing_page_intro_text
+     - field.field.node.landing_page.field_landing_page_key_journeys
+     - field.field.node.landing_page.field_landing_page_nav_title
+     - field.field.node.landing_page.field_landing_page_show_contact
+     - field.field.node.landing_page.field_landing_page_summary
+     - field.field.node.landing_page.field_metatags
++    - field.field.node.landing_page.field_node_primary_site
++    - field.field.node.landing_page.field_node_site
+     - field.field.node.landing_page.field_related_links
++    - field.field.node.landing_page.field_show_content_rating
+     - field.field.node.landing_page.field_show_news_search
+     - field.field.node.landing_page.field_show_related_content
+     - field.field.node.landing_page.field_show_site_section_nav
+@@ -77,6 +83,8 @@ third_party_settings:
+       children:
+         - title
+         - field_featured_image
++        - field_landing_page_hero_image
++        - field_landing_page_hero_theme
+         - field_landing_page_intro_text
+         - field_landing_page_summary
+         - field_landing_page_key_journeys
+@@ -292,8 +300,29 @@ content:
+       default_paragraph_type: _none
+     third_party_settings: {  }
+     region: content
+-  field_landing_page_intro_text:
++  field_landing_page_hero_image:
+     weight: 2
++    settings:
++      entity_browser: tide_image_browser
++      field_widget_display: rendered_entity
++      field_widget_edit: true
++      field_widget_remove: true
++      selection_mode: selection_append
++      field_widget_display_settings:
++        view_mode: default
++      field_widget_replace: false
++      open: false
++    third_party_settings: {  }
++    type: entity_browser_entity_reference
++    region: content
++  field_landing_page_hero_theme:
++    weight: 3
++    settings: {  }
++    third_party_settings: {  }
++    type: options_select
++    region: content
++  field_landing_page_intro_text:
++    weight: 4
+     settings:
+       rows: 5
+       placeholder: ''
+@@ -302,7 +331,7 @@ content:
+     region: content
+   field_landing_page_key_journeys:
+     type: entity_reference_paragraphs
+-    weight: 33
++    weight: 6
+     settings:
+       title: 'Key journey'
+       title_plural: 'Key journeys'
+@@ -328,7 +357,7 @@ content:
+     type: boolean_checkbox
+     region: content
+   field_landing_page_summary:
+-    weight: 3
++    weight: 5
+     settings:
+       rows: 5
+       placeholder: ''
+@@ -346,6 +375,20 @@ content:
+     third_party_settings: {  }
+     type: metatag_firehose
+     region: content
++  field_node_primary_site:
++    type: options_buttons
++    region: content
++    field_name: field_node_primary_site
++    weight: 17
++    settings: {  }
++    third_party_settings: {  }
++  field_node_site:
++    type: options_buttons
++    region: content
++    field_name: field_node_site
++    weight: 16
++    settings: {  }
++    third_party_settings: {  }
+   field_related_links:
+     type: paragraphs
+     weight: 39
+diff --git a/config/install/core.entity_view_display.node.landing_page.default.yml b/config/install/core.entity_view_display.node.landing_page.default.yml
+index 67473a6..9598f44 100644
+--- a/config/install/core.entity_view_display.node.landing_page.default.yml
++++ b/config/install/core.entity_view_display.node.landing_page.default.yml
+@@ -1,3 +1,4 @@
++uuid: dc49400f-c9bb-4efa-b772-c5d9a636edb1
+ langcode: en
+ status: true
+ dependencies:
+@@ -8,13 +9,18 @@ dependencies:
+     - field.field.node.landing_page.field_landing_page_c_secondary
+     - field.field.node.landing_page.field_landing_page_component
+     - field.field.node.landing_page.field_landing_page_contact
++    - field.field.node.landing_page.field_landing_page_hero_image
++    - field.field.node.landing_page.field_landing_page_hero_theme
+     - field.field.node.landing_page.field_landing_page_intro_text
+     - field.field.node.landing_page.field_landing_page_key_journeys
+     - field.field.node.landing_page.field_landing_page_nav_title
+     - field.field.node.landing_page.field_landing_page_show_contact
+     - field.field.node.landing_page.field_landing_page_summary
+     - field.field.node.landing_page.field_metatags
++    - field.field.node.landing_page.field_node_primary_site
++    - field.field.node.landing_page.field_node_site
+     - field.field.node.landing_page.field_related_links
++    - field.field.node.landing_page.field_show_content_rating
+     - field.field.node.landing_page.field_show_news_search
+     - field.field.node.landing_page.field_show_related_content
+     - field.field.node.landing_page.field_show_site_section_nav
+@@ -54,7 +60,7 @@ content:
+     type: entity_reference_label
+     region: content
+   field_landing_page_bg_colour:
+-    weight: 15
++    weight: 18
+     label: above
+     settings: {  }
+     third_party_settings: {  }
+@@ -89,13 +95,28 @@ content:
+     region: content
+   field_landing_page_contact:
+     type: entity_reference_revisions_entity_view
+-    weight: 11
++    weight: 13
+     label: above
+     settings:
+       view_mode: default
+       link: ''
+     third_party_settings: {  }
+     region: content
++  field_landing_page_hero_image:
++    type: entity_reference_label
++    weight: 10
++    label: above
++    settings:
++      link: true
++    third_party_settings: {  }
++    region: content
++  field_landing_page_hero_theme:
++    weight: 11
++    label: above
++    settings: {  }
++    third_party_settings: {  }
++    type: list_default
++    region: content
+   field_landing_page_intro_text:
+     weight: 2
+     label: above
+@@ -113,7 +134,7 @@ content:
+     third_party_settings: {  }
+     region: content
+   field_landing_page_nav_title:
+-    weight: 14
++    weight: 17
+     label: above
+     settings:
+       link_to_entity: false
+@@ -121,7 +142,7 @@ content:
+     type: string
+     region: content
+   field_landing_page_show_contact:
+-    weight: 10
++    weight: 12
+     label: above
+     settings:
+       format: default
+@@ -131,7 +152,7 @@ content:
+     type: boolean
+     region: content
+   field_metatags:
+-    weight: 12
++    weight: 14
+     label: above
+     settings: {  }
+     third_party_settings: {  }
+@@ -147,7 +168,7 @@ content:
+     third_party_settings: {  }
+     region: content
+   field_show_news_search:
+-    weight: 16
++    weight: 19
+     label: above
+     settings:
+       format: default
+@@ -157,7 +178,7 @@ content:
+     type: boolean
+     region: content
+   field_show_site_section_nav:
+-    weight: 13
++    weight: 15
+     label: above
+     settings:
+       format: default
+@@ -167,7 +188,7 @@ content:
+     type: boolean
+     region: content
+   field_show_topic_term_and_tags:
+-    weight: 13
++    weight: 16
+     label: above
+     settings:
+       format: default
+@@ -194,6 +215,8 @@ content:
+     region: content
+ hidden:
+   field_landing_page_summary: true
++  field_node_primary_site: true
++  field_node_site: true
+   field_show_content_rating: true
+   field_show_related_content: true
+   field_show_social_sharing: true
+diff --git a/config/install/field.field.node.landing_page.field_landing_page_hero_image.yml b/config/install/field.field.node.landing_page.field_landing_page_hero_image.yml
+new file mode 100644
+index 0000000..cfb2acf
+--- /dev/null
++++ b/config/install/field.field.node.landing_page.field_landing_page_hero_image.yml
+@@ -0,0 +1,28 @@
++uuid: fb0f6413-72e1-4934-aab9-3047693da768
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.storage.node.field_landing_page_hero_image
++    - media.type.image
++    - node.type.landing_page
++id: node.landing_page.field_landing_page_hero_image
++field_name: field_landing_page_hero_image
++entity_type: node
++bundle: landing_page
++label: 'Hero Image'
++description: 'Journey links will not be displayed if hero image is added'
++required: false
++translatable: false
++default_value: {  }
++default_value_callback: ''
++settings:
++  handler: 'default:media'
++  handler_settings:
++    target_bundles:
++      image: image
++    sort:
++      field: _none
++    auto_create: false
++    auto_create_bundle: ''
++field_type: entity_reference
+diff --git a/config/install/field.field.node.landing_page.field_landing_page_hero_theme.yml b/config/install/field.field.node.landing_page.field_landing_page_hero_theme.yml
+new file mode 100644
+index 0000000..4511feb
+--- /dev/null
++++ b/config/install/field.field.node.landing_page.field_landing_page_hero_theme.yml
+@@ -0,0 +1,21 @@
++uuid: 86c727c4-4b24-46cf-a89a-a067cb71c631
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.storage.node.field_landing_page_hero_theme
++    - node.type.landing_page
++  module:
++    - options
++id: node.landing_page.field_landing_page_hero_theme
++field_name: field_landing_page_hero_theme
++entity_type: node
++bundle: landing_page
++label: Theme
++description: ''
++required: false
++translatable: false
++default_value: {  }
++default_value_callback: ''
++settings: {  }
++field_type: list_string
+diff --git a/config/install/field.storage.node.field_landing_page_hero_image.yml b/config/install/field.storage.node.field_landing_page_hero_image.yml
+new file mode 100644
+index 0000000..de69d33
+--- /dev/null
++++ b/config/install/field.storage.node.field_landing_page_hero_image.yml
+@@ -0,0 +1,20 @@
++uuid: cc1b845b-9add-4e72-9ea1-6a3f34fed419
++langcode: en
++status: true
++dependencies:
++  module:
++    - media
++    - node
++id: node.field_landing_page_hero_image
++field_name: field_landing_page_hero_image
++entity_type: node
++type: entity_reference
++settings:
++  target_type: media
++module: core
++locked: false
++cardinality: 1
++translatable: true
++indexes: {  }
++persist_with_no_fields: false
++custom_storage: false
+diff --git a/config/install/field.storage.node.field_landing_page_hero_theme.yml b/config/install/field.storage.node.field_landing_page_hero_theme.yml
+new file mode 100644
+index 0000000..466940b
+--- /dev/null
++++ b/config/install/field.storage.node.field_landing_page_hero_theme.yml
+@@ -0,0 +1,27 @@
++uuid: c005835f-2c50-4580-be52-8002288f4695
++langcode: en
++status: true
++dependencies:
++  module:
++    - node
++    - options
++id: node.field_landing_page_hero_theme
++field_name: field_landing_page_hero_theme
++entity_type: node
++type: list_string
++settings:
++  allowed_values:
++    -
++      value: dark
++      label: Dark
++    -
++      value: light
++      label: Light
++  allowed_values_function: ''
++module: options
++locked: false
++cardinality: 1
++translatable: true
++indexes: {  }
++persist_with_no_fields: false
++custom_storage: false
+diff --git a/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml b/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml
+index 6157506..917b39e 100644
+--- a/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml
++++ b/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml
+@@ -196,6 +196,22 @@ resourceFields:
+     disabled: false
+     advancedOptionsIcon: ''
+     enhancer_label: ''
++  field_landing_page_hero_image:
++    fieldName: field_landing_page_hero_image
++    publicName: field_landing_page_hero_image
++    enhancer:
++      id: ''
++    disabled: false
++    advancedOptionsIcon: ''
++    enhancer_label: ''
++  field_landing_page_hero_theme:
++      fieldName: field_landing_page_hero_theme
++      publicName: field_landing_page_hero_theme
++      enhancer:
++        id: ''
++      disabled: false
++      advancedOptionsIcon: ''
++      enhancer_label: ''
+   field_landing_page_bg_colour:
+     fieldName: field_landing_page_bg_colour
+     publicName: field_landing_page_bg_colour
+diff --git a/tide_landing_page.info.yml b/tide_landing_page.info.yml
+index 8027a7c..f67d3b1 100644
+--- a/tide_landing_page.info.yml
++++ b/tide_landing_page.info.yml
+@@ -80,6 +80,8 @@ config_devel:
+     - field.field.block_content.campaign.field_block_title
+     - field.field.node.landing_page.field_landing_page_c_secondary
+     - field.field.node.landing_page.field_featured_image
++    - field.field.node.landing_page.field_landing_page_hero_image
++    - field.field.node.landing_page.field_landing_page_hero_theme
+     - field.field.node.landing_page.field_landing_page_c_primary
+     - field.field.node.landing_page.field_landing_page_component
+     - field.field.node.landing_page.field_landing_page_intro_text
+
+From 384d2cc7c1c3ce3de0b46e045a70c9e80e24d47e Mon Sep 17 00:00:00 2001
+From: enzo - Eduardo Garcia <enzo@weknowinc.com>
+Date: Fri, 17 Aug 2018 11:30:26 +1000
+Subject: [PATCH 2/7] Remove UUIDs
+
+---
+ .../core.entity_form_display.node.landing_page.default.yml       | 1 -
+ .../core.entity_view_display.node.landing_page.default.yml       | 1 -
+ ...eld.field.node.landing_page.field_landing_page_hero_image.yml | 1 -
+ ...eld.field.node.landing_page.field_landing_page_hero_theme.yml | 1 -
+ .../install/field.storage.node.field_landing_page_hero_image.yml | 1 -
+ .../install/field.storage.node.field_landing_page_hero_theme.yml | 1 -
+ 6 files changed, 6 deletions(-)
+
+diff --git a/config/install/core.entity_form_display.node.landing_page.default.yml b/config/install/core.entity_form_display.node.landing_page.default.yml
+index 0ee86eb..bc1a3ae 100644
+--- a/config/install/core.entity_form_display.node.landing_page.default.yml
++++ b/config/install/core.entity_form_display.node.landing_page.default.yml
+@@ -1,4 +1,3 @@
+-uuid: 12bfcb62-7c72-4462-ae5d-5f397ba71450
+ langcode: en
+ status: true
+ dependencies:
+diff --git a/config/install/core.entity_view_display.node.landing_page.default.yml b/config/install/core.entity_view_display.node.landing_page.default.yml
+index 9598f44..11f535f 100644
+--- a/config/install/core.entity_view_display.node.landing_page.default.yml
++++ b/config/install/core.entity_view_display.node.landing_page.default.yml
+@@ -1,4 +1,3 @@
+-uuid: dc49400f-c9bb-4efa-b772-c5d9a636edb1
+ langcode: en
+ status: true
+ dependencies:
+diff --git a/config/install/field.field.node.landing_page.field_landing_page_hero_image.yml b/config/install/field.field.node.landing_page.field_landing_page_hero_image.yml
+index cfb2acf..83ad7e6 100644
+--- a/config/install/field.field.node.landing_page.field_landing_page_hero_image.yml
++++ b/config/install/field.field.node.landing_page.field_landing_page_hero_image.yml
+@@ -1,4 +1,3 @@
+-uuid: fb0f6413-72e1-4934-aab9-3047693da768
+ langcode: en
+ status: true
+ dependencies:
+diff --git a/config/install/field.field.node.landing_page.field_landing_page_hero_theme.yml b/config/install/field.field.node.landing_page.field_landing_page_hero_theme.yml
+index 4511feb..7944ca3 100644
+--- a/config/install/field.field.node.landing_page.field_landing_page_hero_theme.yml
++++ b/config/install/field.field.node.landing_page.field_landing_page_hero_theme.yml
+@@ -1,4 +1,3 @@
+-uuid: 86c727c4-4b24-46cf-a89a-a067cb71c631
+ langcode: en
+ status: true
+ dependencies:
+diff --git a/config/install/field.storage.node.field_landing_page_hero_image.yml b/config/install/field.storage.node.field_landing_page_hero_image.yml
+index de69d33..97ff573 100644
+--- a/config/install/field.storage.node.field_landing_page_hero_image.yml
++++ b/config/install/field.storage.node.field_landing_page_hero_image.yml
+@@ -1,4 +1,3 @@
+-uuid: cc1b845b-9add-4e72-9ea1-6a3f34fed419
+ langcode: en
+ status: true
+ dependencies:
+diff --git a/config/install/field.storage.node.field_landing_page_hero_theme.yml b/config/install/field.storage.node.field_landing_page_hero_theme.yml
+index 466940b..dca3701 100644
+--- a/config/install/field.storage.node.field_landing_page_hero_theme.yml
++++ b/config/install/field.storage.node.field_landing_page_hero_theme.yml
+@@ -1,4 +1,3 @@
+-uuid: c005835f-2c50-4580-be52-8002288f4695
+ langcode: en
+ status: true
+ dependencies:
+
+From 16dc395db2549c116cc8a259d3e93f2fecfcf70f Mon Sep 17 00:00:00 2001
+From: enzo - Eduardo Garcia <enzo@weknowinc.com>
+Date: Fri, 17 Aug 2018 12:31:01 +1000
+Subject: [PATCH 3/7] Removed references to field_node_primary_site and
+ field_node_site
+
+---
+ ...ty_form_display.node.landing_page.default.yml | 16 ----------------
+ ...ty_view_display.node.landing_page.default.yml |  4 ----
+ ...sonapi_resource_config.node--landing_page.yml | 16 ----------------
+ 3 files changed, 36 deletions(-)
+
+diff --git a/config/install/core.entity_form_display.node.landing_page.default.yml b/config/install/core.entity_form_display.node.landing_page.default.yml
+index bc1a3ae..25722d3 100644
+--- a/config/install/core.entity_form_display.node.landing_page.default.yml
++++ b/config/install/core.entity_form_display.node.landing_page.default.yml
+@@ -17,8 +17,6 @@ dependencies:
+     - field.field.node.landing_page.field_landing_page_show_contact
+     - field.field.node.landing_page.field_landing_page_summary
+     - field.field.node.landing_page.field_metatags
+-    - field.field.node.landing_page.field_node_primary_site
+-    - field.field.node.landing_page.field_node_site
+     - field.field.node.landing_page.field_related_links
+     - field.field.node.landing_page.field_show_content_rating
+     - field.field.node.landing_page.field_show_news_search
+@@ -374,20 +372,6 @@ content:
+     third_party_settings: {  }
+     type: metatag_firehose
+     region: content
+-  field_node_primary_site:
+-    type: options_buttons
+-    region: content
+-    field_name: field_node_primary_site
+-    weight: 17
+-    settings: {  }
+-    third_party_settings: {  }
+-  field_node_site:
+-    type: options_buttons
+-    region: content
+-    field_name: field_node_site
+-    weight: 16
+-    settings: {  }
+-    third_party_settings: {  }
+   field_related_links:
+     type: paragraphs
+     weight: 39
+diff --git a/config/install/core.entity_view_display.node.landing_page.default.yml b/config/install/core.entity_view_display.node.landing_page.default.yml
+index 11f535f..0feb0b5 100644
+--- a/config/install/core.entity_view_display.node.landing_page.default.yml
++++ b/config/install/core.entity_view_display.node.landing_page.default.yml
+@@ -16,8 +16,6 @@ dependencies:
+     - field.field.node.landing_page.field_landing_page_show_contact
+     - field.field.node.landing_page.field_landing_page_summary
+     - field.field.node.landing_page.field_metatags
+-    - field.field.node.landing_page.field_node_primary_site
+-    - field.field.node.landing_page.field_node_site
+     - field.field.node.landing_page.field_related_links
+     - field.field.node.landing_page.field_show_content_rating
+     - field.field.node.landing_page.field_show_news_search
+@@ -214,8 +212,6 @@ content:
+     region: content
+ hidden:
+   field_landing_page_summary: true
+-  field_node_primary_site: true
+-  field_node_site: true
+   field_show_content_rating: true
+   field_show_related_content: true
+   field_show_social_sharing: true
+diff --git a/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml b/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml
+index 917b39e..157a51c 100644
+--- a/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml
++++ b/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml
+@@ -300,22 +300,6 @@ resourceFields:
+     disabled: false
+     advancedOptionsIcon: ''
+     enhancer_label: ''
+-  field_node_primary_site:
+-    fieldName: field_node_primary_site
+-    publicName: field_node_primary_site
+-    enhancer:
+-      id: ''
+-    disabled: false
+-    advancedOptionsIcon: ''
+-    enhancer_label: ''
+-  field_node_site:
+-    fieldName: field_node_site
+-    publicName: field_node_site
+-    enhancer:
+-      id: ''
+-    disabled: false
+-    advancedOptionsIcon: ''
+-    enhancer_label: ''
+   field_related_links:
+     fieldName: field_related_links
+     publicName: field_related_links
+
+From 659774ad3d756ae4613b7833e6970e3a18120aa4 Mon Sep 17 00:00:00 2001
+From: enzo - Eduardo Garcia <enzo@weknowinc.com>
+Date: Fri, 17 Aug 2018 13:13:48 +1000
+Subject: [PATCH 4/7] Restore JSON API reference for primary site and node side
+
+---
+ ...sonapi_resource_config.node--landing_page.yml | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+diff --git a/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml b/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml
+index 157a51c..b749399 100644
+--- a/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml
++++ b/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml
+@@ -284,6 +284,22 @@ resourceFields:
+     disabled: false
+     advancedOptionsIcon: ''
+     enhancer_label: ''
++  field_node_primary_site:
++    fieldName: field_node_primary_site
++    publicName: field_node_primary_site
++    enhancer:
++      id: ''
++    disabled: false
++    advancedOptionsIcon: ''
++    enhancer_label: ''
++  field_node_site:
++    fieldName: field_node_site
++    publicName: field_node_site
++    enhancer:
++      id: ''
++    disabled: false
++    advancedOptionsIcon: ''
++    enhancer_label: ''
+   field_landing_page_summary:
+     fieldName: field_landing_page_summary
+     publicName: field_landing_page_summary
+
+From 2e9c8615dd53947fddb5d57e9e147de4664c5a72 Mon Sep 17 00:00:00 2001
+From: enzo - Eduardo Garcia <enzo@weknowinc.com>
+Date: Fri, 17 Aug 2018 13:20:47 +1000
+Subject: [PATCH 5/7] Restore JSON API reference for primary site and node side
+
+---
+ ...api_resource_config.node--landing_page.yml | 26 +++++++++----------
+ 1 file changed, 13 insertions(+), 13 deletions(-)
+
+diff --git a/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml b/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml
+index b749399..fdced33 100644
+--- a/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml
++++ b/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml
+@@ -211,7 +211,7 @@ resourceFields:
+         id: ''
+       disabled: false
+       advancedOptionsIcon: ''
+-      enhancer_label: ''
++      enhancer_label: ''
+   field_landing_page_bg_colour:
+     fieldName: field_landing_page_bg_colour
+     publicName: field_landing_page_bg_colour
+@@ -284,33 +284,33 @@ resourceFields:
+     disabled: false
+     advancedOptionsIcon: ''
+     enhancer_label: ''
+-  field_node_primary_site:
+-    fieldName: field_node_primary_site
+-    publicName: field_node_primary_site
++  field_landing_page_summary:
++    fieldName: field_landing_page_summary
++    publicName: field_landing_page_summary
+     enhancer:
+       id: ''
+     disabled: false
+     advancedOptionsIcon: ''
+     enhancer_label: ''
+-  field_node_site:
+-    fieldName: field_node_site
+-    publicName: field_node_site
++  field_metatags:
++    fieldName: field_metatags
++    publicName: field_metatags
+     enhancer:
+       id: ''
+     disabled: false
+     advancedOptionsIcon: ''
+     enhancer_label: ''
+-  field_landing_page_summary:
+-    fieldName: field_landing_page_summary
+-    publicName: field_landing_page_summary
++  field_node_primary_site:
++    fieldName: field_node_primary_site
++    publicName: field_node_primary_site
+     enhancer:
+       id: ''
+     disabled: false
+     advancedOptionsIcon: ''
+     enhancer_label: ''
+-  field_metatags:
+-    fieldName: field_metatags
+-    publicName: field_metatags
++  field_node_site:
++    fieldName: field_node_site
++    publicName: field_node_site
+     enhancer:
+       id: ''
+     disabled: false
+
+From d0df01d22c7114ef574e60204325536c04369064 Mon Sep 17 00:00:00 2001
+From: enzo - Eduardo Garcia <enzo@weknowinc.com>
+Date: Fri, 17 Aug 2018 13:23:11 +1000
+Subject: [PATCH 6/7] Restore JSON API reference for primary site and node side
+
+---
+ ....jsonapi_resource_config.node--landing_page.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml b/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml
+index fdced33..a15964e 100644
+--- a/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml
++++ b/config/optional/jsonapi_extras.jsonapi_resource_config.node--landing_page.yml
+@@ -205,13 +205,13 @@ resourceFields:
+     advancedOptionsIcon: ''
+     enhancer_label: ''
+   field_landing_page_hero_theme:
+-      fieldName: field_landing_page_hero_theme
+-      publicName: field_landing_page_hero_theme
+-      enhancer:
+-        id: ''
+-      disabled: false
+-      advancedOptionsIcon: ''
+-      enhancer_label: ''
++    fieldName: field_landing_page_hero_theme
++    publicName: field_landing_page_hero_theme
++    enhancer:
++      id: ''
++    disabled: false
++    advancedOptionsIcon: ''
++    enhancer_label: ''
+   field_landing_page_bg_colour:
+     fieldName: field_landing_page_bg_colour
+     publicName: field_landing_page_bg_colour
+
+From 072c5f13010d84ba2557f3c6035d1ec4fc61c679 Mon Sep 17 00:00:00 2001
+From: enzo - Eduardo Garcia <enzo@weknowinc.com>
+Date: Fri, 17 Aug 2018 16:26:03 +1000
+Subject: [PATCH 7/7] Remove content field show rating definition
+
+---
+ .../core.entity_form_display.node.landing_page.default.yml       | 1 -
+ .../core.entity_view_display.node.landing_page.default.yml       | 1 -
+ 2 files changed, 2 deletions(-)
+
+diff --git a/config/install/core.entity_form_display.node.landing_page.default.yml b/config/install/core.entity_form_display.node.landing_page.default.yml
+index 25722d3..cd5f92f 100644
+--- a/config/install/core.entity_form_display.node.landing_page.default.yml
++++ b/config/install/core.entity_form_display.node.landing_page.default.yml
+@@ -18,7 +18,6 @@ dependencies:
+     - field.field.node.landing_page.field_landing_page_summary
+     - field.field.node.landing_page.field_metatags
+     - field.field.node.landing_page.field_related_links
+-    - field.field.node.landing_page.field_show_content_rating
+     - field.field.node.landing_page.field_show_news_search
+     - field.field.node.landing_page.field_show_related_content
+     - field.field.node.landing_page.field_show_site_section_nav
+diff --git a/config/install/core.entity_view_display.node.landing_page.default.yml b/config/install/core.entity_view_display.node.landing_page.default.yml
+index 0feb0b5..cdaccff 100644
+--- a/config/install/core.entity_view_display.node.landing_page.default.yml
++++ b/config/install/core.entity_view_display.node.landing_page.default.yml
+@@ -17,7 +17,6 @@ dependencies:
+     - field.field.node.landing_page.field_landing_page_summary
+     - field.field.node.landing_page.field_metatags
+     - field.field.node.landing_page.field_related_links
+-    - field.field.node.landing_page.field_show_content_rating
+     - field.field.node.landing_page.field_show_news_search
+     - field.field.node.landing_page.field_show_related_content
+     - field.field.node.landing_page.field_show_site_section_nav

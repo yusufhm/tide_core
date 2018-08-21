@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7bab0fae4a0a7da36c52626efbf0ca0",
+    "content-hash": "389667569f968b33ed359e9dd03866c5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -60,16 +60,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.64.12",
+            "version": "3.64.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "1006a0bfacb1e1cd69cee92f53a80143cd59dd5e"
+                "reference": "aadc68842a5dd1d3fb7faaee8a8a8eaaf0fd6065"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1006a0bfacb1e1cd69cee92f53a80143cd59dd5e",
-                "reference": "1006a0bfacb1e1cd69cee92f53a80143cd59dd5e",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/aadc68842a5dd1d3fb7faaee8a8a8eaaf0fd6065",
+                "reference": "aadc68842a5dd1d3fb7faaee8a8a8eaaf0fd6065",
                 "shasum": ""
             },
             "require": {
@@ -136,7 +136,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-08-14T22:18:41+00:00"
+            "time": "2018-08-16T22:11:39+00:00"
         },
         {
             "name": "bjeavons/zxcvbn-php",
@@ -1678,6 +1678,11 @@
                 "dpc-sdp/tide_webform": "@dev"
             },
             "type": "drupal-module",
+            "extra": {
+                "patches_applied": {
+                    "[SDPA-735] Hero Banner with Hero Image - Tide": "./patches/SDPA-735-Hero-Banner-with-Hero-Image-Tide.patch"
+                }
+            },
             "license": [
                 "GPL-2.0+"
             ],
