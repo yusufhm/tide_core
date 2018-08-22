@@ -483,6 +483,7 @@ class VicgovauDemoHelper {
       'card_navigation_featured_auto',
       'card_keydates',
       'featured_news',
+      'news_listing',
     ];
 
     $accordion_styles = ['basic', 'numbered'];

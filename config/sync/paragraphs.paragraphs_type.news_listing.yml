@@ -1,0 +1,9 @@
+uuid: 3583f87a-3ae8-4ee7-b645-8bb524986597
+langcode: en
+status: true
+dependencies: {  }
+id: news_listing
+label: 'News Listing'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,29 @@
+uuid: fd785b78-a289-4ab2-9a0e-dae3ec54c0f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_topic
+    - paragraphs.paragraphs_type.news_listing
+    - taxonomy.vocabulary.topic
+id: paragraph.news_listing.field_paragraph_topic
+field_name: field_paragraph_topic
+entity_type: paragraph
+bundle: news_listing
+label: Topic
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      topic: topic
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
