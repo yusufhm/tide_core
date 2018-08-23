@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "389667569f968b33ed359e9dd03866c5",
+    "content-hash": "b7bab0fae4a0a7da36c52626efbf0ca0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -60,16 +60,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.64.14",
+            "version": "3.65.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "aadc68842a5dd1d3fb7faaee8a8a8eaaf0fd6065"
+                "reference": "357ba2a06d2cf6e82a240f98a2292f5cd8bee15a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/aadc68842a5dd1d3fb7faaee8a8a8eaaf0fd6065",
-                "reference": "aadc68842a5dd1d3fb7faaee8a8a8eaaf0fd6065",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/357ba2a06d2cf6e82a240f98a2292f5cd8bee15a",
+                "reference": "357ba2a06d2cf6e82a240f98a2292f5cd8bee15a",
                 "shasum": ""
             },
             "require": {
@@ -136,7 +136,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-08-16T22:11:39+00:00"
+            "time": "2018-08-22T20:21:17+00:00"
         },
         {
             "name": "bjeavons/zxcvbn-php",
@@ -832,16 +832,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.7.1",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "b3217d58609e9c8e661cd41357a54d926c4a2a1a"
+                "reference": "d768d58baee9a4862ca783840eca1b9add7a7f57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/b3217d58609e9c8e661cd41357a54d926c4a2a1a",
-                "reference": "b3217d58609e9c8e661cd41357a54d926c4a2a1a",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/d768d58baee9a4862ca783840eca1b9add7a7f57",
+                "reference": "d768d58baee9a4862ca783840eca1b9add7a7f57",
                 "shasum": ""
             },
             "require": {
@@ -852,8 +852,9 @@
             },
             "require-dev": {
                 "alcaeus/mongo-php-adapter": "^1.1",
+                "doctrine/coding-standard": "^4.0",
                 "mongodb/mongodb": "^1.1",
-                "phpunit/phpunit": "^5.7",
+                "phpunit/phpunit": "^7.0",
                 "predis/predis": "~1.0"
             },
             "suggest": {
@@ -862,7 +863,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.7.x-dev"
+                    "dev-master": "1.8.x-dev"
                 }
             },
             "autoload": {
@@ -897,12 +898,12 @@
                 }
             ],
             "description": "Caching library offering an object-oriented API for many cache backends",
-            "homepage": "http://www.doctrine-project.org",
+            "homepage": "https://www.doctrine-project.org",
             "keywords": [
                 "cache",
                 "caching"
             ],
-            "time": "2017-08-25T07:02:50+00:00"
+            "time": "2018-08-21T18:01:43+00:00"
         },
         {
             "name": "doctrine/collections",
@@ -1483,18 +1484,18 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:dpc-sdp/tide_api.git",
-                "reference": "ad83dfccd5a96145c0ae637eab27f4fb7f295b1b"
+                "reference": "eb1861c8dbb1df8f9a112286649e9675d3f0dd5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/ad83dfccd5a96145c0ae637eab27f4fb7f295b1b",
-                "reference": "ad83dfccd5a96145c0ae637eab27f4fb7f295b1b",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/eb1861c8dbb1df8f9a112286649e9675d3f0dd5c",
+                "reference": "eb1861c8dbb1df8f9a112286649e9675d3f0dd5c",
                 "shasum": ""
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
-                "drupal/jsonapi": "1.16",
-                "drupal/jsonapi_extras": "2.0-rc1",
+                "drupal/jsonapi": "^1.16",
+                "drupal/jsonapi_extras": "^2.5",
                 "drupal/openapi": "1.0-alpha1",
                 "drupal/schemata": "1.0-alpha2"
             },
@@ -1511,9 +1512,6 @@
                     },
                     "drupal/jsonapi": {
                         "Menu content is not accessible via jsonapi - https://www.drupal.org/project/jsonapi/issues/2967986": "https://www.drupal.org/files/issues/2018-07-09/jsonapi_menu_403_fix-2967986-4.patch"
-                    },
-                    "drupal/jsonapi_extras": {
-                        "Field enhancer does not work with Config Entities - https://www.drupal.org/project/jsonapi_extras/issues/2975925": "https://www.drupal.org/files/issues/2018-05-30/jsonapi_extras-config_entities_enhancer-2975925-5.patch"
                     }
                 }
             },
@@ -1525,7 +1523,7 @@
                 "source": "https://github.com/dpc-sdp/tide_api/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_api/issues"
             },
-            "time": "2018-08-15T03:02:08+00:00"
+            "time": "2018-08-23T05:02:38+00:00"
         },
         {
             "name": "dpc-sdp/tide_core",
@@ -1657,12 +1655,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:dpc-sdp/tide_landing_page.git",
-                "reference": "e83d41b1ba4076b3975cd7dd42010563d05acfc2"
+                "reference": "5c4a0ed736b0a291595b3f0c1152bc4dcf28af12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/e83d41b1ba4076b3975cd7dd42010563d05acfc2",
-                "reference": "e83d41b1ba4076b3975cd7dd42010563d05acfc2",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/5c4a0ed736b0a291595b3f0c1152bc4dcf28af12",
+                "reference": "5c4a0ed736b0a291595b3f0c1152bc4dcf28af12",
                 "shasum": ""
             },
             "require": {
@@ -1678,11 +1676,6 @@
                 "dpc-sdp/tide_webform": "@dev"
             },
             "type": "drupal-module",
-            "extra": {
-                "patches_applied": {
-                    "[SDPA-735] Hero Banner with Hero Image - Tide": "./patches/SDPA-735-Hero-Banner-with-Hero-Image-Tide.patch"
-                }
-            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -1691,7 +1684,7 @@
                 "source": "https://github.com/dpc-sdp/tide_landing_page/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_landing_page/issues"
             },
-            "time": "2018-08-10T03:57:35+00:00"
+            "time": "2018-08-22T23:08:02+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
@@ -1947,12 +1940,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:dpc-sdp/tide_webform.git",
-                "reference": "2b98f2093ee77fe154f4456b99b380a63c4fb110"
+                "reference": "5c3755c310a27f55715caca1e66cebf9d160730b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_webform/zipball/2b98f2093ee77fe154f4456b99b380a63c4fb110",
-                "reference": "2b98f2093ee77fe154f4456b99b380a63c4fb110",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_webform/zipball/5c3755c310a27f55715caca1e66cebf9d160730b",
+                "reference": "5c3755c310a27f55715caca1e66cebf9d160730b",
                 "shasum": ""
             },
             "require": {
@@ -1976,7 +1969,7 @@
                 "source": "https://github.com/dpc-sdp/tide_webform/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_webform/issues"
             },
-            "time": "2018-08-15T03:14:10+00:00"
+            "time": "2018-08-20T23:04:43+00:00"
         },
         {
             "name": "drupal-composer/drupal-scaffold",
@@ -3081,13 +3074,13 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
+                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch",
                     "Contextual links should not be added inside another link - https://www.drupal.org/node/2898875": "https://www.drupal.org/files/issues/2018-03-16/contextual_links_should-2898875-6.patch",
                     "No validation on text length for menu description when editing node - https://www.drupal.org/node/2852665#comment-12650295": "https://www.drupal.org/files/issues/2018-06-13/fatal_error_remove_menu_add_with_tests.patch",
                     "active-link.js throws JS error if query string parameter contains a single quote - https://www.drupal.org/node/2902769": "https://www.drupal.org/files/issues/active_link_js_throws-2902769-5_0.patch",
                     "getUuid() in class MenuLinkContent not returning any value - https://www.drupal.org/node/2737741": "https://www.drupal.org/files/issues/drupal-menulinkcontent-getuuid-return-missing-2737741-2.patch",
                     "RSS view with fields give wrong URL from path field - https://www.drupal.org/node/2673980#comment-12180229": "https://www.drupal.org/files/issues/rss_view_with_fields-2673980-28.patch",
-                    "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch",
-                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
+                    "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch"
                 }
             },
             "autoload": {
@@ -4239,17 +4232,17 @@
         },
         {
             "name": "drupal/jsonapi",
-            "version": "1.16.0",
+            "version": "1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/jsonapi",
-                "reference": "8.x-1.16"
+                "reference": "8.x-1.23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-1.16.zip",
-                "reference": "8.x-1.16",
-                "shasum": "2750ba9c137ef87da10089bc100d6f88d8ac4342"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-1.23.zip",
+                "reference": "8.x-1.23",
+                "shasum": "4fb88736a9ad90a995bdc9c3ab90e7731b6d89e5"
             },
             "require": {
                 "drupal/core": "^8.4.3"
@@ -4257,7 +4250,7 @@
             "require-dev": {
                 "drupal/schemata": "1.x-dev#8325d172e1d6880aa24073f8f751ef089282cf9a",
                 "drupal/schemata_json_schema": "*",
-                "justinrainbow/json-schema": "^4.1"
+                "justinrainbow/json-schema": "^5.2"
             },
             "type": "drupal-module",
             "extra": {
@@ -4265,8 +4258,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.16",
-                    "datestamp": "1525889880",
+                    "version": "8.x-1.23",
+                    "datestamp": "1532084496",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4306,21 +4299,21 @@
         },
         {
             "name": "drupal/jsonapi_extras",
-            "version": "2.0.0-rc1",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/jsonapi_extras",
-                "reference": "8.x-2.0-rc1"
+                "reference": "8.x-2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi_extras-8.x-2.0-rc1.zip",
-                "reference": "8.x-2.0-rc1",
-                "shasum": "a876638e2d1810139946f33a5a65944472bdfaf1"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi_extras-8.x-2.5.zip",
+                "reference": "8.x-2.5",
+                "shasum": "76ce52b467952e6e3d9bb210f61671002bb5b404"
             },
             "require": {
                 "drupal/core": "^8.5",
-                "drupal/jsonapi": "^1.13",
+                "drupal/jsonapi": "^1.22",
                 "e0ipso/shaper": "^1"
             },
             "type": "drupal-module",
@@ -4329,15 +4322,12 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-rc1",
-                    "datestamp": "1524209880",
+                    "version": "8.x-2.5",
+                    "datestamp": "1533103380",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "RC releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
-                },
-                "patches_applied": {
-                    "Field enhancer does not work with Config Entities - https://www.drupal.org/project/jsonapi_extras/issues/2975925": "https://www.drupal.org/files/issues/2018-05-30/jsonapi_extras-config_entities_enhancer-2975925-5.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -4643,17 +4633,17 @@
         },
         {
             "name": "drupal/metatag",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/metatag",
-                "reference": "8.x-1.5"
+                "reference": "8.x-1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/metatag-8.x-1.5.zip",
-                "reference": "8.x-1.5",
-                "shasum": "48f1c2a4e93ef1af1eb4b5b6cc6321e951fd1002"
+                "url": "https://ftp.drupal.org/files/projects/metatag-8.x-1.6.zip",
+                "reference": "8.x-1.6",
+                "shasum": "481ad1cdf4a4faac268fdf6901920c537a15fa53"
             },
             "require": {
                 "drupal/core": "*",
@@ -4663,6 +4653,7 @@
                 "drupal/devel": "^1.0",
                 "drupal/metatag_dc": "*",
                 "drupal/metatag_open_graph": "*",
+                "drupal/page_manager": "^4.0",
                 "drupal/redirect": "^1.0",
                 "drupal/restui": "^1.0"
             },
@@ -4672,8 +4663,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.5",
-                    "datestamp": "1522344484",
+                    "version": "8.x-1.6",
+                    "datestamp": "1534867985",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5577,7 +5568,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0",
-                    "datestamp": "1534196880",
+                    "datestamp": "1534247471",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
