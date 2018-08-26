@@ -280,16 +280,16 @@
         },
         {
             "name": "commerceguys/addressing",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/commerceguys/addressing.git",
-                "reference": "ef34ba9f6e5378e56cceb9f45798b464878db031"
+                "reference": "de46cb4a002f9014c44cfcb1dcf18df8105e8239"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/commerceguys/addressing/zipball/ef34ba9f6e5378e56cceb9f45798b464878db031",
-                "reference": "ef34ba9f6e5378e56cceb9f45798b464878db031",
+                "url": "https://api.github.com/repos/commerceguys/addressing/zipball/de46cb4a002f9014c44cfcb1dcf18df8105e8239",
+                "reference": "de46cb4a002f9014c44cfcb1dcf18df8105e8239",
                 "shasum": ""
             },
             "require": {
@@ -335,7 +335,7 @@
                 "localization",
                 "postal"
             ],
-            "time": "2018-05-23T13:00:47+00:00"
+            "time": "2018-08-17T14:27:22+00:00"
         },
         {
             "name": "composer/installers",
@@ -521,16 +521,16 @@
         },
         {
             "name": "consolidation/annotated-command",
-            "version": "2.8.4",
+            "version": "2.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/annotated-command.git",
-                "reference": "651541a0b68318a2a202bda558a676e5ad92223c"
+                "reference": "1e8ff512072422b850b44aa721b5b303e4a5ebb3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/651541a0b68318a2a202bda558a676e5ad92223c",
-                "reference": "651541a0b68318a2a202bda558a676e5ad92223c",
+                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/1e8ff512072422b850b44aa721b5b303e4a5ebb3",
+                "reference": "1e8ff512072422b850b44aa721b5b303e4a5ebb3",
                 "shasum": ""
             },
             "require": {
@@ -569,7 +569,7 @@
                 }
             ],
             "description": "Initialize Symfony Console commands from annotated command class methods.",
-            "time": "2018-05-25T18:04:25+00:00"
+            "time": "2018-08-18T23:51:49+00:00"
         },
         {
             "name": "consolidation/output-formatters",
@@ -3074,13 +3074,13 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
-                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch",
                     "Contextual links should not be added inside another link - https://www.drupal.org/node/2898875": "https://www.drupal.org/files/issues/2018-03-16/contextual_links_should-2898875-6.patch",
                     "No validation on text length for menu description when editing node - https://www.drupal.org/node/2852665#comment-12650295": "https://www.drupal.org/files/issues/2018-06-13/fatal_error_remove_menu_add_with_tests.patch",
                     "active-link.js throws JS error if query string parameter contains a single quote - https://www.drupal.org/node/2902769": "https://www.drupal.org/files/issues/active_link_js_throws-2902769-5_0.patch",
                     "getUuid() in class MenuLinkContent not returning any value - https://www.drupal.org/node/2737741": "https://www.drupal.org/files/issues/drupal-menulinkcontent-getuuid-return-missing-2737741-2.patch",
                     "RSS view with fields give wrong URL from path field - https://www.drupal.org/node/2673980#comment-12180229": "https://www.drupal.org/files/issues/rss_view_with_fields-2673980-28.patch",
-                    "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch"
+                    "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch",
+                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
                 }
             },
             "autoload": {

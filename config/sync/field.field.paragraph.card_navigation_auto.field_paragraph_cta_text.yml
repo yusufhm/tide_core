@@ -1,0 +1,19 @@
+uuid: 9fd62382-1b5b-44db-a294-fdadf1c96907
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_cta_text
+    - paragraphs.paragraphs_type.card_navigation_auto
+id: paragraph.card_navigation_auto.field_paragraph_cta_text
+field_name: field_paragraph_cta_text
+entity_type: paragraph
+bundle: card_navigation_auto
+label: 'CTA Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
