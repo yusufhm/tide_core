@@ -60,16 +60,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.65.2",
+            "version": "3.66.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "357ba2a06d2cf6e82a240f98a2292f5cd8bee15a"
+                "reference": "eefa7317be6a8aceacf10364ea964e70fc7647f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/357ba2a06d2cf6e82a240f98a2292f5cd8bee15a",
-                "reference": "357ba2a06d2cf6e82a240f98a2292f5cd8bee15a",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/eefa7317be6a8aceacf10364ea964e70fc7647f8",
+                "reference": "eefa7317be6a8aceacf10364ea964e70fc7647f8",
                 "shasum": ""
             },
             "require": {
@@ -136,7 +136,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-08-22T20:21:17+00:00"
+            "time": "2018-08-25T00:49:07+00:00"
         },
         {
             "name": "bjeavons/zxcvbn-php",
@@ -1252,16 +1252,16 @@
         },
         {
             "name": "doctrine/persistence",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/persistence.git",
-                "reference": "17896f6d56a2794a1619e019596ae627aabd8fd5"
+                "reference": "af1ec238659a83e320f03e0e454e200f689b4b97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/persistence/zipball/17896f6d56a2794a1619e019596ae627aabd8fd5",
-                "reference": "17896f6d56a2794a1619e019596ae627aabd8fd5",
+                "url": "https://api.github.com/repos/doctrine/persistence/zipball/af1ec238659a83e320f03e0e454e200f689b4b97",
+                "reference": "af1ec238659a83e320f03e0e454e200f689b4b97",
                 "shasum": ""
             },
             "require": {
@@ -1326,7 +1326,7 @@
             "keywords": [
                 "persistence"
             ],
-            "time": "2018-06-14T18:57:48+00:00"
+            "time": "2018-07-12T12:37:50+00:00"
         },
         {
             "name": "doctrine/reflection",
@@ -1655,12 +1655,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:dpc-sdp/tide_landing_page.git",
-                "reference": "5c4a0ed736b0a291595b3f0c1152bc4dcf28af12"
+                "reference": "becd30e8f455addf309105145a1cc61755f60a22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/5c4a0ed736b0a291595b3f0c1152bc4dcf28af12",
-                "reference": "5c4a0ed736b0a291595b3f0c1152bc4dcf28af12",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/becd30e8f455addf309105145a1cc61755f60a22",
+                "reference": "becd30e8f455addf309105145a1cc61755f60a22",
                 "shasum": ""
             },
             "require": {
@@ -1684,7 +1684,7 @@
                 "source": "https://github.com/dpc-sdp/tide_landing_page/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_landing_page/issues"
             },
-            "time": "2018-08-22T23:08:02+00:00"
+            "time": "2018-08-27T00:25:01+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
@@ -4299,17 +4299,17 @@
         },
         {
             "name": "drupal/jsonapi_extras",
-            "version": "2.5.0",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/jsonapi_extras",
-                "reference": "8.x-2.5"
+                "reference": "8.x-2.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi_extras-8.x-2.5.zip",
-                "reference": "8.x-2.5",
-                "shasum": "76ce52b467952e6e3d9bb210f61671002bb5b404"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi_extras-8.x-2.6.zip",
+                "reference": "8.x-2.6",
+                "shasum": "163e340616b59c02f36c817662cb72ff86af9130"
             },
             "require": {
                 "drupal/core": "^8.5",
@@ -4322,8 +4322,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.5",
-                    "datestamp": "1533103380",
+                    "version": "8.x-2.6",
+                    "datestamp": "1535295184",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
