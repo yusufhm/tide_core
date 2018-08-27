@@ -1,0 +1,28 @@
+uuid: fb0f6413-72e1-4934-aab9-3047693da768
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_landing_page_hero_image
+    - media.type.image
+    - node.type.landing_page
+id: node.landing_page.field_landing_page_hero_image
+field_name: field_landing_page_hero_image
+entity_type: node
+bundle: landing_page
+label: 'Hero Image'
+description: 'Journey links will not be displayed if hero image is added'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

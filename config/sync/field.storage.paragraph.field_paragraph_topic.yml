@@ -5,8 +5,6 @@ dependencies:
   module:
     - paragraphs
     - taxonomy
-_core:
-  default_config_hash: RdstoWzX6Hy-xksHaq2f8f6Qr-8xd654VXWFdCuF73I
 id: paragraph.field_paragraph_topic
 field_name: field_paragraph_topic
 entity_type: paragraph
@@ -15,7 +13,7 @@ settings:
   target_type: taxonomy_term
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

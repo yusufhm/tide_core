@@ -1,0 +1,21 @@
+uuid: 86c727c4-4b24-46cf-a89a-a067cb71c631
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_landing_page_hero_theme
+    - node.type.landing_page
+  module:
+    - options
+id: node.landing_page.field_landing_page_hero_theme
+field_name: field_landing_page_hero_theme
+entity_type: node
+bundle: landing_page
+label: Theme
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

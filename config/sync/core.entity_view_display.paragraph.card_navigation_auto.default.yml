@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.card_navigation_auto.field_paragraph_cta_text
     - field.field.paragraph.card_navigation_auto.field_paragraph_reference
     - paragraphs.paragraphs_type.card_navigation_auto
 _core:
@@ -12,6 +13,14 @@ targetEntityType: paragraph
 bundle: card_navigation_auto
 mode: default
 content:
+  field_paragraph_cta_text:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_paragraph_reference:
     weight: 0
     label: hidden
