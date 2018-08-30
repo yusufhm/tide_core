@@ -60,16 +60,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.67.1",
+            "version": "3.67.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "a77e6796841056f46543393f5cd06aa9fa4cc40a"
+                "reference": "b4f47ccd5715fe100111f26713c3500ff56e3dcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a77e6796841056f46543393f5cd06aa9fa4cc40a",
-                "reference": "a77e6796841056f46543393f5cd06aa9fa4cc40a",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b4f47ccd5715fe100111f26713c3500ff56e3dcc",
+                "reference": "b4f47ccd5715fe100111f26713c3500ff56e3dcc",
                 "shasum": ""
             },
             "require": {
@@ -136,7 +136,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-08-28T19:38:00+00:00"
+            "time": "2018-08-29T20:04:59+00:00"
         },
         {
             "name": "bjeavons/zxcvbn-php",
@@ -1483,13 +1483,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:dpc-sdp/tide_api.git",
-                "reference": "eb1861c8dbb1df8f9a112286649e9675d3f0dd5c"
+                "url": "https://github.com/dpc-sdp/tide_api.git",
+                "reference": "d0d7a91e31d7cfa13a5cacd5866e2bc074eaaefe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/eb1861c8dbb1df8f9a112286649e9675d3f0dd5c",
-                "reference": "eb1861c8dbb1df8f9a112286649e9675d3f0dd5c",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/d0d7a91e31d7cfa13a5cacd5866e2bc074eaaefe",
+                "reference": "d0d7a91e31d7cfa13a5cacd5866e2bc074eaaefe",
                 "shasum": ""
             },
             "require": {
@@ -1523,7 +1523,7 @@
                 "source": "https://github.com/dpc-sdp/tide_api/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_api/issues"
             },
-            "time": "2018-08-23T05:02:38+00:00"
+            "time": "2018-08-29T23:17:18+00:00"
         },
         {
             "name": "dpc-sdp/tide_core",
@@ -1531,12 +1531,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:dpc-sdp/tide_core.git",
-                "reference": "53c49109b4b0b3d523fbd7f079df64ca406d9de4"
+                "reference": "4d7c6a0367125e4387bc8259e1661d1b171150c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/53c49109b4b0b3d523fbd7f079df64ca406d9de4",
-                "reference": "53c49109b4b0b3d523fbd7f079df64ca406d9de4",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/4d7c6a0367125e4387bc8259e1661d1b171150c4",
+                "reference": "4d7c6a0367125e4387bc8259e1661d1b171150c4",
                 "shasum": ""
             },
             "require": {
@@ -1647,7 +1647,7 @@
                 "source": "https://github.com/dpc-sdp/tide_core/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_core/issues"
             },
-            "time": "2018-08-29T00:50:41+00:00"
+            "time": "2018-08-29T23:19:13+00:00"
         },
         {
             "name": "dpc-sdp/tide_landing_page",
@@ -1655,12 +1655,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:dpc-sdp/tide_landing_page.git",
-                "reference": "becd30e8f455addf309105145a1cc61755f60a22"
+                "reference": "baf38103b50007f823668da4b40ce2357d6740d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/becd30e8f455addf309105145a1cc61755f60a22",
-                "reference": "becd30e8f455addf309105145a1cc61755f60a22",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/baf38103b50007f823668da4b40ce2357d6740d2",
+                "reference": "baf38103b50007f823668da4b40ce2357d6740d2",
                 "shasum": ""
             },
             "require": {
@@ -1684,7 +1684,7 @@
                 "source": "https://github.com/dpc-sdp/tide_landing_page/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_landing_page/issues"
             },
-            "time": "2018-08-27T00:25:01+00:00"
+            "time": "2018-08-29T22:34:27+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
@@ -2539,7 +2539,7 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "Oliver Köhler",
+                    "name": "Oliver K??hler",
                     "homepage": "https://www.drupal.org/u/nebel54",
                     "role": "Maintainer"
                 },
@@ -2672,7 +2672,7 @@
             ],
             "authors": [
                 {
-                    "name": "Tommy Lynge Jørgensen",
+                    "name": "Tommy Lynge J??rgensen",
                     "homepage": "https://www.drupal.org/u/tlyngej",
                     "email": "tlyngej@gmail.com",
                     "role": "Maintainer"
@@ -3352,7 +3352,7 @@
                     "homepage": "https://www.drupal.org/user/139189"
                 },
                 {
-                    "name": "rötzi",
+                    "name": "r??tzi",
                     "homepage": "https://www.drupal.org/user/73064"
                 },
                 {
@@ -4336,7 +4336,7 @@
             ],
             "authors": [
                 {
-                    "name": "Mateu Aguiló Bosch",
+                    "name": "Mateu Aguil?? Bosch",
                     "homepage": "https://www.drupal.org/user/550110",
                     "email": "mateu.aguilo.bosch@gmail.com"
                 }
@@ -6663,7 +6663,7 @@
                     "email": "marksonnabaum@gmail.com"
                 },
                 {
-                    "name": "Antoine Beaupré",
+                    "name": "Antoine Beaupr??",
                     "email": "anarcat@koumbit.org"
                 },
                 {
@@ -6671,7 +6671,7 @@
                     "email": "greg.1.anderson@greenknowe.org"
                 },
                 {
-                    "name": "Jonathan Araña Cruz",
+                    "name": "Jonathan Ara??a Cruz",
                     "email": "jonhattan@faita.net"
                 },
                 {
@@ -6730,7 +6730,7 @@
             ],
             "authors": [
                 {
-                    "name": "Mateu Aguiló Bosch",
+                    "name": "Mateu Aguil?? Bosch",
                     "email": "mateu.aguilo.bosch@gmail.com"
                 }
             ],
@@ -7376,7 +7376,7 @@
                     "email": "igor@wiedler.ch"
                 },
                 {
-                    "name": "Robert Schönthal",
+                    "name": "Robert Sch??nthal",
                     "email": "seroscho@googlemail.com"
                 }
             ],
@@ -10045,16 +10045,16 @@
             ],
             "authors": [
                 {
-                    "name": "Frédéric Hardy",
+                    "name": "Fr??d??ric Hardy",
                     "email": "frederic.hardy@atoum.org",
                     "homepage": "http://blog.mageekbox.net"
                 },
                 {
-                    "name": "François Dussert",
+                    "name": "Fran??ois Dussert",
                     "email": "francois.dussert@atoum.org"
                 },
                 {
-                    "name": "Gérald Croes",
+                    "name": "G??rald Croes",
                     "email": "gerald.croes@atoum.org"
                 },
                 {
@@ -10585,7 +10585,7 @@
             ],
             "authors": [
                 {
-                    "name": "Christian Lück",
+                    "name": "Christian L??ck",
                     "email": "christian@lueck.tv"
                 }
             ],
@@ -11761,7 +11761,7 @@
             ],
             "authors": [
                 {
-                    "name": "Márk Sági-Kazár",
+                    "name": "M??rk S??gi-Kaz??r",
                     "email": "mark.sagikazar@gmail.com"
                 }
             ],
@@ -11819,7 +11819,7 @@
             ],
             "authors": [
                 {
-                    "name": "Михаил Красильников",
+                    "name": "???????????? ????????????????????????",
                     "email": "m.krasilnikov@yandex.ru"
                 }
             ],
@@ -11876,7 +11876,7 @@
             ],
             "authors": [
                 {
-                    "name": "Márk Sági-Kazár",
+                    "name": "M??rk S??gi-Kaz??r",
                     "email": "mark.sagikazar@gmail.com"
                 }
             ],
@@ -11937,7 +11937,7 @@
                     "email": "geloen.eric@gmail.com"
                 },
                 {
-                    "name": "Márk Sági-Kazár",
+                    "name": "M??rk S??gi-Kaz??r",
                     "email": "mark.sagikazar@gmail.com"
                 }
             ],
@@ -12008,7 +12008,7 @@
             ],
             "authors": [
                 {
-                    "name": "Márk Sági-Kazár",
+                    "name": "M??rk S??gi-Kaz??r",
                     "email": "mark.sagikazar@gmail.com"
                 }
             ],
@@ -12056,7 +12056,7 @@
             ],
             "authors": [
                 {
-                    "name": "Márk Sági-Kazár",
+                    "name": "M??rk S??gi-Kaz??r",
                     "email": "mark.sagikazar@gmail.com"
                 }
             ],
@@ -12106,7 +12106,7 @@
             ],
             "authors": [
                 {
-                    "name": "Márk Sági-Kazár",
+                    "name": "M??rk S??gi-Kaz??r",
                     "email": "mark.sagikazar@gmail.com"
                 },
                 {
@@ -13520,7 +13520,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jean-François Simon",
+                    "name": "Jean-Fran??ois Simon",
                     "email": "jeanfrancois.simon@sensiolabs.com"
                 },
                 {
