@@ -3,6 +3,12 @@ aliases:
   # Fingerprint of the SSH key for the Deployer user. The value is found in
   # CircleCI UI -> SSH Permissions.
   - &deploy_ssh_fingerprint "36:03:e3:ca:b3:0b:82:18:e2:e9:ae:5d:81:17:86:b1"
+
+  # Fingerprint of the key used to get access to private repositories.
+  # @private_repos
+  - &ssh_key_fingerprint "36:03:e3:ca:b3:0b:82:18:e2:e9:ae:5d:81:17:86:b1"
+  # @private_repos_end
+
   - &step_configure_git
     run:
       name: Configure git
@@ -19,6 +25,9 @@ jobs:
           COMPOSER_ALLOW_SUPERUSER: 1
           COMPOSE_PATH_SEPARATOR: ":"
           COMPOSE_FILE: docker-compose.yml:docker-compose.ci.yml
+          # @private_repos
+          SSH_KEY_FINGERPRINT: *ssh_key_fingerprint
+          # @private_repos_end
     working_directory: /app
     steps:
       - checkout
@@ -30,6 +39,21 @@ jobs:
       - run:
           name: Pull newest Bay images.
           command: composer bay:pull
+      # @private_repos
+      - add_ssh_keys:
+          fingerprints:
+            - *ssh_key_fingerprint
+      - run:
+          name: Add SSH key into container environment variable
+          command: |
+            SSH_KEY_FILE="${SSH_KEY_FINGERPRINT//:}" && SSH_KEY_FILE="id_rsa_${SSH_KEY_FILE//\"}" && export $SSH_KEY_FILE
+            cp ~/.ssh/$SSH_KEY_FILE /app/lagoon_cli.key
+      # @private_repos_end
+      - run:
+          name: Add GitHub token into container environment variable
+          command: |
+            echo "GITHUB_TOKEN=$GITHUB_TOKEN" >> .env
+            cat .env
       - run:
           name: Start Bay stack.
           command: |
@@ -71,6 +95,9 @@ jobs:
           COMPOSER_ALLOW_SUPERUSER: 1
           COMPOSE_PATH_SEPARATOR: ":"
           COMPOSE_FILE: docker-compose.yml:docker-compose.ci.yml
+          # @private_repos
+          SSH_KEY_FINGERPRINT: *ssh_key_fingerprint
+          # @private_repos_end
     working_directory: /app
     steps:
       - checkout
@@ -82,6 +109,21 @@ jobs:
       - run:
           name: Pull newest Bay images.
           command: composer bay:pull
+      # @private_repos
+      - add_ssh_keys:
+          fingerprints:
+            - *ssh_key_fingerprint
+      - run:
+          name: Add SSH key into container environment variable
+          command: |
+            SSH_KEY_FILE="${SSH_KEY_FINGERPRINT//:}" && SSH_KEY_FILE="id_rsa_${SSH_KEY_FILE//\"}" && export $SSH_KEY_FILE
+            cp ~/.ssh/$SSH_KEY_FILE /app/lagoon_cli.key
+      # @private_repos_end
+      - run:
+          name: Add GitHub token into container environment variable
+          command: |
+            echo "GITHUB_TOKEN=$GITHUB_TOKEN" >> .env
+            cat .env
       - run:
           name: Start Bay stack.
           command: |
@@ -159,7 +201,6 @@ workflows:
           filters:
             branches:
               ignore: /api|api\-edge/
-
       - build-install
       - push-api:
           requires:

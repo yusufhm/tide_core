@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: related_links
-label: 'Related links'
-icon_uuid: null
-description: ''
-behavior_plugins: {  }

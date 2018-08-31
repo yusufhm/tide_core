@@ -65,6 +65,9 @@ function vicgovau_demo_create_taxonomy_term_sites() {
       'field_site_domains' => [
         ['value' => $site],
       ],
+      'field_acknowledgement_to_country' => [
+        ['value' => "The Victorian Government acknowledges Aboriginal and Torres Strait Islander people as the Traditional Custodians of the land and acknowledges and pays respect to their Elders, past and present."],
+      ],
     ]);
 
     try {

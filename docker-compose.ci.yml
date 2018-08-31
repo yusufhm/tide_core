@@ -3,6 +3,7 @@ services:
   cli:
     environment:
       LAGOON_ENVIRONMENT_TYPE: 'ci'
+      GITHUB_TOKEN: ${GITHUB_TOKEN}
     volumes:
       - .:/app/docroot/sites/default/files
   php:

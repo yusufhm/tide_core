@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: call_to_action
-label: 'Call to Action'
-icon_uuid: null
-description: ''
-behavior_plugins: {  }
