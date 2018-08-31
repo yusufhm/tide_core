@@ -51,11 +51,7 @@ parameters:
     # Specify allowed request methods, specify ['*'] to allow all possible ones.
     allowedMethods: ['POST, GET']
     # Configure requests allowed from specific origins.
-<<<<<<< HEAD
     allowedOrigins: ['*.amazee.io','*.vic.gov.au']
-=======
-    allowedOrigins: ['https://nginx-php-vic-gov-au-master.lagoon.vicsdp.amazee.io','https://app-vic-gov-au-master.lagoon.vicsdp.amazee.io','https://staging.buyingfor.vic.gov.au','https://app-buyingfor-vic-gov-au-master.lagoon.vicsdp.amazee.io']
->>>>>>> dad84e9... [SDPA-908] Added Buying for Vic origin domains to CORS config. (#237)
     # Sets the Access-Control-Expose-Headers header.
     exposedHeaders: false
     # Sets the Access-Control-Max-Age header.
