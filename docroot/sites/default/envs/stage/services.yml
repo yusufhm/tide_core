@@ -51,7 +51,7 @@ parameters:
     # Specify allowed request methods, specify ['*'] to allow all possible ones.
     allowedMethods: ['POST, GET']
     # Configure requests allowed from specific origins.
-    allowedOrigins: ['https://nginx-php-vic-gov-au-master.lagoon.vicsdp.amazee.io','https://app-vic-gov-au-master.lagoon.vicsdp.amazee.io']
+    allowedOrigins: ['https://nginx-php-vic-gov-au-master.lagoon.vicsdp.amazee.io','https://app-vic-gov-au-master.lagoon.vicsdp.amazee.io','https://staging.buyingfor.vic.gov.au','https://app-buyingfor-vic-gov-au-master.lagoon.vicsdp.amazee.io']
     # Sets the Access-Control-Expose-Headers header.
     exposedHeaders: false
     # Sets the Access-Control-Max-Age header.
