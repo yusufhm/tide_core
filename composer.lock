@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d7df50a153eda489c9c3972d65f6b07",
+    "content-hash": "b7bab0fae4a0a7da36c52626efbf0ca0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1484,12 +1484,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_api.git",
-                "reference": "9cf1039ac2216accecbbc191fd103b6fd3ba4d7f"
+                "reference": "8a5ee5b1ad4a462e3a07d16f237fae43acf2c511"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/9cf1039ac2216accecbbc191fd103b6fd3ba4d7f",
-                "reference": "9cf1039ac2216accecbbc191fd103b6fd3ba4d7f",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/8a5ee5b1ad4a462e3a07d16f237fae43acf2c511",
+                "reference": "8a5ee5b1ad4a462e3a07d16f237fae43acf2c511",
                 "shasum": ""
             },
             "require": {
@@ -1513,9 +1513,6 @@
                     "drupal/jsonapi": {
                         "Menu content is not accessible via jsonapi - https://www.drupal.org/project/jsonapi/issues/2967986": "https://www.drupal.org/files/issues/2018-07-09/jsonapi_menu_403_fix-2967986-4.patch"
                     }
-                },
-                "patches_applied": {
-                    "[SDPA-900] API returns http protocol instead of https for Embedded Videos": "./patches/SDPA-900_update-embedded-video-protocol.patch"
                 }
             },
             "license": [
@@ -1526,7 +1523,7 @@
                 "source": "https://github.com/dpc-sdp/tide_api/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_api/issues"
             },
-            "time": "2018-08-30T00:17:58+00:00"
+            "time": "2018-09-04T02:57:39+00:00"
         },
         {
             "name": "dpc-sdp/tide_core",
