@@ -312,6 +312,9 @@
             "docroot/sites/default/files"
         ],
         "patches": {
+            "dpc-sdp/tide_api": {
+                "[SDPA-900] API returns http protocol instead of https for Embedded Videos": "./patches/SDPA-900_update-embedded-video-protocol.patch"
+            }
         }
     }
 }

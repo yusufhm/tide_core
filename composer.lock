@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7bab0fae4a0a7da36c52626efbf0ca0",
+    "content-hash": "8d7df50a153eda489c9c3972d65f6b07",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1484,12 +1484,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_api.git",
-                "reference": "d0d7a91e31d7cfa13a5cacd5866e2bc074eaaefe"
+                "reference": "9cf1039ac2216accecbbc191fd103b6fd3ba4d7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/d0d7a91e31d7cfa13a5cacd5866e2bc074eaaefe",
-                "reference": "d0d7a91e31d7cfa13a5cacd5866e2bc074eaaefe",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/9cf1039ac2216accecbbc191fd103b6fd3ba4d7f",
+                "reference": "9cf1039ac2216accecbbc191fd103b6fd3ba4d7f",
                 "shasum": ""
             },
             "require": {
@@ -1513,6 +1513,9 @@
                     "drupal/jsonapi": {
                         "Menu content is not accessible via jsonapi - https://www.drupal.org/project/jsonapi/issues/2967986": "https://www.drupal.org/files/issues/2018-07-09/jsonapi_menu_403_fix-2967986-4.patch"
                     }
+                },
+                "patches_applied": {
+                    "[SDPA-900] API returns http protocol instead of https for Embedded Videos": "./patches/SDPA-900_update-embedded-video-protocol.patch"
                 }
             },
             "license": [
@@ -1523,7 +1526,7 @@
                 "source": "https://github.com/dpc-sdp/tide_api/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_api/issues"
             },
-            "time": "2018-08-29T23:17:18+00:00"
+            "time": "2018-08-30T00:17:58+00:00"
         },
         {
             "name": "dpc-sdp/tide_core",
@@ -2539,7 +2542,7 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "Oliver K??hler",
+                    "name": "Oliver Köhler",
                     "homepage": "https://www.drupal.org/u/nebel54",
                     "role": "Maintainer"
                 },
@@ -2672,7 +2675,7 @@
             ],
             "authors": [
                 {
-                    "name": "Tommy Lynge J??rgensen",
+                    "name": "Tommy Lynge Jørgensen",
                     "homepage": "https://www.drupal.org/u/tlyngej",
                     "email": "tlyngej@gmail.com",
                     "role": "Maintainer"
@@ -3352,7 +3355,7 @@
                     "homepage": "https://www.drupal.org/user/139189"
                 },
                 {
-                    "name": "r??tzi",
+                    "name": "rötzi",
                     "homepage": "https://www.drupal.org/user/73064"
                 },
                 {
@@ -4336,7 +4339,7 @@
             ],
             "authors": [
                 {
-                    "name": "Mateu Aguil?? Bosch",
+                    "name": "Mateu Aguiló Bosch",
                     "homepage": "https://www.drupal.org/user/550110",
                     "email": "mateu.aguilo.bosch@gmail.com"
                 }
@@ -6663,7 +6666,7 @@
                     "email": "marksonnabaum@gmail.com"
                 },
                 {
-                    "name": "Antoine Beaupr??",
+                    "name": "Antoine Beaupré",
                     "email": "anarcat@koumbit.org"
                 },
                 {
@@ -6671,7 +6674,7 @@
                     "email": "greg.1.anderson@greenknowe.org"
                 },
                 {
-                    "name": "Jonathan Ara??a Cruz",
+                    "name": "Jonathan Araña Cruz",
                     "email": "jonhattan@faita.net"
                 },
                 {
@@ -6730,7 +6733,7 @@
             ],
             "authors": [
                 {
-                    "name": "Mateu Aguil?? Bosch",
+                    "name": "Mateu Aguiló Bosch",
                     "email": "mateu.aguilo.bosch@gmail.com"
                 }
             ],
@@ -7376,7 +7379,7 @@
                     "email": "igor@wiedler.ch"
                 },
                 {
-                    "name": "Robert Sch??nthal",
+                    "name": "Robert Schönthal",
                     "email": "seroscho@googlemail.com"
                 }
             ],
@@ -10045,16 +10048,16 @@
             ],
             "authors": [
                 {
-                    "name": "Fr??d??ric Hardy",
+                    "name": "Frédéric Hardy",
                     "email": "frederic.hardy@atoum.org",
                     "homepage": "http://blog.mageekbox.net"
                 },
                 {
-                    "name": "Fran??ois Dussert",
+                    "name": "François Dussert",
                     "email": "francois.dussert@atoum.org"
                 },
                 {
-                    "name": "G??rald Croes",
+                    "name": "Gérald Croes",
                     "email": "gerald.croes@atoum.org"
                 },
                 {
@@ -10585,7 +10588,7 @@
             ],
             "authors": [
                 {
-                    "name": "Christian L??ck",
+                    "name": "Christian Lück",
                     "email": "christian@lueck.tv"
                 }
             ],
@@ -11761,7 +11764,7 @@
             ],
             "authors": [
                 {
-                    "name": "M??rk S??gi-Kaz??r",
+                    "name": "Márk Sági-Kazár",
                     "email": "mark.sagikazar@gmail.com"
                 }
             ],
@@ -11819,7 +11822,7 @@
             ],
             "authors": [
                 {
-                    "name": "???????????? ????????????????????????",
+                    "name": "Михаил Красильников",
                     "email": "m.krasilnikov@yandex.ru"
                 }
             ],
@@ -11876,7 +11879,7 @@
             ],
             "authors": [
                 {
-                    "name": "M??rk S??gi-Kaz??r",
+                    "name": "Márk Sági-Kazár",
                     "email": "mark.sagikazar@gmail.com"
                 }
             ],
@@ -11937,7 +11940,7 @@
                     "email": "geloen.eric@gmail.com"
                 },
                 {
-                    "name": "M??rk S??gi-Kaz??r",
+                    "name": "Márk Sági-Kazár",
                     "email": "mark.sagikazar@gmail.com"
                 }
             ],
@@ -12008,7 +12011,7 @@
             ],
             "authors": [
                 {
-                    "name": "M??rk S??gi-Kaz??r",
+                    "name": "Márk Sági-Kazár",
                     "email": "mark.sagikazar@gmail.com"
                 }
             ],
@@ -12056,7 +12059,7 @@
             ],
             "authors": [
                 {
-                    "name": "M??rk S??gi-Kaz??r",
+                    "name": "Márk Sági-Kazár",
                     "email": "mark.sagikazar@gmail.com"
                 }
             ],
@@ -12106,7 +12109,7 @@
             ],
             "authors": [
                 {
-                    "name": "M??rk S??gi-Kaz??r",
+                    "name": "Márk Sági-Kazár",
                     "email": "mark.sagikazar@gmail.com"
                 },
                 {
@@ -13520,7 +13523,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jean-Fran??ois Simon",
+                    "name": "Jean-François Simon",
                     "email": "jeanfrancois.simon@sensiolabs.com"
                 },
                 {
