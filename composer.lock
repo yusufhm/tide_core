@@ -1430,7 +1430,7 @@
             "version": "0.0.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:dpc-sdp/tide.git",
+                "url": "https://github.com/dpc-sdp/tide.git",
                 "reference": "fd5d13fbe66f5ffb42cd5b5e45cb08825d776d5e"
             },
             "dist": {
@@ -1530,7 +1530,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:dpc-sdp/tide_core.git",
+                "url": "https://github.com/dpc-sdp/tide_core.git",
                 "reference": "4d7c6a0367125e4387bc8259e1661d1b171150c4"
             },
             "dist": {
@@ -1654,13 +1654,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:dpc-sdp/tide_landing_page.git",
-                "reference": "baf38103b50007f823668da4b40ce2357d6740d2"
+                "url": "https://github.com/dpc-sdp/tide_landing_page.git",
+                "reference": "563dcb76467782f4a1440c70c4e6567cd0d2edff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/baf38103b50007f823668da4b40ce2357d6740d2",
-                "reference": "baf38103b50007f823668da4b40ce2357d6740d2",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/563dcb76467782f4a1440c70c4e6567cd0d2edff",
+                "reference": "563dcb76467782f4a1440c70c4e6567cd0d2edff",
                 "shasum": ""
             },
             "require": {
@@ -1684,14 +1684,14 @@
                 "source": "https://github.com/dpc-sdp/tide_landing_page/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_landing_page/issues"
             },
-            "time": "2018-08-29T22:34:27+00:00"
+            "time": "2018-09-04T02:35:59+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:dpc-sdp/tide_media.git",
+                "url": "https://github.com/dpc-sdp/tide_media.git",
                 "reference": "d8c08b6a6b737d6f21d08175b3b89c64c65edebc"
             },
             "dist": {
@@ -1735,7 +1735,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:dpc-sdp/tide_monsido.git",
+                "url": "https://github.com/dpc-sdp/tide_monsido.git",
                 "reference": "329da98448877d15474a4837efe8e413532fdfe9"
             },
             "dist": {
@@ -1763,7 +1763,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:dpc-sdp/tide_news.git",
+                "url": "https://github.com/dpc-sdp/tide_news.git",
                 "reference": "e53fb16838cd6f8d176b1b4bedc1749b39aa8739"
             },
             "dist": {
@@ -1799,7 +1799,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:dpc-sdp/tide_page.git",
+                "url": "https://github.com/dpc-sdp/tide_page.git",
                 "reference": "2bd12179bd4ac2c4c6420330d66749febe7ba1c3"
             },
             "dist": {
@@ -1833,7 +1833,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:dpc-sdp/tide_search.git",
+                "url": "https://github.com/dpc-sdp/tide_search.git",
                 "reference": "0a3dda4e855eb95d6a621c23a42696407ed65142"
             },
             "dist": {
@@ -1875,7 +1875,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:dpc-sdp/tide_site.git",
+                "url": "https://github.com/dpc-sdp/tide_site.git",
                 "reference": "00e725e687b5f21bb5ef73237ffc02e7204300fa"
             },
             "dist": {
@@ -1910,7 +1910,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:dpc-sdp/tide_test.git",
+                "url": "https://github.com/dpc-sdp/tide_test.git",
                 "reference": "8b184e8ac6a0de6679329cd46b13934e8d19ec1b"
             },
             "dist": {
@@ -1939,7 +1939,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:dpc-sdp/tide_webform.git",
+                "url": "https://github.com/dpc-sdp/tide_webform.git",
                 "reference": "5c3755c310a27f55715caca1e66cebf9d160730b"
             },
             "dist": {
@@ -3074,13 +3074,13 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
-                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch",
                     "Contextual links should not be added inside another link - https://www.drupal.org/node/2898875": "https://www.drupal.org/files/issues/2018-03-16/contextual_links_should-2898875-6.patch",
                     "No validation on text length for menu description when editing node - https://www.drupal.org/node/2852665#comment-12650295": "https://www.drupal.org/files/issues/2018-06-13/fatal_error_remove_menu_add_with_tests.patch",
                     "active-link.js throws JS error if query string parameter contains a single quote - https://www.drupal.org/node/2902769": "https://www.drupal.org/files/issues/active_link_js_throws-2902769-5_0.patch",
                     "getUuid() in class MenuLinkContent not returning any value - https://www.drupal.org/node/2737741": "https://www.drupal.org/files/issues/drupal-menulinkcontent-getuuid-return-missing-2737741-2.patch",
                     "RSS view with fields give wrong URL from path field - https://www.drupal.org/node/2673980#comment-12180229": "https://www.drupal.org/files/issues/rss_view_with_fields-2673980-28.patch",
-                    "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch"
+                    "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch",
+                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
                 }
             },
             "autoload": {
