@@ -4,17 +4,16 @@ status: true
 dependencies:
   module:
     - block_content
-    - entity_reference_revisions
     - node
 _core:
   default_config_hash: j3gXT-oq2y5yz8uGVkSCmvv-rB00g8LuBr5C29hrMhM
 id: node.field_landing_page_c_primary
 field_name: field_landing_page_c_primary
 entity_type: node
-type: entity_reference_revisions
+type: entity_reference
 settings:
   target_type: block_content
-module: entity_reference_revisions
+module: core
 locked: false
 cardinality: 1
 translatable: true

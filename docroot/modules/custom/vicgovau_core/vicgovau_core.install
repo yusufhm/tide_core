@@ -345,3 +345,190 @@ function vicgovau_core_update_8010() {
     }
   }
 }
+
+/**
+ * Create temporary fields and add to landing_page bundle [SDPA-740].
+ */
+function vicgovau_core_update_8011() {
+  $temp_fields = ['field_primary_campaign_temp', 'field_secondary_campaign_temp'];
+
+  foreach ($temp_fields as $temp_field) {
+    // Create temporary field storage.
+    FieldStorageConfig::create([
+      'field_name' => $temp_field,
+      'entity_type' => 'node',
+      'type' => 'entity_reference',
+      'settings' => [
+        'target_type' => 'block_content',
+      ],
+      'module' => 'core',
+      'cardinality' => 1,
+      'dependencies' => [
+        'module' => ['block_content', 'node'],
+      ],
+    ])->save();
+
+    $field_storage = FieldStorageConfig::loadByName('node', $temp_field);
+    $field = FieldConfig::loadByName('node', 'landing_page', $temp_field);
+
+    // Create temporary field.
+    if (empty($field)) {
+      $field = FieldConfig::create([
+        'field_storage' => $field_storage,
+        'bundle' => 'landing_page',
+        'label' => $temp_field,
+        'dependencies' => [
+          'config' => [
+            'block_content.type.campaign',
+            'field.storage.node.' . $temp_field,
+            'node.type.landing_page',
+          ],
+        ],
+        'settings' => [
+          'handler' => 'default:block_content',
+          'handler_settings' => [
+            'target_bundles' => [
+              'campaign' => 'campaign',
+            ],
+          ],
+        ],
+        'field_type' => 'entity_reference',
+      ]);
+      $field->save();
+    }
+  }
+}
+
+/**
+ * Migrating data to temporary fields.
+ */
+function vicgovau_core_update_8012() {
+
+  $connection = \Drupal::service('database');
+
+  // Copy data for both type of landing pages,
+  // the temp tables were created in hook vicgovau_core_update_8011.
+  $landing_pages = ['primary', 'secondary'];
+
+  foreach ($landing_pages as $page) {
+    $base_table = 'node__field_landing_page_c_' . $page;
+    $temp_table = 'node__field_' . $page . '_campaign_temp';
+
+    $field_target = 'field_landing_page_c_' . $page . '_target_id';
+    $field_target_revision = 'field_landing_page_c_' . $page . '_target_revision_id';
+
+    $temp_field_target = 'field_' . $page . '_campaign_temp_target_id';
+
+    if ($connection->schema()->tableExists($base_table) && $connection->schema()->tableExists($temp_table)) {
+      $result = $connection->select($base_table, 'n')
+        ->fields('n')
+        ->execute()
+        ->fetchAll();
+
+      if ($total = count($result) > 0) {
+        foreach ($result as $row) {
+          // We are not migration revision.
+          if (isset($row->$field_target_revision)) {
+            unset($row->$field_target_revision);
+          }
+          // Map temp field for data copy.
+          if (isset($row->$field_target)) {
+            $row->$temp_field_target = $row->$field_target;
+            unset($row->$field_target);
+          }
+          $connection->insert($temp_table)
+            ->fields((array) $row)
+            ->execute();
+        }
+        drupal_set_message($total . ' entries processed for table ' . $temp_table);
+      }
+    }
+  }
+}
+
+/**
+ * Delete and re-create the fields with new definitions [SDPA-740].
+ */
+function vicgovau_core_update_8013() {
+  // No need to call field_purge_batch() after the field is deleted
+  // as cron will take care of this process for us.
+  $entityFieldManager = \Drupal::service('entity_field.manager');
+
+  $fields = $entityFieldManager->getFieldDefinitions('node', 'landing_page');
+  if (isset($fields['field_landing_page_c_primary'])) {
+    $fields['field_landing_page_c_primary']->delete();
+  }
+
+  if (isset($fields['field_landing_page_c_secondary'])) {
+    $fields['field_landing_page_c_secondary']->delete();
+  }
+
+  // Import the field back in using new config.
+  module_load_include('inc', 'tide_core', 'includes/helpers');
+  $config_location = [drupal_get_path('module', 'tide_landing_page') . '/config/install'];
+
+  _tide_import_single_config('field.storage.node.field_landing_page_c_primary', $config_location);
+  _tide_import_single_config('field.field.node.landing_page.field_landing_page_c_primary', $config_location);
+
+  _tide_import_single_config('field.storage.node.field_landing_page_c_secondary', $config_location);
+  _tide_import_single_config('field.field.node.landing_page.field_landing_page_c_secondary', $config_location);
+}
+
+/**
+ * Migrating temp data back to newly created fields [SDPA-740].
+ */
+function vicgovau_core_update_8014() {
+
+  $connection = \Drupal::service('database');
+
+  // Copy data for both type of landing pages,
+  // the temp tables were created in hook vicgovau_core_update_8011.
+  $landing_pages = ['primary', 'secondary'];
+
+  foreach ($landing_pages as $page) {
+    $base_table = 'node__field_landing_page_c_' . $page;
+    $temp_table = 'node__field_' . $page . '_campaign_temp';
+
+    $field_target = 'field_landing_page_c_' . $page . '_target_id';
+
+    $temp_field_target = 'field_' . $page . '_campaign_temp_target_id';
+
+    if ($connection->schema()->tableExists($temp_table) && $connection->schema()->tableExists($base_table)) {
+      $result = $connection->select($temp_table, 'n')
+        ->fields('n')
+        ->execute()
+        ->fetchAll();
+
+      if ($total = count($result) > 0) {
+        foreach ($result as $row) {
+          // Map field for data copy.
+          if (isset($row->$temp_field_target)) {
+            $row->$field_target = $row->$temp_field_target;
+            unset($row->$temp_field_target);
+          }
+          $connection->insert($base_table)
+            ->fields((array) $row)
+            ->execute();
+        }
+        drupal_set_message($total . ' entries processed for table ' . $base_table);
+      }
+    }
+  }
+}
+
+/**
+ * Delete temporary fields. [SDPA-740].
+ */
+function vicgovau_core_update_8015() {
+  // Still perform the deletion process because we created the temp field.
+  $entityFieldManager = \Drupal::service('entity_field.manager');
+
+  $fields = $entityFieldManager->getFieldDefinitions('node', 'landing_page');
+  if (isset($fields['field_primary_campaign_temp'])) {
+    $fields['field_primary_campaign_temp']->delete();
+  }
+
+  if (isset($fields['field_secondary_campaign_temp'])) {
+    $fields['field_secondary_campaign_temp']->delete();
+  }
+}

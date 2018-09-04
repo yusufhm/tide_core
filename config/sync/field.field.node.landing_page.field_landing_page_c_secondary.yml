@@ -6,8 +6,6 @@ dependencies:
     - block_content.type.campaign
     - field.storage.node.field_landing_page_c_secondary
     - node.type.landing_page
-  module:
-    - entity_reference_revisions
 _core:
   default_config_hash: 9d3FiaMdD2KoYxWs0c4-KmpWUwbzgycRk1iXH7PeXKo
 id: node.landing_page.field_landing_page_c_secondary
@@ -29,4 +27,4 @@ settings:
       field: _none
     auto_create: false
     auto_create_bundle: ''
-field_type: entity_reference_revisions
+field_type: entity_reference
