@@ -23,7 +23,7 @@ seckit_xss:
     checkbox: true
 seckit_csrf:
   origin: false
-  origin_whitelist: ''
+  origin_whitelist: 'https://freetafevicmap.com'
 seckit_clickjacking:
   js_css_noscript: false
   noscript_message: 'Sorry, you need to enable JavaScript to visit this website.'
