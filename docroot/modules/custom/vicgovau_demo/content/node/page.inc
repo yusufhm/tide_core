@@ -18,6 +18,10 @@ function vicgovau_demo_create_node_page() {
   $repository = VicgovauDemoRepository::getInstance();
 
   for ($i = 1; $i <= 10; $i++) {
+    // Turn off Random mode for the last page.
+    // It will be generated with all components.
+    $random = ($i < 10) ? TRUE : FALSE;
+
     $uid = VicgovauDemoHelper::randomUid();
 
     $site_sections = VicgovauDemoHelper::randomSiteSections();
@@ -26,7 +30,7 @@ function vicgovau_demo_create_node_page() {
     $status = Node::PUBLISHED;
     $node_data = [
       'type' => 'page',
-      'title' => VicgovauDemoHelper::randomSentence(),
+      'title' => $random ? VicgovauDemoHelper::randomSentence() : 'Demo Page',
       'uid' => $uid,
       'status' => $status,
       'field_page_intro_text' => [
@@ -47,7 +51,19 @@ function vicgovau_demo_create_node_page() {
       'field_featured_image' => [
         ['target_id' => VicgovauDemoHelper::randomImage()],
       ],
+      'field_graphical_image' => [
+        ['target_id' => VicgovauDemoHelper::randomImage()],
+      ],
     ];
+
+    if (!$random) {
+      $node_data['field_node_site'][] = ['target_id' => VicgovauDemoRepository::SITE_ID_VICGOVAU];
+
+      // Set path alias in the absence of Pathauto.
+      if (!\Drupal::moduleHandler()->moduleExists('pathauto')) {
+        $node_data['path'] = ['alias' => '/demo-page'];
+      }
+    }
 
     // Add tags.
     $tags = VicgovauDemoHelper::randomTags(3);
@@ -107,7 +123,7 @@ function vicgovau_demo_create_node_page() {
     ];
     foreach ($booleanFields as $booleanField) {
       if ($node->hasField($booleanField)) {
-        $node->set($booleanField, VicgovauDemoHelper::randomBool());
+        $node->set($booleanField, $random ? VicgovauDemoHelper::randomBool() : TRUE);
       }
     }
 
