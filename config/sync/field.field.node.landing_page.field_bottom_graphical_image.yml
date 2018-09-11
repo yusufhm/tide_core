@@ -1,19 +1,19 @@
-uuid: fe97adb6-c8c7-4718-aa45-6df73030e7f1
+uuid: d14a9213-8498-4828-8c70-3e12990655e8
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_graphical_image
+    - field.storage.node.field_bottom_graphical_image
     - media.type.image
     - node.type.landing_page
-id: node.landing_page.field_graphical_image
-field_name: field_graphical_image
+id: node.landing_page.field_bottom_graphical_image
+field_name: field_bottom_graphical_image
 entity_type: node
 bundle: landing_page
-label: 'Top Graphical Image'
-description: 'The graphical image will not be displayed when a hero image is added.'
+label: 'Bottom Graphical Image'
+description: 'The bottom graphical image will not be displayed when a hero image is added.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

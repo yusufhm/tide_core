@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.tide_image_browser
+    - field.field.node.landing_page.field_bottom_graphical_image
     - field.field.node.landing_page.field_featured_image
     - field.field.node.landing_page.field_graphical_image
     - field.field.node.landing_page.field_landing_page_bg_colour
@@ -88,6 +89,7 @@ third_party_settings:
         - field_landing_page_hero_image
         - field_landing_page_hero_logo
         - field_graphical_image
+        - field_bottom_graphical_image
         - field_landing_page_hero_theme
         - field_landing_page_intro_text
         - field_landing_page_summary
@@ -239,6 +241,21 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_bottom_graphical_image:
+    weight: 5
+    settings:
+      entity_browser: tide_image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: media_browser_preview
+      field_widget_replace: false
+      open: false
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
   field_featured_image:
     weight: 1
     settings:
@@ -350,13 +367,13 @@ content:
     type: entity_browser_entity_reference
     region: content
   field_landing_page_hero_theme:
-    weight: 5
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_landing_page_intro_text:
-    weight: 6
+    weight: 7
     settings:
       rows: 5
       placeholder: ''
@@ -365,7 +382,7 @@ content:
     region: content
   field_landing_page_key_journeys:
     type: entity_reference_paragraphs
-    weight: 8
+    weight: 9
     settings:
       title: 'Key journey'
       title_plural: 'Key journeys'
@@ -391,7 +408,7 @@ content:
     type: boolean_checkbox
     region: content
   field_landing_page_summary:
-    weight: 7
+    weight: 8
     settings:
       rows: 5
       placeholder: ''
@@ -425,7 +442,7 @@ content:
     third_party_settings: {  }
   field_related_links:
     type: paragraphs
-    weight: 39
+    weight: 38
     settings:
       title: Link
       title_plural: Links
@@ -532,7 +549,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }

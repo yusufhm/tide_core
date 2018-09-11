@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.landing_page.field_bottom_graphical_image
     - field.field.node.landing_page.field_featured_image
     - field.field.node.landing_page.field_graphical_image
     - field.field.node.landing_page.field_landing_page_bg_colour
@@ -53,6 +54,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_bottom_graphical_image:
+    type: entity_reference_label
+    weight: 22
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
   field_featured_image:
     weight: 9
     label: above

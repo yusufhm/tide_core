@@ -311,6 +311,7 @@
             "docroot/sites/default/default.settings.local.php",
             "docroot/sites/default/files"
         ],
-        "patches": {}
+        "patches": {
+        }
     }
 }
