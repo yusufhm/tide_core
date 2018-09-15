@@ -60,6 +60,15 @@ function vicgovau_core_enable_modules($is_install = FALSE) {
 }
 
 /**
+ * Helper to enable modules.
+ */
+function vicgovau_core_default_content_modules() {
+  vicgovau_core_install_module('default_content');
+  \Drupal::service('default_content.importer')->importContent('vicgovau_core');
+  \Drupal::service('module_installer')->uninstall(['default_content']);
+}
+
+/**
  * Helper to install a module.
  *
  * @param string $module

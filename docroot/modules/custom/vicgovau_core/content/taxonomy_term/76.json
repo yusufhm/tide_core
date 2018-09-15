@@ -1,0 +1,63 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/76?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/event"
+        }
+    },
+    "tid": [
+        {
+            "value": 76
+        }
+    ],
+    "uuid": [
+        {
+            "value": "b000cbd2-b487-4e9a-ab1b-0d5edb86e4d3"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "event"
+        }
+    ],
+    "name": [
+        {
+            "value": "Free Events",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-09-11T06:38:36+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Free Events | DPC Content Repository",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/76"
+            }
+        }
+    ]
+}

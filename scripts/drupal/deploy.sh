@@ -13,4 +13,6 @@ drush cim -y
 drush cr -y
 echo "Enabling vicgovau modules"
 drush php-eval "module_load_install('vicgovau_core'); vicgovau_core_enable_modules();"
+echo "Importing vicgovau default content"
+drush php-eval "module_load_install('vicgovau_core'); vicgovau_core_default_content_modules();"
 drush cr -y

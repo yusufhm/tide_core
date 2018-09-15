@@ -1,0 +1,63 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/78?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/event"
+        }
+    },
+    "tid": [
+        {
+            "value": 78
+        }
+    ],
+    "uuid": [
+        {
+            "value": "faeabea7-af8d-4d85-96c8-aff746aa501f"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "event"
+        }
+    ],
+    "name": [
+        {
+            "value": "National Events",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-09-11T06:39:23+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "National Events | DPC Content Repository",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/78"
+            }
+        }
+    ]
+}

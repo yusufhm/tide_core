@@ -1,0 +1,63 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/75?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/event"
+        }
+    },
+    "tid": [
+        {
+            "value": 75
+        }
+    ],
+    "uuid": [
+        {
+            "value": "e255cb87-5814-44dc-8612-7d3832454d84"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "event"
+        }
+    ],
+    "name": [
+        {
+            "value": "Festivals",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-09-11T06:38:06+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Festivals | DPC Content Repository",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/75"
+            }
+        }
+    ]
+}

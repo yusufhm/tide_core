@@ -91,6 +91,7 @@ module:
   text: 0
   tide_api: 0
   tide_core: 0
+  tide_event: 0
   tide_landing_page: 0
   tide_media: 0
   tide_news: 0

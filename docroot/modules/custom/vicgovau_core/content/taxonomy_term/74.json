@@ -1,0 +1,63 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/74?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/event"
+        }
+    },
+    "tid": [
+        {
+            "value": 74
+        }
+    ],
+    "uuid": [
+        {
+            "value": "7728e89f-46a2-4d79-bc17-d774dfb30d24"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "event"
+        }
+    ],
+    "name": [
+        {
+            "value": "Conferences & Expos",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-09-11T06:37:42+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Conferences & Expos | DPC Content Repository",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/74"
+            }
+        }
+    ]
+}
