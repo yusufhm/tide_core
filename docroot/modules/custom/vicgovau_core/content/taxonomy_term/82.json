@@ -1,0 +1,63 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/82?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/audience"
+        }
+    },
+    "tid": [
+        {
+            "value": 82
+        }
+    ],
+    "uuid": [
+        {
+            "value": "4038b20b-a519-4963-9cb6-04364cbe8eba"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "audience"
+        }
+    ],
+    "name": [
+        {
+            "value": "Not for profit groups",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 2
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-09-15T08:28:06+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Not for profit groups | DPC Content Repository",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/82"
+            }
+        }
+    ]
+}

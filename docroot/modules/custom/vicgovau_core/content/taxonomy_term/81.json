@@ -1,0 +1,63 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/81?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/audience"
+        }
+    },
+    "tid": [
+        {
+            "value": 81
+        }
+    ],
+    "uuid": [
+        {
+            "value": "a888f885-0ce7-4eff-b664-e1c8165f2f18"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "audience"
+        }
+    ],
+    "name": [
+        {
+            "value": "Local council",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 1
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-09-15T08:28:06+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Local council | DPC Content Repository",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/81"
+            }
+        }
+    ]
+}

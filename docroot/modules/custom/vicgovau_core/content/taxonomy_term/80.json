@@ -1,0 +1,63 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/80?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/audience"
+        }
+    },
+    "tid": [
+        {
+            "value": 80
+        }
+    ],
+    "uuid": [
+        {
+            "value": "f86a3a17-380b-4840-8d54-195260ac9db1"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "audience"
+        }
+    ],
+    "name": [
+        {
+            "value": "Individual",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-09-15T08:25:52+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Individual | DPC Content Repository",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/80"
+            }
+        }
+    ]
+}
