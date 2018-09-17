@@ -1,0 +1,10 @@
+uuid: a98339fd-e8cc-48c2-b69d-7d838bb63eeb
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event Requirements'
+vid: event_requirements
+description: 'Event Requirements for events'
+hierarchy: 0
+weight: 0
+

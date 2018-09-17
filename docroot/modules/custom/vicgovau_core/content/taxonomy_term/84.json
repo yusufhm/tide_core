@@ -1,0 +1,63 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/84?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/event_requirements"
+        }
+    },
+    "tid": [
+        {
+            "value": 84
+        }
+    ],
+    "uuid": [
+        {
+            "value": "d378d5ae-a90e-4370-8399-4b135a66e1f1"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "event_requirements"
+        }
+    ],
+    "name": [
+        {
+            "value": "Accessible venue",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-09-17T04:33:42+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Accessible venue | DPC Content Repository",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/84"
+            }
+        }
+    ]
+}

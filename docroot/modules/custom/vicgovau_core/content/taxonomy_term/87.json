@@ -1,0 +1,63 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/87?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/event_requirements"
+        }
+    },
+    "tid": [
+        {
+            "value": 87
+        }
+    ],
+    "uuid": [
+        {
+            "value": "aa78fcae-3003-4876-8d96-c6ecd20ba80f"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "event_requirements"
+        }
+    ],
+    "name": [
+        {
+            "value": "Online webinar",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-09-17T04:34:06+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Online webinar | DPC Content Repository",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/87"
+            }
+        }
+    ]
+}
