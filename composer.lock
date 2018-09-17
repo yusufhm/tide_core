@@ -1685,12 +1685,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_landing_page.git",
-                "reference": "632dde4db9d1890a5a006da98cccb2a4035a9ce2"
+                "reference": "226d478a9b17e62beb0b04d36bf1923f4fe9af3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/632dde4db9d1890a5a006da98cccb2a4035a9ce2",
-                "reference": "632dde4db9d1890a5a006da98cccb2a4035a9ce2",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/226d478a9b17e62beb0b04d36bf1923f4fe9af3c",
+                "reference": "226d478a9b17e62beb0b04d36bf1923f4fe9af3c",
                 "shasum": ""
             },
             "require": {
@@ -1714,10 +1714,10 @@
             ],
             "description": "Landing Page content type and related configuration for Tide Drupal 8 distribution",
             "support": {
-                "source": "https://github.com/dpc-sdp/tide_landing_page/tree/kurtfoster-feature/VICPOLWEB-307-anchor_and_masonry",
+                "source": "https://github.com/dpc-sdp/tide_landing_page/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_landing_page/issues"
             },
-            "time": "2018-09-11T02:10:01+00:00"
+            "time": "2018-09-16T23:41:46+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",

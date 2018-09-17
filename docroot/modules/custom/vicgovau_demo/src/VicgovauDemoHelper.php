@@ -545,6 +545,7 @@ class VicgovauDemoHelper {
               'value' => static::randomPlainParagraph(),
             ],
             'field_paragraph_cta' => [VicgovauDemoHelper::randomCtaLinkFieldValue()],
+            'field_paragraph_cta_style' => ['value' => static::randomBool() ? 'banner' : 'card'],
           ];
           break;
 
