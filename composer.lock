@@ -60,16 +60,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.67.12",
+            "version": "3.67.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "cdc7180ae87b23d8b34eb8eb8176002081b32c3d"
+                "reference": "f620d3abfb582f648e09456dbdf50ab11d4ec19d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/cdc7180ae87b23d8b34eb8eb8176002081b32c3d",
-                "reference": "cdc7180ae87b23d8b34eb8eb8176002081b32c3d",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f620d3abfb582f648e09456dbdf50ab11d4ec19d",
+                "reference": "f620d3abfb582f648e09456dbdf50ab11d4ec19d",
                 "shasum": ""
             },
             "require": {
@@ -136,7 +136,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-09-13T18:34:42+00:00"
+            "time": "2018-09-18T21:32:51+00:00"
         },
         {
             "name": "bjeavons/zxcvbn-php",
@@ -521,16 +521,16 @@
         },
         {
             "name": "consolidation/annotated-command",
-            "version": "2.8.5",
+            "version": "2.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/annotated-command.git",
-                "reference": "1e8ff512072422b850b44aa721b5b303e4a5ebb3"
+                "reference": "851c6b7f490262748586e05bcb6fc69686519233"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/1e8ff512072422b850b44aa721b5b303e4a5ebb3",
-                "reference": "1e8ff512072422b850b44aa721b5b303e4a5ebb3",
+                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/851c6b7f490262748586e05bcb6fc69686519233",
+                "reference": "851c6b7f490262748586e05bcb6fc69686519233",
                 "shasum": ""
             },
             "require": {
@@ -569,7 +569,7 @@
                 }
             ],
             "description": "Initialize Symfony Console commands from annotated command class methods.",
-            "time": "2018-08-18T23:51:49+00:00"
+            "time": "2018-09-19T03:49:30+00:00"
         },
         {
             "name": "consolidation/output-formatters",
@@ -1532,12 +1532,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "620d05ca05e13f9cead106412225f162c39a32e5"
+                "reference": "0e8cad98b4f7900a1223e6e4cd49345de9994031"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/620d05ca05e13f9cead106412225f162c39a32e5",
-                "reference": "620d05ca05e13f9cead106412225f162c39a32e5",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/0e8cad98b4f7900a1223e6e4cd49345de9994031",
+                "reference": "0e8cad98b4f7900a1223e6e4cd49345de9994031",
                 "shasum": ""
             },
             "require": {
@@ -1648,7 +1648,7 @@
                 "source": "https://github.com/dpc-sdp/tide_core/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_core/issues"
             },
-            "time": "2018-09-17T04:29:36+00:00"
+            "time": "2018-09-19T03:11:56+00:00"
         },
         {
             "name": "dpc-sdp/tide_event",
@@ -1656,16 +1656,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_event.git",
-                "reference": "3f34f9964bc306204320a3cdbbce4e5620d94d8f"
+                "reference": "c76dc74477eee1891a9338619afec59374476fc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/3f34f9964bc306204320a3cdbbce4e5620d94d8f",
-                "reference": "3f34f9964bc306204320a3cdbbce4e5620d94d8f",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/c76dc74477eee1891a9338619afec59374476fc6",
+                "reference": "c76dc74477eee1891a9338619afec59374476fc6",
                 "shasum": ""
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
+                "dpc-sdp/tide_media": "@dev",
                 "drupal/smart_trim": "^1.1"
             },
             "type": "drupal-module",
@@ -1677,7 +1678,7 @@
                 "source": "https://github.com/dpc-sdp/tide_event/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_event/issues"
             },
-            "time": "2018-09-17T07:36:42+00:00"
+            "time": "2018-09-19T04:46:21+00:00"
         },
         {
             "name": "dpc-sdp/tide_landing_page",
@@ -1685,12 +1686,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_landing_page.git",
-                "reference": "080ad205953755f2c4e8df07df91565add13c5c2"
+                "reference": "d38caa2129c20c2963b7f57a7b77ed2a5d114f31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/080ad205953755f2c4e8df07df91565add13c5c2",
-                "reference": "080ad205953755f2c4e8df07df91565add13c5c2",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/d38caa2129c20c2963b7f57a7b77ed2a5d114f31",
+                "reference": "d38caa2129c20c2963b7f57a7b77ed2a5d114f31",
                 "shasum": ""
             },
             "require": {
@@ -1717,7 +1718,7 @@
                 "source": "https://github.com/dpc-sdp/tide_landing_page/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_landing_page/issues"
             },
-            "time": "2018-09-17T03:55:02+00:00"
+            "time": "2018-09-19T03:14:09+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
@@ -3846,7 +3847,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.5",
-                    "datestamp": "1527241084",
+                    "datestamp": "1527243208",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5586,17 +5587,17 @@
         },
         {
             "name": "drupal/search_api",
-            "version": "1.9.0",
+            "version": "1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/search_api",
-                "reference": "8.x-1.9"
+                "reference": "8.x-1.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.9.zip",
-                "reference": "8.x-1.9",
-                "shasum": "b019b3af9e724a1804b540ae0e4a56d2ee98c603"
+                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.10.zip",
+                "reference": "8.x-1.10",
+                "shasum": "1c1d038310a079f8e8154545f743ff7a506c4b8e"
             },
             "require": {
                 "drupal/core": "^8.5"
@@ -5605,14 +5606,19 @@
                 "drupal/search_api_autocomplete": "@dev",
                 "drupal/search_api_db": "*"
             },
+            "suggest": {
+                "drupal/facets": "Adds the ability to create faceted searches.",
+                "drupal/search_api_autocomplete": "Allows adding autocomplete suggestions to search fields.",
+                "drupal/search_api_solr": "Adds support for using Apache Solr as a backend."
+            },
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.9",
-                    "datestamp": "1531985581",
+                    "version": "8.x-1.10",
+                    "datestamp": "1537175280",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7709,16 +7715,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.0.3",
+            "version": "v4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "bd088dc940a418f09cda079a9b5c7c478890fb8d"
+                "reference": "fa6ee28600d21d49b2b4e1006b48426cec8e579c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/bd088dc940a418f09cda079a9b5c7c478890fb8d",
-                "reference": "bd088dc940a418f09cda079a9b5c7c478890fb8d",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/fa6ee28600d21d49b2b4e1006b48426cec8e579c",
+                "reference": "fa6ee28600d21d49b2b4e1006b48426cec8e579c",
                 "shasum": ""
             },
             "require": {
@@ -7756,7 +7762,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2018-07-15T17:25:16+00:00"
+            "time": "2018-09-18T07:03:24+00:00"
         },
         {
             "name": "nodespark/des-connector",

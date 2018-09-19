@@ -1,0 +1,23 @@
+uuid: 6660ccfb-95f2-4af5-aedc-ecd23f603243
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_social_sharing
+    - node.type.event
+id: node.event.field_show_social_sharing
+field_name: field_show_social_sharing
+entity_type: node
+bundle: event
+label: 'Show Social Sharing?'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

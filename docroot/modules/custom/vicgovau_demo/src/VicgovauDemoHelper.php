@@ -240,6 +240,30 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Select a random Audience.
+   *
+   * @return int
+   *   The audience tid.
+   */
+  public static function randomAudience() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $topics = $repository->getDemoEntities('taxonomy_term', 'audience');
+    return count($topics) ? array_rand($topics) : 0;
+  }
+
+  /**
+   * Select a random Event Category.
+   *
+   * @return int
+   *   The event tid.
+   */
+  public static function randomEventCategory() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $topics = $repository->getDemoEntities('taxonomy_term', 'event');
+    return count($topics) ? array_rand($topics) : 0;
+  }
+
+  /**
    * Select random Tags.
    *
    * @param int $count

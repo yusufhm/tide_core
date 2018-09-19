@@ -1,0 +1,24 @@
+uuid: 81f34b61-784b-4ef9-88ad-a058e2be6cc4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_node_primary_site
+    - node.type.event
+    - taxonomy.vocabulary.sites
+id: node.event.field_node_primary_site
+field_name: field_node_primary_site
+entity_type: node
+bundle: event
+label: 'Primary Site'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sites: sites
+field_type: entity_reference
