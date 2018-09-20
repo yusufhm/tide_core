@@ -208,7 +208,6 @@ function vicgovau_demo_create_node_landing_page() {
       if ($primary_campaign) {
         $node_data['field_landing_page_c_primary'] = [
           'target_id' => $primary_campaign->id(),
-          'target_revision_id' => $primary_campaign->getRevisionId(),
         ];
       }
     }
@@ -217,7 +216,6 @@ function vicgovau_demo_create_node_landing_page() {
       if ($secondary_campaign) {
         $node_data['field_landing_page_c_secondary'] = [
           'target_id' => $secondary_campaign->id(),
-          'target_revision_id' => $secondary_campaign->getRevisionId(),
         ];
       }
     }
