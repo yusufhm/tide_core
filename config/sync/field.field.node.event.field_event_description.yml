@@ -11,7 +11,7 @@ dependencies:
 third_party_settings:
   allowed_formats:
     rich_text: rich_text
-    admin_text: '0'
+    admin_text: admin_text
     plain_text: '0'
 id: node.event.field_event_description
 field_name: field_event_description
