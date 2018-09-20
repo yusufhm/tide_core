@@ -1656,12 +1656,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_event.git",
-                "reference": "c696fa6560234ba937834e5f43617c42471e2eca"
+                "reference": "bf39feb071c955d47ab2071dad15328f73a0363e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/c696fa6560234ba937834e5f43617c42471e2eca",
-                "reference": "c696fa6560234ba937834e5f43617c42471e2eca",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/bf39feb071c955d47ab2071dad15328f73a0363e",
+                "reference": "bf39feb071c955d47ab2071dad15328f73a0363e",
                 "shasum": ""
             },
             "require": {
@@ -1678,7 +1678,7 @@
                 "source": "https://github.com/dpc-sdp/tide_event/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_event/issues"
             },
-            "time": "2018-09-20T04:52:16+00:00"
+            "time": "2018-09-20T05:45:49+00:00"
         },
         {
             "name": "dpc-sdp/tide_landing_page",
