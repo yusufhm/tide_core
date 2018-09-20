@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.landing_page.field_landing_page_c_secondary
     - field.field.node.landing_page.field_landing_page_component
     - field.field.node.landing_page.field_landing_page_contact
+    - field.field.node.landing_page.field_landing_page_header
     - field.field.node.landing_page.field_landing_page_hero_image
     - field.field.node.landing_page.field_landing_page_hero_logo
     - field.field.node.landing_page.field_landing_page_hero_theme
@@ -41,7 +42,6 @@ dependencies:
   module:
     - content_moderation
     - entity_browser
-    - entity_reference_revisions
     - field_group
     - inline_entity_form
     - maxlength
@@ -53,6 +53,7 @@ third_party_settings:
     group_content:
       children:
         - group_key_journeys
+        - group_header_content
         - group_top_banner
         - group_components
         - group_bottom_
@@ -95,7 +96,7 @@ third_party_settings:
         - field_landing_page_summary
         - field_landing_page_key_journeys
       parent_name: group_content
-      weight: 22
+      weight: 1
       format_type: tab
       format_settings:
         label: 'Page Header'
@@ -110,7 +111,7 @@ third_party_settings:
       children:
         - field_landing_page_c_primary
       parent_name: group_content
-      weight: 23
+      weight: 3
       format_type: tab
       format_settings:
         label: 'Primary Campaign'
@@ -126,7 +127,7 @@ third_party_settings:
         - field_show_table_of_content
         - field_landing_page_component
       parent_name: group_content
-      weight: 24
+      weight: 4
       format_type: tab
       format_settings:
         label: 'Body Content'
@@ -141,7 +142,7 @@ third_party_settings:
       children:
         - field_landing_page_c_secondary
       parent_name: group_content
-      weight: 26
+      weight: 5
       format_type: tab
       format_settings:
         label: 'Secondary Campaign'
@@ -228,6 +229,21 @@ third_party_settings:
         required_fields: true
       label: 'Site-section Navigation'
       region: content
+    group_header_content:
+      children:
+        - field_landing_page_header
+      parent_name: group_content
+      weight: 2
+      format_type: tab
+      format_settings:
+        label: 'Header Content'
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Header Content'
+      region: content
 _core:
   default_config_hash: pN7fy_ZaJVA-sEQWPZUCiV_-5V5W_ZSuZ7Rbql6y5kg
 id: node.landing_page.default
@@ -237,7 +253,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -293,7 +309,7 @@ content:
     type: options_select
     region: content
   field_landing_page_c_primary:
-    weight: 1
+    weight: 40
     settings:
       match_operator: CONTAINS
       size: 60
@@ -332,6 +348,20 @@ content:
       title_plural: 'Contact Us blocks'
       edit_mode: closed
       add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
+  field_landing_page_header:
+    type: paragraphs
+    weight: 39
+    settings:
+      title: Component
+      title_plural: Components
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      add_mode: select
       form_display_mode: default
       default_paragraph_type: _none
     third_party_settings: {  }
@@ -393,7 +423,7 @@ content:
     third_party_settings: {  }
     region: content
   field_landing_page_nav_title:
-    weight: 21
+    weight: 41
     settings:
       size: 60
       placeholder: ''
@@ -463,7 +493,7 @@ content:
       display_label: true
     third_party_settings: {  }
   field_show_news_search:
-    weight: 3
+    weight: 4
     settings:
       display_label: true
     third_party_settings: {  }
@@ -477,7 +507,7 @@ content:
     type: boolean_checkbox
     region: content
   field_show_site_section_nav:
-    weight: 20
+    weight: 40
     settings:
       display_label: true
     third_party_settings: {  }
@@ -506,7 +536,7 @@ content:
     region: content
   field_show_whats_next:
     type: boolean_checkbox
-    weight: 23
+    weight: 3
     region: content
     settings:
       display_label: true
@@ -531,7 +561,7 @@ content:
     region: content
   field_whats_next:
     type: entity_reference_paragraphs
-    weight: 24
+    weight: 4
     region: content
     settings:
       title: 'What''s Next block'
@@ -549,7 +579,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -603,7 +633,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 6
     region: content
     third_party_settings: {  }
   title:
@@ -619,7 +649,7 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60

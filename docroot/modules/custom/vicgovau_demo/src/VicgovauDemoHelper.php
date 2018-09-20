@@ -481,6 +481,32 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Generate a random Introduction Banner paragraph.
+   *
+   * @return \Drupal\paragraphs\Entity\Paragraph
+   *   The Intro banner.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  public static function randomIntroductionBanner() {
+    $banner_data = [
+      'type' => 'introduction_banner',
+      'field_paragraph_title' => [['value' => static::randomSentence()]],
+      'field_paragraph_summary' => [
+        'value' => static::randomPlainParagraph(),
+      ],
+    ];
+    for ($j = 1; $j <= mt_rand(0, 3); $j++) {
+      $banner_data['field_paragraph_links'][] = static::randomLinkFieldValue();
+    }
+    $banner = Paragraph::create($banner_data);
+    $banner->save();
+    $repository = VicgovauDemoRepository::getInstance();
+    $repository->trackEntity($banner);
+    return $banner;
+  }
+
+  /**
    * Generate random landing page components.
    *
    * @param int $component_count

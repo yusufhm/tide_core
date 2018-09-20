@@ -192,6 +192,20 @@ function vicgovau_demo_create_node_landing_page() {
       ],
     ];
 
+    // Add Intro Banner to header components.
+    try {
+      $banner = VicgovauDemoHelper::randomIntroductionBanner();
+      $node_data['field_landing_page_header'] = [
+        [
+          'target_id' => $banner->id(),
+          'target_revision_id' => $banner->getRevisionId(),
+        ],
+      ];
+    }
+    catch (Exception $e) {
+      watchdog_exception('vicgovau_demo', $e);
+    }
+
     // Add components.
     $components = VicgovauDemoHelper::randomLandingPageComponents(mt_rand(5, 20), $random);
     foreach ($components as $component) {
