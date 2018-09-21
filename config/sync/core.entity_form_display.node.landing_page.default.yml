@@ -315,7 +315,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_revisions_autocomplete
+    type: entity_reference_autocomplete
     region: content
   field_landing_page_c_secondary:
     weight: 26
@@ -324,7 +324,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_revisions_autocomplete
+    type: entity_reference_autocomplete
     region: content
   field_landing_page_component:
     type: paragraphs
