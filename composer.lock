@@ -136,7 +136,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-09-19T18:53:48+00:00"
+            "time": "2018-09-20T21:20:22+00:00"
         },
         {
             "name": "bjeavons/zxcvbn-php",
@@ -1974,12 +1974,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_webform.git",
-                "reference": "74702a9d39f4f2900ec7fe1489b9540aa4179964"
+                "reference": "f186168ed370887e036cf718d5ee398390e0227c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_webform/zipball/74702a9d39f4f2900ec7fe1489b9540aa4179964",
-                "reference": "74702a9d39f4f2900ec7fe1489b9540aa4179964",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_webform/zipball/f186168ed370887e036cf718d5ee398390e0227c",
+                "reference": "f186168ed370887e036cf718d5ee398390e0227c",
                 "shasum": ""
             },
             "require": {
@@ -1987,7 +1987,7 @@
                 "drupal/config_filter": "1.*",
                 "drupal/config_ignore": "^2.1",
                 "drupal/token_conditions": "dev-1.x",
-                "drupal/webform": "^5.0@RC"
+                "drupal/webform": "5.0.0-rc18"
             },
             "suggest": {
                 "dpc-sdp/tide_api": "@dev",
@@ -2003,7 +2003,7 @@
                 "source": "https://github.com/dpc-sdp/tide_webform/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_webform/issues"
             },
-            "time": "2018-09-04T01:41:59+00:00"
+            "time": "2018-09-21T02:43:58+00:00"
         },
         {
             "name": "drupal-composer/drupal-scaffold",
@@ -6454,17 +6454,17 @@
         },
         {
             "name": "drupal/webform",
-            "version": "5.0.0-rc21",
+            "version": "5.0.0-rc18",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/webform",
-                "reference": "8.x-5.0-rc21"
+                "reference": "8.x-5.0-rc18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-rc21.zip",
-                "reference": "8.x-5.0-rc21",
-                "shasum": "d9b778bc13784d2fd6a651d7deb471791af6ba5e"
+                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-rc18.zip",
+                "reference": "8.x-5.0-rc18",
+                "shasum": "f4c1854e8c4c1deaebfd452718d7aa67b01777ac"
             },
             "require": {
                 "drupal/core": "*"
@@ -6473,7 +6473,6 @@
                 "drupal/address": "~1.4",
                 "drupal/devel": "*",
                 "drupal/token": "~1.3",
-                "drupal/webform_access": "*",
                 "drupal/webform_node": "*",
                 "drupal/webform_scheduled_email": "*",
                 "drupal/webform_ui": "*"
@@ -6484,8 +6483,8 @@
                     "dev-5.x": "5.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-5.0-rc21",
-                    "datestamp": "1536405484",
+                    "version": "8.x-5.0-rc18",
+                    "datestamp": "1536257580",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
