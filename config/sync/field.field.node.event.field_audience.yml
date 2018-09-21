@@ -11,7 +11,7 @@ field_name: field_audience
 entity_type: node
 bundle: event
 label: Audience
-description: ''
+description: 'Use <em>Audience</em> field to categorise event by Audience.'
 required: false
 translatable: false
 default_value: {  }

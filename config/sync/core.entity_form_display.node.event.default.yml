@@ -21,6 +21,7 @@ dependencies:
   module:
     - content_moderation
     - entity_browser
+    - maxlength
     - paragraphs
     - path
     - text
@@ -109,7 +110,12 @@ content:
     settings:
       rows: 5
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      maxlength:
+        maxlength_js: 200
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+        maxlength_js_truncate_html: false
     type: string_textarea
     region: content
   field_news_intro_text:
@@ -190,7 +196,10 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      maxlength:
+        maxlength_js: 150
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
   uid:
     type: entity_reference_autocomplete
     weight: 12
