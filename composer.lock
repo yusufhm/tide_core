@@ -136,7 +136,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-09-19T18:53:48+00:00"
+            "time": "2018-09-21T20:29:41+00:00"
         },
         {
             "name": "bjeavons/zxcvbn-php",
@@ -6041,7 +6041,7 @@
         },
         {
             "name": "drupal/token",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/token",
@@ -11890,7 +11890,7 @@
                 "http",
                 "httplug"
             ],
-            "time": "2017-11-30T11:06:59+00:00"
+            "time": "2018-06-22T12:36:17+00:00"
         },
         {
             "name": "php-http/curl-client",
@@ -13405,7 +13405,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2018-07-26T23:47:18+00:00"
+            "time": "2018-09-23T23:08:17+00:00"
         },
         {
             "name": "stecman/symfony-console-completion",
