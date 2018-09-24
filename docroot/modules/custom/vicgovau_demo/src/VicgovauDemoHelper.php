@@ -300,6 +300,18 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Select a random Image Gallery.
+   *
+   * @return \Drupal\block_content\Entity\BlockContent
+   *   The Gallery block.
+   */
+  public static function randomImageGallery() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $galleries = $repository->getDemoEntities('block_content', 'media_gallery');
+    return count($galleries) ? $galleries[array_rand($galleries)] : NULL;
+  }
+
+  /**
    * Select a random image.
    *
    * @return int
@@ -533,6 +545,7 @@ class VicgovauDemoHelper {
       'card_navigation_featured_auto',
       'card_keydates',
       'featured_news',
+      'media_gallery',
       'news_listing',
     ];
 
@@ -699,6 +712,15 @@ class VicgovauDemoHelper {
             foreach ($news as $news_id) {
               $component_data['field_paragraph_news_reference'][] = ['target_id' => $news_id];
             }
+          }
+          break;
+
+        case 'media_gallery':
+          $gallery = static::randomImageGallery();
+          if ($gallery) {
+            $component_data['field_paragraph_media_gallery'] = [
+              ['target_id' => $gallery->id()],
+            ];
           }
           break;
       }

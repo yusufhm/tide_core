@@ -18,6 +18,7 @@ dependencies:
     - paragraphs.paragraphs_type.card_promotion_auto
     - paragraphs.paragraphs_type.embedded_webform
     - paragraphs.paragraphs_type.featured_news
+    - paragraphs.paragraphs_type.media_gallery
     - paragraphs.paragraphs_type.news_listing
   module:
     - entity_reference_revisions
@@ -52,6 +53,7 @@ settings:
       embedded_webform: embedded_webform
       featured_news: featured_news
       news_listing: news_listing
+      media_gallery: media_gallery
     target_bundles_drag_drop:
       banner:
         weight: -33
@@ -113,6 +115,9 @@ settings:
       news_listing:
         enabled: true
         weight: 24
+      media_gallery:
+        enabled: true
+        weight: 26
       contact_us:
         weight: 34
         enabled: false

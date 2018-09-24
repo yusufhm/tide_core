@@ -136,7 +136,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-09-20T21:20:22+00:00"
+            "time": "2018-09-19T18:53:48+00:00"
         },
         {
             "name": "bjeavons/zxcvbn-php",
@@ -1532,12 +1532,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "0e8cad98b4f7900a1223e6e4cd49345de9994031"
+                "reference": "8b3d327c83a14229552dc44685f1a1e4f6df6d1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/0e8cad98b4f7900a1223e6e4cd49345de9994031",
-                "reference": "0e8cad98b4f7900a1223e6e4cd49345de9994031",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/8b3d327c83a14229552dc44685f1a1e4f6df6d1b",
+                "reference": "8b3d327c83a14229552dc44685f1a1e4f6df6d1b",
                 "shasum": ""
             },
             "require": {
@@ -1645,10 +1645,10 @@
             ],
             "description": "Core functionality for Tide Drupal 8 distribution",
             "support": {
-                "source": "https://github.com/dpc-sdp/tide_core/tree/0.0.1",
+                "source": "https://github.com/dpc-sdp/tide_core/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_core/issues"
             },
-            "time": "2018-09-19T03:11:56+00:00"
+            "time": "2018-09-24T01:45:06+00:00"
         },
         {
             "name": "dpc-sdp/tide_event",
@@ -1686,12 +1686,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_landing_page.git",
-                "reference": "3ef61a1473e723d48b256eef3c48ddd4b69d2ad9"
+                "reference": "e89f018075eadd0fb2f62c35bf6ba2078483dcfb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/3ef61a1473e723d48b256eef3c48ddd4b69d2ad9",
-                "reference": "3ef61a1473e723d48b256eef3c48ddd4b69d2ad9",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/e89f018075eadd0fb2f62c35bf6ba2078483dcfb",
+                "reference": "e89f018075eadd0fb2f62c35bf6ba2078483dcfb",
                 "shasum": ""
             },
             "require": {
@@ -1718,7 +1718,7 @@
                 "source": "https://github.com/dpc-sdp/tide_landing_page/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_landing_page/issues"
             },
-            "time": "2018-09-19T23:41:29+00:00"
+            "time": "2018-09-24T01:46:03+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
@@ -6066,7 +6066,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.4",
-                    "datestamp": "1536408480",
+                    "datestamp": "1537557481",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

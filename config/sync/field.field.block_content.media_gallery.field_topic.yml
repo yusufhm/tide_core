@@ -1,0 +1,29 @@
+uuid: 12ecf8b3-b3d6-410f-a83d-a540d42f8b75
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.media_gallery
+    - field.storage.block_content.field_topic
+    - taxonomy.vocabulary.topic
+id: block_content.media_gallery.field_topic
+field_name: field_topic
+entity_type: block_content
+bundle: media_gallery
+label: Topic
+description: 'Use <em>Topic</em> field to categorise the gallery by Topic.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      topic: topic
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference
