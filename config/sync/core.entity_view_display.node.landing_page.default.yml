@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.landing_page.field_bottom_graphical_image
     - field.field.node.landing_page.field_featured_image
     - field.field.node.landing_page.field_graphical_image
     - field.field.node.landing_page.field_landing_page_bg_colour
@@ -10,6 +11,7 @@ dependencies:
     - field.field.node.landing_page.field_landing_page_c_secondary
     - field.field.node.landing_page.field_landing_page_component
     - field.field.node.landing_page.field_landing_page_contact
+    - field.field.node.landing_page.field_landing_page_header
     - field.field.node.landing_page.field_landing_page_hero_image
     - field.field.node.landing_page.field_landing_page_hero_logo
     - field.field.node.landing_page.field_landing_page_hero_theme
@@ -53,6 +55,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_bottom_graphical_image:
+    type: entity_reference_label
+    weight: 22
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
   field_featured_image:
     weight: 9
     label: above
@@ -79,20 +89,16 @@ content:
   field_landing_page_c_primary:
     weight: 8
     label: above
-    settings:
-      view_mode: default
-      link: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
+    type: entity_reference_entity_id
     region: content
   field_landing_page_c_secondary:
     weight: 6
     label: above
-    settings:
-      view_mode: default
-      link: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
+    type: entity_reference_entity_id
     region: content
   field_landing_page_component:
     weight: 1
@@ -106,6 +112,15 @@ content:
   field_landing_page_contact:
     type: entity_reference_revisions_entity_view
     weight: 14
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_landing_page_header:
+    type: entity_reference_revisions_entity_view
+    weight: 23
     label: above
     settings:
       view_mode: default

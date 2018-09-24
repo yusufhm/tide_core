@@ -1,0 +1,44 @@
+uuid: f19d22d4-142b-4a65-b662-87745116516e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.introduction_banner.field_paragraph_links
+    - field.field.paragraph.introduction_banner.field_paragraph_summary
+    - field.field.paragraph.introduction_banner.field_paragraph_title
+    - paragraphs.paragraphs_type.introduction_banner
+  module:
+    - link
+id: paragraph.introduction_banner.default
+targetEntityType: paragraph
+bundle: introduction_banner
+mode: default
+content:
+  field_paragraph_links:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_paragraph_summary:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_paragraph_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

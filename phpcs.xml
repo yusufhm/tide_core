@@ -83,7 +83,7 @@
   </rule>
 
   <!--Allow long array lines in tests.-->
-  <rule ref="Drupal.Array.Array.LongLineDeclaration">
+  <rule ref="Drupal.Arrays.Array.LongLineDeclaration">
     <exclude-pattern>tests/unit/*.Test\.php</exclude-pattern>
     <exclude-pattern>tests/unit/*.TestCase\.php</exclude-pattern>
     <exclude-pattern>tests/src/Unit/*.Test\.php</exclude-pattern>

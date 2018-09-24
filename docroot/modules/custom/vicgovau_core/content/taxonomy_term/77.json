@@ -1,0 +1,63 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/77?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/event"
+        }
+    },
+    "tid": [
+        {
+            "value": 77
+        }
+    ],
+    "uuid": [
+        {
+            "value": "7a8bc426-9b18-4461-b133-91b80584c0a2"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "event"
+        }
+    ],
+    "name": [
+        {
+            "value": "Markets & Fairs",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-09-11T06:38:55+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Markets & Fairs | DPC Content Repository",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/77"
+            }
+        }
+    ]
+}

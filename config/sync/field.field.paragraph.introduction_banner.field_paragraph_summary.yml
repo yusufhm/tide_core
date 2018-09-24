@@ -1,0 +1,19 @@
+uuid: 912d0137-f162-475a-ae04-89dba1cb8ac9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_summary
+    - paragraphs.paragraphs_type.introduction_banner
+id: paragraph.introduction_banner.field_paragraph_summary
+field_name: field_paragraph_summary
+entity_type: paragraph
+bundle: introduction_banner
+label: Summary
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

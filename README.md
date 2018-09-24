@@ -89,6 +89,7 @@ OR
 
 ### Step 1. Adding modules as local packages
 1. Add local package information to root `composer.json`:
+
 ```
     "repositories": {
         "dpc-sdp/tide_page": {

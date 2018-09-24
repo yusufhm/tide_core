@@ -240,6 +240,30 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Select a random Audience.
+   *
+   * @return int
+   *   The audience tid.
+   */
+  public static function randomAudience() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $topics = $repository->getDemoEntities('taxonomy_term', 'audience');
+    return count($topics) ? array_rand($topics) : 0;
+  }
+
+  /**
+   * Select a random Event Category.
+   *
+   * @return int
+   *   The event tid.
+   */
+  public static function randomEventCategory() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $topics = $repository->getDemoEntities('taxonomy_term', 'event');
+    return count($topics) ? array_rand($topics) : 0;
+  }
+
+  /**
    * Select random Tags.
    *
    * @param int $count
@@ -273,6 +297,18 @@ class VicgovauDemoHelper {
     $repository = VicgovauDemoRepository::getInstance();
     $campaigns = $repository->getDemoEntities('block_content', 'campaign');
     return count($campaigns) ? $campaigns[array_rand($campaigns)] : NULL;
+  }
+
+  /**
+   * Select a random Image Gallery.
+   *
+   * @return \Drupal\block_content\Entity\BlockContent
+   *   The Gallery block.
+   */
+  public static function randomImageGallery() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $galleries = $repository->getDemoEntities('block_content', 'media_gallery');
+    return count($galleries) ? $galleries[array_rand($galleries)] : NULL;
   }
 
   /**
@@ -457,6 +493,32 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Generate a random Introduction Banner paragraph.
+   *
+   * @return \Drupal\paragraphs\Entity\Paragraph
+   *   The Intro banner.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  public static function randomIntroductionBanner() {
+    $banner_data = [
+      'type' => 'introduction_banner',
+      'field_paragraph_title' => [['value' => static::randomSentence()]],
+      'field_paragraph_summary' => [
+        'value' => static::randomPlainParagraph(),
+      ],
+    ];
+    for ($j = 1; $j <= mt_rand(0, 3); $j++) {
+      $banner_data['field_paragraph_links'][] = static::randomLinkFieldValue();
+    }
+    $banner = Paragraph::create($banner_data);
+    $banner->save();
+    $repository = VicgovauDemoRepository::getInstance();
+    $repository->trackEntity($banner);
+    return $banner;
+  }
+
+  /**
    * Generate random landing page components.
    *
    * @param int $component_count
@@ -483,6 +545,7 @@ class VicgovauDemoHelper {
       'card_navigation_featured_auto',
       'card_keydates',
       'featured_news',
+      'media_gallery',
       'news_listing',
     ];
 
@@ -545,6 +608,7 @@ class VicgovauDemoHelper {
               'value' => static::randomPlainParagraph(),
             ],
             'field_paragraph_cta' => [VicgovauDemoHelper::randomCtaLinkFieldValue()],
+            'field_paragraph_cta_style' => ['value' => static::randomBool() ? 'banner' : 'card'],
           ];
           break;
 
@@ -648,6 +712,15 @@ class VicgovauDemoHelper {
             foreach ($news as $news_id) {
               $component_data['field_paragraph_news_reference'][] = ['target_id' => $news_id];
             }
+          }
+          break;
+
+        case 'media_gallery':
+          $gallery = static::randomImageGallery();
+          if ($gallery) {
+            $component_data['field_paragraph_media_gallery'] = [
+              ['target_id' => $gallery->id()],
+            ];
           }
           break;
       }

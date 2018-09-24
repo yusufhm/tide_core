@@ -192,6 +192,20 @@ function vicgovau_demo_create_node_landing_page() {
       ],
     ];
 
+    // Add Intro Banner to header components.
+    try {
+      $banner = VicgovauDemoHelper::randomIntroductionBanner();
+      $node_data['field_landing_page_header'] = [
+        [
+          'target_id' => $banner->id(),
+          'target_revision_id' => $banner->getRevisionId(),
+        ],
+      ];
+    }
+    catch (Exception $e) {
+      watchdog_exception('vicgovau_demo', $e);
+    }
+
     // Add components.
     $components = VicgovauDemoHelper::randomLandingPageComponents(mt_rand(5, 20), $random);
     foreach ($components as $component) {
@@ -208,7 +222,6 @@ function vicgovau_demo_create_node_landing_page() {
       if ($primary_campaign) {
         $node_data['field_landing_page_c_primary'] = [
           'target_id' => $primary_campaign->id(),
-          'target_revision_id' => $primary_campaign->getRevisionId(),
         ];
       }
     }
@@ -217,7 +230,6 @@ function vicgovau_demo_create_node_landing_page() {
       if ($secondary_campaign) {
         $node_data['field_landing_page_c_secondary'] = [
           'target_id' => $secondary_campaign->id(),
-          'target_revision_id' => $secondary_campaign->getRevisionId(),
         ];
       }
     }

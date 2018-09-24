@@ -1,0 +1,63 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/88?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/event_requirements"
+        }
+    },
+    "tid": [
+        {
+            "value": 88
+        }
+    ],
+    "uuid": [
+        {
+            "value": "202e36e6-b974-48f5-8a76-87f410696462"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "event_requirements"
+        }
+    ],
+    "name": [
+        {
+            "value": "Seniors",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-09-17T04:34:13+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Seniors | DPC Content Repository",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/88"
+            }
+        }
+    ]
+}

@@ -37,6 +37,9 @@ jobs:
           name: Validate composer config.
           command: composer validate --ansi --with-dependencies --strict
       - run:
+          name: Clear composer caches.
+          command: composer clearcache
+      - run:
           name: Pull newest Bay images.
           command: composer bay:pull
       # @private_repos
@@ -106,6 +109,9 @@ jobs:
       - run:
           name: Validate composer config.
           command: composer validate --ansi --with-dependencies --strict
+      - run:
+          name: Clear composer caches.
+          command: composer clearcache
       - run:
           name: Pull newest Bay images.
           command: composer bay:pull
