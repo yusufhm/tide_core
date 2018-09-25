@@ -1485,12 +1485,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_api.git",
-                "reference": "cb0d58092e2645ea3141d2241a64938a5ce8c13a"
+                "reference": "d5400eae24443e71f4098393a1ecdfc16c6af7ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/cb0d58092e2645ea3141d2241a64938a5ce8c13a",
-                "reference": "cb0d58092e2645ea3141d2241a64938a5ce8c13a",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/d5400eae24443e71f4098393a1ecdfc16c6af7ba",
+                "reference": "d5400eae24443e71f4098393a1ecdfc16c6af7ba",
                 "shasum": ""
             },
             "require": {
@@ -1524,7 +1524,7 @@
                 "source": "https://github.com/dpc-sdp/tide_api/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_api/issues"
             },
-            "time": "2018-09-11T08:04:15+00:00"
+            "time": "2018-09-25T06:07:26+00:00"
         },
         {
             "name": "dpc-sdp/tide_core",
@@ -1656,12 +1656,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_event.git",
-                "reference": "7a56b54aed19847a8217c073a5dc31783f295c4e"
+                "reference": "591dd3cf47029a7fc04382414bcc83ed91499084"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/7a56b54aed19847a8217c073a5dc31783f295c4e",
-                "reference": "7a56b54aed19847a8217c073a5dc31783f295c4e",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/591dd3cf47029a7fc04382414bcc83ed91499084",
+                "reference": "591dd3cf47029a7fc04382414bcc83ed91499084",
                 "shasum": ""
             },
             "require": {
@@ -1678,7 +1678,7 @@
                 "source": "https://github.com/dpc-sdp/tide_event/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_event/issues"
             },
-            "time": "2018-09-25T01:10:59+00:00"
+            "time": "2018-09-25T06:58:44+00:00"
         },
         {
             "name": "dpc-sdp/tide_landing_page",

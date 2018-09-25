@@ -42,4 +42,5 @@ hidden:
   field_node_primary_site: true
   field_node_site: true
   field_show_social_sharing: true
+  field_tags: true
   field_topic: true
