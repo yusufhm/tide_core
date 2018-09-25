@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6429d681e65fa80144b2c9e60b5ac65b",
+    "content-hash": "2d8afd0fba50135e632e75446181f7e8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1427,22 +1427,22 @@
         },
         {
             "name": "dpc-sdp/tide",
-            "version": "0.0.2",
+            "version": "dev-feature/SDPA-982-Scheduled-Publishing-Archiving",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide.git",
-                "reference": "9b3cfab261fa24c4f062a472edc87f14dcd85c0a"
+                "reference": "4aa1dbe2522b39aa0194532a15e814d73a27f497"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide/zipball/9b3cfab261fa24c4f062a472edc87f14dcd85c0a",
-                "reference": "9b3cfab261fa24c4f062a472edc87f14dcd85c0a",
+                "url": "https://api.github.com/repos/dpc-sdp/tide/zipball/4aa1dbe2522b39aa0194532a15e814d73a27f497",
+                "reference": "4aa1dbe2522b39aa0194532a15e814d73a27f497",
                 "shasum": ""
             },
             "require": {
                 "dpc-sdp/tide_api": "dev-master",
                 "dpc-sdp/tide_core": "dev-master",
-                "dpc-sdp/tide_event": "dev-master",
+                "dpc-sdp/tide_event": "dev-feature/SDPA-982-Scheduled-Publishing-Archiving",
                 "dpc-sdp/tide_landing_page": "dev-master",
                 "dpc-sdp/tide_media": "dev-master",
                 "dpc-sdp/tide_monsido": "dev-master",
@@ -1474,10 +1474,10 @@
             ],
             "description": "Tide Drupal 8 profile",
             "support": {
-                "source": "https://github.com/dpc-sdp/tide/tree/0.0.2",
+                "source": "https://github.com/dpc-sdp/tide/tree/feature/SDPA-982-Scheduled-Publishing-Archiving",
                 "issues": "https://github.com/dpc-sdp/tide/issues"
             },
-            "time": "2018-09-15T05:53:22+00:00"
+            "time": "2018-09-21T07:51:14+00:00"
         },
         {
             "name": "dpc-sdp/tide_api",
@@ -1652,16 +1652,16 @@
         },
         {
             "name": "dpc-sdp/tide_event",
-            "version": "dev-master",
+            "version": "dev-feature/SDPA-982-Scheduled-Publishing-Archiving",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_event.git",
-                "reference": "d50a82591fdb7c88dc90d04b37ad125ffad70a4d"
+                "reference": "2a6066f2821c96eb2f60659dd1da6dd1cb29a4fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/d50a82591fdb7c88dc90d04b37ad125ffad70a4d",
-                "reference": "d50a82591fdb7c88dc90d04b37ad125ffad70a4d",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/2a6066f2821c96eb2f60659dd1da6dd1cb29a4fd",
+                "reference": "2a6066f2821c96eb2f60659dd1da6dd1cb29a4fd",
                 "shasum": ""
             },
             "require": {
@@ -1675,10 +1675,10 @@
             ],
             "description": "Event content type and related configuration for Tide Drupal 8 distribution",
             "support": {
-                "source": "https://github.com/dpc-sdp/tide_event/tree/master",
+                "source": "https://github.com/dpc-sdp/tide_event/tree/feature/SDPA-982-Scheduled-Publishing-Archiving",
                 "issues": "https://github.com/dpc-sdp/tide_event/issues"
             },
-            "time": "2018-09-21T03:17:32+00:00"
+            "time": "2018-09-21T09:09:44+00:00"
         },
         {
             "name": "dpc-sdp/tide_landing_page",
@@ -14042,6 +14042,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "dpc-sdp/tide": 20,
         "drupal/coffee": 10,
         "drupal/default_content": 15,
         "drupal/stage_file_proxy": 15,
