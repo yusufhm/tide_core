@@ -616,6 +616,7 @@ class VicgovauDemoHelper {
           $component_data += [
             'field_paragraph_title' => [['value' => static::randomSentence()]],
             'field_paragraph_date' => [['value' => static::randomDate()]],
+            'field_paragraph_date_range' => [['value' => static::randomDate(), 'end_value' => static::randomDate()]],
             'field_paragraph_media' => [['target_id' => static::randomImage()]],
             'field_paragraph_summary' => [
               'value' => static::randomPlainParagraph(),

@@ -136,7 +136,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-09-24T21:19:19+00:00"
+            "time": "2018-09-25T20:15:23+00:00"
         },
         {
             "name": "bjeavons/zxcvbn-php",
@@ -1532,12 +1532,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "8b3d327c83a14229552dc44685f1a1e4f6df6d1b"
+                "reference": "dd3b68c181032dabde713ba15ef292c3760b9217"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/8b3d327c83a14229552dc44685f1a1e4f6df6d1b",
-                "reference": "8b3d327c83a14229552dc44685f1a1e4f6df6d1b",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/dd3b68c181032dabde713ba15ef292c3760b9217",
+                "reference": "dd3b68c181032dabde713ba15ef292c3760b9217",
                 "shasum": ""
             },
             "require": {
@@ -1645,10 +1645,10 @@
             ],
             "description": "Core functionality for Tide Drupal 8 distribution",
             "support": {
-                "source": "https://github.com/dpc-sdp/tide_core/tree/0.0.2",
+                "source": "https://github.com/dpc-sdp/tide_core/tree/0.0.3",
                 "issues": "https://github.com/dpc-sdp/tide_core/issues"
             },
-            "time": "2018-09-24T01:45:06+00:00"
+            "time": "2018-09-25T08:22:30+00:00"
         },
         {
             "name": "dpc-sdp/tide_event",
@@ -1656,12 +1656,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_event.git",
-                "reference": "591dd3cf47029a7fc04382414bcc83ed91499084"
+                "reference": "3138f45a8ea8f538d4bd0d3aa402621d4d6d1fa6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/591dd3cf47029a7fc04382414bcc83ed91499084",
-                "reference": "591dd3cf47029a7fc04382414bcc83ed91499084",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/3138f45a8ea8f538d4bd0d3aa402621d4d6d1fa6",
+                "reference": "3138f45a8ea8f538d4bd0d3aa402621d4d6d1fa6",
                 "shasum": ""
             },
             "require": {
@@ -1678,7 +1678,7 @@
                 "source": "https://github.com/dpc-sdp/tide_event/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_event/issues"
             },
-            "time": "2018-09-25T06:58:44+00:00"
+            "time": "2018-09-26T01:03:08+00:00"
         },
         {
             "name": "dpc-sdp/tide_landing_page",
@@ -1686,12 +1686,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_landing_page.git",
-                "reference": "e89f018075eadd0fb2f62c35bf6ba2078483dcfb"
+                "reference": "a1ea7870c18fb0668ac88821700ae380353ad9d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/e89f018075eadd0fb2f62c35bf6ba2078483dcfb",
-                "reference": "e89f018075eadd0fb2f62c35bf6ba2078483dcfb",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/a1ea7870c18fb0668ac88821700ae380353ad9d0",
+                "reference": "a1ea7870c18fb0668ac88821700ae380353ad9d0",
                 "shasum": ""
             },
             "require": {
@@ -1715,7 +1715,7 @@
                 "source": "https://github.com/dpc-sdp/tide_landing_page/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_landing_page/issues"
             },
-            "time": "2018-09-24T03:28:12+00:00"
+            "time": "2018-09-26T01:06:19+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
@@ -4430,6 +4430,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Date Time enhancer does not work with Date range fields - https://www.drupal.org/project/jsonapi_extras/issues/2953227": "https://www.drupal.org/files/issues/2018-07-17/jsonapi_extras-date-range-fields-support-2953227-d8-11.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -6958,7 +6961,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2017-02-03T22:48:59+00:00"
+            "time": "2018-09-25T20:59:41+00:00"
         },
         {
             "name": "elasticsearch/elasticsearch",
