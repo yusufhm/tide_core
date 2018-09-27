@@ -1,0 +1,9 @@
+uuid: e41d1ba8-f355-42a7-bf19-623495d839b6
+langcode: en
+status: true
+dependencies: {  }
+id: latest_events
+label: 'Latest Events'
+icon_uuid: null
+description: 'Paragraph type to allow users to fetch latest events, with the option of having a CTA as last sixth card '
+behavior_plugins: {  }

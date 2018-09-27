@@ -519,6 +519,32 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Generate a random Call to Action paragraph.
+   *
+   * @return \Drupal\paragraphs\Entity\Paragraph
+   *   The Intro banner.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  public static function randomCallToAction() {
+    $call_to_action_data = [
+      'field_paragraph_title' => [['value' => static::randomSentence()]],
+      'field_paragraph_media' => [['target_id' => static::randomImage()]],
+      'field_paragraph_body' => [
+        'value' => static::randomPlainParagraph(),
+      ],
+      'field_paragraph_cta' => [VicgovauDemoHelper::randomCtaLinkFieldValue()],
+      'field_paragraph_cta_style' => ['value' => static::randomBool() ? 'banner' : 'card'],
+    ];
+
+    $call_to_action = Paragraph::create($call_to_action_data);
+    $call_to_action->save();
+    $repository = VicgovauDemoRepository::getInstance();
+    $repository->trackEntity($call_to_action);
+    return $call_to_action;
+  }
+
+  /**
    * Generate random landing page components.
    *
    * @param int $component_count
@@ -714,6 +740,17 @@ class VicgovauDemoHelper {
               $component_data['field_paragraph_news_reference'][] = ['target_id' => $news_id];
             }
           }
+          break;
+
+        case 'latest_events':
+          $call_to_action = static::randomCallToAction();
+          $component_data += [
+            'field_paragraph_title' => [['value' => static::randomSentence()]],
+            'field_paragraph_cta_card_event' => [
+              'target_id' => $call_to_action->id(),
+              'target_revision_id' => $call_to_action->getRevisionId(),
+            ],
+          ];
           break;
 
         case 'media_gallery':

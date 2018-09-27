@@ -1,0 +1,33 @@
+uuid: 914d8e74-f1e6-41cf-8fa1-2622c5ff19d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.latest_events.field_paragraph_cta_card_event
+    - field.field.paragraph.latest_events.field_paragraph_title
+    - paragraphs.paragraphs_type.latest_events
+  module:
+    - entity_reference_revisions
+id: paragraph.latest_events.default
+targetEntityType: paragraph
+bundle: latest_events
+mode: default
+content:
+  field_paragraph_cta_card_event:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

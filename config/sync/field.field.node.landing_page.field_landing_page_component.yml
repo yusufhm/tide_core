@@ -18,6 +18,7 @@ dependencies:
     - paragraphs.paragraphs_type.card_promotion_auto
     - paragraphs.paragraphs_type.embedded_webform
     - paragraphs.paragraphs_type.featured_news
+    - paragraphs.paragraphs_type.latest_events
     - paragraphs.paragraphs_type.media_gallery
     - paragraphs.paragraphs_type.news_listing
   module:
@@ -54,6 +55,7 @@ settings:
       featured_news: featured_news
       news_listing: news_listing
       media_gallery: media_gallery
+      latest_events: latest_events
     target_bundles_drag_drop:
       banner:
         weight: -33
@@ -118,13 +120,25 @@ settings:
       media_gallery:
         enabled: true
         weight: 26
+      latest_events:
+        enabled: true
+        weight: 29
       contact_us:
         weight: 34
+        enabled: false
+      call_to_action_image:
+        weight: 35
         enabled: false
       phone:
         weight: 38
         enabled: false
       social_link:
         weight: 40
+        enabled: false
+      event_details:
+        weight: 46
+        enabled: false
+      introduction_banner:
+        weight: 48
         enabled: false
 field_type: entity_reference_revisions
