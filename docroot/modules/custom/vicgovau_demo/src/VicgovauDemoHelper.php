@@ -388,6 +388,25 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Select a random Event items.
+   *
+   * @param bool $return_entity
+   *   Whether to return the full entity or just entity ID.
+   *
+   * @return int|\Drupal\node\Entity\Node
+   *   Entity ID or full entity.
+   */
+  public static function randomEvent($return_entity = FALSE) {
+    $repository = VicgovauDemoRepository::getInstance();
+    $pages = $repository->getDemoEntities('node', 'event');
+    if (count($pages)) {
+      $page_id = array_rand($pages);
+      return $return_entity ? $pages[$page_id] : $page_id;
+    }
+    return NULL;
+  }
+
+  /**
    * Generate a random link field from a random page.
    *
    * @return array
@@ -563,6 +582,7 @@ class VicgovauDemoHelper {
       'basic_text',
       'call_to_action',
       'card_event',
+      'card_event_auto',
       'card_promotion',
       'card_promotion_auto',
       'card_navigation',
@@ -760,6 +780,13 @@ class VicgovauDemoHelper {
               ['target_id' => $gallery->id()],
             ];
           }
+          break;
+
+        case 'card_event_auto':
+          $component_data += [
+            'field_paragraph_cta_text' => [['value' => static::randomSentence(2, 5)]],
+            'field_paragraph_reference' => [['target_id' => static::randomEvent()]],
+          ];
           break;
       }
 

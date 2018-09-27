@@ -1,0 +1,9 @@
+uuid: ef4d4d29-be22-415f-871c-eda78c50ccb6
+langcode: en
+status: true
+dependencies: {  }
+id: card_event_auto
+label: 'Card Event Automated'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

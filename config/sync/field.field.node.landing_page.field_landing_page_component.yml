@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.basic_text
     - paragraphs.paragraphs_type.call_to_action
     - paragraphs.paragraphs_type.card_event
+    - paragraphs.paragraphs_type.card_event_auto
     - paragraphs.paragraphs_type.card_keydates
     - paragraphs.paragraphs_type.card_navigation
     - paragraphs.paragraphs_type.card_navigation_auto
@@ -54,6 +55,7 @@ settings:
       embedded_webform: embedded_webform
       featured_news: featured_news
       news_listing: news_listing
+      card_event_auto: card_event_auto
       media_gallery: media_gallery
       latest_events: latest_events
     target_bundles_drag_drop:
@@ -117,6 +119,9 @@ settings:
       news_listing:
         enabled: true
         weight: 24
+      card_event_auto:
+        enabled: true
+        weight: 28
       media_gallery:
         enabled: true
         weight: 26
