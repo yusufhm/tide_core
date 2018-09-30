@@ -264,6 +264,18 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Select a random Event Requirements.
+   *
+   * @return int
+   *   The event tid.
+   */
+  public static function randomEventRequirements() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $topics = $repository->getDemoEntities('taxonomy_term', 'event_requirements');
+    return count($topics) ? array_rand($topics) : 0;
+  }
+
+  /**
    * Select random Tags.
    *
    * @param int $count
