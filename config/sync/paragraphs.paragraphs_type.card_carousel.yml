@@ -1,0 +1,9 @@
+uuid: dcea129f-d1ac-47ab-9639-e09ecf6cdcd0
+langcode: en
+status: true
+dependencies: {  }
+id: card_carousel
+label: 'Card Carousel'
+icon_uuid: null
+description: 'Featured cards for news and upcoming events.'
+behavior_plugins: {  }

@@ -593,6 +593,7 @@ class VicgovauDemoHelper {
       'accordion',
       'basic_text',
       'call_to_action',
+      'card_carousel',
       'card_event',
       'card_event_auto',
       'card_promotion',
@@ -667,6 +668,14 @@ class VicgovauDemoHelper {
             ],
             'field_paragraph_cta' => [VicgovauDemoHelper::randomCtaLinkFieldValue()],
             'field_paragraph_cta_style' => ['value' => static::randomBool() ? 'banner' : 'card'],
+          ];
+          break;
+
+        case 'card_carousel':
+          // TODO: https://digital-engagement.atlassian.net/browse/SDPA-1034
+          $component_data += [
+            'field_paragraph_title' => [['value' => static::randomSentence()]],
+            'field_paragraph_latest_items' => ['value' => static::randomBool() ? 'event' : 'news'],
           ];
           break;
 

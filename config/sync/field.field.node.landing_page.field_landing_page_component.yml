@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.basic_text
     - paragraphs.paragraphs_type.call_to_action
+    - paragraphs.paragraphs_type.card_carousel
     - paragraphs.paragraphs_type.card_event
     - paragraphs.paragraphs_type.card_event_auto
     - paragraphs.paragraphs_type.card_keydates
@@ -57,6 +58,7 @@ settings:
       news_listing: news_listing
       card_event_auto: card_event_auto
       media_gallery: media_gallery
+      card_carousel: card_carousel
       latest_events: latest_events
     target_bundles_drag_drop:
       banner:
@@ -125,11 +127,17 @@ settings:
       media_gallery:
         enabled: true
         weight: 26
+      card_carousel:
+        enabled: true
+        weight: 29
       latest_events:
         enabled: true
         weight: 29
       contact_us:
         weight: 34
+        enabled: false
+      call_to_action_image:
+        weight: 35
         enabled: false
       call_to_action_image:
         weight: 35
