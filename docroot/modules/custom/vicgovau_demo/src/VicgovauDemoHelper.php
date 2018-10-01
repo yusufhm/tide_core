@@ -264,6 +264,18 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Select a random Event Requirements.
+   *
+   * @return int
+   *   The event tid.
+   */
+  public static function randomEventRequirements() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $topics = $repository->getDemoEntities('taxonomy_term', 'event_requirements');
+    return count($topics) ? array_rand($topics) : 0;
+  }
+
+  /**
    * Select random Tags.
    *
    * @param int $count
@@ -385,6 +397,25 @@ class VicgovauDemoHelper {
       return $results;
     }
     return [];
+  }
+
+  /**
+   * Select a random Event items.
+   *
+   * @param bool $return_entity
+   *   Whether to return the full entity or just entity ID.
+   *
+   * @return int|\Drupal\node\Entity\Node
+   *   Entity ID or full entity.
+   */
+  public static function randomEvent($return_entity = FALSE) {
+    $repository = VicgovauDemoRepository::getInstance();
+    $pages = $repository->getDemoEntities('node', 'event');
+    if (count($pages)) {
+      $page_id = array_rand($pages);
+      return $return_entity ? $pages[$page_id] : $page_id;
+    }
+    return NULL;
   }
 
   /**
@@ -519,6 +550,32 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Generate a random Call to Action paragraph.
+   *
+   * @return \Drupal\paragraphs\Entity\Paragraph
+   *   The Intro banner.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  public static function randomCallToAction() {
+    $call_to_action_data = [
+      'field_paragraph_title' => [['value' => static::randomSentence()]],
+      'field_paragraph_media' => [['target_id' => static::randomImage()]],
+      'field_paragraph_body' => [
+        'value' => static::randomPlainParagraph(),
+      ],
+      'field_paragraph_cta' => [VicgovauDemoHelper::randomCtaLinkFieldValue()],
+      'field_paragraph_cta_style' => ['value' => static::randomBool() ? 'banner' : 'card'],
+    ];
+
+    $call_to_action = Paragraph::create($call_to_action_data);
+    $call_to_action->save();
+    $repository = VicgovauDemoRepository::getInstance();
+    $repository->trackEntity($call_to_action);
+    return $call_to_action;
+  }
+
+  /**
    * Generate random landing page components.
    *
    * @param int $component_count
@@ -536,7 +593,9 @@ class VicgovauDemoHelper {
       'accordion',
       'basic_text',
       'call_to_action',
+      'card_carousel',
       'card_event',
+      'card_event_auto',
       'card_promotion',
       'card_promotion_auto',
       'card_navigation',
@@ -612,10 +671,19 @@ class VicgovauDemoHelper {
           ];
           break;
 
+        case 'card_carousel':
+          // TODO: https://digital-engagement.atlassian.net/browse/SDPA-1034
+          $component_data += [
+            'field_paragraph_title' => [['value' => static::randomSentence()]],
+            'field_paragraph_latest_items' => ['value' => static::randomBool() ? 'event' : 'news'],
+          ];
+          break;
+
         case 'card_event':
           $component_data += [
             'field_paragraph_title' => [['value' => static::randomSentence()]],
             'field_paragraph_date' => [['value' => static::randomDate()]],
+            'field_paragraph_date_range' => [['value' => static::randomDate(), 'end_value' => static::randomDate()]],
             'field_paragraph_media' => [['target_id' => static::randomImage()]],
             'field_paragraph_summary' => [
               'value' => static::randomPlainParagraph(),
@@ -715,6 +783,17 @@ class VicgovauDemoHelper {
           }
           break;
 
+        case 'latest_events':
+          $call_to_action = static::randomCallToAction();
+          $component_data += [
+            'field_paragraph_title' => [['value' => static::randomSentence()]],
+            'field_paragraph_cta_card_event' => [
+              'target_id' => $call_to_action->id(),
+              'target_revision_id' => $call_to_action->getRevisionId(),
+            ],
+          ];
+          break;
+
         case 'media_gallery':
           $gallery = static::randomImageGallery();
           if ($gallery) {
@@ -722,6 +801,13 @@ class VicgovauDemoHelper {
               ['target_id' => $gallery->id()],
             ];
           }
+          break;
+
+        case 'card_event_auto':
+          $component_data += [
+            'field_paragraph_cta_text' => [['value' => static::randomSentence(2, 5)]],
+            'field_paragraph_reference' => [['target_id' => static::randomEvent()]],
+          ];
           break;
       }
 

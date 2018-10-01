@@ -1,0 +1,28 @@
+uuid: f5a29e2d-12e0-4ff8-9ab1-495c1f8bae7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.scheduled_archiving
+    - node.type.event
+    - scheduled_updates.scheduled_update_type.scheduled_archiving
+id: node.event.scheduled_archiving
+field_name: scheduled_archiving
+entity_type: node
+bundle: event
+label: 'Scheduled Archiving'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:scheduled_update'
+  handler_settings:
+    target_bundles:
+      scheduled_archiving: scheduled_archiving
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

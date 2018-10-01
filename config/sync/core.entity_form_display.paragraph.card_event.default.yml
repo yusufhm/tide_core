@@ -6,6 +6,7 @@ dependencies:
     - entity_browser.browser.tide_image_browser
     - field.field.paragraph.card_event.field_paragraph_cta
     - field.field.paragraph.card_event.field_paragraph_date
+    - field.field.paragraph.card_event.field_paragraph_date_range
     - field.field.paragraph.card_event.field_paragraph_location
     - field.field.paragraph.card_event.field_paragraph_media
     - field.field.paragraph.card_event.field_paragraph_summary
@@ -15,6 +16,7 @@ dependencies:
   module:
     - address
     - datetime
+    - datetime_range
     - entity_browser
     - link
 _core:
@@ -25,7 +27,7 @@ bundle: card_event
 mode: default
 content:
   field_paragraph_cta:
-    weight: 5
+    weight: 6
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -38,8 +40,14 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
-  field_paragraph_location:
+  field_paragraph_date_range:
     weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_paragraph_location:
+    weight: 4
     settings:
       default_country: null
     third_party_settings: {  }
@@ -56,12 +64,13 @@ content:
       field_widget_display_settings:
         view_mode: media_browser_preview
       open: false
+      field_widget_replace: false
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
   field_paragraph_summary:
     type: string_textarea
-    weight: 4
+    weight: 5
     settings:
       placeholder: ''
       rows: 5
@@ -76,7 +85,7 @@ content:
     type: string_textfield
     region: content
   field_paragraph_topic:
-    weight: 6
+    weight: 7
     settings:
       match_operator: CONTAINS
       size: 60
