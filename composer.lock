@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6429d681e65fa80144b2c9e60b5ac65b",
+    "content-hash": "2073e7a7fa395c91ee71aa44513f718c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1427,16 +1427,16 @@
         },
         {
             "name": "dpc-sdp/tide",
-            "version": "0.0.2",
+            "version": "0.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide.git",
-                "reference": "9b3cfab261fa24c4f062a472edc87f14dcd85c0a"
+                "reference": "5aa61a737f9fca98791805334fcd880f9c2ba700"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide/zipball/9b3cfab261fa24c4f062a472edc87f14dcd85c0a",
-                "reference": "9b3cfab261fa24c4f062a472edc87f14dcd85c0a",
+                "url": "https://api.github.com/repos/dpc-sdp/tide/zipball/5aa61a737f9fca98791805334fcd880f9c2ba700",
+                "reference": "5aa61a737f9fca98791805334fcd880f9c2ba700",
                 "shasum": ""
             },
             "require": {
@@ -1465,7 +1465,8 @@
                         "active-link.js throws JS error if query string parameter contains a single quote - https://www.drupal.org/node/2902769": "https://www.drupal.org/files/issues/active_link_js_throws-2902769-5_0.patch",
                         "getUuid() in class MenuLinkContent not returning any value - https://www.drupal.org/node/2737741": "https://www.drupal.org/files/issues/drupal-menulinkcontent-getuuid-return-missing-2737741-2.patch",
                         "RSS view with fields give wrong URL from path field - https://www.drupal.org/node/2673980#comment-12180229": "https://www.drupal.org/files/issues/rss_view_with_fields-2673980-28.patch",
-                        "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch"
+                        "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch",
+                        "DateTimeIso8601::getDateTime() does not specify the storage timezone when constructing DrupalDateTime object - https://www.drupal.org/project/drupal/issues/3002164": "https://www.drupal.org/files/issues/2018-09-25/3002164-7.patch"
                     }
                 }
             },
@@ -1474,10 +1475,10 @@
             ],
             "description": "Tide Drupal 8 profile",
             "support": {
-                "source": "https://github.com/dpc-sdp/tide/tree/0.0.2",
+                "source": "https://github.com/dpc-sdp/tide/tree/0.0.3",
                 "issues": "https://github.com/dpc-sdp/tide/issues"
             },
-            "time": "2018-09-15T05:53:22+00:00"
+            "time": "2018-10-01T05:32:31+00:00"
         },
         {
             "name": "dpc-sdp/tide_api",
@@ -1659,12 +1660,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_event.git",
-                "reference": "034b55d81510397901c170244f3ac0a21b5a42be"
+                "reference": "c930b5035849835ebff91b6cf72fd3646b4b777a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/034b55d81510397901c170244f3ac0a21b5a42be",
-                "reference": "034b55d81510397901c170244f3ac0a21b5a42be",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/c930b5035849835ebff91b6cf72fd3646b4b777a",
+                "reference": "c930b5035849835ebff91b6cf72fd3646b4b777a",
                 "shasum": ""
             },
             "require": {
@@ -1681,7 +1682,7 @@
                 "source": "https://github.com/dpc-sdp/tide_event/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_event/issues"
             },
-            "time": "2018-09-27T06:22:41+00:00"
+            "time": "2018-10-01T05:30:00+00:00"
         },
         {
             "name": "dpc-sdp/tide_landing_page",
@@ -3115,7 +3116,8 @@
                     "active-link.js throws JS error if query string parameter contains a single quote - https://www.drupal.org/node/2902769": "https://www.drupal.org/files/issues/active_link_js_throws-2902769-5_0.patch",
                     "getUuid() in class MenuLinkContent not returning any value - https://www.drupal.org/node/2737741": "https://www.drupal.org/files/issues/drupal-menulinkcontent-getuuid-return-missing-2737741-2.patch",
                     "RSS view with fields give wrong URL from path field - https://www.drupal.org/node/2673980#comment-12180229": "https://www.drupal.org/files/issues/rss_view_with_fields-2673980-28.patch",
-                    "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch"
+                    "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch",
+                    "DateTimeIso8601::getDateTime() does not specify the storage timezone when constructing DrupalDateTime object - https://www.drupal.org/project/drupal/issues/3002164": "https://www.drupal.org/files/issues/2018-09-25/3002164-7.patch"
                 }
             },
             "autoload": {

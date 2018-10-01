@@ -115,13 +115,15 @@ resourceFields:
     fieldName: field_event_requirements
     publicName: field_event_requirements
     enhancer:
-    id: ''
+      id: ''
     disabled: false
   field_paragraph_date_range:
     fieldName: field_paragraph_date_range
     publicName: field_paragraph_date_range
     enhancer:
-      id: ''
+      id: date_time_from_string
+      settings:
+        dateTimeFormat: 'Y-m-d\TH:i:sO'
     disabled: false
   field_paragraph_event_price_from:
     fieldName: field_paragraph_event_price_from
