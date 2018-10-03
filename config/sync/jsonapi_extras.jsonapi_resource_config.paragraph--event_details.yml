@@ -123,7 +123,7 @@ resourceFields:
     enhancer:
       id: date_time_from_string
       settings:
-        dateTimeFormat: 'Y-m-d\TH:i:sO'
+        dateTimeFormat: 'Y-m-d\TH:i:sP'
     disabled: false
   field_paragraph_event_price_from:
     fieldName: field_paragraph_event_price_from
