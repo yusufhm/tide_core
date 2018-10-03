@@ -550,6 +550,29 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Generate a random Embedded Search Form paragraph.
+   *
+   * @return \Drupal\paragraphs\Entity\Paragraph
+   *   The Intro banner.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  public static function randomEmbeddedSearchForm() {
+    $type_form = mt_rand(0, 2);
+    $search_form_options = ['none', 'event', 'news'];
+
+    $search_form_data = [
+      'field_paragraph_search_block' => ['value' => $search_form_options[$type_form]],
+    ];
+
+    $search_form = Paragraph::create($search_form_data);
+    $search_form->save();
+    $repository = VicgovauDemoRepository::getInstance();
+    $repository->trackEntity($search_form);
+    return $search_form;
+  }
+
+  /**
    * Generate a random Call to Action paragraph.
    *
    * @return \Drupal\paragraphs\Entity\Paragraph

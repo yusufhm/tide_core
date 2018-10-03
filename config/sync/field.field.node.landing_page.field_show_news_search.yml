@@ -10,7 +10,7 @@ field_name: field_show_news_search
 entity_type: node
 bundle: landing_page
 label: 'Show News Search Block?'
-description: ''
+description: DEPRECATED
 required: false
 translatable: false
 default_value:

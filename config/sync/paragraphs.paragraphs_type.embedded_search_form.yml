@@ -1,0 +1,9 @@
+uuid: 8667eeb0-7cfa-4a00-a19d-871b018b9b69
+langcode: en
+status: true
+dependencies: {  }
+id: embedded_search_form
+label: 'Embedded Search Form'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

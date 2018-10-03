@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_landing_page_header
     - node.type.landing_page
+    - paragraphs.paragraphs_type.embedded_search_form
     - paragraphs.paragraphs_type.introduction_banner
   module:
     - entity_reference_revisions
@@ -24,6 +25,7 @@ settings:
     negate: 0
     target_bundles:
       introduction_banner: introduction_banner
+      embedded_search_form: embedded_search_form
     target_bundles_drag_drop:
       introduction_banner:
         enabled: true
@@ -40,6 +42,9 @@ settings:
       basic_text:
         weight: 29
         enabled: false
+      embedded_search_form:
+        enabled: true
+        weight: 30
       call_to_action:
         weight: 30
         enabled: false
@@ -57,6 +62,9 @@ settings:
         enabled: false
       card_navigation_featured:
         weight: 35
+        enabled: false
+      call_to_action_image:
+        weight: 36
         enabled: false
       card_navigation_featured_auto:
         weight: 36
@@ -91,10 +99,19 @@ settings:
       phone:
         weight: 46
         enabled: false
+      event_details:
+        weight: 47
+        enabled: false
       related_links:
         weight: 47
         enabled: false
       social_link:
         weight: 48
+        enabled: false
+      latest_events:
+        weight: 52
+        enabled: false
+      media_gallery:
+        weight: 54
         enabled: false
 field_type: entity_reference_revisions
