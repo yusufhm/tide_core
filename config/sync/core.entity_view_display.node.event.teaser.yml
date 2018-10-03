@@ -44,3 +44,5 @@ hidden:
   field_show_social_sharing: true
   field_tags: true
   field_topic: true
+  scheduled_archiving: true
+  scheduled_publishing: true

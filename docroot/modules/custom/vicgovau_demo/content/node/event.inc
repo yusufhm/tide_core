@@ -116,6 +116,47 @@ function vicgovau_demo_create_node_event() {
       ],
     ];
 
+    // Add Contact Us.
+    $contact_us_data = [
+      'type' => 'contact_us',
+      'field_paragraph_title' => VicgovauDemoHelper::randomSentence(3, 5),
+      'field_paragraph_name' => VicgovauDemoHelper::randomSentence(3, 5),
+      'field_paragraph_email' => 'no-reply@vic.gov.au',
+      'field_paragraph_cta' => [VicgovauDemoHelper::randomCtaLinkFieldValue()],
+      'field_paragraph_department_name' => VicgovauDemoHelper::randomSentence(3, 5),
+      'field_paragraph_location' => [
+        [
+          'langcode' => '',
+          'country_code' => 'AU',
+          'administrative_area' => 'VIC',
+          'locality' => 'Melbourne',
+          'postal_code' => 3001,
+          'address_line1' => 'Department of Premier and Cabinet',
+          'address_line2' => 'GPO Box 4509',
+        ],
+      ],
+      'field_paragraph_postal_address' => [
+        [
+          'langcode' => '',
+          'country_code' => 'AU',
+          'administrative_area' => 'VIC',
+          'locality' => 'Melbourne',
+          'postal_code' => 3001,
+          'address_line1' => 'Department of Premier and Cabinet',
+          'address_line2' => 'GPO Box 4509',
+        ],
+      ],
+    ];
+    $contact_us = Paragraph::create($contact_us_data);
+    $contact_us->save();
+    $repository->trackEntity($contact_us);
+    $node_data['field_landing_page_contact'] = [
+      [
+        'target_id' => $contact_us->id(),
+        'target_revision_id' => $contact_us->getRevisionId(),
+      ],
+    ];
+
     $node = Node::create($node_data);
 
     $boolean_fields = [

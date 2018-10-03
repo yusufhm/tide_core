@@ -1536,12 +1536,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "7f7b78e1e537dbe28c89281c2f968d30ab9ba930"
+                "reference": "58fa7e3b4a90c34a365b70caa09ddb0c17e5f7f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/7f7b78e1e537dbe28c89281c2f968d30ab9ba930",
-                "reference": "7f7b78e1e537dbe28c89281c2f968d30ab9ba930",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/58fa7e3b4a90c34a365b70caa09ddb0c17e5f7f8",
+                "reference": "58fa7e3b4a90c34a365b70caa09ddb0c17e5f7f8",
                 "shasum": ""
             },
             "require": {
@@ -1649,10 +1649,10 @@
             ],
             "description": "Core functionality for Tide Drupal 8 distribution",
             "support": {
-                "source": "https://github.com/dpc-sdp/tide_core/tree/0.0.5",
+                "source": "https://github.com/dpc-sdp/tide_core/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_core/issues"
             },
-            "time": "2018-09-30T23:00:37+00:00"
+            "time": "2018-10-03T01:59:37+00:00"
         },
         {
             "name": "dpc-sdp/tide_event",
@@ -1660,12 +1660,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_event.git",
-                "reference": "e8b7b6686c30d1f6b3380cfc78b7a02cc036d5f9"
+                "reference": "b075a69c3dc89288e580378b1849536abce37204"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/e8b7b6686c30d1f6b3380cfc78b7a02cc036d5f9",
-                "reference": "e8b7b6686c30d1f6b3380cfc78b7a02cc036d5f9",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/b075a69c3dc89288e580378b1849536abce37204",
+                "reference": "b075a69c3dc89288e580378b1849536abce37204",
                 "shasum": ""
             },
             "require": {
@@ -1682,7 +1682,7 @@
                 "source": "https://github.com/dpc-sdp/tide_event/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_event/issues"
             },
-            "time": "2018-10-02T23:54:23+00:00"
+            "time": "2018-10-03T04:12:06+00:00"
         },
         {
             "name": "dpc-sdp/tide_landing_page",

@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.event.field_event_description
     - field.field.node.event.field_event_details
     - field.field.node.event.field_featured_image
+    - field.field.node.event.field_landing_page_contact
     - field.field.node.event.field_landing_page_show_contact
     - field.field.node.event.field_landing_page_summary
     - field.field.node.event.field_news_intro_text
@@ -80,6 +81,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_landing_page_contact:
+    weight: 16
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
     region: content
   field_landing_page_show_contact:
     weight: 11
