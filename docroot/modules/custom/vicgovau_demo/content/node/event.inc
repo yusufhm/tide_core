@@ -157,12 +157,32 @@ function vicgovau_demo_create_node_event() {
       ],
     ];
 
+    // Add Related links.
+    for ($j = 1; $j <= mt_rand(1, 5); $j++) {
+      $link_field_value = VicgovauDemoHelper::randomLinkFieldValue();
+      if (!count($link_field_value)) {
+        break;
+      }
+      $related_link_data = [
+        'type' => 'related_links',
+        'field_paragraph_summary' => ['value' => VicgovauDemoHelper::randomPlainParagraph()],
+        'field_paragraph_link' => [$link_field_value],
+      ];
+      $related_link = Paragraph::create($related_link_data);
+      $related_link->save();
+      $repository->trackEntity($related_link);
+      $node_data['field_related_links'][] = [
+        'target_id' => $related_link->id(),
+        'target_revision_id' => $related_link->getRevisionId(),
+      ];
+    }
+
     $node = Node::create($node_data);
 
     $boolean_fields = [
       'field_landing_page_show_contact',
+      'field_show_content_rating',
       'field_show_social_sharing',
-      'field_landing_page_show_contact',
     ];
     foreach ($boolean_fields as $boolean_field) {
       if ($node->hasField($boolean_field)) {

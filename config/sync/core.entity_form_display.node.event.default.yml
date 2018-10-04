@@ -1,4 +1,3 @@
-uuid: 8582ff6e-30e0-471b-b243-a5ec14c403eb
 langcode: en
 status: true
 dependencies:
@@ -16,6 +15,8 @@ dependencies:
     - field.field.node.event.field_news_intro_text
     - field.field.node.event.field_node_primary_site
     - field.field.node.event.field_node_site
+    - field.field.node.event.field_related_links
+    - field.field.node.event.field_show_content_rating
     - field.field.node.event.field_show_social_sharing
     - field.field.node.event.field_tags
     - field.field.node.event.field_topic
@@ -67,6 +68,7 @@ third_party_settings:
       region: content
     group_right_column:
       children:
+        - group_related_links
         - group_contact
         - group_social_sharing
       parent_name: ''
@@ -83,7 +85,7 @@ third_party_settings:
         - field_landing_page_show_contact
         - field_landing_page_contact
       parent_name: group_right_column
-      weight: 12
+      weight: 4
       format_type: tab
       format_settings:
         id: ''
@@ -114,7 +116,7 @@ third_party_settings:
       children:
         - field_show_social_sharing
       parent_name: group_right_column
-      weight: 13
+      weight: 5
       format_type: tab
       format_settings:
         id: ''
@@ -123,6 +125,20 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Social sharing'
+      region: content
+    group_related_links:
+      children:
+        - field_related_links
+      parent_name: group_right_column
+      weight: 3
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: ' Related links'
       region: content
 id: node.event.default
 targetEntityType: node
@@ -140,7 +156,7 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 7
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -241,16 +257,37 @@ content:
     type: options_buttons
     region: content
     field_name: field_node_primary_site
-    weight: 15
+    weight: 14
     settings: {  }
     third_party_settings: {  }
   field_node_site:
     type: options_buttons
     region: content
     field_name: field_node_site
-    weight: 14
+    weight: 13
     settings: {  }
     third_party_settings: {  }
+  field_related_links:
+    weight: 4
+    settings:
+      title: Link
+      title_plural: Links
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: paragraphs
+    region: content
+  field_show_content_rating:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_show_social_sharing:
     weight: 4
     settings:
@@ -260,7 +297,7 @@ content:
     region: content
   field_tags:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 4
     region: content
     settings:
       match_operator: CONTAINS
@@ -278,13 +315,13 @@ content:
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 12
+    weight: 11
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -292,11 +329,11 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 7
     region: content
     third_party_settings: {  }
   scheduled_archiving:
-    weight: 16
+    weight: 15
     settings:
       form_mode: default
       override_labels: true
@@ -314,7 +351,7 @@ content:
     type: inline_entity_form_complex
     region: content
   scheduled_publishing:
-    weight: 17
+    weight: 16
     settings:
       form_mode: default
       label_singular: ''
@@ -335,14 +372,14 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 13
+    weight: 12
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 8
     region: content
     third_party_settings: {  }
   title:
@@ -358,7 +395,7 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
   uid:
     type: entity_reference_autocomplete
-    weight: 6
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
@@ -366,7 +403,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 11
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
