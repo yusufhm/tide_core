@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4b669cb1ee295ff7f8a54c7754cb8f0d",
+    "content-hash": "2073e7a7fa395c91ee71aa44513f718c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1427,22 +1427,22 @@
         },
         {
             "name": "dpc-sdp/tide",
-            "version": "dev-feature/SDPA-1007-Add-Content-Rating-Related-Links-Event",
+            "version": "0.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide.git",
-                "reference": "64b55a6ca51dcdfb9da634f63d08243c7fab753a"
+                "reference": "5aa61a737f9fca98791805334fcd880f9c2ba700"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide/zipball/64b55a6ca51dcdfb9da634f63d08243c7fab753a",
-                "reference": "64b55a6ca51dcdfb9da634f63d08243c7fab753a",
+                "url": "https://api.github.com/repos/dpc-sdp/tide/zipball/5aa61a737f9fca98791805334fcd880f9c2ba700",
+                "reference": "5aa61a737f9fca98791805334fcd880f9c2ba700",
                 "shasum": ""
             },
             "require": {
                 "dpc-sdp/tide_api": "dev-master",
                 "dpc-sdp/tide_core": "dev-master",
-                "dpc-sdp/tide_event": "dev-feature/SDPA-1007-Add-Content-Rating-Related-Links-Event",
+                "dpc-sdp/tide_event": "dev-master",
                 "dpc-sdp/tide_landing_page": "dev-master",
                 "dpc-sdp/tide_media": "dev-master",
                 "dpc-sdp/tide_monsido": "dev-master",
@@ -1475,10 +1475,10 @@
             ],
             "description": "Tide Drupal 8 profile",
             "support": {
-                "source": "https://github.com/dpc-sdp/tide/tree/feature/SDPA-1007-Add-Content-Rating-Related-Links-Event",
+                "source": "https://github.com/dpc-sdp/tide/tree/0.0.3",
                 "issues": "https://github.com/dpc-sdp/tide/issues"
             },
-            "time": "2018-10-04T01:31:19+00:00"
+            "time": "2018-10-01T05:32:31+00:00"
         },
         {
             "name": "dpc-sdp/tide_api",
@@ -1656,16 +1656,16 @@
         },
         {
             "name": "dpc-sdp/tide_event",
-            "version": "dev-feature/SDPA-1007-Add-Content-Rating-Related-Links-Event",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_event.git",
-                "reference": "a530768372fbe3f1a1b191e2033c3000eb572fef"
+                "reference": "2dc70eefa310b3efe8a68acda513bb9c228c8000"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/a530768372fbe3f1a1b191e2033c3000eb572fef",
-                "reference": "a530768372fbe3f1a1b191e2033c3000eb572fef",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/2dc70eefa310b3efe8a68acda513bb9c228c8000",
+                "reference": "2dc70eefa310b3efe8a68acda513bb9c228c8000",
                 "shasum": ""
             },
             "require": {
@@ -1679,10 +1679,10 @@
             ],
             "description": "Event content type and related configuration for Tide Drupal 8 distribution",
             "support": {
-                "source": "https://github.com/dpc-sdp/tide_event/tree/feature/SDPA-1007-Add-Content-Rating-Related-Links-Event",
+                "source": "https://github.com/dpc-sdp/tide_event/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_event/issues"
             },
-            "time": "2018-10-04T03:40:43+00:00"
+            "time": "2018-10-04T05:44:56+00:00"
         },
         {
             "name": "dpc-sdp/tide_landing_page",
@@ -14051,7 +14051,6 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "dpc-sdp/tide": 20,
         "drupal/coffee": 10,
         "drupal/default_content": 15,
         "drupal/stage_file_proxy": 15,
