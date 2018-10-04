@@ -181,6 +181,12 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_landing_page_contact:
+    fieldName: field_landing_page_contact
+    publicName: field_landing_page_contact
+    enhancer:
+      id: ''
+    disabled: false
   field_landing_page_show_contact:
     fieldName: field_landing_page_show_contact
     publicName: field_landing_page_show_contact
@@ -208,6 +214,18 @@ resourceFields:
   field_node_site:
     fieldName: field_node_site
     publicName: field_node_site
+    enhancer:
+      id: ''
+    disabled: false
+  field_related_links:
+    fieldName: field_related_links
+    publicName: field_related_links
+    enhancer:
+      id: ''
+    disabled: false
+  field_show_content_rating:
+    fieldName: field_show_content_rating
+    publicName: field_show_content_rating
     enhancer:
       id: ''
     disabled: false
