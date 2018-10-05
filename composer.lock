@@ -136,7 +136,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-09-24T21:19:19+00:00"
+            "time": "2018-09-25T20:15:23+00:00"
         },
         {
             "name": "bjeavons/zxcvbn-php",
@@ -1912,12 +1912,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_site.git",
-                "reference": "2ce16cd1020ac3b00cbc5821be0dcab712f7d5e7"
+                "reference": "bd49b07aa21fa15fbe8e34f2d6d615afe257099e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_site/zipball/2ce16cd1020ac3b00cbc5821be0dcab712f7d5e7",
-                "reference": "2ce16cd1020ac3b00cbc5821be0dcab712f7d5e7",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_site/zipball/bd49b07aa21fa15fbe8e34f2d6d615afe257099e",
+                "reference": "bd49b07aa21fa15fbe8e34f2d6d615afe257099e",
                 "shasum": ""
             },
             "require": {
@@ -1939,7 +1939,7 @@
                 "source": "https://github.com/dpc-sdp/tide_site/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_site/issues"
             },
-            "time": "2018-10-02T06:13:55+00:00"
+            "time": "2018-10-05T00:21:01+00:00"
         },
         {
             "name": "dpc-sdp/tide_test",
@@ -3850,7 +3850,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.5",
-                    "datestamp": "1527241084",
+                    "datestamp": "1527243208",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5686,7 +5686,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0",
-                    "datestamp": "1534196880",
+                    "datestamp": "1534247471",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6490,7 +6490,7 @@
                 },
                 "drupal": {
                     "version": "8.x-5.0-rc18",
-                    "datestamp": "1533682980",
+                    "datestamp": "1536257580",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -6967,7 +6967,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2017-02-03T22:48:59+00:00"
+            "time": "2018-09-25T20:59:41+00:00"
         },
         {
             "name": "elasticsearch/elasticsearch",
@@ -13619,7 +13619,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jean-Fran??ois Simon",
+                    "name": "Jean-François Simon",
                     "email": "jeanfrancois.simon@sensiolabs.com"
                 },
                 {
