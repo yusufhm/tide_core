@@ -36,6 +36,7 @@ hidden:
   field_event_description: true
   field_event_details: true
   field_featured_image: true
+  field_landing_page_contact: true
   field_landing_page_show_contact: true
   field_landing_page_summary: true
   field_news_intro_text: true
@@ -44,3 +45,5 @@ hidden:
   field_show_social_sharing: true
   field_tags: true
   field_topic: true
+  scheduled_archiving: true
+  scheduled_publishing: true

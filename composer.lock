@@ -1536,12 +1536,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "7f7b78e1e537dbe28c89281c2f968d30ab9ba930"
+                "reference": "227f83b9e27e51dda9a8dde2980a1df86d1834be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/7f7b78e1e537dbe28c89281c2f968d30ab9ba930",
-                "reference": "7f7b78e1e537dbe28c89281c2f968d30ab9ba930",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/227f83b9e27e51dda9a8dde2980a1df86d1834be",
+                "reference": "227f83b9e27e51dda9a8dde2980a1df86d1834be",
                 "shasum": ""
             },
             "require": {
@@ -1649,10 +1649,10 @@
             ],
             "description": "Core functionality for Tide Drupal 8 distribution",
             "support": {
-                "source": "https://github.com/dpc-sdp/tide_core/tree/0.0.5",
+                "source": "https://github.com/dpc-sdp/tide_core/tree/0.0.6",
                 "issues": "https://github.com/dpc-sdp/tide_core/issues"
             },
-            "time": "2018-09-30T23:00:37+00:00"
+            "time": "2018-10-04T01:17:37+00:00"
         },
         {
             "name": "dpc-sdp/tide_event",
@@ -1660,12 +1660,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_event.git",
-                "reference": "c930b5035849835ebff91b6cf72fd3646b4b777a"
+                "reference": "00d168b561b7fb2fe3fd7626b4c5318cec41ecce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/c930b5035849835ebff91b6cf72fd3646b4b777a",
-                "reference": "c930b5035849835ebff91b6cf72fd3646b4b777a",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/00d168b561b7fb2fe3fd7626b4c5318cec41ecce",
+                "reference": "00d168b561b7fb2fe3fd7626b4c5318cec41ecce",
                 "shasum": ""
             },
             "require": {
@@ -1682,7 +1682,7 @@
                 "source": "https://github.com/dpc-sdp/tide_event/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_event/issues"
             },
-            "time": "2018-10-01T05:30:00+00:00"
+            "time": "2018-10-04T23:30:33+00:00"
         },
         {
             "name": "dpc-sdp/tide_landing_page",
@@ -1690,12 +1690,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_landing_page.git",
-                "reference": "33ad3561c43164b7b93d0ff66e5afb874e88c519"
+                "reference": "ee8e6f817f3b5eb38d85b8bc354e45f61ca39dae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/33ad3561c43164b7b93d0ff66e5afb874e88c519",
-                "reference": "33ad3561c43164b7b93d0ff66e5afb874e88c519",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/ee8e6f817f3b5eb38d85b8bc354e45f61ca39dae",
+                "reference": "ee8e6f817f3b5eb38d85b8bc354e45f61ca39dae",
                 "shasum": ""
             },
             "require": {
@@ -1720,7 +1720,7 @@
                 "source": "https://github.com/dpc-sdp/tide_landing_page/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_landing_page/issues"
             },
-            "time": "2018-10-01T05:08:23+00:00"
+            "time": "2018-10-08T05:08:15+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
@@ -1912,12 +1912,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_site.git",
-                "reference": "ec969df401ac7319b920968d59e2751c1ebc25f0"
+                "reference": "bd49b07aa21fa15fbe8e34f2d6d615afe257099e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_site/zipball/ec969df401ac7319b920968d59e2751c1ebc25f0",
-                "reference": "ec969df401ac7319b920968d59e2751c1ebc25f0",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_site/zipball/bd49b07aa21fa15fbe8e34f2d6d615afe257099e",
+                "reference": "bd49b07aa21fa15fbe8e34f2d6d615afe257099e",
                 "shasum": ""
             },
             "require": {
@@ -1939,7 +1939,7 @@
                 "source": "https://github.com/dpc-sdp/tide_site/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_site/issues"
             },
-            "time": "2018-09-24T05:33:51+00:00"
+            "time": "2018-10-05T00:21:01+00:00"
         },
         {
             "name": "dpc-sdp/tide_test",
@@ -1976,12 +1976,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_webform.git",
-                "reference": "f186168ed370887e036cf718d5ee398390e0227c"
+                "reference": "017d44552158b3e0edecc60f6ed4d6193debaa27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_webform/zipball/f186168ed370887e036cf718d5ee398390e0227c",
-                "reference": "f186168ed370887e036cf718d5ee398390e0227c",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_webform/zipball/017d44552158b3e0edecc60f6ed4d6193debaa27",
+                "reference": "017d44552158b3e0edecc60f6ed4d6193debaa27",
                 "shasum": ""
             },
             "require": {
@@ -2005,7 +2005,7 @@
                 "source": "https://github.com/dpc-sdp/tide_webform/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_webform/issues"
             },
-            "time": "2018-09-21T02:43:58+00:00"
+            "time": "2018-10-04T01:29:45+00:00"
         },
         {
             "name": "drupal-composer/drupal-scaffold",

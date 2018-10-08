@@ -192,8 +192,9 @@ function vicgovau_demo_create_node_landing_page() {
       ],
     ];
 
-    // Add Intro Banner to header components.
+    // Header components.
     try {
+      // Add Intro Banner.
       $banner = VicgovauDemoHelper::randomIntroductionBanner();
       $node_data['field_landing_page_header'] = [
         [
@@ -201,6 +202,15 @@ function vicgovau_demo_create_node_landing_page() {
           'target_revision_id' => $banner->getRevisionId(),
         ],
       ];
+
+      $embedded_search_form = VicgovauDemoHelper::randomEmbeddedSearchForm();
+      $node_data['embedded_search_form'] = [
+        [
+          'target_id' => $embedded_search_form->id(),
+          'target_revision_id' => $embedded_search_form->getRevisionId(),
+        ],
+      ];
+
     }
     catch (Exception $e) {
       watchdog_exception('vicgovau_demo', $e);

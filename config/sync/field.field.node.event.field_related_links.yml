@@ -1,22 +1,21 @@
-uuid: ef4d96d4-2cc1-4013-9194-819a21d6df6b
+uuid: 93317696-25d6-4968-a405-104ecfab4a31
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_landing_page_header
-    - node.type.landing_page
-    - paragraphs.paragraphs_type.embedded_search_form
-    - paragraphs.paragraphs_type.introduction_banner
+    - field.storage.node.field_related_links
+    - node.type.event
+    - paragraphs.paragraphs_type.related_links
   module:
     - entity_reference_revisions
-id: node.landing_page.field_landing_page_header
-field_name: field_landing_page_header
+id: node.event.field_related_links
+field_name: field_related_links
 entity_type: node
-bundle: landing_page
-label: 'Header components'
+bundle: event
+label: 'Related links'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -24,94 +23,99 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      introduction_banner: introduction_banner
-      embedded_search_form: embedded_search_form
+      related_links: related_links
     target_bundles_drag_drop:
-      introduction_banner:
-        enabled: true
-        weight: 25
       accordion:
-        weight: 26
-        enabled: false
-      accordion_content:
-        weight: 27
-        enabled: false
-      banner:
-        weight: 28
-        enabled: false
-      basic_text:
-        weight: 29
-        enabled: false
-      embedded_search_form:
-        enabled: true
-        weight: 30
-      call_to_action:
-        weight: 30
-        enabled: false
-      card_event:
-        weight: 31
-        enabled: false
-      card_keydates:
         weight: 32
         enabled: false
-      card_navigation:
+      accordion_content:
         weight: 33
         enabled: false
-      card_navigation_auto:
+      banner:
         weight: 34
         enabled: false
-      card_navigation_featured:
+      basic_text:
         weight: 35
         enabled: false
+      call_to_action:
+        weight: 36
+        enabled: false
       call_to_action_image:
-        weight: 36
-        enabled: false
-      card_navigation_featured_auto:
-        weight: 36
-        enabled: false
-      card_promotion:
         weight: 37
         enabled: false
-      card_promotion_auto:
+      card_carousel:
         weight: 38
         enabled: false
-      contact_us:
+      card_event:
         weight: 39
         enabled: false
-      embedded_webform:
+      card_event_auto:
         weight: 40
         enabled: false
-      featured_news:
+      card_keydates:
         weight: 41
         enabled: false
-      keydates:
+      card_navigation:
         weight: 42
         enabled: false
-      key_journeys:
+      card_navigation_auto:
         weight: 43
         enabled: false
-      links:
+      card_navigation_featured:
         weight: 44
         enabled: false
-      news_listing:
+      card_navigation_featured_auto:
         weight: 45
         enabled: false
-      phone:
+      card_promotion:
         weight: 46
         enabled: false
-      event_details:
+      card_promotion_auto:
         weight: 47
         enabled: false
-      related_links:
-        weight: 47
-        enabled: false
-      social_link:
+      contact_us:
         weight: 48
         enabled: false
-      latest_events:
+      embedded_search_form:
+        weight: 49
+        enabled: false
+      embedded_webform:
+        weight: 50
+        enabled: false
+      event_details:
+        weight: 51
+        enabled: false
+      featured_news:
         weight: 52
         enabled: false
-      media_gallery:
+      introduction_banner:
+        weight: 53
+        enabled: false
+      keydates:
         weight: 54
+        enabled: false
+      key_journeys:
+        weight: 55
+        enabled: false
+      latest_events:
+        weight: 56
+        enabled: false
+      links:
+        weight: 57
+        enabled: false
+      media_gallery:
+        weight: 58
+        enabled: false
+      news_listing:
+        weight: 59
+        enabled: false
+      phone:
+        weight: 60
+        enabled: false
+      related_links:
+        enabled: true
+        weight: 61
+      social_link:
+        weight: 62
         enabled: false
 field_type: entity_reference_revisions

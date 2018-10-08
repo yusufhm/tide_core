@@ -1,13 +1,13 @@
-uuid: 008b06e5-076c-441b-a29f-cd37af51802a
+uuid: 25970ba1-ebca-4bf3-8755-e98291ab7d1b
 langcode: en
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.event_details
-id: paragraph--event_details
+    - paragraphs.paragraphs_type.call_to_action_image
+id: paragraph--call_to_action_image
 disabled: false
-path: paragraph/event_details
-resourceType: paragraph--event_details
+path: paragraph/call_to_action_image
+resourceType: paragraph--call_to_action_image
 resourceFields:
   id:
     fieldName: id
@@ -55,7 +55,9 @@ resourceFields:
     fieldName: created
     publicName: created
     enhancer:
-      id: ''
+      id: 'date_time'
+      settings:
+        dateTimeFormat: 'Y-m-d\TH:i:sP'
     disabled: false
   revision_uid:
     fieldName: revision_uid
@@ -111,41 +113,15 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  field_event_requirements:
-    fieldName: field_event_requirements
-    publicName: field_event_requirements
-    enhancer:
-      id: ''
-    disabled: false
-  field_paragraph_date_range:
-    fieldName: field_paragraph_date_range
-    publicName: field_paragraph_date_range
-    enhancer:
-      id: date_time_from_string
-      settings:
-        dateTimeFormat: 'Y-m-d\TH:i:sP'
-    disabled: false
-  field_paragraph_event_price_from:
-    fieldName: field_paragraph_event_price_from
-    publicName: field_paragraph_event_price_from
-    enhancer:
-      id: ''
-    disabled: false
-  field_paragraph_event_price_to:
-    fieldName: field_paragraph_event_price_to
-    publicName: field_paragraph_event_price_to
-    enhancer:
-      id: ''
-    disabled: false
-  field_paragraph_link:
-    fieldName: field_paragraph_link
-    publicName: field_paragraph_link
+  field_paragraph_cta:
+    fieldName: field_paragraph_cta
+    publicName: field_paragraph_cta
     enhancer:
       id: link_enhancer
     disabled: false
-  field_paragraph_location:
-    fieldName: field_paragraph_location
-    publicName: field_paragraph_location
+  field_paragraph_media:
+    fieldName: field_paragraph_media
+    publicName: field_paragraph_media
     enhancer:
       id: ''
     disabled: false
