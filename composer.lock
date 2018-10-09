@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2073e7a7fa395c91ee71aa44513f718c",
+    "content-hash": "ffd73ca2123f8f91d5fb74d10363bf87",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1674,6 +1674,11 @@
                 "drupal/smart_trim": "^1.1"
             },
             "type": "drupal-module",
+            "extra": {
+                "patches_applied": {
+                    "field_featured_image and field_paragraph_link are missing from index - https://digital-engagement.atlassian.net/browse/SDPA-1069": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/19.diff"
+                }
+            },
             "license": [
                 "GPL-2.0+"
             ],
