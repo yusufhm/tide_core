@@ -317,9 +317,6 @@
             "docroot/sites/default/files"
         ],
         "patches": {
-            "dpc-sdp/tide_event": {
-                "field_featured_image and field_paragraph_link are missing from index - https://digital-engagement.atlassian.net/browse/SDPA-1069": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/19.diff"
-            }
         }
     }
 }

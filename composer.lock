@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ffd73ca2123f8f91d5fb74d10363bf87",
+    "content-hash": "2073e7a7fa395c91ee71aa44513f718c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1660,12 +1660,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_event.git",
-                "reference": "00d168b561b7fb2fe3fd7626b4c5318cec41ecce"
+                "reference": "22cbcad15d8736179f34ac8421f1f731a5124aaa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/00d168b561b7fb2fe3fd7626b4c5318cec41ecce",
-                "reference": "00d168b561b7fb2fe3fd7626b4c5318cec41ecce",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/22cbcad15d8736179f34ac8421f1f731a5124aaa",
+                "reference": "22cbcad15d8736179f34ac8421f1f731a5124aaa",
                 "shasum": ""
             },
             "require": {
@@ -1674,11 +1674,6 @@
                 "drupal/smart_trim": "^1.1"
             },
             "type": "drupal-module",
-            "extra": {
-                "patches_applied": {
-                    "field_featured_image and field_paragraph_link are missing from index - https://digital-engagement.atlassian.net/browse/SDPA-1069": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/19.diff"
-                }
-            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -1687,7 +1682,7 @@
                 "source": "https://github.com/dpc-sdp/tide_event/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_event/issues"
             },
-            "time": "2018-10-04T23:30:33+00:00"
+            "time": "2018-10-09T02:22:52+00:00"
         },
         {
             "name": "dpc-sdp/tide_landing_page",
