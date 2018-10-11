@@ -1536,12 +1536,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "227f83b9e27e51dda9a8dde2980a1df86d1834be"
+                "reference": "99fa6374530195809daf3851b2e505b374979637"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/227f83b9e27e51dda9a8dde2980a1df86d1834be",
-                "reference": "227f83b9e27e51dda9a8dde2980a1df86d1834be",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/99fa6374530195809daf3851b2e505b374979637",
+                "reference": "99fa6374530195809daf3851b2e505b374979637",
                 "shasum": ""
             },
             "require": {
@@ -1577,6 +1577,7 @@
                 "drupal/password_strength": "^2.0",
                 "drupal/pathauto": "^1.2",
                 "drupal/redirect": "^1.2",
+                "drupal/role_delegation": "^1.0-alpha1",
                 "drupal/scheduled_updates": "^1.0@alpha",
                 "drupal/seckit": "^1.0@alpha",
                 "drupal/simple_sitemap": "^2.11",
@@ -1630,6 +1631,10 @@
                         "Event logs for change in workflows - https://www.drupal.org/project/events_log_track/issues/2974170": "https://www.drupal.org/files/issues/2018-06-26/events_log_track-add-workflows-2974170-7.patch",
                         "Add handlers for file and media entities - https://www.drupal.org/project/events_log_track/issues/2959769": "https://www.drupal.org/files/issues/2018-06-26/events-log-track_add-file-media-2959769-9.patch"
                     },
+                    "drupal/role_delegation": {
+                        "Allow to delegate roles on user creation - https://www.drupal.org/project/role_delegation/issues/2811851": "https://www.drupal.org/files/issues/role-delegation-user-forms-2811851-27.patch",
+                        "Lock down assignable permissions in the VBO action - https://www.drupal.org/project/role_delegation/issues/2862360": "https://www.drupal.org/files/issues/2018-04-29/2862360-Lock-down-assignable-permissions-in-the-VBO-action-15.patch"
+                    },
                     "drupal/smart_trim": {
                         "Additional options checkbox do not appear to save - https://www.drupal.org/project/smart_trim/issues/2941492": "https://www.drupal.org/files/issues/2018-05-04/2941492-4.patch"
                     },
@@ -1649,10 +1654,10 @@
             ],
             "description": "Core functionality for Tide Drupal 8 distribution",
             "support": {
-                "source": "https://github.com/dpc-sdp/tide_core/tree/0.0.6",
+                "source": "https://github.com/dpc-sdp/tide_core/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_core/issues"
             },
-            "time": "2018-10-04T01:17:37+00:00"
+            "time": "2018-10-11T01:24:46+00:00"
         },
         {
             "name": "dpc-sdp/tide_event",
@@ -5398,6 +5403,65 @@
             "homepage": "https://www.drupal.org/project/redis",
             "support": {
                 "source": "http://cgit.drupalcode.org/redis"
+            }
+        },
+        {
+            "name": "drupal/role_delegation",
+            "version": "1.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/role_delegation",
+                "reference": "8.x-1.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/role_delegation-8.x-1.0-alpha1.zip",
+                "reference": "8.x-1.0-alpha1",
+                "shasum": "f49edc6cfe2270358f58e3a72519e501dd0423e2"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha1",
+                    "datestamp": "1459597139",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                },
+                "patches_applied": {
+                    "Allow to delegate roles on user creation - https://www.drupal.org/project/role_delegation/issues/2811851": "https://www.drupal.org/files/issues/role-delegation-user-forms-2811851-27.patch",
+                    "Lock down assignable permissions in the VBO action - https://www.drupal.org/project/role_delegation/issues/2862360": "https://www.drupal.org/files/issues/2018-04-29/2862360-Lock-down-assignable-permissions-in-the-VBO-action-15.patch"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Andrew Schulman",
+                    "homepage": "https://www.drupal.org/user/279446"
+                },
+                {
+                    "name": "David Lesieur",
+                    "homepage": "https://www.drupal.org/user/17157"
+                },
+                {
+                    "name": "benjy",
+                    "homepage": "https://www.drupal.org/user/1852732"
+                }
+            ],
+            "description": "Allows site administrators to grant some roles the authority to assign selected roles to users.",
+            "homepage": "https://www.drupal.org/project/role_delegation",
+            "support": {
+                "source": "http://cgit.drupalcode.org/role_delegation"
             }
         },
         {
