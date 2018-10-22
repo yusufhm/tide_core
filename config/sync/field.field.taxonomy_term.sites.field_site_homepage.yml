@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.taxonomy_term.field_site_homepage
+    - node.type.grant
     - node.type.landing_page
     - node.type.news
     - node.type.page
@@ -25,6 +26,7 @@ settings:
       landing_page: landing_page
       page: page
       news: news
+      grant: grant
     sort:
       field: _none
     auto_create: false

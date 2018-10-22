@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2073e7a7fa395c91ee71aa44513f718c",
+    "content-hash": "786b6ddf74e2ad9b00a3fb8996bdeed2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1689,6 +1689,21 @@
                 "issues": "https://github.com/dpc-sdp/tide_event/issues"
             },
             "time": "2018-10-09T02:22:52+00:00"
+        },
+        {
+            "name": "dpc-sdp/tide_grant",
+            "version": "0.0.1",
+            "dist": {
+                "type": "path",
+                "url": "dpc-sdp/tide_grant",
+                "reference": "811d26bd6bc6eaa30b23d689023a85f691c1f8b3",
+                "shasum": null
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Grant content type and related configuration for Tide Drupal 8 distribution"
         },
         {
             "name": "dpc-sdp/tide_landing_page",
@@ -3563,7 +3578,7 @@
                 },
                 "drupal": {
                     "version": "8.x-5.0-alpha2",
-                    "datestamp": "1538850780",
+                    "datestamp": "1518040080",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"

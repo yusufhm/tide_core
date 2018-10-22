@@ -7,6 +7,7 @@
         "cweagans/composer-patches": "^1.6.0",
         "dpc-sdp/bay": "^0.0.1",
         "dpc-sdp/tide": "^0.0.3",
+        "dpc-sdp/tide_grant": "^0.0.1",
         "drupal-composer/drupal-scaffold": "^2.3",
         "drupal/admin_toolbar": "^1.20",
         "drupal/coffee": "^1.0@beta",
@@ -93,6 +94,10 @@
         "dpc-sdp/tide_event": {
             "type": "vcs",
             "url": "https://github.com/dpc-sdp/tide_event.git"
+        },
+        "dpc-sdp/tide_grant": {
+            "type": "path",
+            "url": "dpc-sdp/tide_grant"
         },
         "dpc-sdp/tide_landing_page": {
             "type": "vcs",

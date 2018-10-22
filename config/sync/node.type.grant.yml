@@ -1,0 +1,21 @@
+uuid: 5717d73a-bfff-4f80-8ab7-34719606fb3b
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  wysiwyg_template:
+    default_template: ''
+name: Grant
+type: grant
+description: 'Use Grant content type for grant content.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
