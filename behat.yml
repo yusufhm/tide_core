@@ -10,6 +10,7 @@ default:
         - %paths.base%/tests/behat/features
         - %paths.base%/dpc-sdp/tide_api/tests/behat/features
         - %paths.base%/dpc-sdp/tide_core/tests/behat/features
+        - %paths.base%/dpc-sdp/tide_grant/tests/behat/features
         - %paths.base%/dpc-sdp/tide_landing_page/tests/behat/features
         - %paths.base%/dpc-sdp/tide_media/tests/behat/features
         - %paths.base%/dpc-sdp/tide_news/tests/behat/features

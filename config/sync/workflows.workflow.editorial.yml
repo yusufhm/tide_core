@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.event
+    - node.type.grant
     - node.type.landing_page
     - node.type.news
     - node.type.page
@@ -85,6 +86,7 @@ type_settings:
   entity_types:
     node:
       - event
+      - grant
       - landing_page
       - news
       - page

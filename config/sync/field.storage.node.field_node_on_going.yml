@@ -1,0 +1,18 @@
+uuid: 0488134a-d6bc-4774-ac73-c9a28447f265
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_node_on_going
+field_name: field_node_on_going
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

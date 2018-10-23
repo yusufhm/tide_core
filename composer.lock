@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2073e7a7fa395c91ee71aa44513f718c",
+    "content-hash": "786b6ddf74e2ad9b00a3fb8996bdeed2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -136,7 +136,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-09-25T20:15:23+00:00"
+            "time": "2018-09-24T21:19:19+00:00"
         },
         {
             "name": "bjeavons/zxcvbn-php",
@@ -1486,12 +1486,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_api.git",
-                "reference": "bf2ac359de7f86698cc8f148770e8f1af25bbd47"
+                "reference": "44473b391af2ae88093a1a1fd04e920d4713d020"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/bf2ac359de7f86698cc8f148770e8f1af25bbd47",
-                "reference": "bf2ac359de7f86698cc8f148770e8f1af25bbd47",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/44473b391af2ae88093a1a1fd04e920d4713d020",
+                "reference": "44473b391af2ae88093a1a1fd04e920d4713d020",
                 "shasum": ""
             },
             "require": {
@@ -1513,7 +1513,8 @@
                         "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
                     },
                     "drupal/jsonapi": {
-                        "Menu content is not accessible via jsonapi - https://www.drupal.org/project/jsonapi/issues/2967986": "https://www.drupal.org/files/issues/2018-07-09/jsonapi_menu_403_fix-2967986-4.patch"
+                        "Menu content is not accessible via jsonapi - https://www.drupal.org/project/jsonapi/issues/2967986": "https://www.drupal.org/files/issues/2018-07-09/jsonapi_menu_403_fix-2967986-4.patch",
+                        "Add a revision id negotiation plugin to support entity revisions - https://www.drupal.org/project/jsonapi/issues/2992833": "https://www.drupal.org/files/issues/2018-08-26/2992833--revision-id-negotiation--52.patch"
                     },
                     "drupal/jsonapi_extras": {
                         "Date Time enhancer does not work with Date range fields - https://www.drupal.org/project/jsonapi_extras/issues/2953227": "https://www.drupal.org/files/issues/2018-07-17/jsonapi_extras-date-range-fields-support-2953227-d8-11.patch"
@@ -1528,7 +1529,7 @@
                 "source": "https://github.com/dpc-sdp/tide_api/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_api/issues"
             },
-            "time": "2018-10-17T00:12:29+00:00"
+            "time": "2018-10-23T02:02:20+00:00"
         },
         {
             "name": "dpc-sdp/tide_core",
@@ -1536,12 +1537,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "227f83b9e27e51dda9a8dde2980a1df86d1834be"
+                "reference": "99fa6374530195809daf3851b2e505b374979637"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/227f83b9e27e51dda9a8dde2980a1df86d1834be",
-                "reference": "227f83b9e27e51dda9a8dde2980a1df86d1834be",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/99fa6374530195809daf3851b2e505b374979637",
+                "reference": "99fa6374530195809daf3851b2e505b374979637",
                 "shasum": ""
             },
             "require": {
@@ -1577,6 +1578,7 @@
                 "drupal/password_strength": "^2.0",
                 "drupal/pathauto": "^1.2",
                 "drupal/redirect": "^1.2",
+                "drupal/role_delegation": "^1.0-alpha1",
                 "drupal/scheduled_updates": "^1.0@alpha",
                 "drupal/seckit": "^1.0@alpha",
                 "drupal/simple_sitemap": "^2.11",
@@ -1630,6 +1632,10 @@
                         "Event logs for change in workflows - https://www.drupal.org/project/events_log_track/issues/2974170": "https://www.drupal.org/files/issues/2018-06-26/events_log_track-add-workflows-2974170-7.patch",
                         "Add handlers for file and media entities - https://www.drupal.org/project/events_log_track/issues/2959769": "https://www.drupal.org/files/issues/2018-06-26/events-log-track_add-file-media-2959769-9.patch"
                     },
+                    "drupal/role_delegation": {
+                        "Allow to delegate roles on user creation - https://www.drupal.org/project/role_delegation/issues/2811851": "https://www.drupal.org/files/issues/role-delegation-user-forms-2811851-27.patch",
+                        "Lock down assignable permissions in the VBO action - https://www.drupal.org/project/role_delegation/issues/2862360": "https://www.drupal.org/files/issues/2018-04-29/2862360-Lock-down-assignable-permissions-in-the-VBO-action-15.patch"
+                    },
                     "drupal/smart_trim": {
                         "Additional options checkbox do not appear to save - https://www.drupal.org/project/smart_trim/issues/2941492": "https://www.drupal.org/files/issues/2018-05-04/2941492-4.patch"
                     },
@@ -1649,10 +1655,10 @@
             ],
             "description": "Core functionality for Tide Drupal 8 distribution",
             "support": {
-                "source": "https://github.com/dpc-sdp/tide_core/tree/0.0.6",
+                "source": "https://github.com/dpc-sdp/tide_core/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_core/issues"
             },
-            "time": "2018-10-04T01:17:37+00:00"
+            "time": "2018-10-11T01:24:46+00:00"
         },
         {
             "name": "dpc-sdp/tide_event",
@@ -1660,12 +1666,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_event.git",
-                "reference": "00d168b561b7fb2fe3fd7626b4c5318cec41ecce"
+                "reference": "8b02fa299f522797edd4dac4aa4f2298da74fb6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/00d168b561b7fb2fe3fd7626b4c5318cec41ecce",
-                "reference": "00d168b561b7fb2fe3fd7626b4c5318cec41ecce",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/8b02fa299f522797edd4dac4aa4f2298da74fb6b",
+                "reference": "8b02fa299f522797edd4dac4aa4f2298da74fb6b",
                 "shasum": ""
             },
             "require": {
@@ -1682,7 +1688,26 @@
                 "source": "https://github.com/dpc-sdp/tide_event/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_event/issues"
             },
-            "time": "2018-10-04T23:30:33+00:00"
+            "time": "2018-10-21T23:29:57+00:00"
+        },
+        {
+            "name": "dpc-sdp/tide_grant",
+            "version": "0.0.1",
+            "dist": {
+                "type": "path",
+                "url": "dpc-sdp/tide_grant",
+                "reference": "f607d2922753eb922432b97ed1333bc0a35c022f",
+                "shasum": null
+            },
+            "require": {
+                "dpc-sdp/tide_core": "@dev",
+                "dpc-sdp/tide_media": "@dev"
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Grant content type and related configuration for Tide Drupal 8 distribution"
         },
         {
             "name": "dpc-sdp/tide_landing_page",
@@ -1690,12 +1715,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_landing_page.git",
-                "reference": "ee8e6f817f3b5eb38d85b8bc354e45f61ca39dae"
+                "reference": "f17f4e60d9396ac72f076e050c399f1f3193c3ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/ee8e6f817f3b5eb38d85b8bc354e45f61ca39dae",
-                "reference": "ee8e6f817f3b5eb38d85b8bc354e45f61ca39dae",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/f17f4e60d9396ac72f076e050c399f1f3193c3ba",
+                "reference": "f17f4e60d9396ac72f076e050c399f1f3193c3ba",
                 "shasum": ""
             },
             "require": {
@@ -1720,7 +1745,7 @@
                 "source": "https://github.com/dpc-sdp/tide_landing_page/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_landing_page/issues"
             },
-            "time": "2018-10-08T05:08:15+00:00"
+            "time": "2018-10-10T23:19:43+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
@@ -2625,7 +2650,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.2",
-                    "datestamp": "1522943885",
+                    "datestamp": "1537978080",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2752,7 +2777,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.3",
-                    "datestamp": "1511810585",
+                    "datestamp": "1537971780",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3110,14 +3135,14 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
-                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch",
                     "Contextual links should not be added inside another link - https://www.drupal.org/node/2898875": "https://www.drupal.org/files/issues/2018-03-16/contextual_links_should-2898875-6.patch",
                     "No validation on text length for menu description when editing node - https://www.drupal.org/node/2852665#comment-12650295": "https://www.drupal.org/files/issues/2018-06-13/fatal_error_remove_menu_add_with_tests.patch",
                     "active-link.js throws JS error if query string parameter contains a single quote - https://www.drupal.org/node/2902769": "https://www.drupal.org/files/issues/active_link_js_throws-2902769-5_0.patch",
                     "getUuid() in class MenuLinkContent not returning any value - https://www.drupal.org/node/2737741": "https://www.drupal.org/files/issues/drupal-menulinkcontent-getuuid-return-missing-2737741-2.patch",
                     "RSS view with fields give wrong URL from path field - https://www.drupal.org/node/2673980#comment-12180229": "https://www.drupal.org/files/issues/rss_view_with_fields-2673980-28.patch",
                     "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch",
-                    "DateTimeIso8601::getDateTime() does not specify the storage timezone when constructing DrupalDateTime object - https://www.drupal.org/project/drupal/issues/3002164": "https://www.drupal.org/files/issues/2018-09-25/3002164-7.patch"
+                    "DateTimeIso8601::getDateTime() does not specify the storage timezone when constructing DrupalDateTime object - https://www.drupal.org/project/drupal/issues/3002164": "https://www.drupal.org/files/issues/2018-09-25/3002164-7.patch",
+                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
                 }
             },
             "autoload": {
@@ -3557,7 +3582,7 @@
                 },
                 "drupal": {
                     "version": "8.x-5.0-alpha2",
-                    "datestamp": "1518040080",
+                    "datestamp": "1538850780",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -4374,7 +4399,8 @@
                     }
                 },
                 "patches_applied": {
-                    "Menu content is not accessible via jsonapi - https://www.drupal.org/project/jsonapi/issues/2967986": "https://www.drupal.org/files/issues/2018-07-09/jsonapi_menu_403_fix-2967986-4.patch"
+                    "Menu content is not accessible via jsonapi - https://www.drupal.org/project/jsonapi/issues/2967986": "https://www.drupal.org/files/issues/2018-07-09/jsonapi_menu_403_fix-2967986-4.patch",
+                    "Add a revision id negotiation plugin to support entity revisions - https://www.drupal.org/project/jsonapi/issues/2992833": "https://www.drupal.org/files/issues/2018-08-26/2992833--revision-id-negotiation--52.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -4535,7 +4561,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-alpha3",
-                    "datestamp": "1468247039",
+                    "datestamp": "1538077980",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -5398,6 +5424,65 @@
             "homepage": "https://www.drupal.org/project/redis",
             "support": {
                 "source": "http://cgit.drupalcode.org/redis"
+            }
+        },
+        {
+            "name": "drupal/role_delegation",
+            "version": "1.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/role_delegation",
+                "reference": "8.x-1.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/role_delegation-8.x-1.0-alpha1.zip",
+                "reference": "8.x-1.0-alpha1",
+                "shasum": "f49edc6cfe2270358f58e3a72519e501dd0423e2"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha1",
+                    "datestamp": "1459597139",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                },
+                "patches_applied": {
+                    "Allow to delegate roles on user creation - https://www.drupal.org/project/role_delegation/issues/2811851": "https://www.drupal.org/files/issues/role-delegation-user-forms-2811851-27.patch",
+                    "Lock down assignable permissions in the VBO action - https://www.drupal.org/project/role_delegation/issues/2862360": "https://www.drupal.org/files/issues/2018-04-29/2862360-Lock-down-assignable-permissions-in-the-VBO-action-15.patch"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Andrew Schulman",
+                    "homepage": "https://www.drupal.org/user/279446"
+                },
+                {
+                    "name": "David Lesieur",
+                    "homepage": "https://www.drupal.org/user/17157"
+                },
+                {
+                    "name": "benjy",
+                    "homepage": "https://www.drupal.org/user/1852732"
+                }
+            ],
+            "description": "Allows site administrators to grant some roles the authority to assign selected roles to users.",
+            "homepage": "https://www.drupal.org/project/role_delegation",
+            "support": {
+                "source": "http://cgit.drupalcode.org/role_delegation"
             }
         },
         {
@@ -6967,7 +7052,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2018-09-25T20:59:41+00:00"
+            "time": "2017-02-03T22:48:59+00:00"
         },
         {
             "name": "elasticsearch/elasticsearch",

@@ -1,0 +1,23 @@
+uuid: 15193b1a-00d9-4949-8e44-6ad02daef546
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_node_fundinglevel
+    - node.type.grant
+id: node.grant.field_node_fundinglevel
+field_name: field_node_fundinglevel
+entity_type: node
+bundle: grant
+label: 'Funding Level'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
