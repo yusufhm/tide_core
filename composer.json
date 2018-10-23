@@ -333,6 +333,10 @@
             "docroot/sites/default/files"
         ],
         "patches": {
+            "dpc-sdp/tide_api": {
+                "[SDPA-104] - Adding redirect support to tide api path resolution": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_api/pull/17.patch"
+            }
+
         }
     }
 }
