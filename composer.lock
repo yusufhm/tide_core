@@ -1666,12 +1666,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_event.git",
-                "reference": "22cbcad15d8736179f34ac8421f1f731a5124aaa"
+                "reference": "8b02fa299f522797edd4dac4aa4f2298da74fb6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/22cbcad15d8736179f34ac8421f1f731a5124aaa",
-                "reference": "22cbcad15d8736179f34ac8421f1f731a5124aaa",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/8b02fa299f522797edd4dac4aa4f2298da74fb6b",
+                "reference": "8b02fa299f522797edd4dac4aa4f2298da74fb6b",
                 "shasum": ""
             },
             "require": {
@@ -1688,7 +1688,7 @@
                 "source": "https://github.com/dpc-sdp/tide_event/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_event/issues"
             },
-            "time": "2018-10-09T02:22:52+00:00"
+            "time": "2018-10-21T23:29:57+00:00"
         },
         {
             "name": "dpc-sdp/tide_grant",
@@ -1696,8 +1696,12 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_grant",
-                "reference": "811d26bd6bc6eaa30b23d689023a85f691c1f8b3",
+                "reference": "f607d2922753eb922432b97ed1333bc0a35c022f",
                 "shasum": null
+            },
+            "require": {
+                "dpc-sdp/tide_core": "@dev",
+                "dpc-sdp/tide_media": "@dev"
             },
             "type": "drupal-module",
             "license": [
