@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.card_event.field_paragraph_cta
-    - field.field.paragraph.card_event.field_paragraph_date
     - field.field.paragraph.card_event.field_paragraph_date_range
     - field.field.paragraph.card_event.field_paragraph_location
     - field.field.paragraph.card_event.field_paragraph_media
@@ -14,7 +13,6 @@ dependencies:
     - paragraphs.paragraphs_type.card_event
   module:
     - address
-    - datetime
     - datetime_range
     - link
 _core:
@@ -35,15 +33,6 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-    region: content
-  field_paragraph_date:
-    weight: 4
-    label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
     region: content
   field_paragraph_date_range:
     weight: 5

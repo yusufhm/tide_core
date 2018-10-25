@@ -5,7 +5,6 @@ dependencies:
   config:
     - entity_browser.browser.tide_image_browser
     - field.field.paragraph.card_event.field_paragraph_cta
-    - field.field.paragraph.card_event.field_paragraph_date
     - field.field.paragraph.card_event.field_paragraph_date_range
     - field.field.paragraph.card_event.field_paragraph_location
     - field.field.paragraph.card_event.field_paragraph_media
@@ -15,7 +14,6 @@ dependencies:
     - paragraphs.paragraphs_type.card_event
   module:
     - address
-    - datetime
     - datetime_range
     - entity_browser
     - link
@@ -33,12 +31,6 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
-    region: content
-  field_paragraph_date:
-    weight: 2
-    settings: {  }
-    third_party_settings: {  }
-    type: datetime_default
     region: content
   field_paragraph_date_range:
     weight: 3
