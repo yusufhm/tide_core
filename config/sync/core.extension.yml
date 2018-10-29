@@ -70,10 +70,14 @@ module:
   override_node_options: 0
   page_cache: 0
   password_policy: 0
+  password_policy_character_types: 0
+  password_policy_characters: 0
+  password_policy_length: 0
   password_strength: 0
   path: 0
   redirect: 0
   redis: 0
+  role_delegation: 0
   scheduled_updates: 0
   schemata: 0
   schemata_json_schema: 0
@@ -93,6 +97,7 @@ module:
   tide_api: 0
   tide_core: 0
   tide_event: 0
+  tide_grant: 0
   tide_landing_page: 0
   tide_media: 0
   tide_news: 0

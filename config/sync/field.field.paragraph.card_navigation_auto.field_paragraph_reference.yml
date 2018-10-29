@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_paragraph_reference
+    - node.type.grant
     - node.type.landing_page
     - node.type.page
     - paragraphs.paragraphs_type.card_navigation_auto
@@ -25,6 +26,7 @@ settings:
     target_bundles:
       landing_page: landing_page
       page: page
+      grant: grant
     sort:
       field: _none
     auto_create: false

@@ -1,0 +1,21 @@
+uuid: 2ee42b00-0bce-4544-b6d0-cf6a84853923
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_node_dates
+    - node.type.grant
+  module:
+    - datetime_range
+id: node.grant.field_node_dates
+field_name: field_node_dates
+entity_type: node
+bundle: grant
+label: 'Grant Dates'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

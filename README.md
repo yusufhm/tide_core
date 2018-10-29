@@ -40,13 +40,15 @@ Local URL -- http://content-vicgovau.docker.amazee.io/
 - `composer app:drush` - run drush commands. Example: `composer app:drush -- status` 
 - `composer app:site-install` - run site installation from profile.
 - `composer app:db-import` - download and re-import DB.
-  
+
 **Bay**
 - `composer bay:start` - build and start local development environment.
 - `composer bay:restart` - restart local development environment.
 - `composer bay:stop` - stop all Bay containers.
 - `composer bay:destroy` - stop and remove all Bay containers.
 - `composer bay:doctor` - helps to find the cause of any issues with a local setup.
+- `composer bay:fixtoken` - if you're seeing the JWT Token error when running composer commands, run this command.
+- `composer bay:redeploy` - If a build has failed on a specific branch, it can be redployed using this commane. Example - `composer bay:redeploy -- develop`.
 - `composer bay:logs` - get logs from all running Bay containers.
 - `composer bay:cli` - run a command in `cli` container. Example: `composer bay:cli -- ls -al`.
 - `composer bay:pull` - pull latest Bay containers.
