@@ -30,3 +30,6 @@ $config['config_split.config_split.stage']['status'] = TRUE;
 
 // Environment indicator color override.
 $config['environment_indicator.indicator']['name'] = 'STAGE';
+
+// Disable index updates on insert/update.
+$config['search_api.index.node']['options']['index_directly'] = FALSE;

@@ -36,3 +36,6 @@ $settings['skip_permissions_hardening'] = TRUE;
 $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/default/envs/local/services.local.yml';
 $settings['cache']['bins']['render'] = 'cache.backend.null';
 $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
+
+// Disable index updates on insert/update.
+$config['search_api.index.node']['options']['index_directly'] = FALSE;
