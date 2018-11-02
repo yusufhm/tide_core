@@ -436,7 +436,7 @@ field_settings:
     label: 'Content components » Paragraph » Topic » Taxonomy term » Name'
     datasource_id: 'entity:node'
     property_path: 'field_landing_page_component:entity:field_paragraph_topic:entity:name'
-    type: text
+    type: string
     boost: !!float 5
     dependencies:
       config:
@@ -471,7 +471,7 @@ field_settings:
     label: 'Tags » Taxonomy term » Name'
     datasource_id: 'entity:node'
     property_path: 'field_tags:entity:name'
-    type: text
+    type: string
     boost: !!float 5
     dependencies:
       config:
@@ -502,7 +502,7 @@ field_settings:
     label: 'Topic » Taxonomy term » Name'
     datasource_id: 'entity:node'
     property_path: 'field_topic:entity:name'
-    type: text
+    type: string
     boost: !!float 5
     dependencies:
       config:
@@ -558,7 +558,8 @@ field_settings:
     label: 'Body » Processed summary'
     datasource_id: 'entity:node'
     property_path: 'body:summary_processed'
-    type: string
+    type: text
+    boost: !!float 0
     dependencies:
       config:
         - field.storage.node.body
