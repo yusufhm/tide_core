@@ -1,0 +1,63 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/93?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location"
+        }
+    },
+    "tid": [
+        {
+            "value": 93
+        }
+    ],
+    "uuid": [
+        {
+            "value": "46c790f6-3a65-4a8a-b4e9-97c7dc55b998"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "location"
+        }
+    ],
+    "name": [
+        {
+            "value": "Northern Metropolitan Region",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-11-07T22:56:22+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Northern Metropolitan Region | DPC Content Repository",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/93"
+            }
+        }
+    ]
+}

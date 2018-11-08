@@ -1,0 +1,63 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/97?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location"
+        }
+    },
+    "tid": [
+        {
+            "value": 97
+        }
+    ],
+    "uuid": [
+        {
+            "value": "e9f54477-7799-4e8c-8ad3-45edb6eb6d2f"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "location"
+        }
+    ],
+    "name": [
+        {
+            "value": "Western Metropolitan Region",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-11-07T22:56:22+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Western Metropolitan Region | DPC Content Repository",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/97"
+            }
+        }
+    ]
+}

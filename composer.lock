@@ -1537,12 +1537,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "99fa6374530195809daf3851b2e505b374979637"
+                "reference": "e7e430379e92b137d9c8de1e78a47609ddb871e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/99fa6374530195809daf3851b2e505b374979637",
-                "reference": "99fa6374530195809daf3851b2e505b374979637",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/e7e430379e92b137d9c8de1e78a47609ddb871e1",
+                "reference": "e7e430379e92b137d9c8de1e78a47609ddb871e1",
                 "shasum": ""
             },
             "require": {
@@ -1604,9 +1604,6 @@
                 "enable-patching": true,
                 "composer-exit-on-patch-failure": true,
                 "patches": {
-                    "drupal/better_exposed_filters": {
-                        "Add core/drupal as dependency to better_exposed_filters asset libraries - https://www.drupal.org/node/2902742": "https://www.drupal.org/files/issues/add_core_drupal_as-2902742-2.patch"
-                    },
                     "drupal/entity_embed": {
                         "2832504 - Send the CKEditor instance ID to the embed.preview route": "https://www.drupal.org/files/issues/2832504-2.patch"
                     },
@@ -1658,7 +1655,7 @@
                 "source": "https://github.com/dpc-sdp/tide_core/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_core/issues"
             },
-            "time": "2018-10-11T01:24:46+00:00"
+            "time": "2018-11-07T22:27:40+00:00"
         },
         {
             "name": "dpc-sdp/tide_event",
@@ -2292,14 +2289,11 @@
                 },
                 "drupal": {
                     "version": "8.x-3.0-alpha4",
-                    "datestamp": "1525044484",
+                    "datestamp": "1540513084",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
                     }
-                },
-                "patches_applied": {
-                    "Add core/drupal as dependency to better_exposed_filters asset libraries - https://www.drupal.org/node/2902742": "https://www.drupal.org/files/issues/add_core_drupal_as-2902742-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2307,6 +2301,10 @@
                 "GPL-2.0-or-later"
             ],
             "authors": [
+                {
+                    "name": "chr.fritsch",
+                    "homepage": "https://www.drupal.org/user/2103716"
+                },
                 {
                     "name": "jkopel",
                     "homepage": "https://www.drupal.org/user/66207"
@@ -3880,7 +3878,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.5",
-                    "datestamp": "1527243208",
+                    "datestamp": "1539588781",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5345,7 +5343,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.2",
-                    "datestamp": "1525419785",
+                    "datestamp": "1539682684",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5364,6 +5362,10 @@
                 {
                     "name": "Dave Reid",
                     "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "pifagor",
+                    "homepage": "https://www.drupal.org/user/2375692"
                 }
             ],
             "description": "Allows users to redirect from old URLs to new URLs.",
@@ -5399,7 +5401,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0",
-                    "datestamp": "1527699484",
+                    "datestamp": "1541600580",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5776,7 +5778,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0",
-                    "datestamp": "1534247471",
+                    "datestamp": "1539600180",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6280,7 +6282,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0",
-                    "datestamp": "1528597684",
+                    "datestamp": "1540857780",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6590,6 +6592,9 @@
                     "services": {
                         "drush.services.yml": "^9"
                     }
+                },
+                "patches_applied": {
+                    "Error processing Webform Tokens, sending leaked metadata - https://www.drupal.org/project/webform/issues/3010727#comment-12838354": "https://www.drupal.org/files/issues/2018-11-01/3010727-4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

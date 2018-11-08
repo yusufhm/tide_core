@@ -1,0 +1,63 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/96?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location"
+        }
+    },
+    "tid": [
+        {
+            "value": 96
+        }
+    ],
+    "uuid": [
+        {
+            "value": "1f229a5b-ae79-4cf3-8311-87284f6927bb"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "location"
+        }
+    ],
+    "name": [
+        {
+            "value": "Southern Metropolitan Region",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-11-07T22:56:22+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Southern Metropolitan Region | DPC Content Repository",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/96"
+            }
+        }
+    ]
+}
