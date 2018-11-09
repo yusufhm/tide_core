@@ -2003,16 +2003,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_webform.git",
-                "reference": "017d44552158b3e0edecc60f6ed4d6193debaa27"
+                "reference": "e7db95f11c3a9dd37ee628e6fe785a951afc1d27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_webform/zipball/017d44552158b3e0edecc60f6ed4d6193debaa27",
-                "reference": "017d44552158b3e0edecc60f6ed4d6193debaa27",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_webform/zipball/e7db95f11c3a9dd37ee628e6fe785a951afc1d27",
+                "reference": "e7db95f11c3a9dd37ee628e6fe785a951afc1d27",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "@dev",
+                "dpc-sdp/tide_core": "dev-master",
                 "drupal/config_filter": "1.*",
                 "drupal/config_ignore": "^2.1",
                 "drupal/token_conditions": "dev-1.x",
@@ -2024,6 +2024,15 @@
                 "dpc-sdp/tide_page": "@dev"
             },
             "type": "drupal-module",
+            "extra": {
+                "enable-patching": true,
+                "composer-exit-on-patch-failure": true,
+                "patches": {
+                    "drupal/webform": {
+                        "Error processing Webform Tokens, sending leaked metadata - https://www.drupal.org/project/webform/issues/3010727#comment-12838354": "https://www.drupal.org/files/issues/2018-11-01/3010727-4.patch"
+                    }
+                }
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -2032,7 +2041,7 @@
                 "source": "https://github.com/dpc-sdp/tide_webform/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_webform/issues"
             },
-            "time": "2018-10-04T01:29:45+00:00"
+            "time": "2018-11-01T21:29:23+00:00"
         },
         {
             "name": "drupal-composer/drupal-scaffold",
