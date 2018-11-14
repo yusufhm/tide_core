@@ -82,7 +82,45 @@ function vicgovau_demo_create_node_grant() {
     }
 
     // Add guidelines content.
-    $accordion = VicgovauDemoHelper::randomAccordionContent();
+    $accordion_data = [
+      'type' => 'accordion',
+      'field_paragraph_title' => VicgovauDemoHelper::randomSentence(3, 5),
+      'field_paragraph_accordion_style' => [
+        'value' => 'basic',
+      ],
+      'field_paragraph_accordion' => [],
+    ];
+
+    // Add 4 Guidelines accordion content data.
+    $accordion_content = VicgovauDemoHelper::randomAccordionContent();
+    $accordion_data['field_paragraph_accordion'][] = [
+      'target_id' => $accordion_content->id(),
+      'target_revision_id' => $accordion_content->getRevisionId(),
+    ];
+
+    $accordion_content = VicgovauDemoHelper::randomAccordionContent();
+    $accordion_data['field_paragraph_accordion'][] = [
+      'target_id' => $accordion_content->id(),
+      'target_revision_id' => $accordion_content->getRevisionId(),
+    ];
+
+    $accordion_content = VicgovauDemoHelper::randomAccordionContent();
+    $accordion_data['field_paragraph_accordion'][] = [
+      'target_id' => $accordion_content->id(),
+      'target_revision_id' => $accordion_content->getRevisionId(),
+    ];
+
+    $accordion_content = VicgovauDemoHelper::randomAccordionContent();
+    $accordion_data['field_paragraph_accordion'][] = [
+      'target_id' => $accordion_content->id(),
+      'target_revision_id' => $accordion_content->getRevisionId(),
+    ];
+
+    // Create host paragraph.
+    $accordion = Paragraph::create($accordion_data);
+    $accordion->save();
+    $repository->trackEntity($accordion);
+
     $node_data['field_node_guidelines'] = [
       'target_id' => $accordion->id(),
       'target_revision_id' => $accordion->getRevisionId(),

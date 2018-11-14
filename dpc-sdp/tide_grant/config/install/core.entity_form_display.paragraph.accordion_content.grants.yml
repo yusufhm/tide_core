@@ -1,8 +1,8 @@
-uuid: 4a84255b-6e1f-45ff-ad3d-899527cd08b6
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_form_mode.paragraph.grants
     - field.field.paragraph.accordion_content.field_paragraph_accordion_body
     - field.field.paragraph.accordion_content.field_paragraph_accordion_name
     - paragraphs.paragraphs_type.accordion_content
@@ -10,10 +10,10 @@ dependencies:
     - content_moderation
     - maxlength
     - text
-id: paragraph.accordion_content.default
+id: paragraph.accordion_content.grants
 targetEntityType: paragraph
 bundle: accordion_content
-mode: default
+mode: grants
 content:
   field_paragraph_accordion_body:
     weight: 102
@@ -27,7 +27,6 @@ content:
     weight: 101
     settings:
       size: 60
-      placeholder: ''
     third_party_settings:
       maxlength:
         maxlength_js: null
