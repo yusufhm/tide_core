@@ -88,6 +88,24 @@ function vicgovau_demo_create_node_grant() {
       'target_revision_id' => $accordion->getRevisionId(),
     ];
 
+    // Add Grants Overview.
+    $grant_overview_data = [
+      'type' => 'grants_overview',
+      'field_paragraph_title' => VicgovauDemoHelper::randomSentence(3, 5),
+      'field_paragraph_summary' => VicgovauDemoHelper::randomSentence(10, 20),
+      'field_paragraph_cta' => [VicgovauDemoHelper::randomCtaLinkFieldValue()],
+    ];
+
+    $grant_overview = Paragraph::create($grant_overview_data);
+    $grant_overview->save();
+    $repository->trackEntity($grant_overview);
+    $node_data['field_node_overview'] = [
+      [
+        'target_id' => $grant_overview->id(),
+        'target_revision_id' => $grant_overview->getRevisionId(),
+      ],
+    ];
+
     // Add Contact Us.
     $contact_us_data = [
       'type' => 'contact_us',
@@ -119,6 +137,7 @@ function vicgovau_demo_create_node_grant() {
         ],
       ],
     ];
+
     $contact_us = Paragraph::create($contact_us_data);
     $contact_us->save();
     $repository->trackEntity($contact_us);
@@ -136,6 +155,7 @@ function vicgovau_demo_create_node_grant() {
       'field_node_on_going',
       'field_show_social_sharing',
     ];
+
     foreach ($boolean_fields as $boolean_field) {
       if ($node->hasField($boolean_field)) {
         $node->set($boolean_field, VicgovauDemoHelper::randomBool());

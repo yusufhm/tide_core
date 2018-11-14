@@ -348,12 +348,14 @@ content:
     type: boolean_checkbox
     region: content
   field_node_overview:
-    type: entity_reference_paragraphs
+    type: paragraphs
     weight: 18
     settings:
       title: Overview
       title_plural: Overview
       edit_mode: closed
+      closed_mode: preview
+      autocollapse: all
       add_mode: button
       form_display_mode: default
       default_paragraph_type: _none
