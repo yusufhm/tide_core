@@ -333,9 +333,6 @@
             "docroot/sites/default/files"
         ],
         "patches": {
-            "dpc-sdp/tide_site" :  {
-                "[SDPA-1073] Added drush command to migrate site" : "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_site/pull/12.patch"
-            }
         }
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c44cd0ab96334ef555fd59660dd987a6",
+    "content-hash": "786b6ddf74e2ad9b00a3fb8996bdeed2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1537,12 +1537,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "e7e430379e92b137d9c8de1e78a47609ddb871e1"
+                "reference": "a6adf278406773041e69e68c0481edd089393dde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/e7e430379e92b137d9c8de1e78a47609ddb871e1",
-                "reference": "e7e430379e92b137d9c8de1e78a47609ddb871e1",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/a6adf278406773041e69e68c0481edd089393dde",
+                "reference": "a6adf278406773041e69e68c0481edd089393dde",
                 "shasum": ""
             },
             "require": {
@@ -1652,10 +1652,10 @@
             ],
             "description": "Core functionality for Tide Drupal 8 distribution",
             "support": {
-                "source": "https://github.com/dpc-sdp/tide_core/tree/master",
+                "source": "https://github.com/dpc-sdp/tide_core/tree/v0.0.8",
                 "issues": "https://github.com/dpc-sdp/tide_core/issues"
             },
-            "time": "2018-11-07T22:27:40+00:00"
+            "time": "2018-11-09T00:15:19+00:00"
         },
         {
             "name": "dpc-sdp/tide_event",
@@ -1750,12 +1750,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_media.git",
-                "reference": "7c0bef491845ea8b8a2fdd6815492a5a3b7dae8f"
+                "reference": "c707b35e9885bfcb036c8d49a176f5675d7205ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_media/zipball/7c0bef491845ea8b8a2fdd6815492a5a3b7dae8f",
-                "reference": "7c0bef491845ea8b8a2fdd6815492a5a3b7dae8f",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_media/zipball/c707b35e9885bfcb036c8d49a176f5675d7205ab",
+                "reference": "c707b35e9885bfcb036c8d49a176f5675d7205ab",
                 "shasum": ""
             },
             "require": {
@@ -1786,7 +1786,7 @@
                 "source": "https://github.com/dpc-sdp/tide_media/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_media/issues"
             },
-            "time": "2018-09-17T04:08:21+00:00"
+            "time": "2018-11-14T00:05:58+00:00"
         },
         {
             "name": "dpc-sdp/tide_monsido",
@@ -1953,11 +1953,6 @@
                 "dpc-sdp/tide_api": "@dev"
             },
             "type": "drupal-module",
-            "extra": {
-                "patches_applied": {
-                    "[SDPA-1073] Added drush command to migrate site": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_site/pull/12.patch"
-                }
-            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -1974,16 +1969,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_test.git",
-                "reference": "ae116f3f53335c5301ec2a169babd98e92b2ae5a"
+                "reference": "a255a277b0b1fd8727a89a4d6dea8b28767e3813"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_test/zipball/ae116f3f53335c5301ec2a169babd98e92b2ae5a",
-                "reference": "ae116f3f53335c5301ec2a169babd98e92b2ae5a",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_test/zipball/a255a277b0b1fd8727a89a4d6dea8b28767e3813",
+                "reference": "a255a277b0b1fd8727a89a4d6dea8b28767e3813",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "@dev",
+                "dpc-sdp/tide_core": "dev-master",
                 "drupal/smart_trim": "^1.1"
             },
             "type": "drupal-module",
@@ -1995,7 +1990,7 @@
                 "source": "https://github.com/dpc-sdp/tide_test/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_test/issues"
             },
-            "time": "2018-09-10T02:12:32+00:00"
+            "time": "2018-11-09T03:31:40+00:00"
         },
         {
             "name": "dpc-sdp/tide_webform",
@@ -2276,17 +2271,17 @@
         },
         {
             "name": "drupal/better_exposed_filters",
-            "version": "3.0.0-alpha4",
+            "version": "3.0.0-alpha5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/better_exposed_filters",
-                "reference": "8.x-3.0-alpha4"
+                "reference": "8.x-3.0-alpha5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/better_exposed_filters-8.x-3.0-alpha4.zip",
-                "reference": "8.x-3.0-alpha4",
-                "shasum": "f42013d1fc36d45212d582e18afc59bc2c364719"
+                "url": "https://ftp.drupal.org/files/projects/better_exposed_filters-8.x-3.0-alpha5.zip",
+                "reference": "8.x-3.0-alpha5",
+                "shasum": "8dbcff4b3bcd24f753d5d1ba6a523442a3690a76"
             },
             "require": {
                 "drupal/core": "*"
@@ -2297,7 +2292,7 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.0-alpha4",
+                    "version": "8.x-3.0-alpha5",
                     "datestamp": "1540513084",
                     "security-coverage": {
                         "status": "not-covered",
