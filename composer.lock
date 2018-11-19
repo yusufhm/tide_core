@@ -1537,12 +1537,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "a6adf278406773041e69e68c0481edd089393dde"
+                "reference": "ade93d2fd1e18ee103d41134e968149dbc702075"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/a6adf278406773041e69e68c0481edd089393dde",
-                "reference": "a6adf278406773041e69e68c0481edd089393dde",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/ade93d2fd1e18ee103d41134e968149dbc702075",
+                "reference": "ade93d2fd1e18ee103d41134e968149dbc702075",
                 "shasum": ""
             },
             "require": {
@@ -1652,10 +1652,10 @@
             ],
             "description": "Core functionality for Tide Drupal 8 distribution",
             "support": {
-                "source": "https://github.com/dpc-sdp/tide_core/tree/v0.0.8",
+                "source": "https://github.com/dpc-sdp/tide_core/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_core/issues"
             },
-            "time": "2018-11-09T00:15:19+00:00"
+            "time": "2018-11-19T04:53:29+00:00"
         },
         {
             "name": "dpc-sdp/tide_event",
@@ -1750,12 +1750,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_media.git",
-                "reference": "c707b35e9885bfcb036c8d49a176f5675d7205ab"
+                "reference": "5118cee86c59e5be1ae16b48a367bf89de8fdbe0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_media/zipball/c707b35e9885bfcb036c8d49a176f5675d7205ab",
-                "reference": "c707b35e9885bfcb036c8d49a176f5675d7205ab",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_media/zipball/5118cee86c59e5be1ae16b48a367bf89de8fdbe0",
+                "reference": "5118cee86c59e5be1ae16b48a367bf89de8fdbe0",
                 "shasum": ""
             },
             "require": {
@@ -1778,6 +1778,9 @@
                 "dpc-sdp/tide_page": "@dev"
             },
             "type": "drupal-module",
+            "extra": {
+                "patches": []
+            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -1786,7 +1789,7 @@
                 "source": "https://github.com/dpc-sdp/tide_media/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_media/issues"
             },
-            "time": "2018-11-14T00:05:58+00:00"
+            "time": "2018-11-19T04:59:27+00:00"
         },
         {
             "name": "dpc-sdp/tide_monsido",
@@ -1822,12 +1825,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_news.git",
-                "reference": "322a0b1cd16d3871a15139b8f54234c32483dd6b"
+                "reference": "6eb0af0e5524448f73e8487d32ca0c170e74ca4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_news/zipball/322a0b1cd16d3871a15139b8f54234c32483dd6b",
-                "reference": "322a0b1cd16d3871a15139b8f54234c32483dd6b",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_news/zipball/6eb0af0e5524448f73e8487d32ca0c170e74ca4c",
+                "reference": "6eb0af0e5524448f73e8487d32ca0c170e74ca4c",
                 "shasum": ""
             },
             "require": {
@@ -1850,7 +1853,7 @@
                 "source": "https://github.com/dpc-sdp/tide_news/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_news/issues"
             },
-            "time": "2018-09-17T03:30:58+00:00"
+            "time": "2018-11-19T05:12:41+00:00"
         },
         {
             "name": "dpc-sdp/tide_page",
@@ -1969,16 +1972,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_test.git",
-                "reference": "a255a277b0b1fd8727a89a4d6dea8b28767e3813"
+                "reference": "53b01a01e0908249da0de952c1c89fc84d546944"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_test/zipball/a255a277b0b1fd8727a89a4d6dea8b28767e3813",
-                "reference": "a255a277b0b1fd8727a89a4d6dea8b28767e3813",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_test/zipball/53b01a01e0908249da0de952c1c89fc84d546944",
+                "reference": "53b01a01e0908249da0de952c1c89fc84d546944",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "dev-master",
+                "dpc-sdp/tide_core": "@dev",
                 "drupal/smart_trim": "^1.1"
             },
             "type": "drupal-module",
@@ -1990,7 +1993,7 @@
                 "source": "https://github.com/dpc-sdp/tide_test/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_test/issues"
             },
-            "time": "2018-11-09T03:31:40+00:00"
+            "time": "2018-11-15T02:16:54+00:00"
         },
         {
             "name": "dpc-sdp/tide_webform",
@@ -4399,7 +4402,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.23",
-                    "datestamp": "1532084496",
+                    "datestamp": "1542081972",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

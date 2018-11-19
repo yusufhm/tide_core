@@ -50,7 +50,7 @@ function vicgovau_demo_create_node_grant() {
         ['target_id' => VicgovauDemoHelper::randomAudience()],
       ],
       'field_node_department' => [
-        ['target_id' => VicgovauDemoHelper::randomGrantDepartment()],
+        ['target_id' => VicgovauDemoHelper::randomDepartment()],
       ],
       'field_node_overview' => [
         'value' => VicgovauDemoHelper::randomPlainParagraph(),

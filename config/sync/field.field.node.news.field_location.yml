@@ -1,17 +1,18 @@
+uuid: ad2fc597-e691-4da4-bf22-61a72e41927d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_node_department
-    - node.type.grant
-    - taxonomy.vocabulary.department
-id: node.grant.field_node_department
-field_name: field_node_department
+    - field.storage.node.field_location
+    - node.type.news
+    - taxonomy.vocabulary.location
+id: node.news.field_location
+field_name: field_location
 entity_type: node
-bundle: grant
-label: Department
+bundle: news
+label: Location
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -19,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      department: department
+      location: location
     sort:
       field: name
       direction: asc

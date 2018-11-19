@@ -856,10 +856,22 @@ class VicgovauDemoHelper {
    * @return int
    *   The department tid.
    */
-  public static function randomGrantDepartment() {
+  public static function randomDepartment() {
     $repository = VicgovauDemoRepository::getInstance();
-    $topics = $repository->getDemoEntities('taxonomy_term', 'department');
-    return count($topics) ? array_rand($topics) : 0;
+    $department = $repository->getDemoEntities('taxonomy_term', 'department');
+    return count($department) ? array_rand($department, 1) : 0;
+  }
+
+  /**
+   * Select a random location.
+   *
+   * @return int
+   *   The location tid.
+   */
+  public static function randomLocation() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $location = $repository->getDemoEntities('taxonomy_term', 'location');
+    return count($location) ? array_rand($location, 1) : 0;
   }
 
 }
