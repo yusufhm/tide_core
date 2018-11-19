@@ -1825,12 +1825,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_news.git",
-                "reference": "6eb0af0e5524448f73e8487d32ca0c170e74ca4c"
+                "reference": "7aa30f362b856d27e20dcd459d5741d6f6c61c82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_news/zipball/6eb0af0e5524448f73e8487d32ca0c170e74ca4c",
-                "reference": "6eb0af0e5524448f73e8487d32ca0c170e74ca4c",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_news/zipball/7aa30f362b856d27e20dcd459d5741d6f6c61c82",
+                "reference": "7aa30f362b856d27e20dcd459d5741d6f6c61c82",
                 "shasum": ""
             },
             "require": {
@@ -1853,7 +1853,7 @@
                 "source": "https://github.com/dpc-sdp/tide_news/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_news/issues"
             },
-            "time": "2018-11-19T05:12:41+00:00"
+            "time": "2018-11-19T20:15:46+00:00"
         },
         {
             "name": "dpc-sdp/tide_page",
