@@ -1,20 +1,20 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/taxonomy\/term\/81?_format=hal_json"
+            "href": "http:\/\/default\/taxonomy\/term\/104?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/audience"
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/license_type"
         }
     },
     "tid": [
         {
-            "value": 81
+            "value": 104
         }
     ],
     "uuid": [
         {
-            "value": "a888f885-0ce7-4eff-b664-e1c8165f2f18"
+            "value": "61ae0328-827b-4e3b-af21-05679a34d5af"
         }
     ],
     "langcode": [
@@ -25,23 +25,23 @@
     ],
     "vid": [
         {
-            "target_id": "audience"
+            "target_id": "license_type"
         }
     ],
     "name": [
         {
-            "value": "Government",
+            "value": "Copyright",
             "lang": "en"
         }
     ],
     "weight": [
         {
-            "value": 1
+            "value": 0
         }
     ],
     "changed": [
         {
-            "value": "2018-09-15T08:28:06+00:00",
+            "value": "2018-11-12T02:38:43+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -55,8 +55,8 @@
     "metatag": [
         {
             "value": {
-                "title": "Local council | DPC Content Repository",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/81"
+                "title": "Copyright | DPC Content Repository",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/104"
             }
         }
     ]

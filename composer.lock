@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "786b6ddf74e2ad9b00a3fb8996bdeed2",
+    "content-hash": "4452bae027924b2fe4e3db4b9822bb89",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1750,12 +1750,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_media.git",
-                "reference": "5118cee86c59e5be1ae16b48a367bf89de8fdbe0"
+                "reference": "36f130564e5c2b3a36c1eaa5a6289b9aee1f522b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_media/zipball/5118cee86c59e5be1ae16b48a367bf89de8fdbe0",
-                "reference": "5118cee86c59e5be1ae16b48a367bf89de8fdbe0",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_media/zipball/36f130564e5c2b3a36c1eaa5a6289b9aee1f522b",
+                "reference": "36f130564e5c2b3a36c1eaa5a6289b9aee1f522b",
                 "shasum": ""
             },
             "require": {
@@ -1789,7 +1789,7 @@
                 "source": "https://github.com/dpc-sdp/tide_media/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_media/issues"
             },
-            "time": "2018-11-19T04:59:27+00:00"
+            "time": "2018-11-20T03:00:57+00:00"
         },
         {
             "name": "dpc-sdp/tide_monsido",
@@ -3300,6 +3300,9 @@
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Do not reimport existing entities - https://www.drupal.org/project/default_content/issues/2698425": "https://www.drupal.org/files/issues/2018-06-05/default_content-dont-reimport-existing-entities-2698425-102.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
