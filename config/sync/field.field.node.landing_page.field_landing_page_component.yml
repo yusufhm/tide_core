@@ -23,6 +23,7 @@ dependencies:
     - paragraphs.paragraphs_type.latest_events
     - paragraphs.paragraphs_type.media_gallery
     - paragraphs.paragraphs_type.news_listing
+    - paragraphs.paragraphs_type.timelines
   module:
     - entity_reference_revisions
 _core:
@@ -56,10 +57,11 @@ settings:
       embedded_webform: embedded_webform
       featured_news: featured_news
       news_listing: news_listing
-      card_event_auto: card_event_auto
       media_gallery: media_gallery
-      card_carousel: card_carousel
+      card_event_auto: card_event_auto
       latest_events: latest_events
+      card_carousel: card_carousel
+      timelines: timelines
     target_bundles_drag_drop:
       banner:
         weight: -33
@@ -121,23 +123,20 @@ settings:
       news_listing:
         enabled: true
         weight: 24
-      card_event_auto:
-        enabled: true
-        weight: 28
       media_gallery:
         enabled: true
         weight: 26
-      card_carousel:
+      card_event_auto:
+        enabled: true
+        weight: 28
+      latest_events:
         enabled: true
         weight: 29
-      latest_events:
+      card_carousel:
         enabled: true
         weight: 29
       contact_us:
         weight: 34
-        enabled: false
-      call_to_action_image:
-        weight: 35
         enabled: false
       call_to_action_image:
         weight: 35
@@ -154,4 +153,16 @@ settings:
       introduction_banner:
         weight: 48
         enabled: false
+      embedded_search_form:
+        weight: 52
+        enabled: false
+      grants_overview:
+        weight: 56
+        enabled: false
+      timeline:
+        weight: 67
+        enabled: false
+      timelines:
+        enabled: true
+        weight: 68
 field_type: entity_reference_revisions

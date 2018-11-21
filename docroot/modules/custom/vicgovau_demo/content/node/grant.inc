@@ -132,6 +132,9 @@ function vicgovau_demo_create_node_grant() {
       'field_paragraph_title' => VicgovauDemoHelper::randomSentence(3, 5),
       'field_paragraph_summary' => VicgovauDemoHelper::randomSentence(10, 20),
       'field_paragraph_cta' => [VicgovauDemoHelper::randomCtaLinkFieldValue()],
+      'field_paragraph_media' => [
+        ['target_id' => VicgovauDemoHelper::randomImage()],
+      ],
     ];
 
     $grant_overview = Paragraph::create($grant_overview_data);
@@ -142,6 +145,29 @@ function vicgovau_demo_create_node_grant() {
         'target_id' => $grant_overview->id(),
         'target_revision_id' => $grant_overview->getRevisionId(),
       ],
+    ];
+
+    // Add Timelines.
+    $timelines_data = [
+      'type' => 'timelines',
+      'field_paragraph_title' => VicgovauDemoHelper::randomSentence(3, 5),
+      'field_timeline' => [],
+    ];
+
+    $timeline_content = VicgovauDemoHelper::randomTimelineContent();
+    $timelines_data['field_timeline'][] = [
+      'target_id' => $timeline_content->id(),
+      'target_revision_id' => $timeline_content->getRevisionId(),
+    ];
+
+    // Create host paragraph.
+    $timelines = Paragraph::create($timelines_data);
+    $timelines->save();
+    $repository->trackEntity($timelines);
+
+    $node_data['field_node_timeline'] = [
+      'target_id' => $timelines->id(),
+      'target_revision_id' => $timelines->getRevisionId(),
     ];
 
     // Add Contact Us.

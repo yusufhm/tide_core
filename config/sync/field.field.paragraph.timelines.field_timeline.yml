@@ -1,20 +1,20 @@
-uuid: 90a193e8-7c35-46c3-8c7b-b5973ca020a4
+uuid: 9832cf15-04eb-4b0f-b690-835a098f0e2e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_node_timeline
-    - node.type.grant
+    - field.storage.paragraph.field_timeline
+    - paragraphs.paragraphs_type.timeline
+    - paragraphs.paragraphs_type.timelines
   module:
     - entity_reference_revisions
-    - tide_core
-id: node.grant.field_node_timeline
-field_name: field_node_timeline
-entity_type: node
-bundle: grant
+id: paragraph.timelines.field_timeline
+field_name: field_timeline
+entity_type: paragraph
+bundle: timelines
 label: Timeline
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -23,105 +23,108 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      timelines: timelines
+      timeline: timeline
     target_bundles_drag_drop:
-      timelines:
+      timeline:
         enabled: true
-        weight: 34
-      accordion:
         weight: 35
-        enabled: false
-      accordion_content:
+      accordion:
         weight: 36
         enabled: false
-      banner:
+      accordion_content:
         weight: 37
         enabled: false
-      basic_text:
+      banner:
         weight: 38
         enabled: false
-      call_to_action:
+      basic_text:
         weight: 39
         enabled: false
-      call_to_action_image:
+      call_to_action:
         weight: 40
         enabled: false
-      card_carousel:
+      call_to_action_image:
         weight: 41
         enabled: false
-      card_event:
+      card_carousel:
         weight: 42
         enabled: false
-      card_event_auto:
+      card_event:
         weight: 43
         enabled: false
-      card_keydates:
+      card_event_auto:
         weight: 44
         enabled: false
-      card_navigation:
+      card_keydates:
         weight: 45
         enabled: false
-      card_navigation_auto:
+      card_navigation:
         weight: 46
         enabled: false
-      card_navigation_featured:
+      card_navigation_auto:
         weight: 47
         enabled: false
-      card_navigation_featured_auto:
+      card_navigation_featured:
         weight: 48
         enabled: false
-      card_promotion:
+      card_navigation_featured_auto:
         weight: 49
         enabled: false
-      card_promotion_auto:
+      card_promotion:
         weight: 50
         enabled: false
-      contact_us:
+      card_promotion_auto:
         weight: 51
         enabled: false
-      embedded_search_form:
+      contact_us:
         weight: 52
         enabled: false
-      embedded_webform:
+      embedded_search_form:
         weight: 53
         enabled: false
-      event_details:
+      embedded_webform:
         weight: 54
         enabled: false
-      featured_news:
+      event_details:
         weight: 55
         enabled: false
-      grants_overview:
+      featured_news:
         weight: 56
         enabled: false
-      introduction_banner:
+      grants_overview:
         weight: 57
         enabled: false
-      keydates:
+      introduction_banner:
         weight: 58
         enabled: false
-      key_journeys:
+      keydates:
         weight: 59
         enabled: false
-      latest_events:
+      key_journeys:
         weight: 60
         enabled: false
-      links:
+      latest_events:
         weight: 61
         enabled: false
-      media_gallery:
+      links:
         weight: 62
         enabled: false
-      news_listing:
+      media_gallery:
         weight: 63
         enabled: false
-      phone:
+      news_listing:
         weight: 64
         enabled: false
-      related_links:
+      phone:
         weight: 65
         enabled: false
-      social_link:
+      related_links:
         weight: 66
+        enabled: false
+      social_link:
+        weight: 67
+        enabled: false
+      timelines:
+        weight: 68
         enabled: false
 field_type: entity_reference_revisions
