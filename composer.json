@@ -31,7 +31,7 @@
         "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
         "drupal/coder": "^8.2",
         "drupal/config_devel": "^1.2",
-        "drupal/console": "^1.0",
+        "drupal/console": "~1.0",
         "drupal/drupal-extension": "~3.3.0",
         "guzzlehttp/psr7": "^1.4",
         "integratedexperts/behat-format-progress-fail": "^0.2.1",
@@ -333,9 +333,6 @@
             "docroot/sites/default/files"
         ],
         "patches": {
-            "drupal/default_content" :  {
-                "Do not reimport existing entities - https://www.drupal.org/project/default_content/issues/2698425" : "https://www.drupal.org/files/issues/2018-06-05/default_content-dont-reimport-existing-entities-2698425-102.patch"
-            }
         }
     }
 }

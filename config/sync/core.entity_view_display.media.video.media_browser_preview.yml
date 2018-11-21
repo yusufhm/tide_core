@@ -8,16 +8,15 @@ dependencies:
     - field.field.media.video.field_media_department
     - field.field.media.video.field_media_file
     - field.field.media.video.field_media_length
-    - field.field.media.video.field_media_link
+    - field.field.media.video.field_media_license
     - field.field.media.video.field_media_restricted
-    - field.field.media.video.field_media_site
     - field.field.media.video.field_media_summary
     - field.field.media.video.field_media_topic
     - field.field.media.video.field_media_transcript
     - image.style.thumbnail
     - media.type.video
   module:
-    - svg_image
+    - image
 _core:
   default_config_hash: Vm_jBmMFHBmyN-TRKEpHYZpAMejWtGyMKzzsuxa0I5U
 id: media.video.media_browser_preview
@@ -48,9 +47,8 @@ hidden:
   field_media_department: true
   field_media_file: true
   field_media_length: true
-  field_media_link: true
+  field_media_license: true
   field_media_restricted: true
-  field_media_site: true
   field_media_summary: true
   field_media_topic: true
   field_media_transcript: true

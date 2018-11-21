@@ -3,12 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.image.field_license_type
     - field.field.media.image.field_media_alignment
     - field.field.media.image.field_media_audience
     - field.field.media.image.field_media_caption
     - field.field.media.image.field_media_department
     - field.field.media.image.field_media_image
+    - field.field.media.image.field_media_license
     - field.field.media.image.field_media_restricted
     - field.field.media.image.field_media_site
     - field.field.media.image.field_media_topic
@@ -17,8 +17,8 @@ dependencies:
   module:
     - content_moderation
     - field_group
+    - image
     - path
-    - svg_image
 third_party_settings:
   field_group:
     group_metadata:
@@ -49,14 +49,8 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_license_type:
-    weight: 2
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   field_media_alignment:
-    weight: 4
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -71,7 +65,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_media_caption:
-    weight: 3
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -93,7 +87,13 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
-    weight: 1
+    weight: 0
+    region: content
+  field_media_license:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_media_restricted:
     weight: 5
@@ -106,7 +106,7 @@ content:
     type: options_buttons
     region: content
     field_name: field_media_site
-    weight: 12
+    weight: 26
     settings: {  }
     third_party_settings: {  }
   field_media_topic:
@@ -126,7 +126,7 @@ content:
     third_party_settings: {  }
   name:
     type: string_textfield
-    weight: 0
+    weight: -1
     region: content
     settings:
       size: 60
