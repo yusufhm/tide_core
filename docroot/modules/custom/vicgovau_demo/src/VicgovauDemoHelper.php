@@ -524,6 +524,35 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Generate a random Timeline Content paragraph.
+   *
+   * @return \Drupal\paragraphs\Entity\Paragraph
+   *   The Timeline content.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  public static function randomTimelineContent() {
+    $timeline = Paragraph::create([
+      'type' => 'timeline',
+      'field_paragraph_title' => VicgovauDemoHelper::randomSentence(3, 5),
+      'field_paragraph_body' => VicgovauDemoHelper::randomSentence(10, 20),
+      'field_paragraph_link' => [VicgovauDemoHelper::randomLinkFieldValue()],
+      'field_paragraph_cta_text' => VicgovauDemoHelper::randomSentence(3, 5),
+      'field_paragraph_department_name' => VicgovauDemoHelper::randomSentence(3, 5),
+      'field_paragraph_date_range' => [
+        [
+          'value' => VicgovauDemoHelper::randomDate(),
+          'end_value' => VicgovauDemoHelper::randomDate(),
+        ],
+      ],
+    ]);
+    $timeline->save();
+    $repository = VicgovauDemoRepository::getInstance();
+    $repository->trackEntity($timeline);
+    return $timeline;
+  }
+
+  /**
    * Generate a random Introduction Banner paragraph.
    *
    * @return \Drupal\paragraphs\Entity\Paragraph
@@ -629,6 +658,7 @@ class VicgovauDemoHelper {
       'featured_news',
       'media_gallery',
       'news_listing',
+      'timelines',
     ];
 
     $accordion_styles = ['basic', 'numbered'];
@@ -832,6 +862,26 @@ class VicgovauDemoHelper {
             'field_paragraph_reference' => [['target_id' => static::randomEvent()]],
           ];
           break;
+
+        case 'timelines':
+          $component_data += [
+            'field_paragraph_title' => [['value' => static::randomSentence()]],
+            'field_timeline' => [],
+          ];
+          $count = mt_rand(3, 5);
+          for ($i = 1; $i <= $count; $i++) {
+            try {
+              $timeline_content = static::randomTimelineContent();
+              $component_data['field_timeline'][] = [
+                'target_id' => $timeline_content->id(),
+                'target_revision_id' => $timeline_content->getRevisionId(),
+              ];
+            }
+            catch (\Exception $exception) {
+              watchdog_exception('vicgovau_demo', $exception);
+            }
+          }
+          break;
       }
 
       try {
@@ -856,10 +906,22 @@ class VicgovauDemoHelper {
    * @return int
    *   The department tid.
    */
-  public static function randomGrantDepartment() {
+  public static function randomDepartment() {
     $repository = VicgovauDemoRepository::getInstance();
-    $topics = $repository->getDemoEntities('taxonomy_term', 'department');
-    return count($topics) ? array_rand($topics) : 0;
+    $department = $repository->getDemoEntities('taxonomy_term', 'department');
+    return count($department) ? array_rand($department, 1) : 0;
+  }
+
+  /**
+   * Select a random location.
+   *
+   * @return int
+   *   The location tid.
+   */
+  public static function randomLocation() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $location = $repository->getDemoEntities('taxonomy_term', 'location');
+    return count($location) ? array_rand($location, 1) : 0;
   }
 
 }

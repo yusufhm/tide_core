@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.accordion_content
   module:
     - content_moderation
+    - maxlength
     - text
 id: paragraph.accordion_content.default
 targetEntityType: paragraph
@@ -27,7 +28,10 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
     type: string_textfield
     region: content
   moderation_state:

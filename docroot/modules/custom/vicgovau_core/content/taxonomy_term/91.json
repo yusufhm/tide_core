@@ -1,0 +1,63 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/91?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location"
+        }
+    },
+    "tid": [
+        {
+            "value": 91
+        }
+    ],
+    "uuid": [
+        {
+            "value": "7cd3a0df-ef7f-46dd-9b58-d4a3d093786c"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "location"
+        }
+    ],
+    "name": [
+        {
+            "value": "Eastern Metropolitan Region",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-11-07T22:56:22+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Eastern Metropolitan Region | DPC Content Repository",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/91"
+            }
+        }
+    ]
+}

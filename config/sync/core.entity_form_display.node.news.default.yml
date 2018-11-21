@@ -6,9 +6,11 @@ dependencies:
     - entity_browser.browser.tide_image_browser
     - field.field.node.news.body
     - field.field.node.news.field_featured_image
+    - field.field.node.news.field_location
     - field.field.node.news.field_metatags
     - field.field.node.news.field_news_date
     - field.field.node.news.field_news_intro_text
+    - field.field.node.news.field_node_department
     - field.field.node.news.field_node_primary_site
     - field.field.node.news.field_node_site
     - field.field.node.news.field_related_links
@@ -38,7 +40,7 @@ third_party_settings:
         - group_related_links
         - group_other
       parent_name: ''
-      weight: 6
+      weight: 8
       format_type: tabs
       format_settings:
         label: 'Right column'
@@ -52,7 +54,7 @@ third_party_settings:
         - field_show_related_content
         - field_related_links
       parent_name: group_right_column
-      weight: 6
+      weight: 10
       format_type: tab
       format_settings:
         id: ''
@@ -67,7 +69,7 @@ third_party_settings:
         - field_show_social_sharing
         - field_show_content_rating
       parent_name: group_right_column
-      weight: 7
+      weight: 11
       format_type: tab
       format_settings:
         id: ''
@@ -84,7 +86,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 4
+    weight: 6
     settings:
       rows: 9
       summary_rows: 3
@@ -93,12 +95,12 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   field_featured_image:
-    weight: 2
+    weight: 4
     settings:
       entity_browser: tide_image_browser
       field_widget_display: rendered_entity
@@ -108,11 +110,21 @@ content:
       field_widget_display_settings:
         view_mode: media_browser_preview
       open: false
+      field_widget_replace: false
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
+  field_location:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_metatags:
-    weight: 18
+    weight: 20
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
@@ -124,25 +136,34 @@ content:
     type: datetime_default
     region: content
   field_news_intro_text:
-    weight: 3
+    weight: 5
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
     region: content
+  field_node_department:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_node_primary_site:
     type: options_buttons
     region: content
     field_name: field_node_primary_site
-    weight: 17
+    weight: 19
     settings: {  }
     third_party_settings: {  }
   field_node_site:
     type: options_buttons
     region: content
     field_name: field_node_site
-    weight: 16
+    weight: 18
     settings: {  }
     third_party_settings: {  }
   field_related_links:
@@ -181,7 +202,7 @@ content:
     type: boolean_checkbox
     region: content
   field_tags:
-    weight: 15
+    weight: 17
     settings:
       match_operator: CONTAINS
       size: 60
@@ -190,7 +211,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_topic:
-    weight: 5
+    weight: 7
     settings:
       match_operator: CONTAINS
       size: 60
@@ -200,13 +221,13 @@ content:
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 14
+    weight: 16
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 11
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -214,12 +235,12 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 11
     region: content
     third_party_settings: {  }
   scheduled_archiving:
     type: inline_entity_form_complex
-    weight: 20
+    weight: 22
     settings:
       override_labels: true
       label_singular: 'Scheduled Archiving'
@@ -228,11 +249,14 @@ content:
       match_operator: CONTAINS
       allow_existing: false
       form_mode: default
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
     third_party_settings: {  }
     region: content
   scheduled_publishing:
     type: inline_entity_form_complex
-    weight: 19
+    weight: 21
     settings:
       override_labels: true
       label_singular: 'Scheduled Publishing'
@@ -241,20 +265,23 @@ content:
       match_operator: CONTAINS
       allow_existing: false
       form_mode: default
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
     third_party_settings: {  }
     region: content
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 13
+    weight: 15
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
+    weight: 12
     region: content
     third_party_settings: {  }
   title:
@@ -270,7 +297,7 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
   uid:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 9
     settings:
       match_operator: CONTAINS
       size: 60
@@ -278,7 +305,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 12
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -1,11 +1,12 @@
+uuid: 3213f338-096c-4213-9ea5-e4d976b2f27a
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - taxonomy
-id: node.field_node_department
-field_name: field_node_department
+id: node.field_location
+field_name: field_location
 entity_type: node
 type: entity_reference
 settings:

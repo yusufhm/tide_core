@@ -177,7 +177,7 @@ resourceFields:
     fieldName: path
     publicName: path
     enhancer:
-      id: ''
+      id: path_enhancer
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
@@ -205,6 +205,12 @@ resourceFields:
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
+  field_location:
+    fieldName: field_location
+    publicName: field_location
+    enhancer:
+      id: ''
+    disabled: false
   field_metatags:
     fieldName: field_metatags
     publicName: field_metatags
@@ -231,6 +237,12 @@ resourceFields:
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
+  field_node_department:
+    fieldName: field_node_department
+    publicName: field_node_department
+    enhancer:
+      id: ''
+    disabled: false
   field_node_primary_site:
     fieldName: field_node_primary_site
     publicName: field_node_primary_site

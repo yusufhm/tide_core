@@ -1,0 +1,10 @@
+uuid: f6888d18-bab6-42b7-83f9-e9b435d545e3
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.grants
+label: Grants
+targetEntityType: paragraph
+cache: true

@@ -54,6 +54,12 @@ function vicgovau_demo_create_node_news() {
       'field_featured_image' => [
         ['target_id' => VicgovauDemoHelper::randomImage()],
       ],
+      'field_node_department' => [
+        ['target_id' => VicgovauDemoHelper::randomDepartment()],
+      ],
+      'field_location' => [
+        ['target_id' => VicgovauDemoHelper::randomLocation()],
+      ],
       'field_news_date' => [['value' => VicgovauDemoHelper::randomDate()]],
     ];
 

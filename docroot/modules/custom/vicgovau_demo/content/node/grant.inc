@@ -50,7 +50,7 @@ function vicgovau_demo_create_node_grant() {
         ['target_id' => VicgovauDemoHelper::randomAudience()],
       ],
       'field_node_department' => [
-        ['target_id' => VicgovauDemoHelper::randomGrantDepartment()],
+        ['target_id' => VicgovauDemoHelper::randomDepartment()],
       ],
       'field_node_overview' => [
         'value' => VicgovauDemoHelper::randomPlainParagraph(),
@@ -82,10 +82,92 @@ function vicgovau_demo_create_node_grant() {
     }
 
     // Add guidelines content.
-    $accordion = VicgovauDemoHelper::randomAccordionContent();
+    $accordion_data = [
+      'type' => 'accordion',
+      'field_paragraph_title' => VicgovauDemoHelper::randomSentence(3, 5),
+      'field_paragraph_accordion_style' => [
+        'value' => 'basic',
+      ],
+      'field_paragraph_accordion' => [],
+    ];
+
+    // Add 4 Guidelines accordion content data.
+    $accordion_content = VicgovauDemoHelper::randomAccordionContent();
+    $accordion_data['field_paragraph_accordion'][] = [
+      'target_id' => $accordion_content->id(),
+      'target_revision_id' => $accordion_content->getRevisionId(),
+    ];
+
+    $accordion_content = VicgovauDemoHelper::randomAccordionContent();
+    $accordion_data['field_paragraph_accordion'][] = [
+      'target_id' => $accordion_content->id(),
+      'target_revision_id' => $accordion_content->getRevisionId(),
+    ];
+
+    $accordion_content = VicgovauDemoHelper::randomAccordionContent();
+    $accordion_data['field_paragraph_accordion'][] = [
+      'target_id' => $accordion_content->id(),
+      'target_revision_id' => $accordion_content->getRevisionId(),
+    ];
+
+    $accordion_content = VicgovauDemoHelper::randomAccordionContent();
+    $accordion_data['field_paragraph_accordion'][] = [
+      'target_id' => $accordion_content->id(),
+      'target_revision_id' => $accordion_content->getRevisionId(),
+    ];
+
+    // Create host paragraph.
+    $accordion = Paragraph::create($accordion_data);
+    $accordion->save();
+    $repository->trackEntity($accordion);
+
     $node_data['field_node_guidelines'] = [
       'target_id' => $accordion->id(),
       'target_revision_id' => $accordion->getRevisionId(),
+    ];
+
+    // Add Grants Overview.
+    $grant_overview_data = [
+      'type' => 'grants_overview',
+      'field_paragraph_title' => VicgovauDemoHelper::randomSentence(3, 5),
+      'field_paragraph_summary' => VicgovauDemoHelper::randomSentence(10, 20),
+      'field_paragraph_cta' => [VicgovauDemoHelper::randomCtaLinkFieldValue()],
+      'field_paragraph_media' => [
+        ['target_id' => VicgovauDemoHelper::randomImage()],
+      ],
+    ];
+
+    $grant_overview = Paragraph::create($grant_overview_data);
+    $grant_overview->save();
+    $repository->trackEntity($grant_overview);
+    $node_data['field_node_overview'] = [
+      [
+        'target_id' => $grant_overview->id(),
+        'target_revision_id' => $grant_overview->getRevisionId(),
+      ],
+    ];
+
+    // Add Timelines.
+    $timelines_data = [
+      'type' => 'timelines',
+      'field_paragraph_title' => VicgovauDemoHelper::randomSentence(3, 5),
+      'field_timeline' => [],
+    ];
+
+    $timeline_content = VicgovauDemoHelper::randomTimelineContent();
+    $timelines_data['field_timeline'][] = [
+      'target_id' => $timeline_content->id(),
+      'target_revision_id' => $timeline_content->getRevisionId(),
+    ];
+
+    // Create host paragraph.
+    $timelines = Paragraph::create($timelines_data);
+    $timelines->save();
+    $repository->trackEntity($timelines);
+
+    $node_data['field_node_timeline'] = [
+      'target_id' => $timelines->id(),
+      'target_revision_id' => $timelines->getRevisionId(),
     ];
 
     // Add Contact Us.
@@ -119,6 +201,7 @@ function vicgovau_demo_create_node_grant() {
         ],
       ],
     ];
+
     $contact_us = Paragraph::create($contact_us_data);
     $contact_us->save();
     $repository->trackEntity($contact_us);
@@ -136,6 +219,7 @@ function vicgovau_demo_create_node_grant() {
       'field_node_on_going',
       'field_show_social_sharing',
     ];
+
     foreach ($boolean_fields as $boolean_field) {
       if ($node->hasField($boolean_field)) {
         $node->set($boolean_field, VicgovauDemoHelper::randomBool());

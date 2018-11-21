@@ -1,0 +1,9 @@
+uuid: 8e594939-a031-4abf-a2bf-43a975dddb8a
+langcode: en
+status: true
+dependencies: {  }
+id: timeline
+label: Timeline
+icon_uuid: null
+description: 'Used to display content in a style representing a timeline.'
+behavior_plugins: {  }

@@ -5,9 +5,9 @@ dependencies:
   config:
     - field.storage.node.field_node_timeline
     - node.type.grant
-    - paragraphs.paragraphs_type.timelines
   module:
     - entity_reference_revisions
+    - tide_core
 id: node.grant.field_node_timeline
 field_name: field_node_timeline
 entity_type: node
