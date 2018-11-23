@@ -387,7 +387,7 @@ content:
       closed_mode: preview
       autocollapse: all
       add_mode: button
-      form_display_mode: default
+      form_display_mode: grants
       default_paragraph_type: timelines
     third_party_settings: {  }
     region: content
