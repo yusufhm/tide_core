@@ -39,6 +39,7 @@ permissions:
   - 'assign site_admin role'
   - 'create alert content'
   - 'create event content'
+  - 'create grant content'
   - 'create image_gallery content'
   - 'create landing_page content'
   - 'create media'
