@@ -40,9 +40,9 @@ services:
     depends_on:
       - cli
   mariadb:
-    image: singledigital/bay-mariadb:latest
+    image: amazeeio/mariadb-drupal
     labels:
-      lagoon.type: mariadb
+      lagoon.type: mariadb-shared
   redis:
     image: amazeeio/redis
     labels:
