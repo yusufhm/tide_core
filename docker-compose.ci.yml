@@ -26,3 +26,7 @@ services:
       dockerfile: Dockerfile.elasticsearch.ci
     environment:
       LAGOON_ENVIRONMENT_TYPE: 'ci'
+  mariadb:
+    image: singledigital/bay-mariadb:latest
+    environment:
+      LAGOON_ENVIRONMENT_TYPE: 'ci'
