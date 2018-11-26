@@ -30,6 +30,9 @@ services:
     volumes:
       - ./tests/test_data:/app/tests/test_data:delegated
   mariadb:
+    image: singledigital/bay-mariadb:latest
+    environment:
+      LAGOON_ENVIRONMENT_TYPE: 'local'
     ports:
       - 13306:3306
   elasticsearch:
