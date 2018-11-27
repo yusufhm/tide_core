@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.tide_image_browser
     - field.field.paragraph.timeline.field_paragraph_body
     - field.field.paragraph.timeline.field_paragraph_cta_text
     - field.field.paragraph.timeline.field_paragraph_date_range
@@ -15,7 +14,6 @@ dependencies:
   module:
     - content_moderation
     - datetime_range
-    - entity_browser
     - link
     - text
 id: paragraph.timeline.default
