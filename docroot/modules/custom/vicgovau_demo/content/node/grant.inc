@@ -52,9 +52,14 @@ function vicgovau_demo_create_node_grant() {
       'field_node_department' => [
         ['target_id' => VicgovauDemoHelper::randomDepartment()],
       ],
-      'field_node_overview' => [
-        'value' => VicgovauDemoHelper::randomPlainParagraph(),
-        'format' => 'rich_text',
+      'field_overview_title' => [
+        'value' => VicgovauDemoHelper::randomSentence(),
+      ],
+      'field_description' => [
+        'value' => VicgovauDemoHelper::randomSentence(),
+      ],
+      ['field_call_to_action'] => [
+        VicgovauDemoHelper::randomLinkFieldValue(),
       ],
       'field_featured_image' => [
         ['target_id' => VicgovauDemoHelper::randomImage()],

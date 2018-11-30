@@ -1537,12 +1537,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "2f18fb256b2ed6124f220f70266679904771f554"
+                "reference": "63bb7b6d6021f6a90eff1a60c0200df7cb43bff4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/2f18fb256b2ed6124f220f70266679904771f554",
-                "reference": "2f18fb256b2ed6124f220f70266679904771f554",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/63bb7b6d6021f6a90eff1a60c0200df7cb43bff4",
+                "reference": "63bb7b6d6021f6a90eff1a60c0200df7cb43bff4",
                 "shasum": ""
             },
             "require": {
@@ -1574,7 +1574,7 @@
                 "drupal/media_entity_audio": "^2.0@alpha",
                 "drupal/metatag": "^1.5",
                 "drupal/override_node_options": "^2.3",
-                "drupal/paragraphs": "1.2",
+                "drupal/paragraphs": "^1.2",
                 "drupal/password_policy": "dev-3.x",
                 "drupal/password_strength": "^2.0",
                 "drupal/pathauto": "^1.2",
@@ -1656,7 +1656,7 @@
                 "source": "https://github.com/dpc-sdp/tide_core/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_core/issues"
             },
-            "time": "2018-11-29T19:11:43+00:00"
+            "time": "2018-11-30T04:55:59+00:00"
         },
         {
             "name": "dpc-sdp/tide_event",
@@ -1713,12 +1713,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_landing_page.git",
-                "reference": "d056b6567538f41dd8c75bab926f1bc8ed0b8ad1"
+                "reference": "a6de3f097192271cf145dd2e45b9ac986933c1c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/d056b6567538f41dd8c75bab926f1bc8ed0b8ad1",
-                "reference": "d056b6567538f41dd8c75bab926f1bc8ed0b8ad1",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/a6de3f097192271cf145dd2e45b9ac986933c1c9",
+                "reference": "a6de3f097192271cf145dd2e45b9ac986933c1c9",
                 "shasum": ""
             },
             "require": {
@@ -1726,7 +1726,7 @@
                 "dpc-sdp/tide_event": "@dev",
                 "dpc-sdp/tide_media": "@dev",
                 "drupal/maxlength": "^1.0@beta",
-                "drupal/paragraphs": "1.2",
+                "drupal/paragraphs": "^1.2",
                 "drupal/smart_trim": "^1.1"
             },
             "suggest": {
@@ -1743,7 +1743,7 @@
                 "source": "https://github.com/dpc-sdp/tide_landing_page/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_landing_page/issues"
             },
-            "time": "2018-11-29T04:39:32+00:00"
+            "time": "2018-11-30T05:05:42+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
@@ -4973,17 +4973,17 @@
         },
         {
             "name": "drupal/paragraphs",
-            "version": "1.2.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/paragraphs",
-                "reference": "8.x-1.2"
+                "reference": "8.x-1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "6efc9d4351d4b21a55e7a6428c78495aaca662ef"
+                "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "85ba97dd1c602d33fc5904b6e1df5973312afa94"
             },
             "require": {
                 "drupal/core": "~8",
@@ -4991,12 +4991,19 @@
             },
             "require-dev": {
                 "drupal/block_field": "~1.0",
+                "drupal/ctools": "3.x-dev",
                 "drupal/diff": "~1.0",
+                "drupal/entity_browser": "1.x-dev",
+                "drupal/entity_usage": "2.x-dev",
                 "drupal/field_group": "~1.0",
                 "drupal/inline_entity_form": "~1.0",
+                "drupal/paragraphs-paragraphs_library": "*",
                 "drupal/replicate": "~1.0",
-                "drupal/search_api": "*",
+                "drupal/search_api": "~1.0",
                 "drupal/search_api_db": "*"
+            },
+            "suggest": {
+                "drupal/entity_browser": "Recommended for an improved user experience when using the Paragraphs library module"
             },
             "type": "drupal-module",
             "extra": {
@@ -5004,7 +5011,7 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.2",
+                    "version": "8.x-1.5",
                     "datestamp": "1541009695",
                     "security-coverage": {
                         "status": "covered",
