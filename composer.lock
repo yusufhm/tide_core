@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e75541d4d69930aaab735444d79ba297",
+    "content-hash": "329fd7b2cddaf695beba63945ec7553f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3306,6 +3306,9 @@
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Do not reimport existing entities - https://www.drupal.org/project/default_content/issues/2698425": "https://www.drupal.org/files/issues/2018-06-05/default_content-dont-reimport-existing-entities-2698425-102.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
