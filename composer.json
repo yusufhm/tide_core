@@ -236,10 +236,10 @@
         "app:drush": "docker exec -i $(docker-compose ps -q cli) drush -r /app/docroot",
         "app:cr": "@composer bay:cli -- drush cr -r /app/docroot -y",
         "app:cleanup": [
-            "rm -Rf vendor",
-            "rm -Rf node_modules",
-            "chmod -Rf 777 docroot/sites/default",
-            "git ls-files --directory --other -i --exclude-from=.gitignore docroot|xargs rm -Rf"
+            "docker exec -i $(docker-compose ps -q cli) rm -Rf vendor",
+            "docker exec -i $(docker-compose ps -q cli) rm -Rf node_modules",
+            "docker exec -i $(docker-compose ps -q cli) chmod -Rf 777 docroot/sites/default",
+            "docker exec -i $(docker-compose ps -q cli) git ls-files --directory --other -i --exclude-from=.gitignore docroot|xargs rm -Rf"
         ],
         "app:debug-drush": "docker exec -i $(docker-compose ps -q cli) /app/scripts/xdebug.sh /app/vendor/bin/drush -r /app/docroot",
         "app:site-install": "@composer bay:cli -- ./scripts/drupal/site-install.sh",

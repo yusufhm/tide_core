@@ -1486,12 +1486,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_api.git",
-                "reference": "efe7d82b9c05b8de5f061834399a3094c0beb98c"
+                "reference": "bd4f9672073c34cfc86791679f7ba2a84eedc3fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/efe7d82b9c05b8de5f061834399a3094c0beb98c",
-                "reference": "efe7d82b9c05b8de5f061834399a3094c0beb98c",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/bd4f9672073c34cfc86791679f7ba2a84eedc3fc",
+                "reference": "bd4f9672073c34cfc86791679f7ba2a84eedc3fc",
                 "shasum": ""
             },
             "require": {
@@ -1529,7 +1529,7 @@
                 "source": "https://github.com/dpc-sdp/tide_api/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_api/issues"
             },
-            "time": "2018-10-25T03:59:35+00:00"
+            "time": "2018-10-23T08:32:01+00:00"
         },
         {
             "name": "dpc-sdp/tide_core",
@@ -1559,7 +1559,6 @@
                 "drupal/core": "8.5.6",
                 "drupal/diff": "^1.0@RC",
                 "drupal/editor_advanced_link": "^1.4",
-                "drupal/entity_browser": "^1.4",
                 "drupal/entity_embed": "1.0.0-beta2",
                 "drupal/environment_indicator": "^3.2",
                 "drupal/events_log_track": "^1.1",
@@ -1605,6 +1604,9 @@
                 "enable-patching": true,
                 "composer-exit-on-patch-failure": true,
                 "patches": {
+                    "drupal/better_exposed_filters": {
+                        "Add core/drupal as dependency to better_exposed_filters asset libraries - https://www.drupal.org/node/2902742": "https://www.drupal.org/files/issues/add_core_drupal_as-2902742-2.patch"
+                    },
                     "drupal/entity_embed": {
                         "2832504 - Send the CKEditor instance ID to the embed.preview route": "https://www.drupal.org/files/issues/2832504-2.patch"
                     },
@@ -1776,9 +1778,6 @@
                 "dpc-sdp/tide_page": "@dev"
             },
             "type": "drupal-module",
-            "extra": {
-                "patches": []
-            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -1823,12 +1822,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_news.git",
-                "reference": "7aa30f362b856d27e20dcd459d5741d6f6c61c82"
+                "reference": "322a0b1cd16d3871a15139b8f54234c32483dd6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_news/zipball/7aa30f362b856d27e20dcd459d5741d6f6c61c82",
-                "reference": "7aa30f362b856d27e20dcd459d5741d6f6c61c82",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_news/zipball/322a0b1cd16d3871a15139b8f54234c32483dd6b",
+                "reference": "322a0b1cd16d3871a15139b8f54234c32483dd6b",
                 "shasum": ""
             },
             "require": {
@@ -1851,7 +1850,7 @@
                 "source": "https://github.com/dpc-sdp/tide_news/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_news/issues"
             },
-            "time": "2018-11-19T20:15:46+00:00"
+            "time": "2018-09-17T03:30:58+00:00"
         },
         {
             "name": "dpc-sdp/tide_page",
@@ -1970,12 +1969,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_test.git",
-                "reference": "53b01a01e0908249da0de952c1c89fc84d546944"
+                "reference": "ae116f3f53335c5301ec2a169babd98e92b2ae5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_test/zipball/53b01a01e0908249da0de952c1c89fc84d546944",
-                "reference": "53b01a01e0908249da0de952c1c89fc84d546944",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_test/zipball/ae116f3f53335c5301ec2a169babd98e92b2ae5a",
+                "reference": "ae116f3f53335c5301ec2a169babd98e92b2ae5a",
                 "shasum": ""
             },
             "require": {
@@ -1991,7 +1990,7 @@
                 "source": "https://github.com/dpc-sdp/tide_test/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_test/issues"
             },
-            "time": "2018-11-15T02:16:54+00:00"
+            "time": "2018-09-10T02:12:32+00:00"
         },
         {
             "name": "dpc-sdp/tide_webform",
@@ -1999,16 +1998,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_webform.git",
-                "reference": "e7db95f11c3a9dd37ee628e6fe785a951afc1d27"
+                "reference": "017d44552158b3e0edecc60f6ed4d6193debaa27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_webform/zipball/e7db95f11c3a9dd37ee628e6fe785a951afc1d27",
-                "reference": "e7db95f11c3a9dd37ee628e6fe785a951afc1d27",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_webform/zipball/017d44552158b3e0edecc60f6ed4d6193debaa27",
+                "reference": "017d44552158b3e0edecc60f6ed4d6193debaa27",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "dev-master",
+                "dpc-sdp/tide_core": "@dev",
                 "drupal/config_filter": "1.*",
                 "drupal/config_ignore": "^2.1",
                 "drupal/token_conditions": "dev-1.x",
@@ -2020,15 +2019,6 @@
                 "dpc-sdp/tide_page": "@dev"
             },
             "type": "drupal-module",
-            "extra": {
-                "enable-patching": true,
-                "composer-exit-on-patch-failure": true,
-                "patches": {
-                    "drupal/webform": {
-                        "Error processing Webform Tokens, sending leaked metadata - https://www.drupal.org/project/webform/issues/3010727#comment-12838354": "https://www.drupal.org/files/issues/2018-11-01/3010727-4.patch"
-                    }
-                }
-            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -2037,7 +2027,7 @@
                 "source": "https://github.com/dpc-sdp/tide_webform/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_webform/issues"
             },
-            "time": "2018-11-01T21:29:23+00:00"
+            "time": "2018-10-04T01:29:45+00:00"
         },
         {
             "name": "drupal-composer/drupal-scaffold",
@@ -2272,17 +2262,17 @@
         },
         {
             "name": "drupal/better_exposed_filters",
-            "version": "3.0.0-alpha5",
+            "version": "3.0.0-alpha4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/better_exposed_filters",
-                "reference": "8.x-3.0-alpha5"
+                "reference": "8.x-3.0-alpha4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/better_exposed_filters-8.x-3.0-alpha5.zip",
-                "reference": "8.x-3.0-alpha5",
-                "shasum": "8dbcff4b3bcd24f753d5d1ba6a523442a3690a76"
+                "url": "https://ftp.drupal.org/files/projects/better_exposed_filters-8.x-3.0-alpha4.zip",
+                "reference": "8.x-3.0-alpha4",
+                "shasum": "f42013d1fc36d45212d582e18afc59bc2c364719"
             },
             "require": {
                 "drupal/core": "*"
@@ -2293,12 +2283,15 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.0-alpha5",
-                    "datestamp": "1540513084",
+                    "version": "8.x-3.0-alpha4",
+                    "datestamp": "1525044484",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Add core/drupal as dependency to better_exposed_filters asset libraries - https://www.drupal.org/node/2902742": "https://www.drupal.org/files/issues/add_core_drupal_as-2902742-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2306,10 +2299,6 @@
                 "GPL-2.0-or-later"
             ],
             "authors": [
-                {
-                    "name": "chr.fritsch",
-                    "homepage": "https://www.drupal.org/user/2103716"
-                },
                 {
                     "name": "jkopel",
                     "homepage": "https://www.drupal.org/user/66207"
@@ -2545,14 +2534,6 @@
                 "GPL-2.0+"
             ],
             "authors": [
-                {
-                    "name": "dpi",
-                    "homepage": "https://www.drupal.org/user/81431"
-                },
-                {
-                    "name": "jibran",
-                    "homepage": "https://www.drupal.org/user/1198144"
-                },
                 {
                     "name": "kim.pepper",
                     "homepage": "https://www.drupal.org/user/370574"
@@ -3151,14 +3132,14 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
+                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch",
                     "Contextual links should not be added inside another link - https://www.drupal.org/node/2898875": "https://www.drupal.org/files/issues/2018-03-16/contextual_links_should-2898875-6.patch",
                     "No validation on text length for menu description when editing node - https://www.drupal.org/node/2852665#comment-12650295": "https://www.drupal.org/files/issues/2018-06-13/fatal_error_remove_menu_add_with_tests.patch",
                     "active-link.js throws JS error if query string parameter contains a single quote - https://www.drupal.org/node/2902769": "https://www.drupal.org/files/issues/active_link_js_throws-2902769-5_0.patch",
                     "getUuid() in class MenuLinkContent not returning any value - https://www.drupal.org/node/2737741": "https://www.drupal.org/files/issues/drupal-menulinkcontent-getuuid-return-missing-2737741-2.patch",
                     "RSS view with fields give wrong URL from path field - https://www.drupal.org/node/2673980#comment-12180229": "https://www.drupal.org/files/issues/rss_view_with_fields-2673980-28.patch",
                     "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch",
-                    "DateTimeIso8601::getDateTime() does not specify the storage timezone when constructing DrupalDateTime object - https://www.drupal.org/project/drupal/issues/3002164": "https://www.drupal.org/files/issues/2018-09-25/3002164-7.patch",
-                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
+                    "DateTimeIso8601::getDateTime() does not specify the storage timezone when constructing DrupalDateTime object - https://www.drupal.org/project/drupal/issues/3002164": "https://www.drupal.org/files/issues/2018-09-25/3002164-7.patch"
                 }
             },
             "autoload": {
@@ -3894,7 +3875,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.5",
-                    "datestamp": "1539588781",
+                    "datestamp": "1527243208",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4411,7 +4392,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.23",
-                    "datestamp": "1542081972",
+                    "datestamp": "1532084496",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5419,7 +5400,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.2",
-                    "datestamp": "1539682684",
+                    "datestamp": "1525419785",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5438,10 +5419,6 @@
                 {
                     "name": "Dave Reid",
                     "homepage": "https://www.drupal.org/user/53892"
-                },
-                {
-                    "name": "pifagor",
-                    "homepage": "https://www.drupal.org/user/2375692"
                 }
             ],
             "description": "Allows users to redirect from old URLs to new URLs.",
@@ -5477,7 +5454,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0",
-                    "datestamp": "1541600580",
+                    "datestamp": "1527699484",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5792,7 +5769,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.10",
-                    "datestamp": "1542564480",
+                    "datestamp": "1537175280",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5854,7 +5831,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0",
-                    "datestamp": "1539600180",
+                    "datestamp": "1534247471",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5985,7 +5962,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.12",
-                    "datestamp": "1542505221",
+                    "datestamp": "1523203180",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6358,7 +6335,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0",
-                    "datestamp": "1540857780",
+                    "datestamp": "1528597684",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6668,9 +6645,6 @@
                     "services": {
                         "drush.services.yml": "^9"
                     }
-                },
-                "patches_applied": {
-                    "Error processing Webform Tokens, sending leaked metadata - https://www.drupal.org/project/webform/issues/3010727#comment-12838354": "https://www.drupal.org/files/issues/2018-11-01/3010727-4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
