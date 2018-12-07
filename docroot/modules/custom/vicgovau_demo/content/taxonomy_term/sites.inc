@@ -7,6 +7,7 @@
 
 use Drupal\taxonomy\Entity\Term;
 use Drupal\vicgovau_demo\VicgovauDemoRepository;
+use Drupal\vicgovau_demo\VicgovauDemoHelper;
 
 /**
  * Implements hook_vicgovau_demo_create_ENTITY_TYPE_BUNDLE().
@@ -67,6 +68,9 @@ function vicgovau_demo_create_taxonomy_term_sites() {
       ],
       'field_acknowledgement_to_country' => [
         ['value' => "The Victorian Government acknowledges Aboriginal and Torres Strait Islander people as the Traditional Custodians of the land and acknowledges and pays respect to their Elders, past and present."],
+      ],
+      ['field_site_show_exit_site'] => [
+        'value' => VicgovauDemoHelper::randomBool(),
       ],
     ]);
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0d34ee14367fd0bf81733c17aa447cae",
+    "content-hash": "329fd7b2cddaf695beba63945ec7553f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1537,12 +1537,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "99fa6374530195809daf3851b2e505b374979637"
+                "reference": "63bb7b6d6021f6a90eff1a60c0200df7cb43bff4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/99fa6374530195809daf3851b2e505b374979637",
-                "reference": "99fa6374530195809daf3851b2e505b374979637",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/63bb7b6d6021f6a90eff1a60c0200df7cb43bff4",
+                "reference": "63bb7b6d6021f6a90eff1a60c0200df7cb43bff4",
                 "shasum": ""
             },
             "require": {
@@ -1573,7 +1573,7 @@
                 "drupal/media_entity_audio": "^2.0@alpha",
                 "drupal/metatag": "^1.5",
                 "drupal/override_node_options": "^2.3",
-                "drupal/paragraphs": "1.2",
+                "drupal/paragraphs": "^1.2",
                 "drupal/password_policy": "dev-3.x",
                 "drupal/password_strength": "^2.0",
                 "drupal/pathauto": "^1.2",
@@ -1658,7 +1658,7 @@
                 "source": "https://github.com/dpc-sdp/tide_core/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_core/issues"
             },
-            "time": "2018-10-11T01:24:46+00:00"
+            "time": "2018-11-30T04:55:59+00:00"
         },
         {
             "name": "dpc-sdp/tide_event",
@@ -1715,12 +1715,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_landing_page.git",
-                "reference": "f17f4e60d9396ac72f076e050c399f1f3193c3ba"
+                "reference": "a6de3f097192271cf145dd2e45b9ac986933c1c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/f17f4e60d9396ac72f076e050c399f1f3193c3ba",
-                "reference": "f17f4e60d9396ac72f076e050c399f1f3193c3ba",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/a6de3f097192271cf145dd2e45b9ac986933c1c9",
+                "reference": "a6de3f097192271cf145dd2e45b9ac986933c1c9",
                 "shasum": ""
             },
             "require": {
@@ -1728,7 +1728,7 @@
                 "dpc-sdp/tide_event": "@dev",
                 "dpc-sdp/tide_media": "@dev",
                 "drupal/maxlength": "^1.0@beta",
-                "drupal/paragraphs": "1.2",
+                "drupal/paragraphs": "^1.2",
                 "drupal/smart_trim": "^1.1"
             },
             "suggest": {
@@ -1745,7 +1745,7 @@
                 "source": "https://github.com/dpc-sdp/tide_landing_page/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_landing_page/issues"
             },
-            "time": "2018-10-10T23:19:43+00:00"
+            "time": "2018-11-30T05:05:42+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
@@ -1753,20 +1753,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_media.git",
-                "reference": "7c0bef491845ea8b8a2fdd6815492a5a3b7dae8f"
+                "reference": "1b0aad6767353e73d528eb9383a35b48f4165829"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_media/zipball/7c0bef491845ea8b8a2fdd6815492a5a3b7dae8f",
-                "reference": "7c0bef491845ea8b8a2fdd6815492a5a3b7dae8f",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_media/zipball/1b0aad6767353e73d528eb9383a35b48f4165829",
+                "reference": "1b0aad6767353e73d528eb9383a35b48f4165829",
                 "shasum": ""
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
                 "drupal/embed": "^1.0",
-                "drupal/entity_browser": "^1.4",
-                "drupal/entity_embed": "^1.0@beta",
-                "drupal/field_group": "^3.0-beta1",
                 "drupal/inline_entity_form": "^1.0@beta",
                 "drupal/svg_image": "^1.8",
                 "drupal/video_embed_field": "^2.0"
@@ -1789,7 +1786,7 @@
                 "source": "https://github.com/dpc-sdp/tide_media/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_media/issues"
             },
-            "time": "2018-09-17T04:08:21+00:00"
+            "time": "2018-11-27T03:12:01+00:00"
         },
         {
             "name": "dpc-sdp/tide_monsido",
@@ -1937,12 +1934,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_site.git",
-                "reference": "bd49b07aa21fa15fbe8e34f2d6d615afe257099e"
+                "reference": "1a8c3f74474553dc8142f2f8496f2cd27e2eca3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_site/zipball/bd49b07aa21fa15fbe8e34f2d6d615afe257099e",
-                "reference": "bd49b07aa21fa15fbe8e34f2d6d615afe257099e",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_site/zipball/1a8c3f74474553dc8142f2f8496f2cd27e2eca3f",
+                "reference": "1a8c3f74474553dc8142f2f8496f2cd27e2eca3f",
                 "shasum": ""
             },
             "require": {
@@ -1964,7 +1961,7 @@
                 "source": "https://github.com/dpc-sdp/tide_site/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_site/issues"
             },
-            "time": "2018-10-05T00:21:01+00:00"
+            "time": "2018-11-30T03:51:33+00:00"
         },
         {
             "name": "dpc-sdp/tide_test",
@@ -3290,6 +3287,9 @@
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Do not reimport existing entities - https://www.drupal.org/project/default_content/issues/2698425": "https://www.drupal.org/files/issues/2018-06-05/default_content-dont-reimport-existing-entities-2698425-102.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -4485,6 +4485,59 @@
             }
         },
         {
+            "name": "drupal/lagoon_logs",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/lagoon_logs",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/lagoon_logs-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "7d5a3c306c4bd9106c9011d82e2e4d178dec6ff9"
+            },
+            "require": {
+                "drupal/core": "~8.0",
+                "monolog/monolog": "~1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1542589980",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Blaize Kaye",
+                    "homepage": "https://www.drupal.org/u/bomoko",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "bryangruneberg",
+                    "homepage": "https://www.drupal.org/user/2600012"
+                }
+            ],
+            "description": "Lagoon_logs D8 is a convenience wrapper for monolog.",
+            "homepage": "https://www.drupal.org/project/lagoon_logs",
+            "support": {
+                "source": "http://cgit.drupalcode.org/lagoon_logs"
+            }
+        },
+        {
             "name": "drupal/linkit",
             "version": "5.0.0-beta7",
             "source": {
@@ -4957,17 +5010,17 @@
         },
         {
             "name": "drupal/paragraphs",
-            "version": "1.2.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/paragraphs",
-                "reference": "8.x-1.2"
+                "reference": "8.x-1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "6efc9d4351d4b21a55e7a6428c78495aaca662ef"
+                "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "85ba97dd1c602d33fc5904b6e1df5973312afa94"
             },
             "require": {
                 "drupal/core": "~8",
@@ -4975,12 +5028,19 @@
             },
             "require-dev": {
                 "drupal/block_field": "~1.0",
+                "drupal/ctools": "3.x-dev",
                 "drupal/diff": "~1.0",
+                "drupal/entity_browser": "1.x-dev",
+                "drupal/entity_usage": "2.x-dev",
                 "drupal/field_group": "~1.0",
                 "drupal/inline_entity_form": "~1.0",
+                "drupal/paragraphs-paragraphs_library": "*",
                 "drupal/replicate": "~1.0",
-                "drupal/search_api": "*",
+                "drupal/search_api": "~1.0",
                 "drupal/search_api_db": "*"
+            },
+            "suggest": {
+                "drupal/entity_browser": "Recommended for an improved user experience when using the Paragraphs library module"
             },
             "type": "drupal-module",
             "extra": {
@@ -4988,8 +5048,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1527502684",
+                    "version": "8.x-1.5",
+                    "datestamp": "1541009695",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7747,6 +7807,84 @@
                 "html"
             ],
             "time": "2016-07-25T17:07:32+00:00"
+        },
+        {
+            "name": "monolog/monolog",
+            "version": "1.24.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266",
+                "reference": "bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "psr/log": "~1.0"
+            },
+            "provide": {
+                "psr/log-implementation": "1.0.0"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "^2.4.9 || ^3.0",
+                "doctrine/couchdb": "~1.0@dev",
+                "graylog2/gelf-php": "~1.0",
+                "jakub-onderka/php-parallel-lint": "0.9",
+                "php-amqplib/php-amqplib": "~2.4",
+                "php-console/php-console": "^3.1.3",
+                "phpunit/phpunit": "~4.5",
+                "phpunit/phpunit-mock-objects": "2.3.0",
+                "ruflin/elastica": ">=0.90 <3.0",
+                "sentry/sentry": "^0.13",
+                "swiftmailer/swiftmailer": "^5.3|^6.0"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+                "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+                "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+                "ext-mongo": "Allow sending log messages to a MongoDB server",
+                "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
+                "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
+                "php-console/php-console": "Allow sending log messages to Google Chrome",
+                "rollbar/rollbar": "Allow sending log messages to Rollbar",
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
+                "sentry/sentry": "Allow sending log messages to a Sentry server"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Monolog\\": "src/Monolog"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+            "homepage": "http://github.com/Seldaek/monolog",
+            "keywords": [
+                "log",
+                "logging",
+                "psr-3"
+            ],
+            "time": "2018-11-05T09:00:11+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",

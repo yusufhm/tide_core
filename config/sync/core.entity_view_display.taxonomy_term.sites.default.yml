@@ -11,6 +11,7 @@ dependencies:
     - field.field.taxonomy_term.sites.field_site_homepage
     - field.field.taxonomy_term.sites.field_site_logo
     - field.field.taxonomy_term.sites.field_site_main_menu
+    - field.field.taxonomy_term.sites.field_site_show_exit_site
     - field.field.taxonomy_term.sites.field_site_slogan
     - taxonomy.vocabulary.sites
   module:
@@ -90,6 +91,16 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_site_show_exit_site:
+    weight: 9
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_site_slogan:
     weight: 0

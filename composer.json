@@ -18,6 +18,7 @@
         "drupal/default_content": "^1.0@alpha",
         "drupal/devel": "^1.2",
         "drupal/environment_indicator": "^3.2",
+        "drupal/lagoon_logs": "^1.0",
         "drupal/shield": "^1.2",
         "drupal/stage_file_proxy": "^1.0@alpha",
         "drush/drush": "^8.1",
@@ -332,6 +333,10 @@
             "docroot/sites/default/default.settings.local.php",
             "docroot/sites/default/files"
         ],
-        "patches": {}
+        "patches": {
+            "drupal/default_content" :  {
+                "Do not reimport existing entities - https://www.drupal.org/project/default_content/issues/2698425" : "https://www.drupal.org/files/issues/2018-06-05/default_content-dont-reimport-existing-entities-2698425-102.patch"
+            }
+        }
     }
 }
