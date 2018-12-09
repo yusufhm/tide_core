@@ -163,6 +163,13 @@ resourceFields:
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
+  field_paragraph_date_range:
+    fieldName: field_paragraph_date_range
+    publicName: field_paragraph_date_range
+    enhancer:
+      id: date_time_from_string
+      settings:
+        dateTimeFormat: 'Y-m-d\TH:i:sP'
   field_paragraph_location:
     fieldName: field_paragraph_location
     publicName: field_paragraph_location

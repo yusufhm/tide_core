@@ -52,9 +52,14 @@ function vicgovau_demo_create_node_grant() {
       'field_node_department' => [
         ['target_id' => VicgovauDemoHelper::randomDepartment()],
       ],
-      'field_node_overview' => [
-        'value' => VicgovauDemoHelper::randomPlainParagraph(),
-        'format' => 'rich_text',
+      'field_overview_title' => [
+        'value' => VicgovauDemoHelper::randomSentence(),
+      ],
+      'field_description' => [
+        'value' => VicgovauDemoHelper::randomSentence(),
+      ],
+      ['field_call_to_action'] => [
+        VicgovauDemoHelper::randomLinkFieldValue(),
       ],
       'field_featured_image' => [
         ['target_id' => VicgovauDemoHelper::randomImage()],
@@ -154,10 +159,27 @@ function vicgovau_demo_create_node_grant() {
       'field_timeline' => [],
     ];
 
-    $timeline_content = VicgovauDemoHelper::randomTimelineContent();
+    $timeline = Paragraph::create([
+      'type' => 'timeline',
+      'field_paragraph_title' => VicgovauDemoHelper::randomSentence(3, 5),
+      'field_paragraph_summary' => VicgovauDemoHelper::randomSentence(10, 20),
+      'field_paragraph_link' => [VicgovauDemoHelper::randomLinkFieldValue()],
+      'field_paragraph_cta_text' => VicgovauDemoHelper::randomSentence(3, 5),
+      'field_paragraph_department_name' => VicgovauDemoHelper::randomSentence(3, 5),
+      'field_paragraph_date_range' => [
+        [
+          'value' => VicgovauDemoHelper::randomDate(),
+          'end_value' => VicgovauDemoHelper::randomDate(),
+        ],
+      ],
+    ]);
+    $timeline->save();
+    $repository = VicgovauDemoRepository::getInstance();
+    $repository->trackEntity($timeline);
+
     $timelines_data['field_timeline'][] = [
-      'target_id' => $timeline_content->id(),
-      'target_revision_id' => $timeline_content->getRevisionId(),
+      'target_id' => $timeline->id(),
+      'target_revision_id' => $timeline->getRevisionId(),
     ];
 
     // Create host paragraph.

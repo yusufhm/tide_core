@@ -5,9 +5,9 @@ dependencies:
   config:
     - field.storage.node.field_node_timeline
     - node.type.grant
+    - paragraphs.paragraphs_type.timelines
   module:
     - entity_reference_revisions
-    - tide_core
 id: node.grant.field_node_timeline
 field_name: field_node_timeline
 entity_type: node
@@ -123,5 +123,8 @@ settings:
         enabled: false
       social_link:
         weight: 66
+        enabled: false
+      timeline:
+        weight: 67
         enabled: false
 field_type: entity_reference_revisions
