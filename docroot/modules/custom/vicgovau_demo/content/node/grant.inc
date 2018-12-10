@@ -58,9 +58,7 @@ function vicgovau_demo_create_node_grant() {
       'field_description' => [
         'value' => VicgovauDemoHelper::randomSentence(),
       ],
-      ['field_call_to_action'] => [
-        VicgovauDemoHelper::randomLinkFieldValue(),
-      ],
+      'field_call_to_action' => [VicgovauDemoHelper::randomLinkFieldValue()],
       'field_featured_image' => [
         ['target_id' => VicgovauDemoHelper::randomImage()],
       ],
@@ -129,27 +127,6 @@ function vicgovau_demo_create_node_grant() {
     $node_data['field_node_guidelines'] = [
       'target_id' => $accordion->id(),
       'target_revision_id' => $accordion->getRevisionId(),
-    ];
-
-    // Add Grants Overview.
-    $grant_overview_data = [
-      'type' => 'grants_overview',
-      'field_paragraph_title' => VicgovauDemoHelper::randomSentence(3, 5),
-      'field_paragraph_summary' => VicgovauDemoHelper::randomSentence(10, 20),
-      'field_paragraph_cta' => [VicgovauDemoHelper::randomCtaLinkFieldValue()],
-      'field_paragraph_media' => [
-        ['target_id' => VicgovauDemoHelper::randomImage()],
-      ],
-    ];
-
-    $grant_overview = Paragraph::create($grant_overview_data);
-    $grant_overview->save();
-    $repository->trackEntity($grant_overview);
-    $node_data['field_node_overview'] = [
-      [
-        'target_id' => $grant_overview->id(),
-        'target_revision_id' => $grant_overview->getRevisionId(),
-      ],
     ];
 
     // Add Timelines.
