@@ -1893,17 +1893,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_search.git",
-                "reference": "b6a6e24394afc8f902acade104c83bb313c3d7b6"
+                "reference": "0c1b07742a4c75865de4d5167ba2b353a3071113"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_search/zipball/b6a6e24394afc8f902acade104c83bb313c3d7b6",
-                "reference": "b6a6e24394afc8f902acade104c83bb313c3d7b6",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_search/zipball/0c1b07742a4c75865de4d5167ba2b353a3071113",
+                "reference": "0c1b07742a4c75865de4d5167ba2b353a3071113",
                 "shasum": ""
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
-                "drupal/elasticsearch_connector": "^5.0-alpha2",
+                "drupal/elasticsearch_connector": "^5.0-alpha3",
                 "drupal/search_api": "^1.8"
             },
             "require-dev": {
@@ -1915,7 +1915,8 @@
                 "composer-exit-on-patch-failure": true,
                 "patches": {
                     "drupal/elasticsearch_connector": {
-                        "Failed to parse node status - https://www.drupal.org/project/elasticsearch_connector/issues/2978005": "https://www.drupal.org/files/issues/2018-06-07/elasticsearch_connector-convert_boolean_fields-2978005-2.patch"
+                        "Failed to parse node status - https://www.drupal.org/project/elasticsearch_connector/issues/2978005": "https://www.drupal.org/files/issues/2018-06-07/elasticsearch_connector-convert_boolean_fields-2978005-2.patch",
+                        "Allow index name flexibility - https://www.drupal.org/project/elasticsearch_connector/issues/3010955": "https://www.drupal.org/files/issues/2018-12-10/elasticsearch_connector-index-name-3010955-6-D8.patch"
                     }
                 }
             },
@@ -1927,7 +1928,7 @@
                 "source": "https://github.com/dpc-sdp/tide_search/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_search/issues"
             },
-            "time": "2018-09-03T07:44:33+00:00"
+            "time": "2018-12-11T02:31:07+00:00"
         },
         {
             "name": "dpc-sdp/tide_site",
@@ -2166,7 +2167,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.24",
-                    "datestamp": "1527523080",
+                    "datestamp": "1542915180",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3568,17 +3569,17 @@
         },
         {
             "name": "drupal/elasticsearch_connector",
-            "version": "5.0.0-alpha2",
+            "version": "5.0.0-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/elasticsearch_connector",
-                "reference": "8.x-5.0-alpha2"
+                "reference": "8.x-5.0-alpha3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/elasticsearch_connector-8.x-5.0-alpha2.zip",
-                "reference": "8.x-5.0-alpha2",
-                "shasum": "931b180ad6abcb504bf3bc561637974fdaf694af"
+                "url": "https://ftp.drupal.org/files/projects/elasticsearch_connector-8.x-5.0-alpha3.zip",
+                "reference": "8.x-5.0-alpha3",
+                "shasum": "51e4faaa3950fdd1fdb16f703aa89dd252ef7453"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -3600,7 +3601,7 @@
                     "dev-5.x": "5.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-5.0-alpha2",
+                    "version": "8.x-5.0-alpha3",
                     "datestamp": "1538850780",
                     "security-coverage": {
                         "status": "not-covered",
@@ -3608,7 +3609,8 @@
                     }
                 },
                 "patches_applied": {
-                    "Failed to parse node status - https://www.drupal.org/project/elasticsearch_connector/issues/2978005": "https://www.drupal.org/files/issues/2018-06-07/elasticsearch_connector-convert_boolean_fields-2978005-2.patch"
+                    "Failed to parse node status - https://www.drupal.org/project/elasticsearch_connector/issues/2978005": "https://www.drupal.org/files/issues/2018-06-07/elasticsearch_connector-convert_boolean_fields-2978005-2.patch",
+                    "Allow index name flexibility - https://www.drupal.org/project/elasticsearch_connector/issues/3010955": "https://www.drupal.org/files/issues/2018-12-10/elasticsearch_connector-index-name-3010955-6-D8.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3851,8 +3853,16 @@
                     "homepage": "https://www.drupal.org/user/3260690"
                 },
                 {
+                    "name": "Wim Leers",
+                    "homepage": "https://www.drupal.org/user/99777"
+                },
+                {
                     "name": "cs_shadow",
                     "homepage": "https://www.drupal.org/user/2828287"
+                },
+                {
+                    "name": "phenaproxima",
+                    "homepage": "https://www.drupal.org/user/205645"
                 },
                 {
                     "name": "slashrsm",
@@ -6756,7 +6766,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.0-beta1",
-                    "datestamp": "1499440442",
+                    "datestamp": "1543058580",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -6828,7 +6838,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.0-beta1",
-                    "datestamp": "1499440442",
+                    "datestamp": "1543058580",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
