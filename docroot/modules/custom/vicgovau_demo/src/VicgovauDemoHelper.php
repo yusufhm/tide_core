@@ -856,6 +856,17 @@ class VicgovauDemoHelper {
           }
           break;
 
+        case 'news_listing':
+          $component_data += [
+            'field_paragraph_title' => [['value' => static::randomSentence()]],
+            'field_paragraph_topic' => [],
+          ];
+          // Add 6 random topics.
+          for ($x = 0; $x <= 6; $x++) {
+            $component_data['field_paragraph_topic'][] = ['target_id' => static::randomTopic()];
+          }
+          break;
+
         case 'card_event_auto':
           $component_data += [
             'field_paragraph_cta_text' => [['value' => static::randomSentence(2, 5)]],
