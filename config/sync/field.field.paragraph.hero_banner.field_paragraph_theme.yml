@@ -1,0 +1,21 @@
+uuid: 746d7e53-53b2-446a-8d44-bb9b01f0aa19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_theme
+    - paragraphs.paragraphs_type.hero_banner
+  module:
+    - options
+id: paragraph.hero_banner.field_paragraph_theme
+field_name: field_paragraph_theme
+entity_type: paragraph
+bundle: hero_banner
+label: Theme
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

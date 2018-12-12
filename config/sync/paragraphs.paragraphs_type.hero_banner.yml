@@ -1,0 +1,9 @@
+uuid: 839cf295-4341-40b2-933d-8fdd495ba565
+langcode: en
+status: true
+dependencies: {  }
+id: hero_banner
+label: 'Hero Banner'
+icon_uuid: null
+description: 'A call to action hero banner to provoke an immediate response from the citizen.'
+behavior_plugins: {  }

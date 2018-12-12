@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.landing_page.field_landing_page_component
     - field.field.node.landing_page.field_landing_page_contact
     - field.field.node.landing_page.field_landing_page_header
+    - field.field.node.landing_page.field_landing_page_hero_banner
     - field.field.node.landing_page.field_landing_page_hero_image
     - field.field.node.landing_page.field_landing_page_hero_logo
     - field.field.node.landing_page.field_landing_page_hero_theme
@@ -121,6 +122,15 @@ content:
   field_landing_page_header:
     type: entity_reference_revisions_entity_view
     weight: 23
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_landing_page_hero_banner:
+    type: entity_reference_revisions_entity_view
+    weight: 24
     label: above
     settings:
       view_mode: default
