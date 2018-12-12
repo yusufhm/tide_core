@@ -211,6 +211,18 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Select a random Alert Type.
+   *
+   * @return int
+   *   The audience tid.
+   */
+  public static function randomAlertType() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $topics = $repository->getDemoEntities('taxonomy_term', 'alert_type');
+    return count($topics) ? array_rand($topics) : 0;
+  }
+
+  /**
    * Select a random site from randomSiteSections().
    *
    * @param array $site_section_ids

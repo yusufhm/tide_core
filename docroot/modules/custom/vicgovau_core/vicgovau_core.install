@@ -541,3 +541,28 @@ function vicgovau_core_update_8015() {
     $fields['field_secondary_campaign_temp']->delete();
   }
 }
+
+/**
+ * SDPA-309: Add Alert Types Taxonomy terms.
+ */
+function vicgovau_core_update_8016() {
+  $alert_types = [
+    'Emergency',
+    'Fire',
+    'Flood',
+    'Medical',
+    'Lightening',
+    'Pollution',
+    'Heat wave',
+    'Traffic',
+  ];
+
+  foreach ($alert_types as $type) {
+    Term::create([
+      'parent' => [],
+      'name' => $type,
+      'vid' => 'alert_type',
+    ]
+    )->save();
+  }
+}

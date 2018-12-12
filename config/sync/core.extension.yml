@@ -95,6 +95,7 @@ module:
   taxonomy: 0
   telephone: 0
   text: 0
+  tide_alert: 0
   tide_api: 0
   tide_core: 0
   tide_event: 0

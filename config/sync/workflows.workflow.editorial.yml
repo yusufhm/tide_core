@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.alert
     - node.type.event
     - node.type.grant
     - node.type.landing_page
@@ -85,6 +86,7 @@ type_settings:
       weight: -7
   entity_types:
     node:
+      - alert
       - event
       - grant
       - landing_page
