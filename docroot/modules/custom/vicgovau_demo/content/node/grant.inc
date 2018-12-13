@@ -217,6 +217,7 @@ function vicgovau_demo_create_node_grant() {
       'field_landing_page_show_contact',
       'field_node_on_going',
       'field_show_social_sharing',
+      'field_show_content_rating',
     ];
 
     foreach ($boolean_fields as $boolean_field) {
