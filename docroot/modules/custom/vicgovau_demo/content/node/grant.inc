@@ -71,8 +71,11 @@ function vicgovau_demo_create_node_grant() {
           'end_value' => VicgovauDemoHelper::randomDate(),
         ],
       ],
-      'field_node_fundinglevel' => [
-        'value' => mt_rand(10000, 16000),
+      'field_node_funding_level' => [
+        [
+          'from' => mt_rand(10000, 16000),
+          'to' => mt_rand(16000, 32000),
+        ],
       ],
     ];
 

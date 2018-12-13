@@ -1,16 +1,16 @@
+uuid: a1e5c947-4b50-4981-a388-20e32d4e33f2
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_node_fundinglevel
-field_name: field_node_fundinglevel
+    - range
+id: node.field_node_funding_level
+field_name: field_node_funding_level
 entity_type: node
-type: integer
-settings:
-  unsigned: false
-  size: normal
-module: core
+type: range_integer
+settings: {  }
+module: range
 locked: false
 cardinality: 1
 translatable: true

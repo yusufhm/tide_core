@@ -19,7 +19,7 @@ dependencies:
     - field.field.node.grant.field_node_department
     - field.field.node.grant.field_node_documents
     - field.field.node.grant.field_node_email
-    - field.field.node.grant.field_node_fundinglevel
+    - field.field.node.grant.field_node_funding_level
     - field.field.node.grant.field_node_guidelines
     - field.field.node.grant.field_node_link
     - field.field.node.grant.field_node_on_going
@@ -46,6 +46,7 @@ dependencies:
     - maxlength
     - paragraphs
     - path
+    - range
     - telephone
 third_party_settings:
   field_group:
@@ -114,8 +115,10 @@ third_party_settings:
     group_grant_overview:
       children:
         - field_overview_title
-        - field_node_fundinglevel
+        - field_node_funding_level
         - field_audience
+        - field_node_on_going
+        - field_node_dates
         - field_description
         - field_call_to_action
       parent_name: group_grant_details
@@ -383,12 +386,11 @@ content:
     third_party_settings: {  }
     type: email_default
     region: content
-  field_node_fundinglevel:
+  field_node_funding_level:
     weight: 15
-    settings:
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: number
+    type: range
     region: content
   field_node_guidelines:
     type: paragraphs
@@ -599,4 +601,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: { }
+hidden:
+  field_landing_page_nav_title: true
+  field_news_intro_text: true

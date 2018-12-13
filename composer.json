@@ -20,6 +20,7 @@
         "drupal/devel": "^1.2",
         "drupal/environment_indicator": "^3.2",
         "drupal/lagoon_logs": "^1.0",
+        "drupal/range": "^1.1",
         "drupal/shield": "^1.2",
         "drupal/stage_file_proxy": "^1.0@alpha",
         "drush/drush": "^8.1",
