@@ -71,8 +71,11 @@ function vicgovau_demo_create_node_grant() {
           'end_value' => VicgovauDemoHelper::randomDate(),
         ],
       ],
-      'field_node_fundinglevel' => [
-        'value' => mt_rand(10000, 16000),
+      'field_node_funding_level' => [
+        [
+          'from' => mt_rand(10000, 16000),
+          'to' => mt_rand(16000, 32000),
+        ],
       ],
     ];
 
@@ -217,6 +220,7 @@ function vicgovau_demo_create_node_grant() {
       'field_landing_page_show_contact',
       'field_node_on_going',
       'field_show_social_sharing',
+      'field_show_content_rating',
     ];
 
     foreach ($boolean_fields as $boolean_field) {
