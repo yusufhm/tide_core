@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3215812f2ce73ed4693015c8d79916e5",
+    "content-hash": "ca8a3a6a6b0029143a04bd06953390d9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1713,12 +1713,13 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_grant",
-                "reference": "f607d2922753eb922432b97ed1333bc0a35c022f",
+                "reference": "fa43690f272e0d243cb6dab20e1221c9c8ad0296",
                 "shasum": null
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
-                "dpc-sdp/tide_media": "@dev"
+                "dpc-sdp/tide_media": "@dev",
+                "drupal/range": "^1.1"
             },
             "type": "drupal-module",
             "license": [
