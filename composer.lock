@@ -1683,12 +1683,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_event.git",
-                "reference": "8b02fa299f522797edd4dac4aa4f2298da74fb6b"
+                "reference": "b13b8524458e0489cf1cdb585e21d4a59d7f70d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/8b02fa299f522797edd4dac4aa4f2298da74fb6b",
-                "reference": "8b02fa299f522797edd4dac4aa4f2298da74fb6b",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/b13b8524458e0489cf1cdb585e21d4a59d7f70d4",
+                "reference": "b13b8524458e0489cf1cdb585e21d4a59d7f70d4",
                 "shasum": ""
             },
             "require": {
@@ -1705,7 +1705,7 @@
                 "source": "https://github.com/dpc-sdp/tide_event/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_event/issues"
             },
-            "time": "2018-10-21T23:29:57+00:00"
+            "time": "2018-12-17T02:01:10+00:00"
         },
         {
             "name": "dpc-sdp/tide_grant",
@@ -1913,12 +1913,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_search.git",
-                "reference": "0c1b07742a4c75865de4d5167ba2b353a3071113"
+                "reference": "1b4a9802b27990b9d3072a224e365b290e3cc738"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_search/zipball/0c1b07742a4c75865de4d5167ba2b353a3071113",
-                "reference": "0c1b07742a4c75865de4d5167ba2b353a3071113",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_search/zipball/1b4a9802b27990b9d3072a224e365b290e3cc738",
+                "reference": "1b4a9802b27990b9d3072a224e365b290e3cc738",
                 "shasum": ""
             },
             "require": {
@@ -1948,7 +1948,7 @@
                 "source": "https://github.com/dpc-sdp/tide_search/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_search/issues"
             },
-            "time": "2018-12-11T02:31:07+00:00"
+            "time": "2018-12-17T02:01:37+00:00"
         },
         {
             "name": "dpc-sdp/tide_site",
@@ -5842,17 +5842,17 @@
         },
         {
             "name": "drupal/search_api",
-            "version": "1.10.0",
+            "version": "1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/search_api",
-                "reference": "8.x-1.10"
+                "reference": "8.x-1.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.10.zip",
-                "reference": "8.x-1.10",
-                "shasum": "1c1d038310a079f8e8154545f743ff7a506c4b8e"
+                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.11.zip",
+                "reference": "8.x-1.11",
+                "shasum": "d2bf92afa2ee760977dde1fadcb5bb64a4c2d7c1"
             },
             "require": {
                 "drupal/core": "^8.5"
@@ -5872,7 +5872,7 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.10",
+                    "version": "8.x-1.11",
                     "datestamp": "1542564480",
                     "security-coverage": {
                         "status": "covered",
@@ -14381,6 +14381,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "dpc-sdp/tide": 20,
         "drupal/coffee": 10,
         "drupal/default_content": 15,
         "drupal/stage_file_proxy": 15,
