@@ -95,10 +95,6 @@ function vicgovau_demo_create_node_landing_page() {
     // Add Hero Banner.
     $hero_banner_data = [
       'type' => 'hero_banner',
-      'field_paragraph_title' => VicgovauDemoHelper::randomSentence(3, 5),
-      'field_paragraph_body' => [
-        'value' => VicgovauDemoHelper::randomPlainParagraph(),
-      ],
       'field_paragraph_cta' => [VicgovauDemoHelper::randomCtaLinkFieldValue()],
       'field_paragraph_freetext' => VicgovauDemoHelper::randomSentence(3, 5),
       'field_paragraph_link_text' => [VicgovauDemoHelper::randomCtaLinkFieldValue()],

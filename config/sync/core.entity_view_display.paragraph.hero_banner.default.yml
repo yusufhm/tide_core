@@ -4,17 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.hero_banner.field_paragraph_background_image
-    - field.field.paragraph.hero_banner.field_paragraph_body
     - field.field.paragraph.hero_banner.field_paragraph_cta
     - field.field.paragraph.hero_banner.field_paragraph_freetext
     - field.field.paragraph.hero_banner.field_paragraph_link_text
     - field.field.paragraph.hero_banner.field_paragraph_theme
-    - field.field.paragraph.hero_banner.field_paragraph_title
     - paragraphs.paragraphs_type.hero_banner
   module:
     - link
     - options
-    - text
 id: paragraph.hero_banner.default
 targetEntityType: paragraph
 bundle: hero_banner
@@ -27,13 +24,6 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    region: content
-  field_paragraph_body:
-    weight: 1
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
     region: content
   field_paragraph_cta:
     weight: 2
@@ -73,13 +63,5 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_default
-    region: content
-  field_paragraph_title:
-    weight: 0
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
 hidden: {  }

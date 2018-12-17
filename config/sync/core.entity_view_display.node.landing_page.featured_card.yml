@@ -68,6 +68,8 @@ hidden:
   field_landing_page_c_secondary: true
   field_landing_page_component: true
   field_landing_page_contact: true
+  field_landing_page_header: true
+  field_landing_page_hero_banner: true
   field_landing_page_hero_image: true
   field_landing_page_hero_logo: true
   field_landing_page_hero_theme: true

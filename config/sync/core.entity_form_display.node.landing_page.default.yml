@@ -88,7 +88,6 @@ third_party_settings:
       children:
         - title
         - field_featured_image
-        - field_landing_page_hero_banner
         - field_landing_page_hero_image
         - field_landing_page_hero_logo
         - field_graphical_image
@@ -96,6 +95,7 @@ third_party_settings:
         - field_landing_page_hero_theme
         - field_landing_page_intro_text
         - field_landing_page_summary
+        - field_landing_page_hero_banner
         - field_landing_page_key_journeys
       parent_name: group_content
       weight: 1
@@ -113,7 +113,7 @@ third_party_settings:
       children:
         - field_landing_page_c_primary
       parent_name: group_content
-      weight: 3
+      weight: 4
       format_type: tab
       format_settings:
         label: 'Primary Campaign'
@@ -129,7 +129,7 @@ third_party_settings:
         - field_show_table_of_content
         - field_landing_page_component
       parent_name: group_content
-      weight: 4
+      weight: 5
       format_type: tab
       format_settings:
         label: 'Body Content'
@@ -144,7 +144,7 @@ third_party_settings:
       children:
         - field_landing_page_c_secondary
       parent_name: group_content
-      weight: 5
+      weight: 6
       format_type: tab
       format_settings:
         label: 'Secondary Campaign'
@@ -235,7 +235,7 @@ third_party_settings:
       children:
         - field_landing_page_header
       parent_name: group_content
-      weight: 2
+      weight: 3
       format_type: tab
       format_settings:
         label: 'Header Content'
@@ -260,7 +260,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_bottom_graphical_image:
-    weight: 6
+    weight: 5
     settings:
       entity_browser: tide_image_browser
       field_widget_display: rendered_entity
@@ -290,7 +290,7 @@ content:
     type: entity_browser_entity_reference
     region: content
   field_graphical_image:
-    weight: 5
+    weight: 4
     settings:
       entity_browser: tide_image_browser
       field_widget_display: rendered_entity
@@ -378,7 +378,7 @@ content:
     region: content
   field_landing_page_hero_banner:
     type: entity_reference_paragraphs
-    weight: 2
+    weight: 9
     settings:
       title: 'Hero Banner'
       title_plural: 'Hero Banners'
@@ -389,7 +389,7 @@ content:
     third_party_settings: {  }
     region: content
   field_landing_page_hero_image:
-    weight: 3
+    weight: 2
     settings:
       entity_browser: tide_image_browser
       field_widget_display: rendered_entity
@@ -404,7 +404,7 @@ content:
     type: entity_browser_entity_reference
     region: content
   field_landing_page_hero_logo:
-    weight: 4
+    weight: 3
     settings:
       entity_browser: tide_image_browser
       field_widget_display: rendered_entity
@@ -419,13 +419,13 @@ content:
     type: entity_browser_entity_reference
     region: content
   field_landing_page_hero_theme:
-    weight: 7
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_landing_page_intro_text:
-    weight: 8
+    weight: 7
     settings:
       rows: 5
       placeholder: ''
@@ -460,7 +460,7 @@ content:
     type: boolean_checkbox
     region: content
   field_landing_page_summary:
-    weight: 9
+    weight: 8
     settings:
       rows: 5
       placeholder: ''

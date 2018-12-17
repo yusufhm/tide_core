@@ -5,12 +5,10 @@ dependencies:
   config:
     - entity_browser.browser.tide_image_browser
     - field.field.paragraph.hero_banner.field_paragraph_background_image
-    - field.field.paragraph.hero_banner.field_paragraph_body
     - field.field.paragraph.hero_banner.field_paragraph_cta
     - field.field.paragraph.hero_banner.field_paragraph_freetext
     - field.field.paragraph.hero_banner.field_paragraph_link_text
     - field.field.paragraph.hero_banner.field_paragraph_theme
-    - field.field.paragraph.hero_banner.field_paragraph_title
     - paragraphs.paragraphs_type.hero_banner
   module:
     - entity_browser
@@ -34,14 +32,6 @@ content:
       field_widget_display_settings: {  }
     third_party_settings: {  }
     type: entity_browser_entity_reference
-    region: content
-  field_paragraph_body:
-    weight: 1
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
     region: content
   field_paragraph_cta:
     weight: 2
@@ -72,14 +62,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
-    region: content
-  field_paragraph_title:
-    weight: 0
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
 hidden:
   created: true
