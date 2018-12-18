@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf20e1a52d3c74843c9a00feeabaa5fc",
+    "content-hash": "cd5bc446baec8ee0d5163cbfaf660c63",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1556,12 +1556,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "63bb7b6d6021f6a90eff1a60c0200df7cb43bff4"
+                "reference": "31166f04eebba97392b7536c67261c4ca4db7016"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/63bb7b6d6021f6a90eff1a60c0200df7cb43bff4",
-                "reference": "63bb7b6d6021f6a90eff1a60c0200df7cb43bff4",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/31166f04eebba97392b7536c67261c4ca4db7016",
+                "reference": "31166f04eebba97392b7536c67261c4ca4db7016",
                 "shasum": ""
             },
             "require": {
@@ -1571,6 +1571,7 @@
                 "drupal/allowed_formats": "^1.1",
                 "drupal/better_exposed_filters": "^3.0@alpha",
                 "drupal/ckeditor_iframe": "^2.0@beta",
+                "drupal/clamav": "^1.0",
                 "drupal/config_ignore": "^2.1",
                 "drupal/config_split": "^1.3",
                 "drupal/config_update": "^1.4",
@@ -1675,7 +1676,7 @@
                 "source": "https://github.com/dpc-sdp/tide_core/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_core/issues"
             },
-            "time": "2018-11-30T04:55:59+00:00"
+            "time": "2018-12-18T02:29:40+00:00"
         },
         {
             "name": "dpc-sdp/tide_event",
@@ -2405,6 +2406,65 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/ckeditor_iframe",
                 "issues": "http://drupal.org/project/issues/ckeditor_iframe"
+            }
+        },
+        {
+            "name": "drupal/clamav",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/clamav",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/clamav-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "242a5ec3c08297bbe80c5654a026b280d2458272"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1537453081",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "James Andres",
+                    "homepage": "https://www.drupal.org/user/33827"
+                },
+                {
+                    "name": "adammalone",
+                    "homepage": "https://www.drupal.org/user/1295980"
+                },
+                {
+                    "name": "manarth",
+                    "homepage": "https://www.drupal.org/user/321496"
+                },
+                {
+                    "name": "mcdruid",
+                    "homepage": "https://www.drupal.org/user/255969"
+                }
+            ],
+            "description": "Integration with the ClamAV anti-virus scanner.",
+            "homepage": "https://www.drupal.org/project/clamav",
+            "support": {
+                "source": "http://cgit.drupalcode.org/clamav"
             }
         },
         {
@@ -14381,7 +14441,6 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "dpc-sdp/tide": 20,
         "drupal/coffee": 10,
         "drupal/default_content": 15,
         "drupal/stage_file_proxy": 15,
