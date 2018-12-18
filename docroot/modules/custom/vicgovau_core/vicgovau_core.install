@@ -551,7 +551,7 @@ function vicgovau_core_update_8016() {
     'Fire',
     'Flood',
     'Medical',
-    'Lightening',
+    'Lightning',
     'Pollution',
     'Heat wave',
     'Traffic',
@@ -564,5 +564,22 @@ function vicgovau_core_update_8016() {
       'vid' => 'alert_type',
     ]
     )->save();
+  }
+}
+
+/**
+ * SDPA-1502: Fix term name.
+ */
+function vicgovau_core_update_8017() {
+  // Search for the incorrectly named term, and if found - rename.
+  $query = \Drupal::entityQuery('taxonomy_term');
+  $query->condition('vid', 'alert_type');
+  $query->condition('name', 'Lightening');
+  $result = $query->execute();
+
+  foreach ($result as $term_id) {
+    $term = Term::load($term_id);
+    $term->setName('Lightning');
+    $term->save();
   }
 }
