@@ -1,0 +1,73 @@
+<?php
+
+/**
+ * @file
+ * Tide Alert module functionality.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function tide_alert_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Validate alert before to be saved.
+  if (in_array($form_id, ['node_alert_form', 'node_alert_edit_form'])) {
+    $form['#validate'][] = 'tide_alert_validate_if_alert_is_running';
+  }
+}
+
+/**
+ * Validate alert before save, check if there is other alert published by site.
+ */
+function tide_alert_validate_if_alert_is_running($form, FormStateInterface &$form_state) {
+
+  $aliasManager = \Drupal::service('path.alias_manager');
+  $siteHelper = \Drupal::service('tide_site.helper');
+
+  $moderation_state = $form_state->getValue("moderation_state");
+  $site = $form_state->getValue('field_node_primary_site');
+  $nid = $form_state->getformObject()->getEntity()->id();
+
+  // Validate alert with others alerts published, before to published.
+  if ($moderation_state[0]['value'] === 'published') {
+    $entity_storage = \Drupal::entityTypeManager()->getStorage('node');
+    $query = $entity_storage->getQuery('AND');
+    $query->condition('type', 'alert');
+    $query->condition('field_node_primary_site', $site[0]['target_id']);
+
+    // Ignore current node in alerts validation.
+    if ($nid) {
+      $query->condition('nid', $nid, '!=');
+    }
+
+    $alert_by_domain_nids = $query->execute();
+
+    if (!empty($alert_by_domain_nids)) {
+      // Get content moderation information for alerts in same primary site.
+      $query = \Drupal::database()->select('content_moderation_state_field_data', 'ms');
+      $query->join('node_field_revision', 'nf', 'nf.nid=ms.content_entity_id AND nf.vid=ms.content_entity_revision_id AND nf.langcode=ms.langcode');
+      $query->fields('ms');
+      $query->fields('nf', ['title']);
+      $query->condition('ms.moderation_state', 'published');
+      $query->condition('nf.nid', array_values($alert_by_domain_nids), 'IN');
+      $alerts = $query->execute()->fetchAllAssoc('content_entity_id');
+
+      if ($alerts && count($alerts)) {
+        $site = $siteHelper->getSiteById($site[0]['target_id']);
+        $alert_published = array_shift($alerts);
+
+        $form_state->setErrorByName('moderation_state', t('There is already an alert published <a href="@alert-link" target="_blank">@alert-title</a> on site @alert-site , un-publish that Alert to be able to publish a new one.',
+            [
+              '@alert-link' => $aliasManager->getAliasByPath('/node/' . $alert_published->id),
+              '@alert-title' => $alert_published->title,
+              '@alert-site' => $site->getName(),
+            ]
+
+          )
+        );
+      }
+    }
+
+  }
+}

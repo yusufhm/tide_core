@@ -1,0 +1,26 @@
+name: Tide Alert
+type: module
+description: 'Provides Alert content type and related configuration. '
+type: module
+package: Tide
+core: 8.x
+dependencies:
+  - dpc-sdp:tide_core
+  - dpc-sdp:tide_media
+config_devel:
+  install:
+    - core.base_field_override.node.alert.promote
+    - core.base_field_override.node.alert.status
+    - core.entity_form_display.node.alert.default
+    - core.entity_view_display.node.alert.default
+    - core.entity_view_display.node.alert.teaser
+    - field.field.node.alert.field_alert_type
+    - field.field.node.alert.scheduled_archiving
+    - field.field.node.alert.scheduled_publishing
+    - field.field.node.alert.field_call_to_action
+    - field.storage.node.field_alert_type
+    - field.field.node.alert.field_node_primary_site
+    - field.field.node.alert.field_node_site
+    - node.type.alert
+    - taxonomy.vocabulary.alert_type
+  optional:

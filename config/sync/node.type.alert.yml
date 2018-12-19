@@ -1,0 +1,21 @@
+uuid: 6557a8a0-2f50-4df2-8721-89b14e07f297
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  wysiwyg_template:
+    default_template: ''
+name: Alert
+type: alert
+description: 'Use Alert content type for alert content.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -92,6 +92,28 @@ function vicgovau_demo_create_node_landing_page() {
       }
     }
 
+    // Add Hero Banner.
+    $hero_banner_with_cta_data = [
+      'type' => 'hero_banner_with_cta',
+      'field_paragraph_cta' => [VicgovauDemoHelper::randomCtaLinkFieldValue()],
+      'field_paragraph_freetext' => VicgovauDemoHelper::randomSentence(3, 5),
+      'field_paragraph_link_text' => [VicgovauDemoHelper::randomCtaLinkFieldValue()],
+      'field_paragraph_background_image' => ['target_id' => VicgovauDemoHelper::randomImage()],
+      'field_paragraph_theme' => [
+        'value' => VicgovauDemoHelper::randomBool() ? 'dark' : 'light',
+      ],
+    ];
+
+    $hero_banner_with_cta = Paragraph::create($hero_banner_with_cta_data);
+    $hero_banner_with_cta->save();
+    $repository->trackEntity($hero_banner_with_cta);
+    $node_data['field_landing_page_hero_banner'] = [
+      [
+        'target_id' => $hero_banner_with_cta->id(),
+        'target_revision_id' => $hero_banner_with_cta->getRevisionId(),
+      ],
+    ];
+
     // Add Key Journeys.
     $key_journeys_data = [
       'type' => 'key_journeys',

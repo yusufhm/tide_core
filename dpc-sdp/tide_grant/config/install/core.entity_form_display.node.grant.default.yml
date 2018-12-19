@@ -9,18 +9,25 @@ dependencies:
     - field.field.node.grant.field_featured_image
     - field.field.node.grant.field_landing_page_contact
     - field.field.node.grant.field_landing_page_intro_text
+    - field.field.node.grant.field_landing_page_nav_title
     - field.field.node.grant.field_landing_page_show_contact
     - field.field.node.grant.field_landing_page_summary
+    - field.field.node.grant.field_news_intro_text
+    - field.field.node.grant.field_node_author
     - field.field.node.grant.field_node_dates
     - field.field.node.grant.field_node_department
     - field.field.node.grant.field_node_documents
-    - field.field.node.grant.field_node_fundinglevel
+    - field.field.node.grant.field_node_email
+    - field.field.node.grant.field_node_funding_level
     - field.field.node.grant.field_node_guidelines
+    - field.field.node.grant.field_node_link
     - field.field.node.grant.field_node_on_going
+    - field.field.node.grant.field_node_phone
     - field.field.node.grant.field_node_primary_site
     - field.field.node.grant.field_node_site
     - field.field.node.grant.field_node_timeline
     - field.field.node.grant.field_overview_title
+    - field.field.node.grant.field_show_content_rating
     - field.field.node.grant.field_show_social_sharing
     - field.field.node.grant.field_tags
     - field.field.node.grant.field_topic
@@ -38,12 +45,15 @@ dependencies:
     - maxlength
     - paragraphs
     - path
+    - range
+    - telephone
 third_party_settings:
   field_group:
     group_section_1:
       children:
         - group_page_header
         - group_body_content
+        - group_grant_author
       parent_name: ''
       weight: 0
       format_type: tabs
@@ -73,7 +83,7 @@ third_party_settings:
     group_body_content:
       children:
         - group_grant_details
-        - field_node_department
+        - field_node_link
       parent_name: group_section_1
       weight: 21
       format_type: tab
@@ -104,7 +114,7 @@ third_party_settings:
     group_grant_overview:
       children:
         - field_overview_title
-        - field_node_fundinglevel
+        - field_node_funding_level
         - field_audience
         - field_node_on_going
         - field_node_dates
@@ -141,7 +151,7 @@ third_party_settings:
       children:
         - field_node_guidelines
       parent_name: group_grant_details
-      weight: 25
+      weight: 26
       format_type: tab
       format_settings:
         label: Guidelines
@@ -170,6 +180,7 @@ third_party_settings:
       children:
         - group_social_media
         - group_contact
+        - group_content_rating
       parent_name: ''
       weight: 1
       format_type: tabs
@@ -183,7 +194,7 @@ third_party_settings:
       children:
         - field_show_social_sharing
       parent_name: group_right_column
-      weight: 17
+      weight: 3
       format_type: tab
       format_settings:
         label: 'Social Sharing'
@@ -199,7 +210,7 @@ third_party_settings:
         - field_landing_page_show_contact
         - field_landing_page_contact
       parent_name: group_right_column
-      weight: 18
+      weight: 4
       format_type: tab
       format_settings:
         id: ''
@@ -209,6 +220,37 @@ third_party_settings:
         required_fields: true
       label: Contact
       region: content
+    group_grant_author:
+      children:
+        - field_node_author
+        - field_node_email
+        - field_node_phone
+        - field_node_department
+      parent_name: group_section_1
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Grant Author'
+      region: content
+    group_content_rating:
+      children:
+        - field_show_content_rating
+      parent_name: group_right_column
+      weight: 5
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Content rating'
+      region: content
 id: node.grant.default
 targetEntityType: node
 bundle: grant
@@ -216,7 +258,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -300,6 +342,14 @@ content:
         maxlength_js_truncate_html: false
     type: string_textarea
     region: content
+  field_node_author:
+    weight: 29
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_node_dates:
     weight: 18
     settings: {  }
@@ -307,7 +357,7 @@ content:
     type: daterange_default
     region: content
   field_node_department:
-    weight: 17
+    weight: 32
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -327,16 +377,23 @@ content:
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
-  field_node_fundinglevel:
-    weight: 15
+  field_node_email:
+    weight: 30
     settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: number
+    type: email_default
+    region: content
+  field_node_funding_level:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: range
     region: content
   field_node_guidelines:
     type: paragraphs
-    weight: 15
+    weight: 4
     settings:
       title: Guideline
       title_plural: Guidelines
@@ -352,12 +409,27 @@ content:
         collapse_edit_all: collapse_edit_all
     third_party_settings: {  }
     region: content
+  field_node_link:
+    weight: 17
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   field_node_on_going:
     weight: 17
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
+  field_node_phone:
+    weight: 31
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
     region: content
   field_node_primary_site:
     type: options_buttons
@@ -402,6 +474,13 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
     type: string_textfield
     region: content
+  field_show_content_rating:
+    weight: 20
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_show_social_sharing:
     weight: 13
     settings:
@@ -443,7 +522,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 5
     region: content
     third_party_settings: {  }
   scheduled_archiving:
@@ -509,7 +588,7 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60
@@ -521,4 +600,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_landing_page_nav_title: true
+  field_news_intro_text: true

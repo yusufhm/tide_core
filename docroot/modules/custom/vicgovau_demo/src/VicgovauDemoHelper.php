@@ -211,6 +211,18 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Select a random Alert Type.
+   *
+   * @return int
+   *   The audience tid.
+   */
+  public static function randomAlertType() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $topics = $repository->getDemoEntities('taxonomy_term', 'alert_type');
+    return count($topics) ? array_rand($topics) : 0;
+  }
+
+  /**
    * Select a random site from randomSiteSections().
    *
    * @param array $site_section_ids
@@ -853,6 +865,17 @@ class VicgovauDemoHelper {
             $component_data['field_paragraph_media_gallery'] = [
               ['target_id' => $gallery->id()],
             ];
+          }
+          break;
+
+        case 'news_listing':
+          $component_data += [
+            'field_paragraph_title' => [['value' => static::randomSentence()]],
+            'field_paragraph_topic' => [],
+          ];
+          // Add 6 random topics.
+          for ($x = 0; $x <= 6; $x++) {
+            $component_data['field_paragraph_topic'][] = ['target_id' => static::randomTopic()];
           }
           break;
 
