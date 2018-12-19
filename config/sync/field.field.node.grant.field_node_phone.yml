@@ -1,0 +1,21 @@
+uuid: b6fc6cf1-36fc-4c2d-a0ef-3179e355ebad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_node_phone
+    - node.type.grant
+  module:
+    - telephone
+id: node.grant.field_node_phone
+field_name: field_node_phone
+entity_type: node
+bundle: grant
+label: 'Contact Phone Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

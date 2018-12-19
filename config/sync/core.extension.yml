@@ -19,6 +19,7 @@ module:
   config_update: 0
   content_moderation: 0
   content_moderation_scheduled_updates: 0
+  clamav: 0
   ctools: 0
   datetime: 0
   datetime_range: 0
@@ -95,6 +96,7 @@ module:
   taxonomy: 0
   telephone: 0
   text: 0
+  tide_alert: 0
   tide_api: 0
   tide_core: 0
   tide_event: 0
@@ -112,6 +114,7 @@ module:
   token_filter: 0
   toolbar: 0
   twig_field_value: 0
+  range: 0	
   user: 0
   video_embed_field: 0
   video_embed_media: 0

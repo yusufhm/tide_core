@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.alert.field_node_primary_site
+    - field.field.node.alert.field_node_site
+    - node.type.alert
+  module:
+    - user
+id: node.alert.teaser
+targetEntityType: node
+bundle: alert
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_node_primary_site: true
+  field_node_site: true

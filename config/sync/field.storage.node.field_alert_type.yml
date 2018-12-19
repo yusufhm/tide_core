@@ -1,15 +1,16 @@
+uuid: 78e8a610-b7d8-4671-86f2-8cc06b9460b8
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_node_fundinglevel
-field_name: field_node_fundinglevel
+    - taxonomy
+id: node.field_alert_type
+field_name: field_alert_type
 entity_type: node
-type: integer
+type: entity_reference
 settings:
-  unsigned: false
-  size: normal
+  target_type: taxonomy_term
 module: core
 locked: false
 cardinality: 1

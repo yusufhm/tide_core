@@ -8,18 +8,25 @@ dependencies:
     - field.field.node.grant.field_featured_image
     - field.field.node.grant.field_landing_page_contact
     - field.field.node.grant.field_landing_page_intro_text
+    - field.field.node.grant.field_landing_page_nav_title
     - field.field.node.grant.field_landing_page_show_contact
     - field.field.node.grant.field_landing_page_summary
+    - field.field.node.grant.field_news_intro_text
+    - field.field.node.grant.field_node_author
     - field.field.node.grant.field_node_dates
     - field.field.node.grant.field_node_department
     - field.field.node.grant.field_node_documents
-    - field.field.node.grant.field_node_fundinglevel
+    - field.field.node.grant.field_node_email
+    - field.field.node.grant.field_node_funding_level
     - field.field.node.grant.field_node_guidelines
+    - field.field.node.grant.field_node_link
     - field.field.node.grant.field_node_on_going
+    - field.field.node.grant.field_node_phone
     - field.field.node.grant.field_node_primary_site
     - field.field.node.grant.field_node_site
     - field.field.node.grant.field_node_timeline
     - field.field.node.grant.field_overview_title
+    - field.field.node.grant.field_show_content_rating
     - field.field.node.grant.field_show_social_sharing
     - field.field.node.grant.field_tags
     - field.field.node.grant.field_topic
@@ -30,6 +37,7 @@ dependencies:
     - datetime_range
     - entity_reference_revisions
     - link
+    - range
     - user
 id: node.grant.default
 targetEntityType: node
@@ -37,10 +45,12 @@ bundle: grant
 mode: default
 content:
   content_moderation_control:
-    weight: -20
+    weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
   field_audience:
-    weight: 108
+    weight: 7
     label: above
     settings:
       link: true
@@ -67,7 +77,7 @@ content:
     type: basic_string
     region: content
   field_featured_image:
-    weight: 104
+    weight: 4
     label: above
     settings:
       link: true
@@ -75,7 +85,7 @@ content:
     type: entity_reference_label
     region: content
   field_landing_page_contact:
-    weight: 115
+    weight: 14
     label: above
     settings:
       view_mode: default
@@ -84,14 +94,14 @@ content:
     type: entity_reference_revisions_entity_view
     region: content
   field_landing_page_intro_text:
-    weight: 102
+    weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_landing_page_show_contact:
-    weight: 116
+    weight: 15
     label: above
     settings:
       format: default
@@ -101,14 +111,14 @@ content:
     type: boolean
     region: content
   field_landing_page_summary:
-    weight: 103
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_node_dates:
-    weight: 110
+    weight: 9
     label: above
     settings:
       separator: '-'
@@ -117,43 +127,52 @@ content:
     third_party_settings: {  }
     type: daterange_default
     region: content
-  field_node_department:
-    weight: 105
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_node_documents:
     type: entity_reference_entity_view
-    weight: 111
+    weight: 10
     label: above
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
     region: content
-  field_node_fundinglevel:
-    weight: 109
+  field_node_funding_level:
+    weight: 126
     label: above
     settings:
+      decimal_separator: .
+      scale: 2
+      range_separator: '-'
       thousand_separator: ''
-      prefix_suffix: true
+      range_combine: true
+      from_prefix_suffix: false
+      to_prefix_suffix: false
     third_party_settings: {  }
-    type: number_integer
+    type: range_decimal
     region: content
   field_node_guidelines:
     type: entity_reference_revisions_entity_view
-    weight: 114
+    weight: 13
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     region: content
+  field_node_link:
+    weight: 20
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
   field_node_on_going:
-    weight: 120
+    weight: 19
     label: above
     settings:
       format: default
@@ -173,14 +192,24 @@ content:
     region: content
   field_overview_title:
     weight: 124
+    region: content
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+  field_show_content_rating:
+    weight: 15
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_show_social_sharing:
-    weight: 117
+    weight: 16
     label: above
     settings:
       format: default
@@ -190,7 +219,7 @@ content:
     type: boolean
     region: content
   field_tags:
-    weight: 106
+    weight: 5
     label: above
     settings:
       link: true
@@ -198,7 +227,7 @@ content:
     type: entity_reference_label
     region: content
   field_topic:
-    weight: 107
+    weight: 6
     label: above
     settings:
       link: true
@@ -206,10 +235,12 @@ content:
     type: entity_reference_label
     region: content
   links:
-    weight: 100
+    weight: 1
     region: content
+    settings: {  }
+    third_party_settings: {  }
   scheduled_archiving:
-    weight: 119
+    weight: 18
     label: above
     settings:
       link: true
@@ -217,7 +248,7 @@ content:
     type: entity_reference_label
     region: content
   scheduled_publishing:
-    weight: 118
+    weight: 17
     label: above
     settings:
       link: true
@@ -225,5 +256,11 @@ content:
     type: entity_reference_label
     region: content
 hidden:
+  field_landing_page_nav_title: true
+  field_news_intro_text: true
+  field_node_author: true
+  field_node_department: true
+  field_node_email: true
+  field_node_phone: true
   field_node_primary_site: true
   field_node_site: true

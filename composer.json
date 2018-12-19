@@ -7,9 +7,11 @@
         "cweagans/composer-patches": "^1.6.0",
         "dpc-sdp/bay": "^0.0.1",
         "dpc-sdp/tide": "^0.0.3",
+        "dpc-sdp/tide_alert": "^0.0.1",
         "dpc-sdp/tide_grant": "^0.0.1",
         "drupal-composer/drupal-scaffold": "^2.3",
         "drupal/admin_toolbar": "^1.20",
+        "drupal/clamav": "^1.1",
         "drupal/coffee": "^1.0@beta",
         "drupal/config_filter": "^1.2",
         "drupal/config_ignore": "^2.1",
@@ -19,6 +21,7 @@
         "drupal/devel": "^1.2",
         "drupal/environment_indicator": "^3.2",
         "drupal/lagoon_logs": "^1.0",
+        "drupal/range": "^1.1",
         "drupal/shield": "^1.2",
         "drupal/stage_file_proxy": "^1.0@alpha",
         "drush/drush": "^8.1",
@@ -95,6 +98,10 @@
         "dpc-sdp/tide_event": {
             "type": "vcs",
             "url": "https://github.com/dpc-sdp/tide_event.git"
+        },
+        "dpc-sdp/tide_alert": {
+            "type": "path",
+            "url": "dpc-sdp/tide_alert"
         },
         "dpc-sdp/tide_grant": {
             "type": "path",

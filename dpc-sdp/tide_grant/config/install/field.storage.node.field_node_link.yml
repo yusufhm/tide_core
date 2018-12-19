@@ -1,17 +1,15 @@
-uuid: 3b040242-846d-4181-8f1f-e239599a7447
 langcode: en
 status: true
 dependencies:
   module:
+    - link
     - node
-id: node.field_node_fundinglevel
-field_name: field_node_fundinglevel
+id: node.field_node_link
+field_name: field_node_link
 entity_type: node
-type: integer
-settings:
-  unsigned: false
-  size: normal
-module: core
+type: link
+settings: {  }
+module: link
 locked: false
 cardinality: 1
 translatable: true
