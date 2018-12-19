@@ -3,16 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.hero_banner.field_paragraph_background_image
-    - field.field.paragraph.hero_banner.field_paragraph_cta
-    - field.field.paragraph.hero_banner.field_paragraph_freetext
-    - field.field.paragraph.hero_banner.field_paragraph_link_text
-    - paragraphs.paragraphs_type.hero_banner
+    - field.field.paragraph.hero_banner_with_cta.field_paragraph_background_image
+    - field.field.paragraph.hero_banner_with_cta.field_paragraph_cta
+    - field.field.paragraph.hero_banner_with_cta.field_paragraph_freetext
+    - field.field.paragraph.hero_banner_with_cta.field_paragraph_link_text
+    - paragraphs.paragraphs_type.hero_banner_with_cta
   module:
     - link
-id: paragraph.hero_banner.default
+id: paragraph.hero_banner_with_cta.default
 targetEntityType: paragraph
-bundle: hero_banner
+bundle: hero_banner_with_cta
 mode: default
 content:
   field_paragraph_background_image:

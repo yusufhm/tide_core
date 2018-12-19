@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_paragraph_freetext
-    - paragraphs.paragraphs_type.hero_banner
-id: paragraph.hero_banner.field_paragraph_freetext
+    - paragraphs.paragraphs_type.hero_banner_with_cta
+id: paragraph.hero_banner_with_cta.field_paragraph_freetext
 field_name: field_paragraph_freetext
 entity_type: paragraph
-bundle: hero_banner
+bundle: hero_banner_with_cta
 label: 'Free Text'
 description: ''
 required: false

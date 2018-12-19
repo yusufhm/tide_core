@@ -3,11 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.hero_banner
-id: paragraph--hero_banner
+    - paragraphs.paragraphs_type.hero_banner_with_cta
+id: paragraph--hero_banner_with_cta
 disabled: false
-path: paragraph/hero_banner
-resourceType: paragraph--hero_banner
+path: paragraph.hero_banner_with_cta
+resourceType: paragraph--hero_banner_with_cta
 resourceFields:
   id:
     fieldName: id
