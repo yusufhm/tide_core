@@ -7,11 +7,9 @@ dependencies:
     - field.field.paragraph.hero_banner.field_paragraph_cta
     - field.field.paragraph.hero_banner.field_paragraph_freetext
     - field.field.paragraph.hero_banner.field_paragraph_link_text
-    - field.field.paragraph.hero_banner.field_paragraph_theme
     - paragraphs.paragraphs_type.hero_banner
   module:
     - link
-    - options
 id: paragraph.hero_banner.default
 targetEntityType: paragraph
 bundle: hero_banner
@@ -56,12 +54,5 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-    region: content
-  field_paragraph_theme:
-    weight: 6
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
     region: content
 hidden: {  }

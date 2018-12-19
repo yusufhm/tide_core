@@ -380,8 +380,8 @@ content:
     type: entity_reference_paragraphs
     weight: 9
     settings:
-      title: 'Hero Banner'
-      title_plural: 'Hero Banners'
+      title: 'Hero Banner with CTA'
+      title_plural: 'Hero Banners with CTA'
       edit_mode: closed
       add_mode: dropdown
       form_display_mode: default

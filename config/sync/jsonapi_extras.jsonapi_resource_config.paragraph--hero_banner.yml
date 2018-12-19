@@ -111,12 +111,6 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  field_paragraph_body:
-    fieldName: field_paragraph_body
-    publicName: field_paragraph_body
-    enhancer:
-      id: ''
-    disabled: false
   field_paragraph_cta:
     fieldName: field_paragraph_cta
     publicName: field_paragraph_cta
@@ -134,16 +128,4 @@ resourceFields:
     publicName: field_paragraph_link_text
     enhancer:
       id: link_enhancer
-    disabled: false
-  field_paragraph_theme:
-    fieldName: field_paragraph_theme
-    publicName: field_paragraph_theme
-    enhancer:
-      id: ''
-    disabled: false
-  field_paragraph_title:
-    fieldName: field_paragraph_title
-    publicName: field_paragraph_title
-    enhancer:
-      id: ''
     disabled: false
