@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf20e1a52d3c74843c9a00feeabaa5fc",
+    "content-hash": "cd5bc446baec8ee0d5163cbfaf660c63",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1556,12 +1556,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "63bb7b6d6021f6a90eff1a60c0200df7cb43bff4"
+                "reference": "e2d69426de36b9e166f03d726311a5547ce6ef53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/63bb7b6d6021f6a90eff1a60c0200df7cb43bff4",
-                "reference": "63bb7b6d6021f6a90eff1a60c0200df7cb43bff4",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/e2d69426de36b9e166f03d726311a5547ce6ef53",
+                "reference": "e2d69426de36b9e166f03d726311a5547ce6ef53",
                 "shasum": ""
             },
             "require": {
@@ -1571,6 +1571,7 @@
                 "drupal/allowed_formats": "^1.1",
                 "drupal/better_exposed_filters": "^3.0@alpha",
                 "drupal/ckeditor_iframe": "^2.0@beta",
+                "drupal/clamav": "^1.0",
                 "drupal/config_ignore": "^2.1",
                 "drupal/config_split": "^1.3",
                 "drupal/config_update": "^1.4",
@@ -1675,7 +1676,7 @@
                 "source": "https://github.com/dpc-sdp/tide_core/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_core/issues"
             },
-            "time": "2018-11-30T04:55:59+00:00"
+            "time": "2018-12-19T00:47:14+00:00"
         },
         {
             "name": "dpc-sdp/tide_event",
@@ -1683,12 +1684,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_event.git",
-                "reference": "8b02fa299f522797edd4dac4aa4f2298da74fb6b"
+                "reference": "b13b8524458e0489cf1cdb585e21d4a59d7f70d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/8b02fa299f522797edd4dac4aa4f2298da74fb6b",
-                "reference": "8b02fa299f522797edd4dac4aa4f2298da74fb6b",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/b13b8524458e0489cf1cdb585e21d4a59d7f70d4",
+                "reference": "b13b8524458e0489cf1cdb585e21d4a59d7f70d4",
                 "shasum": ""
             },
             "require": {
@@ -1705,7 +1706,7 @@
                 "source": "https://github.com/dpc-sdp/tide_event/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_event/issues"
             },
-            "time": "2018-10-21T23:29:57+00:00"
+            "time": "2018-12-17T02:01:10+00:00"
         },
         {
             "name": "dpc-sdp/tide_grant",
@@ -1733,12 +1734,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_landing_page.git",
-                "reference": "78fa9484509ff9092ebbf999d361ac7e2c7f74e4"
+                "reference": "ba23dbb975d00ef88ae7f8e9c0fbf3704108f953"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/78fa9484509ff9092ebbf999d361ac7e2c7f74e4",
-                "reference": "78fa9484509ff9092ebbf999d361ac7e2c7f74e4",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/ba23dbb975d00ef88ae7f8e9c0fbf3704108f953",
+                "reference": "ba23dbb975d00ef88ae7f8e9c0fbf3704108f953",
                 "shasum": ""
             },
             "require": {
@@ -1763,7 +1764,7 @@
                 "source": "https://github.com/dpc-sdp/tide_landing_page/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_landing_page/issues"
             },
-            "time": "2018-12-12T02:29:17+00:00"
+            "time": "2018-12-19T21:02:44+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
@@ -1843,12 +1844,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_news.git",
-                "reference": "7aa30f362b856d27e20dcd459d5741d6f6c61c82"
+                "reference": "a38901122b62f632d00a375c8d2606906133991a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_news/zipball/7aa30f362b856d27e20dcd459d5741d6f6c61c82",
-                "reference": "7aa30f362b856d27e20dcd459d5741d6f6c61c82",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_news/zipball/a38901122b62f632d00a375c8d2606906133991a",
+                "reference": "a38901122b62f632d00a375c8d2606906133991a",
                 "shasum": ""
             },
             "require": {
@@ -1871,7 +1872,7 @@
                 "source": "https://github.com/dpc-sdp/tide_news/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_news/issues"
             },
-            "time": "2018-11-19T20:15:46+00:00"
+            "time": "2018-12-19T02:22:53+00:00"
         },
         {
             "name": "dpc-sdp/tide_page",
@@ -1879,12 +1880,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_page.git",
-                "reference": "8fff0243fa77a59cf876ad3a1b99b16a8c6379e7"
+                "reference": "557deafb8abfbc497047f72042fb50539bb1b0ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_page/zipball/8fff0243fa77a59cf876ad3a1b99b16a8c6379e7",
-                "reference": "8fff0243fa77a59cf876ad3a1b99b16a8c6379e7",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_page/zipball/557deafb8abfbc497047f72042fb50539bb1b0ba",
+                "reference": "557deafb8abfbc497047f72042fb50539bb1b0ba",
                 "shasum": ""
             },
             "require": {
@@ -1905,7 +1906,7 @@
                 "source": "https://github.com/dpc-sdp/tide_page/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_page/issues"
             },
-            "time": "2018-09-04T01:11:24+00:00"
+            "time": "2018-12-19T02:22:43+00:00"
         },
         {
             "name": "dpc-sdp/tide_search",
@@ -1913,12 +1914,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_search.git",
-                "reference": "0c1b07742a4c75865de4d5167ba2b353a3071113"
+                "reference": "1b4a9802b27990b9d3072a224e365b290e3cc738"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_search/zipball/0c1b07742a4c75865de4d5167ba2b353a3071113",
-                "reference": "0c1b07742a4c75865de4d5167ba2b353a3071113",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_search/zipball/1b4a9802b27990b9d3072a224e365b290e3cc738",
+                "reference": "1b4a9802b27990b9d3072a224e365b290e3cc738",
                 "shasum": ""
             },
             "require": {
@@ -1948,7 +1949,7 @@
                 "source": "https://github.com/dpc-sdp/tide_search/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_search/issues"
             },
-            "time": "2018-12-11T02:31:07+00:00"
+            "time": "2018-12-17T02:01:37+00:00"
         },
         {
             "name": "dpc-sdp/tide_site",
@@ -2405,6 +2406,65 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/ckeditor_iframe",
                 "issues": "http://drupal.org/project/issues/ckeditor_iframe"
+            }
+        },
+        {
+            "name": "drupal/clamav",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/clamav",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/clamav-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "242a5ec3c08297bbe80c5654a026b280d2458272"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1537453081",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "James Andres",
+                    "homepage": "https://www.drupal.org/user/33827"
+                },
+                {
+                    "name": "adammalone",
+                    "homepage": "https://www.drupal.org/user/1295980"
+                },
+                {
+                    "name": "manarth",
+                    "homepage": "https://www.drupal.org/user/321496"
+                },
+                {
+                    "name": "mcdruid",
+                    "homepage": "https://www.drupal.org/user/255969"
+                }
+            ],
+            "description": "Integration with the ClamAV anti-virus scanner.",
+            "homepage": "https://www.drupal.org/project/clamav",
+            "support": {
+                "source": "http://cgit.drupalcode.org/clamav"
             }
         },
         {
@@ -5842,17 +5902,17 @@
         },
         {
             "name": "drupal/search_api",
-            "version": "1.10.0",
+            "version": "1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/search_api",
-                "reference": "8.x-1.10"
+                "reference": "8.x-1.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.10.zip",
-                "reference": "8.x-1.10",
-                "shasum": "1c1d038310a079f8e8154545f743ff7a506c4b8e"
+                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.11.zip",
+                "reference": "8.x-1.11",
+                "shasum": "d2bf92afa2ee760977dde1fadcb5bb64a4c2d7c1"
             },
             "require": {
                 "drupal/core": "^8.5"
@@ -5872,7 +5932,7 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.10",
+                    "version": "8.x-1.11",
                     "datestamp": "1542564480",
                     "security-coverage": {
                         "status": "covered",
