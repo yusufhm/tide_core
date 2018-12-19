@@ -82,7 +82,6 @@ hidden:
   field_node_site: true
   field_related_links: true
   field_show_content_rating: true
-  field_show_news_search: true
   field_show_related_content: true
   field_show_site_section_nav: true
   field_show_social_sharing: true
