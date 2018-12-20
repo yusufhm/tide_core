@@ -3,17 +3,29 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.news_listing.field_paragraph_title
     - field.field.paragraph.news_listing.field_paragraph_topic
     - paragraphs.paragraphs_type.news_listing
   module:
-    - content_moderation
+    - maxlength
 id: paragraph.news_listing.default
 targetEntityType: paragraph
 bundle: news_listing
 mode: default
 content:
+  field_paragraph_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: 150
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+    type: string_textfield
+    region: content
   field_paragraph_topic:
-    weight: 101
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60

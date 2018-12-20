@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Tide Alert module install file..
+ */
+
+use Drupal\workflows\Entity\Workflow;
+
+/**
+ * Implements hook_install().
+ */
+function tide_alert_install() {
+
+  if (!\Drupal::service('config.installer')->isSyncing()) {
+
+    // Create taxonomy.
+    module_load_include('inc', 'tide_core', 'includes/helpers');
+    $config_location = [drupal_get_path('module', 'tide_alert') . '/config/install'];
+    _tide_import_single_config('taxonomy.vocabulary.alert_type', $config_location);
+
+    // Enable Editorial workflow if workflow module is enabled.
+    $moduleHandler = \Drupal::service('module_handler');
+
+    if ($moduleHandler->moduleExists('workflows')) {
+      $editorial_workflow = Workflow::load('editorial');
+      if ($editorial_workflow) {
+        $editorial_workflow->getTypePlugin()
+          ->addEntityTypeAndBundle('node', 'alert');
+        $editorial_workflow->save();
+      }
+    }
+  }
+}

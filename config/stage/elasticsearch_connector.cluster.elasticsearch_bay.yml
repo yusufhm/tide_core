@@ -12,3 +12,8 @@ options:
   username: dpc
   password: ezh7BnY7
   timeout: '3'
+  rewrite:
+    rewrite_index: 1
+    index:
+      prefix: elasticsearch_index_nonprod_
+      suffix:
