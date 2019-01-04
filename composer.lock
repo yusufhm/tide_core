@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f1e5c40472f4dc34f37dabc20e11c29e",
+    "content-hash": "18e8579fa0283479de5e8c6f40afd575",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1427,20 +1427,20 @@
         },
         {
             "name": "dpc-sdp/tide",
-            "version": "dev-feature/JSONAPI-securiry-update-1-24",
+            "version": "0.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide.git",
-                "reference": "98053eac62561554c7335a5f66c8b91e32dde626"
+                "reference": "5aa61a737f9fca98791805334fcd880f9c2ba700"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide/zipball/98053eac62561554c7335a5f66c8b91e32dde626",
-                "reference": "98053eac62561554c7335a5f66c8b91e32dde626",
+                "url": "https://api.github.com/repos/dpc-sdp/tide/zipball/5aa61a737f9fca98791805334fcd880f9c2ba700",
+                "reference": "5aa61a737f9fca98791805334fcd880f9c2ba700",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_api": "dev-feature/JSONAPI-securiry-update-1-24",
+                "dpc-sdp/tide_api": "dev-master",
                 "dpc-sdp/tide_core": "dev-master",
                 "dpc-sdp/tide_event": "dev-master",
                 "dpc-sdp/tide_landing_page": "dev-master",
@@ -1475,10 +1475,10 @@
             ],
             "description": "Tide Drupal 8 profile",
             "support": {
-                "source": "https://github.com/dpc-sdp/tide/tree/feature/JSONAPI-securiry-update-1-24",
+                "source": "https://github.com/dpc-sdp/tide/tree/0.0.3",
                 "issues": "https://github.com/dpc-sdp/tide/issues"
             },
-            "time": "2018-12-20T04:19:42+00:00"
+            "time": "2018-10-01T05:32:31+00:00"
         },
         {
             "name": "dpc-sdp/tide_alert",
@@ -1501,16 +1501,16 @@
         },
         {
             "name": "dpc-sdp/tide_api",
-            "version": "dev-feature/JSONAPI-securiry-update-1-24",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_api.git",
-                "reference": "c5f745edda941ac0fa7a40c95cc4f46f2843d44a"
+                "reference": "efe7d82b9c05b8de5f061834399a3094c0beb98c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/c5f745edda941ac0fa7a40c95cc4f46f2843d44a",
-                "reference": "c5f745edda941ac0fa7a40c95cc4f46f2843d44a",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/efe7d82b9c05b8de5f061834399a3094c0beb98c",
+                "reference": "efe7d82b9c05b8de5f061834399a3094c0beb98c",
                 "shasum": ""
             },
             "require": {
@@ -1532,7 +1532,8 @@
                         "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
                     },
                     "drupal/jsonapi": {
-                        "Menu content is not accessible via jsonapi - https://www.drupal.org/project/jsonapi/issues/2967986": "https://www.drupal.org/files/issues/2018-07-09/jsonapi_menu_403_fix-2967986-4.patch"
+                        "Menu content is not accessible via jsonapi - https://www.drupal.org/project/jsonapi/issues/2967986": "https://www.drupal.org/files/issues/2018-07-09/jsonapi_menu_403_fix-2967986-4.patch",
+                        "Add a revision id negotiation plugin to support entity revisions - https://www.drupal.org/project/jsonapi/issues/2992833": "https://www.drupal.org/files/issues/2018-08-26/2992833--revision-id-negotiation--52.patch"
                     },
                     "drupal/jsonapi_extras": {
                         "Date Time enhancer does not work with Date range fields - https://www.drupal.org/project/jsonapi_extras/issues/2953227": "https://www.drupal.org/files/issues/2018-07-17/jsonapi_extras-date-range-fields-support-2953227-d8-11.patch"
@@ -1544,10 +1545,10 @@
             ],
             "description": "Content API for Tide distribution.",
             "support": {
-                "source": "https://github.com/dpc-sdp/tide_api/tree/feature/JSONAPI-securiry-update-1-24",
+                "source": "https://github.com/dpc-sdp/tide_api/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_api/issues"
             },
-            "time": "2018-12-20T04:20:48+00:00"
+            "time": "2018-10-25T03:59:35+00:00"
         },
         {
             "name": "dpc-sdp/tide_core",
@@ -1733,12 +1734,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_landing_page.git",
-                "reference": "ba23dbb975d00ef88ae7f8e9c0fbf3704108f953"
+                "reference": "768bd6844b331946fefdec60f68e5f4e30347de6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/ba23dbb975d00ef88ae7f8e9c0fbf3704108f953",
-                "reference": "ba23dbb975d00ef88ae7f8e9c0fbf3704108f953",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/768bd6844b331946fefdec60f68e5f4e30347de6",
+                "reference": "768bd6844b331946fefdec60f68e5f4e30347de6",
                 "shasum": ""
             },
             "require": {
@@ -1763,7 +1764,7 @@
                 "source": "https://github.com/dpc-sdp/tide_landing_page/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_landing_page/issues"
             },
-            "time": "2018-12-19T21:02:44+00:00"
+            "time": "2019-01-03T23:12:56+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
@@ -4473,17 +4474,17 @@
         },
         {
             "name": "drupal/jsonapi",
-            "version": "1.24.0",
+            "version": "1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/jsonapi",
-                "reference": "8.x-1.24"
+                "reference": "8.x-1.23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-1.24.zip",
-                "reference": "8.x-1.24",
-                "shasum": "61ff3254b228d41c6a37d3b6e37f30120c0729b7"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-1.23.zip",
+                "reference": "8.x-1.23",
+                "shasum": "4fb88736a9ad90a995bdc9c3ab90e7731b6d89e5"
             },
             "require": {
                 "drupal/core": "^8.4.3"
@@ -4499,7 +4500,7 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.24",
+                    "version": "8.x-1.23",
                     "datestamp": "1545243863",
                     "security-coverage": {
                         "status": "covered",
@@ -4507,8 +4508,8 @@
                     }
                 },
                 "patches_applied": {
-                    "JSON API 1.23.0 Add a revision id negotiation plugin to support entity revisions - https://www.drupal.org/project/jsonapi/issues/2992833": "./patches/2992833--revision-id-negotiation.patch",
-                    "Menu content is not accessible via jsonapi - https://www.drupal.org/project/jsonapi/issues/2967986": "https://www.drupal.org/files/issues/2018-07-09/jsonapi_menu_403_fix-2967986-4.patch"
+                    "Menu content is not accessible via jsonapi - https://www.drupal.org/project/jsonapi/issues/2967986": "https://www.drupal.org/files/issues/2018-07-09/jsonapi_menu_403_fix-2967986-4.patch",
+                    "Add a revision id negotiation plugin to support entity revisions - https://www.drupal.org/project/jsonapi/issues/2992833": "https://www.drupal.org/files/issues/2018-08-26/2992833--revision-id-negotiation--52.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
