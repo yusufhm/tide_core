@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd5bc446baec8ee0d5163cbfaf660c63",
+    "content-hash": "18e8579fa0283479de5e8c6f40afd575",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1734,12 +1734,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_landing_page.git",
-                "reference": "ba23dbb975d00ef88ae7f8e9c0fbf3704108f953"
+                "reference": "768bd6844b331946fefdec60f68e5f4e30347de6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/ba23dbb975d00ef88ae7f8e9c0fbf3704108f953",
-                "reference": "ba23dbb975d00ef88ae7f8e9c0fbf3704108f953",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/768bd6844b331946fefdec60f68e5f4e30347de6",
+                "reference": "768bd6844b331946fefdec60f68e5f4e30347de6",
                 "shasum": ""
             },
             "require": {
@@ -1764,7 +1764,7 @@
                 "source": "https://github.com/dpc-sdp/tide_landing_page/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_landing_page/issues"
             },
-            "time": "2018-12-19T21:02:44+00:00"
+            "time": "2019-01-03T23:12:56+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
@@ -4501,7 +4501,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.23",
-                    "datestamp": "1542081972",
+                    "datestamp": "1545243863",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
