@@ -46,6 +46,14 @@ environments:
         schedule: "*/15 * * * *"
         command: 'drush cron'
         service: cli
+      - name: drush cron
+        schedule: "0 5,9,17,21 * * *"
+        command: 'bash /app/scripts/drupal/scheduled_backup.sh /app/docroot vicgovau'
+        service: cli
+      - name: drush cron
+        schedule: "0 1,13 * * *"
+        command: 'bash /app/scripts/drupal/scheduled_backup.sh /app/docroot vicgovau true'
+        service: cli
   sandbox:
     cronjobs:
       - name: drush cron
