@@ -13,14 +13,24 @@ use Drupal\Core\Form\FormStateInterface;
 function tide_alert_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // Validate alert before to be saved.
   if (in_array($form_id, ['node_alert_form', 'node_alert_edit_form'])) {
-    $form['#validate'][] = 'tide_alert_validate_if_alert_is_running';
+    $form['#validate'][] = 'tide_alert_node_validate_if_alert_is_running';
   }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function tide_alert_form_content_moderation_entity_moderation_form_alter(
+  &$form,
+  FormStateInterface $form_state,
+  $form_id) {
+  $form['#validate'][] = 'tide_alert_moderation_validate_if_alert_is_running';
 }
 
 /**
  * Validate alert before save, check if there is other alert published by site.
  */
-function tide_alert_validate_if_alert_is_running($form, FormStateInterface &$form_state) {
+function tide_alert_node_validate_if_alert_is_running($form, FormStateInterface &$form_state) {
 
   $aliasManager = \Drupal::service('path.alias_manager');
   $siteHelper = \Drupal::service('tide_site.helper');
@@ -69,5 +79,53 @@ function tide_alert_validate_if_alert_is_running($form, FormStateInterface &$for
       }
     }
 
+  }
+}
+
+/**
+ * Validate content moderation alert before save, with alters in the same site.
+ */
+function tide_alert_moderation_validate_if_alert_is_running($form, FormStateInterface &$form_state) {
+
+  $aliasManager = \Drupal::service('path.alias_manager');
+  $siteHelper = \Drupal::service('tide_site.helper');
+
+  $moderation_state = $form_state->getValue("new_state");
+  $entity = $form_state->get('entity');
+
+  if ($moderation_state === 'published' && $entity->getEntityTypeId() === 'node' && $entity->bundle() === 'alert') {
+    $entity_storage = \Drupal::entityTypeManager()->getStorage('node');
+    $query = $entity_storage->getQuery('AND');
+    $query->condition('type', 'alert');
+    $query->condition('field_node_primary_site', $entity->field_node_primary_site->getValue()[0]['target_id']);
+    $query->condition('nid', $entity->id(), '!=');
+
+    $alert_by_domain_nids = $query->execute();
+
+    if (!empty($alert_by_domain_nids)) {
+      // Get content moderation information for alerts in same primary site.
+      $query = \Drupal::database()->select('content_moderation_state_field_data', 'ms');
+      $query->join('node_field_revision', 'nf', 'nf.nid=ms.content_entity_id AND nf.vid=ms.content_entity_revision_id AND nf.langcode=ms.langcode');
+      $query->fields('ms');
+      $query->fields('nf', ['title']);
+      $query->condition('ms.moderation_state', 'published');
+      $query->condition('nf.nid', array_values($alert_by_domain_nids), 'IN');
+      $alerts = $query->execute()->fetchAllAssoc('content_entity_id');
+
+      if ($alerts && count($alerts)) {
+        $site = $siteHelper->getSiteById($entity->field_node_primary_site->getValue()[0]['target_id']);
+        $alert_published = array_shift($alerts);
+
+        $form_state->setErrorByName('new_state', t('There is already an alert published <a href="@alert-link" target="_blank">@alert-title</a> on site @alert-site , un-publish that Alert to be able to publish a new one.',
+            [
+              '@alert-link' => $aliasManager->getAliasByPath('/node/' . $alert_published->id),
+              '@alert-title' => $alert_published->title,
+              '@alert-site' => $site->getName(),
+            ]
+
+          )
+        );
+      }
+    }
   }
 }
