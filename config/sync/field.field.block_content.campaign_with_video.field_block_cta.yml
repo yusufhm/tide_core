@@ -1,0 +1,23 @@
+uuid: f5963683-ad68-4ea4-b0f5-7d5cecfbc41c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.campaign_with_video
+    - field.storage.block_content.field_block_cta
+  module:
+    - link
+id: block_content.campaign_with_video.field_block_cta
+field_name: field_block_cta
+entity_type: block_content
+bundle: campaign_with_video
+label: CTA
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link
