@@ -1734,12 +1734,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_landing_page.git",
-                "reference": "3b49573b5c57ef3bdcc9ea65b430b9d031da64e0"
+                "reference": "f34ff82fb46e4385d5901070fb44ec24cd6d4348"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/3b49573b5c57ef3bdcc9ea65b430b9d031da64e0",
-                "reference": "3b49573b5c57ef3bdcc9ea65b430b9d031da64e0",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/f34ff82fb46e4385d5901070fb44ec24cd6d4348",
+                "reference": "f34ff82fb46e4385d5901070fb44ec24cd6d4348",
                 "shasum": ""
             },
             "require": {
@@ -1764,7 +1764,7 @@
                 "source": "https://github.com/dpc-sdp/tide_landing_page/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_landing_page/issues"
             },
-            "time": "2019-01-09T22:43:41+00:00"
+            "time": "2019-01-11T05:30:13+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
@@ -2945,7 +2945,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.5",
-                    "datestamp": "1512587912",
+                    "datestamp": "1545090480",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4042,7 +4042,7 @@
                 },
                 "drupal": {
                     "version": "8.x-3.3",
-                    "datestamp": "1518331981",
+                    "datestamp": "1546203481",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4673,7 +4673,7 @@
                 },
                 "drupal": {
                     "version": "8.x-5.0-beta7",
-                    "datestamp": "1520552585",
+                    "datestamp": "1545966784",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
