@@ -343,9 +343,6 @@
         "patches": {
             "drupal/default_content" :  {
                 "Do not reimport existing entities - https://www.drupal.org/project/default_content/issues/2698425" : "https://www.drupal.org/files/issues/2018-06-05/default_content-dont-reimport-existing-entities-2698425-102.patch"
-            },
-            "drupal/jsonapi": {
-                "JSON API 1.23.0 Add a revision id negotiation plugin to support entity revisions - https://www.drupal.org/project/jsonapi/issues/2992833": "./patches/2992833--revision-id-negotiation.patch"
             }
         }
     }
