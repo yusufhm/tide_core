@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd5bc446baec8ee0d5163cbfaf660c63",
+    "content-hash": "8b3e87951c8a2d6d9a700ae933de771f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1427,16 +1427,16 @@
         },
         {
             "name": "dpc-sdp/tide",
-            "version": "0.0.3",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide.git",
-                "reference": "5aa61a737f9fca98791805334fcd880f9c2ba700"
+                "reference": "1a30fe78fd4a4f3b744d57ca1a5461e8fc8bb5f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide/zipball/5aa61a737f9fca98791805334fcd880f9c2ba700",
-                "reference": "5aa61a737f9fca98791805334fcd880f9c2ba700",
+                "url": "https://api.github.com/repos/dpc-sdp/tide/zipball/1a30fe78fd4a4f3b744d57ca1a5461e8fc8bb5f0",
+                "reference": "1a30fe78fd4a4f3b744d57ca1a5461e8fc8bb5f0",
                 "shasum": ""
             },
             "require": {
@@ -1452,7 +1452,7 @@
                 "dpc-sdp/tide_site": "dev-master",
                 "dpc-sdp/tide_test": "dev-master",
                 "dpc-sdp/tide_webform": "dev-master",
-                "drupal/core": "8.5.6"
+                "drupal/core": "^8.6.0"
             },
             "type": "drupal-profile",
             "extra": {
@@ -1461,11 +1461,7 @@
                 "patches": {
                     "drupal/core": {
                         "Contextual links should not be added inside another link - https://www.drupal.org/node/2898875": "https://www.drupal.org/files/issues/2018-03-16/contextual_links_should-2898875-6.patch",
-                        "No validation on text length for menu description when editing node - https://www.drupal.org/node/2852665#comment-12650295": "https://www.drupal.org/files/issues/2018-06-13/fatal_error_remove_menu_add_with_tests.patch",
-                        "active-link.js throws JS error if query string parameter contains a single quote - https://www.drupal.org/node/2902769": "https://www.drupal.org/files/issues/active_link_js_throws-2902769-5_0.patch",
-                        "getUuid() in class MenuLinkContent not returning any value - https://www.drupal.org/node/2737741": "https://www.drupal.org/files/issues/drupal-menulinkcontent-getuuid-return-missing-2737741-2.patch",
                         "RSS view with fields give wrong URL from path field - https://www.drupal.org/node/2673980#comment-12180229": "https://www.drupal.org/files/issues/rss_view_with_fields-2673980-28.patch",
-                        "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch",
                         "DateTimeIso8601::getDateTime() does not specify the storage timezone when constructing DrupalDateTime object - https://www.drupal.org/project/drupal/issues/3002164": "https://www.drupal.org/files/issues/2018-09-25/3002164-7.patch"
                     }
                 }
@@ -1475,10 +1471,10 @@
             ],
             "description": "Tide Drupal 8 profile",
             "support": {
-                "source": "https://github.com/dpc-sdp/tide/tree/0.0.3",
+                "source": "https://github.com/dpc-sdp/tide/tree/1.0.0",
                 "issues": "https://github.com/dpc-sdp/tide/issues"
             },
-            "time": "2018-10-01T05:32:31+00:00"
+            "time": "2019-01-15T01:43:55+00:00"
         },
         {
             "name": "dpc-sdp/tide_alert",
@@ -1556,12 +1552,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "c237702aefc34910e0038b5d93510b9b102b7c66"
+                "reference": "29519d4a8ebd26177e131800f92aee01516dfcf7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/c237702aefc34910e0038b5d93510b9b102b7c66",
-                "reference": "c237702aefc34910e0038b5d93510b9b102b7c66",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/29519d4a8ebd26177e131800f92aee01516dfcf7",
+                "reference": "29519d4a8ebd26177e131800f92aee01516dfcf7",
                 "shasum": ""
             },
             "require": {
@@ -1576,7 +1572,7 @@
                 "drupal/config_split": "^1.3",
                 "drupal/config_update": "^1.4",
                 "drupal/content_moderation_scheduled_updates": "^1.0",
-                "drupal/core": "8.5.6",
+                "drupal/core": "^8.6.0",
                 "drupal/diff": "^1.0@RC",
                 "drupal/editor_advanced_link": "^1.4",
                 "drupal/entity_browser": "^1.4",
@@ -1589,7 +1585,7 @@
                 "drupal/google_analytics": "^2.2",
                 "drupal/hotjar": "^1.2",
                 "drupal/linkit": "^5.0@beta",
-                "drupal/m4032404": "^1.0@alpha",
+                "drupal/m4032404": "1.0-alpha3",
                 "drupal/maxlength": "^1.0@beta",
                 "drupal/media_entity_audio": "^2.0@alpha",
                 "drupal/metatag": "^1.5",
@@ -1676,7 +1672,7 @@
                 "source": "https://github.com/dpc-sdp/tide_core/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_core/issues"
             },
-            "time": "2019-01-09T22:36:53+00:00"
+            "time": "2019-01-14T22:55:59+00:00"
         },
         {
             "name": "dpc-sdp/tide_event",
@@ -1734,12 +1730,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_landing_page.git",
-                "reference": "f34ff82fb46e4385d5901070fb44ec24cd6d4348"
+                "reference": "4e3ed3e68eb9e3d2f3422e97bb2c810c2e839150"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/f34ff82fb46e4385d5901070fb44ec24cd6d4348",
-                "reference": "f34ff82fb46e4385d5901070fb44ec24cd6d4348",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/4e3ed3e68eb9e3d2f3422e97bb2c810c2e839150",
+                "reference": "4e3ed3e68eb9e3d2f3422e97bb2c810c2e839150",
                 "shasum": ""
             },
             "require": {
@@ -1764,7 +1760,7 @@
                 "source": "https://github.com/dpc-sdp/tide_landing_page/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_landing_page/issues"
             },
-            "time": "2019-01-11T05:30:13+00:00"
+            "time": "2019-01-13T23:21:18+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
@@ -1816,16 +1812,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_monsido.git",
-                "reference": "4cd5b4dee5b6c9d8c1c6fab7c8ed6b8a3f12741a"
+                "reference": "eed2ef2dd68a770ffea2fc3d2d44f202b0be121b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_monsido/zipball/4cd5b4dee5b6c9d8c1c6fab7c8ed6b8a3f12741a",
-                "reference": "4cd5b4dee5b6c9d8c1c6fab7c8ed6b8a3f12741a",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_monsido/zipball/eed2ef2dd68a770ffea2fc3d2d44f202b0be121b",
+                "reference": "eed2ef2dd68a770ffea2fc3d2d44f202b0be121b",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "8.5.6"
+                "drupal/core": "^8.6.0"
             },
             "type": "drupal-module",
             "license": [
@@ -1836,7 +1832,7 @@
                 "source": "https://github.com/dpc-sdp/tide_monsido/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_monsido/issues"
             },
-            "time": "2018-09-04T00:53:38+00:00"
+            "time": "2019-01-15T01:04:46+00:00"
         },
         {
             "name": "dpc-sdp/tide_news",
@@ -1957,12 +1953,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_site.git",
-                "reference": "d035ff5105202d159123560a0c1890ff96066dee"
+                "reference": "bf6ef931922735e8737ce5edd24af6370f40e81f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_site/zipball/d035ff5105202d159123560a0c1890ff96066dee",
-                "reference": "d035ff5105202d159123560a0c1890ff96066dee",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_site/zipball/bf6ef931922735e8737ce5edd24af6370f40e81f",
+                "reference": "bf6ef931922735e8737ce5edd24af6370f40e81f",
                 "shasum": ""
             },
             "require": {
@@ -1984,7 +1980,7 @@
                 "source": "https://github.com/dpc-sdp/tide_site/tree/master",
                 "issues": "https://github.com/dpc-sdp/tide_site/issues"
             },
-            "time": "2019-01-09T22:37:06+00:00"
+            "time": "2019-01-15T01:03:24+00:00"
         },
         {
             "name": "dpc-sdp/tide_test",
@@ -3022,16 +3018,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "8.5.6",
+            "version": "8.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "7d7184a69ac90ce53929ce99f18458043416107a"
+                "reference": "b66c9334d4a4264589c8b8a2fef73eefcb34a26e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/7d7184a69ac90ce53929ce99f18458043416107a",
-                "reference": "7d7184a69ac90ce53929ce99f18458043416107a",
+                "url": "https://api.github.com/repos/drupal/core/zipball/b66c9334d4a4264589c8b8a2fef73eefcb34a26e",
+                "reference": "b66c9334d4a4264589c8b8a2fef73eefcb34a26e",
                 "shasum": ""
             },
             "require": {
@@ -3149,10 +3145,12 @@
                 "drupal/link": "self.version",
                 "drupal/locale": "self.version",
                 "drupal/media": "self.version",
+                "drupal/media_library": "self.version",
                 "drupal/menu_link_content": "self.version",
                 "drupal/menu_ui": "self.version",
                 "drupal/migrate": "self.version",
                 "drupal/migrate_drupal": "self.version",
+                "drupal/migrate_drupal_multilingual": "self.version",
                 "drupal/migrate_drupal_ui": "self.version",
                 "drupal/minimal": "self.version",
                 "drupal/node": "self.version",
@@ -3184,7 +3182,8 @@
                 "drupal/user": "self.version",
                 "drupal/views": "self.version",
                 "drupal/views_ui": "self.version",
-                "drupal/workflows": "self.version"
+                "drupal/workflows": "self.version",
+                "drupal/workspaces": "self.version"
             },
             "require-dev": {
                 "behat/mink": "1.7.x-dev",
@@ -3194,8 +3193,8 @@
                 "jcalderonzumba/gastonjs": "^1.0.2",
                 "jcalderonzumba/mink-phantomjs-driver": "^0.3.1",
                 "mikey179/vfsstream": "^1.2",
-                "phpspec/prophecy": "^1.4",
-                "phpunit/phpunit": "^4.8.35 || ^6.1",
+                "phpspec/prophecy": "^1.7",
+                "phpunit/phpunit": "^4.8.35 || ^6.5",
                 "symfony/css-selector": "^3.4.0",
                 "symfony/debug": "^3.4.0",
                 "symfony/phpunit-bridge": "^3.4.3"
@@ -3232,12 +3231,9 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
+                    "Debug EntityChangedConstraintValidator": "./patches/drupal-core-debug-entity-changed-constraint-validator.patch",
                     "Contextual links should not be added inside another link - https://www.drupal.org/node/2898875": "https://www.drupal.org/files/issues/2018-03-16/contextual_links_should-2898875-6.patch",
-                    "No validation on text length for menu description when editing node - https://www.drupal.org/node/2852665#comment-12650295": "https://www.drupal.org/files/issues/2018-06-13/fatal_error_remove_menu_add_with_tests.patch",
-                    "active-link.js throws JS error if query string parameter contains a single quote - https://www.drupal.org/node/2902769": "https://www.drupal.org/files/issues/active_link_js_throws-2902769-5_0.patch",
-                    "getUuid() in class MenuLinkContent not returning any value - https://www.drupal.org/node/2737741": "https://www.drupal.org/files/issues/drupal-menulinkcontent-getuuid-return-missing-2737741-2.patch",
                     "RSS view with fields give wrong URL from path field - https://www.drupal.org/node/2673980#comment-12180229": "https://www.drupal.org/files/issues/rss_view_with_fields-2673980-28.patch",
-                    "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch",
                     "DateTimeIso8601::getDateTime() does not specify the storage timezone when constructing DrupalDateTime object - https://www.drupal.org/project/drupal/issues/3002164": "https://www.drupal.org/files/issues/2018-09-25/3002164-7.patch",
                     "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
                 }
@@ -3263,7 +3259,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2018-08-01T20:50:42+00:00"
+            "time": "2019-01-02T21:52:52+00:00"
         },
         {
             "name": "drupal/ctools",
