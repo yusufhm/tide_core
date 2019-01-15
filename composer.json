@@ -6,7 +6,7 @@
         "composer/installers": "^1.2.0",
         "cweagans/composer-patches": "^1.6.0",
         "dpc-sdp/bay": "^0.0.1",
-        "dpc-sdp/tide": "^0.0.3",
+        "dpc-sdp/tide": "^1.0.0",
         "dpc-sdp/tide_alert": "^0.0.1",
         "dpc-sdp/tide_grant": "^0.0.1",
         "drupal-composer/drupal-scaffold": "^2.3",
@@ -341,6 +341,9 @@
             "docroot/sites/default/files"
         ],
         "patches": {
+            "drupal/core" :  {
+                "Debug EntityChangedConstraintValidator" : "./patches/drupal-core-debug-entity-changed-constraint-validator.patch"
+            },
             "drupal/default_content" :  {
                 "Do not reimport existing entities - https://www.drupal.org/project/default_content/issues/2698425" : "https://www.drupal.org/files/issues/2018-06-05/default_content-dont-reimport-existing-entities-2698425-102.patch"
             }
