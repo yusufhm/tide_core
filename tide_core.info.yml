@@ -162,7 +162,6 @@ config_devel:
     - field.field.media.file.field_media_file
     - field.field.media.image.field_media_image
     - field.storage.media.field_media_file
-    - media.type.embedded_video
     - metatag.metatag_defaults.403
     - metatag.metatag_defaults.404
     - metatag.metatag_defaults.front
