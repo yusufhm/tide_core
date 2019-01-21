@@ -35,7 +35,7 @@ jobs:
           docker_layer_caching: true
       - run:
           name: Validate composer config.
-          command: composer validate --ansi --with-dependencies --strict
+          command: composer validate --ansi --with-dependencies
       - run:
           name: Clear composer caches.
           command: composer clearcache
