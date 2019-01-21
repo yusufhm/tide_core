@@ -77,6 +77,7 @@ module:
   password_policy_length: 0
   password_strength: 0
   path: 0
+  prlp: 0
   redirect: 0
   redis: 0
   role_delegation: 0
