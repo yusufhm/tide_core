@@ -7,7 +7,7 @@ Feature: Homepage
   Scenario: Anonymous user visits homepage
     Given I go to the homepage
     And I am in the "<front>" path
-    And I see the text "DPC Content Repository"
+    And I see the text "Single Digital Presence Content Management System"
     Then I save screenshot
 
   @api @javascript
