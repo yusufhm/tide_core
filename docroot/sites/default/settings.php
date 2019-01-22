@@ -52,7 +52,7 @@ if (file_exists('/bay')) {
 
 // Include local settings and services files.
 // Those files should be located outside of `docroot` instead of `sites/default`
-// because `composer app:rebuild` removes them.
+// because `ahoy rebuild` removes them.
 if (file_exists(dirname(DRUPAL_ROOT) . '/local/settings.local.php')) {
   include dirname(DRUPAL_ROOT) . '/local/settings.local.php';
 }

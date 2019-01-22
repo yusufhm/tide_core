@@ -1,13 +1,13 @@
 version: 2
 aliases:
-  # Fingerprint of the SSH key for the Deployer user. The value is found in
-  # CircleCI UI -> SSH Permissions.
-  - &deploy_ssh_fingerprint "36:03:e3:ca:b3:0b:82:18:e2:e9:ae:5d:81:17:86:b1"
 
-  # Fingerprint of the key used to get access to private repositories.
-  # @private_repos
+  # Fingerprint of the key used to access Lagoon environment and private repositories.
+  # The value can be found in CircleCI UI -> SSH Permissions.
   - &ssh_key_fingerprint "36:03:e3:ca:b3:0b:82:18:e2:e9:ae:5d:81:17:86:b1"
-  # @private_repos_end
+
+  # Fingerprint of the SSH key for the Deployer user used to push code into repositories.
+  # The value can be found in CircleCI UI -> SSH Permissions.
+  - &deploy_ssh_fingerprint "36:03:e3:ca:b3:0b:82:18:e2:e9:ae:5d:81:17:86:b1"
 
   - &step_configure_git
     run:
@@ -17,187 +17,85 @@ aliases:
         mkdir -p ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
         DEPLOY_SSH_FILE="${DEPLOY_SSH_FINGERPRINT//:}" && DEPLOY_SSH_FILE="id_rsa_${DEPLOY_SSH_FILE//\"}" && ssh-add -D && ssh-add ~/.ssh/$DEPLOY_SSH_FILE
 
+  # Re-usable job to run different types of builds.
+  - &job-build
+    working_directory: &working-directory /app
+    docker:
+      - image: &builder-image integratedexperts/ci-builder
+        environment:
+          SSH_KEY_FINGERPRINT: *ssh_key_fingerprint
+          LAGOON_ENVIRONMENT_TYPE: ci
+    steps:
+      - attach_workspace:
+          at: /workspace
+      - checkout
+      - run: ./dev-init.sh
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          name: Add GitHub token into container environment variable
+          command: |
+            echo "GITHUB_TOKEN=$GITHUB_TOKEN" >> .env
+      - add_ssh_keys:
+          fingerprints:
+            - *ssh_key_fingerprint
+      - run:
+          name: Add SSH key into container environment variable
+          command: |
+            SSH_KEY_FILE="${SSH_KEY_FINGERPRINT//:}" && SSH_KEY_FILE="id_rsa_${SSH_KEY_FILE//\"}" && export $SSH_KEY_FILE
+            cp ~/.ssh/$SSH_KEY_FILE /app/lagoon_cli.key
+      - run: .circleci/build.sh
+      - run: .circleci/test.sh
+      - run:
+          name: Copy artifacts
+          command: .circleci/test-artifacts.sh
+          when: always
+      - store_artifacts:
+          path: /tmp/artifacts
+
+  # Re-usable job to mirror code.
+  - &job-mirror
+    working_directory: *working-directory
+    docker:
+      - image: *builder-image
+    environment:
+      DEPLOY_SSH_FINGERPRINT: *deploy_ssh_fingerprint
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - *deploy_ssh_fingerprint
+      - *step_configure_git
+      - run: ./dev-init.sh
+      - run: .circleci/mirror.sh
+
 jobs:
   build:
-    docker:
-      - image: singledigital/bay-circle:latest
-        environment:
-          COMPOSER_ALLOW_SUPERUSER: 1
-          COMPOSE_PATH_SEPARATOR: ":"
-          COMPOSE_FILE: docker-compose.yml:docker-compose.ci.yml
-          # @private_repos
-          SSH_KEY_FINGERPRINT: *ssh_key_fingerprint
-          # @private_repos_end
-    working_directory: /app
-    steps:
-      - checkout
-      - setup_remote_docker:
-          docker_layer_caching: true
-      - run:
-          name: Validate composer config.
-          command: composer validate --ansi --with-dependencies --strict
-      - run:
-          name: Clear composer caches.
-          command: composer clearcache
-      - run:
-          name: Pull newest Bay images.
-          command: composer bay:pull
-      # @private_repos
-      - add_ssh_keys:
-          fingerprints:
-            - *ssh_key_fingerprint
-      - run:
-          name: Add SSH key into container environment variable
-          command: |
-            SSH_KEY_FILE="${SSH_KEY_FINGERPRINT//:}" && SSH_KEY_FILE="id_rsa_${SSH_KEY_FILE//\"}" && export $SSH_KEY_FILE
-            cp ~/.ssh/$SSH_KEY_FILE /app/lagoon_cli.key
-      # @private_repos_end
-      - run:
-          name: Add GitHub token into container environment variable
-          command: |
-            echo "GITHUB_TOKEN=$GITHUB_TOKEN" >> .env
-            cat .env
-      - run:
-          name: Start Bay stack.
-          command: |
-            composer bay:start -- --build
-            sleep 10 # wait for mariadb to startup
-            docker ps -a
-      - run:
-          name: Setup app.
-          command: |
-            docker-compose exec cli bash -c "mkdir -p /home/.ssh && echo -e \"$BAY_KEY\" > /home/.ssh/key && chmod 600 /home/.ssh/key"
-            composer app:db-import
-            composer app:search-index
-            composer bay:cli -- mkdir -p /app/screenshots
-      - run:
-          name: Install dev dependencies.
-          command: composer bay:cli -- composer install --ansi
-      - run:
-          name: Lint code.
-          command: composer bay:cli -- composer app:cs
-      - run:
-          name: Run unit tests.
-          command: composer bay:cli -- vendor/bin/phpunit
-      - run:
-          name: Run behat tests.
-          command: composer bay:cli -- vendor/bin/behat --format=progress_fail --colors || composer bay:cli -- vendor/bin/behat --format=progress_fail --colors --rerun
-      - run:
-          name: Copy artifacts.
-          command: |
-            mkdir -p /tmp/artifacts/behat
-            docker cp $(docker-compose ps -q cli):/app/screenshots /tmp/artifacts/behat
-          when: always
-      - store_artifacts:
-          path: /tmp/artifacts
+    <<: *job-build
 
   build-install:
+    <<: *job-build
     docker:
-      - image: singledigital/bay-circle:latest
+      - image: *builder-image
         environment:
-          COMPOSER_ALLOW_SUPERUSER: 1
-          COMPOSE_PATH_SEPARATOR: ":"
-          COMPOSE_FILE: docker-compose.yml:docker-compose.ci.yml
-          # @private_repos
           SSH_KEY_FINGERPRINT: *ssh_key_fingerprint
-          # @private_repos_end
-    working_directory: /app
-    steps:
-      - checkout
-      - setup_remote_docker:
-          docker_layer_caching: true
-      - run:
-          name: Validate composer config.
-          command: composer validate --ansi --with-dependencies --strict
-      - run:
-          name: Clear composer caches.
-          command: composer clearcache
-      - run:
-          name: Pull newest Bay images.
-          command: composer bay:pull
-      # @private_repos
-      - add_ssh_keys:
-          fingerprints:
-            - *ssh_key_fingerprint
-      - run:
-          name: Add SSH key into container environment variable
-          command: |
-            SSH_KEY_FILE="${SSH_KEY_FINGERPRINT//:}" && SSH_KEY_FILE="id_rsa_${SSH_KEY_FILE//\"}" && export $SSH_KEY_FILE
-            cp ~/.ssh/$SSH_KEY_FILE /app/lagoon_cli.key
-      # @private_repos_end
-      - run:
-          name: Add GitHub token into container environment variable
-          command: |
-            echo "GITHUB_TOKEN=$GITHUB_TOKEN" >> .env
-            cat .env
-      - run:
-          name: Start Bay stack.
-          command: |
-            composer bay:start -- --build
-            sleep 10 # wait for mariadb to startup
-            docker ps -a
-      - run:
-          name: Setup app.
-          command: |
-            docker-compose exec cli bash -c "mkdir -p /home/.ssh && echo -e \"$BAY_KEY\" > /home/.ssh/key && chmod 600 /home/.ssh/key"
-            composer app:site-install
-            composer bay:cli -- mkdir -p /app/screenshots
-      - run:
-          name: Install dev dependencies.
-          command: composer bay:cli -- composer install --ansi
-      - run:
-          name: Lint code.
-          command: composer bay:cli -- composer app:cs
-      - run:
-          name: Run unit tests.
-          command: composer bay:cli -- vendor/bin/phpunit
-      - run:
-          name: Run behat tests.
-          command: composer bay:cli -- vendor/bin/behat --format=progress_fail --colors --profile=tide || composer bay:cli -- vendor/bin/behat --format=progress_fail --colors --profile=tide --rerun
-      - run:
-          name: Copy artifacts.
-          command: |
-            mkdir -p /tmp/artifacts/behat
-            docker cp $(docker-compose ps -q cli):/app/screenshots /tmp/artifacts/behat
-          when: always
-      - store_artifacts:
-          path: /tmp/artifacts
+          LAGOON_ENVIRONMENT_TYPE: ci
+          INSTALL_NEW_SITE: 1
+          BEHAT_PROFILE: "--profile=tide"
 
   push-api:
+    <<: *job-mirror
     docker:
-      - image: singledigital/bay-circle:latest
-    working_directory: /app
-    environment:
-      DEPLOY_SSH_FINGERPRINT: *deploy_ssh_fingerprint
-    steps:
-      - checkout
-      - add_ssh_keys:
-          fingerprints:
-            - *deploy_ssh_fingerprint
-      - *step_configure_git
-      - run:
-          name: Push to remote
-          command: |
-            git checkout -b api
-            git push origin api --force
+      - image: *builder-image
+        environment:
+          MIRROR_GIT_BRANCH: api
 
   push-api-edge:
+    <<: *job-mirror
     docker:
-      - image: singledigital/bay-circle:latest
-    working_directory: /app
-    environment:
-      DEPLOY_SSH_FINGERPRINT: *deploy_ssh_fingerprint
-    steps:
-      - checkout
-      - add_ssh_keys:
-          fingerprints:
-            - *deploy_ssh_fingerprint
-      - *step_configure_git
-      - run:
-          name: Push to remote
-          command: |
-            git checkout -b api-edge
-            git push origin api-edge --force
+      - image: *builder-image
+        environment:
+          MIRROR_GIT_BRANCH: api-edge
 
 workflows:
   version: 2
