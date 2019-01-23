@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bfb933189532e4a72b9ee0a9feb903c6",
+    "content-hash": "b7d4bc0bb14094aa131258f728a9a46f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -698,7 +698,10 @@
             },
             "type": "composer-plugin",
             "extra": {
-                "class": "cweagans\\Composer\\Patches"
+                "class": "cweagans\\Composer\\Patches",
+                "patches_applied": {
+                    "Fix for already applied patches - specific to 1.6.5": "patches/composer-patches/fix-applied-patches.patch"
+                }
             },
             "autoload": {
                 "psr-4": {
@@ -1638,16 +1641,16 @@
         },
         {
             "name": "dpc-sdp/tide_core",
-            "version": "v1.0.0-alpha1",
+            "version": "v1.0.0-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "0d4f139a2a9295fdc81967b5800e89f2381edfdb"
+                "reference": "bdf3afcb31016cdf06d1da260b81cf947707a2a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/0d4f139a2a9295fdc81967b5800e89f2381edfdb",
-                "reference": "0d4f139a2a9295fdc81967b5800e89f2381edfdb",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/bdf3afcb31016cdf06d1da260b81cf947707a2a3",
+                "reference": "bdf3afcb31016cdf06d1da260b81cf947707a2a3",
                 "shasum": ""
             },
             "require": {
@@ -1734,7 +1737,8 @@
                         "Events Log Track breaks Entity Browser #5 - https://www.drupal.org/project/events_log_track/issues/2934036": "https://www.drupal.org/files/issues/2018-04-19/2934036-check_empty_submit-5.patch",
                         "Entities with title longer than 50 characters - https://www.drupal.org/project/events_log_track/issues/2930817": "https://www.drupal.org/files/issues/increase-character-length-2930817-2.patch",
                         "Event logs for change in workflows - https://www.drupal.org/project/events_log_track/issues/2974170": "https://www.drupal.org/files/issues/2018-06-26/events_log_track-add-workflows-2974170-7.patch",
-                        "Add handlers for file and media entities - https://www.drupal.org/project/events_log_track/issues/2959769": "https://www.drupal.org/files/issues/2018-06-26/events-log-track_add-file-media-2959769-9.patch"
+                        "Add handlers for file and media entities - https://www.drupal.org/project/events_log_track/issues/2959769": "https://www.drupal.org/files/issues/2018-06-26/events-log-track_add-file-media-2959769-9.patch",
+                        "Skip password logging during failed authentication attempt - https://www.drupal.org/project/events_log_track/issues/3027463": "https://www.drupal.org/files/issues/2019-01-22/event-log-track-auth-3027463-2.patch"
                     },
                     "drupal/role_delegation": {
                         "Allow to delegate roles on user creation - https://www.drupal.org/project/role_delegation/issues/2811851": "https://www.drupal.org/files/issues/role-delegation-user-forms-2811851-27.patch",
@@ -1758,7 +1762,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Core functionality for Tide Drupal 8 distribution",
-            "time": "2019-01-22T08:48:09+00:00"
+            "time": "2019-01-23T04:13:46+00:00"
         },
         {
             "name": "dpc-sdp/tide_event",
@@ -3034,16 +3038,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "8.5.6",
+            "version": "8.5.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "7d7184a69ac90ce53929ce99f18458043416107a"
+                "reference": "596f97e4d55dae28e00605d9825529bd8b8ad382"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/7d7184a69ac90ce53929ce99f18458043416107a",
-                "reference": "7d7184a69ac90ce53929ce99f18458043416107a",
+                "url": "https://api.github.com/repos/drupal/core/zipball/596f97e4d55dae28e00605d9825529bd8b8ad382",
+                "reference": "596f97e4d55dae28e00605d9825529bd8b8ad382",
                 "shasum": ""
             },
             "require": {
@@ -3087,6 +3091,7 @@
                 "symfony/validator": "~3.4.0",
                 "symfony/yaml": "~3.4.5",
                 "twig/twig": "^1.35.0",
+                "typo3/phar-stream-wrapper": "^2.0.1",
                 "zendframework/zend-diactoros": "^1.1",
                 "zendframework/zend-feed": "^2.4"
             },
@@ -3276,7 +3281,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2018-08-01T20:50:42+00:00"
+            "time": "2019-01-16T23:30:07+00:00"
         },
         {
             "name": "drupal/ctools",
@@ -4119,7 +4124,8 @@
                     "Events Log Track breaks Entity Browser #5 - https://www.drupal.org/project/events_log_track/issues/2934036": "https://www.drupal.org/files/issues/2018-04-19/2934036-check_empty_submit-5.patch",
                     "Entities with title longer than 50 characters - https://www.drupal.org/project/events_log_track/issues/2930817": "https://www.drupal.org/files/issues/increase-character-length-2930817-2.patch",
                     "Event logs for change in workflows - https://www.drupal.org/project/events_log_track/issues/2974170": "https://www.drupal.org/files/issues/2018-06-26/events_log_track-add-workflows-2974170-7.patch",
-                    "Add handlers for file and media entities - https://www.drupal.org/project/events_log_track/issues/2959769": "https://www.drupal.org/files/issues/2018-06-26/events-log-track_add-file-media-2959769-9.patch"
+                    "Add handlers for file and media entities - https://www.drupal.org/project/events_log_track/issues/2959769": "https://www.drupal.org/files/issues/2018-06-26/events-log-track_add-file-media-2959769-9.patch",
+                    "Skip password logging during failed authentication attempt - https://www.drupal.org/project/events_log_track/issues/3027463": "https://www.drupal.org/files/issues/2019-01-22/event-log-track-auth-3027463-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -10208,6 +10214,46 @@
             "time": "2019-01-14T14:59:29+00:00"
         },
         {
+            "name": "typo3/phar-stream-wrapper",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3/phar-stream-wrapper.git",
+                "reference": "0469d9fefa0146ea4299d3b11cfbb76faa7045bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3/phar-stream-wrapper/zipball/0469d9fefa0146ea4299d3b11cfbb76faa7045bf",
+                "reference": "0469d9fefa0146ea4299d3b11cfbb76faa7045bf",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3|^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.36"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TYPO3\\PharStreamWrapper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Interceptors for PHP's native phar:// stream handling",
+            "homepage": "https://typo3.org/",
+            "keywords": [
+                "phar",
+                "php",
+                "security",
+                "stream-wrapper"
+            ],
+            "time": "2018-10-18T08:46:28+00:00"
+        },
+        {
             "name": "webflo/drupal-finder",
             "version": "1.1.0",
             "source": {
@@ -10773,6 +10819,9 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "4.4-dev"
+                },
+                "patches_applied": {
+                    "Correctly filter features, now that the base path is correctly set - https://github.com/Behat/Gherkin/pull/129": "https://patch-diff.githubusercontent.com/raw/Behat/Gherkin/pull/129.patch"
                 }
             },
             "autoload": {
@@ -12933,7 +12982,14 @@
             "time": "2019-01-01T13:45:19+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "alias": "8.5.6",
+            "alias_normalized": "8.5.6.0",
+            "version": "8.5.10.0",
+            "package": "drupal/core"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/coffee": 10,
