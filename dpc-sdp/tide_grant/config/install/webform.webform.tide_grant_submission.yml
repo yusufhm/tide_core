@@ -55,7 +55,7 @@ elements: |
     '#title': Topic
     '#empty_option': 'Please select'
     '#required': true
-    '#vocabulary': audience
+    '#vocabulary': topic
     '#breadcrumb_delimiter': ''
   who_is_the_grant_or_program_for_:
     '#type': webform_term_select
