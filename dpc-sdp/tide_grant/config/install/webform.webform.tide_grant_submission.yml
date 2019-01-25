@@ -40,7 +40,7 @@ elements: |
     '#datepicker': true
   this_grant_program_is_ongoing_and_does_have_an_open_close_dates_:
     '#type': checkbox
-    '#title': 'This grant/program is ongoing and does have an open/close dates.'
+    '#title': 'This grant/program is ongoing and does not have open/close dates.'
     '#states':
       required:
         -
@@ -118,11 +118,11 @@ elements: |
     '#type': webform_horizontal_rule
   privacy_statement_disclaimer:
     '#type': processed_text
-    '#text': "<h2>Privicy statement and disclaimer</h2>\n\n<p>\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\" <a href=\"https://www.vic.gov.au/\">Read full statement</a></p>\n"
+    '#text': "<p>The Department of Premier and Cabinet is collecting information in order to promote your upcoming grant or program. Any information collected will be used by the Department of Premier and Cabinet and may be used in Department of Premier and Cabinet reporting in an aggregated or de-identified format.</p>\n\n<p>Department of Premier and Cabinet collects, stores, shares and manages personal information consistently with the provisions of the Victorian Information Privacy Act 2000.</p>\n\n<p>For more information on how Department of Premier and Cabinet handles your personal information, or if you would like to exercise your right to access any personal information you provide, please see the <a href=\"/privacy\" target=\"_blank\">privacy</a>.</p>\n\n<p>For more information on how the software companies engaged by Department of Premier and Cabinet handle personal information, please see the <a href=\"/privacy\" target=\"_blank\">privacy</a> policy.</p>\n"
     '#format': rich_text
   agree_privacy_statement:
     '#type': checkbox
-    '#title': 'I understand and agree to the privacy and disclaimer'
+    '#title': 'I have read and understand how Department of Premier and Cabinet stores information.'
     '#required': true
   actions:
     '#type': webform_actions
