@@ -83,8 +83,8 @@ function tide_grant_webform_submission_presave($submission) {
       ],
       'field_node_dates' => [
         [
-          'value' => date('Y-m-d\TH:i:00', strtotime(Html::escape($submission_data['open_date']))),
-          'end_value' => date('Y-m-d\TH:i:00', strtotime(Html::escape($submission_data['close_date']))),
+          'value' => $submission_data['open_date'] ? date('Y-m-d\TH:i:00', strtotime(Html::escape($submission_data['open_date']))) : NULL,
+          'end_value' => $submission_data['close_date'] ? date('Y-m-d\TH:i:00', strtotime(Html::escape($submission_data['close_date']))) : NULL,
         ],
       ],
       'field_node_on_going' => Html::escape($submission_data['this_grant_program_is_ongoing_and_does_have_an_open_close_dates_']),
