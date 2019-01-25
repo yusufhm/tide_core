@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "421222db6d733411e5d354119a33c0c6",
+    "content-hash": "19c81a6816a9e5a83cc3c30f867c3028",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1631,6 +1631,9 @@
                     "drupal/jsonapi_extras": {
                         "Date Time enhancer does not work with Date range fields - https://www.drupal.org/project/jsonapi_extras/issues/2953227": "https://www.drupal.org/files/issues/2018-07-17/jsonapi_extras-date-range-fields-support-2953227-d8-11.patch"
                     }
+                },
+                "patches_applied": {
+                    "Youtube wont connect and transcript pulls back sorry page - https://digital-engagement.atlassian.net/browse/SDPA-1743": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_api/pull/27.patch"
                 }
             },
             "license": [
