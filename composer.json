@@ -282,9 +282,6 @@
             "cweagans/composer-patches": {
                 "Fix for already applied patches - specific to 1.6.5": "patches/composer-patches/fix-applied-patches.patch"
             },
-            "dpc-sdp/tide_api": {
-                "Youtube wont connect and transcript pulls back sorry page - https://digital-engagement.atlassian.net/browse/SDPA-1743": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_api/pull/27.patch"
-            },
             "drupal/core": {
                 "Debug EntityChangedConstraintValidator": "./patches/core/drupal-core-debug-entity-changed-constraint-validator.patch"
             },
