@@ -41,7 +41,7 @@ function vicgovau_demo_create_node_alert() {
         ['target_id' => VicgovauDemoHelper::randomAlertType()],
       ],
       ['field_call_to_action'] => [
-        VicgovauDemoHelper::randomLinkFieldValue(),
+        [],
       ],
     ];
 

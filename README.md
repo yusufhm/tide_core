@@ -4,69 +4,52 @@ Drupal 8 implementation of Content API for VIC.GOV.AU
 [![CircleCI](https://circleci.com/gh/dpc-sdp/content-vic-gov-au.svg?style=shield&circle-token=619001ceda795d221a96315242e2782f621612d4)](https://circleci.com/gh/dpc-sdp/content-vic-gov-au)
 ![Release](https://img.shields.io/github/release/dpc-sdp/content-vic-gov-au.svg)
 
-## Local environment setup
-1. Install Docker
-   - Install [Homebrew](https://brew.sh/)
-   ```bash
-   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-   ```
-   - Install docker `brew cask install docker`
-   (You can also install it manually if you prefer - https://www.docker.com/docker-mac)
-2. Start docker and you should be able to run `docker ps`
-3. Checkout project repo and confirm the path is in docker's file sharing config - https://docs.docker.com/docker-for-mac/#file-sharing
-4. Make sure that `composer` & `pygmy` are installed
-   - Install pygmy `gem install pygmy` (you might need sudo for this depending on your ruby configuration)
-   - Run `brew bundle` or install each package manually:
-      - Install composer `brew install composer`
-5. Make sure you don't have anything running on port 80 on the host machine (like a web server) then run `pygmy up` 
-6. Run `composer app:build`
-7. Once build has completed, you can run `composer app:login` to `drush uli` into the local site.
+## Prerequisites
+1. Make sure that you have latest versions of all required software installed:   
+  - [Docker](https://www.docker.com/) 
+  - [Pygmy](https://docs.amazee.io/local_docker_development/pygmy.html)
+  - [Ahoy](https://github.com/ahoy-cli/ahoy) 
+2. Make sure that all local web development services are shut down (`apache/nginx`, `mysql`, `MAMP` etc).
 
-* If any steps fail you're safe to rerun from any point, 
-starting again from the beginning will just reconfirm the changes.
+## Local environment setup
+3. `curl https://raw.githubusercontent.com/dpc-sdp/dev-tools/master/install | bash`
+4. `pygmy up`
+5. `ahoy build` 
 
 Local URL -- http://content-vicgovau.docker.amazee.io/
 
-## Available `composer` commands
-
-**Application**
-- `composer app:build` - build application and local development environment.
-- `composer app:rebuild` - rebuild application and local development environment with removing all dependencies.
-- `composer app:cleanup` - remove all dependencies.
-- `composer app:login` - login into locally built website (run `drush uli` on the `cli` container).
-- `composer app:test` - run tests.
-- `composer app:cs` - lint code.
-- `composer app:cr` - rebuild application cache.
-- `composer app:drush` - run drush commands. Example: `composer app:drush -- status` 
-- `composer app:site-install` - run site installation from profile.
-- `composer app:db-import` - download and re-import DB.
-
-**Bay**
-- `composer bay:start` - build and start local development environment.
-- `composer bay:restart` - restart local development environment.
-- `composer bay:stop` - stop all Bay containers.
-- `composer bay:destroy` - stop and remove all Bay containers.
-- `composer bay:doctor` - helps to find the cause of any issues with a local setup.
-- `composer bay:fixtoken` - if you're seeing the JWT Token error when running composer commands, run this command.
-- `composer bay:redeploy` - If a build has failed on a specific branch, it can be redployed using this commane. Example - `composer bay:redeploy -- develop`.
-- `composer bay:logs` - get logs from all running Bay containers.
-- `composer bay:cli` - run a command in `cli` container. Example: `composer bay:cli -- ls -al`.
-- `composer bay:pull` - pull latest Bay containers.
-
-## Logs.
-
-Using the composer helper script you can get logs from any running container.
-
-`composer bay:logs`
-
-You can also filter the output to show only logs from a particular service.
-For example `composer bay:logs -- php` will show the log output from the php container.
-The full list of services can be found in the `docker-compose.yml`
+## Available `ahoy` commands
+Run each command as `ahoy <command>`.
+```
+ build                Build or rebuild project.
+   clean                Remove all build files.
+   clean-full           Remove all development files.
+   cli                  Start a shell inside CLI container or run a command.
+   composer-merge       Merge composer files.
+   deploy               Deploy or re-deploy a branch in Bay.
+   doctor               Identify problems with current stack.
+   down                 Stop Docker containers and remove container, images, volumes and networks.
+   drush                Run drush commands in the CLI service container.
+   flush-redis          Flush Redis cache.
+   info                 Print information about this project.
+   install-dev          Install dependencies.
+   install-site         Install site.
+   lint                 Lint code.
+   login                Login to a website.
+   logs                 Show Docker logs.
+   pull                 Pull latest docker images.
+   restart              Restart all stopped and running Docker containers.
+   start                Start existing Docker containers.
+   stop                 Stop running Docker containers.
+   test-behat           Run Behat tests.
+   up                   Build and start Docker containers.   
+```
 
 ## SSHing into CLI container 
+`ahoy cli`
 
-`docker-compose exec cli bash`
-
+## Running a command in CLI container 
+`ahoy cli ls /app`
 
 ## Mailhog.
 
@@ -103,7 +86,7 @@ OR
 2. Assess if package is required for distribution (Tide) or site (content.vic.gov.au) and add to relevant `composer.json`:
   - for distribution - `dpc-sdp/tide/composer.json`
   - for site - `composer.json`
-3. To make sure that composer trigger dependency tree rebuild, run `composer app:cleanup`.
+3. To make sure that Composer triggers dependency tree rebuild, run `ahoy clean`.
 4. Run `composer update --lock`. This will install all dependencies and update root `composer.lock` file with newly added module. 
 
 ### Step 2. Enable module
@@ -143,11 +126,9 @@ Behat configuration uses multiple extensions:
 Generic Behat tests should be written against the test entities from the Tide Test module. If a new test entity (node, block, etc.) is added to the Tide Test module, the relevant permissions must be also granted to Approver and Editor via the hook `tide_test_entity_bundle_create()`.
 
 ### Run tests locally:
-- Run all tests: `composer app:test`
-- Run PHPUnit tests: `composer app:test-phpunit`
-- Run Behat tests: `composer app:test-behat`
-    - Run specific test feature: `composer app:test-behat tests/behat/features/homepage.feature`
-    - Run specific test tag: `composer app:test-behat -- --tags=wip`
+- Run Behat tests: `ahoy test-behat`
+    - Run specific test feature: `ahoy test-behat tests/behat/features/homepage.feature`
+    - Run specific test tag: `ahoy test-behat -- --tags=wip`
 
 Read more information in [the wiki page](https://digital-engagement.atlassian.net/wiki/spaces/SDP/pages/134906009/Behat+testing).
 
@@ -175,31 +156,29 @@ Test artifacts (screenshots etc.) are available under 'Artifacts' tab in Circle 
 ### PHP application from browser 
 1. Trigger xDebug from web browser (using one of the browser extensions) so that PHPStorm recognises the server `content-vicgovau.docker.amazee.io` and configures the path mapping. Alternatively, you can create the server in PHPStorm Settings.
   * Make sure `serverName` to be `content-vicgovau.docker.amazee.io`
- 
-  
+   
 ### PHP scripts
-1. Make sure `scripts/xdebug.sh` is executable.
+1. Make sure `xdebug.sh` is executable.
 2. SSH into CLI container: `docker-compose exec cli bash`
-3. Run your PHP script: `scripts/xdebug.sh path/to/script`.
-    * Example running a single Behat test: `scripts/xdebug.sh vendor/bin/behat path/to/test.feature`
+3. Run your PHP script: `xdebug.sh path/to/script`.
+    * Example running a single Behat test: `xdebug.sh vendor/bin/behat path/to/test.feature`
 
 ### Drush commands
 3. To debug `drush` commands:
     * SSH to CLI container: `docker-compose exec cli bash`
         + `cd docroot`
-        + `../scripts/xdebug.sh ../vendor/bin/drush <DRUSH_COMMAND>`
-            - Example: `../scripts/xdebug.sh ../vendor/bin/drush updb -y`
-    * Debug directly from host machine: `composer debug-drush -- <DRUSH_COMMAND>`
-        + Example: `composer app:debug-drush -- updb -y`
+        + `./xdebug.sh ../vendor/bin/drush <DRUSH_COMMAND>`
+            - Example: `./xdebug.sh ../vendor/bin/drush updb -y`
 
 ### DB connection details
+Run `ahoy info` to get the port number.
 
 ```
   Host:     127.0.0.1
   Username: drupal
   Password: drupal
   Database: drupal
-  Port:     13306
+  Port:     <get from "ahoy info">
 ```  
 
 ### Pre deployment database backups

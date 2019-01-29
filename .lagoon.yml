@@ -26,7 +26,7 @@ tasks:
         name: Deploy drupal.
         command: |
           if [[ "$LAGOON_GIT_BRANCH" = "api" ]] || [[ "$LAGOON_GIT_BRANCH" = "api-edge" ]]; then
-            ./scripts/drupal/site-install.sh
+            ./scripts/drupal/install-new-site.sh
           else
             ./scripts/drupal/deploy.sh
           fi
@@ -45,6 +45,14 @@ environments:
       - name: drush cron
         schedule: "*/15 * * * *"
         command: 'drush cron'
+        service: cli
+      - name: drush cron
+        schedule: "0 5,9,17,21 * * *"
+        command: 'bash /app/scripts/drupal/backup-scheduled.sh /app/docroot vicgovau'
+        service: cli
+      - name: drush cron
+        schedule: "0 1,13 * * *"
+        command: 'bash /app/scripts/drupal/backup-scheduled.sh /app/docroot vicgovau true'
         service: cli
   sandbox:
     cronjobs:

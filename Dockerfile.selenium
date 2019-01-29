@@ -1,4 +1,0 @@
-FROM selenium/standalone-chrome
-
-# Copy test assets into container with browser.
-COPY tests/test_data /app/tests/test_data

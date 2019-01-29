@@ -1,57 +1,42 @@
 default:
-  autoload: [%paths.base%/tests/behat/bootstrap]
+  autoload: [ '%paths.base%/tests/behat/bootstrap' ]
   gherkin:
+    # Disable caching during development. It is enabled for profiles below.
+    cache: ~
     filters:
       # Allow skipping tests by tagging them with "@skipped"
       tags: "~@skipped"
   suites:
     default:
       paths:
-        - %paths.base%/tests/behat/features
-        - %paths.base%/dpc-sdp/tide_api/tests/behat/features
-        - %paths.base%/dpc-sdp/tide_core/tests/behat/features
-        - %paths.base%/dpc-sdp/tide_grant/tests/behat/features
-        - %paths.base%/dpc-sdp/tide_landing_page/tests/behat/features
-        - %paths.base%/dpc-sdp/tide_media/tests/behat/features
-        - %paths.base%/dpc-sdp/tide_news/tests/behat/features
-        - %paths.base%/dpc-sdp/tide_page/tests/behat/features
-        - %paths.base%/dpc-sdp/tide_search/tests/behat/features
-        - %paths.base%/dpc-sdp/tide_site/tests/behat/features
-        - %paths.base%/dpc-sdp/tide_site/modules/tide_site_simple_sitemap/tests/behat/features
-        - %paths.base%/dpc-sdp/tide_test/tests/behat/features
-        - %paths.base%/dpc-sdp/tide_webform/tests/behat/features
-        - %paths.base%/docroot/modules/custom/vicgovau_core/tests/behat/features
+      - '%paths.base%/tests/behat/features'
+      - '%paths.base%/docroot/modules/custom/vicgovau_core/tests/behat/features'
       contexts:
-        - VicgovauDrupalContext
-        - Drupal\DrupalExtension\Context\MinkContext
-        - VicgovauMinkContext
-        - Drupal\DrupalExtension\Context\MarkupContext
-        - Drupal\DrupalExtension\Context\MessageContext
-        - Drupal\DrupalExtension\Context\DrushContext
-        - IntegratedExperts\BehatScreenshotExtension\Context\ScreenshotContext
-        - IntegratedExperts\BehatRelativityExtension\Context\RelativityContext
-        - Ubirak\RestApiBehatExtension\RestApiContext
-        - Ubirak\RestApiBehatExtension\Json\JsonContext
+      - FeatureContext
+      - Drupal\DrupalExtension\Context\MinkContext
+      - Drupal\DrupalExtension\Context\MarkupContext
+      - Drupal\DrupalExtension\Context\MessageContext
+      - IntegratedExperts\BehatScreenshotExtension\Context\ScreenshotContext
 
   extensions:
     Behat\MinkExtension:
       goutte: ~
       base_url: http://nginx:8080
+      files_path: '%paths.base%/tests/behat/fixtures'
       browser_name: chrome
       selenium2:
-        wd_host: "http://selenium:4444/wd/hub"
+        wd_host: "http://chrome:4444/wd/hub"
         capabilities: { "browser": "chrome", "version": "*", "marionette": true }
       javascript_session: selenium2
-      files_path: %paths.base%/tests/test_data
     # Provides integration with Drupal APIs.
     Drupal\DrupalExtension:
       blackbox: ~
       api_driver: drupal
       drush_driver: drush
       drupal:
-        drupal_root: %paths.base%/docroot
+        drupal_root: docroot
       drush:
-        root: %paths.base%/docroot
+        root: docroot
       selectors:
         message_selector: '.messages'
         error_message_selector: '.messages.messages--error'
@@ -78,38 +63,12 @@ default:
         disabled: '.region-disabled'
     # Allows to capture HTML and JPG screenshots (based on the driver used).
     IntegratedExperts\BehatScreenshotExtension:
-      dir: %paths.base%/screenshots
+      dir: '%paths.base%/screenshots'
       fail: true
       purge: false
     # Show explicit fail information and continue the test run.
     IntegratedExperts\BehatFormatProgressFail\FormatExtension: ~
-    IntegratedExperts\BehatRelativityExtension:
-      breakpoints:
-        mobile:
-          width: 320
-          height: 480
-        tablet:
-          width: 768
-          height: 1024
-        desktop:
-          width: 1024
-          height: 1024
-          default: true
-      # Vertical offset - document will be scrolled to the element with this offset.
-      # Useful when fixed elements may cover part of pages making it impossible to click on components.
-      offset: 60
-      # List of site-wide components.
-      components:
-        'header-container': ".header-container"
-        'page': ".layout-container"
-        'header': "header"
-        'main': "main"
-        'footer': "footer"
-        'content-rating-comments': "#block-webform-content-rating .form-item-comments"
-    Ubirak\RestApiBehatExtension\Extension:
-      rest:
-        base_url: http://nginx:8080
-        store_response: true
+
 p0:
   gherkin:
     filters:
