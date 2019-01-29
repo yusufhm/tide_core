@@ -1756,6 +1756,9 @@
                     "drupal/field_group": {
                         "Do not translate field group labels using interface translation. - https://www.drupal.org/project/field_group/issues/2846617": "https://www.drupal.org/files/issues/2018-05-10/2846617-16-use-config-translations-for-field-group.patch"
                     }
+                },
+                "patches_applied": {
+                    "Reverting to Drupal core 8.5.x": "https://github.com/dpc-sdp/tide_core/compare/e2d69426de36b9e166f03d726311a5547ce6ef53...feature/SDPA-1716-sa-core-2019-00-e2d694.patch"
                 }
             },
             "license": [
@@ -1889,6 +1892,11 @@
                 "dpc-sdp/tide_core": "^1.0"
             },
             "type": "drupal-module",
+            "extra": {
+                "patches_applied": {
+                    "Reverting to Drupal core 8.5.x": "https://github.com/dpc-sdp/tide_monsido/compare/4cd5b4dee5b6c9d8c1c6fab7c8ed6b8a3f12741a...feature/SDPA-1716-sa-core-2019-00-4cd5b4.patch"
+                }
+            },
             "license": [
                 "GPL-2.0-or-later"
             ],
@@ -10212,6 +10220,46 @@
                 "templating"
             ],
             "time": "2019-01-14T14:59:29+00:00"
+        },
+        {
+            "name": "typo3/phar-stream-wrapper",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3/phar-stream-wrapper.git",
+                "reference": "0469d9fefa0146ea4299d3b11cfbb76faa7045bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3/phar-stream-wrapper/zipball/0469d9fefa0146ea4299d3b11cfbb76faa7045bf",
+                "reference": "0469d9fefa0146ea4299d3b11cfbb76faa7045bf",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3|^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.36"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TYPO3\\PharStreamWrapper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Interceptors for PHP's native phar:// stream handling",
+            "homepage": "https://typo3.org/",
+            "keywords": [
+                "phar",
+                "php",
+                "security",
+                "stream-wrapper"
+            ],
+            "time": "2018-10-18T08:46:28+00:00"
         },
         {
             "name": "typo3/phar-stream-wrapper",
