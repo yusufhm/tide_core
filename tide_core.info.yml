@@ -80,6 +80,10 @@ config_devel:
     - field.field.paragraph.related_links.field_paragraph_summary
     - field.storage.node.field_featured_image
     - field.storage.node.field_metatags
+    - field.storage.node.field_node_author
+    - field.storage.node.field_node_email
+    - field.storage.node.field_node_link
+    - field.storage.node.field_node_phone
     - field.storage.node.field_related_links
     - field.storage.node.field_show_related_content
     - field.storage.node.field_show_social_sharing
