@@ -45,6 +45,7 @@
         "drupal/simple_sitemap": "^2.12",
         "drupal/smart_trim": "^1.1",
         "drupal/stage_file_proxy": "^1.0-alpha3",
+        "drupal/telephone": "^8.5.6",
         "drupal/token_conditions": "dev-1.x",
         "drupal/token_filter": "^1.1",
         "drupal/twig_field_value": "^1.1",
