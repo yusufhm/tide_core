@@ -1,0 +1,9 @@
+uuid: 58be6fa5-c2d2-4e58-b741-1cc805fd12d0
+langcode: en
+status: true
+dependencies: {  }
+name: Expertise
+vid: expertise
+description: 'Areas of expertise for Profile content.'
+hierarchy: 0
+weight: 0

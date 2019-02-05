@@ -1,0 +1,21 @@
+uuid: 15f1c81b-8569-4adb-8964-14298ea3c2d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_year
+    - node.type.profile
+  module:
+    - options
+id: node.profile.field_year
+field_name: field_year
+entity_type: node
+bundle: profile
+label: 'Induction Year'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

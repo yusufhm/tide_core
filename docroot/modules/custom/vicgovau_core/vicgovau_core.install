@@ -583,3 +583,44 @@ function vicgovau_core_update_8017() {
     $term->save();
   }
 }
+
+/**
+ * SDPA-1700: Add Expertise vocabulary terms.
+ */
+function vicgovau_core_update_8018() {
+  // Creates terms for Expertise vocabulary.
+  $vid = 'expertise';
+
+  $terms = [
+    'Aboriginal affairs',
+    'Advocacy and social justice',
+    'Arts, culture and literature',
+    'Business and finance',
+    'Community',
+    'Cultural diversity',
+    'Design, architecture and planning',
+    'Disability rights',
+    'Education',
+    'Energy, environment and sustainability',
+    'Gender equality and women\'s rights',
+    'Health',
+    'History and heritage',
+    'International development, foreign affairs and trade',
+    'Law and justice',
+    'LGBTI rights',
+    'Media and communications',
+    'Prevention of family violence',
+    'Public service and government',
+    'Regional and rural',
+    'Science, technology, engineering and maths',
+    'Sport and recreation'
+  ];
+  foreach ($terms as $term) {
+    Term::create([
+      'name' => $term,
+      'vid' => $vid,
+      'parent' => [],
+    ])->save();
+  }
+}
+

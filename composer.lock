@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "421222db6d733411e5d354119a33c0c6",
+    "content-hash": "3c5555a6950aab53d1c40bc10085ad9b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1960,6 +1960,25 @@
             ],
             "description": "Page content type and related configuration for Tide Drupal 8 distribution",
             "time": "2019-01-22T10:01:17+00:00"
+        },
+        {
+            "name": "dpc-sdp/tide_profile",
+            "version": "0.0.1",
+            "dist": {
+                "type": "path",
+                "url": "dpc-sdp/tide_profile",
+                "reference": "7dff339686d0ea8f0e5613d88c58ee64433bbba3",
+                "shasum": null
+            },
+            "require": {
+                "dpc-sdp/tide_core": "@dev",
+                "dpc-sdp/tide_media": "@dev"
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Profile content type and related configuration for Tide Drupal 8 distribution"
         },
         {
             "name": "dpc-sdp/tide_search",
@@ -6424,7 +6443,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.8",
-                    "datestamp": "1516678385",
+                    "datestamp": "1548492180",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

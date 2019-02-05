@@ -9,6 +9,7 @@ dependencies:
     - node.type.landing_page
     - node.type.news
     - node.type.page
+    - node.type.profile
   module:
     - content_moderation
 _core:
@@ -92,3 +93,4 @@ type_settings:
       - landing_page
       - news
       - page
+      - profile

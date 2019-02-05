@@ -9,6 +9,7 @@
         "dpc-sdp/tide": "^1.0",
         "dpc-sdp/tide_alert": "^0.0.1",
         "dpc-sdp/tide_grant": "^0.0.1",
+        "dpc-sdp/tide_profile": "^0.0.1",
         "drupal-composer/drupal-scaffold": "^2.3",
         "drupal/admin_toolbar": "^1.20",
         "drupal/clamav": "^1.1",
@@ -129,6 +130,10 @@
             "type": "vcs",
             "no-api": true,
             "url": "https://github.com/dpc-sdp/tide_page.git"
+        },
+        "dpc-sdp/tide_profile": {
+            "type": "path",
+            "url": "dpc-sdp/tide_profile"
         },
         "dpc-sdp/tide_news": {
             "type": "vcs",
