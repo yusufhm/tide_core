@@ -103,7 +103,7 @@ function tide_grant_webform_submission_presave($submission) {
       ],
       'field_call_to_action' => [
         'uri' => Html::escape($submission_data['website_url_to_apply_for_grant_or_program']),
-        'title' => t('More information'),
+        'title' => t('Apply now'),
       ],
       'field_node_author' => [
         'value' => Html::escape($submission_data['contact_person']),
