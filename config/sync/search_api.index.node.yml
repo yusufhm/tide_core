@@ -3,44 +3,50 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_audience
     - field.storage.node.body
+    - field.storage.node.field_audience
+    - field.storage.node.field_event_category
+    - field.storage.node.field_event_details
+    - field.storage.paragraph.field_paragraph_date_range
+    - field.storage.node.field_event_description
+    - field.storage.paragraph.field_paragraph_location
+    - field.storage.paragraph.field_paragraph_event_price_from
+    - field.storage.paragraph.field_paragraph_event_price_to
+    - field.storage.paragraph.field_event_requirements
+    - field.storage.node.field_news_intro_text
     - field.storage.node.field_landing_page_contact
     - field.storage.paragraph.field_paragraph_body
     - field.storage.paragraph.field_paragraph_name
+    - field.storage.node.field_landing_page_intro_text
+    - field.storage.node.field_landing_page_summary
+    - field.storage.node.field_featured_image
+    - field.storage.media.field_media_image
+    - field.storage.node.field_node_dates
+    - field.storage.node.field_node_on_going
+    - field.storage.node.field_node_primary_site
+    - field.storage.node.field_node_site
+    - field.storage.node.field_page_intro_text
     - field.storage.node.field_landing_page_component
     - field.storage.paragraph.field_paragraph_accordion
     - field.storage.paragraph.field_paragraph_accordion_body
     - field.storage.paragraph.field_paragraph_accordion_name
+    - field.storage.paragraph.field_paragraph_link
     - field.storage.paragraph.field_paragraph_summary
     - field.storage.paragraph.field_paragraph_title
     - field.storage.paragraph.field_paragraph_topic
-    - field.storage.node.field_event_category
-    - field.storage.node.field_event_description
-    - field.storage.node.field_event_details
-    - field.storage.paragraph.field_paragraph_date_range
-    - field.storage.paragraph.field_event_requirements
-    - field.storage.paragraph.field_paragraph_location
-    - field.storage.paragraph.field_paragraph_link
-    - field.storage.paragraph.field_paragraph_event_price_from
-    - field.storage.paragraph.field_paragraph_event_price_to
-    - field.storage.node.field_news_intro_text
-    - field.storage.node.field_featured_image
-    - field.storage.media.field_media_image
-    - field.storage.node.field_node_funding_level
-    - field.storage.node.field_node_dates
-    - field.storage.node.field_landing_page_intro_text
-    - field.storage.node.field_page_intro_text
-    - field.storage.node.field_node_on_going
-    - field.storage.node.field_node_primary_site
-    - field.storage.node.field_node_site
-    - field.storage.node.field_landing_page_summary
     - field.storage.node.field_tags
     - field.storage.node.field_topic
+    - field.storage.node.field_node_funding_level
+    - field.storage.node.field_profile_intro_text
+    - field.storage.node.field_life_span
+    - field.storage.node.field_profile_category
+    - field.storage.node.field_expertise
+    - field.storage.node.field_location
+    - field.storage.node.field_year
     - search_api.server.elasticsearch_bay
   module:
-    - taxonomy
     - node
+    - taxonomy
     - paragraphs
     - media
     - file
@@ -328,6 +334,44 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_landing_page_summary
+  field_life_span:
+    label: 'Profile Lifespan'
+    datasource_id: 'entity:node'
+    property_path: field_life_span
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_life_span
+  field_location:
+    label: 'Profile Location'
+    datasource_id: 'entity:node'
+    property_path: field_location
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_location
+  field_location_name:
+    label: 'Profile Location » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_location:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location
+      module:
+        - taxonomy
+        - taxonomy
+  field_location_uuid:
+    label: 'Profile Location » Taxonomy term » UUID'
+    datasource_id: 'entity:node'
+    property_path: 'field_location:entity:uuid'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location
+      module:
+        - taxonomy
+        - taxonomy
   field_media_image_absolute_path:
     label: 'Featured Image » Media » Image » File » Download URL'
     datasource_id: 'entity:node'
@@ -517,6 +561,74 @@ field_settings:
         - paragraphs
         - taxonomy
         - taxonomy
+  field_profile_category:
+    label: 'Profile Category'
+    datasource_id: 'entity:node'
+    property_path: field_profile_category
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_profile_category
+  field_profile_category_name:
+    label: 'Profile Category » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_profile_category:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_profile_category
+      module:
+        - taxonomy
+        - taxonomy
+  field_profile_category_uuid:
+    label: 'Profile Category » Taxonomy term » UUID'
+    datasource_id: 'entity:node'
+    property_path: 'field_profile_category:entity:uuid'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_profile_category
+      module:
+        - taxonomy
+        - taxonomy
+  field_profile_expertise:
+    label: 'Profile Expertise'
+    datasource_id: 'entity:node'
+    property_path: field_expertise
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_expertise
+  field_profile_expertise_name:
+    label: 'Profile Expertise » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_expertise:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_expertise
+      module:
+        - taxonomy
+        - taxonomy
+  field_profile_expertise_uuid:
+    label: 'Profile Expertise » Taxonomy term » UUID'
+    datasource_id: 'entity:node'
+    property_path: 'field_expertise:entity:uuid'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_expertise
+      module:
+        - taxonomy
+        - taxonomy
+  field_profile_intro_text:
+    label: 'Profile Introduction Text'
+    datasource_id: 'entity:node'
+    property_path: field_profile_intro_text
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_profile_intro_text
   field_tags:
     label: Tags
     datasource_id: 'entity:node'
@@ -579,6 +691,14 @@ field_settings:
       module:
         - taxonomy
         - taxonomy
+  field_year:
+    label: 'Induction Year'
+    datasource_id: 'entity:node'
+    property_path: field_year
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_year
   funding_level_from:
     label: 'Funding Level » From value'
     datasource_id: 'entity:node'
@@ -721,6 +841,9 @@ processor_settings:
       - field_landing_page_contact_name
       - field_landing_page_intro_text
       - field_landing_page_summary
+      - field_life_span
+      - field_location_name
+      - field_location_uuid
       - field_media_image_absolute_path
       - field_page_intro_text
       - field_paragraph_accordion_body
@@ -732,10 +855,16 @@ processor_settings:
       - field_paragraph_title
       - field_paragraph_topic_name
       - field_paragraph_topic_uuid
+      - field_profile_category_name
+      - field_profile_category_uuid
+      - field_profile_expertise_name
+      - field_profile_expertise_uuid
+      - field_profile_intro_text
       - field_tags_name
       - field_tags_uuid
       - field_topic_name
       - field_topic_uuid
+      - field_year
       - langcode
       - summary_processed
       - title
@@ -758,6 +887,6 @@ tracker_settings:
   default:
     indexing_order: fifo
 options:
-  index_directly: true
+  index_directly: false
   cron_limit: 50
 server: elasticsearch_bay

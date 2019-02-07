@@ -31,6 +31,7 @@ hidden:
   field_expertise: true
   field_featured_image: true
   field_landing_page_c_secondary: true
+  field_landing_page_contact: true
   field_landing_page_show_contact: true
   field_landing_page_summary: true
   field_life_span: true
