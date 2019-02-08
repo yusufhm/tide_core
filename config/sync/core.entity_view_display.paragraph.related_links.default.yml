@@ -4,11 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.related_links.field_paragraph_link
-    - field.field.paragraph.related_links.field_paragraph_summary
     - paragraphs.paragraphs_type.related_links
   module:
     - link
-    - text
 _core:
   default_config_hash: A8Rf-9dFFYkyZcS8MuD9JpcddjVpzYx3_JcHug62tdQ
 id: paragraph.related_links.default
@@ -27,12 +25,5 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-    region: content
-  field_paragraph_summary:
-    type: text_default
-    weight: 3
-    label: above
-    settings: {  }
-    third_party_settings: {  }
     region: content
 hidden: {  }
