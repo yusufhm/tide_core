@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c5555a6950aab53d1c40bc10085ad9b",
+    "content-hash": "e9d3145be8618eae901b689953e46683",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1758,7 +1758,8 @@
                     }
                 },
                 "patches_applied": {
-                    "Reverting to Drupal core 8.5.x": "https://github.com/dpc-sdp/tide_core/compare/e2d69426de36b9e166f03d726311a5547ce6ef53...feature/SDPA-1716-sa-core-2019-00-e2d694.patch"
+                    "Reverting to Drupal core 8.5.x": "https://github.com/dpc-sdp/tide_core/compare/e2d69426de36b9e166f03d726311a5547ce6ef53...feature/SDPA-1716-sa-core-2019-00-e2d694.patch",
+                   "[SDPA-1630] Webform submission event": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_core/pull/58.patch"
                 }
             },
             "license": [
@@ -1769,16 +1770,16 @@
         },
         {
             "name": "dpc-sdp/tide_event",
-            "version": "v1.0.0-alpha1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_event.git",
-                "reference": "d2472e0c0209b6714b79e9d88249c576911c38b8"
+                "reference": "495196535e79785cb9f8fc30ac9437a183c0c305"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/d2472e0c0209b6714b79e9d88249c576911c38b8",
-                "reference": "d2472e0c0209b6714b79e9d88249c576911c38b8",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/495196535e79785cb9f8fc30ac9437a183c0c305",
+                "reference": "495196535e79785cb9f8fc30ac9437a183c0c305",
                 "shasum": ""
             },
             "require": {
@@ -1789,11 +1790,16 @@
                 "dpc-sdp/tide_api:^1.0": "Allows to use Drupal in headless mode"
             },
             "type": "drupal-module",
+            "extra": {
+                "patches_applied": {
+                    "[SDPA-1630] Webform submission event": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/25.patch"
+                }
+            },
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Event content type and related configuration for Tide Drupal 8 distribution",
-            "time": "2019-01-22T10:05:49+00:00"
+            "time": "2019-01-29T01:33:00+00:00"
         },
         {
             "name": "dpc-sdp/tide_grant",

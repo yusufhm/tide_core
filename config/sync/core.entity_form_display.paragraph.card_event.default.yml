@@ -87,6 +87,7 @@ content:
     region: content
 hidden:
   created: true
+  field_paragraph_date: true
   moderation_state: true
   status: true
   uid: true
