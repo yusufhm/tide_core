@@ -50,6 +50,9 @@ function vicgovau_demo_create_node_profile() {
       'field_profile_category' => [
         ['target_id' => VicgovauDemoHelper::randomProfileCategory()],
       ],
+      'field_topic' => [
+        ['target_id' => VicgovauDemoHelper::randomTopic()],
+      ],
       'field_year' => [
         'value' => array_rand(range(date('Y'), 2001), 1),
       ],
@@ -61,6 +64,34 @@ function vicgovau_demo_create_node_profile() {
       ],
 
     ];
+
+    // Add tags.
+    $tags = VicgovauDemoHelper::randomTags(3);
+    if (!empty($tags)) {
+      foreach ($tags as $tag_id => $tag) {
+        $node_data['field_tags'][] = ['target_id' => $tag_id];
+      }
+    }
+
+    // Add Related links.
+    for ($j = 1; $j <= mt_rand(1, 5); $j++) {
+      $link_field_value = VicgovauDemoHelper::randomLinkFieldValue();
+      if (!count($link_field_value)) {
+        break;
+      }
+      $related_link_data = [
+        'type' => 'related_links',
+        'field_paragraph_summary' => ['value' => VicgovauDemoHelper::randomPlainParagraph()],
+        'field_paragraph_link' => [$link_field_value],
+      ];
+      $related_link = Paragraph::create($related_link_data);
+      $related_link->save();
+      $repository->trackEntity($related_link);
+      $node_data['field_related_links'][] = [
+        'target_id' => $related_link->id(),
+        'target_revision_id' => $related_link->getRevisionId(),
+      ];
+    }
 
     $secondary_campaign = VicgovauDemoHelper::randomCampaign();
     if ($secondary_campaign) {
