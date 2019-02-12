@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "06e77a9f75b103d44dc6b912e0618a84",
+    "content-hash": "0e6471d96aa16147f2346ff0bbb995d6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1760,7 +1760,7 @@
                 "patches_applied": {
                     "Reverting to Drupal core 8.5.x": "https://github.com/dpc-sdp/tide_core/compare/e2d69426de36b9e166f03d726311a5547ce6ef53...feature/SDPA-1716-sa-core-2019-00-e2d694.patch",
                     "[SDPA-1630] Webform submission event": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_core/pull/58.patch",
-		    "[SDPA-1783] Removed summary field from related links and whats next": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_core/pull/59.patch"
+                    "[SDPA-1783] Removed summary field from related links and whats next": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_core/pull/59.patch"
                 }
             },
             "license": [
@@ -1793,7 +1793,8 @@
             "type": "drupal-module",
             "extra": {
                 "patches_applied": {
-                    "[SDPA-1630] Webform submission event": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/25.patch"
+                    "[SDPA-1630] Webform submission event": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/25.patch",
+                    "[SDPA-1891] Enable Category and Requirements to be processed with multi-values": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/27.patch"
                 }
             },
             "license": [
