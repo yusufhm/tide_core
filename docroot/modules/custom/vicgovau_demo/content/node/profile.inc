@@ -148,6 +148,7 @@ function vicgovau_demo_create_node_profile() {
     $node = Node::create($node_data);
 
     $boolean_fields = [
+      'field_show_related_content',
       'field_landing_page_show_contact',
       'field_show_social_sharing',
       'field_show_content_rating',

@@ -40,8 +40,11 @@ hidden:
   field_node_site: true
   field_profile_category: true
   field_profile_intro_text: true
+  field_related_links: true
   field_show_content_rating: true
   field_show_social_sharing: true
+  field_tags: true
+  field_topic: true
   field_year: true
   scheduled_archiving: true
   scheduled_publishing: true
