@@ -124,3 +124,15 @@ function tide_grant_update_8006() {
   $config_location = [drupal_get_path('module', 'tide_grant') . '/config/install'];
   _tide_import_single_config('webform.webform.tide_grant_submission', $config_location);
 }
+
+/**
+ * Forced update of the field type using config from the module.
+ */
+function tide_grant_update_8007() {
+  module_load_include('inc', 'tide_core', 'includes/helpers');
+  $config_location = [drupal_get_path('module', 'tide_grant') . '/config/install'];
+  _tide_import_single_config('core.entity_form_display.node.grant.default', $config_location);
+  _tide_import_single_config('core.entity_view_display.node.grant.default', $config_location);
+  _tide_import_single_config('field.field.node.grant.field_description', $config_location);
+  _tide_import_single_config('field.storage.node.field_description', $config_location);
+}
