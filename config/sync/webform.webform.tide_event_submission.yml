@@ -118,6 +118,9 @@ elements: |
     '#type': checkbox
     '#title': 'I have read and understand how Department of Premier and Cabinet stores information.'
     '#required': true
+  actions:
+    '#type': webform_actions
+    '#title': Submit
 css: ''
 javascript: ''
 settings:
@@ -187,7 +190,10 @@ settings:
   draft_loaded_message: ''
   confirmation_type: page
   confirmation_title: 'Thank you for your submission.'
-  confirmation_message: "<pre>\r\nWe&#39;ll take a look at your event before it&#39;s published live in the vic.gov.au events database. We will let you know once your event has been published. Alternatively, we&#39;ll be in touch for more information.\r\n\r\nRegards, Product and Editorial team\r\n</pre>"
+  confirmation_message: |
+    We&#39;ll take a look at your event before it&#39;s published live in the vic.gov.au events database. We will let you know once your event has been published. Alternatively, we&#39;ll be in touch for more information.<br />
+    <br />
+    Regards, Product and Editorial team
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
