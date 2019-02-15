@@ -59,6 +59,24 @@ elements: |
     '#title': 'Close date'
     '#datepicker': true
     '#required': true
+  price_from:
+    '#type': number
+    '#title': 'Price From'
+    '#description': 'Enter the price amount in dollar value.'
+    '#states':
+      disabled:
+        ':input[name="free"]':
+          checked: true
+    '#step': '0.01'
+  price_to:
+    '#type': number
+    '#title': 'Price To'
+    '#description': 'Enter the price amount in dollar value.'
+    '#states':
+      disabled:
+        ':input[name="free"]':
+          checked: true
+    '#step': '0.01'
   free:
     '#type': checkbox
     '#title': Free
@@ -71,14 +89,6 @@ elements: |
         -
           ':input[name="price_to"]':
             empty: true
-  price_from:
-    '#type': number
-    '#title': 'Price From'
-    '#description': 'Enter the price amount in dollar value.'
-  price_to:
-    '#type': number
-    '#title': 'Price To'
-    '#description': 'Enter the price amount in dollar value.'
   website_url_for_event_information:
     '#type': url
     '#title': 'Website URL for event information'

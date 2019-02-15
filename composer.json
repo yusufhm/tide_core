@@ -300,7 +300,8 @@
             "dpc-sdp/tide_event": {
                 "[SDPA-1630] Webform submission event": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/25.patch",
                 "[SDPA-1903] Update webform event submit action to be used by JSON API": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/28.patch",
-                "[SDPA-1891] Enable Category and Requirements to be processed with multi-values" : "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/27.patch"
+                "[SDPA-1891] Enable Category and Requirements to be processed with multi-values" : "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/27.patch",
+                "[SDPA-1882] Add conditional disabled status for price fields": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/29.patch"
             }
         }
     }
