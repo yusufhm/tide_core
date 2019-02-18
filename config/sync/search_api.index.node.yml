@@ -22,6 +22,7 @@ dependencies:
     - field.storage.node.field_featured_image
     - field.storage.media.field_media_image
     - field.storage.node.field_node_dates
+    - field.storage.node.field_node_link
     - field.storage.node.field_node_on_going
     - field.storage.node.field_node_primary_site
     - field.storage.node.field_node_site
@@ -401,6 +402,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_node_dates
+  field_node_link:
+    label: 'Website URL'
+    datasource_id: 'entity:node'
+    property_path: field_node_link
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_node_link
   field_node_on_going:
     label: Ongoing
     datasource_id: 'entity:node'
@@ -845,6 +854,7 @@ processor_settings:
       - field_location_name
       - field_location_uuid
       - field_media_image_absolute_path
+      - field_node_link
       - field_page_intro_text
       - field_paragraph_accordion_body
       - field_paragraph_accordion_name
