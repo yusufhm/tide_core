@@ -105,6 +105,9 @@ function _tide_delete_config($id, array $locations = [], $file_system_delete = F
         // Delete configuration file from disk.
         $file_storage = new FileStorage($path);
         $file_storage->delete($id);
+        drush_print(t('Configuration for @conf_name has been deleted from active config storage.', [
+          '@conf_name' => $id,
+        ]), 4);
       }
       catch (\Exception $e) {
         print $e->getMessage();
@@ -209,7 +212,7 @@ function _tide_import_single_config($config_name, array $locations = [], $overri
       $file_storage = new FileStorage($config_directories[CONFIG_SYNC_DIRECTORY]);
       $config_data = $config_factory->getEditable($config_name);
       $file_storage->write($config_name, $config_data->get());
-      drush_print(t('Configuration for @conf_name has been imported to active config with overwrite flag.', [
+      drush_print(t('Configuration for @conf_name has been imported to active config storage with overwrite flag.', [
         '@conf_name' => $config_name,
       ]), 4);
     }
