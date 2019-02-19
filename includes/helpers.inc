@@ -209,9 +209,9 @@ function _tide_import_single_config($config_name, array $locations = [], $overri
       $file_storage = new FileStorage($config_directories[CONFIG_SYNC_DIRECTORY]);
       $config_data = $config_factory->getEditable($config_name);
       $file_storage->write($config_name, $config_data->get());
-      drush_print(t('Configuration for @conf_name has been imported to active config with overwrite flag.', array(
+      drush_print(t('Configuration for @conf_name has been imported to active config with overwrite flag.', [
         '@conf_name' => $config_name,
-      )), 4);
+      ]), 4);
     }
   }
   catch (Exception $exception) {
