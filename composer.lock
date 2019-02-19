@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7c6846472a286c4133cda3a6606238c1",
+    "content-hash": "d4bd8802e6d710f1523bc00e679271ca",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1796,7 +1796,8 @@
                     "[SDPA-1630] Webform submission event": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/25.patch",
                     "[SDPA-1903] Update webform event submit action to be used by JSON API": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/28.patch",
                     "[SDPA-1891] Enable Category and Requirements to be processed with multi-values": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/27.patch",
-                    "[SDPA-1882] Add conditional disabled status for price fields": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/29.patch"
+                    "[SDPA-1882] Add conditional disabled status for price fields": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/29.patch",
+                    "[SDPA-1933] Event webform submit - Map event submission to body field": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/33.patch"
                 }
             },
             "license": [
@@ -1891,16 +1892,16 @@
         },
         {
             "name": "dpc-sdp/tide_monsido",
-            "version": "v1.0.0-alpha1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_monsido.git",
-                "reference": "4a95715799188c3b4dedfb2c7ad414a9a6415971"
+                "reference": "fb419aed5cdab1795bb39d9db0d14c4de5cb3b0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_monsido/zipball/4a95715799188c3b4dedfb2c7ad414a9a6415971",
-                "reference": "4a95715799188c3b4dedfb2c7ad414a9a6415971",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_monsido/zipball/fb419aed5cdab1795bb39d9db0d14c4de5cb3b0b",
+                "reference": "fb419aed5cdab1795bb39d9db0d14c4de5cb3b0b",
                 "shasum": ""
             },
             "require": {
@@ -1916,7 +1917,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Provides Monsido integration for Tide Drupal 8 distribution",
-            "time": "2019-01-22T09:41:09+00:00"
+            "time": "2019-01-29T01:38:44+00:00"
         },
         {
             "name": "dpc-sdp/tide_news",
