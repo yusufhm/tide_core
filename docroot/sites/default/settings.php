@@ -35,7 +35,7 @@ $config['shield.settings']['credentials']['shield']['pass'] = 'sdp';
 $config['config_split.config_split.local']['status'] = FALSE;
 
 // Stage file proxy
-$config['stage_file_proxy.settings']['origin'] = 'http://dpc:sdp@nginx-php-content-vic-production.lagoon.vicsdp.amazee.io';
+$config['stage_file_proxy.settings']['origin'] = 'https://content.vic.gov.au';
 
 // Installation profile.
 $settings['install_profile'] = 'tide';
