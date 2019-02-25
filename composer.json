@@ -308,6 +308,9 @@
             },
             "dpc-sdp/tide_media": {
                 "[SDPA-1759] Enable ics files ": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_media/pull/18.patch"
+            },
+            "dpc-sdp/tide_api": {
+                "SDPA-2031-adding-wildcard-redirects": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_api/pull/33.patch"
             }
         }
     }
