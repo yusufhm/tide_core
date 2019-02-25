@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5042bf269c9ec7386a02c659edc9a97",
+    "content-hash": "a91cb62f7cabcd5ade0695cc5ac79fe8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1631,9 +1631,6 @@
                     "drupal/jsonapi_extras": {
                         "Date Time enhancer does not work with Date range fields - https://www.drupal.org/project/jsonapi_extras/issues/2953227": "https://www.drupal.org/files/issues/2018-07-17/jsonapi_extras-date-range-fields-support-2953227-d8-11.patch"
                     }
-                },
-                "patches_applied": {
-                    "SDPA-2031-adding-wildcard-redirects": "https://github.com/dpc-sdp/tide_api/compare/1.0.0...master.patch"
                 }
             },
             "license": [
@@ -1759,11 +1756,6 @@
                     "drupal/field_group": {
                         "Do not translate field group labels using interface translation. - https://www.drupal.org/project/field_group/issues/2846617": "https://www.drupal.org/files/issues/2018-05-10/2846617-16-use-config-translations-for-field-group.patch"
                     }
-                },
-                "patches_applied": {
-                    "[SDPA-1630] Webform submission event": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_core/pull/58.patch",
-                    "[SDPA-1783] Removed summary field from related links and whats next": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_core/pull/59.patch",
-                    "[SDPA-2026] Add Drush 8 command to run scheduled updates cron": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_core/pull/61.patch"
                 }
             },
             "license": [
@@ -1794,15 +1786,6 @@
                 "dpc-sdp/tide_api:^1.0": "Allows to use Drupal in headless mode"
             },
             "type": "drupal-module",
-            "extra": {
-                "patches_applied": {
-                    "[SDPA-1630] Webform submission event": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/25.patch",
-                    "[SDPA-1903] Update webform event submit action to be used by JSON API": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/28.patch",
-                    "[SDPA-1891] Enable Category and Requirements to be processed with multi-values": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/27.patch",
-                    "[SDPA-1882] Add conditional disabled status for price fields": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/29.patch",
-                    "[SDPA-1933] Event webform submit - Map event submission to body field": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/33.patch"
-                }
-            },
             "license": [
                 "GPL-2.0-or-later"
             ],
@@ -1882,11 +1865,6 @@
                 "drupal/video_embed_field": "^2.0"
             },
             "type": "drupal-module",
-            "extra": {
-                "patches_applied": {
-                    "[SDPA-1759] Enable ics files ": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_media/pull/18.patch"
-                }
-            },
             "license": [
                 "GPL-2.0-or-later"
             ],
