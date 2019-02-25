@@ -295,9 +295,13 @@
             "drupal/default_content": {
                 "Do not reimport existing entities - https://www.drupal.org/project/default_content/issues/2698425": "https://www.drupal.org/files/issues/2018-06-05/default_content-dont-reimport-existing-entities-2698425-102.patch"
             },
+            "drupal/purge_queuer_url": {
+                "Fixing the SQL Sanitize Drush command - https://www.drupal.org/project/purge_queuer_url/issues/2950814": "https://www.drupal.org/files/issues/2950814-drush-sanitize-service-check.patch"
+            },
             "dpc-sdp/tide_core": {
                 "[SDPA-1630] Webform submission event": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_core/pull/58.patch",
-                "[SDPA-1783] Removed summary field from related links and whats next": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_core/pull/59.patch"
+                "[SDPA-1783] Removed summary field from related links and whats next": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_core/pull/59.patch",
+                "[SDPA-2026] Add Drush 8 command to run scheduled updates cron": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_core/pull/61.patch"
             },
             "dpc-sdp/tide_event": {
                 "[SDPA-1630] Webform submission event": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/25.patch",
@@ -310,7 +314,7 @@
                 "[SDPA-1759] Enable ics files ": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_media/pull/18.patch"
             },
             "dpc-sdp/tide_api": {
-                "SDPA-2031-adding-wildcard-redirects": "https://github.com/dpc-sdp/tide_api/compare/e52050a98dc913108b7765efe87b9fa7a2dfe2c2...feature/SDPA-2031-adding-wildcard-redirects-homepage-fix.patch"
+                "SDPA-2031-adding-wildcard-redirects": "https://github.com/dpc-sdp/tide_api/compare/1.0.0...master.patch"
             }
         }
     }
