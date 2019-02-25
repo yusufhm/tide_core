@@ -205,6 +205,30 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_node_author:
+    fieldName: field_node_author
+    publicName: field_node_author
+    enhancer:
+      id: ''
+    disabled: false
+  field_node_email:
+    fieldName: field_node_email
+    publicName: field_node_email
+    enhancer:
+      id: ''
+    disabled: false
+  field_node_link:
+    fieldName: field_node_link
+    publicName: field_node_link
+    enhancer:
+      id: link_enhancer
+    disabled: false
+  field_node_phone:
+    fieldName: field_node_phone
+    publicName: field_node_phone
+    enhancer:
+      id: ''
+    disabled: false
   field_node_primary_site:
     fieldName: field_node_primary_site
     publicName: field_node_primary_site

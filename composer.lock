@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "421222db6d733411e5d354119a33c0c6",
+    "content-hash": "a91cb62f7cabcd5ade0695cc5ac79fe8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1756,9 +1756,6 @@
                     "drupal/field_group": {
                         "Do not translate field group labels using interface translation. - https://www.drupal.org/project/field_group/issues/2846617": "https://www.drupal.org/files/issues/2018-05-10/2846617-16-use-config-translations-for-field-group.patch"
                     }
-                },
-                "patches_applied": {
-                    "Reverting to Drupal core 8.5.x": "https://github.com/dpc-sdp/tide_core/compare/e2d69426de36b9e166f03d726311a5547ce6ef53...feature/SDPA-1716-sa-core-2019-00-e2d694.patch"
                 }
             },
             "license": [
@@ -1769,16 +1766,16 @@
         },
         {
             "name": "dpc-sdp/tide_event",
-            "version": "v1.0.0-alpha1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_event.git",
-                "reference": "d2472e0c0209b6714b79e9d88249c576911c38b8"
+                "reference": "495196535e79785cb9f8fc30ac9437a183c0c305"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/d2472e0c0209b6714b79e9d88249c576911c38b8",
-                "reference": "d2472e0c0209b6714b79e9d88249c576911c38b8",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/495196535e79785cb9f8fc30ac9437a183c0c305",
+                "reference": "495196535e79785cb9f8fc30ac9437a183c0c305",
                 "shasum": ""
             },
             "require": {
@@ -1793,7 +1790,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Event content type and related configuration for Tide Drupal 8 distribution",
-            "time": "2019-01-22T10:05:49+00:00"
+            "time": "2019-01-29T01:33:00+00:00"
         },
         {
             "name": "dpc-sdp/tide_grant",
@@ -1848,16 +1845,16 @@
         },
         {
             "name": "dpc-sdp/tide_media",
-            "version": "v1.0.0-alpha1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_media.git",
-                "reference": "f6c9147098bb8ff2ac404f8cf4280f0f45169e63"
+                "reference": "81d924ecd5ea6943135afd9a928cd3e30e35c1d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_media/zipball/f6c9147098bb8ff2ac404f8cf4280f0f45169e63",
-                "reference": "f6c9147098bb8ff2ac404f8cf4280f0f45169e63",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_media/zipball/81d924ecd5ea6943135afd9a928cd3e30e35c1d8",
+                "reference": "81d924ecd5ea6943135afd9a928cd3e30e35c1d8",
                 "shasum": ""
             },
             "require": {
@@ -1872,36 +1869,31 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Media and related configuration for Tide Drupal 8 distribution",
-            "time": "2019-01-22T09:46:36+00:00"
+            "time": "2019-01-29T01:43:12+00:00"
         },
         {
             "name": "dpc-sdp/tide_monsido",
-            "version": "v1.0.0-alpha1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_monsido.git",
-                "reference": "4a95715799188c3b4dedfb2c7ad414a9a6415971"
+                "reference": "fb419aed5cdab1795bb39d9db0d14c4de5cb3b0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_monsido/zipball/4a95715799188c3b4dedfb2c7ad414a9a6415971",
-                "reference": "4a95715799188c3b4dedfb2c7ad414a9a6415971",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_monsido/zipball/fb419aed5cdab1795bb39d9db0d14c4de5cb3b0b",
+                "reference": "fb419aed5cdab1795bb39d9db0d14c4de5cb3b0b",
                 "shasum": ""
             },
             "require": {
                 "dpc-sdp/tide_core": "^1.0"
             },
             "type": "drupal-module",
-            "extra": {
-                "patches_applied": {
-                    "Reverting to Drupal core 8.5.x": "https://github.com/dpc-sdp/tide_monsido/compare/4cd5b4dee5b6c9d8c1c6fab7c8ed6b8a3f12741a...feature/SDPA-1716-sa-core-2019-00-4cd5b4.patch"
-                }
-            },
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Provides Monsido integration for Tide Drupal 8 distribution",
-            "time": "2019-01-22T09:41:09+00:00"
+            "time": "2019-01-29T01:38:44+00:00"
         },
         {
             "name": "dpc-sdp/tide_news",
@@ -1960,6 +1952,25 @@
             ],
             "description": "Page content type and related configuration for Tide Drupal 8 distribution",
             "time": "2019-01-22T10:01:17+00:00"
+        },
+        {
+            "name": "dpc-sdp/tide_profile",
+            "version": "0.0.1",
+            "dist": {
+                "type": "path",
+                "url": "dpc-sdp/tide_profile",
+                "reference": "7dff339686d0ea8f0e5613d88c58ee64433bbba3",
+                "shasum": null
+            },
+            "require": {
+                "dpc-sdp/tide_core": "@dev",
+                "dpc-sdp/tide_media": "@dev"
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Profile content type and related configuration for Tide Drupal 8 distribution"
         },
         {
             "name": "dpc-sdp/tide_search",
@@ -5033,6 +5044,185 @@
             }
         },
         {
+            "name": "drupal/migrate_cron",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/migrate_cron",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migrate_cron-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "eaf813c0a626f6d33f59c5d5068d73c2442e6019"
+            },
+            "require": {
+                "drupal/core": "*",
+                "drupal/migrate_plus": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1549636080",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "vadimski",
+                    "homepage": "https://www.drupal.org/user/3395802"
+                }
+            ],
+            "description": "Run migrations at cron",
+            "homepage": "https://www.drupal.org/project/migrate_cron",
+            "support": {
+                "source": "http://cgit.drupalcode.org/migrate_cron"
+            }
+        },
+        {
+            "name": "drupal/migrate_plus",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/migrate_plus",
+                "reference": "8.x-4.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migrate_plus-8.x-4.1.zip",
+                "reference": "8.x-4.1",
+                "shasum": "cfd7ef2b17ede664b2b74eb101032a03c386457e"
+            },
+            "require": {
+                "drupal/core": "^8.3"
+            },
+            "require-dev": {
+                "drupal/migrate_example_advanced_setup": "*",
+                "drupal/migrate_example_setup": "*",
+                "drupal/migrate_tools": "*"
+            },
+            "suggest": {
+                "ext-soap": "*",
+                "sainsburys/guzzle-oauth2-plugin": "3.0 required for the OAuth2 authentication plugin"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-4.x": "4.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-4.1",
+                    "datestamp": "1546879080",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Ryan",
+                    "homepage": "https://www.drupal.org/u/mikeryan",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "mikeryan",
+                    "homepage": "https://www.drupal.org/user/4420"
+                }
+            ],
+            "description": "Enhancements to core migration support.",
+            "homepage": "https://www.drupal.org/project/migrate_plus",
+            "support": {
+                "source": "https://cgit.drupalcode.org/migrate_plus",
+                "issues": "https://www.drupal.org/project/issues/migrate_plus",
+                "irc": "irc://irc.freenode.org/drupal-migrate"
+            }
+        },
+        {
+            "name": "drupal/migrate_tools",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/migrate_tools",
+                "reference": "8.x-4.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migrate_tools-8.x-4.1.zip",
+                "reference": "8.x-4.1",
+                "shasum": "0355d5309fbb738759332779d0ecf5f19a1da0a4"
+            },
+            "require": {
+                "drupal/core": "^8.3",
+                "drupal/migrate_plus": "^4"
+            },
+            "require-dev": {
+                "drupal/migrate_plus": "4.x-dev",
+                "drupal/migrate_source_csv": "^2.2",
+                "drush/drush": "^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-4.x": "4.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-4.1",
+                    "datestamp": "1546879080",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "heddn",
+                    "homepage": "https://www.drupal.org/user/1463982"
+                },
+                {
+                    "name": "mikeryan",
+                    "homepage": "https://www.drupal.org/user/4420"
+                },
+                {
+                    "name": "moshe weitzman",
+                    "homepage": "https://www.drupal.org/user/23"
+                }
+            ],
+            "description": "Tools to assist in developing and running migrations.",
+            "homepage": "http://drupal.org/project/migrate_tools",
+            "support": {
+                "source": "http://cgit.drupalcode.org/migrate_tools",
+                "issues": "http://drupal.org/project/migrate_tools",
+                "irc": "irc://irc.freenode.org/drupal-migrate"
+            }
+        },
+        {
             "name": "drupal/openapi",
             "version": "1.0.0-alpha1",
             "source": {
@@ -5557,6 +5747,9 @@
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
                     }
+                },
+                "patches_applied": {
+                    "Fixing the SQL Sanitize Drush command - https://www.drupal.org/project/purge_queuer_url/issues/2950814": "https://www.drupal.org/files/issues/2950814-drush-sanitize-service-check.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -10220,46 +10413,6 @@
                 "templating"
             ],
             "time": "2019-01-14T14:59:29+00:00"
-        },
-        {
-            "name": "typo3/phar-stream-wrapper",
-            "version": "v2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/TYPO3/phar-stream-wrapper.git",
-                "reference": "0469d9fefa0146ea4299d3b11cfbb76faa7045bf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3/phar-stream-wrapper/zipball/0469d9fefa0146ea4299d3b11cfbb76faa7045bf",
-                "reference": "0469d9fefa0146ea4299d3b11cfbb76faa7045bf",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.3|^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.36"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "TYPO3\\PharStreamWrapper\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Interceptors for PHP's native phar:// stream handling",
-            "homepage": "https://typo3.org/",
-            "keywords": [
-                "phar",
-                "php",
-                "security",
-                "stream-wrapper"
-            ],
-            "time": "2018-10-18T08:46:28+00:00"
         },
         {
             "name": "typo3/phar-stream-wrapper",

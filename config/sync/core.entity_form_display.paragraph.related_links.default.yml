@@ -4,12 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.related_links.field_paragraph_link
-    - field.field.paragraph.related_links.field_paragraph_summary
     - paragraphs.paragraphs_type.related_links
   module:
-    - content_moderation
     - link
-    - text
 _core:
   default_config_hash: 6ihE3JyM5GgviP1rfqLv2AIlAK4dg273DCv_pvRKihU
 id: paragraph.related_links.default
@@ -24,14 +21,6 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
-    region: content
-  field_paragraph_summary:
-    type: text_textfield
-    weight: 104
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
     region: content
   moderation_state:
     type: moderation_state_default

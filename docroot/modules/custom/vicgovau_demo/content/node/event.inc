@@ -165,7 +165,6 @@ function vicgovau_demo_create_node_event() {
       }
       $related_link_data = [
         'type' => 'related_links',
-        'field_paragraph_summary' => ['value' => VicgovauDemoHelper::randomPlainParagraph()],
         'field_paragraph_link' => [$link_field_value],
       ];
       $related_link = Paragraph::create($related_link_data);

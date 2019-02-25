@@ -38,6 +38,7 @@ dependencies:
     - entity_reference_revisions
     - link
     - range
+    - text
     - user
 id: node.grant.default
 targetEntityType: node
@@ -70,11 +71,11 @@ content:
     type: link
     region: content
   field_description:
-    weight: 125
+    weight: 127
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    type: text_default
     region: content
   field_featured_image:
     weight: 4

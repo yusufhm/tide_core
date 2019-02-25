@@ -3,8 +3,8 @@ status: true
 dependencies:
   module:
     - node
-id: node.field_node_author
-field_name: field_node_author
+id: node.field_life_span
+field_name: field_life_span
 entity_type: node
 type: string
 settings:

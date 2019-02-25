@@ -288,6 +288,18 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Select a random Expertise.
+   *
+   * @return int
+   *   The expertise tid.
+   */
+  public static function randomExpertise() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $terms = $repository->getDemoEntities('taxonomy_term', 'expertise');
+    return count($terms) ? array_rand($terms) : 0;
+  }
+
+  /**
    * Select random Tags.
    *
    * @param int $count
@@ -945,6 +957,18 @@ class VicgovauDemoHelper {
     $repository = VicgovauDemoRepository::getInstance();
     $location = $repository->getDemoEntities('taxonomy_term', 'location');
     return count($location) ? array_rand($location, 1) : 0;
+  }
+
+  /**
+   * Select a random department.
+   *
+   * @return int
+   *   The department tid.
+   */
+  public static function randomProfileCategory() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $term = $repository->getDemoEntities('taxonomy_term', 'profile_category');
+    return count($term) ? array_rand($term, 1) : 0;
   }
 
 }

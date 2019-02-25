@@ -1,0 +1,2 @@
+grants_feed_importer_cron: 1
+grants_feed_importer_interval: '86400'

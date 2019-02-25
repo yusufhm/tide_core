@@ -1,0 +1,19 @@
+uuid: c5296f07-575f-4895-9056-39bf66d9fe8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_landing_page_summary
+    - node.type.profile
+id: node.profile.field_landing_page_summary
+field_name: field_landing_page_summary
+entity_type: node
+bundle: profile
+label: Summary
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

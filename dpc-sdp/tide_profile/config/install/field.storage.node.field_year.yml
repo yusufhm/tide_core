@@ -2,14 +2,16 @@ langcode: en
 status: true
 dependencies:
   module:
-    - link
     - node
-id: node.field_node_link
-field_name: field_node_link
+    - options
+id: node.field_year
+field_name: field_year
 entity_type: node
-type: link
-settings: {  }
-module: link
+type: list_string
+settings:
+  allowed_values: {  }
+  allowed_values_function: tide_profile_year_allowed_values
+module: options
 locked: false
 cardinality: 1
 translatable: true

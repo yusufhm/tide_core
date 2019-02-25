@@ -13,7 +13,7 @@ entity_type: paragraph
 bundle: accordion
 label: 'Accordion Style'
 description: ''
-required: true
+required: false
 translatable: false
 default_value:
   -
