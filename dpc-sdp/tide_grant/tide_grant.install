@@ -136,3 +136,16 @@ function tide_grant_update_8007() {
   _tide_import_single_config('field.field.node.grant.field_description', $config_location);
   _tide_import_single_config('field.storage.node.field_description', $config_location);
 }
+
+/**
+ * Enable migration modules for feed imports and update config.
+ */
+function tide_grant_update_8008() {
+  // Import feed URL configuration.
+  module_load_include('inc', 'tide_core', 'includes/helpers');
+  $config_location = [drupal_get_path('module', 'tide_grant') . '/config/install'];
+  _tide_import_single_config('tide_grant.settings.feed_url', $config_location);
+  // Enable migration modules.
+  $module_installer = \Drupal::service('module_installer');
+  $module_installer->install(['migrate_plus', 'migrate_cron', 'migrate_tools']);
+}

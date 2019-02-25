@@ -21,6 +21,8 @@
         "drupal/jsonapi": "1.23 as 1.24",
         "drupal/jsonapi_extras": "2.9 as 2.5",
         "drupal/lagoon_logs": "^1.0",
+        "drupal/migrate_cron": "^1.1",
+        "drupal/migrate_tools": "^4.1",
         "drupal/range": "^1.1",
         "drupal/shield": "^1.2",
         "drupal/stage_file_proxy": "^1.0@alpha",

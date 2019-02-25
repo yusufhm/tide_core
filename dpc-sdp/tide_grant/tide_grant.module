@@ -9,6 +9,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\node\Entity\Node;
 use Drupal\Component\Utility\Html;
+use Drupal\Component\Utility\UrlHelper;
 
 /**
  * Implements hook_form_BASE_FORM_ID_alter().
@@ -129,5 +130,16 @@ function tide_grant_webform_submission_presave($submission) {
     }
 
     $node->save();
+  }
+}
+
+/**
+ * Implements hook_migration_plugins_alter().
+ */
+function tide_grant_migration_plugins_alter(array &$migrations) {
+  // If different URL has been provided via config then inject it.
+  $url = \Drupal::config('tide_grant.settings')->get('feed_url');
+  if ($url && UrlHelper::isValid($url, TRUE)) {
+    $migrations['grants_feed_importer']['source']['urls'] = $url;
   }
 }
