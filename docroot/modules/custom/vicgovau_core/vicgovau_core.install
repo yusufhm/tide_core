@@ -667,7 +667,7 @@ function _vicgovau_core_update_8019_verify_redirect_to_address($to) {
 }
 
 function _vicgovau_core_update_8019_add_redirects($from, $to) {
-  verify_redirect_to_address($to);
+  _vicgovau_core_update_8019_verify_redirect_to_address($to);
   if ($from != '' && $to != '') {
     $redirectrepo = redirect_repository();
     if ($redirectrepo->findBySourcePath($from)) {
