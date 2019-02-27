@@ -624,3 +624,73 @@ function vicgovau_core_update_8018() {
   }
 }
 
+/**
+ * VSM-187: Importing redirects from the redirect spreadsheet.
+ */
+function vicgovau_core_update_8019() {
+  if (file_exists(dirname(DRUPAL_ROOT) . '/patches/redirects.php')) {
+    include dirname(DRUPAL_ROOT) . '/patches/redirects.php';
+
+    if (is_array($vicgovau)) {
+      foreach ($vicgovau as $from => $to) {
+        _vicgovau_core_update_8019_add_redirects($from, $to);
+      }
+    }
+    if (is_array($vanities)) {
+      foreach ($vanities as $from => $to) {
+        _vicgovau_core_update_8019_add_redirects($from, $to);
+      }
+    }
+    if (is_array($subsite_decommission)) {
+      foreach ($subsite_decommission as $from => $to) {
+        _vicgovau_core_update_8019_add_redirects($from, $to);
+      }
+    }
+    if (is_array($subsites_remain)) {
+      foreach ($subsites_remain as $from => $to) {
+        _vicgovau_core_update_8019_add_redirects($from, $to);
+      }
+    }
+  }
+}
+
+function _vicgovau_core_update_8019_verify_redirect_to_address($to) {
+  if ((substr($to, 0, 4) == 'http')) {
+    return $to;
+  }
+  $to = (substr($to, 0, 1) == '/') ? $to : '/' . $to;
+  $path = \Drupal::service('path.alias_manager')->getPathByAlias($to);
+  if(preg_match('/node\/(\d+)/', $path, $matches)) {
+    return 'node/' . $matches[1];
+  }
+  return '';
+}
+
+function _vicgovau_core_update_8019_add_redirects($from, $to) {
+  _vicgovau_core_update_8019_verify_redirect_to_address($to);
+  if ($from != '' && $to != '') {
+    $redirectrepo = redirect_repository();
+    if ($redirectrepo->findBySourcePath($from)) {
+      return;
+    }
+    $vicgov = $to == 'https://vic.gov.au' || $to == 'http://vic.gov.au' || $to == 'vic.gov.au';
+    $wwwvicgov = $to == 'https://www.vic.gov.au' || $to == 'http://www.vic.gov.au' || $to == 'www.vic.gov.au';
+    if ($vicgov || $wwwvicgov) {
+      $to = 'site-4/';
+    }
+    $redirect = \Drupal\redirect\Entity\Redirect::create();
+    $redirect->setLanguage('en');
+    $redirect->setStatusCode(301);
+    $queryStr = substr($from, 0, strpos($from, '?'));
+    if (!empty($queryStr)) {
+      $query = explode('&', $queryStr);
+    }
+    else {
+      $query = [];
+    }
+    $redirect->setSource($from, $query);
+    $redirect->setRedirect($to);
+    $redirect->getRedirect();
+    $redirect->save();
+  }
+}
