@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5042bf269c9ec7386a02c659edc9a97",
+    "content-hash": "2ede6477fe726169ec70a4c487a6656e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3291,6 +3291,7 @@
                 },
                 "patches_applied": {
                     "Debug EntityChangedConstraintValidator": "./patches/core/drupal-core-debug-entity-changed-constraint-validator.patch",
+                    "Apply SA-CORE-2019-003 to all independent projects - https://digital-engagement.atlassian.net/browse/SDPA-2015": "./patches/core/drupal_8.x-5.10-SA-CORE-2019-003.patch",
                     "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch",
                     "Contextual links should not be added inside another link - https://www.drupal.org/node/2898875": "https://www.drupal.org/files/issues/2018-03-16/contextual_links_should-2898875-6.patch",
                     "No validation on text length for menu description when editing node - https://www.drupal.org/node/2852665#comment-12650295": "https://www.drupal.org/files/issues/2018-06-13/fatal_error_remove_menu_add_with_tests.patch",
@@ -4573,6 +4574,7 @@
                     }
                 },
                 "patches_applied": {
+                    "Apply SA-CORE-2019-003 to all independent projects - https://digital-engagement.atlassian.net/browse/SDPA-2015": "./patches/jsonapi/jsonapi_8.x-1.23-SA-CORE-2019-003.patch",
                     "Menu content is not accessible via jsonapi - https://www.drupal.org/project/jsonapi/issues/2967986": "https://www.drupal.org/files/issues/2018-07-09/jsonapi_menu_403_fix-2967986-4.patch"
                 }
             },
@@ -5029,7 +5031,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.7",
-                    "datestamp": "1535726393",
+                    "datestamp": "1550692511",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
