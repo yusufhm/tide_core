@@ -1,0 +1,23 @@
+uuid: 2257e767-5187-46df-ab2a-40536e8b4e53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_related_content
+    - node.type.event
+id: node.event.field_show_related_content
+field_name: field_show_related_content
+entity_type: node
+bundle: event
+label: 'Show Related Content?'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
