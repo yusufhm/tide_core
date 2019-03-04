@@ -290,10 +290,14 @@
                 "Fix for already applied patches - specific to 1.6.5": "patches/composer-patches/fix-applied-patches.patch"
             },
             "drupal/core": {
-                "Debug EntityChangedConstraintValidator": "./patches/core/drupal-core-debug-entity-changed-constraint-validator.patch"
+                "Debug EntityChangedConstraintValidator": "./patches/core/drupal-core-debug-entity-changed-constraint-validator.patch",
+                "Apply SA-CORE-2019-003 to all independent projects - https://digital-engagement.atlassian.net/browse/SDPA-2015": "./patches/core/drupal_8.x-5.10-SA-CORE-2019-003.patch"
             },
             "drupal/default_content": {
                 "Do not reimport existing entities - https://www.drupal.org/project/default_content/issues/2698425": "https://www.drupal.org/files/issues/2018-06-05/default_content-dont-reimport-existing-entities-2698425-102.patch"
+            },
+            "drupal/jsonapi": {
+                "Apply SA-CORE-2019-003 to all independent projects - https://digital-engagement.atlassian.net/browse/SDPA-2015": "./patches/jsonapi/jsonapi_8.x-1.23-SA-CORE-2019-003.patch"
             },
             "drupal/purge_queuer_url": {
                 "Fixing the SQL Sanitize Drush command - https://www.drupal.org/project/purge_queuer_url/issues/2950814": "https://www.drupal.org/files/issues/2950814-drush-sanitize-service-check.patch"
