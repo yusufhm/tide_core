@@ -248,8 +248,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.5.11.zip",
-                "reference": "master",
-                "shasum": null
+                "reference": "master"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -262,8 +261,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/iframe/releases/iframe_4.5.11.zip",
-                "reference": "master",
-                "shasum": null
+                "reference": "master"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -276,8 +274,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/templates/releases/templates_4.5.7.zip",
-                "reference": "master",
-                "shasum": null
+                "reference": "master"
             },
             "type": "drupal-library"
         },
@@ -1521,8 +1518,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/bay",
-                "reference": "927a01f4945efb0fa9de4c9788ab41e4a18f37b5",
-                "shasum": null
+                "reference": "927a01f4945efb0fa9de4c9788ab41e4a18f37b5"
             },
             "require": {
                 "drupal/cloudflare": "^1.0@alpha",
@@ -1578,8 +1574,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_alert",
-                "reference": "ef76a6cd2c46c57bd83888c10610b624f84b2d70",
-                "shasum": null
+                "reference": "ef76a6cd2c46c57bd83888c10610b624f84b2d70"
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -1816,8 +1811,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_grant",
-                "reference": "fa43690f272e0d243cb6dab20e1221c9c8ad0296",
-                "shasum": null
+                "reference": "fa43690f272e0d243cb6dab20e1221c9c8ad0296"
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -1982,8 +1976,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_profile",
-                "reference": "7dff339686d0ea8f0e5613d88c58ee64433bbba3",
-                "shasum": null
+                "reference": "7dff339686d0ea8f0e5613d88c58ee64433bbba3"
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -8190,9 +8183,7 @@
             "version": "4.3.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/enyo/dropzone/archive/v4.3.0.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://github.com/enyo/dropzone/archive/v4.3.0.zip"
             },
             "type": "drupal-library"
         },
