@@ -20,6 +20,9 @@ settings:
     -
       value: news
       label: News
+    -
+      value: ckan_datavic
+      label: 'Data.Vic CKAN Search'
   allowed_values_function: ''
 module: options
 locked: false
