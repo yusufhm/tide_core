@@ -1,0 +1,33 @@
+name: Tide Publication
+type: module
+description: 'Provides Publication content type and related configuration. '
+package: Tide
+core: 8.x
+dependencies:
+  - dpc-sdp:tide_landing_page
+  - entity_hierarchy:entity_hierarchy
+config_devel:
+  install:
+      - core.base_field_override.node.publication.promote
+      - core.base_field_override.node.publication.status
+      - core.base_field_override.node.publication_page.promote
+      - core.base_field_override.node.publication_page.status
+      - core.entity_form_display.node.publication.default
+      - core.entity_form_display.node.publication_page.default
+      - core.entity_view_display.node.publication.default
+      - core.entity_view_display.node.publication.teaser
+      - core.entity_view_display.node.publication_page.default
+      - core.entity_view_display.node.publication_page.teaser
+      - field.field.node.publication.body
+      - field.field.node.publication.field_node_primary_site
+      - field.field.node.publication.field_node_site
+      - field.field.node.publication_page.body
+      - field.field.node.publication_page.field_publication
+      - field.storage.node.field_publication
+      - node.type.publication
+      - node.type.publication_page
+      - simple_sitemap.bundle_settings.node.publication
+      - simple_sitemap.bundle_settings.node.publication_page
+  optional:
+    - jsonapi_extras.jsonapi_resource_config.node--publication
+    - jsonapi_extras.jsonapi_resource_config.node--publication_page

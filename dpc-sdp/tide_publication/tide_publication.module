@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Tide Publication.
+ */
+
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Drupal\tide_publication\TidePublicationFieldStorageDefinition;
+use Drupal\tide_publication\TidePublicationPageItemList;
+
+/**
+ * Implements hook_entity_bundle_field_info().
+ */
+function tide_publication_entity_bundle_field_info(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+  $fields = [];
+  if ($entity_type->id() === 'node' && $bundle === 'publication') {
+    $fields['publication_pages'] = TidePublicationFieldStorageDefinition::create('entity_reference')
+      ->setLabel(t('Publication pages'))
+      ->setComputed(TRUE)
+      ->setClass(TidePublicationPageItemList::class)
+      ->setReadOnly(FALSE)
+      ->setInternal(FALSE)
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setSettings([
+        'handler' => 'default:node',
+        'handler_settings' => [
+          'target_bundles' => [
+            'publication_page' => 'publication_page',
+          ],
+        ],
+      ])
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'region' => 'hidden',
+        'weight' => 100,
+      ])
+      ->setDisplayOptions('form', [
+        'label' => 'hidden',
+        'region' => 'hidden',
+        'weight' => 100,
+      ])
+      ->setTargetEntityTypeId($entity_type->id())
+      ->setTargetBundle('publication')
+      ->setName('publication_pages')
+      ->setDisplayConfigurable('form', FALSE)
+      ->setDisplayConfigurable('view', FALSE);
+  }
+
+  return $fields;
+}
