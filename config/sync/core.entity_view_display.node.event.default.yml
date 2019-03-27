@@ -21,7 +21,6 @@ dependencies:
     - field.field.node.event.field_node_site
     - field.field.node.event.field_related_links
     - field.field.node.event.field_show_content_rating
-    - field.field.node.event.field_show_related_content
     - field.field.node.event.field_show_social_sharing
     - field.field.node.event.field_tags
     - field.field.node.event.field_topic
@@ -168,16 +167,6 @@ content:
     region: content
   field_show_content_rating:
     weight: 18
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
-  field_show_related_content:
-    weight: 23
     label: above
     settings:
       format: default

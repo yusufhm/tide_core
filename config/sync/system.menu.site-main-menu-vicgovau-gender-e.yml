@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: site-main-menu-vicgovau-gender-e
-label: 'Main menu - vic.gov.au - Gender equality and women''s leadership'
+label: 'vic.gov.au - Gender equality and women''s leadership - MAIN MENU'
 description: 'Automatically created site menu Main menu - vic.gov.au - Gender equality and women&#039;s leadership'
 locked: false

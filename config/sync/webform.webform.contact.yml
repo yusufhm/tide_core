@@ -1,21 +1,19 @@
-uuid: a8c7889d-ecf4-4538-ae6d-efe8b1c1949b
 langcode: en
 status: open
 dependencies:
   enforced:
     module:
       - webform
-_core:
-  default_config_hash: 54q-eZLQ0xY3g9yFexLIn97Y8F_sByRhO4ima2pMmn4
 open: null
 close: null
 uid: null
 template: false
+archive: false
 id: contact
 title: Contact
-description: 'Basic email contact webform.'
+description: 'Basic email contact webform. Duplicate this and configure for your site.'
 category: ''
-elements: "what_type_of_enquiry_do_you_have_:\n  '#type': webform_select_other\n  '#title': 'What type of enquiry do you have? '\n  '#options':\n    'General enquiry': 'General enquiry'\n    'vic.gov.au website enquiry': 'vic.gov.au website enquiry'\n    'Complaint or feedback for government': 'Complaint or feedback for government'\n    'Making a payment': 'Making a payment'\n    'Completing an application': 'Completing an application'\n  '#required': true\ntopic:\n  '#type': select\n  '#title': Topic\n  '#options':\n    'Traffic delays': 'Traffic delays'\n    Transport: Transport\n    'Myki fines': 'Myki fines'\n  '#states':\n    invisible:\n      ':input[name=\"what_type_of_enquiry_do_you_have_[select]\"]':\n        empty: true\n  '#required': true\nmessage:\n  '#type': textarea\n  '#title': Message\n  '#required': true\nname:\n  '#type': textfield\n  '#title': 'Full name'\n  '#required': true\n  '#default_value': '[webform-authenticated-user:display-name]'\nemail:\n  '#type': email\n  '#title': 'Email address'\n  '#default_value': '[webform-authenticated-user:mail]'\ncontact_number:\n  '#type': tel\n  '#title': 'Contact number'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'Send message'\n"
+elements: "what_type_of_enquiry_do_you_have_:\n  '#type': webform_select_other\n  '#title': 'What type of enquiry do you have? '\n  '#options':\n    'General enquiry': 'General enquiry'\n    'vic.gov.au website enquiry': 'vic.gov.au website enquiry'\n    'Complaint or feedback for government': 'Complaint or feedback for government'\n    'Making a payment': 'Making a payment'\n    'Completing an application': 'Completing an application'\n  '#required': true\ntopic:\n  '#type': select\n  '#title': Topic\n  '#options':\n    'Traffic delays': 'Traffic delays'\n    Transport: Transport\n    'Myki fines': 'Myki fines'\n  '#states':\n    invisible:\n      ':input[name=\"what_type_of_enquiry_do_you_have_[select]\"]':\n        empty: true\n  '#required': true\nmessage:\n  '#type': textarea\n  '#title': Message\n  '#required': true\nname:\n  '#type': textfield\n  '#title': 'Full name'\n  '#required': true\n  '#default_value': '[current-user:display-name]'\nemail:\n  '#type': email\n  '#title': 'Email address'\n  '#default_value': '[current-user:mail]'\ncontact_number:\n  '#type': tel\n  '#title': 'Contact number'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'Send message'\n"
 css: ''
 javascript: ''
 settings:
@@ -51,17 +49,22 @@ settings:
   submission_label: ''
   submission_log: false
   submission_user_columns: {  }
+  submission_user_duplicate: false
   submission_login: false
   submission_login_message: ''
   submission_exception_message: ''
   submission_locked_message: ''
+  previous_submission_message: ''
+  previous_submissions_message: ''
   autofill: false
   autofill_message: ''
   autofill_excluded_elements: {  }
   wizard_progress_bar: true
   wizard_progress_pages: false
   wizard_progress_percentage: false
+  wizard_progress_link: false
   wizard_start_label: ''
+  wizard_preview_link: false
   wizard_confirmation: true
   wizard_confirmation_label: ''
   wizard_track: ''
@@ -72,6 +75,7 @@ settings:
   preview_attributes: {  }
   preview_excluded_elements: {  }
   preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
   draft: none
   draft_multiple: false
   draft_auto_save: false
@@ -162,14 +166,15 @@ handlers:
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      from_mail: default
+      from_mail: _default
       from_options: {  }
-      from_name: default
+      from_name: _default
       subject: '[webform_submission:values:subject:raw]'
       body: '[webform_submission:values:message:value]'
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
+      exclude_empty_checkbox: false
       html: true
       attachments: false
       twig: false
@@ -188,7 +193,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: default
+      to_mail: _default
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
@@ -202,6 +207,7 @@ handlers:
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
+      exclude_empty_checkbox: false
       html: true
       attachments: false
       twig: false
@@ -210,3 +216,7 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
+uuid: a8c7889d-ecf4-4538-ae6d-efe8b1c1949b
+_core:
+  default_config_hash: 54q-eZLQ0xY3g9yFexLIn97Y8F_sByRhO4ima2pMmn4
+weight: 0

@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: site-main-menu-how-to-guide
-label: 'Main menu - How to guide'
-description: 'Automatically created site menu Main menu - How to guide'
+label: 'vic.gov.au - Vic Gov digital guide - MAIN MENU'
+description: 'Automatically created site menu Main menu - Vic Gov digital guide'
 locked: false

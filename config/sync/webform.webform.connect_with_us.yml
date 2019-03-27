@@ -4,8 +4,10 @@ status: open
 dependencies: {  }
 open: null
 close: null
+weight: 0
 uid: 14
 template: false
+archive: false
 id: connect_with_us
 title: 'Connect with us'
 description: 'Form embed on the vic.gov.au Connect with us page'
@@ -46,17 +48,22 @@ settings:
   submission_label: ''
   submission_log: false
   submission_user_columns: {  }
+  submission_user_duplicate: false
   submission_login: false
   submission_login_message: ''
   submission_exception_message: ''
   submission_locked_message: ''
+  previous_submission_message: ''
+  previous_submissions_message: ''
   autofill: false
   autofill_message: ''
   autofill_excluded_elements: {  }
   wizard_progress_bar: true
   wizard_progress_pages: false
   wizard_progress_percentage: false
+  wizard_progress_link: false
   wizard_start_label: ''
+  wizard_preview_link: false
   wizard_confirmation: true
   wizard_confirmation_label: ''
   wizard_track: ''
@@ -67,6 +74,7 @@ settings:
   preview_attributes: {  }
   preview_excluded_elements: {  }
   preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
   draft: none
   draft_multiple: false
   draft_auto_save: false
@@ -143,7 +151,7 @@ access:
 handlers:
   alpha_vic_gov_au:
     id: email
-    label: 'Alpha vic.gov.au'
+    label: vic.gov.au
     handler_id: alpha_vic_gov_au
     status: true
     conditions: {  }
@@ -157,14 +165,15 @@ handlers:
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      from_mail: sdp.siteadmin@dpc.vic.gov.au
+      from_mail: contact@dpc.vic.gov.au
       from_options: {  }
       from_name: 'DPC Content Repository'
-      subject: 'Alpha vic.gov.au - Feedback'
+      subject: 'vic.gov.au - Feedback'
       body: "<p>Submitted on {{ webform_token('[webform_submission:created]', webform_submission) }}</p>\n<p>Submitted by: {{ webform_token('[webform_submission:user]', webform_submission) }}</p>\n<p>Submitted values are:</p>\n{{ webform_token('[webform_submission:values]', webform_submission) }}\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
+      exclude_empty_checkbox: false
       html: true
       attachments: false
       twig: true

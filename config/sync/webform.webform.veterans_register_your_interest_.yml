@@ -1,0 +1,184 @@
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+uid: 59
+template: false
+archive: false
+id: veterans_register_your_interest_
+title: 'Veterans - Register your interest in a career in the Victorian Public Sector '
+description: ''
+category: ''
+elements: "first_name:\n  '#type': webform_name\n  '#title': 'First name'\n  '#title__access': false\n  '#first__title': 'First name'\n  '#middle__access': false\n  '#last__access': false\n  '#suffix__access': false\n  '#degree__access': false\n  '#required': true\nlast_name:\n  '#type': webform_name\n  '#title': 'Last name'\n  '#title__access': false\n  '#first__access': false\n  '#middle__access': false\n  '#last__title': 'Last name'\n  '#suffix__access': false\n  '#degree__access': false\n  '#required': true\nemail:\n  '#type': email\n  '#title': Email\n  '#required': true\nphone:\n  '#type': tel\n  '#title': Phone\nhave_you_ever_served_in_the_australian_defence_force_:\n  '#type': radios\n  '#title': 'Have you ever served in the Australian Defence Force?'\n  '#options':\n    'Yes': 'Yes'\n    'No': 'No'\n  '#required': true\nplease_select_type_of_service:\n  '#type': checkboxes\n  '#title': 'Please select type of service'\n  '#options':\n    Army: Army\n    Navy: Navy\n    'Air Force': 'Air Force'\nrank:\n  '#type': textfield\n  '#title': Rank\nwould_you_like_to_receive_updates_on_victorian_government_vetera:\n  '#type': checkboxes\n  '#title': 'Would you like to receive updates on Victorian Government veteran employment initiatives?'\n  '#options':\n    'Yes': 'Yes'\nterms_of_service:\n  '#type': webform_terms_of_service\n  '#title': 'I have read and accept the Department of Premier and Cabinet''s Privacy Policy and understand how my information will be used'\n  '#terms_title': 'Privacy Policy'\n  '#terms_content': \"<p>The&nbsp;Department of Premier and Cabinet Veterans Branch is collecting information and feedback for the Public Sector Veteran Employment Strategy. Any information collected will be used by the Veterans Branch and may be used in&nbsp;Department of Premier and Cabinet reporting in an aggregated or de-identified format.</p>\\n\\n<p>Veterans Branch collects, stores, shares and manages personal information consistently with the provisions of the Victorian Information Privacy Act 2000.</p>\\n\\n<p>For more information on how the Veterans Branch handles your personal information, or if you would like to exercise your right to access any personal information you provide, please see the&nbsp;<a href=\\\"https://www.vic.gov.au/privacy.html\\\">Victorian Government Privacy Policy</a>.</p>\"\n"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_login: false
+  form_login_message: ''
+  submission_label: ''
+  submission_log: false
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_login: false
+  submission_login_message: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: message
+  confirmation_title: ''
+  confirmation_message: 'Thank you for your interest in the Victorian Public Sector Veterans Employment Strategy'
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  administrator_email:
+    id: email
+    label: 'Administrator email'
+    handler_id: administrator_email
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: marcella.marino@dpc.vic.gov.au
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: veterans@dpc.vic.gov.au
+      from_options: {  }
+      from_name: 'Department of Premier and Cabinet Veterans Branch '
+      subject: _default
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+uuid: 092a1e24-b9f0-4706-bc56-dc43677e0ea5
+weight: 0

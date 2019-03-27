@@ -1,0 +1,8 @@
+uuid: 13a829de-9958-4e71-b9dc-a2411b533678
+langcode: en
+status: true
+dependencies: {  }
+id: site-main-menu-datavic
+label: 'Main menu - DataVic'
+description: 'Automatically created site menu Main menu - DataVic'
+locked: false

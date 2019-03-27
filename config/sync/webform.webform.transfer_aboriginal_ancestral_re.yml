@@ -1,0 +1,217 @@
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+uid: 59
+template: false
+archive: false
+id: transfer_aboriginal_ancestral_re
+title: 'Transfer Aboriginal Ancestral Remains to Traditional Owner'
+description: ''
+category: ''
+elements: "name_of_the_public_organisation_or_university_in_possession_of_a:\n  '#type': textfield\n  '#title': 'Name of the public organisation or university in possession of Aboriginal Ancestral Remains'\n  '#title_display': before\ncontact_person:\n  '#type': webform_name\n  '#title': 'Contact person'\n  '#title_display': before\n  '#required': true\n  '#title__access': false\n  '#first__title': 'First name'\n  '#middle__access': false\n  '#last__title': 'Last name'\n  '#suffix__access': false\n  '#degree__access': false\nemail:\n  '#type': webform_email_confirm\n  '#title': Email\n  '#title_display': before\naddress_of_organisation:\n  '#type': webform_address\n  '#title': 'Address of organisation'\n  '#title_display': before\n  '#address_2__access': false\n  '#city__title': City\n  '#state_province__title': State\n  '#postal_code__title': Postcode\n  '#country__access': false\naccession_or_catalogue_entry:\n  '#type': textfield\n  '#title': 'Accession or catalogue entry'\n  '#title_display': before\nplease_upload_any_documentation_correspondence_or_research_relat:\n  '#type': managed_file\n  '#title': 'Please upload any documentation, correspondence or research related to the Aboriginal Ancestral Remains'\n  '#title_display': before\nplease_provide_a_description_of_the_ancestral_remains:\n  '#type': textfield\n  '#title': 'Please provide a description of the Ancestral Remains'\n  '#description': '<span style=\"font-size:10.0pt\"><span style=\"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;\">Include dimensions, materials, suspected minimum number of individuals and photographic documentation, if appropriate, and the antiquity of such Aboriginal Ancestral Remains and associated Aboriginal objects if known.</span></span>'\n  '#title_display': before\nlocation_of_the_ancestral_remains:\n  '#type': webform_address\n  '#title': 'Location of the Ancestral Remains'\n  '#title_display': before\n  '#address_2__access': false\n  '#city__title': City\n  '#state_province__title': State\n  '#postal_code__title': Postcode\n  '#country__access': false\nname_of_the_person_or_organisation_where_the_object_originated:\n  '#type': webform_name\n  '#title': 'Name of the person or organisation where the object originated'\n  '#title_display': before\n  '#title__access': false\n  '#first__title': Name\n  '#middle__access': false\n  '#last__access': false\n  '#suffix__access': false\n  '#degree__access': false\ndate_you_acquired_the_object_if_known_:\n  '#type': date\n  '#title': 'Date you acquired the object (if known)'\nplease_describe_how_the_object_was_obtained:\n  '#type': textarea\n  '#title': 'Please describe how the object was obtained'\n  '#description': 'For example, gift, purchase or excavation'\nplease_provide_details_and_results_of_any_consultations_undertak:\n  '#type': textfield\n  '#title': 'Please provide details and results of any consultations undertaken with Traditional Owners and other Aboriginal people, groups or corporations'\nplease_provide_a_summary_of_the_evidence_used_to_determine_the_o:\n  '#type': textarea\n  '#title': 'Please provide a summary of the evidence used to determine the origin and cultural affiliation of each set of Aboriginal Ancestral Remains and associated Aboriginal objects'\n  '#description': 'Please include references to published material, if appropriate'\ndo_you_have_the_object:\n  '#type': radios\n  '#title': 'Do you have the object'\n  '#options':\n    'Yes': 'Yes'\n    'No': 'No'\nname_of_the_relevant_traditional_owner_group_if_known_:\n  '#type': textfield\n  '#title': 'Name of the relevant Traditional Owner group (if known)'\n"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_login: false
+  form_login_message: ''
+  submission_label: ''
+  submission_log: false
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_login: false
+  submission_login_message: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: message
+  confirmation_title: ''
+  confirmation_message: 'Thank you for submitting your online report. We&#39;ll be in touch by email or phone within 14 business days.'
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  administrator_notification:
+    id: email
+    label: 'Administrator notification'
+    handler_id: administrator_notification
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: marcella.marino@dpc.vic.gov.au
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: vahc@dpc.vic.gov.au
+      from_options: {  }
+      from_name: 'Victorian Aboriginal Heritage Council'
+      subject: _default
+      body: "<p>Submitted on {{ webform_token('[webform_submission:created]', webform_submission) }}</p>\n<p>Submitted by: {{ webform_token('[webform_submission:user]', webform_submission) }}</p>\n<p>Submitted values are:</p>\n{{ webform_token('[webform_submission:values]', webform_submission) }}\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      html: true
+      attachments: false
+      twig: true
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+  customer_notification:
+    id: email
+    label: 'Customer notification'
+    handler_id: customer_notification
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:email:raw]'
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: vahc@dpc.vic.gov.au
+      from_options: {  }
+      from_name: 'Victorian Aboriginal Heritage Council'
+      subject: _default
+      body: "Thank you for reporting the transfer of Ancestral Remains.<br />\n<br />\nWe will review your report and be in touch within 14 days.<br />\n<br />\nFor more information, please email <a href=\"mailto:vahc@dpc.vic.gov.au\">vahc@dpc.vic.gov.au</a>.<br />\n<br />\nKind regards,<br />\nVictorian Aboriginal Heritage Council"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+uuid: a14d5244-e84a-4a03-b811-632ec07cba71
+weight: 0

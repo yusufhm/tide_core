@@ -1,0 +1,8 @@
+uuid: ae9a06c2-d345-47cb-8ad4-ba2236d627b0
+langcode: en
+status: true
+dependencies: {  }
+id: site-footer-menu-victorian-multi
+label: 'Footer menu - Victorian Multicultural Commission'
+description: 'Automatically created site menu Footer menu - Victorian Multicultural Commission'
+locked: false

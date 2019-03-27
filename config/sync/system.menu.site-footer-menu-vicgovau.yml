@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: site-footer-menu-vicgovau
-label: 'Footer menu - vic.gov.au'
+label: 'vic.gov.au - FOOTER MENU'
 description: 'Automatically created site menu Footer menu - vic.gov.au'
 locked: false

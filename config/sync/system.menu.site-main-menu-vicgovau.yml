@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: site-main-menu-vicgovau
-label: 'Main menu - vic.gov.au'
+label: 'vic.gov.au - MAIN MENU'
 description: 'Automatically created site menu Main menu - vic.gov.au'
 locked: false

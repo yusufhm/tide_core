@@ -1,0 +1,8 @@
+uuid: 73ff5572-5e29-4a83-9888-f90b6c1c9ef7
+langcode: en
+status: true
+dependencies: {  }
+id: site-footer-menu-familyviolencem
+label: 'fvrim.vic.gov.au - FOOTER MENU'
+description: 'Automatically created site menu Footer menu - familyviolencemonitor.vic.gov.au'
+locked: false

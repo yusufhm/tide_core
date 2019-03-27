@@ -14,9 +14,16 @@ targetEntityType: node
 bundle: alert
 mode: teaser
 content:
+  content_moderation_control:
+    weight: -20
+    region: content
   links:
     weight: 100
     region: content
 hidden:
+  field_alert_type: true
+  field_call_to_action: true
   field_node_primary_site: true
   field_node_site: true
+  scheduled_archiving: true
+  scheduled_publishing: true

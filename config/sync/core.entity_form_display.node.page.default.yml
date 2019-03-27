@@ -144,7 +144,6 @@ content:
         view_mode: media_browser_preview
       field_widget_replace: false
       open: false
-      field_widget_display_settings: {  }
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
