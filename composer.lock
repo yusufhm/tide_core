@@ -60,16 +60,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.90.9",
+            "version": "3.90.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "b9d93ad14a504a0833bdafa2e80c9bd90d6cf47a"
+                "reference": "6304e127004f783283d3d13fa07ca13980e43ccd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b9d93ad14a504a0833bdafa2e80c9bd90d6cf47a",
-                "reference": "b9d93ad14a504a0833bdafa2e80c9bd90d6cf47a",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6304e127004f783283d3d13fa07ca13980e43ccd",
+                "reference": "6304e127004f783283d3d13fa07ca13980e43ccd",
                 "shasum": ""
             },
             "require": {
@@ -138,7 +138,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-03-25T18:17:43+00:00"
+            "time": "2019-03-27T18:17:43+00:00"
         },
         {
             "name": "bjeavons/zxcvbn-php",
@@ -1922,12 +1922,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_landing_page.git",
-                "reference": "8f2478d7a151c8a114c9fe2ec0d2515df731939c"
+                "reference": "b444c5e93a7b76fdd6d1a3b7f52239c1a6593923"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/8f2478d7a151c8a114c9fe2ec0d2515df731939c",
-                "reference": "8f2478d7a151c8a114c9fe2ec0d2515df731939c",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/b444c5e93a7b76fdd6d1a3b7f52239c1a6593923",
+                "reference": "b444c5e93a7b76fdd6d1a3b7f52239c1a6593923",
                 "shasum": ""
             },
             "require": {
@@ -1945,7 +1945,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Landing Page content type and related configuration for Tide Drupal 8 distribution",
-            "time": "2019-03-27T02:50:41+00:00"
+            "time": "2019-03-27T22:30:52+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
@@ -2194,22 +2194,22 @@
         },
         {
             "name": "drupal-composer/drupal-scaffold",
-            "version": "2.5.4",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal-composer/drupal-scaffold.git",
-                "reference": "fc6bf4ceecb5d47327f54d48d4d4f67b17da956d"
+                "reference": "0e00601e070c5c71e6d3a6478fa61198e30c2964"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal-composer/drupal-scaffold/zipball/fc6bf4ceecb5d47327f54d48d4d4f67b17da956d",
-                "reference": "fc6bf4ceecb5d47327f54d48d4d4f67b17da956d",
+                "url": "https://api.github.com/repos/drupal-composer/drupal-scaffold/zipball/0e00601e070c5c71e6d3a6478fa61198e30c2964",
+                "reference": "0e00601e070c5c71e6d3a6478fa61198e30c2964",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0.0",
                 "composer/semver": "^1.4",
-                "php": ">=5.4.5"
+                "php": "^5.5.9|>=7.0.8"
             },
             "require-dev": {
                 "composer/composer": "dev-master",
@@ -2234,7 +2234,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Composer Plugin for updating the Drupal scaffold files when using drupal/core",
-            "time": "2018-07-27T10:07:07+00:00"
+            "time": "2019-03-26T09:14:17+00:00"
         },
         {
             "name": "drupal/address",
@@ -5715,17 +5715,17 @@
         },
         {
             "name": "drupal/paragraphs",
-            "version": "1.7.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/paragraphs",
-                "reference": "8.x-1.7"
+                "reference": "8.x-1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.7.zip",
-                "reference": "8.x-1.7",
-                "shasum": "85f7a2ef0850dd9113fb57934986a5c31ee2b555"
+                "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.8.zip",
+                "reference": "8.x-1.8",
+                "shasum": "a40849233de8403f5488c20c5b81ab4877373f65"
             },
             "require": {
                 "drupal/core": "~8",
@@ -5753,8 +5753,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.7",
-                    "datestamp": "1553087589",
+                    "version": "8.x-1.8",
+                    "datestamp": "1553618281",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7882,16 +7882,16 @@
         },
         {
             "name": "drush/drush",
-            "version": "8.2.1",
+            "version": "8.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drush-ops/drush.git",
-                "reference": "76b4cf0e7ced91790b9c9a7053fa3e9f04fc69e3"
+                "reference": "96622a19d7cabcdee0b08367eb529fed42e5fd0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drush-ops/drush/zipball/76b4cf0e7ced91790b9c9a7053fa3e9f04fc69e3",
-                "reference": "76b4cf0e7ced91790b9c9a7053fa3e9f04fc69e3",
+                "url": "https://api.github.com/repos/drush-ops/drush/zipball/96622a19d7cabcdee0b08367eb529fed42e5fd0f",
+                "reference": "96622a19d7cabcdee0b08367eb529fed42e5fd0f",
                 "shasum": ""
             },
             "require": {
@@ -7938,6 +7938,9 @@
                 "psr-0": {
                     "Drush": "lib/",
                     "Consolidation": "lib/"
+                },
+                "psr-4": {
+                    "Drush\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -7988,7 +7991,7 @@
             ],
             "description": "Drush is a command line shell and scripting interface for Drupal, a veritable Swiss Army knife designed to make life easier for those of us who spend some of our working hours hacking away at the command prompt.",
             "homepage": "http://www.drush.org",
-            "time": "2019-03-14T03:57:03+00:00"
+            "time": "2019-03-26T16:04:40+00:00"
         },
         {
             "name": "e0ipso/shaper",
