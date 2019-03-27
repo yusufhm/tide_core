@@ -1922,12 +1922,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_landing_page.git",
-                "reference": "b444c5e93a7b76fdd6d1a3b7f52239c1a6593923"
+                "reference": "ea6253b43c4422ec8441b2813b9420aaaca41fde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/b444c5e93a7b76fdd6d1a3b7f52239c1a6593923",
-                "reference": "b444c5e93a7b76fdd6d1a3b7f52239c1a6593923",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/ea6253b43c4422ec8441b2813b9420aaaca41fde",
+                "reference": "ea6253b43c4422ec8441b2813b9420aaaca41fde",
                 "shasum": ""
             },
             "require": {
@@ -1945,7 +1945,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Landing Page content type and related configuration for Tide Drupal 8 distribution",
-            "time": "2019-03-27T22:30:52+00:00"
+            "time": "2019-03-27T23:43:05+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
