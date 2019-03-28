@@ -1672,12 +1672,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_api.git",
-                "reference": "b68494555f4afbfffdc13b530f92426e02939bd9"
+                "reference": "468cf81e69e8977483bd6bad0f7e07eb08da871c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/b68494555f4afbfffdc13b530f92426e02939bd9",
-                "reference": "b68494555f4afbfffdc13b530f92426e02939bd9",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/468cf81e69e8977483bd6bad0f7e07eb08da871c",
+                "reference": "468cf81e69e8977483bd6bad0f7e07eb08da871c",
                 "shasum": ""
             },
             "require": {
@@ -1709,7 +1709,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Content API for Tide distribution.",
-            "time": "2019-03-25T02:15:51+00:00"
+            "time": "2019-03-28T00:46:48+00:00"
         },
         {
             "name": "dpc-sdp/tide_authenticated_content",
