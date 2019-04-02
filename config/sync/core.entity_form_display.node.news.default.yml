@@ -5,6 +5,7 @@ dependencies:
   config:
     - entity_browser.browser.tide_image_browser
     - field.field.node.news.body
+    - field.field.node.news.field_authenticated_content
     - field.field.node.news.field_featured_image
     - field.field.node.news.field_location
     - field.field.node.news.field_metatags
@@ -99,6 +100,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_authenticated_content:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_featured_image:
     weight: 4
     settings:
@@ -124,7 +131,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_metatags:
-    weight: 20
+    weight: 21
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
@@ -156,14 +163,14 @@ content:
     type: options_buttons
     region: content
     field_name: field_node_primary_site
-    weight: 19
+    weight: 20
     settings: {  }
     third_party_settings: {  }
   field_node_site:
     type: options_buttons
     region: content
     field_name: field_node_site
-    weight: 18
+    weight: 19
     settings: {  }
     third_party_settings: {  }
   field_related_links:
@@ -177,6 +184,10 @@ content:
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: _none
+      closed_mode_threshold: 0
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
     third_party_settings: {  }
     type: paragraphs
     region: content
@@ -240,7 +251,7 @@ content:
     third_party_settings: {  }
   scheduled_archiving:
     type: inline_entity_form_complex
-    weight: 22
+    weight: 23
     settings:
       override_labels: true
       label_singular: 'Scheduled Archiving'
@@ -256,7 +267,7 @@ content:
     region: content
   scheduled_publishing:
     type: inline_entity_form_complex
-    weight: 21
+    weight: 22
     settings:
       override_labels: true
       label_singular: 'Scheduled Publishing'

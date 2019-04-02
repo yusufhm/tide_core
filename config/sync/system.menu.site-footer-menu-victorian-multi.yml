@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: site-footer-menu-victorian-multi
-label: 'Footer menu - Victorian Multicultural Commission'
+label: 'multicultural.vic.gov.au - FOOTER MENU'
 description: 'Automatically created site menu Footer menu - Victorian Multicultural Commission'
 locked: false

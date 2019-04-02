@@ -45,6 +45,7 @@ permissions:
   - 'create scheduled_archiving scheduled updates'
   - 'create scheduled_publishing scheduled updates'
   - 'create section_page content'
+  - 'create terms in authenticated_content'
   - 'create timeline content'
   - 'create url aliases'
   - 'create webform'

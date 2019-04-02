@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: site-main-menu-datavic
-label: 'Main menu - DataVic'
+label: 'data.vic.gov.au - MAIN menu'
 description: 'Automatically created site menu Main menu - DataVic'
 locked: false

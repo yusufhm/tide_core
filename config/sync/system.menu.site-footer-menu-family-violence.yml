@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: site-footer-menu-family-violence
-label: 'Family violence reform - FOOTER MENU'
+label: 'vic.gov.au - Family violence reform - FOOTER MENU'
 description: 'Automatically created site menu Footer menu - Family violence reform'
 locked: false

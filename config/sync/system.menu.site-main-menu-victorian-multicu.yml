@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: site-main-menu-victorian-multicu
-label: 'Main menu - Victorian Multicultural Commission'
+label: 'multicultural.vic.gov.au - MAIN MENU'
 description: 'Automatically created site menu Main menu - Victorian Multicultural Commission'
 locked: false

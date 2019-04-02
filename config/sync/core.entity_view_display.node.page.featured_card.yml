@@ -63,6 +63,7 @@ content:
       image_link: ''
     third_party_settings: {  }
 hidden:
+  field_graphical_image: true
   field_metatags: true
   field_node_primary_site: true
   field_node_site: true
@@ -71,8 +72,11 @@ hidden:
   field_show_content_rating: true
   field_show_related_content: true
   field_show_social_sharing: true
+  field_show_table_of_content: true
   field_show_whats_next: true
   field_tags: true
   field_topic: true
   field_whats_next: true
   links: true
+  scheduled_archiving: true
+  scheduled_publishing: true

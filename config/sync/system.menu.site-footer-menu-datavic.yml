@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: site-footer-menu-datavic
-label: 'Footer menu - DataVic'
+label: 'data.vic.gov.au - FOOTER menu'
 description: 'Automatically created site menu Footer menu - DataVic'
 locked: false

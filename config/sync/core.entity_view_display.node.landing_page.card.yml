@@ -60,6 +60,7 @@ content:
       summary_handler: full
     third_party_settings: {  }
 hidden:
+  field_authenticated_content: true
   field_bottom_graphical_image: true
   field_featured_image: true
   field_graphical_image: true

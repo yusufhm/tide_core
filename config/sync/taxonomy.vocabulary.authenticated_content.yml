@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 _core:
   default_config_hash: c5G-I_0k2C2lV51W2r3xBgj1nOOnYmOy61aXaW6da5U
-name: 'Authenticate Content'
+name: 'Authenticated Content'
 vid: authenticated_content
 description: 'Allow access to specified content to authenticated users only'
 hierarchy: 0

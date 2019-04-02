@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: site-main-menu-vicfree-wifi
-label: 'VicFree WiFi - MAIN MENU'
+label: 'vic.gov.au - VicFree WiFi - MAIN MENU'
 description: 'Automatically created site menu Main menu - VicFree WiFi'
 locked: false

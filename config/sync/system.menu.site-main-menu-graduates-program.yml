@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: site-main-menu-graduates-program
-label: 'Graduates program - MAIN MENU'
+label: 'vic.gov.au - Graduates program - MAIN MENU'
 description: 'Automatically created site menu Main menu - Graduates program'
 locked: false

@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: site-footer-menu-familyviolencem
 label: 'fvrim.vic.gov.au - FOOTER MENU'
-description: 'Automatically created site menu Footer menu - familyviolencemonitor.vic.gov.au'
+description: 'Automatically created site menu Footer menu - fvrim.vic.gov.au'
 locked: false

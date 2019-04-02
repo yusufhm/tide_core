@@ -10,7 +10,7 @@ template: false
 archive: false
 id: buyer_registration_form
 title: 'Buyer registration form'
-description: "By submitting this application, you agree to the terms in the register&#39;s rules of use.<br />\r\nFields marked with an asterisk (*) must be completed"
+description: '<p>Buying for Victoria form embedded on&nbsp;eServices and IT buyer registration form page</p>'
 category: ''
 elements: "email_address_required_:\n  '#type': textfield\n  '#title': 'Email address * (required)'\n  '#required': true\nfull_name_required_:\n  '#type': textfield\n  '#title': 'Full name * (required)'\n  '#required': true\nphone_number_required_:\n  '#type': textfield\n  '#title': 'Phone number * (required)'\n  '#required': true\norganisation_local_government_authorities:\n  '#type': select\n  '#title': 'Organisation (select LGA for local government authorities)'\n  '#options':\n    'Not Listed': 'Not Listed'\n    'Alfred Health': 'Alfred Health'\n    'Ambulance Victoria': 'Ambulance Victoria'\n    'Ames Australia': 'Ames Australia'\n    'Austin Health': 'Austin Health'\n    'Barwon Water': 'Barwon Water'\n    'Bastow Institute of Educational Leadership': 'Bastow Institute of Educational Leadership'\n    CenITex: CenITex\n    'Central Highlands Water (MAV)': 'Central Highlands Water'\n    'Chief Parliamentary Counsel': 'Chief Parliamentary Counsel'\n    'Chisholm Institute': 'Chisholm Institute'\n    'Citywide Service Solutions (MAV)': 'Citywide Service Solutions'\n    'Clayton South Regional Landfill (MAV)': 'Clayton South Regional Landfill'\n    'Coliban Water': 'Coliban Water'\n    'Commission for Gambling and Liquor Regulation': 'Commission for Gambling and Liquor Regulation'\n    'Commissioner for Environmental Sustainability': 'Commissioner for Environmental Sustainability'\n    'Commissioner for Privacy and Data Protection': 'Commissioner for Privacy and Data Protection'\n    'Country Fire Authority (MAV)': 'Country Fire Authority'\n    'County Court of Victoria': 'County Court of Victoria'\n    'Court Services Victoria': 'Court Services Victoria'\n    'Dairy Food Safety Victoria': 'Dairy Food Safety Victoria'\n    'Department of Health and Human Services': 'Department of Health and Human Services'\n    'Cradle Coast Authority (MAV)': 'Cradle Coast Authority'\n    'Department of Justice and Regulation': 'Department of Justice and Regulation'\n    'Department of Treasury and Finance': 'Department of Treasury and Finance'\n    'Dept of Eco Dev, Jobs, Transport and Resources': 'Dept of Eco Dev, Jobs, Transport and Resources'\n    'Department of Education &amp; Training (DET)': 'Department of Education &amp; Training'\n    'Dept of Environment, Land, Water and Planning': 'Dept of Environment, Land, Water and Planning'\n    'Department of Premier and Cabinet': 'Department of Premier and Cabinet'\n    'Development Victoria': 'Development Victoria'\n    'Economic Policy &amp; State Productivity (DPC)': 'Economic Policy &amp; State Productivity'\n    'Family Violence &amp; Service Delivery Reform (DPC)': 'Family Violence &amp; Service Delivery Reform'\n    'Governance Policy &amp; Coordination (DPC)': 'Governance Policy &amp; Coordination'\n    'Office of the General Counsel (DPC)': 'Office of the General Counsel'\n    'Service Victoria (DPC)': 'Service Victoria (DPC)'\n    'Social Policy (DPC)': 'Social Policy'\n    'Emergency Management Victoria': 'Emergency Management Victoria'\n    'Emergency Services Superannuation Board': 'Emergency Services Superannuation Board'\n    'Emergency Services Telecommunications Authority': 'Emergency Services Telecommunications Authority'\n    'Energy Safe Victoria': 'Energy Safe Victoria'\n    'Environment Protection Authority': 'Environment Protection Authority'\n    'Essential Services Commission': 'Essential Services Commission'\n    'Fed Square Pty Ltd': 'Fed Square Pty Ltd'\n    Forensicare: Forensicare\n    'Game Management Authority': 'Game Management Authority'\n    'Geelong Regional Library Corporation (MAV)': 'Geelong Regional Library Corporation'\n    'Goulburn Murray Water (MAV)': 'Goulburn Murray Water'\n    'Goulburn Valley Health (GV Health) (WoVG)': 'Goulburn Valley Health (GV Health)'\n    'Grampians Rural Health Alliance': 'Grampians Rural Health Alliance'\n    'Greater Metropolitan Cemeteries Trust': 'Greater Metropolitan Cemeteries Trust'\n    'Greyhound Racing Victoria': 'Greyhound Racing Victoria'\n    'Health Purchasing Victoria': 'Health Purchasing Victoria'\n    'High Country Library Corporation (MAV)': 'High Country Library Corporation'\n    'Holmesglen Institute': 'Holmesglen Institute'\n    'Hume Rural Health Alliance': 'Hume Rural Health Alliance'\n    'IBAC (Ind. Broad-based Anti-corruption Commission)': 'IBAC (Ind. Broad-based Anti-corruption Commission)'\n    'Infrastructure Victoria': 'Infrastructure Victoria'\n    'Invest Victoria': 'Invest Victoria'\n    'La Trobe University (MAV)': 'La Trobe University'\n    'Level Crossing Removal Authority': 'Level Crossing Removal Authority'\n    'LGA Victoria (MAV)': 'LGA Victoria (MAV)'\n    'LGA Tasmania (MAV)': 'LGA Tasmania (MAV)'\n    'Local Government Investigations and Compliance Inspectorate': 'Local Government Investigations and Compliance Inspectorate'\n    'Loddon Murray Rural Health Alliance': 'Loddon Murray Rural Health Alliance'\n    'Melbourne &amp; Olympic Parks': 'Melbourne &amp; Olympic Parks'\n    'Melbourne Market Authority': 'Melbourne Market Authority'\n    'Melbourne Metro Rail Authority': 'Melbourne Metro Rail Authority'\n    'Melbourne Polytechnic': 'Melbourne Polytechnic'\n    'Melbourne Water (MW)': 'Melbourne Water (MW)'\n    'Metropolitan Fire Brigade': 'Metropolitan Fire Brigade'\n    'Monash Health': 'Monash Health'\n    'National Gallery of Victoria (NGV)': 'National Gallery of Victoria (NGV)'\n    'National Health Practitioner Ombudsman and Privacy Commissioner': 'National Health Practitioner Ombudsman and Privacy Commissioner'\n    'National Transport Commission (WoVG)': 'National Transport Commission'\n    'North Central Goldfields Regional Library (MAV)': 'North Central Goldfields Regional Library'\n    'North East Link Authority (WoVG)': 'North East Link Authority'\n    'Office of Road Safety Camera Commissioner': 'Office of Road Safety Camera Commissioner'\n    'Office of the Freedom of Information Commissioner': 'Office of the Freedom of Information Commissioner'\n    'Office of the Governor': 'Office of the Governor'\n    'Office of the Victorian Government Architect': 'Office of the Victorian Government Architect'\n    'OPP (Office of Public Prosecutions)': 'OPP (Office of Public Prosecutions)'\n    'Parks Victoria': 'Parks Victoria'\n    'Parliament of Victoria': 'Parliament of Victoria'\n    'Peter MacCallum Cancer Centre': 'Peter MacCallum Cancer Centre'\n    'Places Victoria': 'Places Victoria'\n    'Port of Melbourne': 'Port of Melbourne'\n    'Public Records Office Victoria': 'Public Records Office Victoria'\n    'Public Transport Victoria': 'Public Transport Victoria'\n    'Regional Development Victoria': 'Regional Development Victoria'\n    'Royal District Nursing Service': 'Royal District Nursing Service'\n    'South East Water': 'South East Water'\n    'South West Alliance of Rural Health': 'South West Alliance of Rural Health'\n    'Southern Metropolitan Cemeteries Trust (SMCT)': 'Southern Metropolitan Cemeteries Trust (SMCT)'\n    'Southern Water (MAV)': 'Southern Water (MAV)'\n    'State Library Victoria': 'State Library Victoria'\n    'State Revenue Office': 'State Revenue Office'\n    'Supreme Court of Victoria': 'Supreme Court of Victoria'\n    'Sustainability Victoria': 'Sustainability Victoria'\n    'Taxi Services Commission': 'Taxi Services Commission'\n    'The Royal Victorian Eye and Ear Hospital': 'The Royal Victorian Eye and Ear Hospital'\n    'The Royal Womens Hospital': 'The Royal Womens Hospital'\n    'Tourism Victoria': 'Tourism Victoria'\n    'Transport Accident Commission': 'Transport Accident Commission'\n    'Transport Safety Victoria': 'Transport Safety Victoria'\n    'Treasury Corporation of Victoria': 'Treasury Corporation of Victoria'\n    'TRY Australia (MAV)': 'TRY Australia'\n    V/Line: V/Line\n    VicHealth: VicHealth\n    VicRoads: VicRoads\n    'Victoria Legal Aid': 'Victoria Legal Aid'\n    'Victoria Police': 'Victoria Police'\n    'Victorian Auditor-General&#39;s Office': 'Victorian Auditor-General&#39;s Office'\n    'Victorian Building Authority': 'Victorian Building Authority'\n    'Victorian Civil &amp; Administrative Tribunal': 'Victorian Civil &amp; Administrative Tribunal'\n    'Victorian Deaf Education Institute': 'Victorian Deaf Education Institute'\n    'Victorian Electoral Commission': 'Victorian Electoral Commission'\n    'Victorian Environmental Water Holder': 'Victorian Environmental Water Holder'\n    'Victorian Fisheries Authority (WoVG)': 'Victorian Fisheries Authority (WoVG)'\n    'Victorian Government Solicitor&#39;s Office': 'Victorian Government Solicitor&#39;s Office'\n    'Victorian Inspectorate': 'Victorian Inspectorate'\n    'Victorian Institute of Forensic Medicine': 'Victorian Institute of Forensic Medicine'\n    'Victorian Institute of Teaching': 'Victorian Institute of Teaching'\n    'Victorian Legal Services Board': 'Victorian Legal Services Board'\n    'Victorian Managed Insurance Authority': 'Victorian Managed Insurance Authority'\n    'Victorian Multicultural Commission': 'Victorian Multicultural Commission'\n    'Victorian Ombudsman': 'Victorian Ombudsman'\n    'Victorian Planning Authority': 'Victorian Planning Authority'\n    'Victorian Ports Corporation': 'Victorian Ports Corporation'\n    'Victorian Public Sector Commission': 'Victorian Public Sector Commission'\n    'Victorian Responsible Gambling Foundation': 'Victorian Responsible Gambling Foundation'\n    'Victorian Small Business Commissioner': 'Victorian Small Business Commissioner'\n    'Victorian State Emergency Service': 'Victorian State Emergency Service'\n    VicTrack: VicTrack\n    'Western Health': 'Western Health'\n    'Western Leisure Services (MAV)': 'Western Leisure Services'\n    'Western Water (WW)': 'Western Water'\n    'Whitehorse Manningham Regional Library Corporation (MAV)': 'Whitehorse Manningham Regional Library Corporation'\n    'WorkSafe Victoria': 'WorkSafe Victoria'\n    'Yarra Plenty Regional Library (MAV)': 'Yarra Plenty Regional Library'\n    'Yarra Valley Water': 'Yarra Valley Water'\nnot_listed_or_council_name:\n  '#type': textfield\n  '#title': 'Not listed or council name'\nactions:\n  '#type': webform_actions\n  '#title': Submit\n"
 css: ''
@@ -21,6 +21,7 @@ settings:
   page: true
   page_submit_path: ''
   page_confirm_path: ''
+  form_title: both
   form_submit_once: false
   form_exception_message: ''
   form_open_message: ''
@@ -28,6 +29,7 @@ settings:
   form_previous_submissions: true
   form_confidential: false
   form_confidential_message: ''
+  form_remote_addr: true
   form_convert_anonymous: false
   form_prepopulate: false
   form_prepopulate_source_entity: false
@@ -43,16 +45,26 @@ settings:
   form_submit_back: false
   form_autofocus: false
   form_details_toggle: false
-  form_login: false
-  form_login_message: ''
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
   submission_label: ''
   submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
   submission_user_columns: {  }
   submission_user_duplicate: false
-  submission_login: false
-  submission_login_message: ''
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
   submission_exception_message: ''
   submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
   previous_submission_message: ''
   previous_submissions_message: ''
   autofill: false
@@ -93,9 +105,11 @@ settings:
   limit_total: null
   limit_total_interval: null
   limit_total_message: ''
+  limit_total_unique: false
   limit_user: null
   limit_user_interval: null
   limit_user_message: ''
+  limit_user_unique: false
   entity_limit_total: null
   entity_limit_total_interval: null
   entity_limit_user: null
@@ -148,6 +162,11 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
+  configuration:
+    roles:
+      - anonymous
+    users: {  }
+    permissions: {  }
 handlers:
   eservices_buyer_registration_form_email:
     id: email
@@ -159,15 +178,15 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: eServices@dpc.gov.au
+      to_mail: eServices@dpc.vic.gov.au
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      from_mail: _default
+      from_mail: sdp.siteadmin@dpc.vic.gov.au
       from_options: {  }
-      from_name: _default
+      from_name: 'eServices (via SDP)'
       subject: _default
       body: _default
       excluded_elements: {  }
@@ -182,3 +201,4 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
+      theme_name: ''
