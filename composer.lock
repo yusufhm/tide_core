@@ -775,7 +775,10 @@
             },
             "type": "composer-plugin",
             "extra": {
-                "class": "cweagans\\Composer\\Patches"
+                "class": "cweagans\\Composer\\Patches",
+                "patches_applied": {
+                    "Fix for already applied patches - specific to 1.6.5": "patches/composer-patches/fix-applied-patches.patch"
+                }
             },
             "autoload": {
                 "psr-4": {
@@ -1744,12 +1747,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "3e9a875f0e72b726b22127d242fb144c7b6ef15d"
+                "reference": "333f7c8aff18a3e3faf7e8ce588491f007214a78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/3e9a875f0e72b726b22127d242fb144c7b6ef15d",
-                "reference": "3e9a875f0e72b726b22127d242fb144c7b6ef15d",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/333f7c8aff18a3e3faf7e8ce588491f007214a78",
+                "reference": "333f7c8aff18a3e3faf7e8ce588491f007214a78",
                 "shasum": ""
             },
             "require": {
@@ -1858,7 +1861,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Core functionality for Tide Drupal 8 distribution",
-            "time": "2019-04-01T03:33:01+00:00"
+            "time": "2019-04-02T06:18:27+00:00"
         },
         {
             "name": "dpc-sdp/tide_event",
@@ -11655,6 +11658,9 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "4.4-dev"
+                },
+                "patches_applied": {
+                    "Correctly filter features, now that the base path is correctly set - https://github.com/Behat/Gherkin/pull/129": "https://patch-diff.githubusercontent.com/raw/Behat/Gherkin/pull/129.patch"
                 }
             },
             "autoload": {
