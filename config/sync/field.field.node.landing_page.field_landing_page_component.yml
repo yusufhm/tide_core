@@ -24,6 +24,7 @@ dependencies:
     - paragraphs.paragraphs_type.media_gallery
     - paragraphs.paragraphs_type.news_listing
     - paragraphs.paragraphs_type.timelines
+    - paragraphs.paragraphs_type.user_authentication_block
   module:
     - entity_reference_revisions
 _core:
@@ -62,6 +63,7 @@ settings:
       latest_events: latest_events
       card_carousel: card_carousel
       timelines: timelines
+      user_authentication_block: user_authentication_block
     target_bundles_drag_drop:
       banner:
         weight: -33
@@ -156,8 +158,8 @@ settings:
       embedded_search_form:
         weight: 52
         enabled: false
-      grants_overview:
-        weight: 56
+      hero_banner_with_cta:
+        weight: 57
         enabled: false
       timeline:
         weight: 67
@@ -165,4 +167,7 @@ settings:
       timelines:
         enabled: true
         weight: 68
+      user_authentication_block:
+        enabled: true
+        weight: 70
 field_type: entity_reference_revisions

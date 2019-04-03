@@ -1672,12 +1672,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_api.git",
-                "reference": "b2f5d0408c43c8b9ce9fc6b4e8bea5469f8ea0a0"
+                "reference": "92595a499c27333e9a00707b1659a5712695e887"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/b2f5d0408c43c8b9ce9fc6b4e8bea5469f8ea0a0",
-                "reference": "b2f5d0408c43c8b9ce9fc6b4e8bea5469f8ea0a0",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/92595a499c27333e9a00707b1659a5712695e887",
+                "reference": "92595a499c27333e9a00707b1659a5712695e887",
                 "shasum": ""
             },
             "require": {
@@ -1709,7 +1709,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Content API for Tide distribution.",
-            "time": "2019-04-02T02:40:32+00:00"
+            "time": "2019-04-03T04:05:02+00:00"
         },
         {
             "name": "dpc-sdp/tide_authenticated_content",
@@ -7883,16 +7883,16 @@
         },
         {
             "name": "drush/drush",
-            "version": "8.2.2",
+            "version": "8.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drush-ops/drush.git",
-                "reference": "96622a19d7cabcdee0b08367eb529fed42e5fd0f"
+                "reference": "bf2b2471b9410e0ff4adc23aee020ee1aff28610"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drush-ops/drush/zipball/96622a19d7cabcdee0b08367eb529fed42e5fd0f",
-                "reference": "96622a19d7cabcdee0b08367eb529fed42e5fd0f",
+                "url": "https://api.github.com/repos/drush-ops/drush/zipball/bf2b2471b9410e0ff4adc23aee020ee1aff28610",
+                "reference": "bf2b2471b9410e0ff4adc23aee020ee1aff28610",
                 "shasum": ""
             },
             "require": {
@@ -7992,7 +7992,7 @@
             ],
             "description": "Drush is a command line shell and scripting interface for Drupal, a veritable Swiss Army knife designed to make life easier for those of us who spend some of our working hours hacking away at the command prompt.",
             "homepage": "http://www.drush.org",
-            "time": "2019-03-26T16:04:40+00:00"
+            "time": "2019-04-03T04:20:26+00:00"
         },
         {
             "name": "e0ipso/shaper",
