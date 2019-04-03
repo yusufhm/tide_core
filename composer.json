@@ -297,7 +297,8 @@
                 "Fix for already applied patches - specific to 1.6.5": "patches/composer-patches/fix-applied-patches.patch"
             },
             "drupal/core": {
-                "Debug EntityChangedConstraintValidator": "./patches/core/drupal-core-debug-entity-changed-constraint-validator.patch"
+                "Debug EntityChangedConstraintValidator": "./patches/core/drupal-core-debug-entity-changed-constraint-validator.patch",
+                "Temporary files whose files are missing on the disk result in never-ending error log messages - https://www.drupal.org/project/drupal/issues/2802803": "https://www.drupal.org/files/issues/2018-06-27/missing-temp-files-stuck-in-table-2802803-33.patch"
             },
             "drupal/default_content": {
                 "Do not reimport existing entities - https://www.drupal.org/project/default_content/issues/2698425": "https://www.drupal.org/files/issues/2018-06-05/default_content-dont-reimport-existing-entities-2698425-102.patch"
