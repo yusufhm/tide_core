@@ -1,19 +1,18 @@
-uuid: 8362932e-b019-42f3-accb-037e7f1dd4cd
+uuid: 9f50b1a0-7387-4b7b-bf6f-1dc89a058c89
 langcode: en
 status: true
 dependencies:
   module:
-    - node
+    - link
     - paragraphs
 _core:
-  default_config_hash: 2kBXlMcqi9iXVKufvY6TGNleqpr8Hh-BJcu30pCcDhM
+  default_config_hash: E4cEp-NWlu0B005EHnl_vvGp3ZmHo2ywx0VJwg8rzAU
 id: paragraph.field_next_page
 field_name: field_next_page
 entity_type: paragraph
-type: entity_reference
-settings:
-  target_type: node
-module: core
+type: link
+settings: {  }
+module: link
 locked: false
 cardinality: 1
 translatable: true

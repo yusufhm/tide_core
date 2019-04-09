@@ -1,9 +1,7 @@
-uuid: 82758253-34d9-4899-bc72-8c720866711b
+uuid: 6d43918f-4ef2-4084-9f86-41ea66fc7dde
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: c5G-I_0k2C2lV51W2r3xBgj1nOOnYmOy61aXaW6da5U
 name: 'Authenticated Content'
 vid: authenticated_content
 description: 'Allow access to specified content to authenticated users only'

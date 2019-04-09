@@ -1,12 +1,14 @@
-uuid: 11389ac9-d74a-4b23-9ac9-6dd009da6840
+uuid: 18294d97-751f-4da6-aa1f-1e750d060d17
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.paragraph.user_authentication_block.field_next_page
     - paragraphs.paragraphs_type.user_authentication_block
+  module:
+    - link
 _core:
-  default_config_hash: 2WtuPWtN5Sy-800SDqtC038Uzfq5Dsez7SM-EOjzMQ4
+  default_config_hash: 0WMguau5zN3XfwmvU55fmIJuZOfr3yw_lykHgVGz51Y
 id: paragraph.user_authentication_block.default
 targetEntityType: paragraph
 bundle: user_authentication_block
@@ -16,8 +18,12 @@ content:
     weight: 0
     label: above
     settings:
-      link: true
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    type: entity_reference_label
+    type: link
     region: content
 hidden: {  }

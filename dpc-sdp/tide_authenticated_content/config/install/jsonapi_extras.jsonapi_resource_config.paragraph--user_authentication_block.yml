@@ -1,11 +1,8 @@
-uuid: da77f081-9d20-4003-926a-5bd23cf07c37
 langcode: en
 status: true
 dependencies:
   config:
     - paragraphs.paragraphs_type.user_authentication_block
-_core:
-  default_config_hash: mEKgg8Jj3MsSnslFh4GDw7uRG98Apb-L_uWPIPboM_Q
 id: paragraph--user_authentication_block
 disabled: false
 path: paragraph/user_authentication_block

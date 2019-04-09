@@ -1,30 +1,25 @@
-uuid: 93fa598e-637a-4755-aa23-7325f31bace3
+uuid: e0f60b80-b80a-41b7-950b-244464e68d59
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_next_page
-    - node.type.landing_page
     - paragraphs.paragraphs_type.user_authentication_block
+  module:
+    - link
 _core:
-  default_config_hash: xhCB9AO8drhSm6M1rhMF96UeRVd3ImxGaQea9bFdgGw
+  default_config_hash: ZqnoTJtunKQasptuEzLfLKp1L2vwCrWCf6MhAxkhPNI
 id: paragraph.user_authentication_block.field_next_page
 field_name: field_next_page
 entity_type: paragraph
 bundle: user_authentication_block
-label: 'Next Page'
+label: next_page
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
-  handler_settings:
-    target_bundles:
-      landing_page: landing_page
-    sort:
-      field: _none
-    auto_create: false
-    auto_create_bundle: ''
-field_type: entity_reference
+  link_type: 1
+  title: 0
+field_type: link
