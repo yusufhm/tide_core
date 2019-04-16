@@ -283,7 +283,8 @@
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.5.11.zip",
-                "reference": "master"
+                "reference": "master",
+                "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -296,7 +297,8 @@
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/iframe/releases/iframe_4.5.11.zip",
-                "reference": "master"
+                "reference": "master",
+                "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -309,7 +311,8 @@
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/templates/releases/templates_4.5.7.zip",
-                "reference": "master"
+                "reference": "master",
+                "shasum": null
             },
             "type": "drupal-library"
         },
@@ -1598,7 +1601,8 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/bay",
-                "reference": "927a01f4945efb0fa9de4c9788ab41e4a18f37b5"
+                "reference": "927a01f4945efb0fa9de4c9788ab41e4a18f37b5",
+                "shasum": null
             },
             "require": {
                 "drupal/cloudflare": "^1.0@alpha",
@@ -1654,7 +1658,8 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_alert",
-                "reference": "ef76a6cd2c46c57bd83888c10610b624f84b2d70"
+                "reference": "ef76a6cd2c46c57bd83888c10610b624f84b2d70",
+                "shasum": null
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -1717,7 +1722,8 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_authenticated_content",
-                "reference": "3b81f9d9ec12c548822fa75f87e3f2fd4ac16a15"
+                "reference": "3b81f9d9ec12c548822fa75f87e3f2fd4ac16a15",
+                "shasum": null
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -1869,12 +1875,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_event.git",
-                "reference": "b979a384df8c9e9938174ef99e60262c316ec406"
+                "reference": "8261568c1e8ff4ca327842f2037a175a8055d438"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/b979a384df8c9e9938174ef99e60262c316ec406",
-                "reference": "b979a384df8c9e9938174ef99e60262c316ec406",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/8261568c1e8ff4ca327842f2037a175a8055d438",
+                "reference": "8261568c1e8ff4ca327842f2037a175a8055d438",
                 "shasum": ""
             },
             "require": {
@@ -1895,7 +1901,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Event content type and related configuration for Tide Drupal 8 distribution",
-            "time": "2019-03-21T06:19:40+00:00"
+            "time": "2019-04-09T03:32:06+00:00"
         },
         {
             "name": "dpc-sdp/tide_grant",
@@ -1903,7 +1909,8 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_grant",
-                "reference": "fa43690f272e0d243cb6dab20e1221c9c8ad0296"
+                "reference": "fa43690f272e0d243cb6dab20e1221c9c8ad0296",
+                "shasum": null
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -2063,7 +2070,8 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_profile",
-                "reference": "7dff339686d0ea8f0e5613d88c58ee64433bbba3"
+                "reference": "7dff339686d0ea8f0e5613d88c58ee64433bbba3",
+                "shasum": null
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -2264,7 +2272,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.4",
-                    "datestamp": "1527081784",
+                    "datestamp": "1554332581",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2287,6 +2295,10 @@
                 {
                     "name": "googletorp",
                     "homepage": "https://www.drupal.org/user/386230"
+                },
+                {
+                    "name": "mglaman",
+                    "homepage": "https://www.drupal.org/user/2416470"
                 },
                 {
                     "name": "rszrama",
@@ -3339,11 +3351,11 @@
                 "patches_applied": {
                     "Debug EntityChangedConstraintValidator": "./patches/core/drupal-core-debug-entity-changed-constraint-validator.patch",
                     "Temporary files whose files are missing on the disk result in never-ending error log messages - https://www.drupal.org/project/drupal/issues/2802803": "https://www.drupal.org/files/issues/2018-06-27/missing-temp-files-stuck-in-table-2802803-33.patch",
-                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch",
                     "Contextual links should not be added inside another link - https://www.drupal.org/node/2898875": "https://www.drupal.org/files/issues/2018-03-16/contextual_links_should-2898875-6.patch",
                     "active-link.js throws JS error if query string parameter contains a single quote - https://www.drupal.org/node/2902769": "https://www.drupal.org/files/issues/2018-10-25/active_link_js_throws-2902769-16.patch",
                     "RSS view with fields give wrong URL from path field - https://www.drupal.org/node/2673980#comment-12180229": "https://www.drupal.org/files/issues/rss_view_with_fields-2673980-28.patch",
-                    "DateTimeIso8601::getDateTime() does not specify the storage timezone when constructing DrupalDateTime object - https://www.drupal.org/project/drupal/issues/3002164": "https://www.drupal.org/files/issues/2018-09-25/3002164-7.patch"
+                    "DateTimeIso8601::getDateTime() does not specify the storage timezone when constructing DrupalDateTime object - https://www.drupal.org/project/drupal/issues/3002164": "https://www.drupal.org/files/issues/2018-09-25/3002164-7.patch",
+                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
                 }
             },
             "autoload": {
@@ -8784,7 +8796,9 @@
             "version": "4.3.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/enyo/dropzone/archive/v4.3.0.zip"
+                "url": "https://github.com/enyo/dropzone/archive/v4.3.0.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library"
         },
