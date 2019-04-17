@@ -1996,22 +1996,21 @@
         },
         {
             "name": "dpc-sdp/tide_search",
-            "version": "1.0.2",
+            "version": "v1.0.0-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_search.git",
-                "reference": "9c973905cef142112c608886d81a988c10ddc320"
+                "reference": "16c6620a135fac9ace5ed4c74d0e65014b9aea3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_search/zipball/9c973905cef142112c608886d81a988c10ddc320",
-                "reference": "9c973905cef142112c608886d81a988c10ddc320",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_search/zipball/16c6620a135fac9ace5ed4c74d0e65014b9aea3e",
+                "reference": "16c6620a135fac9ace5ed4c74d0e65014b9aea3e",
                 "shasum": ""
             },
             "require": {
                 "dpc-sdp/tide_core": "^1.0",
                 "drupal/elasticsearch_connector": "^5.0-alpha3",
-                "drupal/metatag": "~1.7.0",
                 "drupal/search_api": "^1.11"
             },
             "type": "drupal-module",
@@ -2019,7 +2018,7 @@
                 "patches": {
                     "drupal/elasticsearch_connector": {
                         "Failed to parse node status - https://www.drupal.org/project/elasticsearch_connector/issues/2978005": "https://www.drupal.org/files/issues/2018-06-07/elasticsearch_connector-convert_boolean_fields-2978005-2.patch",
-                        "Allow index name flexibility - https://www.drupal.org/project/elasticsearch_connector/issues/3010955#comment-12998995": "https://www.drupal.org/files/issues/2019-03-05/3010955-10.patch"
+                        "Allow index name flexibility - https://www.drupal.org/project/elasticsearch_connector/issues/3010955": "https://www.drupal.org/files/issues/2018-12-10/elasticsearch_connector-index-name-3010955-6-D8.patch"
                     }
                 }
             },
@@ -2027,7 +2026,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Search configuration for Tide Drupal 8 distribution",
-            "time": "2019-04-16T04:48:47+00:00"
+            "time": "2019-01-22T10:08:06+00:00"
         },
         {
             "name": "dpc-sdp/tide_site",
@@ -2168,7 +2167,7 @@
             "version": "1.4.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/address.git",
+                "url": "https://git.drupal.org/project/address",
                 "reference": "8.x-1.4"
             },
             "dist": {
@@ -2191,7 +2190,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.4",
-                    "datestamp": "1554332581",
+                    "datestamp": "1527081784",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2208,16 +2207,8 @@
                     "homepage": "https://www.drupal.org/user/86106"
                 },
                 {
-                    "name": "dww",
-                    "homepage": "https://www.drupal.org/user/46549"
-                },
-                {
                     "name": "googletorp",
                     "homepage": "https://www.drupal.org/user/386230"
-                },
-                {
-                    "name": "mglaman",
-                    "homepage": "https://www.drupal.org/user/2416470"
                 },
                 {
                     "name": "rszrama",
@@ -2227,7 +2218,7 @@
             "description": "Provides functionality for storing, validating and displaying international postal addresses.",
             "homepage": "http://drupal.org/project/address",
             "support": {
-                "source": "https://git.drupalcode.org/project/address"
+                "source": "http://cgit.drupalcode.org/address"
             }
         },
         {
@@ -2235,7 +2226,7 @@
             "version": "1.25.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/admin_toolbar.git",
+                "url": "https://git.drupal.org/project/admin_toolbar",
                 "reference": "8.x-1.25"
             },
             "dist": {
@@ -2254,7 +2245,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.25",
-                    "datestamp": "1549218480",
+                    "datestamp": "1542915384",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2316,7 +2307,7 @@
             "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/allowed_formats.git",
+                "url": "https://git.drupal.org/project/allowed_formats",
                 "reference": "8.x-1.1"
             },
             "dist": {
@@ -2355,7 +2346,7 @@
             "description": "Limit which text formats are available for each field instance.",
             "homepage": "https://www.drupal.org/project/allowed_formats",
             "support": {
-                "source": "https://git.drupalcode.org/project/allowed_formats"
+                "source": "http://cgit.drupalcode.org/allowed_formats"
             }
         },
         {
@@ -2363,7 +2354,7 @@
             "version": "3.0.0-alpha5",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/better_exposed_filters.git",
+                "url": "https://git.drupal.org/project/better_exposed_filters",
                 "reference": "8.x-3.0-alpha5"
             },
             "dist": {
@@ -2382,7 +2373,7 @@
                 },
                 "drupal": {
                     "version": "8.x-3.0-alpha5",
-                    "datestamp": "1550449381",
+                    "datestamp": "1540513084",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -2394,10 +2385,6 @@
                 "GPL-2.0-or-later"
             ],
             "authors": [
-                {
-                    "name": "Etroid",
-                    "homepage": "https://www.drupal.org/user/3048985"
-                },
                 {
                     "name": "chr.fritsch",
                     "homepage": "https://www.drupal.org/user/2103716"
@@ -2411,6 +2398,10 @@
                     "homepage": "https://www.drupal.org/user/192273"
                 },
                 {
+                    "name": "mortona2k",
+                    "homepage": "https://www.drupal.org/user/1029484"
+                },
+                {
                     "name": "rlhawk",
                     "homepage": "https://www.drupal.org/user/352283"
                 }
@@ -2418,7 +2409,7 @@
             "description": "Provides advanced options (such as links, checkboxes, or jQueryUI widgets) for exposed Views elements.",
             "homepage": "https://www.drupal.org/project/better_exposed_filters",
             "support": {
-                "source": "https://git.drupalcode.org/project/better_exposed_filters"
+                "source": "http://cgit.drupalcode.org/better_exposed_filters"
             }
         },
         {
@@ -2426,7 +2417,7 @@
             "version": "2.0.0-beta1",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/ckeditor_iframe.git",
+                "url": "https://git.drupal.org/project/ckeditor_iframe",
                 "reference": "8.x-2.0-beta1"
             },
             "dist": {
@@ -2479,7 +2470,7 @@
             "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/clamav.git",
+                "url": "https://git.drupal.org/project/clamav",
                 "reference": "8.x-1.1"
             },
             "dist": {
@@ -2530,7 +2521,7 @@
             "description": "Integration with the ClamAV anti-virus scanner.",
             "homepage": "https://www.drupal.org/project/clamav",
             "support": {
-                "source": "https://git.drupalcode.org/project/clamav"
+                "source": "http://cgit.drupalcode.org/clamav"
             }
         },
         {
@@ -2538,7 +2529,7 @@
             "version": "1.0.0-alpha7",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/cloudflare.git",
+                "url": "https://git.drupal.org/project/cloudflare",
                 "reference": "8.x-1.0-alpha7"
             },
             "dist": {
@@ -2574,10 +2565,10 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-alpha7",
-                    "datestamp": "1551718384",
+                    "datestamp": "1477961340",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
+                        "message": "Project has not opted into security advisory coverage!"
                     }
                 },
                 "installer-paths": {
@@ -2625,10 +2616,6 @@
                     "homepage": "https://www.drupal.org/user/348040"
                 },
                 {
-                    "name": "Chris Charlton",
-                    "homepage": "https://www.drupal.org/user/17089"
-                },
-                {
                     "name": "Wim Leers",
                     "homepage": "https://www.drupal.org/user/99777"
                 },
@@ -2637,16 +2624,8 @@
                     "homepage": "https://www.drupal.org/user/2677413"
                 },
                 {
-                    "name": "dietric@gmail.com",
-                    "homepage": "https://www.drupal.org/user/611306"
-                },
-                {
                     "name": "phayes",
                     "homepage": "https://www.drupal.org/user/47098"
-                },
-                {
-                    "name": "vijaycs85",
-                    "homepage": "https://www.drupal.org/user/93488"
                 }
             ],
             "description": "Drupal module for interacting with CloudFlare's SDK. CloudFlare is a copyright of CloudFlare, Inc.  The authors of this tool has no association with CloudFlare, Inc.",
@@ -2658,7 +2637,7 @@
                 "Drupal"
             ],
             "support": {
-                "source": "https://git.drupalcode.org/project/cloudflare"
+                "source": "http://cgit.drupalcode.org/cloudflare"
             }
         },
         {
@@ -2666,7 +2645,7 @@
             "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/cloudfront_purger.git",
+                "url": "https://git.drupal.org/project/cloudfront_purger",
                 "reference": "8.x-1.1"
             },
             "dist": {
@@ -2732,7 +2711,7 @@
             "version": "1.0.0-beta2",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/coffee.git",
+                "url": "https://git.drupal.org/project/coffee",
                 "reference": "8.x-1.0-beta2"
             },
             "dist": {
@@ -2803,7 +2782,7 @@
             "version": "1.4.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/config_filter.git",
+                "url": "https://git.drupal.org/project/config_filter",
                 "reference": "8.x-1.4"
             },
             "dist": {
@@ -2872,7 +2851,7 @@
             "version": "2.1.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/config_ignore.git",
+                "url": "https://git.drupal.org/project/config_ignore",
                 "reference": "8.x-2.1"
             },
             "dist": {
@@ -2932,7 +2911,7 @@
             "version": "1.4.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/config_split.git",
+                "url": "https://git.drupal.org/project/config_split",
                 "reference": "8.x-1.4"
             },
             "dist": {
@@ -3004,7 +2983,7 @@
             "version": "1.6.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/config_update.git",
+                "url": "https://git.drupal.org/project/config_update",
                 "reference": "8.x-1.6"
             },
             "dist": {
@@ -3047,7 +3026,7 @@
             "description": "Provides basic revert and update functionality for other modules",
             "homepage": "https://www.drupal.org/project/config_update",
             "support": {
-                "source": "https://git.drupalcode.org/project/config_update"
+                "source": "http://cgit.drupalcode.org/config_update"
             }
         },
         {
@@ -3055,7 +3034,7 @@
             "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/content_moderation_scheduled_updates.git",
+                "url": "https://git.drupal.org/project/content_moderation_scheduled_updates",
                 "reference": "8.x-1.0"
             },
             "dist": {
@@ -3077,8 +3056,8 @@
                     "version": "8.x-1.0",
                     "datestamp": "1527478087",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
                     }
                 }
             },
@@ -3095,7 +3074,7 @@
             "description": "Integrates Scheduled Updates module with Content Moderation",
             "homepage": "https://www.drupal.org/project/content_moderation_scheduled_updates",
             "support": {
-                "source": "https://git.drupalcode.org/project/content_moderation_scheduled_updates"
+                "source": "http://cgit.drupalcode.org/content_moderation_scheduled_updates"
             }
         },
         {
@@ -3351,7 +3330,7 @@
             "version": "3.0.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/ctools.git",
+                "url": "https://git.drupal.org/project/ctools",
                 "reference": "8.x-3.0"
             },
             "dist": {
@@ -3370,7 +3349,7 @@
                 },
                 "drupal": {
                     "version": "8.x-3.0",
-                    "datestamp": "1549603381",
+                    "datestamp": "1493401742",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3444,7 +3423,7 @@
             "version": "1.0.0-alpha7",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/default_content.git",
+                "url": "https://git.drupal.org/project/default_content",
                 "reference": "8.x-1.0-alpha7"
             },
             "dist": {
@@ -3510,7 +3489,7 @@
             "description": "Imports default content when a module is enabled",
             "homepage": "https://www.drupal.org/project/default_content",
             "support": {
-                "source": "https://git.drupalcode.org/project/default_content"
+                "source": "http://cgit.drupalcode.org/default_content"
             }
         },
         {
@@ -3518,7 +3497,7 @@
             "version": "1.2.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/devel.git",
+                "url": "https://git.drupal.org/project/devel",
                 "reference": "8.x-1.2"
             },
             "dist": {
@@ -3600,7 +3579,7 @@
             "version": "1.0.0-rc2",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/diff.git",
+                "url": "https://git.drupal.org/project/diff",
                 "reference": "8.x-1.0-rc2"
             },
             "dist": {
@@ -3686,7 +3665,7 @@
             "version": "1.4.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/editor_advanced_link.git",
+                "url": "https://git.drupal.org/project/editor_advanced_link",
                 "reference": "8.x-1.4"
             },
             "dist": {
@@ -3725,7 +3704,7 @@
             "description": "Add title, target etc. attributes to Text Editor's link dialog if the text format allows them.",
             "homepage": "https://www.drupal.org/project/editor_advanced_link",
             "support": {
-                "source": "https://git.drupalcode.org/project/editor_advanced_link"
+                "source": "http://cgit.drupalcode.org/editor_advanced_link"
             }
         },
         {
@@ -3733,7 +3712,7 @@
             "version": "5.0.0-alpha3",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/elasticsearch_connector.git",
+                "url": "https://git.drupal.org/project/elasticsearch_connector",
                 "reference": "8.x-5.0-alpha3"
             },
             "dist": {
@@ -3771,7 +3750,7 @@
                 },
                 "patches_applied": {
                     "Failed to parse node status - https://www.drupal.org/project/elasticsearch_connector/issues/2978005": "https://www.drupal.org/files/issues/2018-06-07/elasticsearch_connector-convert_boolean_fields-2978005-2.patch",
-                    "Allow index name flexibility - https://www.drupal.org/project/elasticsearch_connector/issues/3010955#comment-12998995": "https://www.drupal.org/files/issues/2019-03-05/3010955-10.patch"
+                    "Allow index name flexibility - https://www.drupal.org/project/elasticsearch_connector/issues/3010955": "https://www.drupal.org/files/issues/2018-12-10/elasticsearch_connector-index-name-3010955-6-D8.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3814,7 +3793,7 @@
             "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/embed.git",
+                "url": "https://git.drupal.org/project/embed",
                 "reference": "8.x-1.0"
             },
             "dist": {
@@ -3869,7 +3848,7 @@
             "description": "Provide a framework for various different types of embeds in WYSIWYG editors, common functionality, interfaces, and standards.",
             "homepage": "https://www.drupal.org/project/embed",
             "support": {
-                "source": "https://git.drupalcode.org/project/embed",
+                "source": "http://cgit.drupalcode.org/embed",
                 "issues": "https://www.drupal.org/project/issues/embed",
                 "irc": "irc://irc.freenode.org/drupal-media"
             }
@@ -3879,7 +3858,7 @@
             "version": "1.6.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/entity_browser.git",
+                "url": "https://git.drupal.org/project/entity_browser",
                 "reference": "8.x-1.6"
             },
             "dist": {
@@ -3906,7 +3885,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.6",
-                    "datestamp": "1550237884",
+                    "datestamp": "1536328684",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3934,20 +3913,12 @@
                     "role": "contributor"
                 },
                 {
-                    "name": "Drupal Media Team",
-                    "homepage": "https://www.drupal.org/user/3260690"
-                },
-                {
                     "name": "Primsi",
                     "homepage": "https://www.drupal.org/user/282629"
                 },
                 {
                     "name": "marcingy",
                     "homepage": "https://www.drupal.org/user/77320"
-                },
-                {
-                    "name": "oknate",
-                    "homepage": "https://www.drupal.org/user/471638"
                 },
                 {
                     "name": "samuel.mortenson",
@@ -3971,7 +3942,7 @@
             "version": "1.0.0-beta2",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/entity_embed.git",
+                "url": "https://git.drupal.org/project/entity_embed",
                 "reference": "8.x-1.0-beta2"
             },
             "dist": {
@@ -4041,7 +4012,7 @@
             "description": "Allows any entity to be embedded within a text area using a WYSIWYG editor.",
             "homepage": "https://www.drupal.org/project/entity_embed",
             "support": {
-                "source": "https://git.drupalcode.org/project/entity_embed",
+                "source": "http://cgit.drupalcode.org/entity_embed",
                 "issues": "https://www.drupal.org/project/issues/entity_embed",
                 "irc": "irc://irc.freenode.org/drupal-media"
             }
@@ -4051,7 +4022,7 @@
             "version": "1.6.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/entity_reference_revisions.git",
+                "url": "https://git.drupal.org/project/entity_reference_revisions",
                 "reference": "8.x-1.6"
             },
             "dist": {
@@ -4104,7 +4075,7 @@
             "description": "Adds a Entity Reference field type with revision support.",
             "homepage": "https://www.drupal.org/project/entity_reference_revisions",
             "support": {
-                "source": "https://git.drupalcode.org/project/entity_reference_revisions"
+                "source": "http://cgit.drupalcode.org/entity_reference_revisions"
             }
         },
         {
@@ -4112,7 +4083,7 @@
             "version": "3.5.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/environment_indicator.git",
+                "url": "https://git.drupal.org/project/environment_indicator",
                 "reference": "8.x-3.5"
             },
             "dist": {
@@ -4131,7 +4102,7 @@
                 },
                 "drupal": {
                     "version": "8.x-3.5",
-                    "datestamp": "1553405885",
+                    "datestamp": "1546540980",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4155,7 +4126,7 @@
             "description": "Adds a color indicator for the different environments.",
             "homepage": "https://www.drupal.org/project/environment_indicator",
             "support": {
-                "source": "https://git.drupalcode.org/project/environment_indicator"
+                "source": "http://cgit.drupalcode.org/environment_indicator"
             }
         },
         {
@@ -4163,7 +4134,7 @@
             "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/events_log_track.git",
+                "url": "https://git.drupal.org/project/events_log_track",
                 "reference": "8.x-1.1"
             },
             "dist": {
@@ -4211,7 +4182,7 @@
             ],
             "homepage": "https://www.drupal.org/project/events_log_track",
             "support": {
-                "source": "https://git.drupalcode.org/project/events_log_track"
+                "source": "http://cgit.drupalcode.org/events_log_track"
             }
         },
         {
@@ -4219,7 +4190,7 @@
             "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/fakeobjects.git",
+                "url": "https://git.drupal.org/project/fakeobjects",
                 "reference": "8.x-1.0"
             },
             "dist": {
@@ -4271,7 +4242,7 @@
             "version": "1.0.0-alpha4",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/fast_404.git",
+                "url": "https://git.drupal.org/project/fast_404",
                 "reference": "8.x-1.0-alpha4"
             },
             "dist": {
@@ -4325,7 +4296,7 @@
             ],
             "homepage": "https://www.drupal.org/project/fast_404",
             "support": {
-                "source": "https://git.drupalcode.org/project/fast_404"
+                "source": "http://cgit.drupalcode.org/fast_404"
             }
         },
         {
@@ -4333,7 +4304,7 @@
             "version": "3.0.0-beta1",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/field_group.git",
+                "url": "https://git.drupal.org/project/field_group",
                 "reference": "8.x-3.0-beta1"
             },
             "dist": {
@@ -4391,7 +4362,7 @@
             "description": "Provides the field_group module.",
             "homepage": "https://www.drupal.org/project/field_group",
             "support": {
-                "source": "https://git.drupalcode.org/project/field_group"
+                "source": "http://cgit.drupalcode.org/field_group"
             }
         },
         {
@@ -4399,7 +4370,7 @@
             "version": "2.3.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/google_analytics.git",
+                "url": "https://git.drupal.org/project/google_analytics",
                 "reference": "8.x-2.3"
             },
             "dist": {
@@ -4422,7 +4393,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.3",
-                    "datestamp": "1548968580",
+                    "datestamp": "1531469021",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4455,7 +4426,7 @@
             "version": "1.2.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/hotjar.git",
+                "url": "https://git.drupal.org/project/hotjar",
                 "reference": "8.x-1.2"
             },
             "dist": {
@@ -4474,7 +4445,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.2",
-                    "datestamp": "1550919784",
+                    "datestamp": "1513139885",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4498,7 +4469,7 @@
             "description": "Allows your site to be tracked by Hotjar by adding a Javascript tracking code to every page.",
             "homepage": "https://www.drupal.org/project/hotjar",
             "support": {
-                "source": "https://git.drupalcode.org/project/hotjar"
+                "source": "http://cgit.drupalcode.org/hotjar"
             }
         },
         {
@@ -4506,7 +4477,7 @@
             "version": "1.0.0-rc1",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/inline_entity_form.git",
+                "url": "https://git.drupal.org/project/inline_entity_form",
                 "reference": "8.x-1.0-rc1"
             },
             "dist": {
@@ -4564,7 +4535,7 @@
             "description": "Provides a widget for inline management (creation, modification, removal) of referenced entities.",
             "homepage": "https://www.drupal.org/project/inline_entity_form",
             "support": {
-                "source": "https://git.drupalcode.org/project/inline_entity_form"
+                "source": "http://cgit.drupalcode.org/inline_entity_form"
             }
         },
         {
@@ -4572,7 +4543,7 @@
             "version": "1.23.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/jsonapi.git",
+                "url": "https://git.drupal.org/project/jsonapi",
                 "reference": "8.x-1.23"
             },
             "dist": {
@@ -4632,7 +4603,7 @@
             "description": "Provides a JSON API standards-compliant API for accessing and manipulating Drupal content and configuration entities.",
             "homepage": "https://www.drupal.org/project/jsonapi",
             "support": {
-                "source": "https://git.drupalcode.org/project/jsonapi"
+                "source": "http://cgit.drupalcode.org/jsonapi"
             }
         },
         {
@@ -4640,7 +4611,7 @@
             "version": "2.9.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/jsonapi_extras.git",
+                "url": "https://git.drupal.org/project/jsonapi_extras",
                 "reference": "8.x-2.9"
             },
             "dist": {
@@ -4685,7 +4656,7 @@
             "description": "JSON API Extras provides a means to override and provide limited configurations to the default zero-configuration implementation provided by the JSON API module.",
             "homepage": "https://www.drupal.org/project/jsonapi_extras",
             "support": {
-                "source": "https://git.drupalcode.org/project/jsonapi_extras"
+                "source": "http://cgit.drupalcode.org/jsonapi_extras"
             }
         },
         {
@@ -4693,7 +4664,7 @@
             "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/lagoon_logs.git",
+                "url": "https://git.drupal.org/project/lagoon_logs",
                 "reference": "8.x-1.0"
             },
             "dist": {
@@ -4738,7 +4709,7 @@
             "description": "Lagoon_logs D8 is a convenience wrapper for monolog.",
             "homepage": "https://www.drupal.org/project/lagoon_logs",
             "support": {
-                "source": "https://git.drupalcode.org/project/lagoon_logs"
+                "source": "http://cgit.drupalcode.org/lagoon_logs"
             }
         },
         {
@@ -4746,7 +4717,7 @@
             "version": "5.0.0-beta8",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/linkit.git",
+                "url": "https://git.drupal.org/project/linkit",
                 "reference": "8.x-5.0-beta8"
             },
             "dist": {
@@ -4799,7 +4770,7 @@
             "version": "1.0.0-alpha4",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/m4032404.git",
+                "url": "https://git.drupal.org/project/m4032404",
                 "reference": "8.x-1.0-alpha4"
             },
             "dist": {
@@ -4846,7 +4817,7 @@
             "description": "Emit a 404 response for access denied pages",
             "homepage": "https://www.drupal.org/project/m4032404",
             "support": {
-                "source": "https://git.drupalcode.org/project/m4032404"
+                "source": "http://cgit.drupalcode.org/m4032404"
             }
         },
         {
@@ -4854,7 +4825,7 @@
             "version": "1.0.0-beta2",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/maxlength.git",
+                "url": "https://git.drupal.org/project/maxlength",
                 "reference": "8.x-1.0-beta2"
             },
             "dist": {
@@ -4956,7 +4927,7 @@
             "description": "Limit the number of characters in textfields and textareas and shows the amount of characters left.",
             "homepage": "https://www.drupal.org/project/maxlength",
             "support": {
-                "source": "https://git.drupalcode.org/project/maxlength"
+                "source": "http://cgit.drupalcode.org/maxlength"
             }
         },
         {
@@ -4964,7 +4935,7 @@
             "version": "2.0.0-alpha1",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/media_entity_audio.git",
+                "url": "https://git.drupal.org/project/media_entity_audio",
                 "reference": "8.x-2.0-alpha1"
             },
             "dist": {
@@ -5011,7 +4982,7 @@
                     "homepage": "https://www.drupal.org/user/282629"
                 },
                 {
-                    "name": "rubela_shome",
+                    "name": "arit_nath",
                     "homepage": "https://www.drupal.org/user/3266902"
                 },
                 {
@@ -5022,7 +4993,7 @@
             "description": "Media entity for audio files.",
             "homepage": "https://www.drupal.org/project/media_entity_audio",
             "support": {
-                "source": "https://git.drupalcode.org/project/media_entity_audio"
+                "source": "http://cgit.drupalcode.org/media_entity_audio"
             }
         },
         {
@@ -5030,7 +5001,7 @@
             "version": "1.7.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/metatag.git",
+                "url": "https://git.drupal.org/project/metatag",
                 "reference": "8.x-1.7"
             },
             "dist": {
@@ -5101,7 +5072,7 @@
             "version": "1.2.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/migrate_cron.git",
+                "url": "https://git.drupal.org/project/migrate_cron",
                 "reference": "8.x-1.2"
             },
             "dist": {
@@ -5141,7 +5112,7 @@
             "description": "Run migrations at cron",
             "homepage": "https://www.drupal.org/project/migrate_cron",
             "support": {
-                "source": "https://git.drupalcode.org/project/migrate_cron"
+                "source": "http://cgit.drupalcode.org/migrate_cron"
             }
         },
         {
@@ -5149,7 +5120,7 @@
             "version": "4.1.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/migrate_plus.git",
+                "url": "https://git.drupal.org/project/migrate_plus",
                 "reference": "8.x-4.1"
             },
             "dist": {
@@ -5212,7 +5183,7 @@
             "version": "4.1.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/migrate_tools.git",
+                "url": "https://git.drupal.org/project/migrate_tools",
                 "reference": "8.x-4.1"
             },
             "dist": {
@@ -5280,7 +5251,7 @@
             "version": "1.0.0-alpha1",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/openapi.git",
+                "url": "https://git.drupal.org/project/openapi",
                 "reference": "8.x-1.0-alpha1"
             },
             "dist": {
@@ -5348,7 +5319,7 @@
             "version": "2.4.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/override_node_options.git",
+                "url": "https://git.drupal.org/project/override_node_options",
                 "reference": "8.x-2.4"
             },
             "dist": {
@@ -5388,7 +5359,7 @@
             "description": "Allows permissions to be set on each node option such as published and authoring information.",
             "homepage": "https://www.drupal.org/project/override_node_options",
             "support": {
-                "source": "https://git.drupalcode.org/project/override_node_options"
+                "source": "http://cgit.drupalcode.org/override_node_options"
             }
         },
         {
@@ -5396,7 +5367,7 @@
             "version": "1.5.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/paragraphs.git",
+                "url": "https://git.drupal.org/project/paragraphs",
                 "reference": "8.x-1.5"
             },
             "dist": {
@@ -5432,7 +5403,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.5",
-                    "datestamp": "1550692525",
+                    "datestamp": "1541009695",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5468,7 +5439,7 @@
             "description": "Enables the creation of Paragraphs entities.",
             "homepage": "https://www.drupal.org/project/paragraphs",
             "support": {
-                "source": "https://git.drupalcode.org/project/paragraphs"
+                "source": "http://cgit.drupalcode.org/paragraphs"
             }
         },
         {
@@ -5476,7 +5447,7 @@
             "version": "dev-3.x",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/password_policy.git",
+                "url": "https://git.drupal.org/project/password_policy",
                 "reference": "176dd7eca67bbce80ca16e37fa3e94323647bf0d"
             },
             "require": {
@@ -5489,8 +5460,8 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.0-alpha4+12-dev",
-                    "datestamp": "1544199486",
+                    "version": "8.x-3.0-alpha4+11-dev",
+                    "datestamp": "1538683981",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -5526,7 +5497,7 @@
             "description": "Sets up constraints and expiration of passwords.",
             "homepage": "https://www.drupal.org/project/password_policy",
             "support": {
-                "source": "https://git.drupalcode.org/project/password_policy"
+                "source": "http://cgit.drupalcode.org/password_policy"
             },
             "time": "2018-12-07T16:11:36+00:00"
         },
@@ -5535,7 +5506,7 @@
             "version": "2.0.0-alpha2",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/password_strength.git",
+                "url": "https://git.drupal.org/project/password_strength",
                 "reference": "8.x-2.0-alpha2"
             },
             "dist": {
@@ -5592,7 +5563,7 @@
             "description": "Integrates the Password Strength into Drupal's Password Policy module.",
             "homepage": "https://www.drupal.org/project/password_strength",
             "support": {
-                "source": "https://git.drupalcode.org/project/password_strength"
+                "source": "http://cgit.drupalcode.org/password_strength"
             }
         },
         {
@@ -5600,7 +5571,7 @@
             "version": "1.3.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/pathauto.git",
+                "url": "https://git.drupal.org/project/pathauto",
                 "reference": "8.x-1.3"
             },
             "dist": {
@@ -5621,7 +5592,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.3",
-                    "datestamp": "1554239887",
+                    "datestamp": "1536407884",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5653,7 +5624,7 @@
             "description": "Provides a mechanism for modules to automatically generate aliases for the content they manage.",
             "homepage": "https://www.drupal.org/project/pathauto",
             "support": {
-                "source": "https://git.drupalcode.org/project/pathauto"
+                "source": "http://cgit.drupalcode.org/pathauto"
             }
         },
         {
@@ -5661,7 +5632,7 @@
             "version": "1.3.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/prlp.git",
+                "url": "https://git.drupal.org/project/prlp",
                 "reference": "8.x-1.3"
             },
             "dist": {
@@ -5712,7 +5683,7 @@
             "description": "Enhances the password reset landing page by letting user change their password on arrival via the password reset link",
             "homepage": "https://www.drupal.org/project/prlp",
             "support": {
-                "source": "https://git.drupalcode.org/project/prlp"
+                "source": "http://cgit.drupalcode.org/prlp"
             }
         },
         {
@@ -5720,7 +5691,7 @@
             "version": "3.0.0-beta8",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/purge.git",
+                "url": "https://git.drupal.org/project/purge",
                 "reference": "8.x-3.0-beta8"
             },
             "dist": {
@@ -5767,7 +5738,7 @@
             "description": "Provides a generic external cache invalidation API and queue service.",
             "homepage": "https://www.drupal.org/project/purge",
             "support": {
-                "source": "https://git.drupalcode.org/project/purge"
+                "source": "http://cgit.drupalcode.org/purge"
             }
         },
         {
@@ -5775,7 +5746,7 @@
             "version": "1.0.0-rc1",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/purge_queuer_url.git",
+                "url": "https://git.drupal.org/project/purge_queuer_url",
                 "reference": "8.x-1.0-rc1"
             },
             "dist": {
@@ -5818,7 +5789,7 @@
             "description": "Queues URLs or paths to your Purge queue utilizing a traffic database.",
             "homepage": "https://www.drupal.org/project/purge_queuer_url",
             "support": {
-                "source": "https://git.drupalcode.org/project/purge_queuer_url"
+                "source": "http://cgit.drupalcode.org/purge_queuer_url"
             }
         },
         {
@@ -5826,7 +5797,7 @@
             "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/range.git",
+                "url": "https://git.drupal.org/project/range",
                 "reference": "8.x-1.1"
             },
             "dist": {
@@ -5869,7 +5840,7 @@
             "description": "Defines a numeric range field type.",
             "homepage": "https://www.drupal.org/project/range",
             "support": {
-                "source": "https://git.drupalcode.org/project/range"
+                "source": "http://cgit.drupalcode.org/range"
             }
         },
         {
@@ -5877,7 +5848,7 @@
             "version": "1.3.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/redirect.git",
+                "url": "https://git.drupal.org/project/redirect",
                 "reference": "8.x-1.3"
             },
             "dist": {
@@ -5924,7 +5895,7 @@
             "description": "Allows users to redirect from old URLs to new URLs.",
             "homepage": "https://www.drupal.org/project/redirect",
             "support": {
-                "source": "https://git.drupalcode.org/project/redirect"
+                "source": "http://cgit.drupalcode.org/redirect"
             }
         },
         {
@@ -5932,7 +5903,7 @@
             "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/redis.git",
+                "url": "https://git.drupal.org/project/redis",
                 "reference": "8.x-1.1"
             },
             "dist": {
@@ -5983,7 +5954,7 @@
             "description": "Provide a module placeholder, for using as dependency for module that needs Redis.",
             "homepage": "https://www.drupal.org/project/redis",
             "support": {
-                "source": "https://git.drupalcode.org/project/redis"
+                "source": "http://cgit.drupalcode.org/redis"
             }
         },
         {
@@ -5991,7 +5962,7 @@
             "version": "1.0.0-alpha1",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/role_delegation.git",
+                "url": "https://git.drupal.org/project/role_delegation",
                 "reference": "8.x-1.0-alpha1"
             },
             "dist": {
@@ -6042,7 +6013,7 @@
             "description": "Allows site administrators to grant some roles the authority to assign selected roles to users.",
             "homepage": "https://www.drupal.org/project/role_delegation",
             "support": {
-                "source": "https://git.drupalcode.org/project/role_delegation"
+                "source": "http://cgit.drupalcode.org/role_delegation"
             }
         },
         {
@@ -6050,7 +6021,7 @@
             "version": "1.0.0-alpha7",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/scheduled_updates.git",
+                "url": "https://git.drupal.org/project/scheduled_updates",
                 "reference": "8.x-1.0-alpha7"
             },
             "dist": {
@@ -6093,7 +6064,7 @@
             "description": "Create scheduled updates to field values on entities such content, users, and terms.",
             "homepage": "https://www.drupal.org/project/scheduled_updates",
             "support": {
-                "source": "https://git.drupalcode.org/project/scheduled_updates"
+                "source": "http://cgit.drupalcode.org/scheduled_updates"
             }
         },
         {
@@ -6101,7 +6072,7 @@
             "version": "1.0.0-alpha2",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/schemata.git",
+                "url": "https://git.drupal.org/project/schemata",
                 "reference": "8.x-1.0-alpha2"
             },
             "dist": {
@@ -6168,7 +6139,7 @@
             "description": "Provide schema definitions of Drupal entities for type validation, code generation, and documentation.",
             "homepage": "https://www.drupal.org/project/schemata",
             "support": {
-                "source": "https://git.drupalcode.org/project/schemata"
+                "source": "http://cgit.drupalcode.org/schemata"
             }
         },
         {
@@ -6233,7 +6204,7 @@
             "description": "Provides a data models for entity types and bundles in JSON schema format.",
             "homepage": "https://www.drupal.org/project/schemata",
             "support": {
-                "source": "https://git.drupalcode.org/project/schemata"
+                "source": "http://cgit.drupalcode.org/schemata"
             }
         },
         {
@@ -6241,7 +6212,7 @@
             "version": "1.11.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/search_api.git",
+                "url": "https://git.drupal.org/project/search_api",
                 "reference": "8.x-1.11"
             },
             "dist": {
@@ -6269,7 +6240,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.11",
-                    "datestamp": "1552334285",
+                    "datestamp": "1542564480",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6312,7 +6283,7 @@
             "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/seckit.git",
+                "url": "https://git.drupal.org/project/seckit",
                 "reference": "8.x-1.1"
             },
             "dist": {
@@ -6376,7 +6347,7 @@
             "version": "1.2.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/shield.git",
+                "url": "https://git.drupal.org/project/shield",
                 "reference": "8.x-1.2"
             },
             "dist": {
@@ -6435,7 +6406,7 @@
             "description": "Creates a general shield for the site.",
             "homepage": "https://www.drupal.org/project/shield",
             "support": {
-                "source": "https://git.drupalcode.org/project/shield"
+                "source": "http://cgit.drupalcode.org/shield"
             }
         },
         {
@@ -6443,7 +6414,7 @@
             "version": "2.12.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/simple_sitemap.git",
+                "url": "https://git.drupal.org/project/simple_sitemap",
                 "reference": "8.x-2.12"
             },
             "dist": {
@@ -6504,7 +6475,7 @@
             "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/smart_trim.git",
+                "url": "https://git.drupal.org/project/smart_trim",
                 "reference": "8.x-1.1"
             },
             "dist": {
@@ -6576,7 +6547,7 @@
             "version": "1.0.0-alpha3",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/stage_file_proxy.git",
+                "url": "https://git.drupal.org/project/stage_file_proxy",
                 "reference": "8.x-1.0-alpha3"
             },
             "dist": {
@@ -6643,7 +6614,7 @@
             "description": "Provides stage_file_proxy module.",
             "homepage": "https://www.drupal.org/project/stage_file_proxy",
             "support": {
-                "source": "https://git.drupalcode.org/project/stage_file_proxy"
+                "source": "http://cgit.drupalcode.org/stage_file_proxy"
             }
         },
         {
@@ -6651,7 +6622,7 @@
             "version": "1.8.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/svg_image.git",
+                "url": "https://git.drupal.org/project/svg_image",
                 "reference": "8.x-1.8"
             },
             "dist": {
@@ -6670,7 +6641,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.8",
-                    "datestamp": "1548492180",
+                    "datestamp": "1516678385",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6690,7 +6661,7 @@
             "description": "Overrides the standard image formatter and widget to support SVG files.",
             "homepage": "https://www.drupal.org/project/svg_image",
             "support": {
-                "source": "https://git.drupalcode.org/project/svg_image"
+                "source": "http://cgit.drupalcode.org/svg_image"
             }
         },
         {
@@ -6698,7 +6669,7 @@
             "version": "1.5.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/token.git",
+                "url": "https://git.drupal.org/project/token",
                 "reference": "8.x-1.5"
             },
             "dist": {
@@ -6761,7 +6732,7 @@
             "description": "Provides a user interface for the Token API and some missing core tokens.",
             "homepage": "https://www.drupal.org/project/token",
             "support": {
-                "source": "https://git.drupalcode.org/project/token"
+                "source": "http://cgit.drupalcode.org/token"
             }
         },
         {
@@ -6769,7 +6740,7 @@
             "version": "dev-1.x",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/token_conditions.git",
+                "url": "https://git.drupal.org/project/token_conditions",
                 "reference": "cbfc9d36bbdfe056d051c63772c6c2bd65aa3d08"
             },
             "require": {
@@ -6815,7 +6786,7 @@
             "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/token_filter.git",
+                "url": "https://git.drupal.org/project/token_filter",
                 "reference": "8.x-1.1"
             },
             "dist": {
@@ -6879,7 +6850,7 @@
             "description": "This is a very simple module to make global token values available as an input filter.",
             "homepage": "https://www.drupal.org/project/token_filter",
             "support": {
-                "source": "https://git.drupalcode.org/project/token_filter"
+                "source": "http://cgit.drupalcode.org/token_filter"
             }
         },
         {
@@ -6887,7 +6858,7 @@
             "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/twig_field_value.git",
+                "url": "https://git.drupal.org/project/twig_field_value",
                 "reference": "8.x-1.1"
             },
             "dist": {
@@ -6906,7 +6877,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.1",
-                    "datestamp": "1549817580",
+                    "datestamp": "1474037939",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6926,7 +6897,7 @@
             "description": "Twig filters for value(s) and label.",
             "homepage": "https://www.drupal.org/project/twig_field_value",
             "support": {
-                "source": "https://git.drupalcode.org/project/twig_field_value"
+                "source": "http://cgit.drupalcode.org/twig_field_value"
             }
         },
         {
@@ -6934,7 +6905,7 @@
             "version": "2.0.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/video_embed_field.git",
+                "url": "https://git.drupal.org/project/video_embed_field",
                 "reference": "8.x-2.0"
             },
             "dist": {
@@ -6987,7 +6958,7 @@
             "description": "A pluggable field type for storing videos from external video hosts such as Vimeo and YouTube.",
             "homepage": "https://www.drupal.org/project/video_embed_field",
             "support": {
-                "source": "https://git.drupalcode.org/project/video_embed_field"
+                "source": "http://cgit.drupalcode.org/video_embed_field"
             }
         },
         {
@@ -6995,7 +6966,7 @@
             "version": "1.0.0-beta2",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/views_menu_children_filter.git",
+                "url": "https://git.drupal.org/project/views_menu_children_filter",
                 "reference": "8.x-1.0-beta2"
             },
             "dist": {
@@ -7014,7 +6985,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-beta2",
-                    "datestamp": "1553314690",
+                    "datestamp": "1496280244",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -7038,7 +7009,7 @@
             "description": "Views Menu Children Filter",
             "homepage": "https://www.drupal.org/project/views_menu_children_filter",
             "support": {
-                "source": "https://git.drupalcode.org/project/views_menu_children_filter"
+                "source": "http://cgit.drupalcode.org/views_menu_children_filter"
             }
         },
         {
@@ -7046,7 +7017,7 @@
             "version": "2.0.0-alpha4",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/viewsreference.git",
+                "url": "https://git.drupal.org/project/viewsreference",
                 "reference": "8.x-2.0-alpha4"
             },
             "dist": {
@@ -7081,12 +7052,12 @@
             ],
             "authors": [
                 {
-                    "name": "joekers",
-                    "homepage": "https://www.drupal.org/user/2229066"
+                    "name": "New Zeal",
+                    "homepage": "https://www.drupal.org/user/93571"
                 },
                 {
-                    "name": "kent@passingphase.nz",
-                    "homepage": "https://www.drupal.org/user/93571"
+                    "name": "joekers",
+                    "homepage": "https://www.drupal.org/user/2229066"
                 },
                 {
                     "name": "seanB",
@@ -7108,7 +7079,7 @@
             "version": "5.0.0-rc18",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/webform.git",
+                "url": "https://git.drupal.org/project/webform",
                 "reference": "8.x-5.0-rc18"
             },
             "dist": {
@@ -7212,7 +7183,7 @@
             "version": "2.0.0-beta1",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/wysiwyg_template.git",
+                "url": "https://git.drupal.org/project/wysiwyg_template",
                 "reference": "8.x-2.0-beta1"
             },
             "dist": {
@@ -7349,7 +7320,7 @@
             "description": "Core functionality for the WYSIWYG Template module",
             "homepage": "https://www.drupal.org/project/wysiwyg_template",
             "support": {
-                "source": "https://git.drupalcode.org/project/wysiwyg_template"
+                "source": "http://cgit.drupalcode.org/wysiwyg_template"
             }
         },
         {
@@ -11744,7 +11715,7 @@
             "version": "1.2.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/config_devel.git",
+                "url": "https://git.drupal.org/project/config_devel",
                 "reference": "8.x-1.2"
             },
             "dist": {
@@ -11807,7 +11778,7 @@
             "description": "Helps developers work with configuration.",
             "homepage": "https://www.drupal.org/project/config_devel",
             "support": {
-                "source": "https://git.drupalcode.org/project/config_devel"
+                "source": "http://cgit.drupalcode.org/config_devel"
             }
         },
         {
