@@ -1,7 +1,6 @@
 name: Tide Grant
 type: module
 description: 'Provides Grant content type and related configuration. '
-type: module
 package: Tide
 core: 8.x
 dependencies:

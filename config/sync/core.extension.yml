@@ -112,6 +112,7 @@ module:
   tide_api: 0
   tide_authenticated_content: 0
   tide_core: 0
+  tide_data_driven_component: 0
   tide_event: 0
   tide_grant: 0
   tide_landing_page: 0

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b061ba7cc81363805ded6da44d770dac",
+    "content-hash": "577cf3eea2b7d3579b96d86dec85b586",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1868,6 +1868,24 @@
             ],
             "description": "Core functionality for Tide Drupal 8 distribution",
             "time": "2019-04-02T06:18:27+00:00"
+        },
+        {
+            "name": "dpc-sdp/tide_data_driven_component",
+            "version": "0.0.1",
+            "dist": {
+                "type": "path",
+                "url": "dpc-sdp/tide_data_driven_component",
+                "reference": "7390e5834ce48dc1952027fc9f5aeb0780c3ce57"
+            },
+            "require": {
+                "dpc-sdp/tide_core": "@dev",
+                "dpc-sdp/tide_landing_page": "@dev"
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Data Driven Component content type and related configuration for Tide Drupal 8 distribution."
         },
         {
             "name": "dpc-sdp/tide_event",

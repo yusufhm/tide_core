@@ -8,6 +8,7 @@
         "dpc-sdp/bay": "^0.0.1",
         "dpc-sdp/tide": "dev-develop",
         "dpc-sdp/tide_alert": "^0.0.1",
+        "dpc-sdp/tide_data_driven_component": "^0.0.1",
         "dpc-sdp/tide_grant": "^0.0.1",
         "dpc-sdp/tide_profile": "^0.0.1",
         "dpc-sdp/tide_authenticated_content": "^0.0.1",
@@ -111,6 +112,10 @@
             "type": "vcs",
             "no-api": true,
             "url": "https://github.com/dpc-sdp/tide_core.git"
+        },
+        "dpc-sdp/tide_data_driven_component": {
+          "type": "path",
+          "url": "dpc-sdp/tide_data_driven_component"
         },
         "dpc-sdp/tide_event": {
             "type": "vcs",

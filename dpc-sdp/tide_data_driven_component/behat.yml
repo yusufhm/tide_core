@@ -1,30 +1,28 @@
 default:
-  autoload: [ '%paths.base%/tests/behat/bootstrap' ]
+  autoload: [ %paths.base%/tests/behat/bootstrap ]
   gherkin:
     filters:
-      # Allow skipping tests by tagging them with "@skipped"
-      tags: "~@skipped"
+      tags: "~@suggest&&~@skipped"
   suites:
     default:
-      paths:
-      - '%paths.base%/tests/behat/features'
-      - '%paths.base%/docroot/modules/custom/vicgovau_core/tests/behat/features'
-      - '%paths.base%/dpc-sdp/tide_data_driven_component/tests/behat/features'
+      paths: [ %paths.base%/tests/behat/features ]
       contexts:
-      - FeatureContext
-      - Drupal\DrupalExtension\Context\MinkContext
-      - Drupal\DrupalExtension\Context\MarkupContext
-      - Drupal\DrupalExtension\Context\MessageContext
-      - IntegratedExperts\BehatScreenshotExtension\Context\ScreenshotContext
+        - FeatureContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - IntegratedExperts\BehatScreenshotExtension\Context\ScreenshotContext
+        - Ubirak\RestApiBehatExtension\RestApiContext
+        - Ubirak\RestApiBehatExtension\Json\JsonContext
 
   extensions:
     Behat\MinkExtension:
       goutte: ~
       base_url: http://nginx:8080
-      files_path: '%paths.base%/tests/behat/fixtures'
+      files_path: %paths.base%/tests/behat/fixtures
       browser_name: chrome
       selenium2:
-        wd_host: "http://chrome:4444/wd/hub"
+        wd_host: "http://selenium:4444/wd/hub"
         capabilities: { "browser": "chrome", "version": "*", "marionette": true }
       javascript_session: selenium2
     # Provides integration with Drupal APIs.
@@ -33,14 +31,14 @@ default:
       api_driver: drupal
       drush_driver: drush
       drupal:
-        drupal_root: docroot
+        drupal_root: build/docroot
       drush:
-        root: docroot
+        root: build/docroot
       selectors:
         message_selector: '.messages'
-        error_message_selector: '.messages.messages--error'
-        success_message_selector: '.messages.messages--status'
-        warning_message_selector: '.messages.messages--warning'
+        error_message_selector: '.messages.error'
+        success_message_selector: '.messages.status'
+        warning_message_selector: '.messages.warning'
       region_map:
         alert: '.region-alert'
         header: '.region-header'
@@ -62,21 +60,17 @@ default:
         disabled: '.region-disabled'
     # Allows to capture HTML and JPG screenshots (based on the driver used).
     IntegratedExperts\BehatScreenshotExtension:
-      dir: '%paths.base%/screenshots'
+      dir: %paths.base%/screenshots
       fail: true
       purge: false
     # Show explicit fail information and continue the test run.
     IntegratedExperts\BehatFormatProgressFail\FormatExtension: ~
+    Ubirak\RestApiBehatExtension\Extension:
+      rest:
+        base_url: http://nginx:8080
+        store_response: true
 
-p0:
+suggest:
   gherkin:
     filters:
-      tags: "@p0&&~@skipped"
-p1:
-  gherkin:
-    filters:
-      tags: "@p1&&~@skipped"
-tide:
-  gherkin:
-    filters:
-      tags: "~@vicgovau&&~@skipped"
+      tags: "~@nosuggest&&~@skipped"
