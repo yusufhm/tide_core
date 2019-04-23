@@ -8,7 +8,6 @@
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\node\Entity\Node;
-use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\UrlHelper;
 
 /**
@@ -75,50 +74,50 @@ function tide_grant_webform_submission_presave($submission) {
     // Create node object with values from webform submission.
     $node = Node::create([
       'type' => 'grant',
-      'title' => Html::escape($submission_data['name_of_grant_or_program']),
+      'title' => $submission_data['name_of_grant_or_program'],
       'field_description' => [
-        'value' => Html::escape($submission_data['describe_the_grant_or_program']),
+        'value' => $submission_data['describe_the_grant_or_program'],
       ],
       'field_landing_page_summary' => [
-        'value' => Html::escape($submission_data['describe_the_grant_or_program']),
+        'value' => $submission_data['describe_the_grant_or_program'],
       ],
       'field_node_dates' => [
         [
-          'value' => $submission_data['open_date'] && $submission_data['close_date'] ? date('Y-m-d\TH:i:00', strtotime(Html::escape($submission_data['open_date']))) : NULL,
-          'end_value' => $submission_data['open_date'] && $submission_data['close_date'] ? date('Y-m-d\TH:i:00', strtotime(Html::escape($submission_data['close_date']))) : NULL,
+          'value' => $submission_data['open_date'] && $submission_data['close_date'] ? date('Y-m-d\TH:i:00', strtotime($submission_data['open_date'])) : NULL,
+          'end_value' => $submission_data['open_date'] && $submission_data['close_date'] ? date('Y-m-d\TH:i:00', strtotime($submission_data['close_date'])) : NULL,
         ],
       ],
-      'field_node_on_going' => Html::escape($submission_data['this_grant_program_is_ongoing_and_does_have_an_open_close_dates_']),
+      'field_node_on_going' => $submission_data['this_grant_program_is_ongoing_and_does_have_an_open_close_dates_'],
       'field_topic' => [
-        ['target_id' => Html::escape($submission_data['topic'])],
+        ['target_id' => $submission_data['topic']],
       ],
       'field_audience' => [],
       'field_node_funding_level' => [
         [
-          'from' => Html::escape($submission_data['funding_level_from']),
-          'to' => Html::escape($submission_data['funding_level_to']),
+          'from' => $submission_data['funding_level_from'],
+          'to' => $submission_data['funding_level_to'],
         ],
       ],
       'field_node_link' => [
-        'uri' => Html::escape($submission_data['website_url_for_grant_or_program_information']),
+        'uri' => $submission_data['website_url_for_grant_or_program_information'],
       ],
       'field_call_to_action' => [
-        'uri' => Html::escape($submission_data['website_url_to_apply_for_grant_or_program']),
+        'uri' => $submission_data['website_url_to_apply_for_grant_or_program'],
         'title' => t('Apply now'),
       ],
       'field_node_author' => [
-        'value' => Html::escape($submission_data['contact_person']),
+        'value' => $submission_data['contact_person'],
       ],
       'field_node_department' => [
-        ['target_id' => Html::escape($submission_data['department_agency_or_provider_organisation'])],
+        ['target_id' => $submission_data['department_agency_or_provider_organisation']],
       ],
-      'field_node_email' => Html::escape($submission_data['contact_email_address']),
-      'field_node_phone' => Html::escape($submission_data['contact_telephone_number']),
+      'field_node_email' => $submission_data['contact_email_address'],
+      'field_node_phone' => $submission_data['contact_telephone_number'],
     ]);
 
     // Loop through multiple value fields.
     foreach ($submission_data['who_is_the_grant_or_program_for_'] as $topic) {
-      $node->field_audience->appendItem(Html::escape($topic));
+      $node->field_audience->appendItem($topic);
     }
 
     // Set the node to Needs Review state.

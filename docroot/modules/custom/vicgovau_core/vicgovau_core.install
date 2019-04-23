@@ -738,3 +738,10 @@ function vicgovau_core_update_8022() {
   $module_installer = \Drupal::service('module_installer');
   $module_installer->install(['tide_authenticated_content']);
 }
+
+/**
+ * Add the data driven component. [SDPA-1339].
+ */
+function vicgovau_core_update_8023() {
+  vicgovau_core_install_module('tide_data_driven_component');
+}

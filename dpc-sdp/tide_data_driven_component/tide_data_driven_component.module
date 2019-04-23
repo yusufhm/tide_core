@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Data Driven Component module functionality.
+ */
+
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\field\Entity\FieldConfig;
+
+/**
+ * Set dynamic allowed values for the data drive component field.
+ *
+ * @param \Drupal\field\Entity\FieldStorageConfig $definition
+ *   The field definition.
+ * @param \Drupal\Core\Entity\ContentEntityInterface|null $entity
+ *   The entity being created if applicable.
+ * @param bool $cacheable
+ *   Boolean indicating if the results are cacheable.
+ *
+ * @return array
+ *   An array of possible key and value options.
+ *
+ * @see options_allowed_values()
+ */
+function tide_data_driven_component_items_list(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
+  $options = [
+    'myvic_vicfreewifi' => 'Vic Free Wifi Map',
+    'myvic_family_violence_women_programs' => 'Prevention of Family Violence Against Women Programs Map',
+  ];
+
+  return $options;
+}
+
+/**
+ * Sets the default value for the data driven component field.
+ *
+ * @param \Drupal\Core\Entity\ContentEntityInterface $entity
+ *   The entity being created.
+ * @param \Drupal\field\Entity\FieldConfig $config
+ *   The field config definition.
+ *
+ * @return array
+ *   An array of default value keys with each entry keyed with the “value” key.
+ *
+ * @see \Drupal\Core\Field\FieldConfigBase::getDefaultValue()
+ */
+function tide_data_driven_component_default_value(
+  ContentEntityInterface $entity,
+  FieldConfig $config
+) {
+  $default = 'myvic_vicfreewifi';
+
+  return [
+    ['value' => $default],
+  ];
+}
