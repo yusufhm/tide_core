@@ -8,6 +8,7 @@
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Utility\UpdateException;
+use Drupal\media\Entity\Media;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
@@ -744,4 +745,43 @@ function vicgovau_core_update_8022() {
  */
 function vicgovau_core_update_8023() {
   vicgovau_core_install_module('tide_data_driven_component');
+}
+/**
+ * Assign new License Type field value to all media entities.
+ */
+function vicgovau_core_update_8024() {
+  // Assign license type field of all existing media to "Copyright".
+  $existingMedia = \Drupal::entityQuery('media')
+    ->exists('field_license_type')
+    ->execute();
+  if ($existingMedia && count($existingMedia)) {
+    $termId = NULL;
+    $term = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->loadByProperties([
+        'name' => 'Copyright',
+        'vid' => 'license_type',
+      ]);
+
+    // Its possible there might be some duplicates, just to be safe lets reset
+    // the array.
+    $term = reset($term);
+    if (!$term) {
+      $term = Term::create([
+        'name' => 'Copyright',
+        'vid' => 'license_type',
+      ]);
+      $term->save();
+    }
+    // Extract our term ID.
+    $termId = $term->id();
+    if ($termId) {
+      /** @var \Drupal\media\Entity\Media $media */
+      foreach ($existingMedia as $mediaId) {
+        $media = Media::load($mediaId);
+        $media->set('field_license_type', $termId);
+        $media->save();
+      }
+    }
+  }
 }

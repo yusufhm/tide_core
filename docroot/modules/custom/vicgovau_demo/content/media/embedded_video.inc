@@ -36,7 +36,9 @@ function vicgovau_demo_create_media_embedded_video() {
         'status' => 1,
         'name' => $title,
         'field_media_video_embed_field' => [['value' => $url]],
-        'field_media_license' => [['value' => 'cc4']],
+        'field_license_type' => [
+          ['target_id' => VicgovauDemoHelper::randomMediaLicense()],
+        ],
         'field_media_restricted' => [['value' => VicgovauDemoHelper::randomBool()]],
         'field_media_site' => VicgovauDemoHelper::getFieldValueForSiteSections($site_section),
         'field_media_link' => [['value' => 'View transcript']],

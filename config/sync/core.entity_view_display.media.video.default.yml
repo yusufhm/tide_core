@@ -3,14 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.video.field_license_type
     - field.field.media.video.field_media_audience
     - field.field.media.video.field_media_department
     - field.field.media.video.field_media_file
-    - field.field.media.video.field_media_link
     - field.field.media.video.field_media_length
-    - field.field.media.video.field_media_license
+    - field.field.media.video.field_media_link
     - field.field.media.video.field_media_restricted
-    - field.field.media.video.field_media_site
     - field.field.media.video.field_media_summary
     - field.field.media.video.field_media_topic
     - field.field.media.video.field_media_transcript
@@ -18,8 +17,7 @@ dependencies:
     - media.type.video
   module:
     - file
-    - image
-    - options
+    - svg_image
     - user
 _core:
   default_config_hash: 98CYM285NIN6lKbQo7cwuOqfQhx9q_PJUYjgOI8jJ3g
@@ -38,6 +36,14 @@ content:
       custom_date_format: ''
       timezone: ''
     third_party_settings: {  }
+  field_license_type:
+    weight: 16
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   field_media_audience:
     weight: 11
     label: above
@@ -75,13 +81,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  field_media_license:
-    weight: 14
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
     region: content
   field_media_link:
     weight: 15
@@ -140,5 +139,4 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_media_site: true
   name: true
