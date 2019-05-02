@@ -1,21 +1,38 @@
 #!/usr/bin/env bash
 ##
-# Install development files from the centralised location.
+# Install development files from the centralised location - Dev-Tools repository.
 #
+# === WHAT IS DEV-TOOLS ===
+# Dev-Tools is a development environment for Drupal sites with tools included.
+# https://github.com/dpc-sdp/dev-tools
+#
+# === WHAT IS THIS FILE AND WHY DO I NEED IT ===
+# Using Dev-Tools requires initial installation into your project. Once
+# installed, it the can be "attached" in every environment were development
+# stack is required. This means that your project will have only small number
+# of Dev-Tools files committed - the rest of the files will be downloaded each
+# time Dev-Tools needs to be "attached".
+#
+# This file is a script to download Dev-Tools at the latest stable version and
+# "attach" it to the current environment.
 # Files already committed within current repository will not be overridden.
-##
-# To override any files coming from Dev Tools to persist in the current
-# repository, modify `.git/info/exclude` file and commit them.
 #
 # Usage:
-# . dev-init.sh
+# ./dev-tools.sh
 #
-# To update all files, including committed:
-# ALLOW_OVERRIDE=1 . dev-init.sh
+# === HOW TO OVERRIDE LOCALLY EXCLUDED FILES ===
+# To override any files coming from Dev-Tools to persist in the current
+# repository, modify `.git/info/exclude` file and commit them.
 #
+# === HOW TO UPDATE DEV-TOOLS ===
+# ALLOW_OVERRIDE=1 ./dev-tools.sh
+#
+# === HOW TO PIN TO SPECIFIC DEV-TOOLS COMMIT ===
+# For development of Dev-Tools or debugging of the development stack, it may be
+# required to point to the specific Dev-Tools's commit rather then use the latest
+# stable version.
+#
+# Uncomment and set the Dev-Tools's commit value and commit this change.
+# export DRUPALDEV_COMMIT=COMMIT_SHA
 
-# Development only: uncomment and set the commit value to fetch Dev Tools at
-# specific commit.
-export GH_COMMIT=e7c3b83e650e69b16aa5ba6db2c21f7ad3257769
-
-curl https://raw.githubusercontent.com/dpc-sdp/dev-tools/master/install | bash
+bash <(curl -L https://raw.githubusercontent.com/dpc-sdp/dev-tools/master/install?"$(date +%s)") "$@"
