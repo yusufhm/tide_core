@@ -54,7 +54,7 @@ third_party_settings:
       format_settings:
         id: ''
         classes: ''
-        formatter: closed
+        formatter: open
         description: ''
         required_fields: true
       label: 'Profile detail'
@@ -305,6 +305,24 @@ content:
     region: content
   field_topic:
     weight: 16
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_tags:
+    weight: 16
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_topic:
+    weight: 17
     settings:
       match_operator: CONTAINS
       size: 60

@@ -1,0 +1,8 @@
+uuid: f84e9266-71e7-434c-a77e-60a54918420b
+langcode: en
+status: true
+dependencies: {  }
+id: site-main-menu-victorian-multicu
+label: 'multicultural.vic.gov.au - MAIN MENU'
+description: 'Automatically created site menu Main menu - Victorian Multicultural Commission'
+locked: false

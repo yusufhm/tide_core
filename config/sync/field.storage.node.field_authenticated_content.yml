@@ -1,0 +1,20 @@
+uuid: d12b5ee6-2f5a-4169-8f43-e1570183aa26
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_authenticated_content
+field_name: field_authenticated_content
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

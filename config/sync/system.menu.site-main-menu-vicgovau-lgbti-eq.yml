@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: site-main-menu-vicgovau-lgbti-eq
-label: 'Main menu - vic.gov.au - LGBTI equality'
+label: 'vic.gov.au - LGBTI equality - MAIN MENU'
 description: 'Automatically created site menu Main menu - vic.gov.au - LGBTI equality'
 locked: false

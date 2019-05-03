@@ -14,3 +14,4 @@ Feature: Homepage
     Given I go to the homepage
     And I am in the "<front>" path
     Then I save screenshot
+

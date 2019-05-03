@@ -1,0 +1,8 @@
+uuid: 0a72e9e4-e718-4aad-8365-5b2d069b94d6
+langcode: en
+status: true
+dependencies: {  }
+id: site-main-menu-portable-long-ser
+label: 'vic.gov.au - Portable long service - MAIN MENU'
+description: 'Automatically created site menu Main menu - Portable long service'
+locked: false

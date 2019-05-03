@@ -971,4 +971,16 @@ class VicgovauDemoHelper {
     return count($term) ? array_rand($term, 1) : 0;
   }
 
+  /**
+   * Select a random department.
+   *
+   * @return int
+   *   The department tid.
+   */
+  public static function randomMediaLicense() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $term = $repository->getDemoEntities('taxonomy_term', 'license_type');
+    return count($term) ? array_rand($term, 1) : 0;
+  }
+
 }

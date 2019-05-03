@@ -1,0 +1,8 @@
+uuid: c8a4b9df-a890-44c7-9472-dd7f4f39f7a6
+langcode: en
+status: true
+dependencies: {  }
+id: site-main-menu-vicgovau-single-d
+label: 'vic.gov.au - Single Digital Presence - MAIN MENU'
+description: 'Automatically created site menu Main menu - vic.gov.au - Single Digital Presence'
+locked: false

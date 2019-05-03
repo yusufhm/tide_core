@@ -5,8 +5,10 @@
  * Install file for core.
  */
 
+use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Utility\UpdateException;
+use Drupal\media\Entity\Media;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
@@ -692,5 +694,94 @@ function _vicgovau_core_update_8019_add_redirects($from, $to) {
     $redirect->setRedirect($to);
     $redirect->getRedirect();
     $redirect->save();
+  }
+}
+/**
+ * Grant Webform Configuration access to API requests [SDPA12-13].
+ */
+function vicgovau_core_update_8020() {
+  $webforms = \Drupal::entityTypeManager()->getStorage('webform')->loadMultiple();
+  foreach ($webforms as $webform) {
+    /** @var \Drupal\webform\Entity\Webform $webform */
+    $access_rules = $webform->getAccessRules();
+    if (!isset($access_rules['configuration']['roles'])) {
+      $access_rules['configuration'] = [
+        'roles' => [AccountInterface::ANONYMOUS_ROLE],
+        'users' => [],
+        'permissions' => [],
+      ];
+      $webform->setAccessRules($access_rules);
+      $webform->save();
+    }
+    elseif (!in_array(AccountInterface::ANONYMOUS_ROLE, $access_rules['configuration']['roles'])) {
+      $access_rules['configuration']['roles'][] = AccountInterface::ANONYMOUS_ROLE;
+      $webform->setAccessRules($access_rules);
+      $webform->save();
+    }
+  }
+}
+
+/**
+ * Remove the legacy openapi_redoc from system schema.
+ */
+function vicgovau_core_update_8021() {
+  \Drupal::database()->delete('key_value')
+    ->condition('collection', 'system.schema')
+    ->condition('name', 'openapi_redoc')
+    ->execute();
+}
+
+/**
+ * SDPAPC-2: Install Authenticated Content Module.
+ */
+function vicgovau_core_update_8022() {
+  /** @var \Drupal\Core\Extension\ModuleInstallerInterface $module_installer */
+  $module_installer = \Drupal::service('module_installer');
+  $module_installer->install(['tide_authenticated_content']);
+}
+
+/**
+ * Add the data driven component. [SDPA-1339].
+ */
+function vicgovau_core_update_8023() {
+  vicgovau_core_install_module('tide_data_driven_component');
+}
+/**
+ * Assign new License Type field value to all media entities.
+ */
+function vicgovau_core_update_8024() {
+  // Assign license type field of all existing media to "Copyright".
+  $existingMedia = \Drupal::entityQuery('media')
+    ->exists('field_license_type')
+    ->execute();
+  if ($existingMedia && count($existingMedia)) {
+    $termId = NULL;
+    $term = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->loadByProperties([
+        'name' => 'Copyright',
+        'vid' => 'license_type',
+      ]);
+
+    // Its possible there might be some duplicates, just to be safe lets reset
+    // the array.
+    $term = reset($term);
+    if (!$term) {
+      $term = Term::create([
+        'name' => 'Copyright',
+        'vid' => 'license_type',
+      ]);
+      $term->save();
+    }
+    // Extract our term ID.
+    $termId = $term->id();
+    if ($termId) {
+      /** @var \Drupal\media\Entity\Media $media */
+      foreach ($existingMedia as $mediaId) {
+        $media = Media::load($mediaId);
+        $media->set('field_license_type', $termId);
+        $media->save();
+      }
+    }
   }
 }
