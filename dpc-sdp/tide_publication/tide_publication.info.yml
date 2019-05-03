@@ -19,8 +19,6 @@ config_devel:
       - core.entity_view_display.node.publication_page.default
       - core.entity_view_display.node.publication_page.teaser
       - field.field.node.publication.body
-      - field.field.node.publication.field_node_primary_site
-      - field.field.node.publication.field_node_site
       - field.field.node.publication_page.body
       - field.field.node.publication_page.field_publication
       - field.storage.node.field_publication

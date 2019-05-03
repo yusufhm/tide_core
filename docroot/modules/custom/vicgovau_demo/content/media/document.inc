@@ -28,7 +28,7 @@ function vicgovau_demo_create_media_document() {
     'uid' => VicgovauDemoHelper::randomUid(),
   ]);
 
-  for ($i = 1; $i <= 10; $i++) {
+  for ($i = 1; $i <= VicgovauDemoRepository::MAX_DEMO_PER_TYPE; $i++) {
     try {
       $site_section = VicgovauDemoHelper::randomSiteSections();
 
@@ -60,6 +60,10 @@ function vicgovau_demo_create_media_document() {
       }
     }
     catch (Exception $exception) {
+      \Drupal::logger('vicgovau_demo')->error('Exception occurs in the function %function: %exception', [
+        '%function' => __FUNCTION__,
+        '%exception' => $exception->getMessage(),
+      ]);
       watchdog_exception('vicgovau_demo', $exception);
     }
   }

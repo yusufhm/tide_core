@@ -146,18 +146,6 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  field_node_primary_site:
-    fieldName: field_node_primary_site
-    publicName: field_node_primary_site
-    enhancer:
-      id: ''
-    disabled: false
-  field_node_site:
-    fieldName: field_node_site
-    publicName: field_node_site
-    enhancer:
-      id: ''
-    disabled: false
   publication_pages:
     fieldName: publication_pages
     publicName: publication_pages

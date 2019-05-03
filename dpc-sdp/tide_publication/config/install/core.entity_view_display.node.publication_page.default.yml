@@ -3,8 +3,6 @@ status: true
 dependencies:
   config:
     - field.field.node.publication_page.body
-    - field.field.node.publication_page.field_node_primary_site
-    - field.field.node.publication_page.field_node_site
     - field.field.node.publication_page.field_publication
     - node.type.publication_page
   module:
@@ -34,6 +32,4 @@ content:
   links:
     weight: 100
     region: content
-hidden:
-  field_node_primary_site: true
-  field_node_site: true
+hidden: {  }

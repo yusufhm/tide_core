@@ -21,7 +21,7 @@ function vicgovau_demo_create_node_publication_weight() {
  */
 function vicgovau_demo_create_node_publication() {
   $nodes = [];
-  $total = 5;
+  $total = VicgovauDemoRepository::MAX_DEMO_PER_TYPE;
 
   for ($i = 1; $i <= $total; $i++) {
     // Turn off Random mode for the last publication.
@@ -30,7 +30,7 @@ function vicgovau_demo_create_node_publication() {
     $uid = VicgovauDemoHelper::randomUid();
 
     $site_sections = VicgovauDemoHelper::randomSiteSections();
-    $primary_site_id = VicgovauDemoHelper::randomSite($site_sections);
+    $primary_site_id = $random ? VicgovauDemoHelper::randomSite($site_sections) : VicgovauDemoRepository::SITE_ID_VICGOVAU;
 
     $status = Node::PUBLISHED;
     $node_data = [
@@ -71,6 +71,10 @@ function vicgovau_demo_create_node_publication() {
       $nodes[] = $node;
     }
     catch (Exception $exception) {
+      \Drupal::logger('vicgovau_demo')->error('Exception occurs in the function %function: %exception', [
+        '%function' => __FUNCTION__,
+        '%exception' => $exception->getMessage(),
+      ]);
       watchdog_exception('vicgovau_demo', $exception);
     }
   }

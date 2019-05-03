@@ -51,6 +51,10 @@ function vicgovau_demo_create_menu_menu() {
       $menus[] = $menu;
     }
     catch (Exception $exception) {
+      \Drupal::logger('vicgovau_demo')->error('Exception occurs in the function %function: %exception', [
+        '%function' => __FUNCTION__,
+        '%exception' => $exception->getMessage(),
+      ]);
       watchdog_exception('vicgovau_demo', $exception);
     }
   }

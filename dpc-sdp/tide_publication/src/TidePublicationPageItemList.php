@@ -7,7 +7,7 @@ use Drupal\Core\Field\EntityReferenceFieldItemList;
 use Drupal\Core\TypedData\ComputedItemListTrait;
 
 /**
- * Class TidePublicationComputedPageList.
+ * Class TidePublicationPageItemList.
  */
 class TidePublicationPageItemList extends EntityReferenceFieldItemList {
   use ComputedItemListTrait;
@@ -40,26 +40,18 @@ class TidePublicationPageItemList extends EntityReferenceFieldItemList {
     $nested_set_storage_factory = $container->get('entity_hierarchy.nested_set_storage_factory');
     /** @var \Drupal\entity_hierarchy\Storage\NestedSetNodeKeyFactory $nested_set_node_factory */
     $nested_set_node_factory = $container->get('entity_hierarchy.nested_set_node_factory');
-    /** @var \Drupal\entity_hierarchy\Information\ParentCandidateInterface $parent_candidate */
-    $parent_candidate = $container->get('entity_hierarchy.information.parent_candidate');
     /** @var \Drupal\entity_hierarchy\Storage\EntityTreeNodeMapperInterface $entity_tree_node_mapper */
     $entity_tree_node_mapper = $container->get('entity_hierarchy.entity_tree_node_mapper');
 
-    /** @var \Drupal\Core\Field\FieldDefinitionInterface[] $fields */
-    $fields = $parent_candidate->getCandidateFields($entity);
-    if (!$fields) {
-      return;
-    }
-
-    $field_name = reset($fields);
+    $publication_field_name = 'field_publication';
     $cache = new CacheableMetadata();
     $cache->addCacheableDependency($entity);
 
     /** @var \PNX\NestedSet\NestedSetInterface $storage */
-    $storage = $nested_set_storage_factory->get($field_name, $entity->getEntityTypeId());
+    $storage = $nested_set_storage_factory->get($publication_field_name, $entity->getEntityTypeId());
     /** @var \PNX\NestedSet\Node[] $children */
     $children = $storage->findChildren($nested_set_node_factory->fromEntity($entity));
-    $child_entities = $entity_tree_node_mapper->loadAndAccessCheckEntitysForTreeNodes($entity->getEntityTypeId(), $children, $cache);
+    $child_entities = $entity_tree_node_mapper->loadAndAccessCheckEntitysForTreeNodes('node', $children, $cache);
 
     foreach ($children as $weight => $nested_node) {
       if (!$child_entities->contains($nested_node)) {

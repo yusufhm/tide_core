@@ -23,7 +23,7 @@ function vicgovau_demo_create_node_publication_page_weight() {
 function vicgovau_demo_create_node_publication_page() {
   $nodes = [];
 
-  for ($i = 1; $i <= 15; $i++) {
+  for ($i = 1; $i <= VicgovauDemoRepository::MAX_DEMO_PER_TYPE * 2; $i++) {
     $uid = VicgovauDemoHelper::randomUid();
 
     $repository = VicgovauDemoRepository::getInstance();
@@ -53,7 +53,10 @@ function vicgovau_demo_create_node_publication_page() {
         ['target_id' => $primary_site_id],
       ],
       'field_publication' => [
-        ['target_id' => $publication->id()],
+        [
+          'target_id' => $publication->id(),
+          'weight' => $i - 1,
+        ],
       ],
     ];
 
@@ -70,7 +73,7 @@ function vicgovau_demo_create_node_publication_page() {
       $nodes[] = $node;
     }
     catch (Exception $exception) {
-      watchdog_exception('vicgovau_demo', $exception);
+
     }
   }
 

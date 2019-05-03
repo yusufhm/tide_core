@@ -615,6 +615,7 @@ class VicgovauDemoHelper {
     $search_form_options = ['none', 'event', 'news'];
 
     $search_form_data = [
+      'type' => 'embedded_search_form',
       'field_paragraph_search_block' => ['value' => $search_form_options[$type_form]],
     ];
 
@@ -688,7 +689,7 @@ class VicgovauDemoHelper {
     $accordion_styles = ['basic', 'numbered'];
     if (!$random) {
       // All 2 styles of accordion should be generated.
-      $supported_components[] = 'accordion';
+      array_unshift($supported_components, 'accordion');
       $component_count = count($supported_components);
     }
 

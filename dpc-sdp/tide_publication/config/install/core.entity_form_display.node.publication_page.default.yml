@@ -3,8 +3,6 @@ status: true
 dependencies:
   config:
     - field.field.node.publication_page.body
-    - field.field.node.publication_page.field_node_primary_site
-    - field.field.node.publication_page.field_node_site
     - field.field.node.publication_page.field_publication
     - node.type.publication_page
   module:
@@ -30,20 +28,6 @@ content:
     type: datetime_timestamp
     weight: 2
     region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_node_primary_site:
-    type: options_buttons
-    region: content
-    field_name: field_node_primary_site
-    weight: 12
-    settings: {  }
-    third_party_settings: {  }
-  field_node_site:
-    type: options_buttons
-    region: content
-    field_name: field_node_site
-    weight: 11
     settings: {  }
     third_party_settings: {  }
   field_publication:

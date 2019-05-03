@@ -3,8 +3,6 @@ status: true
 dependencies:
   config:
     - field.field.node.publication.body
-    - field.field.node.publication.field_node_primary_site
-    - field.field.node.publication.field_node_site
     - node.type.publication
   module:
     - content_moderation
@@ -28,20 +26,6 @@ content:
     type: datetime_timestamp
     weight: 2
     region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_node_primary_site:
-    type: options_buttons
-    region: content
-    field_name: field_node_primary_site
-    weight: 11
-    settings: {  }
-    third_party_settings: {  }
-  field_node_site:
-    type: options_buttons
-    region: content
-    field_name: field_node_site
-    weight: 10
     settings: {  }
     third_party_settings: {  }
   moderation_state:
