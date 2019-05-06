@@ -3361,10 +3361,10 @@
                 "patches_applied": {
                     "Debug EntityChangedConstraintValidator": "./patches/core/drupal-core-debug-entity-changed-constraint-validator.patch",
                     "Temporary files whose files are missing on the disk result in never-ending error log messages - https://www.drupal.org/project/drupal/issues/2802803": "https://www.drupal.org/files/issues/2018-06-27/missing-temp-files-stuck-in-table-2802803-33.patch",
+                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch",
                     "Contextual links should not be added inside another link - https://www.drupal.org/node/2898875": "https://www.drupal.org/files/issues/2018-03-16/contextual_links_should-2898875-6.patch",
                     "RSS view with fields give wrong URL from path field - https://www.drupal.org/node/2673980#comment-12180229": "https://www.drupal.org/files/issues/rss_view_with_fields-2673980-28.patch",
-                    "DateTimeIso8601::getDateTime() does not specify the storage timezone when constructing DrupalDateTime object - https://www.drupal.org/project/drupal/issues/3002164": "https://www.drupal.org/files/issues/2018-09-25/3002164-7.patch",
-                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
+                    "DateTimeIso8601::getDateTime() does not specify the storage timezone when constructing DrupalDateTime object - https://www.drupal.org/project/drupal/issues/3002164": "https://www.drupal.org/files/issues/2018-09-25/3002164-7.patch"
                 }
             },
             "autoload": {
