@@ -16,8 +16,6 @@ dependencies:
     - svg_image
     - taxonomy
     - user
-_core:
-  default_config_hash: tOecwAUbP8NMJNhxgFAkCphTgaBoCOrnGkeoFqrRZVw
 id: tide_media_browser
 label: 'Media Browser'
 module: views

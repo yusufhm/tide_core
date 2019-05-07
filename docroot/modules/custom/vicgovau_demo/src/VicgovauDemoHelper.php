@@ -264,6 +264,18 @@ class VicgovauDemoHelper {
   }
 
   /**
+   * Select a random License.
+   *
+   * @return int
+   *   The license tid.
+   */
+  public static function randomLicense() {
+    $repository = VicgovauDemoRepository::getInstance();
+    $licenses = $repository->getDemoEntities('taxonomy_term', 'license_type');
+    return count($licenses) ? array_rand($licenses) : 0;
+  }
+
+  /**
    * Select a random Event Category.
    *
    * @return int
@@ -491,12 +503,15 @@ class VicgovauDemoHelper {
   /**
    * Generate a random date.
    *
+   * @param bool $date_only
+   *   Return date without time.
+   *
    * @return string
    *   Date string.
    */
-  public static function randomDate() {
+  public static function randomDate($date_only = FALSE) {
     $random_timestamp = static::randomTimestamp();
-    return date('Y-m-d\TH:i:00', $random_timestamp);
+    return date($date_only? 'Y-m-d' : 'Y-m-d\TH:i:00', $random_timestamp);
   }
 
   /**
@@ -659,11 +674,13 @@ class VicgovauDemoHelper {
    *   Number of components to generate.
    * @param bool $random
    *   If FALSE, all component types will be randomly generated.
+   * @param bool $allowed_components
+   *   List of components to generate.
    *
    * @return array
    *   The components.
    */
-  public static function randomLandingPageComponents($component_count = 20, $random = TRUE) {
+  public static function randomLandingPageComponents($component_count = 20, $random = TRUE, $allowed_components = NULL) {
     $repository = VicgovauDemoRepository::getInstance();
 
     $supported_components = [
@@ -685,6 +702,10 @@ class VicgovauDemoHelper {
       'news_listing',
       'timelines',
     ];
+
+    if (!empty($allowed_components)) {
+      $supported_components = $allowed_components;
+    }
 
     $accordion_styles = ['basic', 'numbered'];
     if (!$random) {

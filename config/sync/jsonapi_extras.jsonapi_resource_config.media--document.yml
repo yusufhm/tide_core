@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - media.type.document
-_core:
-  default_config_hash: lIuWAbcBkVPYBSn6JHkqosSKYZF7rkC69Ji1bAViMTE
 id: media--document
 disabled: false
 path: media/document

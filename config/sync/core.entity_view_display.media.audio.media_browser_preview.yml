@@ -17,8 +17,6 @@ dependencies:
     - media.type.audio
   module:
     - svg_image
-_core:
-  default_config_hash: 0YtV9xSWIVlvFrbIPuumehBNfzsZFfrylXBaBljwDRI
 id: media.audio.media_browser_preview
 targetEntityType: media
 bundle: audio
@@ -48,8 +46,10 @@ hidden:
   field_media_department: true
   field_media_file: true
   field_media_length: true
+  field_media_license: true
   field_media_restricted: true
   field_media_show_transcript: true
+  field_media_site: true
   field_media_summary: true
   field_media_topic: true
   field_media_transcript: true

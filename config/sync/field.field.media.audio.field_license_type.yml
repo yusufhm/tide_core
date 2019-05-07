@@ -1,4 +1,4 @@
-uuid: 7ab6b9bf-a29d-44a8-b876-d3ab29081e40
+uuid: 9dcf427f-c85b-4eb4-8239-07978a81d0fb
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ entity_type: media
 bundle: audio
 label: 'License Type'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

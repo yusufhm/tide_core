@@ -35,8 +35,6 @@ third_party_settings:
         required_fields: true
       label: Metadata
       region: content
-_core:
-  default_config_hash: sdy_JNYmi_ZVOAT65jwlnybzjn97GsvgGbuN-RoPbD8
 id: media.image.default
 targetEntityType: media
 bundle: image
@@ -146,4 +144,6 @@ content:
       placeholder: ''
     region: content
     third_party_settings: {  }
-hidden: { }
+hidden:
+  field_media_license: true
+  field_media_site: true
