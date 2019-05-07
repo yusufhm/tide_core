@@ -1,0 +1,9 @@
+uuid: b524422b-7181-4741-9ad4-0e75ba0bad29
+langcode: en
+status: true
+dependencies: {  }
+name: 'License Type'
+vid: license_type
+description: 'License Types for Media'
+hierarchy: 0
+weight: 0

@@ -37,6 +37,7 @@ permissions:
   - 'create page content'
   - 'create profile content'
   - 'create section_page content'
+  - 'create terms in authenticated_content'
   - 'create timeline content'
   - 'create url aliases'
   - 'create webform'

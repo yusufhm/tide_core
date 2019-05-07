@@ -1,0 +1,170 @@
+uuid: be5893db-5dcf-408b-a7f0-43548e048b7c
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+weight: 0
+uid: 59
+template: false
+archive: false
+id: education_partner_application_su
+title: 'Education partner application - SummerTech LIVE'
+description: ''
+category: ''
+elements: "education_profile:\n  '#type': textarea\n  '#title': 'About the education profile'\n  '#description': \"<span style=\\\"font-size:11pt\\\"><span style=\\\"line-height:normal\\\"><span style=\\\"font-family:Calibri,sans-serif\\\"><span style=\\\"color:black\\\">The tertiary institution is required to have a tripartite agreement between the business and the students tailored to the individual project and consistent with the SummerTech LIVE guidelines covering issues such as Intellectual Property, expectations on the outcomes of the project and the hours committed by the supervisor and student(s).</span></span></span></span><br />\\n<br />\\n<span style=\\\"font-size:11pt\\\"><span style=\\\"line-height:normal\\\"><span style=\\\"font-family:Calibri,sans-serif\\\"><span style=\\\"color:black\\\">SummerTech LIVE offers the supervisor exposure to real world problems and the opportunity for practical experience. </span></span></span></span>\"\nbusiness_name:\n  '#type': textfield\n  '#title': 'Name of education institute'\ndepartment_or_school:\n  '#type': textfield\n  '#title': 'Department or school'\nfaculty:\n  '#type': textfield\n  '#title': Faculty\ncontact_name:\n  '#type': textarea\n  '#title': 'Contact name'\nemail:\n  '#type': email\n  '#title': Email\nbusiness_address:\n  '#type': webform_address\n  '#title': Address\n  '#address_2__access': false\n  '#city__title': State\n  '#state_province__access': false\n  '#postal_code__title': Postcode\nwebsite:\n  '#type': textfield\n  '#title': Website\ncampus_location:\n  '#type': radios\n  '#title': 'Campus location'\n  '#options':\n    CBD: CBD\n    Metro: Metro\n    Regional: Regional\ntype_of_institution:\n  '#type': radios\n  '#title': 'Type of institution'\n  '#options':\n    University: University\n    TAFE: TAFE\n    Private/RTO: Private/RTO\nplease_select_preferred_dates_to_take_part:\n  '#type': radios\n  '#title': 'Please select preferred dates to take part'\n  '#options':\n    'December 2019 to February 2020': 'December 2019 to February 2020'\n    'January 2020 to March 2020': 'January 2020 to March 2020'\nsupervisor_profile:\n  '#type': webform_wizard_page\n  '#title': 'Supervisor profile'\n  about_the_supervisor_profile:\n    '#type': textarea\n    '#title': 'About the supervisor profile'\n    '#description': '<span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"color:black\">Supervisors will be required to understand the project requirements, meet with the business and work with the students on delivering the project outcomes. The supervisor is the lead researcher on the project and is required to assist students throughout the entire project timelines (10-12 weeks). A minimum of 5 hours per week of supervision is required.</span></span></span></span>'\n  please_include_how_many_of_your_supervisors_have_been_involved_i:\n    '#type': textarea\n    '#title': 'Please include how many of your supervisors have been involved in SummerTech LIVE and or similar studentship programs?'\n  how_many_supervisors_have_had_experience_working_with_small_to_m:\n    '#type': textfield\n    '#title': 'List the number of supervisors that have experience working with Small to Medium-sized Enterprises (SMEs):'\n  how_many_supervisors_are_likely_to_take_part_in_summertech_live_:\n    '#type': textfield\n    '#title': 'How many supervisors are likely to take part in SummerTech LIVE?'\n  please_select_the_skill_areas_of_supervisors_who_will_take_part_:\n    '#type': checkboxes\n    '#title': 'Please select the skill areas of supervisors who will take part in the program'\n    '#options':\n      'Cyber security': 'Cyber security'\n      'Machine learning': 'Machine learning'\n      'Data analytics': 'Data analytics'\n      'Software engineering': 'Software engineering'\n      Programming: Programming\n      'Web development': 'Web development'\n      'DevOps ': 'DevOps '\n      'Digital design': 'Digital design'\n      'Digital marketing': 'Digital marketing'\n      'Software testing': 'Software testing'\n      'App development': 'App development'\n      'User experience': 'User experience'\n      IOT: IOT\n      Networks: Networks\n      VR/AR: VR/AR\n  are_there_any_smes_or_larger_business_you_would_like_to_work_wit:\n    '#type': textarea\n    '#title': 'Are there any SMEs or larger business you would like to work with that have not been previously involved with SummerTech LIVE?'\n  how_many_projects_would_the_tertiary_institute_like_to_be_part_o:\n    '#type': textfield\n    '#title': 'How many projects would the tertiary institute like to be part of?'\nstudent_profile:\n  '#type': webform_wizard_page\n  '#title': 'Student profile'\n  about_the_student_profile:\n    '#type': textarea\n    '#title': 'About the student profile'\n    '#description': \"<span style=\\\"font-size:11pt\\\"><span style=\\\"line-height:normal\\\"><span style=\\\"font-family:Calibri,sans-serif\\\"><span style=\\\"color:black\\\">Students, under supervision are anticipated to bring innovative and creative thinking, some technical skills, to undertake some research and development and, be willing to communicate (effectively) with the business to develop a solution. </span></span></span></span><br />\\n<span style=\\\"font-size:11pt\\\"><span style=\\\"line-height:normal\\\"><span style=\\\"font-family:Calibri,sans-serif\\\"><span style=\\\"color:black\\\">The particular technical skills and the level of study of the students will be coordinated by the education partner in consultation with the business to meet the specific project requirements. </span></span></span></span><br />\\n<br />\\n<span style=\\\"font-size:11pt\\\"><span style=\\\"line-height:normal\\\"><span style=\\\"font-family:Calibri,sans-serif\\\"><span style=\\\"color:black\\\">Project teams can be made up of a mix of levels of students as this adds to the experience for students and access to skilled resources for the business. </span></span></span></span><br />\\n<span style=\\\"font-size:11pt\\\"><span style=\\\"line-height:normal\\\"><span style=\\\"font-family:Calibri,sans-serif\\\"><span style=\\\"color:black\\\">Mandatory criteria: students need to be currently enrolled in a course and be enrolled in 2019.</span></span></span></span>\"\n  please_include_number_of_students_likely_to_be_part_of_the_progr:\n    '#type': textfield\n    '#title': 'Please include number of students likely to be part of the program'\n  dip_cert_qualified_students:\n    '#type': textfield\n    '#title': 'Number of Dip/Cert students'\n  number_of_undergraduate:\n    '#type': textfield\n    '#title': 'Number of Undergraduate students'\n  number_of_postgraduate_students:\n    '#type': textfield\n    '#title': 'Number of Postgraduate students'\n  please_select_the_skill_areas_of_students_who_will_take_part_in_:\n    '#type': checkboxes\n    '#title': 'Please select the skill areas of students who will take part in the program'\n    '#options':\n      'Cyber security': 'Cyber security'\n      'Machine learning': 'Machine learning'\n      'Data analytics': 'Data analytics'\n      'Software engineering': 'Software engineering'\n      Programming: Programming\n      'Web development': 'Web development'\n      'DevOps ': 'DevOps '\n      'Digital design': 'Digital design'\n      'Digital marketing': 'Digital marketing'\n      'Software testing': 'Software testing'\n      'App development': 'App development'\n      'User experience': 'User experience'\n      IOT: IOT\n      Networks: Networks\n      VR/AR: VR/AR\n"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_title: both
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles:
+      - anonymous
+    users: {  }
+    permissions: {  }
+handlers: {  }

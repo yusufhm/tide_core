@@ -62,8 +62,10 @@ content:
     third_party_settings: {  }
 hidden:
   field_featured_image: true
+  field_location: true
   field_metatags: true
   field_news_intro_text: true
+  field_node_department: true
   field_node_primary_site: true
   field_node_site: true
   field_related_links: true
@@ -73,3 +75,5 @@ hidden:
   field_tags: true
   field_topic: true
   links: true
+  scheduled_archiving: true
+  scheduled_publishing: true

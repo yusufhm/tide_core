@@ -1,0 +1,8 @@
+uuid: 58f09b02-e354-452b-8ddb-e39cfecebd29
+langcode: en
+status: true
+dependencies: {  }
+id: site-footer-menu-datavic
+label: 'data.vic.gov.au - FOOTER menu'
+description: 'Automatically created site menu Footer menu - DataVic'
+locked: false

@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: site-main-menu-vicgovau-housing
-label: 'Main menu - vic.gov.au - Housing'
+label: 'vic.gov.au - Housing - MAIN MENU'
 description: 'Automatically created site menu Main menu - vic.gov.au - Housing'
 locked: false

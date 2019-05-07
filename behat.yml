@@ -1,8 +1,6 @@
 default:
   autoload: [ '%paths.base%/tests/behat/bootstrap' ]
   gherkin:
-    # Disable caching during development. It is enabled for profiles below.
-    cache: ~
     filters:
       # Allow skipping tests by tagging them with "@skipped"
       tags: "~@skipped"
@@ -11,6 +9,7 @@ default:
       paths:
       - '%paths.base%/tests/behat/features'
       - '%paths.base%/docroot/modules/custom/vicgovau_core/tests/behat/features'
+      - '%paths.base%/dpc-sdp/tide_data_driven_component/tests/behat/features'
       contexts:
       - FeatureContext
       - Drupal\DrupalExtension\Context\MinkContext

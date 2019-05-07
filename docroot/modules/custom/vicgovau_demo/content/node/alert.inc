@@ -40,9 +40,6 @@ function vicgovau_demo_create_node_alert() {
       'field_alert_type' => [
         ['target_id' => VicgovauDemoHelper::randomAlertType()],
       ],
-      ['field_call_to_action'] => [
-        [],
-      ],
     ];
 
     $node = Node::create($node_data);

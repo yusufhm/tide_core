@@ -1,0 +1,8 @@
+uuid: c0d30945-cd53-47c4-b56d-3795531063ad
+langcode: en
+status: true
+dependencies: {  }
+id: site-footer-menu-buyingforvicgov
+label: 'buyingfor.vic.gov.au - FOOTER menu'
+description: 'Automatically created site menu Footer menu - buyingfor.vic.gov.au'
+locked: false
