@@ -7,9 +7,12 @@
 
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\field\Entity\FieldConfig;
 use Drupal\tide_publication\TidePublicationFieldStorageDefinition;
 use Drupal\tide_publication\TidePublicationPageItemList;
 use Drupal\tide_publication\TidePublicationPageNavigationItemList;
+use Drupal\workflows\Entity\Workflow;
 
 /**
  * Implements hook_entity_bundle_field_info().
@@ -17,6 +20,7 @@ use Drupal\tide_publication\TidePublicationPageNavigationItemList;
 function tide_publication_entity_bundle_field_info(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
   $fields = [];
   if ($entity_type->id() === 'node') {
+    // Add the publication_pages computed field to Publication content type.
     if ($bundle === 'publication') {
       $fields['publication_pages'] = TidePublicationFieldStorageDefinition::create('entity_reference')
         ->setLabel(t('Publication pages'))
@@ -49,6 +53,8 @@ function tide_publication_entity_bundle_field_info(EntityTypeInterface $entity_t
         ->setDisplayConfigurable('form', FALSE)
         ->setDisplayConfigurable('view', FALSE);
     }
+    // Add the publication prev/next navigation computed fields to Publication
+    // Page content type.
     elseif ($bundle === 'publication_page') {
       $fields['publication_navigation_prev'] = TidePublicationFieldStorageDefinition::create('entity_reference')
         ->setLabel(t('Publication Navigation Prev'))
@@ -87,4 +93,57 @@ function tide_publication_entity_bundle_field_info(EntityTypeInterface $entity_t
   }
 
   return $fields;
+}
+
+/**
+ * Implements hook_entity_bundle_create().
+ */
+function tide_publication_entity_bundle_create($entity_type_id, $bundle) {
+  /** @var \Drupal\Core\Extension\ModuleHandlerInterface $moduleHandler */
+  $moduleHandler = \Drupal::service('module_handler');
+
+  if ($entity_type_id == 'node' && in_array($bundle, ['publication', 'publication_page'])) {
+    // Enable Editorial workflow if workflow module is enabled.
+    $moduleHandler = \Drupal::service('module_handler');
+    if ($moduleHandler->moduleExists('workflows')) {
+      $editorial_workflow = Workflow::load('editorial');
+      if ($editorial_workflow) {
+        $editorial_workflow->getTypePlugin()->addEntityTypeAndBundle('node', $bundle);
+        $editorial_workflow->save();
+      }
+    }
+  }
+
+  // Add the Featured News and Embedded Webform paragraphs to Publication Page
+  // components if exists.
+  if ($entity_type_id == 'paragraph') {
+    $field_config = FieldConfig::loadByName('node', 'publication_page', 'field_landing_page_component');
+    if ($field_config) {
+      $handler_settings = $field_config->getSetting('handler_settings');
+
+      $is_featured_news = ($bundle == 'featured_news' && $moduleHandler->moduleExists('tide_news'));
+      $is_embedded_webform = ($bundle == 'embedded_webform' && $moduleHandler->moduleExists('tide_webform'));
+      if ($is_featured_news || $is_embedded_webform) {
+        $handler_settings['target_bundles'][$bundle] = $bundle;
+        $field_config->setSetting('handler_settings', $handler_settings);
+        $field_config->save();
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function tide_publication_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $publication_forms = [
+    'node_publication_form',
+    'node_publication_edit_form',
+    'node_publication_page_form',
+    'node_publication_page_edit_form',
+  ];
+  if (in_array($form_id, $publication_forms)) {
+    // Change form layout.
+    $form['#attached']['library'][] = 'tide_landing_page/landing_page_form';
+  }
 }

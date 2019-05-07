@@ -128,6 +128,12 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  metatag_normalized:
+    fieldName: metatag_normalized
+    publicName: metatag_normalized
+    enhancer:
+      id: ''
+    disabled: false
   path:
     fieldName: path
     publicName: path
@@ -140,9 +146,39 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  body:
-    fieldName: body
-    publicName: body
+  field_landing_page_component:
+    fieldName: field_landing_page_component
+    publicName: field_landing_page_component
+    enhancer:
+      id: ''
+    disabled: false
+  field_landing_page_contact:
+    fieldName: field_landing_page_contact
+    publicName: field_landing_page_contact
+    enhancer:
+      id: ''
+    disabled: false
+  field_landing_page_intro_text:
+    fieldName: field_landing_page_intro_text
+    publicName: field_landing_page_intro_text
+    enhancer:
+      id: ''
+    disabled: false
+  field_landing_page_show_contact:
+    fieldName: field_landing_page_show_contact
+    publicName: field_landing_page_show_contact
+    enhancer:
+      id: ''
+    disabled: false
+  field_node_primary_site:
+    fieldName: field_node_primary_site
+    publicName: field_node_primary_site
+    enhancer:
+      id: ''
+    disabled: false
+  field_node_site:
+    fieldName: field_node_site
+    publicName: field_node_site
     enhancer:
       id: ''
     disabled: false
@@ -150,5 +186,71 @@ resourceFields:
     fieldName: field_publication
     publicName: field_publication
     enhancer:
+      id: entity_reference_site_enhancer
+    disabled: false
+  field_related_links:
+    fieldName: field_related_links
+    publicName: field_related_links
+    enhancer:
       id: ''
+    disabled: false
+  field_show_content_rating:
+    fieldName: field_show_content_rating
+    publicName: field_show_content_rating
+    enhancer:
+      id: ''
+    disabled: false
+  field_show_publication_nav:
+    fieldName: field_show_publication_nav
+    publicName: field_show_publication_nav
+    enhancer:
+      id: ''
+    disabled: false
+  field_show_related_content:
+    fieldName: field_show_related_content
+    publicName: field_show_related_content
+    enhancer:
+      id: ''
+    disabled: false
+  field_show_social_sharing:
+    fieldName: field_show_social_sharing
+    publicName: field_show_social_sharing
+    enhancer:
+      id: ''
+    disabled: false
+  field_show_table_of_content:
+    fieldName: field_show_table_of_content
+    publicName: field_show_table_of_content
+    enhancer:
+      id: ''
+    disabled: false
+  scheduled_archiving:
+    disabled: true
+    fieldName: scheduled_archiving
+    publicName: scheduled_archiving
+    enhancer:
+      id: ''
+  scheduled_publishing:
+    disabled: true
+    fieldName: scheduled_publishing
+    publicName: scheduled_publishing
+    enhancer:
+      id: ''
+  field_landing_page_summary:
+    fieldName: field_landing_page_summary
+    publicName: field_landing_page_summary
+    enhancer:
+      id: ''
+    disabled: false
+  publication_navigation_prev:
+    fieldName: publication_navigation_prev
+    publicName: publication_navigation_prev
+    enhancer:
+      id: entity_reference_site_enhancer
+    disabled: false
+  publication_navigation_next:
+    fieldName: publication_navigation_next
+    publicName: publication_navigation_next
+    enhancer:
+      id: entity_reference_site_enhancer
     disabled: false

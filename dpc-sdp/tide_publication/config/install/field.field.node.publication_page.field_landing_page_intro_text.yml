@@ -1,22 +1,18 @@
-uuid: 012f2b01-b7ba-41a1-8193-cbb1f0464c2b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
+    - field.storage.node.field_landing_page_intro_text
     - node.type.publication_page
-  module:
-    - text
-id: node.publication_page.body
-field_name: body
+id: node.publication_page.field_landing_page_intro_text
+field_name: field_landing_page_intro_text
 entity_type: node
 bundle: publication_page
-label: Body
+label: 'Introduction Text'
 description: ''
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings:
-  display_summary: true
-field_type: text_with_summary
+settings: {  }
+field_type: string_long
