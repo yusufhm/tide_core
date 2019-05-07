@@ -418,7 +418,7 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_node_on_going
-  field_node_primary_site:
+  field_node_primary_csite:
     label: 'Primary Site » Taxonomy term » Term ID'
     datasource_id: 'entity:node'
     property_path: 'field_node_primary_site:entity:tid'
