@@ -1,0 +1,8 @@
+uuid: 97a40a64-aa48-469c-825f-895cafdeaaa2
+langcode: en
+status: true
+dependencies: {  }
+id: site-main-menu-digital-standards
+label: 'vic.gov.au - Digital standards - MAIN MENU'
+description: 'Automatically created site menu Main menu - Digital standards'
+locked: false

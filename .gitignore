@@ -32,3 +32,5 @@ node_modules
 
 # Compiled assets.
 docroot/themes/**/build
+
+.idea

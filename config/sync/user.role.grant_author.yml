@@ -1,3 +1,4 @@
+uuid: a51fc76a-b19e-4117-9906-63ba6361e545
 langcode: en
 status: true
 dependencies:
@@ -5,7 +6,7 @@ dependencies:
     module:
       - tide_grant
 id: grant_author
-label: Grant Author
+label: 'Grant Author'
 weight: 99
 is_admin: false
 permissions:

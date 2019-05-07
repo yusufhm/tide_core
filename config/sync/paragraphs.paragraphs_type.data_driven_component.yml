@@ -1,0 +1,9 @@
+uuid: 2208d985-448b-4994-b8ea-ab1b9263154c
+langcode: en
+status: true
+dependencies: {  }
+id: data_driven_component
+label: 'Data Driven Component'
+icon_uuid: null
+description: 'Data Drive Components including maps and graph based components driven by external data.'
+behavior_plugins: {  }

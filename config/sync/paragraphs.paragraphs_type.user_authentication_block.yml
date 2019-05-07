@@ -1,0 +1,11 @@
+uuid: 10e9ed18-b5f0-417e-972a-954d58e1462f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: wpgwIKZzqXH77foVAfN5WOBZYpT2ujf-eB-c1VOIqZI
+id: user_authentication_block
+label: 'User Authentication Block'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

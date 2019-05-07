@@ -49,7 +49,9 @@ function vicgovau_demo_create_media_document() {
               'target_id' => $document_file->id(),
             ],
           ],
-          'field_media_license' => [['value' => 'cc4']],
+          'field_license_type' => [
+            ['target_id' => VicgovauDemoHelper::randomMediaLicense()],
+          ],
           'field_media_restricted' => [['value' => VicgovauDemoHelper::randomBool()]],
           'field_media_site' => VicgovauDemoHelper::getFieldValueForSiteSections($site_section),
         ]);

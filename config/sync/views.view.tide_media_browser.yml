@@ -4,17 +4,17 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_media_department
-    - field.storage.media.field_media_license
     - image.style.thumbnail
     - media.type.document
     - media.type.embedded_video
     - media.type.image
+    - taxonomy.vocabulary.license_type
   module:
     - better_exposed_filters
     - entity_browser
-    - image
     - media
-    - options
+    - svg_image
+    - taxonomy
     - user
 _core:
   default_config_hash: tOecwAUbP8NMJNhxgFAkCphTgaBoCOrnGkeoFqrRZVw
@@ -123,7 +123,6 @@ display:
             name: name
             bundle: bundle
             field_media_department: field_media_department
-            field_media_license: field_media_license
             status: status
           info:
             entity_browser_select:
@@ -153,13 +152,6 @@ display:
               empty_column: false
               responsive: ''
             field_media_department:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_media_license:
               sortable: true
               default_sort_order: asc
               align: ''
@@ -492,68 +484,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_media_license:
-          id: field_media_license
-          table: media__field_media_license
-          field: field_media_license
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: License
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         status:
           id: status
           table: media_field_data
@@ -666,6 +596,55 @@ display:
           entity_type: media
           entity_field: name
           plugin_id: string
+        field_license_type_target_id_1:
+          id: field_license_type_target_id_1
+          table: media__field_license_type
+          field: field_license_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_license_type_target_id_1_op
+            label: 'License Type'
+            description: ''
+            use_operator: false
+            operator: field_license_type_target_id_1_op
+            identifier: field_license_type_target_id_1
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              approver: '0'
+              site_admin: '0'
+              editor: '0'
+              previewer: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+          type: select
+          limit: true
+          vid: license_type
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
         bundle:
           id: bundle
           table: media_field_data
@@ -710,49 +689,6 @@ display:
           entity_type: media
           entity_field: bundle
           plugin_id: bundle
-        field_media_license_value:
-          id: field_media_license_value
-          table: media__field_media_license
-          field: field_media_license_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_media_license_value_op
-            label: License
-            description: ''
-            use_operator: false
-            operator: field_media_license_value_op
-            identifier: license
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              approver: '0'
-              editor: '0'
-              previewer: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          plugin_id: list_field
         status:
           id: status
           table: media_field_data
@@ -828,10 +764,10 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - user.permissions
       tags:
         - 'config:field.storage.media.field_media_department'
-        - 'config:field.storage.media.field_media_license'
   document_browser:
     display_plugin: entity_browser
     id: document_browser
@@ -885,10 +821,10 @@ display:
           entity_type: media
           entity_field: name
           plugin_id: string
-        field_media_license_value:
-          id: field_media_license_value
-          table: media__field_media_license
-          field: field_media_license_value
+        field_license_type_target_id:
+          id: field_license_type_target_id
+          table: media__field_license_type
+          field: field_license_type_target_id
           relationship: none
           group_type: group
           admin_label: ''
@@ -897,12 +833,12 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: field_media_license_value_op
-            label: License
+            operator_id: field_license_type_target_id_op
+            label: 'License Type'
             description: ''
             use_operator: false
-            operator: field_media_license_value_op
-            identifier: license
+            operator: field_license_type_target_id_op
+            identifier: field_license_type_target_id
             required: false
             remember: false
             multiple: false
@@ -911,6 +847,7 @@ display:
               anonymous: '0'
               administrator: '0'
               approver: '0'
+              site_admin: '0'
               editor: '0'
               previewer: '0'
             reduce: false
@@ -926,8 +863,13 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          plugin_id: list_field
+          reduce_duplicates: true
+          type: select
+          limit: true
+          vid: license_type
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
         status:
           id: status
           table: media_field_data
@@ -1264,68 +1206,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_media_license:
-          id: field_media_license
-          table: media__field_media_license
-          field: field_media_license
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: License
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         status:
           id: status
           table: media_field_data
@@ -1400,10 +1280,10 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - user.permissions
       tags:
         - 'config:field.storage.media.field_media_department'
-        - 'config:field.storage.media.field_media_license'
   embedded_video_browser:
     display_plugin: entity_browser
     id: embedded_video_browser
@@ -1457,10 +1337,10 @@ display:
           entity_type: media
           entity_field: name
           plugin_id: string
-        field_media_license_value:
-          id: field_media_license_value
-          table: media__field_media_license
-          field: field_media_license_value
+        field_license_type_target_id:
+          id: field_license_type_target_id
+          table: media__field_license_type
+          field: field_license_type_target_id
           relationship: none
           group_type: group
           admin_label: ''
@@ -1469,12 +1349,12 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: field_media_license_value_op
-            label: License
+            operator_id: field_license_type_target_id_op
+            label: 'License Type'
             description: ''
             use_operator: false
-            operator: field_media_license_value_op
-            identifier: license
+            operator: field_license_type_target_id_op
+            identifier: field_license_type_target_id
             required: false
             remember: false
             multiple: false
@@ -1483,8 +1363,11 @@ display:
               anonymous: '0'
               administrator: '0'
               approver: '0'
+              site_admin: '0'
               editor: '0'
               previewer: '0'
+              event_author: '0'
+              grant_author: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1498,8 +1381,13 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          plugin_id: list_field
+          reduce_duplicates: true
+          type: select
+          limit: true
+          vid: license_type
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
         status:
           id: status
           table: media_field_data
@@ -1836,68 +1724,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_media_license:
-          id: field_media_license
-          table: media__field_media_license
-          field: field_media_license
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: License
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         status:
           id: status
           table: media_field_data
@@ -1972,10 +1798,10 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - user.permissions
       tags:
         - 'config:field.storage.media.field_media_department'
-        - 'config:field.storage.media.field_media_license'
   image_browser:
     display_plugin: entity_browser
     id: image_browser
@@ -2029,10 +1855,10 @@ display:
           entity_type: media
           entity_field: name
           plugin_id: string
-        field_media_license_value:
-          id: field_media_license_value
-          table: media__field_media_license
-          field: field_media_license_value
+        field_license_type_target_id:
+          id: field_license_type_target_id
+          table: media__field_license_type
+          field: field_license_type_target_id
           relationship: none
           group_type: group
           admin_label: ''
@@ -2041,12 +1867,12 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: field_media_license_value_op
-            label: License
+            operator_id: field_license_type_target_id_op
+            label: 'License Type'
             description: ''
             use_operator: false
-            operator: field_media_license_value_op
-            identifier: license
+            operator: field_license_type_target_id_op
+            identifier: field_license_type_target_id
             required: false
             remember: false
             multiple: false
@@ -2055,6 +1881,7 @@ display:
               anonymous: '0'
               administrator: '0'
               approver: '0'
+              site_admin: '0'
               editor: '0'
               previewer: '0'
             reduce: false
@@ -2070,8 +1897,13 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          plugin_id: list_field
+          reduce_duplicates: true
+          type: select
+          limit: true
+          vid: license_type
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
         status:
           id: status
           table: media_field_data
@@ -2408,68 +2240,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_media_license:
-          id: field_media_license
-          table: media__field_media_license
-          field: field_media_license
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: License
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         status:
           id: status
           table: media_field_data
@@ -2544,10 +2314,10 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - user.permissions
       tags:
         - 'config:field.storage.media.field_media_department'
-        - 'config:field.storage.media.field_media_license'
   media_browser:
     display_plugin: entity_browser
     id: media_browser
@@ -2563,7 +2333,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - user.permissions
       tags:
         - 'config:field.storage.media.field_media_department'
-        - 'config:field.storage.media.field_media_license'

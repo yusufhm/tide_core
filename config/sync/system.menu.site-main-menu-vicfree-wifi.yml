@@ -1,0 +1,8 @@
+uuid: eb9428d1-e82f-40b6-b5d4-54d361fef6c3
+langcode: en
+status: true
+dependencies: {  }
+id: site-main-menu-vicfree-wifi
+label: 'vic.gov.au - VicFree WiFi - MAIN MENU'
+description: 'Automatically created site menu Main menu - VicFree WiFi'
+locked: false

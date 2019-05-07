@@ -246,6 +246,7 @@ content:
     type: entity_reference_label
     region: content
 hidden:
+  field_authenticated_content: true
   field_landing_page_summary: true
   field_node_primary_site: true
   field_node_site: true

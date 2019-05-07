@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: data_driven_component
+label: 'Data Driven Component'
+icon_uuid: null
+description: 'Data Drive Components including maps and graph based components driven by external data.'
+behavior_plugins: {  }

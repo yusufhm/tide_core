@@ -7,5 +7,5 @@ _core:
 name: Sites
 vid: sites
 description: 'Sites and sections'
-hierarchy: 0
+hierarchy: 1
 weight: 0

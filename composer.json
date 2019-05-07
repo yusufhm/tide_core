@@ -6,26 +6,31 @@
         "composer/installers": "^1.2.0",
         "cweagans/composer-patches": "^1.6.0",
         "dpc-sdp/bay": "^0.0.1",
-        "dpc-sdp/tide": "^1.0",
+        "dpc-sdp/tide": "1.1.0",
         "dpc-sdp/tide_alert": "^0.0.1",
+        "dpc-sdp/tide_data_driven_component": "^0.0.1",
         "dpc-sdp/tide_grant": "^0.0.1",
         "dpc-sdp/tide_profile": "^0.0.1",
+        "dpc-sdp/tide_authenticated_content": "^0.0.1",
         "drupal-composer/drupal-scaffold": "^2.3",
         "drupal/admin_toolbar": "^1.20",
         "drupal/clamav": "^1.1",
         "drupal/coffee": "^1.0@beta",
         "drupal/config_filter": "^1.2",
-        "drupal/core": "8.5.10 as 8.5.6",
         "drupal/default_content": "^1.0@alpha",
         "drupal/devel": "^1.2",
-        "drupal/jsonapi": "1.23 as 1.24",
-        "drupal/jsonapi_extras": "2.9 as 2.5",
         "drupal/lagoon_logs": "^1.0",
+        "drupal/openapi": "^1.0-beta2",
+        "drupal/openapi_ui": "^1.0-rc1",
+        "drupal/openapi_ui_redoc": "^1.0-rc2",
+        "drupal/permissions_by_term": "^2.6",
+        "drupal/profile": "^1.0@RC",
         "drupal/migrate_cron": "^1.1",
         "drupal/migrate_tools": "^4.1",
         "drupal/range": "^1.1",
         "drupal/shield": "^1.2",
         "drupal/stage_file_proxy": "^1.0@alpha",
+        "drupal/username_enumeration_prevention": "^1.0@beta",
         "drush/drush": "^8.1",
         "library/dropzone": "^4.3",
         "webflo/drupal-finder": "^1.1",
@@ -108,10 +113,18 @@
             "no-api": true,
             "url": "https://github.com/dpc-sdp/tide_core.git"
         },
+        "dpc-sdp/tide_data_driven_component": {
+          "type": "path",
+          "url": "dpc-sdp/tide_data_driven_component"
+        },
         "dpc-sdp/tide_event": {
             "type": "vcs",
             "no-api": true,
             "url": "https://github.com/dpc-sdp/tide_event.git"
+        },
+        "dpc-sdp/tide_authenticated_content": {
+            "type": "path",
+            "url": "dpc-sdp/tide_authenticated_content"
         },
         "dpc-sdp/tide_landing_page": {
             "type": "vcs",
@@ -228,7 +241,6 @@
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
         "post-install-cmd": [
-            "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
         "post-update-cmd": [
@@ -291,34 +303,17 @@
             },
             "drupal/core": {
                 "Debug EntityChangedConstraintValidator": "./patches/core/drupal-core-debug-entity-changed-constraint-validator.patch",
-                "Apply SA-CORE-2019-003 to all independent projects - https://digital-engagement.atlassian.net/browse/SDPA-2015": "./patches/core/drupal_8.x-5.10-SA-CORE-2019-003.patch"
+                "Temporary files whose files are missing on the disk result in never-ending error log messages - https://www.drupal.org/project/drupal/issues/2802803": "https://www.drupal.org/files/issues/2018-06-27/missing-temp-files-stuck-in-table-2802803-33.patch"
             },
             "drupal/default_content": {
                 "Do not reimport existing entities - https://www.drupal.org/project/default_content/issues/2698425": "https://www.drupal.org/files/issues/2018-06-05/default_content-dont-reimport-existing-entities-2698425-102.patch"
             },
-            "drupal/jsonapi": {
-                "Apply SA-CORE-2019-003 to all independent projects - https://digital-engagement.atlassian.net/browse/SDPA-2015": "./patches/jsonapi/jsonapi_8.x-1.23-SA-CORE-2019-003.patch"
-            },
             "drupal/purge_queuer_url": {
                 "Fixing the SQL Sanitize Drush command - https://www.drupal.org/project/purge_queuer_url/issues/2950814": "https://www.drupal.org/files/issues/2950814-drush-sanitize-service-check.patch"
             },
-            "dpc-sdp/tide_core": {
-                "[SDPA-1630] Webform submission event": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_core/pull/58.patch",
-                "[SDPA-1783] Removed summary field from related links and whats next": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_core/pull/59.patch",
-                "[SDPA-2026] Add Drush 8 command to run scheduled updates cron": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_core/pull/61.patch"
-            },
-            "dpc-sdp/tide_event": {
-                "[SDPA-1630] Webform submission event": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/25.patch",
-                "[SDPA-1903] Update webform event submit action to be used by JSON API": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/28.patch",
-                "[SDPA-1891] Enable Category and Requirements to be processed with multi-values" : "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/27.patch",
-                "[SDPA-1882] Add conditional disabled status for price fields": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/29.patch",
-                "[SDPA-1933] Event webform submit - Map event submission to body field": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_event/pull/33.patch"
-            },
-            "dpc-sdp/tide_media": {
-                "[SDPA-1759] Enable ics files ": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_media/pull/18.patch"
-            },
-            "dpc-sdp/tide_api": {
-                "SDPA-2031-adding-wildcard-redirects": "https://github.com/dpc-sdp/tide_api/compare/1.0.0...master.patch"
+            "drupal/password_policy": {
+                "Allow users to bypass validation when editing another user, and correct permission is set - https://www.drupal.org/project/password_policy/issues/2786315": "https://www.drupal.org/files/issues/2019-02-15/edit_other_users-2786315-38.patch",
+                "Add password validation to the user entity as a constraint - https://www.drupal.org/project/password_policy/issues/2941526#comment-13004347": "https://www.drupal.org/files/issues/2019-03-12/password_policy-move-password-validation-to-user-entity-2941526-6-D8.patch"
             }
         }
     }
