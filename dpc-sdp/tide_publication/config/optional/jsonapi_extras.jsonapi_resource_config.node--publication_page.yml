@@ -78,13 +78,17 @@ resourceFields:
     fieldName: created
     publicName: created
     enhancer:
-      id: ''
+      id: date_time
+      settings:
+        dateTimeFormat: 'Y-m-d\TH:i:sP'
     disabled: false
   changed:
     fieldName: changed
     publicName: changed
     enhancer:
-      id: ''
+      id: date_time
+      settings:
+        dateTimeFormat: 'Y-m-d\TH:i:sP'
     disabled: false
   promote:
     fieldName: promote

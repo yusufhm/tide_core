@@ -78,13 +78,17 @@ resourceFields:
     fieldName: created
     publicName: created
     enhancer:
-      id: ''
+      id: date_time
+      settings:
+        dateTimeFormat: 'Y-m-d\TH:i:sP'
     disabled: false
   changed:
     fieldName: changed
     publicName: changed
     enhancer:
-      id: ''
+      id: date_time
+      settings:
+        dateTimeFormat: 'Y-m-d\TH:i:sP'
     disabled: false
   promote:
     fieldName: promote
@@ -194,18 +198,6 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  field_node_primary_site:
-    fieldName: field_node_primary_site
-    publicName: field_node_primary_site
-    enhancer:
-      id: ''
-    disabled: false
-  field_node_site:
-    fieldName: field_node_site
-    publicName: field_node_site
-    enhancer:
-      id: ''
-    disabled: false
   field_publication_authors:
     fieldName: field_publication_authors
     publicName: field_publication_authors
@@ -216,7 +208,9 @@ resourceFields:
     fieldName: field_publication_date
     publicName: field_publication_date
     enhancer:
-      id: ''
+      id: date_time_from_string
+      settings:
+        dateTimeFormat: 'Y-m-d\TH:i:sP'
     disabled: false
   field_related_links:
     fieldName: field_related_links
