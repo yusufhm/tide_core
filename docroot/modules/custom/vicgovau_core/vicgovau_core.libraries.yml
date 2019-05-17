@@ -1,0 +1,5 @@
+highlight_drop_down:
+  version: 1.x
+  css:
+    layout:
+      css/highlight_drop_down.css: {}
