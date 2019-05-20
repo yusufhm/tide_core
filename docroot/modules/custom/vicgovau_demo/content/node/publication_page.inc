@@ -22,10 +22,12 @@ function vicgovau_demo_create_node_publication_page_weight() {
  */
 function vicgovau_demo_create_node_publication_page() {
   $nodes = [];
-  $repository = VicgovauDemoRepository::getInstance();
+  $created_pages = [];
 
   for ($i = 1; $i <= VicgovauDemoRepository::MAX_DEMO_PER_TYPE * 3; $i++) {
     $uid = VicgovauDemoHelper::randomUid();
+
+    $level = ($i <= VicgovauDemoRepository::MAX_DEMO_PER_TYPE) ? 1 : 2;
 
     $repository = VicgovauDemoRepository::getInstance();
     $publications = $repository->getDemoEntities('node', 'publication');
@@ -50,7 +52,7 @@ function vicgovau_demo_create_node_publication_page() {
       ],
       'field_publication' => [
         [
-          'target_id' => $publication->id(),
+          'target_id' => ($level == 1) ? $publication->id() : $created_pages[1][array_rand($created_pages[1])],
           'weight' => $i - 1,
         ],
       ],
@@ -157,6 +159,7 @@ function vicgovau_demo_create_node_publication_page() {
     try {
       $node->save();
       $nodes[] = $node;
+      $created_pages[$level][] = $node->id();
     }
     catch (Exception $exception) {
 

@@ -9,91 +9,12 @@ use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\field\Entity\FieldConfig;
+use Drupal\tide_publication\Navigation\Children;
+use Drupal\tide_publication\Navigation\Next;
+use Drupal\tide_publication\Navigation\Previous;
+use Drupal\tide_publication\Navigation\Root;
 use Drupal\tide_publication\TidePublicationFieldStorageDefinition;
-use Drupal\tide_publication\TidePublicationPageItemList;
-use Drupal\tide_publication\TidePublicationPageNavigationItemList;
 use Drupal\workflows\Entity\Workflow;
-
-/**
- * Implements hook_entity_bundle_field_info().
- */
-function tide_publication_entity_bundle_field_info(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
-  $fields = [];
-  if ($entity_type->id() === 'node') {
-    // Add the publication_pages computed field to Publication content type.
-    if ($bundle === 'publication') {
-      $fields['publication_pages'] = TidePublicationFieldStorageDefinition::create('entity_reference')
-        ->setLabel(t('Publication pages'))
-        ->setComputed(TRUE)
-        ->setClass(TidePublicationPageItemList::class)
-        ->setReadOnly(FALSE)
-        ->setInternal(FALSE)
-        ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
-        ->setSettings([
-          'handler' => 'default:node',
-          'handler_settings' => [
-            'target_bundles' => [
-              'publication_page' => 'publication_page',
-            ],
-          ],
-        ])
-        ->setDisplayOptions('view', [
-          'label' => 'hidden',
-          'region' => 'hidden',
-          'weight' => 100,
-        ])
-        ->setDisplayOptions('form', [
-          'label' => 'hidden',
-          'region' => 'hidden',
-          'weight' => 100,
-        ])
-        ->setTargetEntityTypeId($entity_type->id())
-        ->setTargetBundle('publication')
-        ->setName('publication_pages')
-        ->setDisplayConfigurable('form', FALSE)
-        ->setDisplayConfigurable('view', FALSE);
-    }
-    // Add the publication prev/next navigation computed fields to Publication
-    // Page content type.
-    elseif ($bundle === 'publication_page') {
-      $fields['publication_navigation_prev'] = TidePublicationFieldStorageDefinition::create('entity_reference')
-        ->setLabel(t('Publication Navigation Prev'))
-        ->setComputed(TRUE)
-        ->setClass(TidePublicationPageNavigationItemList::class)
-        ->setReadOnly(FALSE)
-        ->setInternal(FALSE)
-        ->setCardinality(1)
-        ->setSettings([
-          'handler' => 'default:node',
-          'handler_settings' => [
-            'target_bundles' => [
-              'publication_page' => 'publication_page',
-            ],
-          ],
-        ])
-        ->setDisplayOptions('view', [
-          'label' => 'hidden',
-          'region' => 'hidden',
-          'weight' => 100,
-        ])
-        ->setDisplayOptions('form', [
-          'label' => 'hidden',
-          'region' => 'hidden',
-          'weight' => 100,
-        ])
-        ->setTargetEntityTypeId($entity_type->id())
-        ->setTargetBundle('publication_page')
-        ->setName('publication_navigation_prev')
-        ->setDisplayConfigurable('form', FALSE)
-        ->setDisplayConfigurable('view', FALSE);
-
-      $fields['publication_navigation_next'] = clone $fields['publication_navigation_prev'];
-      $fields['publication_navigation_next']->setLabel('Publication Navigation Next')->setName('publication_navigation_next');
-    }
-  }
-
-  return $fields;
-}
 
 /**
  * Implements hook_entity_bundle_create().
@@ -146,4 +67,108 @@ function tide_publication_form_node_form_alter(&$form, FormStateInterface $form_
     // Change form layout.
     $form['#attached']['library'][] = 'tide_landing_page/landing_page_form';
   }
+}
+
+/**
+ * Implements hook_entity_bundle_field_info().
+ */
+function tide_publication_entity_bundle_field_info(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+  $fields = [];
+  if ($entity_type->id() === 'node') {
+    $default_settings = [
+      'handler' => 'default:node',
+      'handler_settings' => [
+        'target_bundles' => [
+          'publication' => 'publication',
+          'publication_page' => 'publication_page',
+        ],
+      ],
+    ];
+    $default_display = [
+      'label' => 'hidden',
+      'region' => 'hidden',
+      'weight' => 100,
+    ];
+
+    // Add the publication children and next navigation computed fields to
+    // Publication content type.
+    if ($bundle === 'publication') {
+      $fields['publication_children'] = TidePublicationFieldStorageDefinition::create('entity_reference')
+        ->setLabel(t('Publication Children'))
+        ->setComputed(TRUE)
+        ->setClass(Children::class)
+        ->setReadOnly(FALSE)
+        ->setInternal(FALSE)
+        ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+        ->setSettings($default_settings)
+        ->setDisplayOptions('view', $default_display)
+        ->setDisplayOptions('form', $default_display)
+        ->setTargetEntityTypeId($entity_type->id())
+        ->setTargetBundle('publication')
+        ->setName('publication_pages')
+        ->setDisplayConfigurable('form', FALSE)
+        ->setDisplayConfigurable('view', FALSE);
+
+      $fields['publication_navigation_next'] = clone $fields['publication_children'];
+      $fields['publication_navigation_next']->setClass(Next::class)
+        ->setCardinality(1)
+        ->setLabel('Publication Navigation Next')
+        ->setName('publication_navigation_next');
+    }
+    // Add the publication root/prev/next navigation computed fields to
+    // Publication Page content type.
+    elseif ($bundle === 'publication_page') {
+      $fields['publication_navigation_root'] = TidePublicationFieldStorageDefinition::create('entity_reference')
+        ->setLabel(t('Publication Navigation Root'))
+        ->setComputed(TRUE)
+        ->setClass(Root::class)
+        ->setReadOnly(FALSE)
+        ->setInternal(FALSE)
+        ->setCardinality(1)
+        ->setSettings($default_settings)
+        ->setDisplayOptions('view', $default_display)
+        ->setDisplayOptions('form', $default_display)
+        ->setTargetEntityTypeId($entity_type->id())
+        ->setTargetBundle('publication_page')
+        ->setName('publication_navigation_root')
+        ->setDisplayConfigurable('form', FALSE)
+        ->setDisplayConfigurable('view', FALSE);
+
+      $fields['publication_navigation_prev'] = clone $fields['publication_navigation_root'];
+      $fields['publication_navigation_prev']->setClass(Previous::class)
+        ->setLabel('Publication Navigation Prev')
+        ->setName('publication_navigation_prev');
+
+      $fields['publication_navigation_next'] = clone $fields['publication_navigation_root'];
+      $fields['publication_navigation_next']->setClass(Next::class)
+        ->setLabel('Publication Navigation Next')
+        ->setName('publication_navigation_next');
+    }
+  }
+
+  return $fields;
+}
+
+/**
+ * Implements hook_tide_entity_reference_site_enhancer_undo_transform_alter().
+ *
+ * @see \Drupal\tide_site\Plugin\jsonapi\FieldEnhancer\EntityReferenceSiteEnhancer::doUndoTransform()
+ */
+function tide_publication_tide_entity_reference_site_enhancer_undo_transform_alter(&$data, &$context, &$entity) {
+  /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
+  if ($entity && in_array($entity->bundle(), ['publication', 'publication_page'])) {
+    $summary = $entity->get('field_landing_page_summary')->getString();
+    if ($summary) {
+      $data['meta']['field_landing_page_summary'] = $summary;
+    }
+  }
+}
+
+/**
+ * Implements hook_tide_path_enhancer_transform_alter().
+ *
+ * @see \Drupal\tide_site\Plugin\jsonapi\FieldEnhancer\EntityReferenceSiteEnhancer:::doTransform()
+ */
+function tide_publication_tide_entity_reference_site_enhancer_transform_alter(&$value, &$context) {
+  unset($value['meta']['field_landing_page_summary']);
 }

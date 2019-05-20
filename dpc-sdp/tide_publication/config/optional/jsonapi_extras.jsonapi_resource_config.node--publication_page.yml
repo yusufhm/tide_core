@@ -246,6 +246,12 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  publication_navigation_root:
+    fieldName: publication_navigation_root
+    publicName: publication_navigation_root
+    enhancer:
+      id: entity_reference_site_enhancer
+    disabled: false
   publication_navigation_prev:
     fieldName: publication_navigation_prev
     publicName: publication_navigation_prev

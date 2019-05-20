@@ -22,7 +22,7 @@ function vicgovau_demo_create_node_publication_weight() {
  */
 function vicgovau_demo_create_node_publication() {
   $nodes = [];
-  $total = VicgovauDemoRepository::MAX_DEMO_PER_TYPE;
+  $total = 1;
   $repository = VicgovauDemoRepository::getInstance();
 
   for ($i = 1; $i <= $total; $i++) {

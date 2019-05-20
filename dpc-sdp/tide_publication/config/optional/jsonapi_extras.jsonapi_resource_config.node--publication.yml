@@ -266,9 +266,15 @@ resourceFields:
     publicName: scheduled_publishing
     enhancer:
       id: ''
-  publication_pages:
-    fieldName: publication_pages
-    publicName: publication_pages
+  publication_children:
+    fieldName: publication_children
+    publicName: publication_children
+    enhancer:
+      id: entity_reference_site_enhancer
+    disabled: false
+  publication_navigation_next:
+    fieldName: publication_navigation_next
+    publicName: publication_navigation_next
     enhancer:
       id: entity_reference_site_enhancer
     disabled: false

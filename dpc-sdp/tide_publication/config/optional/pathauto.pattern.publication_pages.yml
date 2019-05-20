@@ -6,7 +6,7 @@ dependencies:
 id: publication_pages
 label: 'Publication Pages'
 type: 'canonical_entities:node'
-pattern: '[node:field_publication:entity:title]/[node:title]'
+pattern: '[node:field_publication:entity:url:path-no-site-prefix]/[node:title]'
 selection_criteria:
   96994a80-9dfb-4bf3-b9cf-7fc3e3503c56:
     id: node_type

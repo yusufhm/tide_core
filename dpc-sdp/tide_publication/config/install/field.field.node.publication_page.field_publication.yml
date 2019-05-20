@@ -11,7 +11,7 @@ id: node.publication_page.field_publication
 field_name: field_publication
 entity_type: node
 bundle: publication_page
-label: Publication
+label: Publication / Parent page
 description: ''
 required: true
 translatable: false
@@ -22,11 +22,12 @@ settings:
   handler_settings:
     target_bundles:
       publication: publication
+      publication_page: publication_page
     sort:
       field: _none
     auto_create: false
     auto_create_bundle: ''
   weight_min: -1000
   weight_max: 1000
-  weight_label: 'Page number'
+  weight_label: 'Weight'
 field_type: entity_reference_hierarchy

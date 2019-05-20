@@ -1,0 +1,25 @@
+services:
+  # Pretends to be a JSON:API Controller.
+  jsonapi.entity_resource.publication:
+    class: \Drupal\tide_publication\Controller\PublicationResource
+    arguments:
+      - '@entity_type.manager'
+      - '@entity_field.manager'
+      - '@jsonapi.link_manager'
+      - '@jsonapi.resource_type.repository'
+      - '@renderer'
+      - '@entity.repository'
+      - '@jsonapi.include_resolver'
+      - '@jsonapi.entity_access_checker'
+      - '@jsonapi.field_resolver'
+      - '@jsonapi.serializer'
+    calls:
+      - [setContainer, ['@service_container']]
+      -
+        - setDependencies
+        -
+          - '@entity_hierarchy.nested_set_storage_factory'
+          - '@entity_hierarchy.nested_set_node_factory'
+          - '@entity_hierarchy.entity_tree_node_mapper'
+          - '@module_handler'
+          - '@cache.data'
