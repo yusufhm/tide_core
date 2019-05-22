@@ -17,6 +17,8 @@ if [[ -z "$PERSIST_DB" ]]; then
     echo "==> Enabling site-specific modules"
     drush php-eval "\$prefix = getenv('DRUPAL_MODULE_PREFIX'); module_load_install(\$prefix . '_core'); \$func = \$prefix . '_core_enable_modules'; \$func();"
 fi
+echo "==> Rebuilding node access permissions"
+drush php-eval "node_access_rebuild();"
 drush cr -y
 
 if [ "$DRUPAL_REFRESH_SEARCHAPI" ]; then
