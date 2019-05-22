@@ -86,6 +86,10 @@ class Routes implements ContainerInjectionInterface {
 
     if ($this->moduleHandler->moduleExists('jsonapi')) {
       $resource_type = $this->resourceTypeRepository->get('node', 'publication');
+      if (!$resource_type) {
+        return $routes;
+      }
+
       $path = $resource_type->getPath();
       $entity_type_id = $resource_type->getEntityTypeId();
 
@@ -103,8 +107,7 @@ class Routes implements ContainerInjectionInterface {
 
       $routes->add(JsonapiRoutes::getRouteName($resource_type, 'individual.hierarchy'), $hierarchy_route);
 
-      // Require the JSON:API media type header on every route, except on file
-      // upload routes, where we require `application/octet-stream`.
+      // Require the JSON:API media type header on every route.
       $routes->addRequirements(['_content_type_format' => 'api_json']);
       // Enable all available authentication providers.
       $routes->addOptions(['_auth' => $this->providerIds]);

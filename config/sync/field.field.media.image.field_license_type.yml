@@ -1,4 +1,4 @@
-uuid: 2e5334c4-5723-421f-981c-d8646351490b
+uuid: 0a817943-463d-42e9-a6ee-74d9c359f9e3
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ entity_type: media
 bundle: image
 label: 'License Type'
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

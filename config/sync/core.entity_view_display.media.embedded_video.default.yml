@@ -17,6 +17,8 @@ dependencies:
   module:
     - user
     - video_embed_field
+_core:
+  default_config_hash: w_SaCu5L2d-ikzmDYQVD3kcJUZ0eeflWn3ltQYC-4oM
 id: media.embedded_video.default
 targetEntityType: media
 bundle: embedded_video
@@ -123,7 +125,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_media_license: true
-  field_media_site: true
   name: true
   thumbnail: true

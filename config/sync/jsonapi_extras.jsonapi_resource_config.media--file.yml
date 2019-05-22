@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - media.type.file
+_core:
+  default_config_hash: J7HMtpWc49Z7u9Vkm-U_aKEAGUcsrCSft_7lp3_RRX4
 id: media--file
 disabled: false
 path: media/file

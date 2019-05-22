@@ -1,4 +1,4 @@
-uuid: ea61e79d-1fb0-4e18-a805-671db2744111
+uuid: 64557e7e-c26b-45b5-9042-1e15654d3276
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ entity_type: media
 bundle: embedded_video
 label: 'License Type'
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

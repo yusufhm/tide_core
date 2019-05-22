@@ -100,7 +100,7 @@ class PublicationResource extends EntityResource {
    */
   public function getHierarchy(EntityInterface $entity, Request $request) {
     if (!($entity instanceof ContentEntityInterface)) {
-      throw new \Exception('The requested entity does not support hierarchy.');
+      throw new \Exception('The requested entity is not supported.');
     }
 
     $resource_object = $this->entityAccessChecker->getAccessCheckedResourceObject($entity);
@@ -114,7 +114,7 @@ class PublicationResource extends EntityResource {
     }
 
     if (!$this->nestedSetStorageFactory || !$this->nestedSetNodeKeyFactory || !$this->entityTreeNodeMapper) {
-      throw new \Exception('The method setEntityHierarchyServices() must be called when instantiating a PublicationResource object.');
+      throw new \Exception('The method setDependencies() must be called when instantiating a PublicationResource object.');
     }
 
     $resource_type = $this->resourceTypeRepository->get($entity->getEntityTypeId(), $entity->bundle());

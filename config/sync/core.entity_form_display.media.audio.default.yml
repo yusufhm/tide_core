@@ -37,6 +37,8 @@ third_party_settings:
         required_fields: true
       label: Metadata
       region: content
+_core:
+  default_config_hash: bh5xeWywl6EsB_riUPf-VwKoAxptpO3ouYTCU7ZyKMo
 id: media.audio.default
 targetEntityType: media
 bundle: audio
@@ -162,6 +164,4 @@ content:
       placeholder: ''
     region: content
     third_party_settings: {  }
-hidden:
-  field_media_license: true
-  field_media_site: true
+hidden: { }

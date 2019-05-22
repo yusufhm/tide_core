@@ -13,6 +13,8 @@ dependencies:
     - media.type.document
   module:
     - file
+_core:
+  default_config_hash: nUvxCTSeIV2lZ5VSVKanwTLG2xkrKesteCn76tIK4fA
 id: media.document.embedded
 targetEntityType: media
 bundle: document
@@ -31,9 +33,7 @@ hidden:
   field_license_type: true
   field_media_audience: true
   field_media_department: true
-  field_media_license: true
   field_media_restricted: true
-  field_media_site: true
   field_media_topic: true
   name: true
   thumbnail: true

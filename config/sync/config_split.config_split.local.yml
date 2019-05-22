@@ -12,7 +12,6 @@ module:
   dblog: 0
   field_tools: 0
   views_ui: 0
-  vicgovau_demo: 1000
 theme: {  }
 blacklist: {  }
 graylist:

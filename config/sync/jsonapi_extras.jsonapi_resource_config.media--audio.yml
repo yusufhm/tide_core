@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - media.type.audio
+_core:
+  default_config_hash: XaArrZT5Ll3qsufZGfJyVlRw31Xso04CpMpbKP2Rws4
 id: media--audio
 disabled: false
 path: media/audio
