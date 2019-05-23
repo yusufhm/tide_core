@@ -54,6 +54,40 @@ environments:
         schedule: "0 1,5,9,13,17,21 * * *"
         command: 'bash /app/scripts/drupal/backup-scheduled.sh /app/docroot vicgovau'
         service: cli
+    routes:
+      - nginx-php:
+        - "wwww.content.vic.gov.au":
+            tls-acme: 'true'
+            insecure: Allow
+            hsts: max-age=31536000
+        - "content.vic.gov.au":
+            tls-acme: 'true'
+            insecure: Allow
+            hsts: max-age=31536000
+    monitoring_urls:
+      - "www.content.vic.gov.au"
+  master:
+    routes:
+      - nginx-php:
+        - "www.staging.content.vic.gov.au":
+            tls-acme: 'true'
+            insecure: Allow
+            hsts: max-age=31536000
+        - "staging.content.vic.gov.au":
+            tls-acme: 'true'
+            insecure: Allow
+            hsts: max-age=31536000
+  develop:
+    routes:
+      - nginx-php:
+        - "www.develop.content.vic.gov.au":
+            tls-acme: 'true'
+            insecure: Allow
+            hsts: max-age=31536000
+        - "develop.content.vic.gov.au":
+            tls-acme: 'true'
+            insecure: Allow
+            hsts: max-age=31536000
   sandbox:
     cronjobs:
       - name: drush cron
