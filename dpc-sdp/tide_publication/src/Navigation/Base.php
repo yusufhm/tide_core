@@ -90,7 +90,7 @@ abstract class Base extends EntityReferenceFieldItemList {
    */
   protected function validateEntityType(array $allowed_bundles = ['publication', 'publication_page']) {
     $entity = $this->getEntity();
-    return ($entity->getEntityTypeId() == 'node') && in_array($entity->bundle(), $allowed_bundles);
+    return ($entity->getEntityTypeId() == 'node') && in_array($entity->bundle(), $allowed_bundles) && !$entity->isNew();
   }
 
   /**
@@ -104,17 +104,26 @@ abstract class Base extends EntityReferenceFieldItemList {
    */
   protected function findRootEntity(CacheableMetadata $cache) {
     $entity = $this->getEntity();
+    if ($entity->isNew()) {
+      return NULL;
+    }
     /** @var \PNX\NestedSet\NestedSetInterface $storage */
     $storage = $this->getStorage();
-    /** @var \PNX\NestedSet\Node $root_node */
-    $root_node = $storage->findRoot($this->nestedSetNodeKeyFactory->fromEntity($entity));
-    $root_entities = $this->entityTreeNodeMapper->loadAndAccessCheckEntitysForTreeNodes($entity->getEntityTypeId(), [$root_node], $cache);
-    if ($root_entities->contains($root_node)) {
-      /** @var \Drupal\Core\Entity\ContentEntityInterface $root_entity */
-      $root_entity = $root_entities->offsetGet($root_node);
-      if ($root_entity->isDefaultRevision()) {
-        $cache->addCacheableDependency($root_entity);
-        return $root_entity;
+    /** @var \PNX\NestedSet\NodeKey $entity_nodekey */
+    $entity_nodekey = $this->nestedSetNodeKeyFactory->fromEntity($entity);
+    if ($entity_nodekey) {
+      /** @var \PNX\NestedSet\Node $root_node */
+      $root_node = $storage->findRoot($entity_nodekey);
+      if ($root_node) {
+        $root_entities = $this->entityTreeNodeMapper->loadAndAccessCheckEntitysForTreeNodes($entity->getEntityTypeId(), [$root_node], $cache);
+        if ($root_entities->contains($root_node)) {
+          /** @var \Drupal\Core\Entity\ContentEntityInterface $root_entity */
+          $root_entity = $root_entities->offsetGet($root_node);
+          if ($root_entity->isDefaultRevision()) {
+            $cache->addCacheableDependency($root_entity);
+            return $root_entity;
+          }
+        }
       }
     }
 
