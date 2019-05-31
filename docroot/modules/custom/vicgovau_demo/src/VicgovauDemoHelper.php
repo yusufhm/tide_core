@@ -511,7 +511,7 @@ class VicgovauDemoHelper {
    */
   public static function randomDate($date_only = FALSE) {
     $random_timestamp = static::randomTimestamp();
-    return date($date_only? 'Y-m-d' : 'Y-m-d\TH:i:00', $random_timestamp);
+    return date($date_only ? 'Y-m-d' : 'Y-m-d\TH:i:00', $random_timestamp);
   }
 
   /**
