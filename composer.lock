@@ -1830,12 +1830,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "f6f0ace5e149804311ca10e4ee9f984a64dff349"
+                "reference": "5eb8f284559e5bf814abd9d3ab2b80a3d47df70c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/f6f0ace5e149804311ca10e4ee9f984a64dff349",
-                "reference": "f6f0ace5e149804311ca10e4ee9f984a64dff349",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/5eb8f284559e5bf814abd9d3ab2b80a3d47df70c",
+                "reference": "5eb8f284559e5bf814abd9d3ab2b80a3d47df70c",
                 "shasum": ""
             },
             "require": {
@@ -1939,7 +1939,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Core functionality for Tide Drupal 8 distribution",
-            "time": "2019-05-22T07:19:45+00:00"
+            "time": "2019-06-03T06:04:50+00:00"
         },
         {
             "name": "dpc-sdp/tide_data_driven_component",
@@ -2229,12 +2229,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_site.git",
-                "reference": "7ec69460309f0ea88cb435acd3b48c669d27d5e2"
+                "reference": "43bc55f3592f04d031465941b669994ddef9982a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_site/zipball/7ec69460309f0ea88cb435acd3b48c669d27d5e2",
-                "reference": "7ec69460309f0ea88cb435acd3b48c669d27d5e2",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_site/zipball/43bc55f3592f04d031465941b669994ddef9982a",
+                "reference": "43bc55f3592f04d031465941b669994ddef9982a",
                 "shasum": ""
             },
             "require": {
@@ -2252,7 +2252,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Post content to multiple sites and sections.",
-            "time": "2019-06-03T01:22:45+00:00"
+            "time": "2019-06-03T06:15:30+00:00"
         },
         {
             "name": "dpc-sdp/tide_test",
