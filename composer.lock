@@ -2229,12 +2229,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_site.git",
-                "reference": "d87243d72c7585592c39262b60ee003004ab38f7"
+                "reference": "7ec69460309f0ea88cb435acd3b48c669d27d5e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_site/zipball/d87243d72c7585592c39262b60ee003004ab38f7",
-                "reference": "d87243d72c7585592c39262b60ee003004ab38f7",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_site/zipball/7ec69460309f0ea88cb435acd3b48c669d27d5e2",
+                "reference": "7ec69460309f0ea88cb435acd3b48c669d27d5e2",
                 "shasum": ""
             },
             "require": {
