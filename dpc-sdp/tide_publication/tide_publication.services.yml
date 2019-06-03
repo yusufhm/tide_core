@@ -23,3 +23,7 @@ services:
           - '@entity_hierarchy.entity_tree_node_mapper'
           - '@module_handler'
           - '@cache.data'
+  tide_publication.response_event_subscriber:
+    class: \Drupal\tide_publication\EventSubscriber\Response
+    tags:
+      - {name: event_subscriber}
