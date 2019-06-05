@@ -14,6 +14,8 @@ class VicgovauDemoRepository {
 
   const SITE_ID_VICGOVAU = 4;
 
+  const MAX_DEMO_PER_TYPE = 5;
+
   /**
    * The repository singleton.
    *
