@@ -15,6 +15,10 @@ function vicgovau_demo_create_taxonomy_term_location() {
     $locations = $storage->loadByProperties(['vid' => 'location']);
   }
   catch (Exception $exception) {
+    \Drupal::logger('vicgovau_demo')->error('Exception occurs in the function %function: %exception', [
+      '%function' => __FUNCTION__,
+      '%exception' => $exception->getMessage(),
+    ]);
     watchdog_exception('vicgovau_demo', $exception);
   }
 

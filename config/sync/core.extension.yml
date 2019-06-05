@@ -23,6 +23,7 @@ module:
   ctools: 0
   datetime: 0
   datetime_range: 0
+  dbal: 0
   diff: 0
   dynamic_page_cache: 0
   editor: 0
@@ -32,6 +33,7 @@ module:
   entity_browser: 0
   entity_browser_entity_form: 0
   entity_embed: 0
+  entity_hierarchy: 0
   entity_reference: 0
   entity_reference_revisions: 0
   environment_indicator: 0
@@ -120,6 +122,7 @@ module:
   tide_news: 0
   tide_page: 0
   tide_profile: 0
+  tide_publication: 0
   tide_search: 0
   tide_site: 0
   tide_site_simple_sitemap: 0

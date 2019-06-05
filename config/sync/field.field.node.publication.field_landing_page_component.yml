@@ -1,0 +1,138 @@
+uuid: 2090373e-cdfd-4252-9d4a-db8580e38f3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_landing_page_component
+    - node.type.publication
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.basic_text
+  module:
+    - entity_reference_revisions
+id: node.publication.field_landing_page_component
+field_name: field_landing_page_component
+entity_type: node
+bundle: publication
+label: 'Content components'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      accordion: accordion
+      basic_text: basic_text
+    target_bundles_drag_drop:
+      accordion:
+        enabled: true
+        weight: 37
+      accordion_content:
+        weight: 38
+        enabled: false
+      banner:
+        weight: 39
+        enabled: false
+      basic_text:
+        enabled: true
+        weight: 40
+      call_to_action:
+        weight: 41
+        enabled: false
+      call_to_action_image:
+        weight: 42
+        enabled: false
+      card_carousel:
+        weight: 43
+        enabled: false
+      card_event:
+        weight: 44
+        enabled: false
+      card_event_auto:
+        weight: 45
+        enabled: false
+      card_keydates:
+        weight: 46
+        enabled: false
+      card_navigation:
+        weight: 47
+        enabled: false
+      card_navigation_auto:
+        weight: 48
+        enabled: false
+      card_navigation_featured:
+        weight: 49
+        enabled: false
+      card_navigation_featured_auto:
+        weight: 50
+        enabled: false
+      card_promotion:
+        weight: 51
+        enabled: false
+      card_promotion_auto:
+        weight: 52
+        enabled: false
+      contact_us:
+        weight: 53
+        enabled: false
+      data_driven_component:
+        weight: 54
+        enabled: false
+      embedded_search_form:
+        weight: 55
+        enabled: false
+      embedded_webform:
+        weight: 56
+        enabled: false
+      event_details:
+        weight: 57
+        enabled: false
+      featured_news:
+        weight: 58
+        enabled: false
+      hero_banner_with_cta:
+        weight: 59
+        enabled: false
+      introduction_banner:
+        weight: 60
+        enabled: false
+      keydates:
+        weight: 61
+        enabled: false
+      key_journeys:
+        weight: 62
+        enabled: false
+      latest_events:
+        weight: 63
+        enabled: false
+      links:
+        weight: 64
+        enabled: false
+      media_gallery:
+        weight: 65
+        enabled: false
+      news_listing:
+        weight: 66
+        enabled: false
+      phone:
+        weight: 67
+        enabled: false
+      related_links:
+        weight: 68
+        enabled: false
+      social_link:
+        weight: 69
+        enabled: false
+      timeline:
+        weight: 70
+        enabled: false
+      timelines:
+        weight: 71
+        enabled: false
+      user_authentication_block:
+        weight: 72
+        enabled: false
+field_type: entity_reference_revisions

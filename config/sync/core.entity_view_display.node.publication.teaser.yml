@@ -1,0 +1,27 @@
+uuid: b0f14469-2e2b-4c76-a993-aa2f50722af0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.publication.field_node_primary_site
+    - field.field.node.publication.field_node_site
+    - node.type.publication
+  module:
+    - user
+id: node.publication.teaser
+targetEntityType: node
+bundle: publication
+mode: teaser
+content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_node_primary_site: true
+  field_node_site: true

@@ -5,8 +5,7 @@ dependencies: {  }
 id: ci
 label: ci
 folder: ../config/ci
-module:
-  vicgovau_demo: 0
+module: {  }
 theme: {  }
 blacklist: {  }
 graylist:

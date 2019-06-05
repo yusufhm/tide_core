@@ -1,0 +1,23 @@
+uuid: 2f682498-56d3-417d-bcb3-a289b4d8647a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_table_of_content
+    - node.type.publication
+id: node.publication.field_show_table_of_content
+field_name: field_show_table_of_content
+entity_type: node
+bundle: publication
+label: 'Show Table of Content?'
+description: 'Check this box if you want to show the Table of Content on this page.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
