@@ -69,9 +69,10 @@ function vicgovau_demo_install() {
         $demo_function = 'vicgovau_demo_create_' . $entity_type_id . '_' . $bundle;
         if (function_exists($demo_function)) {
           $available_demo[$demo_function] = [
+            '#type' => $entity_type_id . ':' . $bundle,
             '#callback' => $demo_function,
             '#tracking' => TRUE,
-            '#weight' => isset($default_weights[$entity_type_id]) ? $default_weights[$entity_type_id] : 0,
+            '#weight' => $default_weights[$entity_type_id] ?? 0,
           ];
           $demo_weight_function = 'vicgovau_demo_create_' . $entity_type_id . '_' . $bundle . '_weight';
           if (function_exists($demo_weight_function)) {
@@ -91,6 +92,9 @@ function vicgovau_demo_install() {
   foreach ($available_demo as $demo) {
     $demo_entities = $demo['#callback']();
     $repository->addDemoEntities($demo_entities, $demo['#tracking']);
+    $message = sprintf('%s %s demo %s content.', ($demo['#tracking'] ? 'Created' : 'Loaded'), count($demo_entities), $demo['#type']);
+    \Drupal::logger('vicgovau_demo')->info($message);
+    \Drupal::messenger()->addMessage($message);
   }
   \Drupal::messenger()->addMessage('Created all demo content.');
   \Drupal::cache('data')->deleteAll();

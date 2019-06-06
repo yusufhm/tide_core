@@ -4,13 +4,14 @@ status: false
 dependencies: {  }
 id: local
 label: local
+description: ''
 folder: ../config/local
 module:
   config_devel: 0
   devel_generate: 0
   dblog: 0
+  field_tools: 0
   views_ui: 0
-  vicgovau_demo: 0
 theme: {  }
 blacklist: {  }
 graylist:
