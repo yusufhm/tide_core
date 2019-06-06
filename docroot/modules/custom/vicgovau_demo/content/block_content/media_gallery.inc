@@ -7,6 +7,7 @@
 
 use Drupal\block_content\Entity\BlockContent;
 use Drupal\vicgovau_demo\VicgovauDemoHelper;
+use Drupal\vicgovau_demo\VicgovauDemoRepository;
 
 /**
  * Implements hook_vicgovau_demo_create_ENTITY_TYPE_BUNDLE().
@@ -14,7 +15,7 @@ use Drupal\vicgovau_demo\VicgovauDemoHelper;
 function vicgovau_demo_create_block_content_media_gallery() {
   $galleries = [];
 
-  for ($i = 1; $i <= 10; $i++) {
+  for ($i = 1; $i <= VicgovauDemoRepository::MAX_DEMO_PER_TYPE; $i++) {
     try {
       $block_data = [
         'type' => 'media_gallery',
@@ -45,6 +46,10 @@ function vicgovau_demo_create_block_content_media_gallery() {
       $galleries[] = $gallery;
     }
     catch (Exception $exception) {
+      \Drupal::logger('vicgovau_demo')->error('Exception occurs in the function %function: %exception', [
+        '%function' => __FUNCTION__,
+        '%exception' => $exception->getMessage(),
+      ]);
       watchdog_exception('vicgovau_demo', $exception);
     }
   }

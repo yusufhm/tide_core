@@ -1,0 +1,97 @@
+<?php
+
+/**
+ * @file
+ * Install file.
+ */
+
+use Drupal\search_api\Item\Field;
+use Drupal\workflows\Entity\Workflow;
+
+/**
+ * Implements hook_install().
+ */
+function tide_publication_install() {
+  // Don't do anything else during config sync.
+  if (\Drupal::isConfigSyncing()) {
+    return;
+  }
+
+  // Enable Editorial workflow if workflow module is enabled.
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('workflows')) {
+    $editorial_workflow = Workflow::load('editorial');
+    if ($editorial_workflow) {
+      $editorial_workflow->getTypePlugin()->addEntityTypeAndBundle('node', 'publication');
+      $editorial_workflow->getTypePlugin()->addEntityTypeAndBundle('node', 'publication_page');
+      $editorial_workflow->save();
+    }
+  }
+
+  _tide_publication_update_search_api_index();
+}
+
+/**
+ * Add fields to search API.
+ */
+function _tide_publication_update_search_api_index() {
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('tide_search')) {
+    $index_storage = \Drupal::entityTypeManager()
+      ->getStorage('search_api_index');
+    /** @var \Drupal\search_api\IndexInterface $index */
+    $index = $index_storage->load('node');
+
+    // Index the Authors field.
+    if (!$index->getField('field_publication_authors')) {
+      $field_publication_authors = new Field($index, 'field_publication_authors');
+      $field_publication_authors->setType('text');
+      $field_publication_authors->setPropertyPath('field_publication_authors');
+      $field_publication_authors->setDatasourceId('entity:node');
+      $field_publication_authors->setLabel('Publication authors');
+      $index->addField($field_publication_authors);
+    }
+
+    // Index the Publication date field.
+    if (!$index->getField('field_publication_date')) {
+      $field_publication_date = new Field($index, 'field_publication_date');
+      $field_publication_date->setType('date');
+      $field_publication_date->setPropertyPath('field_publication_date');
+      $field_publication_date->setDatasourceId('entity:node');
+      $field_publication_date->setBoost(1);
+      $field_publication_date->setLabel('Date of Publication');
+      $index->addField($field_publication_date);
+    }
+
+    // Index the Publication entity_reference field.
+    if (!$index->getField('field_publication_title')) {
+      $field_publication_title = new Field($index, 'field_publication_title');
+      $field_publication_title->setType('string');
+      $field_publication_title->setPropertyPath('field_publication:entity:title');
+      $field_publication_title->setDatasourceId('entity:node');
+      $field_publication_title->setBoost(1);
+      $field_publication_title->setLabel('Publication » Content » Title');
+      $index->addField($field_publication_title);
+    }
+    if (!$index->getField('field_publication_nid')) {
+      $field_publication_nid = new Field($index, 'field_publication_nid');
+      $field_publication_nid->setType('integer');
+      $field_publication_nid->setPropertyPath('field_publication:entity:nid');
+      $field_publication_nid->setDatasourceId('entity:node');
+      $field_publication_nid->setBoost(1);
+      $field_publication_nid->setLabel('Publication » Content » ID');
+      $index->addField($field_publication_nid);
+    }
+    if (!$index->getField('field_publication_uuid')) {
+      $field_publication_uuid = new Field($index, 'field_publication_uuid');
+      $field_publication_uuid->setType('string');
+      $field_publication_uuid->setPropertyPath('field_publication:entity:uuid');
+      $field_publication_uuid->setDatasourceId('entity:node');
+      $field_publication_uuid->setBoost(1);
+      $field_publication_uuid->setLabel('Publication » Content » UUID');
+      $index->addField($field_publication_uuid);
+    }
+
+    $index->save();
+  }
+}

@@ -26,7 +26,7 @@ function vicgovau_demo_create_node_landing_page() {
   $repository = VicgovauDemoRepository::getInstance();
   $site_menus = $repository->getDemoEntities('site_menu');
 
-  $total = 10;
+  $total = VicgovauDemoRepository::MAX_DEMO_PER_TYPE;
   for ($i = 1; $i <= $total; $i++) {
     // Turn off Random mode for the last landing page.
     // It will be generated with all components.
@@ -233,11 +233,15 @@ function vicgovau_demo_create_node_landing_page() {
 
     }
     catch (Exception $e) {
+      \Drupal::logger('vicgovau_demo')->error('Exception occurs in the function %function: %exception', [
+        '%function' => __FUNCTION__,
+        '%exception' => $e->getMessage(),
+      ]);
       watchdog_exception('vicgovau_demo', $e);
     }
 
     // Add components.
-    $components = VicgovauDemoHelper::randomLandingPageComponents(mt_rand(5, 20), $random);
+    $components = VicgovauDemoHelper::randomLandingPageComponents(mt_rand(5, 10), $random);
     foreach ($components as $component) {
       /** @var \Drupal\paragraphs\Entity\Paragraph $component */
       $node_data['field_landing_page_component'][] = [
@@ -316,6 +320,10 @@ function vicgovau_demo_create_node_landing_page() {
       }
     }
     catch (Exception $exception) {
+      \Drupal::logger('vicgovau_demo')->error('Exception occurs in the function %function: %exception', [
+        '%function' => __FUNCTION__,
+        '%exception' => $exception->getMessage(),
+      ]);
       watchdog_exception('vicgovau_demo', $exception);
     }
   }
