@@ -6,6 +6,7 @@ dependencies:
     - node.type.publication
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.basic_text
+    - paragraphs.paragraphs_type.complex_image
   module:
     - entity_reference_revisions
 id: node.publication.field_landing_page_component
@@ -25,6 +26,7 @@ settings:
     target_bundles:
       accordion: accordion
       basic_text: basic_text
+      complex_image: complex_image
     target_bundles_drag_drop:
       accordion:
         enabled: true

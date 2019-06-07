@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3e9c0e5cb50cb6bf3b86c2b18a7fdfc",
+    "content-hash": "13c190cc0fe65ec30677dae0159f478e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2043,6 +2043,11 @@
                 "dpc-sdp/tide_webform:^1.1.3": "Allows to use questionnaires"
             },
             "type": "drupal-module",
+            "extra": {
+                "patches_applied": {
+                    "Added Complex Image component - https://github.com/dpc-sdp/tide_landing_page/pull/75": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_landing_page/pull/75.patch"
+                }
+            },
             "license": [
                 "GPL-2.0-or-later"
             ],
