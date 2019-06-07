@@ -93,6 +93,16 @@ function vicgovau_core_install_module($module) {
 }
 
 /**
+ * Implements hook_update_dependencies().
+ */
+function vicgovau_core_update_dependencies() {
+  $dependencies['vicgovau_core'][8024] = ['tide_media' => 8005];
+  $dependencies['vicgovau_core'][8025] = ['tide_media' => 8005];
+
+  return $dependencies;
+}
+
+/**
  * Creates sites and sections.
  */
 function vicgovau_core_update_8001() {
@@ -746,42 +756,54 @@ function vicgovau_core_update_8022() {
 function vicgovau_core_update_8023() {
   vicgovau_core_install_module('tide_data_driven_component');
 }
-/**
- * Assign new License Type field value to all media entities.
- */
-function vicgovau_core_update_8024() {
-  // Assign license type field of all existing media to "Copyright".
-  $existingMedia = \Drupal::entityQuery('media')
-    ->exists('field_license_type')
-    ->execute();
-  if ($existingMedia && count($existingMedia)) {
-    $termId = NULL;
-    $term = \Drupal::entityTypeManager()
-      ->getStorage('taxonomy_term')
-      ->loadByProperties([
-        'name' => 'Copyright',
-        'vid' => 'license_type',
-      ]);
 
-    // Its possible there might be some duplicates, just to be safe lets reset
-    // the array.
-    $term = reset($term);
-    if (!$term) {
-      $term = Term::create([
-        'name' => 'Copyright',
-        'vid' => 'license_type',
-      ]);
-      $term->save();
+/**
+ * Set license type to Copyright for existing media [SDPA-309] [SDPA-2523].
+ */
+function vicgovau_core_update_8025(&$sandbox) {
+  $new_field = 'field_license_type';
+
+  if (!isset($sandbox['tid'])) {
+    $copyright_term = \Drupal::entityQuery('taxonomy_term')
+      ->condition('vid', 'license_type')
+      ->condition('name', 'Copyright')
+      ->execute();
+    if (!empty($copyright_term)) {
+      $copyright_term = array_keys($copyright_term);
+      $sandbox['tid'] = reset($copyright_term);
     }
-    // Extract our term ID.
-    $termId = $term->id();
-    if ($termId) {
-      /** @var \Drupal\media\Entity\Media $media */
-      foreach ($existingMedia as $mediaId) {
-        $media = Media::load($mediaId);
-        $media->set('field_license_type', $termId);
-        $media->save();
-      }
+    else {
+      // No Copyright license, bail out early.
+      return;
     }
   }
+
+  if (!isset($sandbox['total'])) {
+    $count = \Drupal::entityQuery('media')
+      ->count()
+      ->execute();
+    $sandbox['total'] = $count;
+    $sandbox['current'] = 0;
+    $sandbox['processed'] = 0;
+    $sandbox['#finished'] = $count ? 0 : 1;
+  }
+
+  $batch_size = 50;
+  $mids = \Drupal::entityQuery('media')
+    ->condition('mid', $sandbox['current'], '>')
+    ->sort('mid', 'ASC')
+    ->range(0, $batch_size)
+    ->execute();
+
+  foreach ($mids as $mid) {
+    $sandbox['current'] = $mid;
+    $media = Media::load($mid);
+    if ($media && $media->hasField($new_field)) {
+      $media->$new_field->target_id = $sandbox['tid'];
+      $media->save();
+    }
+    $sandbox['processed']++;
+  }
+
+  $sandbox['#finished'] = ($sandbox['processed'] / $sandbox['total']);
 }
