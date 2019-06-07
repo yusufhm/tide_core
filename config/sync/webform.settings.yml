@@ -1,4 +1,5 @@
 settings:
+  default_status: open
   default_page_base_path: form
   default_form_open_message: 'This form has not yet been opened to submissions.'
   default_form_close_message: 'Sorry...This form is closed to new submissions.'
@@ -33,7 +34,7 @@ settings:
   default_confirmation_message: 'New submission added to [webform:title].'
   default_confirmation_back_label: 'Back to form'
   default_submission_label: '[webform_submission:submitted-to]: Submission #[webform_submission:serial]'
-  default_submission_login_message: 'Please login to access this submission.'
+  default_submission_access_denied_message: 'Please login to access this submission.'
   default_submission_exception_message: 'Unable to process this submission. Please contact the site administrator.'
   default_submission_locked_message: 'This submission has been locked.'
   default_submission_log: false
@@ -43,6 +44,17 @@ settings:
   confirmation_back_classes: "button\n"
   default_limit_total_message: 'No more submissions are permitted.'
   default_limit_user_message: 'No more submissions are permitted.'
+  dialog: false
+  dialog_options:
+    narrow:
+      title: Narrow
+      width: 600
+    normal:
+      title: Normal
+      width: 800
+    wide:
+      title: Wide
+      width: 1000
 assets:
   css: ''
   javascript: ''
