@@ -177,28 +177,17 @@ function tide_publication_tide_entity_reference_site_enhancer_transform_alter(&$
  * Implements hook_form_alter().
  */
 function tide_publication_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if ($form_id == 'node_publication_page_form' || $form_id == 'node_publication_page_edit_form') {
-    if (preg_match('/^field_publication=\d+/', Drupal::request()
-      ->getQueryString(), $matches)) {
-      if ($parent_node = $form['field_publication']['widget']['0']['target_id']['target_id']['#default_value']) {
-        $parent_node_id = explode('=', Drupal::request()->getQueryString())[1];
-        if ($parent_node->id() == $parent_node_id) {
-          foreach (array_keys($form['actions']) as $action) {
-            if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
-              $form['actions'][$action]['#submit'][] = '_redirect_publication_page';
-            }
-          }
-        }
+  if (Drupal::routeMatch()->getRouteName() == 'entity.node.entity_hierarchy_reorder') {
+    /** @var \Drupal\Core\Url $url */
+    $url = $form['actions']['add_child']['#url'];
+    $opt = $url->getOptions();
+    $destination = ['destination' => '/node/' . $opt['query']['field_publication'] . '/children'];
+    $opt['query'] = $opt['query'] + $destination;
+    $url->setOptions($opt);
+    array_walk($form['children'], function ($item, $index) use ($destination) {
+      if (is_numeric($index)) {
+        $item['operations']['#links']['edit']['url']->setOption('query', $destination);
       }
-    }
-  }
-}
-
-/**
- * Redirect publication_page nodes back to /node/{node_id}/children page.
- */
-function _redirect_publication_page($form,FormStateInterface $form_state){
-  if ($node_id = $form_state->getValue(['field_publication',0,'target_id','target_id'])){
-    $form_state->setRedirect('entity.node.entity_hierarchy_reorder',['node'=>$node_id]);
+    });
   }
 }
