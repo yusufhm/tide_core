@@ -177,16 +177,17 @@ function tide_publication_tide_entity_reference_site_enhancer_transform_alter(&$
  * Implements hook_form_alter().
  */
 function tide_publication_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if (Drupal::routeMatch()->getRouteName() == 'entity.node.entity_hierarchy_reorder') {
+  if (Drupal::routeMatch()->getRouteName() == 'entity.node.entity_hierarchy_reorder' && $parent_node = Drupal::routeMatch()->getParameter('node')) {
     /** @var \Drupal\Core\Url $url */
     $url = $form['actions']['add_child']['#url'];
     $opt = $url->getOptions();
-    $destination = ['destination' => '/node/' . $opt['query']['field_publication'] . '/children'];
+    $destination = ['destination' => "/node/{$parent_node->id()}/children"];
     $opt['query'] = $opt['query'] + $destination;
     $url->setOptions($opt);
     array_walk($form['children'], function ($item, $index) use ($destination) {
       if (is_numeric($index)) {
         $item['operations']['#links']['edit']['url']->setOption('query', $destination);
+        $item['operations']['#links']['delete']['url']->setOption('query', $destination);
       }
     });
   }
