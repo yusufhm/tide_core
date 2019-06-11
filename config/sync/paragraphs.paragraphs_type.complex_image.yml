@@ -1,0 +1,9 @@
+uuid: ad9272cd-6a0e-4fe2-a8fd-44126f51d895
+langcode: en
+status: true
+dependencies: {  }
+id: complex_image
+label: 'Complex Image'
+icon_uuid: null
+description: 'Provides images with source, caption, and data table.'
+behavior_plugins: {  }

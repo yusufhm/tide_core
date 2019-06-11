@@ -5,6 +5,7 @@
  * Install file.
  */
 
+use Drupal\field\Entity\FieldConfig;
 use Drupal\search_api\Item\Field;
 use Drupal\workflows\Entity\Workflow;
 
@@ -93,5 +94,30 @@ function _tide_publication_update_search_api_index() {
     }
 
     $index->save();
+  }
+}
+
+/**
+ * Implements hook_update_dependencies().
+ */
+function tide_publication_update_dependencies() {
+  $dependencies['tide_publication'][8001] = ['tide_landing_page' => 8008];
+
+  return $dependencies;
+}
+
+/**
+ * Add Complex Image component.
+ */
+function tide_publication_update_8001() {
+  $content_types = ['publication', 'publication_pages'];
+  foreach ($content_types as $content_type) {
+    $field_config = FieldConfig::loadByName('node', $content_type, 'field_landing_page_component');
+    if ($field_config) {
+      $handler_settings = $field_config->getSetting('handler_settings');
+      $handler_settings['target_bundles']['complex_image'] = 'complex_image';
+      $field_config->setSetting('handler_settings', $handler_settings);
+      $field_config->save();
+    }
   }
 }
