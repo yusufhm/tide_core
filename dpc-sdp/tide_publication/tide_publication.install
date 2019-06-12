@@ -121,18 +121,3 @@ function tide_publication_update_8001() {
     }
   }
 }
-
-/**
- * Enable the blockquote template available to all Node types.
- */
-function tide_publication_update_8002() {
-  module_load_include('inc', 'tide_core', 'includes/helpers');
-  $config_location = [drupal_get_path('module', 'tide_publication') . '/config/install'];
-  if ($wysiwyg_template = Drupal::entityTypeManager()
-    ->getStorage('wysiwyg_template')
-    ->load('blockquote')) {
-    if (count($wysiwyg_template->getNodeTypes()) > 0) {
-      _tide_import_single_config('wysiwyg_template.wysiwyg_template.blockquote', $config_location, TRUE);
-    }
-  }
-}
