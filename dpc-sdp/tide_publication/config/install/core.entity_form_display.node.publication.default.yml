@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.publication.field_show_related_content
     - field.field.node.publication.field_show_social_sharing
     - field.field.node.publication.field_show_table_of_content
+    - field.field.node.publication.field_tags
     - field.field.node.publication.field_topic
     - field.field.node.publication.scheduled_archiving
     - field.field.node.publication.scheduled_publishing
@@ -329,6 +330,15 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
+  field_tags:
+    weight: 12
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_topic:
     weight: 11
     settings:
@@ -359,7 +369,7 @@ content:
     third_party_settings: {  }
   scheduled_archiving:
     type: inline_entity_form_complex
-    weight: 15
+    weight: 16
     settings:
       override_labels: true
       label_singular: 'Scheduled Archiving'
@@ -375,7 +385,7 @@ content:
     region: content
   scheduled_publishing:
     type: inline_entity_form_complex
-    weight: 14
+    weight: 15
     settings:
       override_labels: true
       label_singular: 'Scheduled Publishing'
