@@ -217,13 +217,11 @@ function tide_core_update_8005() {
  * Enable the blockquote template available to all Node types.
  */
 function tide_core_update_8006() {
-  module_load_include('inc', 'tide_core', 'includes/helpers');
-  $config_location = [drupal_get_path('module', 'tide_core') . '/config/install'];
   if ($wysiwyg_template = Drupal::entityTypeManager()
     ->getStorage('wysiwyg_template')
     ->load('blockquote')) {
     if (count($wysiwyg_template->getNodeTypes()) > 0) {
-      _tide_import_single_config('wysiwyg_template.wysiwyg_template.blockquote', $config_location, TRUE);
+      $wysiwyg_template->set('node_types', [])->save();
     }
   }
 }
