@@ -121,3 +121,16 @@ function tide_publication_update_8001() {
     }
   }
 }
+
+/**
+ * Add field_tags into publication node type.
+ */
+function tide_publication_update_8002() {
+  module_load_include('inc', 'tide_core', 'includes/helpers');
+  $config_location = [drupal_get_path('module', 'tide_publication') . '/config/install'];
+  if (!FieldConfig::loadByName('node', 'publication', 'field_tags')) {
+    _tide_import_single_config('field.field.node.publication.field_tags', $config_location, TRUE);
+    _tide_import_single_config('core.entity_view_display.node.publication.default', $config_location, TRUE);
+    _tide_import_single_config('core.entity_form_display.node.publication.default', $config_location, TRUE);
+  }
+}
