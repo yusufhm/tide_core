@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "13c190cc0fe65ec30677dae0159f478e",
+    "content-hash": "5191acab766ef0ad9a4e2add31c63d1a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -284,8 +284,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.5.11.zip",
-                "reference": "master",
-                "shasum": null
+                "reference": "master"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -298,8 +297,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/iframe/releases/iframe_4.5.11.zip",
-                "reference": "master",
-                "shasum": null
+                "reference": "master"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -312,8 +310,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/templates/releases/templates_4.5.7.zip",
-                "reference": "master",
-                "shasum": null
+                "reference": "master"
             },
             "type": "drupal-library"
         },
@@ -1684,8 +1681,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/bay",
-                "reference": "927a01f4945efb0fa9de4c9788ab41e4a18f37b5",
-                "shasum": null
+                "reference": "927a01f4945efb0fa9de4c9788ab41e4a18f37b5"
             },
             "require": {
                 "drupal/cloudflare": "^1.0@alpha",
@@ -1741,8 +1737,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_alert",
-                "reference": "ef76a6cd2c46c57bd83888c10610b624f84b2d70",
-                "shasum": null
+                "reference": "ef76a6cd2c46c57bd83888c10610b624f84b2d70"
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -1802,8 +1797,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_authenticated_content",
-                "reference": "3b81f9d9ec12c548822fa75f87e3f2fd4ac16a15",
-                "shasum": null
+                "reference": "3b81f9d9ec12c548822fa75f87e3f2fd4ac16a15"
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -1951,8 +1945,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_data_driven_component",
-                "reference": "7390e5834ce48dc1952027fc9f5aeb0780c3ce57",
-                "shasum": null
+                "reference": "7390e5834ce48dc1952027fc9f5aeb0780c3ce57"
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -2004,8 +1997,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_grant",
-                "reference": "fa43690f272e0d243cb6dab20e1221c9c8ad0296",
-                "shasum": null
+                "reference": "fa43690f272e0d243cb6dab20e1221c9c8ad0296"
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -2045,7 +2037,8 @@
             "type": "drupal-module",
             "extra": {
                 "patches_applied": {
-                    "Added Complex Image component - https://github.com/dpc-sdp/tide_landing_page/pull/75": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_landing_page/pull/75.patch"
+                    "Added Complex Image component - https://github.com/dpc-sdp/tide_landing_page/pull/75": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_landing_page/pull/75.patch",
+                    "Removed caption field and added View data label - https://github.com/dpc-sdp/tide_landing_page/pull/76": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_landing_page/pull/76.patch"
                 }
             },
             "license": [
@@ -2170,8 +2163,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_profile",
-                "reference": "7dff339686d0ea8f0e5613d88c58ee64433bbba3",
-                "shasum": null
+                "reference": "7dff339686d0ea8f0e5613d88c58ee64433bbba3"
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -2189,8 +2181,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_publication",
-                "reference": "cd6e40ee91a8a043f2910835c1c7f8fdeada2d15",
-                "shasum": null
+                "reference": "cd6e40ee91a8a043f2910835c1c7f8fdeada2d15"
             },
             "require": {
                 "dpc-sdp/tide_landing_page": "@dev",
@@ -9080,9 +9071,7 @@
             "version": "4.3.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/enyo/dropzone/archive/v4.3.0.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://github.com/enyo/dropzone/archive/v4.3.0.zip"
             },
             "type": "drupal-library"
         },
