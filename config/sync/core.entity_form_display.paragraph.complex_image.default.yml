@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.tide_image_browser
-    - field.field.paragraph.complex_image.field_complex_image_caption
     - field.field.paragraph.complex_image.field_complex_image_data
+    - field.field.paragraph.complex_image.field_complex_image_data_label
     - field.field.paragraph.complex_image.field_complex_image_dl_label
     - field.field.paragraph.complex_image.field_complex_image_full_label
     - field.field.paragraph.complex_image.field_complex_image_media
@@ -22,19 +22,6 @@ targetEntityType: paragraph
 bundle: complex_image
 mode: default
 content:
-  field_complex_image_caption:
-    weight: 2
-    settings:
-      rows: 2
-      placeholder: ''
-    third_party_settings:
-      maxlength:
-        maxlength_js: null
-        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-        maxlength_js_enforce: false
-        maxlength_js_truncate_html: false
-    type: string_textarea
-    region: content
   field_complex_image_data:
     weight: 4
     settings:
@@ -51,8 +38,16 @@ content:
         hide_guidelines: '0'
     type: text_textarea
     region: content
-  field_complex_image_dl_label:
+  field_complex_image_data_label:
     weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_complex_image_dl_label:
+    weight: 7
     settings:
       size: 60
       placeholder: ''

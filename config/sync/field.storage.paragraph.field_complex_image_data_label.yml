@@ -1,14 +1,16 @@
-uuid: 9fcc61d2-ce23-4d22-9dc3-b4ea3f1c0a97
+uuid: 2d62191a-3959-4186-8039-e7d29a1fb7f9
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.field_complex_image_caption
-field_name: field_complex_image_caption
+id: paragraph.field_complex_image_data_label
+field_name: field_complex_image_data_label
 entity_type: paragraph
-type: string_long
+type: string
 settings:
+  max_length: 255
+  is_ascii: false
   case_sensitive: false
 module: core
 locked: false
