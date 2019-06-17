@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5191acab766ef0ad9a4e2add31c63d1a",
+    "content-hash": "cd8bf7faf60318efcf0e7d7be7325ee1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1783,6 +1783,9 @@
                     "drupal/jsonapi_extras": {
                         "JSON:API Extras 3.4 adds enhanced field values outside of attributes for Config Entities - https://www.drupal.org/project/jsonapi_extras/issues/3037833": "https://www.drupal.org/files/issues/2019-03-06/jsonapi_extras-config_entities_enhancer-3037833-4.patch"
                     }
+                },
+                "patches_applied": {
+                    "Removed Preview Links from Tide API - https://github.com/dpc-sdp/tide_api/pull/38": "https://github.com/dpc-sdp/tide_api/commit/1b83ed26262a9f7bd80e7d66382eccee05cb6b4a.patch"
                 }
             },
             "license": [
