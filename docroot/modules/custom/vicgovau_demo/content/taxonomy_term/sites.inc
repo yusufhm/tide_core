@@ -97,11 +97,19 @@ function vicgovau_demo_create_taxonomy_term_sites() {
           $repository->addDemoEntity($term_section, 'site_section', 'site:' . $term_site->id(), FALSE);
         }
         catch (Exception $exception) {
+          \Drupal::logger('vicgovau_demo')->error('Exception occurs in the function %function: %exception', [
+            '%function' => __FUNCTION__,
+            '%exception' => $exception->getMessage(),
+          ]);
           watchdog_exception('vicgovau_demo', $exception);
         }
       }
     }
     catch (Exception $exception) {
+      \Drupal::logger('vicgovau_demo')->error('Exception occurs in the function %function: %exception', [
+        '%function' => __FUNCTION__,
+        '%exception' => $exception->getMessage(),
+      ]);
       watchdog_exception('vicgovau_demo', $exception);
     }
 

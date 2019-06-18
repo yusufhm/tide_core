@@ -44,11 +44,12 @@ environments:
     cronjobs:
       - name: drush cron
         schedule: "*/15 * * * *"
-        command: 'drush cron'
+        command: 'drush cron --user=1'
         service: cli
       - name: drush scheduled updates cron
         schedule: "2,7,12,17,22,27,32,37,42,47,52,57 * * * *"
-        command: 'drush tide-core-scheduled-updates-cron'
+        # drush command drush tide-core-scheduled-updates-cron must run as user 1
+        command: 'drush tide-core-scheduled-updates-cron --user=1'
         service: cli
       - name: Database Backups
         schedule: "0 1,5,9,13,17,21 * * *"
@@ -78,6 +79,15 @@ environments:
             insecure: Allow
             hsts: max-age=31536000
   develop:
+    cronjobs:
+      - name: drush cron
+        schedule: "*/15 * * * *"
+        command: 'drush cron --user=1'
+        service: cli
+      - name: drush scheduled updates cron
+        schedule: "2,7,12,17,22,27,32,37,42,47,52,57 * * * *"
+        command: 'drush tide-core-scheduled-updates-cron --user=1'
+        service: cli
     routes:
       - nginx-php:
         - "www.develop.content.vic.gov.au":
@@ -92,13 +102,13 @@ environments:
     cronjobs:
       - name: drush cron
         schedule: "*/15 * * * *"
-        command: 'drush cron'
+        command: 'drush cron --user=1'
         service: cli
   api:
     cronjobs:
       - name: drush cron
         schedule: "*/15 * * * *"
-        command: 'drush cron'
+        command: 'drush cron --user=1'
         service: cli
     routes:
       - nginx-php:
@@ -107,7 +117,7 @@ environments:
     cronjobs:
       - name: drush cron
         schedule: "*/15 * * * *"
-        command: 'drush cron'
+        command: 'drush cron --user=1'
         service: cli
     routes:
       - nginx-php:

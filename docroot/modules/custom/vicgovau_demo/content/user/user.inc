@@ -50,7 +50,11 @@ function vicgovau_demo_create_user_user() {
           $users[] = $user;
         }
         catch (Exception $exception) {
-          watchdog_exception('vicgovau_demo', $exception);
+          \Drupal::logger('vicgovau_demo')->error('Exception occurs in the function %function: %exception', [
+        '%function' => __FUNCTION__,
+        '%exception' => $exception->getMessage(),
+      ]);
+      watchdog_exception('vicgovau_demo', $exception);
         }
       }
     }

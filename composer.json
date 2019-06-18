@@ -6,11 +6,12 @@
         "composer/installers": "^1.2.0",
         "cweagans/composer-patches": "^1.6.0",
         "dpc-sdp/bay": "^0.0.1",
-        "dpc-sdp/tide": "1.1.0",
+        "dpc-sdp/tide": "1.1.5",
         "dpc-sdp/tide_alert": "^0.0.1",
         "dpc-sdp/tide_data_driven_component": "^0.0.1",
         "dpc-sdp/tide_grant": "^0.0.1",
         "dpc-sdp/tide_profile": "^0.0.1",
+        "dpc-sdp/tide_publication": "^0.0.1",
         "dpc-sdp/tide_authenticated_content": "^0.0.1",
         "drupal-composer/drupal-scaffold": "^2.3",
         "drupal/admin_toolbar": "^1.20",
@@ -19,6 +20,7 @@
         "drupal/config_filter": "^1.2",
         "drupal/default_content": "^1.0@alpha",
         "drupal/devel": "^1.2",
+        "drupal/field_tools": "^1.0-alpha4",
         "drupal/lagoon_logs": "^1.0",
         "drupal/openapi": "^1.0-beta2",
         "drupal/openapi_ui": "^1.0-rc1",
@@ -97,6 +99,10 @@
         "dpc-sdp/tide_grant": {
             "type": "path",
             "url": "dpc-sdp/tide_grant"
+        },
+        "dpc-sdp/tide_publication": {
+            "type": "path",
+            "url": "dpc-sdp/tide_publication"
         },
         "dpc-sdp/tide": {
             "type": "vcs",
@@ -300,6 +306,16 @@
             },
             "cweagans/composer-patches": {
                 "Fix for already applied patches - specific to 1.6.5": "patches/composer-patches/fix-applied-patches.patch"
+            },
+            "dpc-sdp/tide_api": {
+                "Removed Preview Links from Tide API - https://github.com/dpc-sdp/tide_api/pull/38": "https://github.com/dpc-sdp/tide_api/commit/1b83ed26262a9f7bd80e7d66382eccee05cb6b4a.patch"
+            },
+            "dpc-sdp/tide_landing_page": {
+                "Added Complex Image component - https://github.com/dpc-sdp/tide_landing_page/pull/75": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_landing_page/pull/75.patch",
+                "Removed caption field and added View data label - https://github.com/dpc-sdp/tide_landing_page/pull/76": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_landing_page/pull/76.patch"
+            },
+            "dpc-sdp/tide_webform": {
+                "Added Privacy Statement element - https://github.com/dpc-sdp/tide_webform/pull/26": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_webform/pull/26.patch"
             },
             "drupal/core": {
                 "Debug EntityChangedConstraintValidator": "./patches/core/drupal-core-debug-entity-changed-constraint-validator.patch",

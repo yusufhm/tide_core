@@ -7,6 +7,7 @@
 
 use Drupal\node\Entity\Node;
 use Drupal\vicgovau_demo\VicgovauDemoHelper;
+use Drupal\vicgovau_demo\VicgovauDemoRepository;
 
 /**
  * Implements hook_vicgovau_demo_create_ENTITY_TYPE_BUNDLE_weight().
@@ -21,7 +22,7 @@ function vicgovau_demo_create_node_alert_weight() {
 function vicgovau_demo_create_node_alert() {
   $nodes = [];
 
-  for ($i = 1; $i <= 10; $i++) {
+  for ($i = 1; $i <= VicgovauDemoRepository::MAX_DEMO_PER_TYPE; $i++) {
     $uid = VicgovauDemoHelper::randomUid();
 
     $site_sections = VicgovauDemoHelper::randomSiteSections();
@@ -55,6 +56,10 @@ function vicgovau_demo_create_node_alert() {
       $nodes[] = $node;
     }
     catch (Exception $exception) {
+      \Drupal::logger('vicgovau_demo')->error('Exception occurs in the function %function: %exception', [
+        '%function' => __FUNCTION__,
+        '%exception' => $exception->getMessage(),
+      ]);
       watchdog_exception('vicgovau_demo', $exception);
     }
   }

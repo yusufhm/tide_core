@@ -10,6 +10,8 @@ dependencies:
     - node.type.news
     - node.type.page
     - node.type.profile
+    - node.type.publication
+    - node.type.publication_page
   module:
     - content_moderation
 _core:
@@ -94,3 +96,5 @@ type_settings:
       - news
       - page
       - profile
+      - publication
+      - publication_page
