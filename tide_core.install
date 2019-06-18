@@ -212,3 +212,16 @@ function tide_core_update_8005() {
   $config_location = [drupal_get_path('module', 'tide_core') . '/config/optional'];
   _tide_import_single_config('prlp.settings', $config_location);
 }
+
+/**
+ * Enable the blockquote template available to all Node types.
+ */
+function tide_core_update_8006() {
+  if ($wysiwyg_template = Drupal::entityTypeManager()
+    ->getStorage('wysiwyg_template')
+    ->load('blockquote')) {
+    if (count($wysiwyg_template->getNodeTypes()) > 0) {
+      $wysiwyg_template->set('node_types', [])->save();
+    }
+  }
+}
