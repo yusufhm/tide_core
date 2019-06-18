@@ -2,5 +2,6 @@ ignored_config_entities:
   - '*vicgovau_demo*'
   - 'system.menu.*'
   - 'webform.webform.*'
+  - 'user.mail.*'
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk

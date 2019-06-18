@@ -33,13 +33,20 @@ function tide_authenticated_content_install() {
     user_role_grant_permissions('editor', ['create terms in authenticated_content']);
     user_role_grant_permissions("approver", ['create terms in authenticated_content']);
   }
-
-  tide_authenticated_content_update_8001();
 }
 
 /**
  * Rebuild node_access table.
  */
-function tide_authenticated_content_update_8001() {
-  node_access_rebuild(TRUE);
+function tide_authenticated_content_update_8002() {
+  node_access_rebuild();
+}
+
+/**
+ * Update tide_authenticated_content configurations in database.
+ */
+function tide_authenticated_content_update_8003() {
+  module_load_include('inc', 'tide_core', 'includes/helpers');
+  $config_location = [drupal_get_path('module', 'tide_authenticated_content') . '/config/install'];
+  _tide_import_single_config('tide_authenticated_content.module', $config_location, TRUE);
 }

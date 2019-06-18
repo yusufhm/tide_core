@@ -1,0 +1,20 @@
+uuid: 74a6bde1-af1b-42bc-ae2c-779984597f67
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  wysiwyg_template:
+    default_template: ''
+name: 'Publication page'
+type: publication_page
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
