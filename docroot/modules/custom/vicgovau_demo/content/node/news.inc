@@ -24,7 +24,7 @@ function vicgovau_demo_create_node_news() {
   $nodes = [];
   $repository = VicgovauDemoRepository::getInstance();
 
-  for ($i = 1; $i <= 10; $i++) {
+  for ($i = 1; $i <= VicgovauDemoRepository::MAX_DEMO_PER_TYPE; $i++) {
     $uid = VicgovauDemoHelper::randomUid();
 
     $site_sections = VicgovauDemoHelper::randomSiteSections();
@@ -114,6 +114,10 @@ function vicgovau_demo_create_node_news() {
       $nodes[] = $node;
     }
     catch (Exception $exception) {
+      \Drupal::logger('vicgovau_demo')->error('Exception occurs in the function %function: %exception', [
+        '%function' => __FUNCTION__,
+        '%exception' => $exception->getMessage(),
+      ]);
       watchdog_exception('vicgovau_demo', $exception);
     }
   }

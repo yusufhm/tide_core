@@ -17,10 +17,10 @@ function vicgovau_demo_create_node_page() {
   $nodes = [];
   $repository = VicgovauDemoRepository::getInstance();
 
-  for ($i = 1; $i <= 10; $i++) {
+  for ($i = 1; $i <= VicgovauDemoRepository::MAX_DEMO_PER_TYPE; $i++) {
     // Turn off Random mode for the last page.
     // It will be generated with all components.
-    $random = ($i < 10) ? TRUE : FALSE;
+    $random = ($i < VicgovauDemoRepository::MAX_DEMO_PER_TYPE) ? TRUE : FALSE;
 
     $uid = VicgovauDemoHelper::randomUid();
 
@@ -136,6 +136,10 @@ function vicgovau_demo_create_node_page() {
       $nodes[] = $node;
     }
     catch (Exception $exception) {
+      \Drupal::logger('vicgovau_demo')->error('Exception occurs in the function %function: %exception', [
+        '%function' => __FUNCTION__,
+        '%exception' => $exception->getMessage(),
+      ]);
       watchdog_exception('vicgovau_demo', $exception);
     }
   }
