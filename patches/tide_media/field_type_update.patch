@@ -1,0 +1,525 @@
+diff --git a/config/install/core.entity_view_display.media.audio.default.yml b/config/install/core.entity_view_display.media.audio.default.yml
+index bd07673..51a961a 100644
+--- a/config/install/core.entity_view_display.media.audio.default.yml
++++ b/config/install/core.entity_view_display.media.audio.default.yml
+@@ -27,7 +27,7 @@ content:
+   created:
+     label: hidden
+     type: timestamp
+-    weight: 0
++    weight: 1
+     region: content
+     settings:
+       date_format: medium
+@@ -35,7 +35,7 @@ content:
+       timezone: ''
+     third_party_settings: {  }
+   field_license_type:
+-    weight: 16
++    weight: 12
+     label: above
+     settings:
+       link: true
+@@ -43,7 +43,7 @@ content:
+     type: entity_reference_label
+     region: content
+   field_media_audience:
+-    weight: 8
++    weight: 5
+     label: above
+     settings:
+       link: true
+@@ -51,7 +51,7 @@ content:
+     type: entity_reference_label
+     region: content
+   field_media_department:
+-    weight: 9
++    weight: 6
+     label: above
+     settings:
+       link: true
+@@ -59,7 +59,7 @@ content:
+     type: entity_reference_label
+     region: content
+   field_media_file:
+-    weight: 6
++    weight: 3
+     label: above
+     settings:
+       use_description_as_link_text: true
+@@ -67,7 +67,7 @@ content:
+     type: file_default
+     region: content
+   field_media_length:
+-    weight: 12
++    weight: 8
+     label: above
+     settings:
+       link_to_entity: false
+@@ -75,7 +75,7 @@ content:
+     type: string
+     region: content
+   field_media_restricted:
+-    weight: 7
++    weight: 4
+     label: above
+     settings:
+       format: default
+@@ -85,7 +85,7 @@ content:
+     type: boolean
+     region: content
+   field_media_show_transcript:
+-    weight: 15
++    weight: 11
+     label: above
+     settings:
+       format: default
+@@ -95,14 +95,14 @@ content:
+     type: boolean
+     region: content
+   field_media_summary:
+-    weight: 13
++    weight: 9
+     label: above
+     settings: {  }
+     third_party_settings: {  }
+     type: text_default
+     region: content
+   field_media_topic:
+-    weight: 10
++    weight: 7
+     label: above
+     settings:
+       link: true
+@@ -110,19 +110,23 @@ content:
+     type: entity_reference_label
+     region: content
+   field_media_transcript:
+-    weight: 14
++    type: text_default
++    weight: 10
++    region: content
+     label: above
+     settings: {  }
+     third_party_settings: {  }
+-    type: basic_string
+-    region: content
+   thumbnail:
+     type: image
+-    weight: 5
++    weight: 2
+     label: hidden
+     settings:
+       image_style: thumbnail
+       image_link: ''
++      svg_attributes:
++        width: ''
++        height: ''
++      svg_render_as_image: true
+     region: content
+     third_party_settings: {  }
+   uid:
+diff --git a/config/install/core.entity_view_display.media.embedded_video.default.yml b/config/install/core.entity_view_display.media.embedded_video.default.yml
+index 79310f2..c4b43e6 100644
+--- a/config/install/core.entity_view_display.media.embedded_video.default.yml
++++ b/config/install/core.entity_view_display.media.embedded_video.default.yml
+@@ -14,6 +14,7 @@ dependencies:
+     - field.field.media.embedded_video.field_media_video_embed_field
+     - media.type.embedded_video
+   module:
++    - text
+     - user
+     - video_embed_field
+ id: media.embedded_video.default
+@@ -32,7 +33,7 @@ content:
+       timezone: ''
+     third_party_settings: {  }
+   field_license_type:
+-    weight: 13
++    weight: 11
+     label: above
+     settings:
+       link: true
+@@ -40,7 +41,7 @@ content:
+     type: entity_reference_label
+     region: content
+   field_media_audience:
+-    weight: 8
++    weight: 7
+     label: above
+     settings:
+       link: true
+@@ -48,7 +49,7 @@ content:
+     type: entity_reference_label
+     region: content
+   field_media_department:
+-    weight: 9
++    weight: 8
+     label: above
+     settings:
+       link: true
+@@ -56,7 +57,7 @@ content:
+     type: entity_reference_label
+     region: content
+   field_media_length:
+-    weight: 4
++    weight: 3
+     label: above
+     settings:
+       link_to_entity: false
+@@ -64,7 +65,7 @@ content:
+     type: string
+     region: content
+   field_media_link:
+-    weight: 12
++    weight: 10
+     label: above
+     settings:
+       link_to_entity: false
+@@ -72,7 +73,7 @@ content:
+     type: string
+     region: content
+   field_media_restricted:
+-    weight: 7
++    weight: 6
+     label: above
+     settings:
+       format: default
+@@ -82,14 +83,14 @@ content:
+     type: boolean
+     region: content
+   field_media_summary:
+-    weight: 5
++    weight: 4
+     label: above
+     settings: {  }
+     third_party_settings: {  }
+     type: basic_string
+     region: content
+   field_media_topic:
+-    weight: 10
++    weight: 9
+     label: above
+     settings:
+       link: true
+@@ -97,14 +98,14 @@ content:
+     type: entity_reference_label
+     region: content
+   field_media_transcript:
+-    weight: 6
++    type: text_default
++    weight: 5
++    region: content
+     label: above
+     settings: {  }
+     third_party_settings: {  }
+-    type: basic_string
+-    region: content
+   field_media_video_embed_field:
+-    weight: 3
++    weight: 2
+     label: above
+     settings:
+       responsive: true
+diff --git a/config/install/core.entity_view_display.media.video.default.yml b/config/install/core.entity_view_display.media.video.default.yml
+index ba33d05..c032d31 100644
+--- a/config/install/core.entity_view_display.media.video.default.yml
++++ b/config/install/core.entity_view_display.media.video.default.yml
+@@ -17,6 +17,7 @@ dependencies:
+   module:
+     - file
+     - svg_image
++    - text
+     - user
+ id: media.video.default
+ targetEntityType: media
+@@ -26,7 +27,7 @@ content:
+   created:
+     label: hidden
+     type: timestamp
+-    weight: 0
++    weight: 1
+     region: content
+     settings:
+       date_format: medium
+@@ -34,7 +35,7 @@ content:
+       timezone: ''
+     third_party_settings: {  }
+   field_license_type:
+-    weight: 16
++    weight: 12
+     label: above
+     settings:
+       link: true
+@@ -42,7 +43,7 @@ content:
+     type: entity_reference_label
+     region: content
+   field_media_audience:
+-    weight: 11
++    weight: 8
+     label: above
+     settings:
+       link: true
+@@ -50,7 +51,7 @@ content:
+     type: entity_reference_label
+     region: content
+   field_media_department:
+-    weight: 12
++    weight: 9
+     label: above
+     settings:
+       link: true
+@@ -59,7 +60,7 @@ content:
+     region: content
+   field_media_file:
+     type: file_video
+-    weight: 6
++    weight: 3
+     label: above
+     settings:
+       muted: false
+@@ -72,7 +73,7 @@ content:
+     third_party_settings: {  }
+     region: content
+   field_media_length:
+-    weight: 7
++    weight: 4
+     label: above
+     settings:
+       link_to_entity: false
+@@ -80,7 +81,7 @@ content:
+     type: string
+     region: content
+   field_media_link:
+-    weight: 15
++    weight: 11
+     label: above
+     settings:
+       link_to_entity: false
+@@ -88,7 +89,7 @@ content:
+     type: string
+     region: content
+   field_media_restricted:
+-    weight: 10
++    weight: 7
+     label: above
+     settings:
+       format: default
+@@ -98,14 +99,14 @@ content:
+     type: boolean
+     region: content
+   field_media_summary:
+-    weight: 8
++    weight: 5
+     label: above
+     settings: {  }
+     third_party_settings: {  }
+     type: basic_string
+     region: content
+   field_media_topic:
+-    weight: 13
++    weight: 10
+     label: above
+     settings:
+       link: true
+@@ -113,19 +114,23 @@ content:
+     type: entity_reference_label
+     region: content
+   field_media_transcript:
+-    weight: 9
++    type: text_default
++    weight: 6
++    region: content
+     label: above
+     settings: {  }
+     third_party_settings: {  }
+-    type: basic_string
+-    region: content
+   thumbnail:
+     type: image
+-    weight: 5
++    weight: 2
+     label: hidden
+     settings:
+       image_style: thumbnail
+       image_link: ''
++      svg_attributes:
++        width: ''
++        height: ''
++      svg_render_as_image: true
+     region: content
+     third_party_settings: {  }
+   uid:
+diff --git a/config/install/field.field.media.audio.field_media_transcript.yml b/config/install/field.field.media.audio.field_media_transcript.yml
+index db03d05..ddd76a0 100644
+--- a/config/install/field.field.media.audio.field_media_transcript.yml
++++ b/config/install/field.field.media.audio.field_media_transcript.yml
+@@ -4,6 +4,8 @@ dependencies:
+   config:
+     - field.storage.media.field_media_transcript
+     - media.type.audio
++  module:
++    - text
+ id: media.audio.field_media_transcript
+ field_name: field_media_transcript
+ entity_type: media
+@@ -15,4 +17,4 @@ translatable: true
+ default_value: {  }
+ default_value_callback: ''
+ settings: {  }
+-field_type: string_long
++field_type: text_long
+diff --git a/config/install/field.field.media.embedded_video.field_media_transcript.yml b/config/install/field.field.media.embedded_video.field_media_transcript.yml
+index e9f8079..c9098dc 100644
+--- a/config/install/field.field.media.embedded_video.field_media_transcript.yml
++++ b/config/install/field.field.media.embedded_video.field_media_transcript.yml
+@@ -4,6 +4,8 @@ dependencies:
+   config:
+     - field.storage.media.field_media_transcript
+     - media.type.embedded_video
++  module:
++    - text
+ id: media.embedded_video.field_media_transcript
+ field_name: field_media_transcript
+ entity_type: media
+@@ -15,4 +17,4 @@ translatable: true
+ default_value: {  }
+ default_value_callback: ''
+ settings: {  }
+-field_type: string_long
++field_type: text_long
+diff --git a/config/install/field.field.media.video.field_media_transcript.yml b/config/install/field.field.media.video.field_media_transcript.yml
+index b965ba7..1b89700 100644
+--- a/config/install/field.field.media.video.field_media_transcript.yml
++++ b/config/install/field.field.media.video.field_media_transcript.yml
+@@ -4,6 +4,8 @@ dependencies:
+   config:
+     - field.storage.media.field_media_transcript
+     - media.type.video
++  module:
++    - text
+ id: media.video.field_media_transcript
+ field_name: field_media_transcript
+ entity_type: media
+@@ -15,4 +17,4 @@ translatable: false
+ default_value: {  }
+ default_value_callback: ''
+ settings: {  }
+-field_type: string_long
++field_type: text_long
+diff --git a/config/install/field.storage.media.field_media_transcript.yml b/config/install/field.storage.media.field_media_transcript.yml
+index eca9283..dccfe4a 100644
+--- a/config/install/field.storage.media.field_media_transcript.yml
++++ b/config/install/field.storage.media.field_media_transcript.yml
+@@ -3,13 +3,13 @@ status: true
+ dependencies:
+   module:
+     - media
++    - text
+ id: media.field_media_transcript
+ field_name: field_media_transcript
+ entity_type: media
+-type: string_long
+-settings:
+-  case_sensitive: false
+-module: core
++type: text_long
++settings: {  }
++module: text
+ locked: false
+ cardinality: 1
+ translatable: true
+diff --git a/tide_media.install b/tide_media.install
+index 434c685..22017e8 100644
+--- a/tide_media.install
++++ b/tide_media.install
+@@ -11,6 +11,7 @@ use Drupal\file\Entity\File;
+ use Drupal\media\Entity\Media;
+ use Drupal\taxonomy\Entity\Term;
+ use Drupal\taxonomy\Entity\Vocabulary;
++use Drupal\field\Entity\FieldStorageConfig;
+ 
+ /**
+  * Implements hook_install().
+@@ -243,3 +244,81 @@ function tide_media_update_8005() {
+     }
+   }
+ }
++
++/**
++ * Video transcript field change from text field to WYSIWYG.
++ */
++function tide_media_update_8006() {
++  $entity_type = 'media';
++  $field_name = 'field_media_transcript';
++  $field_storage = FieldStorageConfig::loadByName($entity_type, $field_name);
++
++  if (is_null($field_storage)) {
++    return;
++  }
++
++  $database = Drupal::database();
++  $line_breaks = [
++    "\r\n",
++    "\n",
++    "\r",
++  ];
++  $br = "<br />";
++  // Step1 create two temporary tables for holding data.
++  $tmp_table_names = [
++    'tmp_table' => 'media__field_media_transcript',
++    'tmp_revision_table' => 'media_revision__field_media_transcript',
++  ];
++  $spec = [
++    'type' => 'text',
++    'size' => 'big',
++    'not null' => FALSE,
++  ];
++
++  foreach ($tmp_table_names as $tmp => $table_name) {
++    if ($database->schema()->tableExists($table_name)) {
++      $database->query("CREATE TABLE {$tmp} SELECT * FROM  {$table_name}");
++      $database->truncate($table_name)->execute();
++      $database->schema()->addField($table_name, 'field_media_transcript_format', $spec);
++    }
++  }
++
++  // Step2 update field config from string_long to text_long.
++  // Update FieldStorageConfig.
++  $new_field_storage = $field_storage->toArray();
++  $new_field_storage['type'] = 'text_long';
++  $new_field_storage['module'] = 'text';
++  $new_field_storage = FieldStorageConfig::create($new_field_storage);
++  $new_field_storage->original = $new_field_storage;
++  $new_field_storage->enforceIsNew(FALSE);
++  $new_field_storage->save();
++
++  // Update field.
++  foreach ($field_storage->getBundles() as $bundle => $label) {
++    $field = FieldConfig::loadByName($entity_type, $bundle, $field_name);
++    $new_field = $field->toArray();
++    $new_field['field_type'] = 'text_long';
++    $new_field = FieldConfig::create($new_field);
++    $new_field->original = $field;
++    $new_field->enforceIsNew(FALSE);
++    $new_field->save();
++  }
++
++  // Step 3 data migration.
++  foreach ($tmp_table_names as $tmp => $table_name) {
++    $database->schema()->addField($tmp, 'field_media_transcript_format', $spec);
++    $database->update($tmp)
++      ->fields(['field_media_transcript_format' => 'rich_text'])
++      ->execute();
++    $database->insert($table_name)->from($database->select($tmp, 't')
++      ->fields('t'))->execute();
++    foreach ($line_breaks as $line_break) {
++      $database->update('media__field_media_transcript')->expression('field_media_transcript_value', "REPLACE(field_media_transcript_value,:line_break,:br)", [
++        ':line_break' => $line_break,
++        ':br' => $br,
++      ])->execute();
++    }
++    $database->schema()->dropTable($tmp);
++  }
++  drupal_flush_all_caches();
++}

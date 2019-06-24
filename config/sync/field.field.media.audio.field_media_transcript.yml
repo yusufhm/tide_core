@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.storage.media.field_media_transcript
     - media.type.audio
+  module:
+    - text
 _core:
   default_config_hash: i2oWoowAbDXAkOEiH_Oz1ERfRlvr3d_6RjhUDUXzhqk
 id: media.audio.field_media_transcript
@@ -18,4 +20,4 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string_long
+field_type: text_long

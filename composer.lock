@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9176ac7480debfe83b4a3b56aa1e8990",
+    "content-hash": "19597b34ac1427e8e686aa0011283c18",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2060,6 +2060,11 @@
                 "drupal/video_embed_field": "^2.0"
             },
             "type": "drupal-module",
+            "extra": {
+                "patches_applied": {
+                    "update media field type": "patches/tide_media/field_type_update.patch"
+                }
+            },
             "license": [
                 "GPL-2.0-or-later"
             ],
