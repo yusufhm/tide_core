@@ -58,11 +58,11 @@ environments:
     routes:
       - nginx-php:
         - "wwww.content.vic.gov.au":
-            tls-acme: 'true'
+            tls-acme: 'false'
             insecure: Allow
             hsts: max-age=31536000
         - "content.vic.gov.au":
-            tls-acme: 'true'
+            tls-acme: 'false'
             insecure: Allow
             hsts: max-age=31536000
     monitoring_urls:
@@ -71,11 +71,11 @@ environments:
     routes:
       - nginx-php:
         - "www.staging.content.vic.gov.au":
-            tls-acme: 'true'
+            tls-acme: 'false'
             insecure: Allow
             hsts: max-age=31536000
         - "staging.content.vic.gov.au":
-            tls-acme: 'true'
+            tls-acme: 'false'
             insecure: Allow
             hsts: max-age=31536000
   develop:
@@ -91,11 +91,11 @@ environments:
     routes:
       - nginx-php:
         - "www.develop.content.vic.gov.au":
-            tls-acme: 'true'
+            tls-acme: 'false'
             insecure: Allow
             hsts: max-age=31536000
         - "develop.content.vic.gov.au":
-            tls-acme: 'true'
+            tls-acme: 'false'
             insecure: Allow
             hsts: max-age=31536000
   sandbox:
