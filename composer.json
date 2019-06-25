@@ -322,7 +322,7 @@
                 "Add password validation to the user entity as a constraint - https://www.drupal.org/project/password_policy/issues/2941526#comment-13004347": "https://www.drupal.org/files/issues/2019-03-12/password_policy-move-password-validation-to-user-entity-2941526-6-D8.patch"
             },
             "dpc-sdp/tide_media": {
-                "update media field type": "patches/tide_media/field_type_update.patch"
+                "tide_media field type change patch - https://github.com/dpc-sdp/tide_media/pull/23": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_media/pull/23.patch"
             }
         }
     }
