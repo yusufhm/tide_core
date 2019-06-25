@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9176ac7480debfe83b4a3b56aa1e8990",
+    "content-hash": "2ffa527921632843a9cc3aca29821480",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1751,22 +1751,22 @@
         },
         {
             "name": "dpc-sdp/tide_api",
-            "version": "1.2.6",
+            "version": "dev-feature/upgrade_jsonapi",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_api.git",
-                "reference": "300fffafca583414f68e268550bc6fd6927dd98f"
+                "reference": "e2b23d56c25a22ef446708e61dcf4df6b8bc68f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/300fffafca583414f68e268550bc6fd6927dd98f",
-                "reference": "300fffafca583414f68e268550bc6fd6927dd98f",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/e2b23d56c25a22ef446708e61dcf4df6b8bc68f4",
+                "reference": "e2b23d56c25a22ef446708e61dcf4df6b8bc68f4",
                 "shasum": ""
             },
             "require": {
                 "dpc-sdp/tide_core": "^1.2.5",
-                "drupal/jsonapi": "~2.3.0",
-                "drupal/jsonapi_extras": "~3.4.0",
+                "drupal/jsonapi": "^2.4",
+                "drupal/jsonapi_extras": "^3.8",
                 "drupal/schemata": "^1.0-alpha2"
             },
             "suggest": {
@@ -1779,9 +1779,6 @@
                 "patches": {
                     "drupal/core": {
                         "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
-                    },
-                    "drupal/jsonapi_extras": {
-                        "JSON:API Extras 3.4 adds enhanced field values outside of attributes for Config Entities - https://www.drupal.org/project/jsonapi_extras/issues/3037833": "https://www.drupal.org/files/issues/2019-03-06/jsonapi_extras-config_entities_enhancer-3037833-4.patch"
                     }
                 }
             },
@@ -1789,7 +1786,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Content API for Tide distribution.",
-            "time": "2019-06-18T04:53:34+00:00"
+            "time": "2019-06-25T04:40:31+00:00"
         },
         {
             "name": "dpc-sdp/tide_authenticated_content",
@@ -4928,17 +4925,17 @@
         },
         {
             "name": "drupal/jsonapi",
-            "version": "2.3.0",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/jsonapi.git",
-                "reference": "8.x-2.3"
+                "reference": "8.x-2.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-2.3.zip",
-                "reference": "8.x-2.3",
-                "shasum": "b5a6e263eb1c238de869b28483e411b1167a8432"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-2.4.zip",
+                "reference": "8.x-2.4",
+                "shasum": "5f710c1c602378748fa3b21ceec0977de62359ed"
             },
             "require": {
                 "drupal/core": "^8.5.11"
@@ -4954,8 +4951,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.3",
-                    "datestamp": "1553177584",
+                    "version": "8.x-2.4",
+                    "datestamp": "1553554702",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4992,21 +4989,21 @@
         },
         {
             "name": "drupal/jsonapi_extras",
-            "version": "3.4.0",
+            "version": "3.8.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/jsonapi_extras.git",
-                "reference": "8.x-3.4"
+                "reference": "8.x-3.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi_extras-8.x-3.4.zip",
-                "reference": "8.x-3.4",
-                "shasum": "d9ab3fc818094f9f9f6dc673a4487413b06b945a"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi_extras-8.x-3.8.zip",
+                "reference": "8.x-3.8",
+                "shasum": "d2f793ca5e6ac7ec2db42f1ca05e468d3d20a568"
             },
             "require": {
-                "drupal/core": "^8.5",
-                "drupal/jsonapi": "^2.1",
+                "drupal/core": "~8.0",
+                "drupal/jsonapi": "*",
                 "e0ipso/shaper": "^1"
             },
             "require-dev": {
@@ -5018,15 +5015,12 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.4",
-                    "datestamp": "1553751485",
+                    "version": "8.x-3.8",
+                    "datestamp": "1560872886",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
-                },
-                "patches_applied": {
-                    "JSON:API Extras 3.4 adds enhanced field values outside of attributes for Config Entities - https://www.drupal.org/project/jsonapi_extras/issues/3037833": "https://www.drupal.org/files/issues/2019-03-06/jsonapi_extras-config_entities_enhancer-3037833-4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -14134,9 +14128,17 @@
             "time": "2019-02-04T21:34:32+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "alias": "1.2.6",
+            "alias_normalized": "1.2.6.0",
+            "version": "dev-feature/upgrade_jsonapi",
+            "package": "dpc-sdp/tide_api"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "dpc-sdp/tide_api": 20,
         "drupal/coffee": 10,
         "drupal/default_content": 15,
         "drupal/profile": 5,
