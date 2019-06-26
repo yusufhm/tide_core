@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\Reference;
 /**
  * Class TidePublicationServiceProvider.
  *
- * @package Drupal\tide_site
+ * @package Drupal\tide_publication
  */
 class TidePublicationServiceProvider extends ServiceProviderBase {
 
@@ -20,8 +20,8 @@ class TidePublicationServiceProvider extends ServiceProviderBase {
     // Dynamically define the service tide_site.get_route_subscriber.
     $modules = $container->getParameter('container.modules');
 
-    // Check for installed tide_api module.
-    if (isset($modules['tide_api'])) {
+    // Check if jsonapi is installed.
+    if (isset($modules['jsonapi'])) {
       if ($container->hasDefinition('jsonapi.entity_resource')) {
         $entity_resource = $container->getDefinition('jsonapi.entity_resource');
         // Pretends to be a JSON:API Controller.
