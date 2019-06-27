@@ -60,7 +60,6 @@ function vicgovau_core_editor_js_settings_alter(array &$settings) {
     if ($settings['editor']['formats'][$text_format_id]['editor'] === 'ckeditor') {
       $settings['editor']['formats'][$text_format_id]['editorSettings']['autoGrow_maxHeight'] = '600';
       $settings['editor']['formats'][$text_format_id]['editorSettings']['forcePasteAsPlainText'] = TRUE;
-      $settings['editor']['formats'][$text_format_id]['editorSettings']['disallowedContent'] = 'br';
     }
   }
 }
