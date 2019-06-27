@@ -18,6 +18,7 @@ dependencies:
     - paragraphs.paragraphs_type.card_navigation_featured_auto
     - paragraphs.paragraphs_type.card_promotion
     - paragraphs.paragraphs_type.card_promotion_auto
+    - paragraphs.paragraphs_type.complex_image
     - paragraphs.paragraphs_type.data_driven_component
     - paragraphs.paragraphs_type.embedded_webform
     - paragraphs.paragraphs_type.featured_news
@@ -64,6 +65,7 @@ settings:
       latest_events: latest_events
       card_carousel: card_carousel
       data_driven_component: data_driven_component
+      complex_image: complex_image
       timelines: timelines
       user_authentication_block: user_authentication_block
     target_bundles_drag_drop:
@@ -151,6 +153,9 @@ settings:
       phone:
         weight: 38
         enabled: false
+      complex_image:
+        enabled: true
+        weight: 38
       social_link:
         weight: 40
         enabled: false

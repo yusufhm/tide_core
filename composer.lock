@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3e9c0e5cb50cb6bf3b86c2b18a7fdfc",
+    "content-hash": "9176ac7480debfe83b4a3b56aa1e8990",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -284,8 +284,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.5.11.zip",
-                "reference": "master",
-                "shasum": null
+                "reference": "master"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -298,8 +297,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/iframe/releases/iframe_4.5.11.zip",
-                "reference": "master",
-                "shasum": null
+                "reference": "master"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -312,8 +310,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/templates/releases/templates_4.5.7.zip",
-                "reference": "master",
-                "shasum": null
+                "reference": "master"
             },
             "type": "drupal-library"
         },
@@ -1684,8 +1681,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/bay",
-                "reference": "927a01f4945efb0fa9de4c9788ab41e4a18f37b5",
-                "shasum": null
+                "reference": "927a01f4945efb0fa9de4c9788ab41e4a18f37b5"
             },
             "require": {
                 "drupal/cloudflare": "^1.0@alpha",
@@ -1702,38 +1698,38 @@
         },
         {
             "name": "dpc-sdp/tide",
-            "version": "1.1.5",
+            "version": "1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide.git",
-                "reference": "a4458273d4d4ebaf7a1dc2b694524d242f842014"
+                "reference": "b251587de199dc4bf6a2cce2e69313fdc7be39dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide/zipball/a4458273d4d4ebaf7a1dc2b694524d242f842014",
-                "reference": "a4458273d4d4ebaf7a1dc2b694524d242f842014",
+                "url": "https://api.github.com/repos/dpc-sdp/tide/zipball/b251587de199dc4bf6a2cce2e69313fdc7be39dd",
+                "reference": "b251587de199dc4bf6a2cce2e69313fdc7be39dd",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_api": "1.2.5",
-                "dpc-sdp/tide_core": "1.2.3",
-                "dpc-sdp/tide_event": "1.2.4",
-                "dpc-sdp/tide_landing_page": "1.1.5",
-                "dpc-sdp/tide_media": "1.2.4",
-                "dpc-sdp/tide_monsido": "1.1.4",
-                "dpc-sdp/tide_news": "1.1.4",
-                "dpc-sdp/tide_page": "1.2.4",
-                "dpc-sdp/tide_search": "1.1.4",
-                "dpc-sdp/tide_site": "1.1.5",
+                "dpc-sdp/tide_api": "1.2.6",
+                "dpc-sdp/tide_core": "1.2.5",
+                "dpc-sdp/tide_event": "1.2.5",
+                "dpc-sdp/tide_landing_page": "1.1.6",
+                "dpc-sdp/tide_media": "1.2.5",
+                "dpc-sdp/tide_monsido": "1.1.5",
+                "dpc-sdp/tide_news": "1.1.5",
+                "dpc-sdp/tide_page": "1.2.5",
+                "dpc-sdp/tide_search": "1.1.5",
+                "dpc-sdp/tide_site": "1.1.6",
                 "dpc-sdp/tide_test": "^1.0",
-                "dpc-sdp/tide_webform": "1.1.5"
+                "dpc-sdp/tide_webform": "1.1.6"
             },
             "type": "drupal-profile",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Tide Drupal 8 profile",
-            "time": "2019-06-05T06:50:25+00:00"
+            "time": "2019-06-18T06:12:42+00:00"
         },
         {
             "name": "dpc-sdp/tide_alert",
@@ -1741,8 +1737,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_alert",
-                "reference": "ef76a6cd2c46c57bd83888c10610b624f84b2d70",
-                "shasum": null
+                "reference": "ef76a6cd2c46c57bd83888c10610b624f84b2d70"
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -1756,26 +1751,26 @@
         },
         {
             "name": "dpc-sdp/tide_api",
-            "version": "1.2.5",
+            "version": "1.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_api.git",
-                "reference": "39df955d06e324caec18280f16036221102d4df4"
+                "reference": "300fffafca583414f68e268550bc6fd6927dd98f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/39df955d06e324caec18280f16036221102d4df4",
-                "reference": "39df955d06e324caec18280f16036221102d4df4",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/300fffafca583414f68e268550bc6fd6927dd98f",
+                "reference": "300fffafca583414f68e268550bc6fd6927dd98f",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3",
+                "dpc-sdp/tide_core": "^1.2.5",
                 "drupal/jsonapi": "~2.3.0",
                 "drupal/jsonapi_extras": "~3.4.0",
                 "drupal/schemata": "^1.0-alpha2"
             },
             "suggest": {
-                "dpc-sdp/tide_site:^1.1.4": "TODO - Remove it later when we fix the incorrect dependency"
+                "dpc-sdp/tide_site:^1.1.6": "TODO - Remove it later when we fix the incorrect dependency"
             },
             "type": "drupal-module",
             "extra": {
@@ -1794,7 +1789,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Content API for Tide distribution.",
-            "time": "2019-06-05T04:26:39+00:00"
+            "time": "2019-06-18T04:53:34+00:00"
         },
         {
             "name": "dpc-sdp/tide_authenticated_content",
@@ -1802,8 +1797,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_authenticated_content",
-                "reference": "3b81f9d9ec12c548822fa75f87e3f2fd4ac16a15",
-                "shasum": null
+                "reference": "3b81f9d9ec12c548822fa75f87e3f2fd4ac16a15"
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -1829,16 +1823,16 @@
         },
         {
             "name": "dpc-sdp/tide_core",
-            "version": "1.2.3",
+            "version": "1.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "7aa2db87a4810b7a2735cc9190c778d48ecd2aa3"
+                "reference": "4f9c9ae8adbbf8c2efe4896e3b6874b12755f951"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/7aa2db87a4810b7a2735cc9190c778d48ecd2aa3",
-                "reference": "7aa2db87a4810b7a2735cc9190c778d48ecd2aa3",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/4f9c9ae8adbbf8c2efe4896e3b6874b12755f951",
+                "reference": "4f9c9ae8adbbf8c2efe4896e3b6874b12755f951",
                 "shasum": ""
             },
             "require": {
@@ -1899,9 +1893,6 @@
                         "DateTimeIso8601::getDateTime() does not specify the storage timezone when constructing DrupalDateTime object - https://www.drupal.org/project/drupal/issues/3002164": "https://www.drupal.org/files/issues/2018-09-25/3002164-7.patch",
                         "Custom blocks are no longer displayed and no longer appear in the custom block library - https://www.drupal.org/project/drupal/issues/2997898#comment-12832813": "https://www.drupal.org/files/issues/2018-10-27/2997898-21.patch"
                     },
-                    "drupal/entity_embed": {
-                        "2832504 - Send the CKEditor instance ID to the embed.preview route": "https://www.drupal.org/files/issues/2832504-2.patch"
-                    },
                     "drupal/entity_reference_revisions": {
                         "Allow entities to be generated if none exist - https://www.drupal.org/node/2910326": "https://www.drupal.org/files/issues/entity_reference_revisions-stop_checking_for_entities_before_generating_sample-2910326-2.patch"
                     },
@@ -1943,7 +1934,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Core functionality for Tide Drupal 8 distribution",
-            "time": "2019-06-05T01:09:37+00:00"
+            "time": "2019-06-18T02:29:08+00:00"
         },
         {
             "name": "dpc-sdp/tide_data_driven_component",
@@ -1951,8 +1942,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_data_driven_component",
-                "reference": "7390e5834ce48dc1952027fc9f5aeb0780c3ce57",
-                "shasum": null
+                "reference": "7390e5834ce48dc1952027fc9f5aeb0780c3ce57"
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -1966,25 +1956,25 @@
         },
         {
             "name": "dpc-sdp/tide_event",
-            "version": "1.2.4",
+            "version": "1.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_event.git",
-                "reference": "f4b5408f10e777d38ccaf61de3f1c23a940e4e8a"
+                "reference": "079d6b9302c5608354c427378e83630adc49dcb7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/f4b5408f10e777d38ccaf61de3f1c23a940e4e8a",
-                "reference": "f4b5408f10e777d38ccaf61de3f1c23a940e4e8a",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/079d6b9302c5608354c427378e83630adc49dcb7",
+                "reference": "079d6b9302c5608354c427378e83630adc49dcb7",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3",
-                "dpc-sdp/tide_media": "^1.2.4",
-                "dpc-sdp/tide_webform": "^1.1.3"
+                "dpc-sdp/tide_core": "^1.2.5",
+                "dpc-sdp/tide_media": "^1.2.5",
+                "dpc-sdp/tide_webform": "^1.1.6"
             },
             "suggest": {
-                "dpc-sdp/tide_api:^1.2.5": "Allows to use Drupal in headless mode"
+                "dpc-sdp/tide_api:^1.2.6": "Allows to use Drupal in headless mode"
             },
             "type": "drupal-module",
             "extra": {
@@ -1996,7 +1986,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Event content type and related configuration for Tide Drupal 8 distribution",
-            "time": "2019-06-05T05:55:15+00:00"
+            "time": "2019-06-18T05:29:19+00:00"
         },
         {
             "name": "dpc-sdp/tide_grant",
@@ -2004,8 +1994,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_grant",
-                "reference": "fa43690f272e0d243cb6dab20e1221c9c8ad0296",
-                "shasum": null
+                "reference": "fa43690f272e0d243cb6dab20e1221c9c8ad0296"
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -2020,51 +2009,51 @@
         },
         {
             "name": "dpc-sdp/tide_landing_page",
-            "version": "1.1.5",
+            "version": "1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_landing_page.git",
-                "reference": "166e11021444b8c7dad602bb0d2193380f3353de"
+                "reference": "fd9e2d26bb3f53f9b5ad2c68d04a2d1a6ec9725d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/166e11021444b8c7dad602bb0d2193380f3353de",
-                "reference": "166e11021444b8c7dad602bb0d2193380f3353de",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/fd9e2d26bb3f53f9b5ad2c68d04a2d1a6ec9725d",
+                "reference": "fd9e2d26bb3f53f9b5ad2c68d04a2d1a6ec9725d",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3",
-                "dpc-sdp/tide_event": "^1.2.3",
-                "dpc-sdp/tide_media": "^1.2.4"
+                "dpc-sdp/tide_core": "^1.2.5",
+                "dpc-sdp/tide_event": "^1.2.5",
+                "dpc-sdp/tide_media": "^1.2.5"
             },
             "suggest": {
-                "dpc-sdp/tide_api:^1.2.5": "Allows to use Drupal in headless mode",
-                "dpc-sdp/tide_news:^1.1.3": "News content type and related configuration for Tide Drupal 8 distribution",
-                "dpc-sdp/tide_webform:^1.1.3": "Allows to use questionnaires"
+                "dpc-sdp/tide_api:^1.2.6": "Allows to use Drupal in headless mode",
+                "dpc-sdp/tide_news:^1.1.5": "News content type and related configuration for Tide Drupal 8 distribution",
+                "dpc-sdp/tide_webform:^1.1.6": "Allows to use questionnaires"
             },
             "type": "drupal-module",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Landing Page content type and related configuration for Tide Drupal 8 distribution",
-            "time": "2019-06-05T06:07:31+00:00"
+            "time": "2019-06-18T05:36:55+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
-            "version": "1.2.4",
+            "version": "1.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_media.git",
-                "reference": "f103b0c5cb59740e519905b00aaac634988823e8"
+                "reference": "cacf21494e484b7b517ea1c5d877b2c0e2b25439"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_media/zipball/f103b0c5cb59740e519905b00aaac634988823e8",
-                "reference": "f103b0c5cb59740e519905b00aaac634988823e8",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_media/zipball/cacf21494e484b7b517ea1c5d877b2c0e2b25439",
+                "reference": "cacf21494e484b7b517ea1c5d877b2c0e2b25439",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3",
+                "dpc-sdp/tide_core": "^1.2.5",
                 "drupal/embed": "^1.0",
                 "drupal/inline_entity_form": "^1.0-rc1",
                 "drupal/svg_image": "^1.8",
@@ -2075,89 +2064,89 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Media and related configuration for Tide Drupal 8 distribution",
-            "time": "2019-06-05T03:51:28+00:00"
+            "time": "2019-06-18T05:03:28+00:00"
         },
         {
             "name": "dpc-sdp/tide_monsido",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_monsido.git",
-                "reference": "b56358a7969175fc9231f4bea257f8a23d50635c"
+                "reference": "0756b9f193f00a125bb3e28282bd97033bf9e363"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_monsido/zipball/b56358a7969175fc9231f4bea257f8a23d50635c",
-                "reference": "b56358a7969175fc9231f4bea257f8a23d50635c",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_monsido/zipball/0756b9f193f00a125bb3e28282bd97033bf9e363",
+                "reference": "0756b9f193f00a125bb3e28282bd97033bf9e363",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3"
+                "dpc-sdp/tide_core": "^1.2.5"
             },
             "type": "drupal-module",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Provides Monsido integration for Tide Drupal 8 distribution",
-            "time": "2019-06-05T06:02:00+00:00"
+            "time": "2019-06-18T05:42:14+00:00"
         },
         {
             "name": "dpc-sdp/tide_news",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_news.git",
-                "reference": "5a5e5fb225a088f7751f02b63297a6e3a5841a1d"
+                "reference": "76229fa8fe04adaddb9a964b1ce7bc3c524499b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_news/zipball/5a5e5fb225a088f7751f02b63297a6e3a5841a1d",
-                "reference": "5a5e5fb225a088f7751f02b63297a6e3a5841a1d",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_news/zipball/76229fa8fe04adaddb9a964b1ce7bc3c524499b7",
+                "reference": "76229fa8fe04adaddb9a964b1ce7bc3c524499b7",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3",
-                "dpc-sdp/tide_media": "^1.2.4"
+                "dpc-sdp/tide_core": "^1.2.5",
+                "dpc-sdp/tide_media": "^1.2.5"
             },
             "suggest": {
-                "dpc-sdp/tide_api:^1.2.5": "Allows to use Drupal in headless mode",
-                "dpc-sdp/tide_webform:^1.1.3": "Allows to use questionnaires"
+                "dpc-sdp/tide_api:^1.2.6": "Allows to use Drupal in headless mode",
+                "dpc-sdp/tide_webform:^1.1.6": "Allows to use questionnaires"
             },
             "type": "drupal-module",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "News content type and related configuration for Tide Drupal 8 distribution",
-            "time": "2019-06-05T05:59:38+00:00"
+            "time": "2019-06-18T05:32:27+00:00"
         },
         {
             "name": "dpc-sdp/tide_page",
-            "version": "1.2.4",
+            "version": "1.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_page.git",
-                "reference": "971d77088d9967bf13ad9ccfa3a1b61a9d1f11ab"
+                "reference": "87f57aa4a850d8b584dd132248eadf0f12ebc585"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_page/zipball/971d77088d9967bf13ad9ccfa3a1b61a9d1f11ab",
-                "reference": "971d77088d9967bf13ad9ccfa3a1b61a9d1f11ab",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_page/zipball/87f57aa4a850d8b584dd132248eadf0f12ebc585",
+                "reference": "87f57aa4a850d8b584dd132248eadf0f12ebc585",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3",
-                "dpc-sdp/tide_media": "^1.2.4"
+                "dpc-sdp/tide_core": "^1.2.5",
+                "dpc-sdp/tide_media": "^1.2.5"
             },
             "suggest": {
-                "dpc-sdp/tide_api:^1.2.5": "Allows to use Drupal in headless mode",
-                "dpc-sdp/tide_webform:^1.1.3": "Allows to use questionnaires"
+                "dpc-sdp/tide_api:^1.2.6": "Allows to use Drupal in headless mode",
+                "dpc-sdp/tide_webform:^1.1.6": "Allows to use questionnaires"
             },
             "type": "drupal-module",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Page content type and related configuration for Tide Drupal 8 distribution",
-            "time": "2019-06-05T06:06:10+00:00"
+            "time": "2019-06-18T05:47:01+00:00"
         },
         {
             "name": "dpc-sdp/tide_profile",
@@ -2165,8 +2154,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_profile",
-                "reference": "7dff339686d0ea8f0e5613d88c58ee64433bbba3",
-                "shasum": null
+                "reference": "7dff339686d0ea8f0e5613d88c58ee64433bbba3"
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -2184,8 +2172,7 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_publication",
-                "reference": "cd6e40ee91a8a043f2910835c1c7f8fdeada2d15",
-                "shasum": null
+                "reference": "cd6e40ee91a8a043f2910835c1c7f8fdeada2d15"
             },
             "require": {
                 "dpc-sdp/tide_landing_page": "@dev",
@@ -2199,20 +2186,20 @@
         },
         {
             "name": "dpc-sdp/tide_search",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_search.git",
-                "reference": "a02e0ff85147ad1e1b5a6c8a4193835cf042c4dd"
+                "reference": "77bc087a42fa556b6e1407293234dfb022af79bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_search/zipball/a02e0ff85147ad1e1b5a6c8a4193835cf042c4dd",
-                "reference": "a02e0ff85147ad1e1b5a6c8a4193835cf042c4dd",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_search/zipball/77bc087a42fa556b6e1407293234dfb022af79bf",
+                "reference": "77bc087a42fa556b6e1407293234dfb022af79bf",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3",
+                "dpc-sdp/tide_core": "^1.2.5",
                 "drupal/elasticsearch_connector": "^5.0-alpha3",
                 "drupal/search_api": "^1.11"
             },
@@ -2229,35 +2216,35 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Search configuration for Tide Drupal 8 distribution",
-            "time": "2019-06-05T06:04:44+00:00"
+            "time": "2019-06-18T05:50:38+00:00"
         },
         {
             "name": "dpc-sdp/tide_site",
-            "version": "1.1.5",
+            "version": "1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_site.git",
-                "reference": "d24756c95b4536fa94f5bc2819007353e5978ff8"
+                "reference": "38ee83058b92bb83b6b40ae05f465dd3b6fd9982"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_site/zipball/d24756c95b4536fa94f5bc2819007353e5978ff8",
-                "reference": "d24756c95b4536fa94f5bc2819007353e5978ff8",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_site/zipball/38ee83058b92bb83b6b40ae05f465dd3b6fd9982",
+                "reference": "38ee83058b92bb83b6b40ae05f465dd3b6fd9982",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3",
-                "dpc-sdp/tide_media": "^1.2.4"
+                "dpc-sdp/tide_core": "^1.2.5",
+                "dpc-sdp/tide_media": "^1.2.5"
             },
             "suggest": {
-                "dpc-sdp/tide_api:^1.2.5": "Allows to use Drupal in headless mode"
+                "dpc-sdp/tide_api:^1.2.6": "Allows to use Drupal in headless mode"
             },
             "type": "drupal-module",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Post content to multiple sites and sections.",
-            "time": "2019-06-05T05:14:53+00:00"
+            "time": "2019-06-18T05:08:39+00:00"
         },
         {
             "name": "dpc-sdp/tide_test",
@@ -2282,37 +2269,32 @@
         },
         {
             "name": "dpc-sdp/tide_webform",
-            "version": "1.1.5",
+            "version": "1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_webform.git",
-                "reference": "d95a5961c857f00fb8cbcae4b4df905eaa821736"
+                "reference": "5219c68368e2fd780f166351f9e11f940fe72336"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_webform/zipball/d95a5961c857f00fb8cbcae4b4df905eaa821736",
-                "reference": "d95a5961c857f00fb8cbcae4b4df905eaa821736",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_webform/zipball/5219c68368e2fd780f166351f9e11f940fe72336",
+                "reference": "5219c68368e2fd780f166351f9e11f940fe72336",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3",
+                "dpc-sdp/tide_core": "^1.2.5",
                 "drupal/token_conditions": "dev-1.x",
                 "drupal/webform": "^5.2"
             },
             "suggest": {
-                "dpc-sdp/tide_api:^1.2.5": "Allows to use Drupal in headless mode"
+                "dpc-sdp/tide_api:^1.2.6": "Allows to use Drupal in headless mode"
             },
             "type": "drupal-module",
-            "extra": {
-                "patches_applied": {
-                    "Added Privacy Statement element - https://github.com/dpc-sdp/tide_webform/pull/26": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_webform/pull/26.patch"
-                }
-            },
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Webform configuration for Tide Drupal 8 distribution",
-            "time": "2019-06-05T06:34:57+00:00"
+            "time": "2019-06-18T05:26:35+00:00"
         },
         {
             "name": "drupal-composer/drupal-scaffold",
@@ -4254,14 +4236,11 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-beta3",
-                    "datestamp": "1556906881",
+                    "datestamp": "1560008285",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
-                },
-                "patches_applied": {
-                    "2832504 - Send the CKEditor instance ID to the embed.preview route": "https://www.drupal.org/files/issues/2832504-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -9075,9 +9054,7 @@
             "version": "4.3.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/enyo/dropzone/archive/v4.3.0.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://github.com/enyo/dropzone/archive/v4.3.0.zip"
             },
             "type": "drupal-library"
         },

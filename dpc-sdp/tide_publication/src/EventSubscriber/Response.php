@@ -37,7 +37,7 @@ class Response implements EventSubscriberInterface {
 
     /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
     $entity = $request->attributes->get('entity');
-    if ($entity && in_array($entity->bundle(), ['publication', ['publication_page']])) {
+    if ($entity && in_array($entity->bundle(), ['publication', 'publication_page'])) {
       $response = $event->getResponse();
       if (!$response instanceof CacheableResponseInterface) {
         return;
