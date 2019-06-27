@@ -107,6 +107,7 @@ permissions:
   - 'edit own timeline content'
   - 'edit own webform'
   - 'edit own webform submission'
+  - 'reorder entity_hierarchy children'
   - 'revert alert revisions'
   - 'revert all revisions'
   - 'revert event revisions'

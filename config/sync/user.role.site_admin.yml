@@ -157,6 +157,7 @@ permissions:
   - 'edit terms in topic'
   - 'edit webform assets'
   - 'override news promote to front landing_page option'
+  - 'reorder entity_hierarchy children'
   - 'revert alert revisions'
   - 'revert all revisions'
   - 'revert event revisions'
