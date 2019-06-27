@@ -320,6 +320,9 @@
             "drupal/password_policy": {
                 "Allow users to bypass validation when editing another user, and correct permission is set - https://www.drupal.org/project/password_policy/issues/2786315": "https://www.drupal.org/files/issues/2019-02-15/edit_other_users-2786315-38.patch",
                 "Add password validation to the user entity as a constraint - https://www.drupal.org/project/password_policy/issues/2941526#comment-13004347": "https://www.drupal.org/files/issues/2019-03-12/password_policy-move-password-validation-to-user-entity-2941526-6-D8.patch"
+            },
+            "dpc-sdp/tide_landing_page": {
+                "summary field ristricted to 200 characters - https://github.com/dpc-sdp/content-vic-gov-au/pull/604": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_landing_page/pull/73.patch"
             }
         }
     }
