@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9176ac7480debfe83b4a3b56aa1e8990",
+    "content-hash": "9f8f0635a152ae182d05703952e70acb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2032,6 +2032,11 @@
                 "dpc-sdp/tide_webform:^1.1.6": "Allows to use questionnaires"
             },
             "type": "drupal-module",
+            "extra": {
+                "patches_applied": {
+                    "summary field ristricted to 200 characters - https://github.com/dpc-sdp/content-vic-gov-au/pull/604": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_landing_page/pull/80.patch"
+                }
+            },
             "license": [
                 "GPL-2.0-or-later"
             ],
