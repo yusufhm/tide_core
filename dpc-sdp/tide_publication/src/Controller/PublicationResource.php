@@ -7,6 +7,7 @@ use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
+use Drupal\Core\Url;
 use Drupal\entity_hierarchy\Storage\EntityTreeNodeMapperInterface;
 use Drupal\entity_hierarchy\Storage\NestedSetNodeKeyFactory;
 use Drupal\entity_hierarchy\Storage\NestedSetStorage;
@@ -15,6 +16,7 @@ use Drupal\jsonapi\Controller\EntityResource;
 use Drupal\jsonapi\Exception\EntityAccessDeniedHttpException;
 use Drupal\jsonapi\JsonApiResource\Link;
 use Drupal\jsonapi\JsonApiResource\LinkCollection;
+use Drupal\jsonapi\Routing\Routes;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -118,14 +120,15 @@ class PublicationResource extends EntityResource {
     }
 
     $resource_type = $this->resourceTypeRepository->get($entity->getEntityTypeId(), $entity->bundle());
-    $entity_link = $this->linkManager->getEntityLink($entity->uuid(), $resource_type, [], 'individual');
+    $route_name = Routes::getRouteName($resource_type, 'individual');
+    $entity_link = Url::fromRoute($route_name, ['entity' => $entity->uuid()]);
 
     $response_data = [
       'type' => $resource_type->getTypeName(),
       'id' => $entity->uuid(),
       'links' => [
         'self' => [
-          'href' => $entity_link,
+          'href' => $entity_link->setAbsolute(TRUE)->toString(TRUE)->getGeneratedUrl(),
         ],
       ],
     ];
@@ -156,7 +159,7 @@ class PublicationResource extends EntityResource {
       $this->cacheData->set($cid, $flatten_hierarchy, $cache->getCacheMaxAge(), $cache->getCacheTags());
     }
 
-    $self_link = new Link(new CacheableMetadata(), $this->linkManager->getRequestLink($request), ['self']);
+    $self_link = new Link(new CacheableMetadata(), self::getRequestLink($request), ['self']);
     $links = (new LinkCollection([]))->withLink('self', $self_link);
     $serialized_links = $this->serializer->normalize($links, 'api_json');
 
