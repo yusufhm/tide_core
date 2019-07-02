@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9f8f0635a152ae182d05703952e70acb",
+    "content-hash": "f747afdfea0682a75a21778ab546fc61",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -284,7 +284,8 @@
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.5.11.zip",
-                "reference": "master"
+                "reference": "master",
+                "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -297,7 +298,8 @@
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/iframe/releases/iframe_4.5.11.zip",
-                "reference": "master"
+                "reference": "master",
+                "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -310,7 +312,8 @@
             "dist": {
                 "type": "zip",
                 "url": "https://download.ckeditor.com/templates/releases/templates_4.5.7.zip",
-                "reference": "master"
+                "reference": "master",
+                "shasum": null
             },
             "type": "drupal-library"
         },
@@ -1681,7 +1684,8 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/bay",
-                "reference": "927a01f4945efb0fa9de4c9788ab41e4a18f37b5"
+                "reference": "927a01f4945efb0fa9de4c9788ab41e4a18f37b5",
+                "shasum": null
             },
             "require": {
                 "drupal/cloudflare": "^1.0@alpha",
@@ -1737,7 +1741,8 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_alert",
-                "reference": "ef76a6cd2c46c57bd83888c10610b624f84b2d70"
+                "reference": "ef76a6cd2c46c57bd83888c10610b624f84b2d70",
+                "shasum": null
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -1797,7 +1802,8 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_authenticated_content",
-                "reference": "3b81f9d9ec12c548822fa75f87e3f2fd4ac16a15"
+                "reference": "3b81f9d9ec12c548822fa75f87e3f2fd4ac16a15",
+                "shasum": null
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -1942,7 +1948,8 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_data_driven_component",
-                "reference": "7390e5834ce48dc1952027fc9f5aeb0780c3ce57"
+                "reference": "7390e5834ce48dc1952027fc9f5aeb0780c3ce57",
+                "shasum": null
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -1994,7 +2001,8 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_grant",
-                "reference": "fa43690f272e0d243cb6dab20e1221c9c8ad0296"
+                "reference": "fa43690f272e0d243cb6dab20e1221c9c8ad0296",
+                "shasum": null
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -2034,7 +2042,7 @@
             "type": "drupal-module",
             "extra": {
                 "patches_applied": {
-                    "summary field ristricted to 200 characters - https://github.com/dpc-sdp/content-vic-gov-au/pull/604": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_landing_page/pull/80.patch"
+                    "summary field ristricted to 200 characters - https://github.com/dpc-sdp/tide_landing_page/pull/80": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_landing_page/pull/80.patch"
                 }
             },
             "license": [
@@ -2159,7 +2167,8 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_profile",
-                "reference": "7dff339686d0ea8f0e5613d88c58ee64433bbba3"
+                "reference": "7dff339686d0ea8f0e5613d88c58ee64433bbba3",
+                "shasum": null
             },
             "require": {
                 "dpc-sdp/tide_core": "@dev",
@@ -2177,7 +2186,8 @@
             "dist": {
                 "type": "path",
                 "url": "dpc-sdp/tide_publication",
-                "reference": "cd6e40ee91a8a043f2910835c1c7f8fdeada2d15"
+                "reference": "cd6e40ee91a8a043f2910835c1c7f8fdeada2d15",
+                "shasum": null
             },
             "require": {
                 "dpc-sdp/tide_landing_page": "@dev",
@@ -9059,7 +9069,9 @@
             "version": "4.3.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/enyo/dropzone/archive/v4.3.0.zip"
+                "url": "https://github.com/enyo/dropzone/archive/v4.3.0.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library"
         },
