@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd8bf7faf60318efcf0e7d7be7325ee1",
+    "content-hash": "e706ea4a2a6430e4adb33cd845a37aa4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -316,16 +316,16 @@
         },
         {
             "name": "commerceguys/addressing",
-            "version": "v1.0.3",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/commerceguys/addressing.git",
-                "reference": "10bf70355e76188d4e195ace1c7c9dc44dc66d6f"
+                "reference": "2d048bfdb3b79f2d87f5d5b078769c059eaa3eb1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/commerceguys/addressing/zipball/10bf70355e76188d4e195ace1c7c9dc44dc66d6f",
-                "reference": "10bf70355e76188d4e195ace1c7c9dc44dc66d6f",
+                "url": "https://api.github.com/repos/commerceguys/addressing/zipball/2d048bfdb3b79f2d87f5d5b078769c059eaa3eb1",
+                "reference": "2d048bfdb3b79f2d87f5d5b078769c059eaa3eb1",
                 "shasum": ""
             },
             "require": {
@@ -371,7 +371,7 @@
                 "localization",
                 "postal"
             ],
-            "time": "2019-03-31T19:45:09+00:00"
+            "time": "2019-06-27T10:43:27+00:00"
         },
         {
             "name": "composer/installers",
@@ -1466,20 +1466,23 @@
         },
         {
             "name": "doctrine/lexer",
-            "version": "v1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c"
+                "reference": "1febd6c3ef84253d7c815bed85fc622ad207a9f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/83893c552fd2045dd78aef794c31e694c37c0b8c",
-                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/1febd6c3ef84253d7c815bed85fc622ad207a9f8",
+                "reference": "1febd6c3ef84253d7c815bed85fc622ad207a9f8",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.5"
             },
             "type": "library",
             "extra": {
@@ -1488,8 +1491,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Lexer\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Lexer\\": "lib/Doctrine/Common/Lexer"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1510,13 +1513,16 @@
                     "email": "schmittjoh@gmail.com"
                 }
             ],
-            "description": "Base library for a lexer that can be used in Top-Down, Recursive Descent Parsers.",
-            "homepage": "http://www.doctrine-project.org",
+            "description": "PHP Doctrine Lexer parser library that can be used in Top-Down, Recursive Descent Parsers.",
+            "homepage": "https://www.doctrine-project.org/projects/lexer.html",
             "keywords": [
+                "annotations",
+                "docblock",
                 "lexer",
-                "parser"
+                "parser",
+                "php"
             ],
-            "time": "2014-09-09T13:34:57+00:00"
+            "time": "2019-06-08T11:03:04+00:00"
         },
         {
             "name": "doctrine/persistence",
@@ -1698,38 +1704,38 @@
         },
         {
             "name": "dpc-sdp/tide",
-            "version": "1.1.5",
+            "version": "1.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide.git",
-                "reference": "a4458273d4d4ebaf7a1dc2b694524d242f842014"
+                "reference": "b3788cf6e7bde848e7b472aab2c52162e2854395"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide/zipball/a4458273d4d4ebaf7a1dc2b694524d242f842014",
-                "reference": "a4458273d4d4ebaf7a1dc2b694524d242f842014",
+                "url": "https://api.github.com/repos/dpc-sdp/tide/zipball/b3788cf6e7bde848e7b472aab2c52162e2854395",
+                "reference": "b3788cf6e7bde848e7b472aab2c52162e2854395",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_api": "1.2.5",
-                "dpc-sdp/tide_core": "1.2.3",
-                "dpc-sdp/tide_event": "1.2.4",
-                "dpc-sdp/tide_landing_page": "1.1.5",
-                "dpc-sdp/tide_media": "1.2.4",
-                "dpc-sdp/tide_monsido": "1.1.4",
-                "dpc-sdp/tide_news": "1.1.4",
-                "dpc-sdp/tide_page": "1.2.4",
-                "dpc-sdp/tide_search": "1.1.4",
-                "dpc-sdp/tide_site": "1.1.5",
+                "dpc-sdp/tide_api": "1.2.7",
+                "dpc-sdp/tide_core": "1.2.5",
+                "dpc-sdp/tide_event": "1.2.5",
+                "dpc-sdp/tide_landing_page": "1.1.6",
+                "dpc-sdp/tide_media": "1.2.5",
+                "dpc-sdp/tide_monsido": "1.1.5",
+                "dpc-sdp/tide_news": "1.1.5",
+                "dpc-sdp/tide_page": "1.2.5",
+                "dpc-sdp/tide_search": "1.1.5",
+                "dpc-sdp/tide_site": "1.1.6",
                 "dpc-sdp/tide_test": "^1.0",
-                "dpc-sdp/tide_webform": "1.1.5"
+                "dpc-sdp/tide_webform": "1.1.6"
             },
             "type": "drupal-profile",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Tide Drupal 8 profile",
-            "time": "2019-06-05T06:50:25+00:00"
+            "time": "2019-07-02T08:36:06+00:00"
         },
         {
             "name": "dpc-sdp/tide_alert",
@@ -1751,26 +1757,26 @@
         },
         {
             "name": "dpc-sdp/tide_api",
-            "version": "1.2.5",
+            "version": "1.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_api.git",
-                "reference": "39df955d06e324caec18280f16036221102d4df4"
+                "reference": "1f2f0eecbe53fcbfc0226b847919b9b93417b377"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/39df955d06e324caec18280f16036221102d4df4",
-                "reference": "39df955d06e324caec18280f16036221102d4df4",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/1f2f0eecbe53fcbfc0226b847919b9b93417b377",
+                "reference": "1f2f0eecbe53fcbfc0226b847919b9b93417b377",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3",
-                "drupal/jsonapi": "~2.3.0",
-                "drupal/jsonapi_extras": "~3.4.0",
+                "dpc-sdp/tide_core": "^1.2.5",
+                "drupal/jsonapi": "^2.4",
+                "drupal/jsonapi_extras": "^3.8",
                 "drupal/schemata": "^1.0-alpha2"
             },
             "suggest": {
-                "dpc-sdp/tide_site:^1.1.4": "TODO - Remove it later when we fix the incorrect dependency"
+                "dpc-sdp/tide_site:^1.1.6": "TODO - Remove it later when we fix the incorrect dependency"
             },
             "type": "drupal-module",
             "extra": {
@@ -1779,20 +1785,14 @@
                 "patches": {
                     "drupal/core": {
                         "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
-                    },
-                    "drupal/jsonapi_extras": {
-                        "JSON:API Extras 3.4 adds enhanced field values outside of attributes for Config Entities - https://www.drupal.org/project/jsonapi_extras/issues/3037833": "https://www.drupal.org/files/issues/2019-03-06/jsonapi_extras-config_entities_enhancer-3037833-4.patch"
                     }
-                },
-                "patches_applied": {
-                    "Removed Preview Links from Tide API - https://github.com/dpc-sdp/tide_api/pull/38": "https://github.com/dpc-sdp/tide_api/commit/1b83ed26262a9f7bd80e7d66382eccee05cb6b4a.patch"
                 }
             },
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Content API for Tide distribution.",
-            "time": "2019-06-05T04:26:39+00:00"
+            "time": "2019-07-02T08:25:42+00:00"
         },
         {
             "name": "dpc-sdp/tide_authenticated_content",
@@ -1826,16 +1826,16 @@
         },
         {
             "name": "dpc-sdp/tide_core",
-            "version": "1.2.3",
+            "version": "1.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_core.git",
-                "reference": "7aa2db87a4810b7a2735cc9190c778d48ecd2aa3"
+                "reference": "4f9c9ae8adbbf8c2efe4896e3b6874b12755f951"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/7aa2db87a4810b7a2735cc9190c778d48ecd2aa3",
-                "reference": "7aa2db87a4810b7a2735cc9190c778d48ecd2aa3",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_core/zipball/4f9c9ae8adbbf8c2efe4896e3b6874b12755f951",
+                "reference": "4f9c9ae8adbbf8c2efe4896e3b6874b12755f951",
                 "shasum": ""
             },
             "require": {
@@ -1896,9 +1896,6 @@
                         "DateTimeIso8601::getDateTime() does not specify the storage timezone when constructing DrupalDateTime object - https://www.drupal.org/project/drupal/issues/3002164": "https://www.drupal.org/files/issues/2018-09-25/3002164-7.patch",
                         "Custom blocks are no longer displayed and no longer appear in the custom block library - https://www.drupal.org/project/drupal/issues/2997898#comment-12832813": "https://www.drupal.org/files/issues/2018-10-27/2997898-21.patch"
                     },
-                    "drupal/entity_embed": {
-                        "2832504 - Send the CKEditor instance ID to the embed.preview route": "https://www.drupal.org/files/issues/2832504-2.patch"
-                    },
                     "drupal/entity_reference_revisions": {
                         "Allow entities to be generated if none exist - https://www.drupal.org/node/2910326": "https://www.drupal.org/files/issues/entity_reference_revisions-stop_checking_for_entities_before_generating_sample-2910326-2.patch"
                     },
@@ -1940,7 +1937,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Core functionality for Tide Drupal 8 distribution",
-            "time": "2019-06-05T01:09:37+00:00"
+            "time": "2019-06-18T02:29:08+00:00"
         },
         {
             "name": "dpc-sdp/tide_data_driven_component",
@@ -1962,25 +1959,25 @@
         },
         {
             "name": "dpc-sdp/tide_event",
-            "version": "1.2.4",
+            "version": "1.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_event.git",
-                "reference": "f4b5408f10e777d38ccaf61de3f1c23a940e4e8a"
+                "reference": "079d6b9302c5608354c427378e83630adc49dcb7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/f4b5408f10e777d38ccaf61de3f1c23a940e4e8a",
-                "reference": "f4b5408f10e777d38ccaf61de3f1c23a940e4e8a",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_event/zipball/079d6b9302c5608354c427378e83630adc49dcb7",
+                "reference": "079d6b9302c5608354c427378e83630adc49dcb7",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3",
-                "dpc-sdp/tide_media": "^1.2.4",
-                "dpc-sdp/tide_webform": "^1.1.3"
+                "dpc-sdp/tide_core": "^1.2.5",
+                "dpc-sdp/tide_media": "^1.2.5",
+                "dpc-sdp/tide_webform": "^1.1.6"
             },
             "suggest": {
-                "dpc-sdp/tide_api:^1.2.5": "Allows to use Drupal in headless mode"
+                "dpc-sdp/tide_api:^1.2.6": "Allows to use Drupal in headless mode"
             },
             "type": "drupal-module",
             "extra": {
@@ -1992,7 +1989,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Event content type and related configuration for Tide Drupal 8 distribution",
-            "time": "2019-06-05T05:55:15+00:00"
+            "time": "2019-06-18T05:29:19+00:00"
         },
         {
             "name": "dpc-sdp/tide_grant",
@@ -2015,57 +2012,51 @@
         },
         {
             "name": "dpc-sdp/tide_landing_page",
-            "version": "1.1.5",
+            "version": "1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_landing_page.git",
-                "reference": "166e11021444b8c7dad602bb0d2193380f3353de"
+                "reference": "fd9e2d26bb3f53f9b5ad2c68d04a2d1a6ec9725d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/166e11021444b8c7dad602bb0d2193380f3353de",
-                "reference": "166e11021444b8c7dad602bb0d2193380f3353de",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/fd9e2d26bb3f53f9b5ad2c68d04a2d1a6ec9725d",
+                "reference": "fd9e2d26bb3f53f9b5ad2c68d04a2d1a6ec9725d",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3",
-                "dpc-sdp/tide_event": "^1.2.3",
-                "dpc-sdp/tide_media": "^1.2.4"
+                "dpc-sdp/tide_core": "^1.2.5",
+                "dpc-sdp/tide_event": "^1.2.5",
+                "dpc-sdp/tide_media": "^1.2.5"
             },
             "suggest": {
-                "dpc-sdp/tide_api:^1.2.5": "Allows to use Drupal in headless mode",
-                "dpc-sdp/tide_news:^1.1.3": "News content type and related configuration for Tide Drupal 8 distribution",
-                "dpc-sdp/tide_webform:^1.1.3": "Allows to use questionnaires"
+                "dpc-sdp/tide_api:^1.2.6": "Allows to use Drupal in headless mode",
+                "dpc-sdp/tide_news:^1.1.5": "News content type and related configuration for Tide Drupal 8 distribution",
+                "dpc-sdp/tide_webform:^1.1.6": "Allows to use questionnaires"
             },
             "type": "drupal-module",
-            "extra": {
-                "patches_applied": {
-                    "Added Complex Image component - https://github.com/dpc-sdp/tide_landing_page/pull/75": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_landing_page/pull/75.patch",
-                    "Removed caption field and added View data label - https://github.com/dpc-sdp/tide_landing_page/pull/76": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_landing_page/pull/76.patch"
-                }
-            },
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Landing Page content type and related configuration for Tide Drupal 8 distribution",
-            "time": "2019-06-05T06:07:31+00:00"
+            "time": "2019-06-18T05:36:55+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
-            "version": "1.2.4",
+            "version": "1.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_media.git",
-                "reference": "f103b0c5cb59740e519905b00aaac634988823e8"
+                "reference": "cacf21494e484b7b517ea1c5d877b2c0e2b25439"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_media/zipball/f103b0c5cb59740e519905b00aaac634988823e8",
-                "reference": "f103b0c5cb59740e519905b00aaac634988823e8",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_media/zipball/cacf21494e484b7b517ea1c5d877b2c0e2b25439",
+                "reference": "cacf21494e484b7b517ea1c5d877b2c0e2b25439",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3",
+                "dpc-sdp/tide_core": "^1.2.5",
                 "drupal/embed": "^1.0",
                 "drupal/inline_entity_form": "^1.0-rc1",
                 "drupal/svg_image": "^1.8",
@@ -2076,89 +2067,89 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Media and related configuration for Tide Drupal 8 distribution",
-            "time": "2019-06-05T03:51:28+00:00"
+            "time": "2019-06-18T05:03:28+00:00"
         },
         {
             "name": "dpc-sdp/tide_monsido",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_monsido.git",
-                "reference": "b56358a7969175fc9231f4bea257f8a23d50635c"
+                "reference": "0756b9f193f00a125bb3e28282bd97033bf9e363"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_monsido/zipball/b56358a7969175fc9231f4bea257f8a23d50635c",
-                "reference": "b56358a7969175fc9231f4bea257f8a23d50635c",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_monsido/zipball/0756b9f193f00a125bb3e28282bd97033bf9e363",
+                "reference": "0756b9f193f00a125bb3e28282bd97033bf9e363",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3"
+                "dpc-sdp/tide_core": "^1.2.5"
             },
             "type": "drupal-module",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Provides Monsido integration for Tide Drupal 8 distribution",
-            "time": "2019-06-05T06:02:00+00:00"
+            "time": "2019-06-18T05:42:14+00:00"
         },
         {
             "name": "dpc-sdp/tide_news",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_news.git",
-                "reference": "5a5e5fb225a088f7751f02b63297a6e3a5841a1d"
+                "reference": "76229fa8fe04adaddb9a964b1ce7bc3c524499b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_news/zipball/5a5e5fb225a088f7751f02b63297a6e3a5841a1d",
-                "reference": "5a5e5fb225a088f7751f02b63297a6e3a5841a1d",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_news/zipball/76229fa8fe04adaddb9a964b1ce7bc3c524499b7",
+                "reference": "76229fa8fe04adaddb9a964b1ce7bc3c524499b7",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3",
-                "dpc-sdp/tide_media": "^1.2.4"
+                "dpc-sdp/tide_core": "^1.2.5",
+                "dpc-sdp/tide_media": "^1.2.5"
             },
             "suggest": {
-                "dpc-sdp/tide_api:^1.2.5": "Allows to use Drupal in headless mode",
-                "dpc-sdp/tide_webform:^1.1.3": "Allows to use questionnaires"
+                "dpc-sdp/tide_api:^1.2.6": "Allows to use Drupal in headless mode",
+                "dpc-sdp/tide_webform:^1.1.6": "Allows to use questionnaires"
             },
             "type": "drupal-module",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "News content type and related configuration for Tide Drupal 8 distribution",
-            "time": "2019-06-05T05:59:38+00:00"
+            "time": "2019-06-18T05:32:27+00:00"
         },
         {
             "name": "dpc-sdp/tide_page",
-            "version": "1.2.4",
+            "version": "1.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_page.git",
-                "reference": "971d77088d9967bf13ad9ccfa3a1b61a9d1f11ab"
+                "reference": "87f57aa4a850d8b584dd132248eadf0f12ebc585"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_page/zipball/971d77088d9967bf13ad9ccfa3a1b61a9d1f11ab",
-                "reference": "971d77088d9967bf13ad9ccfa3a1b61a9d1f11ab",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_page/zipball/87f57aa4a850d8b584dd132248eadf0f12ebc585",
+                "reference": "87f57aa4a850d8b584dd132248eadf0f12ebc585",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3",
-                "dpc-sdp/tide_media": "^1.2.4"
+                "dpc-sdp/tide_core": "^1.2.5",
+                "dpc-sdp/tide_media": "^1.2.5"
             },
             "suggest": {
-                "dpc-sdp/tide_api:^1.2.5": "Allows to use Drupal in headless mode",
-                "dpc-sdp/tide_webform:^1.1.3": "Allows to use questionnaires"
+                "dpc-sdp/tide_api:^1.2.6": "Allows to use Drupal in headless mode",
+                "dpc-sdp/tide_webform:^1.1.6": "Allows to use questionnaires"
             },
             "type": "drupal-module",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Page content type and related configuration for Tide Drupal 8 distribution",
-            "time": "2019-06-05T06:06:10+00:00"
+            "time": "2019-06-18T05:47:01+00:00"
         },
         {
             "name": "dpc-sdp/tide_profile",
@@ -2198,20 +2189,20 @@
         },
         {
             "name": "dpc-sdp/tide_search",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_search.git",
-                "reference": "a02e0ff85147ad1e1b5a6c8a4193835cf042c4dd"
+                "reference": "77bc087a42fa556b6e1407293234dfb022af79bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_search/zipball/a02e0ff85147ad1e1b5a6c8a4193835cf042c4dd",
-                "reference": "a02e0ff85147ad1e1b5a6c8a4193835cf042c4dd",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_search/zipball/77bc087a42fa556b6e1407293234dfb022af79bf",
+                "reference": "77bc087a42fa556b6e1407293234dfb022af79bf",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3",
+                "dpc-sdp/tide_core": "^1.2.5",
                 "drupal/elasticsearch_connector": "^5.0-alpha3",
                 "drupal/search_api": "^1.11"
             },
@@ -2228,35 +2219,35 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Search configuration for Tide Drupal 8 distribution",
-            "time": "2019-06-05T06:04:44+00:00"
+            "time": "2019-06-18T05:50:38+00:00"
         },
         {
             "name": "dpc-sdp/tide_site",
-            "version": "1.1.5",
+            "version": "1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_site.git",
-                "reference": "d24756c95b4536fa94f5bc2819007353e5978ff8"
+                "reference": "38ee83058b92bb83b6b40ae05f465dd3b6fd9982"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_site/zipball/d24756c95b4536fa94f5bc2819007353e5978ff8",
-                "reference": "d24756c95b4536fa94f5bc2819007353e5978ff8",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_site/zipball/38ee83058b92bb83b6b40ae05f465dd3b6fd9982",
+                "reference": "38ee83058b92bb83b6b40ae05f465dd3b6fd9982",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3",
-                "dpc-sdp/tide_media": "^1.2.4"
+                "dpc-sdp/tide_core": "^1.2.5",
+                "dpc-sdp/tide_media": "^1.2.5"
             },
             "suggest": {
-                "dpc-sdp/tide_api:^1.2.5": "Allows to use Drupal in headless mode"
+                "dpc-sdp/tide_api:^1.2.6": "Allows to use Drupal in headless mode"
             },
             "type": "drupal-module",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Post content to multiple sites and sections.",
-            "time": "2019-06-05T05:14:53+00:00"
+            "time": "2019-06-18T05:08:39+00:00"
         },
         {
             "name": "dpc-sdp/tide_test",
@@ -2281,37 +2272,32 @@
         },
         {
             "name": "dpc-sdp/tide_webform",
-            "version": "1.1.5",
+            "version": "1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_webform.git",
-                "reference": "d95a5961c857f00fb8cbcae4b4df905eaa821736"
+                "reference": "5219c68368e2fd780f166351f9e11f940fe72336"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_webform/zipball/d95a5961c857f00fb8cbcae4b4df905eaa821736",
-                "reference": "d95a5961c857f00fb8cbcae4b4df905eaa821736",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_webform/zipball/5219c68368e2fd780f166351f9e11f940fe72336",
+                "reference": "5219c68368e2fd780f166351f9e11f940fe72336",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_core": "^1.2.3",
+                "dpc-sdp/tide_core": "^1.2.5",
                 "drupal/token_conditions": "dev-1.x",
                 "drupal/webform": "^5.2"
             },
             "suggest": {
-                "dpc-sdp/tide_api:^1.2.5": "Allows to use Drupal in headless mode"
+                "dpc-sdp/tide_api:^1.2.6": "Allows to use Drupal in headless mode"
             },
             "type": "drupal-module",
-            "extra": {
-                "patches_applied": {
-                    "Added Privacy Statement element - https://github.com/dpc-sdp/tide_webform/pull/26": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_webform/pull/26.patch"
-                }
-            },
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Webform configuration for Tide Drupal 8 distribution",
-            "time": "2019-06-05T06:34:57+00:00"
+            "time": "2019-06-18T05:26:35+00:00"
         },
         {
             "name": "drupal-composer/drupal-scaffold",
@@ -2359,17 +2345,17 @@
         },
         {
             "name": "drupal/address",
-            "version": "1.6.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/address.git",
-                "reference": "8.x-1.6"
+                "reference": "8.x-1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/address-8.x-1.6.zip",
-                "reference": "8.x-1.6",
-                "shasum": "e27d2f8dac799a166b8ee040ceb608f2eff57cee"
+                "url": "https://ftp.drupal.org/files/projects/address-8.x-1.7.zip",
+                "reference": "8.x-1.7",
+                "shasum": "dab23a510090e59e3e6bc77faa517b523ad048ae"
             },
             "require": {
                 "commerceguys/addressing": "^1.0.0",
@@ -2384,8 +2370,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.6",
-                    "datestamp": "1554334685",
+                    "version": "8.x-1.7",
+                    "datestamp": "1559642884",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4227,17 +4213,17 @@
         },
         {
             "name": "drupal/entity_embed",
-            "version": "1.0.0-beta3",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_embed.git",
-                "reference": "8.x-1.0-beta3"
+                "reference": "8.x-1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_embed-8.x-1.0-beta3.zip",
-                "reference": "8.x-1.0-beta3",
-                "shasum": "2ecb2e88e5ecc217195dfa291b4959ea6b83aa8c"
+                "url": "https://ftp.drupal.org/files/projects/entity_embed-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "abd37a54162a702cf696ef0e5f8b2b1082263c21"
             },
             "require": {
                 "drupal/core": "^8.4.0",
@@ -4252,15 +4238,12 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta3",
-                    "datestamp": "1556906881",
+                    "version": "8.x-1.0",
+                    "datestamp": "1561765981",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
-                },
-                "patches_applied": {
-                    "2832504 - Send the CKEditor instance ID to the embed.preview route": "https://www.drupal.org/files/issues/2832504-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -4948,17 +4931,17 @@
         },
         {
             "name": "drupal/jsonapi",
-            "version": "2.3.0",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/jsonapi.git",
-                "reference": "8.x-2.3"
+                "reference": "8.x-2.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-2.3.zip",
-                "reference": "8.x-2.3",
-                "shasum": "b5a6e263eb1c238de869b28483e411b1167a8432"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-2.4.zip",
+                "reference": "8.x-2.4",
+                "shasum": "5f710c1c602378748fa3b21ceec0977de62359ed"
             },
             "require": {
                 "drupal/core": "^8.5.11"
@@ -4974,8 +4957,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.3",
-                    "datestamp": "1553177584",
+                    "version": "8.x-2.4",
+                    "datestamp": "1553554702",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5012,21 +4995,21 @@
         },
         {
             "name": "drupal/jsonapi_extras",
-            "version": "3.4.0",
+            "version": "3.8.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/jsonapi_extras.git",
-                "reference": "8.x-3.4"
+                "reference": "8.x-3.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi_extras-8.x-3.4.zip",
-                "reference": "8.x-3.4",
-                "shasum": "d9ab3fc818094f9f9f6dc673a4487413b06b945a"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi_extras-8.x-3.8.zip",
+                "reference": "8.x-3.8",
+                "shasum": "d2f793ca5e6ac7ec2db42f1ca05e468d3d20a568"
             },
             "require": {
-                "drupal/core": "^8.5",
-                "drupal/jsonapi": "^2.1",
+                "drupal/core": "~8.0",
+                "drupal/jsonapi": "*",
                 "e0ipso/shaper": "^1"
             },
             "require-dev": {
@@ -5038,15 +5021,12 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.4",
-                    "datestamp": "1553751485",
+                    "version": "8.x-3.8",
+                    "datestamp": "1560872886",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
-                },
-                "patches_applied": {
-                    "JSON:API Extras 3.4 adds enhanced field values outside of attributes for Config Entities - https://www.drupal.org/project/jsonapi_extras/issues/3037833": "https://www.drupal.org/files/issues/2019-03-06/jsonapi_extras-config_entities_enhancer-3037833-4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -6096,11 +6076,11 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/password_policy.git",
-                "reference": "176dd7eca67bbce80ca16e37fa3e94323647bf0d"
+                "reference": "ce2a23083601b7d0106c553a715617dcddf26fa1"
             },
             "require": {
-                "drupal/core": "*",
-                "drupal/ctools": "*"
+                "drupal/core": "^8.5.0",
+                "drupal/ctools": "^3.1"
             },
             "type": "drupal-module",
             "extra": {
@@ -6108,8 +6088,8 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.0-alpha4+12-dev",
-                    "datestamp": "1544199486",
+                    "version": "8.x-3.0-alpha5+12-dev",
+                    "datestamp": "1561666981",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -6151,7 +6131,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/password_policy"
             },
-            "time": "2018-12-07T16:11:36+00:00"
+            "time": "2019-06-28T14:54:21+00:00"
         },
         {
             "name": "drupal/password_strength",
@@ -6619,17 +6599,17 @@
         },
         {
             "name": "drupal/redirect",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/redirect.git",
-                "reference": "8.x-1.3"
+                "reference": "8.x-1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/redirect-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "3f9620d186e25f36ac56755979932b8ea965b8c7"
+                "url": "https://ftp.drupal.org/files/projects/redirect-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "4c7e0dc0ab0cbcc7d66e16cc684882c0eaa71c1c"
             },
             "require": {
                 "drupal/core": "~8"
@@ -6640,8 +6620,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1539682684",
+                    "version": "8.x-1.4",
+                    "datestamp": "1561757585",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6733,17 +6713,17 @@
         },
         {
             "name": "drupal/role_delegation",
-            "version": "1.0.0-alpha3",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/role_delegation.git",
-                "reference": "8.x-1.0-alpha3"
+                "reference": "8.x-1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/role_delegation-8.x-1.0-alpha3.zip",
-                "reference": "8.x-1.0-alpha3",
-                "shasum": "e80f20b518c5f24b33e26efe918f8fdc4a2c016d"
+                "url": "https://ftp.drupal.org/files/projects/role_delegation-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "662db086615cf2c9addd22e855470ba774f4a337"
             },
             "require": {
                 "drupal/core": "*"
@@ -6754,11 +6734,11 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha3",
-                    "datestamp": "1556911981",
+                    "version": "8.x-1.0",
+                    "datestamp": "1560754985",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -7005,17 +6985,17 @@
         },
         {
             "name": "drupal/search_api",
-            "version": "1.12.0",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api.git",
-                "reference": "8.x-1.12"
+                "reference": "8.x-1.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.12.zip",
-                "reference": "8.x-1.12",
-                "shasum": "db203e2fdd669d6e9ff2c99688c0816d248a1fff"
+                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.13.zip",
+                "reference": "8.x-1.13",
+                "shasum": "9f03dd5a4d9ee7c58d47aabc33d9229793d1195f"
             },
             "require": {
                 "drupal/core": "^8.5"
@@ -7035,7 +7015,7 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.12",
+                    "version": "8.x-1.13",
                     "datestamp": "1557244685",
                     "security-coverage": {
                         "status": "covered",
@@ -7076,17 +7056,17 @@
         },
         {
             "name": "drupal/seckit",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/seckit.git",
-                "reference": "8.x-1.1"
+                "reference": "8.x-1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/seckit-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "bf7756d1a6a2d64ff35147b7a464cbd7f1acffcc"
+                "url": "https://ftp.drupal.org/files/projects/seckit-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "5bd6730e54b7bfae3c68dbfac3ccbb6f12129a65"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -7097,8 +7077,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1539600180",
+                    "version": "8.x-1.2",
+                    "datestamp": "1561463889",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7745,17 +7725,17 @@
         },
         {
             "name": "drupal/video_embed_field",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/video_embed_field.git",
-                "reference": "8.x-2.0"
+                "reference": "8.x-2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/video_embed_field-8.x-2.0.zip",
-                "reference": "8.x-2.0",
-                "shasum": "e864f090b3cb9405376ca324d81ace83613e2019"
+                "url": "https://ftp.drupal.org/files/projects/video_embed_field-8.x-2.1.zip",
+                "reference": "8.x-2.1",
+                "shasum": "fa1682741b4a1404df80c709ed8e40b7d8362d67"
             },
             "require": {
                 "drupal/core": "*"
@@ -7771,13 +7751,12 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.x",
-                    "datestamp": "1523338084",
+                    "version": "8.x-2.1",
+                    "datestamp": "1557726644",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
-                    },
-                    "package": "Field types"
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -9025,16 +9004,16 @@
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
-            "version": "1.8.1",
+            "version": "1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kub-AT/php-simple-html-dom-parser.git",
-                "reference": "6db1e01db320040024cd1f74b0e1483aa2670720"
+                "reference": "1fe277a7616b5d7cfd192a8908cbc7653dc9baee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kub-AT/php-simple-html-dom-parser/zipball/6db1e01db320040024cd1f74b0e1483aa2670720",
-                "reference": "6db1e01db320040024cd1f74b0e1483aa2670720",
+                "url": "https://api.github.com/repos/Kub-AT/php-simple-html-dom-parser/zipball/1fe277a7616b5d7cfd192a8908cbc7653dc9baee",
+                "reference": "1fe277a7616b5d7cfd192a8908cbc7653dc9baee",
                 "shasum": ""
             },
             "require": {
@@ -9067,7 +9046,7 @@
                 "dom",
                 "html"
             ],
-            "time": "2019-03-05T14:12:22+00:00"
+            "time": "2019-06-03T05:50:36+00:00"
         },
         {
             "name": "library/dropzone",
@@ -10019,7 +9998,7 @@
         },
         {
             "name": "symfony/class-loader",
-            "version": "v3.4.27",
+            "version": "v3.4.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/class-loader.git",
@@ -10075,16 +10054,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v3.4.27",
+            "version": "v3.4.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "15a9104356436cb26e08adab97706654799d31d8"
+                "reference": "c4d2f3529755ffc0be9fb823583b28d8744eeb3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/15a9104356436cb26e08adab97706654799d31d8",
-                "reference": "15a9104356436cb26e08adab97706654799d31d8",
+                "url": "https://api.github.com/repos/symfony/console/zipball/c4d2f3529755ffc0be9fb823583b28d8744eeb3d",
+                "reference": "c4d2f3529755ffc0be9fb823583b28d8744eeb3d",
                 "shasum": ""
             },
             "require": {
@@ -10143,20 +10122,20 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2019-04-08T09:29:13+00:00"
+            "time": "2019-06-05T11:33:52+00:00"
         },
         {
             "name": "symfony/debug",
-            "version": "v3.4.27",
+            "version": "v3.4.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "681afbb26488903c5ac15e63734f1d8ac430c9b9"
+                "reference": "1172dc1abe44dfadd162239153818b074e6e53bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/681afbb26488903c5ac15e63734f1d8ac430c9b9",
-                "reference": "681afbb26488903c5ac15e63734f1d8ac430c9b9",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/1172dc1abe44dfadd162239153818b074e6e53bf",
+                "reference": "1172dc1abe44dfadd162239153818b074e6e53bf",
                 "shasum": ""
             },
             "require": {
@@ -10199,20 +10178,20 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2019-04-11T09:48:14+00:00"
+            "time": "2019-06-18T21:26:03+00:00"
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v3.4.27",
+            "version": "v3.4.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "be0feb3fa202aedfd8d1956f2dafd563fb13acbf"
+                "reference": "76857ce235ba1866b66a1d5be34c6794c8895435"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/be0feb3fa202aedfd8d1956f2dafd563fb13acbf",
-                "reference": "be0feb3fa202aedfd8d1956f2dafd563fb13acbf",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/76857ce235ba1866b66a1d5be34c6794c8895435",
+                "reference": "76857ce235ba1866b66a1d5be34c6794c8895435",
                 "shasum": ""
             },
             "require": {
@@ -10270,20 +10249,20 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2019-04-20T15:32:49+00:00"
+            "time": "2019-05-30T15:47:52+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v3.4.27",
+            "version": "v3.4.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "a088aafcefb4eef2520a290ed82e4374092a6dff"
+                "reference": "f18fdd6cc7006441865e698420cee26bac94741f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/a088aafcefb4eef2520a290ed82e4374092a6dff",
-                "reference": "a088aafcefb4eef2520a290ed82e4374092a6dff",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/f18fdd6cc7006441865e698420cee26bac94741f",
+                "reference": "f18fdd6cc7006441865e698420cee26bac94741f",
                 "shasum": ""
             },
             "require": {
@@ -10333,7 +10312,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2019-04-02T08:51:52+00:00"
+            "time": "2019-06-25T07:45:31+00:00"
         },
         {
             "name": "symfony/finder",
@@ -10386,16 +10365,16 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v3.4.27",
+            "version": "v3.4.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "fa02215233be8de1c2b44617088192f9e8db3512"
+                "reference": "8cfbf75bb3a72963b12c513a73e9247891df24f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/fa02215233be8de1c2b44617088192f9e8db3512",
-                "reference": "fa02215233be8de1c2b44617088192f9e8db3512",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/8cfbf75bb3a72963b12c513a73e9247891df24f8",
+                "reference": "8cfbf75bb3a72963b12c513a73e9247891df24f8",
                 "shasum": ""
             },
             "require": {
@@ -10436,20 +10415,20 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-05-01T08:04:33+00:00"
+            "time": "2019-06-22T20:10:25+00:00"
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v3.4.27",
+            "version": "v3.4.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "586046f5adc6a08eaebbe4519ef18ad52f54e453"
+                "reference": "abbb38dbab652ddc40a86d0c3b0e14ca52d58ed2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/586046f5adc6a08eaebbe4519ef18ad52f54e453",
-                "reference": "586046f5adc6a08eaebbe4519ef18ad52f54e453",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/abbb38dbab652ddc40a86d0c3b0e14ca52d58ed2",
+                "reference": "abbb38dbab652ddc40a86d0c3b0e14ca52d58ed2",
                 "shasum": ""
             },
             "require": {
@@ -10525,7 +10504,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2019-05-01T13:03:24+00:00"
+            "time": "2019-06-26T13:56:39+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -10764,16 +10743,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v3.4.27",
+            "version": "v3.4.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "a9c4dfbf653023b668c282e4e02609d131f4057a"
+                "reference": "d129c017e8602507688ef2c3007951a16c1a8407"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/a9c4dfbf653023b668c282e4e02609d131f4057a",
-                "reference": "a9c4dfbf653023b668c282e4e02609d131f4057a",
+                "url": "https://api.github.com/repos/symfony/process/zipball/d129c017e8602507688ef2c3007951a16c1a8407",
+                "reference": "d129c017e8602507688ef2c3007951a16c1a8407",
                 "shasum": ""
             },
             "require": {
@@ -10809,7 +10788,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2019-04-08T16:15:54+00:00"
+            "time": "2019-05-30T15:47:52+00:00"
         },
         {
             "name": "symfony/psr-http-message-bridge",
@@ -10878,16 +10857,16 @@
         },
         {
             "name": "symfony/routing",
-            "version": "v3.4.27",
+            "version": "v3.4.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
-                "reference": "ff11aac46d6cb8a65f2855687bb9a1ac9d860eec"
+                "reference": "8d804d8a65a26dc9de1aaf2ff3a421e581d050e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/ff11aac46d6cb8a65f2855687bb9a1ac9d860eec",
-                "reference": "ff11aac46d6cb8a65f2855687bb9a1ac9d860eec",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/8d804d8a65a26dc9de1aaf2ff3a421e581d050e6",
+                "reference": "8d804d8a65a26dc9de1aaf2ff3a421e581d050e6",
                 "shasum": ""
             },
             "require": {
@@ -10950,20 +10929,20 @@
                 "uri",
                 "url"
             ],
-            "time": "2019-03-29T21:58:42+00:00"
+            "time": "2019-06-26T11:14:13+00:00"
         },
         {
             "name": "symfony/serializer",
-            "version": "v3.4.27",
+            "version": "v3.4.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/serializer.git",
-                "reference": "99aceeb3e10852b951b9cab57a2b83062db09efb"
+                "reference": "c060c0e0b97dc13b3c3fd8f981a68fa32a24371c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/serializer/zipball/99aceeb3e10852b951b9cab57a2b83062db09efb",
-                "reference": "99aceeb3e10852b951b9cab57a2b83062db09efb",
+                "url": "https://api.github.com/repos/symfony/serializer/zipball/c060c0e0b97dc13b3c3fd8f981a68fa32a24371c",
+                "reference": "c060c0e0b97dc13b3c3fd8f981a68fa32a24371c",
                 "shasum": ""
             },
             "require": {
@@ -10994,7 +10973,7 @@
                 "doctrine/cache": "For using the default cached annotation reader and metadata cache.",
                 "psr/cache-implementation": "For using the metadata cache.",
                 "symfony/config": "For using the XML mapping loader.",
-                "symfony/http-foundation": "To use the DataUriNormalizer.",
+                "symfony/http-foundation": "For using a MIME type guesser within the DataUriNormalizer.",
                 "symfony/property-access": "For using the ObjectNormalizer.",
                 "symfony/property-info": "To deserialize relations.",
                 "symfony/yaml": "For using the default YAML mapping loader."
@@ -11029,20 +11008,20 @@
             ],
             "description": "Symfony Serializer Component",
             "homepage": "https://symfony.com",
-            "time": "2019-04-27T21:20:35+00:00"
+            "time": "2019-06-14T05:50:06+00:00"
         },
         {
             "name": "symfony/translation",
-            "version": "v3.4.27",
+            "version": "v3.4.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "301a5d627220a1c4ee522813b0028653af6c4f54"
+                "reference": "5c07632afb8cb14b422051b651213ed17bf7c249"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/301a5d627220a1c4ee522813b0028653af6c4f54",
-                "reference": "301a5d627220a1c4ee522813b0028653af6c4f54",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/5c07632afb8cb14b422051b651213ed17bf7c249",
+                "reference": "5c07632afb8cb14b422051b651213ed17bf7c249",
                 "shasum": ""
             },
             "require": {
@@ -11099,20 +11078,20 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-05-01T11:10:09+00:00"
+            "time": "2019-06-13T10:34:15+00:00"
         },
         {
             "name": "symfony/validator",
-            "version": "v3.4.27",
+            "version": "v3.4.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
-                "reference": "cc3f577d8887737df4d77a4c0cc6e3c22164cea4"
+                "reference": "d6561bff343346be8ff3e93eb5c4344985bc538b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/validator/zipball/cc3f577d8887737df4d77a4c0cc6e3c22164cea4",
-                "reference": "cc3f577d8887737df4d77a4c0cc6e3c22164cea4",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/d6561bff343346be8ff3e93eb5c4344985bc538b",
+                "reference": "d6561bff343346be8ff3e93eb5c4344985bc538b",
                 "shasum": ""
             },
             "require": {
@@ -11184,7 +11163,7 @@
             ],
             "description": "Symfony Validator Component",
             "homepage": "https://symfony.com",
-            "time": "2019-04-29T08:34:27+00:00"
+            "time": "2019-06-20T06:43:29+00:00"
         },
         {
             "name": "symfony/var-dumper",
@@ -11257,7 +11236,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.4.27",
+            "version": "v3.4.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
@@ -11316,16 +11295,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.40.1",
+            "version": "v1.42.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "35889516bbd6bbe46a600c2c33b03515df4a076e"
+                "reference": "21707d6ebd05476854805e4f91b836531941bcd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/35889516bbd6bbe46a600c2c33b03515df4a076e",
-                "reference": "35889516bbd6bbe46a600c2c33b03515df4a076e",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/21707d6ebd05476854805e4f91b836531941bcd4",
+                "reference": "21707d6ebd05476854805e4f91b836531941bcd4",
                 "shasum": ""
             },
             "require": {
@@ -11335,12 +11314,12 @@
             "require-dev": {
                 "psr/container": "^1.0",
                 "symfony/debug": "^2.7",
-                "symfony/phpunit-bridge": "^3.4.19|^4.1.8"
+                "symfony/phpunit-bridge": "^3.4.19|^4.1.8|^5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.40-dev"
+                    "dev-master": "1.42-dev"
                 }
             },
             "autoload": {
@@ -11378,31 +11357,33 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2019-04-29T14:12:28+00:00"
+            "time": "2019-06-18T15:35:16+00:00"
         },
         {
             "name": "typo3/phar-stream-wrapper",
-            "version": "v2.1.1",
+            "version": "v2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3/phar-stream-wrapper.git",
-                "reference": "e438b0c78652b33407983eb29d215a1a3f68f6f3"
+                "reference": "057622f5a3b92a5ffbea0fbaadce573500a62870"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3/phar-stream-wrapper/zipball/e438b0c78652b33407983eb29d215a1a3f68f6f3",
-                "reference": "e438b0c78652b33407983eb29d215a1a3f68f6f3",
+                "url": "https://api.github.com/repos/TYPO3/phar-stream-wrapper/zipball/057622f5a3b92a5ffbea0fbaadce573500a62870",
+                "reference": "057622f5a3b92a5ffbea0fbaadce573500a62870",
                 "shasum": ""
             },
             "require": {
                 "brumann/polyfill-unserialize": "^1.0",
-                "ext-fileinfo": "*",
                 "ext-json": "*",
                 "php": "^5.3.3|^7.0"
             },
             "require-dev": {
                 "ext-xdebug": "*",
                 "phpunit/phpunit": "^4.8.36"
+            },
+            "suggest": {
+                "ext-fileinfo": "For PHP builtin file type guessing, otherwise uses internal processing"
             },
             "type": "library",
             "autoload": {
@@ -11422,7 +11403,7 @@
                 "security",
                 "stream-wrapper"
             ],
-            "time": "2019-05-05T17:30:51+00:00"
+            "time": "2019-05-14T13:14:31+00:00"
         },
         {
             "name": "webflo/drupal-finder",

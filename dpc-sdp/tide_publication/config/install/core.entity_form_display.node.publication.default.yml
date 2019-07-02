@@ -423,7 +423,7 @@ content:
     third_party_settings:
       maxlength:
         maxlength_js: 150
-        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_label: '<p>Add your content for your publication landing page. Save when ready and a Children tab will appear. <br/>Content limited to @limit characters, remaining: <strong>@remaining</strong>.</p>'
   uid:
     type: entity_reference_autocomplete
     weight: 1
