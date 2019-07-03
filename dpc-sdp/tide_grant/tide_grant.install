@@ -8,6 +8,7 @@
 use Drupal\workflows\Entity\Workflow;
 use Drupal\user\Entity\User;
 use Drupal\Component\Utility\Random;
+use Drupal\field\Entity\FieldConfig;
 
 /**
  * Implements hook_install().
@@ -148,4 +149,15 @@ function tide_grant_update_8008() {
   // Enable migration modules.
   $module_installer = \Drupal::service('module_installer');
   $module_installer->install(['migrate_plus', 'migrate_cron', 'migrate_tools']);
+}
+
+/**
+ * Change field_show_social_sharing field default value to 1.
+ */
+function tide_grant_update_8009() {
+  $field = FieldConfig::loadByName('node', 'grant', 'field_show_social_sharing');
+  if (!$field->get('default_value')) {
+    $field->set('default_value', TRUE);
+    $field->save();
+  }
 }
