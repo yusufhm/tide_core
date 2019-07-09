@@ -51,7 +51,7 @@ parameters:
     # Specify allowed request methods, specify ['*'] to allow all possible ones.
     allowedMethods: ['POST, GET']
     # Configure requests allowed from specific origins.
-    allowedOrigins: ['https://www.aboriginalheritagecouncil.vic.gov.au','https://aboriginalheritagecouncil.vic.gov.au','https://www.buyingfor.vic.gov.au','https://buyingfor.vic.gov.au','https://data.vic.gov.au','https://www.data.vic.gov.au','https://fvrim.vic.gov.au','https://www.fvrim.vic.gov.au','https://www.multiculturalcommission.vic.gov.au','https://multiculturalcommission.vic.gov.au','https://vic.gov.au','https://www.vic.gov.au']
+    allowedOrigins: ['https://www.aboriginalheritagecouncil.vic.gov.au','https://aboriginalheritagecouncil.vic.gov.au','https://www.buyingfor.vic.gov.au','https://buyingfor.vic.gov.au','https://data.vic.gov.au','https://www.data.vic.gov.au','https://fvrim.vic.gov.au','https://www.fvrim.vic.gov.au','https://www.multiculturalcommission.vic.gov.au','https://multiculturalcommission.vic.gov.au','https://vic.gov.au','https://www.vic.gov.au','https://app-multiculturalcommission-vic-gov-au-production.lagoon.vicsdp.amazee.io']
     # Sets the Access-Control-Expose-Headers header.
     exposedHeaders: false
     # Sets the Access-Control-Max-Age header.
