@@ -17,6 +17,7 @@ dependencies:
     - datetime_range
     - entity_browser
     - link
+    - maxlength
 _core:
   default_config_hash: agxBVeITdtibaABss7iJFlszvuYjwCvmRSwanCvthpo
 id: paragraph.card_event.default
@@ -40,8 +41,7 @@ content:
     region: content
   field_paragraph_location:
     weight: 4
-    settings:
-      default_country: null
+    settings: {  }
     third_party_settings: {  }
     type: address_default
     region: content
@@ -64,9 +64,14 @@ content:
     type: string_textarea
     weight: 5
     settings:
-      placeholder: ''
       rows: 5
-    third_party_settings: {  }
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: 200
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+        maxlength_js_truncate_html: false
     region: content
   field_paragraph_title:
     weight: 0

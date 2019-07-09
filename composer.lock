@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3d57f3ec814dc3d2127ba0015f4d3d2",
+    "content-hash": "ff2cca0641a183a1bb2b6c4f54610f4d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -776,10 +776,7 @@
             },
             "type": "composer-plugin",
             "extra": {
-                "class": "cweagans\\Composer\\Patches",
-                "patches_applied": {
-                    "Fix for already applied patches - specific to 1.6.5": "patches/composer-patches/fix-applied-patches.patch"
-                }
+                "class": "cweagans\\Composer\\Patches"
             },
             "autoload": {
                 "psr-4": {
@@ -2035,6 +2032,11 @@
                 "dpc-sdp/tide_webform:^1.1.6": "Allows to use questionnaires"
             },
             "type": "drupal-module",
+            "extra": {
+                "patches_applied": {
+                    "summary field ristricted to 200 characters - https://github.com/dpc-sdp/tide_landing_page/pull/80": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_landing_page/pull/80.patch"
+                }
+            },
             "license": [
                 "GPL-2.0-or-later"
             ],
@@ -4156,7 +4158,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.7",
-                    "datestamp": "1550237884",
+                    "datestamp": "1562241181",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5279,7 +5281,7 @@
                 },
                 "drupal": {
                     "version": "8.x-5.0-beta8",
-                    "datestamp": "1545966784",
+                    "datestamp": "1562194985",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -7029,7 +7031,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.13",
-                    "datestamp": "1557244685",
+                    "datestamp": "1562599986",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
