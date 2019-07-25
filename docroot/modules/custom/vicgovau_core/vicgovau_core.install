@@ -41,7 +41,7 @@ function vicgovau_core_enable_modules($is_install = FALSE) {
     }
 
     if ($environment == 'ci' || $environment == 'development') {
-      vicgovau_core_install_module('vicgovau_demo');
+      vicgovau_core_install_module('tide_demo_content');
     }
   }
   else {
@@ -56,7 +56,7 @@ function vicgovau_core_enable_modules($is_install = FALSE) {
     }
 
     if ($environment == 'local' || $environment == 'ci' || $environment == 'development') {
-      vicgovau_core_install_module('vicgovau_demo');
+      vicgovau_core_install_module('tide_demo_content');
     }
   }
 }
