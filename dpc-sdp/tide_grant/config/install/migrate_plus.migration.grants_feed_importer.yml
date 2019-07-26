@@ -14,6 +14,7 @@ source:
   urls: 'http://www.business.vic.gov.au/grants2.xml/'
   data_parser_plugin: simple_xml
   item_selector: /grantset/grant
+  track_changes: true
   defaults:
     tag: 'Business Victoria'
     audience: Business
