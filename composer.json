@@ -6,7 +6,7 @@
         "composer/installers": "^1.2.0",
         "cweagans/composer-patches": "^1.6.0",
         "dpc-sdp/bay": "^0.0.1",
-        "dpc-sdp/tide": "1.1.8",
+        "dpc-sdp/tide": "1.1.10",
         "dpc-sdp/tide_alert": "^0.0.1",
         "dpc-sdp/tide_data_driven_component": "^0.0.1",
         "dpc-sdp/tide_grant": "^0.0.1",
