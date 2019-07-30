@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a1efb00f093a06210e1d123648a4971c",
+    "content-hash": "d321263decde4a728dedd6339ac2db73",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1701,7 +1701,7 @@
         },
         {
             "name": "dpc-sdp/tide",
-            "version": "1.1.8",
+            "version": "1.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide.git",
@@ -1780,9 +1780,6 @@
                     "drupal/core": {
                         "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
                     }
-                },
-                "patches_applied": {
-                    "[SDPA-2972] Added User cache context to GetRoute API - https://github.com/dpc-sdp/tide_api/pull/53": "https://github.com/dpc-sdp/tide_api/pull/53.patch"
                 }
             },
             "license": [
