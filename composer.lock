@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3b02152cf2e289c01a3564a9610dc26",
+    "content-hash": "f84d1f749be42f10f900945e10d94d44",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1705,16 +1705,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide.git",
-                "reference": "21eea93b5a9d3752e36dced7035f90b3cd0d1165"
+                "reference": "0006e5313c0316018f7200bf11d50d0e11f3c784"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide/zipball/21eea93b5a9d3752e36dced7035f90b3cd0d1165",
-                "reference": "21eea93b5a9d3752e36dced7035f90b3cd0d1165",
+                "url": "https://api.github.com/repos/dpc-sdp/tide/zipball/0006e5313c0316018f7200bf11d50d0e11f3c784",
+                "reference": "0006e5313c0316018f7200bf11d50d0e11f3c784",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_api": "1.2.8",
+                "dpc-sdp/tide_api": "1.2.9",
                 "dpc-sdp/tide_core": "1.2.6",
                 "dpc-sdp/tide_event": "1.2.6",
                 "dpc-sdp/tide_landing_page": "1.1.6",
@@ -1732,7 +1732,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Tide Drupal 8 profile",
-            "time": "2019-07-19T00:52:50+00:00"
+            "time": "2019-07-30T04:41:07+00:00"
         },
         {
             "name": "dpc-sdp/tide_alert",
@@ -1754,16 +1754,16 @@
         },
         {
             "name": "dpc-sdp/tide_api",
-            "version": "1.2.8",
+            "version": "1.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_api.git",
-                "reference": "c147491f92838f9e162f1532a18e63e2e2b06981"
+                "reference": "8d516a5198b74852cd6e7804abda365b6628a59a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/c147491f92838f9e162f1532a18e63e2e2b06981",
-                "reference": "c147491f92838f9e162f1532a18e63e2e2b06981",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/8d516a5198b74852cd6e7804abda365b6628a59a",
+                "reference": "8d516a5198b74852cd6e7804abda365b6628a59a",
                 "shasum": ""
             },
             "require": {
@@ -1780,16 +1780,13 @@
                     "drupal/core": {
                         "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
                     }
-                },
-                "patches_applied": {
-                    "[SDPA-2972] Added User cache context to GetRoute API - https://github.com/dpc-sdp/tide_api/pull/53": "https://github.com/dpc-sdp/tide_api/pull/53.patch"
                 }
             },
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Content API for Tide distribution.",
-            "time": "2019-07-18T02:17:27+00:00"
+            "time": "2019-07-29T07:06:00+00:00"
         },
         {
             "name": "dpc-sdp/tide_authenticated_content",
@@ -3476,11 +3473,11 @@
                 "patches_applied": {
                     "Debug EntityChangedConstraintValidator": "./patches/core/drupal-core-debug-entity-changed-constraint-validator.patch",
                     "Temporary files whose files are missing on the disk result in never-ending error log messages - https://www.drupal.org/project/drupal/issues/2802803": "https://www.drupal.org/files/issues/2018-06-27/missing-temp-files-stuck-in-table-2802803-33.patch",
+                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch",
                     "Contextual links should not be added inside another link - https://www.drupal.org/node/2898875": "https://www.drupal.org/files/issues/2018-03-16/contextual_links_should-2898875-6.patch",
                     "RSS view with fields give wrong URL from path field - https://www.drupal.org/node/2673980#comment-12180229": "https://www.drupal.org/files/issues/rss_view_with_fields-2673980-28.patch",
                     "DateTimeIso8601::getDateTime() does not specify the storage timezone when constructing DrupalDateTime object - https://www.drupal.org/project/drupal/issues/3002164": "https://www.drupal.org/files/issues/2018-09-25/3002164-7.patch",
-                    "Custom blocks are no longer displayed and no longer appear in the custom block library - https://www.drupal.org/project/drupal/issues/2997898#comment-12832813": "https://www.drupal.org/files/issues/2018-10-27/2997898-21.patch",
-                    "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
+                    "Custom blocks are no longer displayed and no longer appear in the custom block library - https://www.drupal.org/project/drupal/issues/2997898#comment-12832813": "https://www.drupal.org/files/issues/2018-10-27/2997898-21.patch"
                 }
             },
             "autoload": {
