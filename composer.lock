@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3ee52a94f7ce7bee8213e0210755c71",
+    "content-hash": "f02bbf160db1b89a84726eeeeae872b2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1780,6 +1780,9 @@
                     "drupal/core": {
                         "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
                     }
+                },
+                "patches_applied": {
+                    "Homepage for all semi independent sites returning the same entity - https://github.com/dpc-sdp/tide_api/pull/55": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_api/pull/55.patch"
                 }
             },
             "license": [
@@ -2266,6 +2269,11 @@
                 "dpc-sdp/tide_api:^1.2.8": "Allows to use Drupal in headless mode"
             },
             "type": "drupal-module",
+            "extra": {
+                "patches_applied": {
+                    "Homepage for all semi independent sites returning the same entity - https://github.com/dpc-sdp/tide_site/pull/28": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_site/pull/28.patch"
+                }
+            },
             "license": [
                 "GPL-2.0-or-later"
             ],
@@ -5594,7 +5602,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.8",
-                    "datestamp": "1563995941",
+                    "datestamp": "1550692511",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
