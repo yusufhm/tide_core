@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f84d1f749be42f10f900945e10d94d44",
+    "content-hash": "c3ee52a94f7ce7bee8213e0210755c71",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2316,6 +2316,11 @@
                 "dpc-sdp/tide_api:^1.2.9": "Set default value to jsonapi.settings readonly property"
             },
             "type": "drupal-module",
+            "extra": {
+                "patches_applied": {
+                    "tide_webform access role issue - https://github.com/dpc-sdp/tide_webform/pull/31": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_webform/pull/31.patch"
+                }
+            },
             "license": [
                 "GPL-2.0-or-later"
             ],
