@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f02bbf160db1b89a84726eeeeae872b2",
+    "content-hash": "df6e64d83da6df373b3aeb93ab99ba25",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1701,38 +1701,38 @@
         },
         {
             "name": "dpc-sdp/tide",
-            "version": "1.1.10",
+            "version": "1.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide.git",
-                "reference": "0006e5313c0316018f7200bf11d50d0e11f3c784"
+                "reference": "40cd979815b4f910982bccf3703bd03f7fde43f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide/zipball/0006e5313c0316018f7200bf11d50d0e11f3c784",
-                "reference": "0006e5313c0316018f7200bf11d50d0e11f3c784",
+                "url": "https://api.github.com/repos/dpc-sdp/tide/zipball/40cd979815b4f910982bccf3703bd03f7fde43f2",
+                "reference": "40cd979815b4f910982bccf3703bd03f7fde43f2",
                 "shasum": ""
             },
             "require": {
-                "dpc-sdp/tide_api": "1.2.9",
+                "dpc-sdp/tide_api": "1.2.10",
                 "dpc-sdp/tide_core": "1.2.6",
                 "dpc-sdp/tide_event": "1.2.6",
-                "dpc-sdp/tide_landing_page": "1.1.6",
+                "dpc-sdp/tide_landing_page": "1.1.7",
                 "dpc-sdp/tide_media": "1.2.6",
                 "dpc-sdp/tide_monsido": "1.1.5",
                 "dpc-sdp/tide_news": "1.1.5",
                 "dpc-sdp/tide_page": "1.2.5",
                 "dpc-sdp/tide_search": "1.1.5",
-                "dpc-sdp/tide_site": "1.1.7",
+                "dpc-sdp/tide_site": "1.1.9",
                 "dpc-sdp/tide_test": "^1.0",
-                "dpc-sdp/tide_webform": "1.1.7"
+                "dpc-sdp/tide_webform": "1.1.8"
             },
             "type": "drupal-profile",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Tide Drupal 8 profile",
-            "time": "2019-07-30T04:41:07+00:00"
+            "time": "2019-08-04T02:13:44+00:00"
         },
         {
             "name": "dpc-sdp/tide_alert",
@@ -1754,16 +1754,16 @@
         },
         {
             "name": "dpc-sdp/tide_api",
-            "version": "1.2.9",
+            "version": "1.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_api.git",
-                "reference": "8d516a5198b74852cd6e7804abda365b6628a59a"
+                "reference": "04cae05260a65b7c883f4911f6a9e5b313082c69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/8d516a5198b74852cd6e7804abda365b6628a59a",
-                "reference": "8d516a5198b74852cd6e7804abda365b6628a59a",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_api/zipball/04cae05260a65b7c883f4911f6a9e5b313082c69",
+                "reference": "04cae05260a65b7c883f4911f6a9e5b313082c69",
                 "shasum": ""
             },
             "require": {
@@ -1780,16 +1780,13 @@
                     "drupal/core": {
                         "Menu content is not accessible via jsonapi - https://www.drupal.org/node/2915792": "https://www.drupal.org/files/issues/menu_link_content-view-permissions-2915792.patch"
                     }
-                },
-                "patches_applied": {
-                    "Homepage for all semi independent sites returning the same entity - https://github.com/dpc-sdp/tide_api/pull/55": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_api/pull/55.patch"
                 }
             },
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Content API for Tide distribution.",
-            "time": "2019-07-29T07:06:00+00:00"
+            "time": "2019-08-02T07:07:10+00:00"
         },
         {
             "name": "dpc-sdp/tide_authenticated_content",
@@ -2033,16 +2030,16 @@
         },
         {
             "name": "dpc-sdp/tide_landing_page",
-            "version": "1.1.6",
+            "version": "1.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_landing_page.git",
-                "reference": "fd9e2d26bb3f53f9b5ad2c68d04a2d1a6ec9725d"
+                "reference": "aa57b0d8b8437b2a6d2c3705d2852acad681d0b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/fd9e2d26bb3f53f9b5ad2c68d04a2d1a6ec9725d",
-                "reference": "fd9e2d26bb3f53f9b5ad2c68d04a2d1a6ec9725d",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_landing_page/zipball/aa57b0d8b8437b2a6d2c3705d2852acad681d0b9",
+                "reference": "aa57b0d8b8437b2a6d2c3705d2852acad681d0b9",
                 "shasum": ""
             },
             "require": {
@@ -2056,16 +2053,11 @@
                 "dpc-sdp/tide_webform:^1.1.6": "Allows to use questionnaires"
             },
             "type": "drupal-module",
-            "extra": {
-                "patches_applied": {
-                    "summary field ristricted to 200 characters - https://github.com/dpc-sdp/tide_landing_page/pull/80": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_landing_page/pull/80.patch"
-                }
-            },
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Landing Page content type and related configuration for Tide Drupal 8 distribution",
-            "time": "2019-06-18T05:36:55+00:00"
+            "time": "2019-07-09T05:30:10+00:00"
         },
         {
             "name": "dpc-sdp/tide_media",
@@ -2249,16 +2241,16 @@
         },
         {
             "name": "dpc-sdp/tide_site",
-            "version": "1.1.7",
+            "version": "1.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_site.git",
-                "reference": "e4cbf305665c6283ccb3a421397c003e9af21de2"
+                "reference": "a50b1ee9380862c5f0fa9bef192c0b7ac9f5f578"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_site/zipball/e4cbf305665c6283ccb3a421397c003e9af21de2",
-                "reference": "e4cbf305665c6283ccb3a421397c003e9af21de2",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_site/zipball/a50b1ee9380862c5f0fa9bef192c0b7ac9f5f578",
+                "reference": "a50b1ee9380862c5f0fa9bef192c0b7ac9f5f578",
                 "shasum": ""
             },
             "require": {
@@ -2278,7 +2270,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Post content to multiple sites and sections.",
-            "time": "2019-07-18T04:20:23+00:00"
+            "time": "2019-08-01T03:55:14+00:00"
         },
         {
             "name": "dpc-sdp/tide_test",
@@ -2303,16 +2295,16 @@
         },
         {
             "name": "dpc-sdp/tide_webform",
-            "version": "1.1.7",
+            "version": "1.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dpc-sdp/tide_webform.git",
-                "reference": "809044752108800b37e495c00770f4e8a73b0e67"
+                "reference": "0241076d8a2246bdf26d06aef9669f637360e4a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dpc-sdp/tide_webform/zipball/809044752108800b37e495c00770f4e8a73b0e67",
-                "reference": "809044752108800b37e495c00770f4e8a73b0e67",
+                "url": "https://api.github.com/repos/dpc-sdp/tide_webform/zipball/0241076d8a2246bdf26d06aef9669f637360e4a9",
+                "reference": "0241076d8a2246bdf26d06aef9669f637360e4a9",
                 "shasum": ""
             },
             "require": {
@@ -2324,16 +2316,11 @@
                 "dpc-sdp/tide_api:^1.2.9": "Set default value to jsonapi.settings readonly property"
             },
             "type": "drupal-module",
-            "extra": {
-                "patches_applied": {
-                    "tide_webform access role issue - https://github.com/dpc-sdp/tide_webform/pull/31": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_webform/pull/31.patch"
-                }
-            },
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Webform configuration for Tide Drupal 8 distribution",
-            "time": "2019-07-24T05:36:10+00:00"
+            "time": "2019-08-02T04:19:26+00:00"
         },
         {
             "name": "drupal-composer/drupal-scaffold",
