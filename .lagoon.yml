@@ -51,6 +51,10 @@ environments:
         # drush command drush tide-core-scheduled-updates-cron must run as user 1
         command: 'drush tide-core-scheduled-updates-cron --user=1'
         service: cli
+      - name: Import Grant feed
+        schedule: "0 4 * * *"
+        command: "drush migrate-reset-status grants_feed_importer && drush migrate-import grants_feed_importer"
+        service: cli
       - name: Database Backups
         schedule: "0 1,5,9,13,17,21 * * *"
         command: 'bash /app/scripts/drupal/backup-scheduled.sh /app/docroot vicgovau'
@@ -87,6 +91,10 @@ environments:
       - name: drush scheduled updates cron
         schedule: "2,7,12,17,22,27,32,37,42,47,52,57 * * * *"
         command: 'drush tide-core-scheduled-updates-cron --user=1'
+        service: cli
+      - name: Import Grant feed
+        schedule: "0 4 * * *"
+        command: "drush migrate-reset-status grants_feed_importer && drush migrate-import grants_feed_importer"
         service: cli
     routes:
       - nginx-php:

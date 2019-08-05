@@ -149,6 +149,7 @@ permissions:
   - 'edit terms in profile_category'
   - 'edit terms in topic'
   - 'override news promote to front landing_page option'
+  - 'reorder entity_hierarchy children'
   - 'revert alert revisions'
   - 'revert all revisions'
   - 'revert event revisions'
