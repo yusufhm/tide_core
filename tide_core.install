@@ -377,16 +377,12 @@ function tide_core_update_8014() {
  * Enable hotlinking by default on Stage File Proxy.
  */
 function tide_core_update_8015() {
-
-  $stage_file_proxy_config = \Drupal::config('stage_file_proxy.settings')->get();
-
-  // Check that Stage File Proxy is active.
-  if (!empty($stage_file_proxy_config)) {
+  if (\Drupal::moduleHandler()->moduleExists('stage_file_proxy')) {
     $stage_file_proxy_config_editable = \Drupal::service('config.factory')->getEditable('stage_file_proxy.settings');
     $stage_file_proxy_config_editable->set('hotlink', TRUE);
     $stage_file_proxy_config_editable->save();
   }
   else {
-    drush_log('Stage File Proxy configuration is not active.', 'warning');
+    drush_log('Stage File Proxy is not active.', 'warning');
   }
 }
