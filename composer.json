@@ -44,6 +44,7 @@
         "drupal/role_delegation": "^1.0-alpha1",
         "drupal/scheduled_updates": "^1.0-alpha7",
         "drupal/seckit": "^1.1",
+        "drupal/section_purger": "0.1.0",
         "drupal/simple_sitemap": "^2.12",
         "drupal/smart_trim": "^1.1",
         "drupal/stage_file_proxy": "^1.0-alpha3",
@@ -58,6 +59,11 @@
         "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        "drupal/section_purger": {
+            "type": "vcs",
+            "no-api": true,
+            "url": "https://github.com/section/section_purger.git"
         }
     },
     "extra": {
