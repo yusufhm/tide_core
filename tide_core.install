@@ -14,6 +14,8 @@ use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\scheduled_transitions\ScheduledTransitionsPermissions;
 use Drupal\user\Entity\Role;
+use Drupal\purge\Plugin\Purge\Purger\PurgersServiceInterface;
+use Drupal\section_purger\Entity\SectionPurgerSettings;
 
 /**
  * Implements hook_install().
@@ -361,4 +363,90 @@ function tide_core_update_8013() {
     $role->grantPermission('view latest version');
     $role->save();
   }
+}
+
+/**
+ * Create a new Section.io Purger.
+ */
+function tide_core_update_8014() {
+
+  $module_installer = \Drupal::service('module_installer');
+  $module_installer->install([
+    'purge',
+    'purge_processor_cron',
+    'purge_processor_lateruntime',
+    'purge_tokens',
+    'purge_ui',
+    'section_purger',
+    'section_purger_tagsheader',
+  ]);
+  drupal_flush_all_caches();
+
+  if (\Drupal::moduleHandler()->moduleExists('section_purger')) {
+    module_load_include('inc', 'tide_core', 'includes/helpers');
+    $config_location = [drupal_get_path('module', 'tide_core') . '/config/optional'];
+    _tide_import_single_config('key.key.section_io_password', $config_location);
+
+    $purgePurgers = \Drupal::service('purge.purgers');
+    $plugin_id = 'section';
+
+    $enabled = $purgePurgers->getPluginsEnabled();
+    $available = $purgePurgers->getPluginsAvailable();
+
+    // Verify that the plugin exists.
+    if (!isset($purgePurgers->getPlugins()[$plugin_id])) {
+      return \Drupal::messenger()->addError(t('The given plugin does not exist!'));
+    }
+
+    if (in_array($plugin_id, $enabled)) {
+      drupal_set_message('The purger already exists!');
+    }
+
+    // Verify that new instances of the plugin may be created.
+    if (!in_array($plugin_id, $purgePurgers->getPluginsAvailable())) {
+      return \Drupal::messenger()->addError(t('No more instances of this plugin can be created!'));
+    }
+
+    // Define the new instance and store it.
+    $purger_id = $purgePurgers->createId();
+    $enabled[$purger_id] = $plugin_id;
+    $purgePurgers->setPluginsEnabled($enabled);
+    drupal_set_message('The purger has been created!');
+
+    $settings = SectionPurgerSettings::load($purger_id);
+
+    $section_user = getenv('SECTION_IO_USER');
+
+    $settings->name = 'Section Develop';
+    $settings->invalidationtype = 'tag';
+    $settings->hostname = 'aperture.section.io';
+    $settings->sitename = '';
+    $settings->port = 443;
+    $settings->path = '/';
+    $settings->account = 1918;
+    $settings->application = 7011;
+    $settings->environmentname = 'Develop';
+    $settings->username = $section_user ? $section_user : '';
+    $settings->password = 'section_io_password';
+    $settings->request_method = 'POST';
+    $settings->scheme = 'https';
+    $settings->verify = '1';
+    $settings->body = '';
+    $settings->body_content_type = 'application/json';
+    $settings->runtime_measurement = true;
+    $settings->timeout = '!!float 1';
+    $settings->connect_timeout = '!!float 1';
+    $settings->cooldown_time = '!!float 0';
+    $settings->max_requests = 100;
+    $settings->http_errors = true;
+    $settings->save();
+
+    $config_factory = \Drupal::configFactory();
+    $config = $config_factory->getEditable('system.performance');
+    $config->set('cache.page.max_age', 3600);
+    $config->save();
+
+    drupal_set_message('Please export config for the section purger module. It must be separate in Production, Master and Develop to point the "environmentname" setting to the separate Section environments.');
+  }
+
 }
