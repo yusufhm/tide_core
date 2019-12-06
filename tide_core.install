@@ -407,4 +407,3 @@ function tide_core_update_8016() {
     drush_log('Stage File Proxy configuration is not active.', 'warning');
   }
 }
-
