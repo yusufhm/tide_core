@@ -57,6 +57,10 @@ function tide_core_install() {
   $functions = get_defined_functions();
   foreach ($functions['user'] as $function) {
     if (strpos($function, 'tide_core_update_') === 0) {
+      // We don't want the tide_core_update_8015 to run during the CI.
+      if ($function == 'tide_core_update_8015') {
+        continue;
+      }
       call_user_func($function);
     }
   }
@@ -374,15 +378,33 @@ function tide_core_update_8014() {
 }
 
 /**
- * Enable hotlinking by default on Stage File Proxy.
+ * ClamAV configuration is updated to use central service.
  */
 function tide_core_update_8015() {
-  if (\Drupal::moduleHandler()->moduleExists('stage_file_proxy')) {
+  if (\Drupal::moduleHandler()->moduleExists('clamav')) {
+    $config_factory = \Drupal::configFactory();
+    $config = $config_factory->getEditable('clamav.settings');
+    $config->set('scan_mode', 0);
+    $config->set('mode_daemon_tcpip.hostname', 'clamav.sdp-central-clamav-master.svc.cluster.local');
+    $config->save();
+  }
+}
+
+/**
+ * Enable hotlinking by default on Stage File Proxy.
+ */
+function tide_core_update_8016() {
+
+  $stage_file_proxy_config = \Drupal::config('stage_file_proxy.settings')->get();
+
+  // Check that Stage File Proxy is active.
+  if (!empty($stage_file_proxy_config)) {
     $stage_file_proxy_config_editable = \Drupal::service('config.factory')->getEditable('stage_file_proxy.settings');
     $stage_file_proxy_config_editable->set('hotlink', TRUE);
     $stage_file_proxy_config_editable->save();
   }
   else {
-    drush_log('Stage File Proxy is not active.', 'warning');
+    drush_log('Stage File Proxy configuration is not active.', 'warning');
   }
 }
+
