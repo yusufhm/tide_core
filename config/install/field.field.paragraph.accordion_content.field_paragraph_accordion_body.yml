@@ -16,8 +16,8 @@ id: paragraph.accordion_content.field_paragraph_accordion_body
 field_name: field_paragraph_accordion_body
 entity_type: paragraph
 bundle: accordion_content
-label: 'Item Content'
-description: ''
+label: 'Accordion item content'
+description: 'If you use headings in accordion content you must start with Heading 3.'
 required: true
 translatable: false
 default_value: {  }

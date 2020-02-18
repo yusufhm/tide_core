@@ -8,8 +8,8 @@ id: paragraph.accordion_content.field_paragraph_accordion_name
 field_name: field_paragraph_accordion_name
 entity_type: paragraph
 bundle: accordion_content
-label: 'Item Name'
-description: ''
+label: 'Accordion item heading'
+description: 'You must add a heading here to describe the content of the accordion.'
 required: true
 translatable: false
 default_value: {  }
