@@ -184,6 +184,15 @@ function _tide_core_update_editorial_workflow() {
 }
 
 /**
+ * Implements hook_update_dependencies().
+ */
+function tide_core_update_dependencies() {
+  $dependencies['tide_core'][8007] = ['system' => 8805];
+
+  return $dependencies;
+}
+
+/**
  * Add field storage for Show Related Content and Show Social Sharing.
  */
 function tide_core_update_8001() {
