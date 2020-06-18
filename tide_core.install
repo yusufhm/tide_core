@@ -187,7 +187,7 @@ function _tide_core_update_editorial_workflow() {
  */
 function tide_core_update_dependencies() {
   $dependencies['tide_core'][8007] = ['system' => 8805];
-  $dependencies['tide_site'][8007] = ['system' => 8805];
+  $dependencies['tide_site'][8004] = ['system' => 8805];
 
   return $dependencies;
 }
