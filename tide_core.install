@@ -190,6 +190,7 @@ function tide_core_update_dependencies() {
   // Some sites have already run 8007. Need to check for 8016 too.
   $dependencies['tide_core'][8016] = ['system' => 8805];
   $dependencies['tide_landing_page'][8015] = ['system' => 8805];
+  $dependencies['tide_landing_page'][8016] = ['system' => 8805];
   $dependencies['tide_site'][8004] = ['system' => 8805];
 
   return $dependencies;
