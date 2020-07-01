@@ -587,3 +587,15 @@ function tide_core_update_8021() {
   $config_storage = \Drupal::service('config.storage');
   $config_storage->write($view, $source->read($view));
 }
+
+/**
+ * Update Scheduled Transitions View.
+ */
+function tide_core_update_8022() {
+    $config_factory = \Drupal::configFactory();
+    $config = $config_factory->getEditable('views.view.scheduled_transitions');
+
+    // Update empty View results.
+    $config->set('display.default.display_options.empty.area.content.format', 'plain_text');
+    $config->save();
+}
