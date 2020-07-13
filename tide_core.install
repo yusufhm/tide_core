@@ -634,3 +634,36 @@ function tide_core_update_8023() {
     $editorial_workflow->save();
   }
 }
+
+/**
+ * Import tide_core_moderated_content_filters.
+ */
+function tide_core_update_8024() {
+  $view = 'views.view.tide_core_moderated_content_filters';
+  $config_path = drupal_get_path('module', 'tide_core') . '/config/install';
+  $source = new FileStorage($config_path);
+  $config_storage = \Drupal::service('config.storage');
+  $config_storage->write($view, $source->read($view));
+}
+
+/**
+ * Update content overview filters.
+ */
+function tide_core_update_8025() {
+    $config_factory = \Drupal::configFactory();
+    $config = $config_factory->getEditable('views.view.summary_contents_filters');
+
+    $config->delete('display.default.display_options.filters.moderation_state');
+
+    $config->set('display.default.cache_metadata.tags', [
+      'config:field.storage.node.field_node_primary_site',
+      'config:field.storage.node.field_node_site'
+    ]);
+
+    $config->set('display.page_1.cache_metadata.tags', [
+      'config:field.storage.node.field_node_primary_site',
+      'config:field.storage.node.field_node_site'
+    ]);
+
+    $config->save();
+}
