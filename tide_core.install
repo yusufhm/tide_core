@@ -650,20 +650,20 @@ function tide_core_update_8024() {
  * Update content overview filters.
  */
 function tide_core_update_8025() {
-    $config_factory = \Drupal::configFactory();
-    $config = $config_factory->getEditable('views.view.summary_contents_filters');
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('views.view.summary_contents_filters');
 
-    $config->clear('display.default.display_options.filters.moderation_state');
+  $config->clear('display.default.display_options.filters.moderation_state');
 
-    $config->set('display.default.cache_metadata.tags', [
-      'config:field.storage.node.field_node_primary_site',
-      'config:field.storage.node.field_node_site'
-    ]);
+  $config->set('display.default.cache_metadata.tags', [
+    'config:field.storage.node.field_node_primary_site',
+    'config:field.storage.node.field_node_site'
+  ]);
 
-    $config->set('display.page_1.cache_metadata.tags', [
-      'config:field.storage.node.field_node_primary_site',
-      'config:field.storage.node.field_node_site'
-    ]);
+  $config->set('display.page_1.cache_metadata.tags', [
+    'config:field.storage.node.field_node_primary_site',
+    'config:field.storage.node.field_node_site'
+  ]);
 
-    $config->save();
+  $config->save();
 }
