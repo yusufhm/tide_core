@@ -657,12 +657,12 @@ function tide_core_update_8025() {
 
   $config->set('display.default.cache_metadata.tags', [
     'config:field.storage.node.field_node_primary_site',
-    'config:field.storage.node.field_node_site'
+    'config:field.storage.node.field_node_site',
   ]);
 
   $config->set('display.page_1.cache_metadata.tags', [
     'config:field.storage.node.field_node_primary_site',
-    'config:field.storage.node.field_node_site'
+    'config:field.storage.node.field_node_site',
   ]);
 
   $config->save();
