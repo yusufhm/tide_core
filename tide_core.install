@@ -653,7 +653,7 @@ function tide_core_update_8025() {
     $config_factory = \Drupal::configFactory();
     $config = $config_factory->getEditable('views.view.summary_contents_filters');
 
-    $config->delete('display.default.display_options.filters.moderation_state');
+    $config->clear('display.default.display_options.filters.moderation_state');
 
     $config->set('display.default.cache_metadata.tags', [
       'config:field.storage.node.field_node_primary_site',
