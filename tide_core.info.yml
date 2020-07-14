@@ -104,6 +104,8 @@ config_devel:
     - field.storage.node.field_node_email
     - field.storage.node.field_node_link
     - field.storage.node.field_node_phone
+    - field.storage.node.field_node_primary_site
+    - field.storage.node.field_node_site
     - field.storage.node.field_related_links
     - field.storage.node.field_show_related_content
     - field.storage.node.field_show_social_sharing
@@ -137,6 +139,7 @@ config_devel:
     - taxonomy.vocabulary.location
     - taxonomy.vocabulary.tags
     - taxonomy.vocabulary.topic
+    - taxonomy.vocabulary.sites
     - user.role.approver
     - user.role.editor
     - user.role.previewer
