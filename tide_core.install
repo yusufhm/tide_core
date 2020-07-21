@@ -672,3 +672,15 @@ function tide_core_update_8025() {
     ->set('register', UserInterface::REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL)
     ->save(TRUE);
 }
+
+/**
+ * Update Scheduled Transitions View.
+ */
+function tide_core_update_8026() {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('views.view.scheduled_transitions');
+
+  // Update empty View results.
+  $config->set('display.default.display_options.empty.area.content.format', 'plain_text');
+  $config->save();
+}
