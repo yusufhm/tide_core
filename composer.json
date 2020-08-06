@@ -10,7 +10,7 @@
         "ckeditor/iframe": "^4.5.11",
         "drupal/address": "^1.4",
         "drupal/allowed_formats": "^1.1",
-        "drupal/better_exposed_filters": "^3.0-alpha5",
+        "drupal/better_exposed_filters": "^5.0",
         "drupal/ckeditor_iframe": "^2.0-beta1",
         "drupal/clamav": "^1.1",
         "drupal/config_ignore": "^2.1",
