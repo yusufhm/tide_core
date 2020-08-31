@@ -224,9 +224,6 @@ function tide_core_form_content_moderation_entity_moderation_form_alter(&$form, 
   }
 }
 
-/**
- * Implements hook_ckeditor_css_alter().
- */
-function tide_core_ckeditor_css_alter(&$css, $editor) {
-  $css[] = drupal_get_path('module', 'tide_core') . '/css/ckeditor_overrides.css';
+function tide_core_preprocess_page(&$variables) {
+  $variables['#attached']['library'][] = 'tide_core/ckeditor_stylesheets';
 }
