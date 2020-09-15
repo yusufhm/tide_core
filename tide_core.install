@@ -894,3 +894,14 @@ function tide_core_update_8035() {
     }
   }
 }
+
+/**
+ * Approver, site_admin and editor should access to `summary_text` text format.
+ */
+function tide_core_update_8036() {
+  $roles = ['approver', 'site_admin', 'editor'];
+  $permissions[] = 'use text format summary_text';
+  foreach ($roles as $role) {
+    user_role_grant_permissions(Role::load($role)->id(), $permissions);
+  }
+}
