@@ -57,7 +57,7 @@ class TideCallout extends PluginBase implements CKEditorPluginInterface, CKEdito
       'tide_callout' => [
         'label' => t('Callout template'),
         'image' => $iconImage,
-      ]
+      ],
     ];
   }
 
