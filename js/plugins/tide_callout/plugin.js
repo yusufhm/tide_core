@@ -13,7 +13,7 @@ CKEDITOR.plugins.add('tide_callout', {
       }
     });
 
-    editor.ui.addButton('Callout', {
+    editor.ui.addButton('tide_callout', {
       label: 'Callout template', //this is the tooltip text for the button
       toolbar: 'insert',
       command: 'callout_template',
