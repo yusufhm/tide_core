@@ -9,7 +9,7 @@ CKEDITOR.plugins.add('tide_callout', {
 
     editor.addCommand( 'callout_template', {
       exec: function(editor) {
-        editor.insertHtml( '<div class="callout-wrapper"><h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor</p><ul><li>Lorem ipsum dolor</li><li>Lorem ipsum dolor</li></ul></div>' );
+        editor.insertHtml( '<div class="callout-wrapper"><div class="callout-wrapper__title">Lorem ipsum dolor</div><div class="callout-wrapper__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div></div>' );
       }
     });
 
