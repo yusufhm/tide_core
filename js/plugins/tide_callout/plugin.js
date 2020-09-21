@@ -8,16 +8,39 @@ CKEDITOR.plugins.add('tide_callout', {
     'use strict';
 
     editor.addCommand( 'callout_template', {
-      exec: function(editor) {
-        editor.insertHtml( '<div class="callout-wrapper"><div class="callout-wrapper__title">Lorem ipsum dolor</div><div class="callout-wrapper__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div></div>' );
-      }
-    });
+      exec : function( editor ) {
+        var selectedHtml = "";
+        var selection = editor.getSelection();
+        if (selection) {
+          selectedHtml = getSelectionHtml(selection);
+        }
+        editor.insertHtml('<div class="callout-wrapper">' + selectedHtml + '</div>');
+      });
 
     editor.ui.addButton('tide_callout', {
-      label: 'Callout template', //this is the tooltip text for the button
+      label: 'Callout (WYSIWYG)', //this is the tooltip text for the button
       toolbar: 'insert',
       command: 'callout_template',
       icon: this.path + 'images/icon.png'
     });
   }
 });
+
+/**
+ Get HTML of a range.
+ */
+function getRangeHtml(range) {
+  var content = range.extractContents();
+  return content.getHtml();
+}
+/**
+ Get HTML of a selection.
+ */
+function getSelectionHtml(selection) {
+  var ranges = selection.getRanges();
+  var html = '';
+  for (var i = 0; i < ranges.length; i++) {
+    html += getRangeHtml(ranges[i]);
+  }
+  return html;
+}
