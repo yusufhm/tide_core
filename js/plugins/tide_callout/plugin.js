@@ -3,20 +3,21 @@
  * Callout plugin definition.
  */
 
-CKEDITOR.config.contentsCss = '/css/tide_callout.css' ;
+CKEDITOR.config.contentsCss = '/css/ckeditor_overrides.css' ;
 CKEDITOR.plugins.add('TideCallout', {
   init: function(editor) {
     'use strict';
 
     editor.addCommand('callout_template', {
-      exec : function( editor ) {
+      exec: function(editor) {
         var selectedHtml = "";
         var selection = editor.getSelection();
         if (selection) {
           selectedHtml = getSelectionHtml(selection);
         }
         editor.insertHtml('<div class="callout-wrapper">' + selectedHtml + '</div>');
-      });
+      }
+    });
 
     editor.ui.addButton('TideCallout', {
       label: 'Callout (WYSIWYG)',
