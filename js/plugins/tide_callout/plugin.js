@@ -3,11 +3,12 @@
  * Callout plugin definition.
  */
 
+CKEDITOR.config.contentsCss = '/css/tide_callout.css' ;
 CKEDITOR.plugins.add('tide_callout', {
   init: function(editor) {
     'use strict';
 
-    editor.addCommand( 'callout_template', {
+    editor.addCommand('callout_template', {
       exec : function( editor ) {
         var selectedHtml = "";
         var selection = editor.getSelection();
@@ -18,7 +19,7 @@ CKEDITOR.plugins.add('tide_callout', {
       });
 
     editor.ui.addButton('tide_callout', {
-      label: 'Callout (WYSIWYG)', //this is the tooltip text for the button
+      label: 'Callout (WYSIWYG)',
       toolbar: 'insert',
       command: 'callout_template',
       icon: this.path + 'images/icon.png'
@@ -27,20 +28,14 @@ CKEDITOR.plugins.add('tide_callout', {
 });
 
 /**
- Get HTML of a range.
- */
-function getRangeHtml(range) {
-  var content = range.extractContents();
-  return content.getHtml();
-}
-/**
  Get HTML of a selection.
  */
 function getSelectionHtml(selection) {
   var ranges = selection.getRanges();
   var html = '';
   for (var i = 0; i < ranges.length; i++) {
-    html += getRangeHtml(ranges[i]);
+    var content = ranges[i].extractContents();
+    html += content.getHtml();
   }
   return html;
 }
