@@ -11,7 +11,7 @@ use Drupal\editor\Entity\Editor;
  * Defines the "Callout" plugin, with a CKEditor.
  *
  * @CKEditorPlugin(
- *   id = "tide_callout",
+ *   id = "TideCallout",
  *   label = @Translation("Callout template Plugin")
  * )
  */
@@ -54,7 +54,7 @@ class TideCallout extends PluginBase implements CKEditorPluginInterface, CKEdito
 
     // Return the CKEditor plugin button details.
     return [
-      'tide_callout' => [
+      'TideCallout' => [
         'label' => t('Callout template'),
         'image' => $iconImage,
       ],

@@ -937,9 +937,9 @@ function tide_core_update_8038() {
     $updated_rows = [];
 
     foreach ($rows as $key => $row) {
-      if ($row['name'] === 'Media' && !in_array('tide_callout', $row['items'])) {
+      if ($row['name'] === 'Media' && !in_array('TideCallout', $row['items'])) {
         // Insert tide_callout inside Media group toolbar.
-        array_splice($row['items'], 1, 0, 'tide_callout');
+        array_splice($row['items'], 1, 0, 'TideCallout');
       }
       $updated_rows[] = $row;
     }

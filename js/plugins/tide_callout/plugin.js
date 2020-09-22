@@ -4,7 +4,7 @@
  */
 
 CKEDITOR.config.contentsCss = '/css/tide_callout.css' ;
-CKEDITOR.plugins.add('tide_callout', {
+CKEDITOR.plugins.add('TideCallout', {
   init: function(editor) {
     'use strict';
 
@@ -18,7 +18,7 @@ CKEDITOR.plugins.add('tide_callout', {
         editor.insertHtml('<div class="callout-wrapper">' + selectedHtml + '</div>');
       });
 
-    editor.ui.addButton('tide_callout', {
+    editor.ui.addButton('TideCallout', {
       label: 'Callout (WYSIWYG)',
       toolbar: 'insert',
       command: 'callout_template',
