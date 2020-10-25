@@ -934,6 +934,9 @@ function tide_core_update_8038() {
   foreach ($configs as $config) {
     $editable_config = $config_factory->getEditable($config);
     $rows = $editable_config->get('settings.toolbar.rows.0');
+    if (empty($rows)) {
+      continue;
+    }
     $updated_rows = [];
 
     foreach ($rows as $key => $row) {
