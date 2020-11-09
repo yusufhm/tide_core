@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: card_carousel
+label: 'Card Carousel'
+icon_uuid: null
+description: 'Featured cards for news and upcoming events.'
+behavior_plugins: {  }
