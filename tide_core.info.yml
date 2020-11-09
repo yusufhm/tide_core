@@ -150,6 +150,13 @@ config_devel:
     - wysiwyg_template.wysiwyg_template.secondary_button
     - field.storage.block_content.field_tags
     - field.storage.block_content.field_topic
+    - paragraphs.paragraphs_type.basic_text
+    - paragraphs.paragraphs_type.call_to_action
+    - paragraphs.paragraphs_type.card_carousel
+    - paragraphs.paragraphs_type.card_event
+    - paragraphs.paragraphs_type.card_event_auto
+    - paragraphs.paragraphs_type.card_promotion
+    - paragraphs.paragraphs_type.card_promotion_auto
   optional:
     - block.block.seven_breadcrumbs
     - block.block.seven_content
