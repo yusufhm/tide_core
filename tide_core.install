@@ -921,3 +921,64 @@ function tide_core_update_8037() {
     $storage->createFromStorageRecord($config_read)->save();
   }
 }
+
+/**
+ * Add Callout template to wysiwyg toolbar.
+ */
+function tide_core_update_8038() {
+  $config_factory = \Drupal::configFactory();
+  $configs = [
+    'editor.editor.admin_text',
+    'editor.editor.rich_text',
+  ];
+  foreach ($configs as $config) {
+    $editable_config = $config_factory->getEditable($config);
+    $rows = $editable_config->get('settings.toolbar.rows.0');
+    $updated_rows = [];
+
+    foreach ($rows as $key => $row) {
+      if ($row['name'] === 'Media' && !in_array('TideCallout', $row['items'])) {
+        // Insert tide_callout inside Media group toolbar.
+        array_splice($row['items'], 1, 0, 'TideCallout');
+      }
+      $updated_rows[] = $row;
+    }
+
+    $editable_config->set('settings.toolbar.rows.0', $updated_rows);
+    $editable_config->save();
+  }
+}
+
+/**
+ * Enable ckeditor_liststyle module.
+ */
+function tide_core_update_8039() {
+  if (!\Drupal::moduleHandler()->moduleExists('ckeditor_liststyle')) {
+    $module_installer = \Drupal::service('module_installer');
+    $module_installer->install(['ckeditor_liststyle']);
+  }
+
+  // Update allowed HTML list.
+  $config_factory = \Drupal::configFactory();
+  $filter_ids = [
+    'filter.format.admin_text',
+    'filter.format.rich_text',
+  ];
+  foreach ($filter_ids as $filter_id) {
+    $filter = $config_factory->getEditable($filter_id);
+    $value = $filter->get('filters.filter_html.settings.allowed_html');
+    $replaced = str_replace('<ol start type class>', '<ol start type style class>', $value);
+    $replaced = str_replace('<ul type class>', '<ul type style class>', $replaced);
+    $filter->set('filters.filter_html.settings.allowed_html', $replaced);
+    $filter->save();
+  }
+}
+
+/**
+ * Editor should not have access to redirects.
+ */
+function tide_core_update_8040() {
+  $role = 'editor';
+  $permissions = ['administer redirect settings', 'administer redirects'];
+  user_role_revoke_permissions(Role::load($role)->id(), $permissions);
+}
