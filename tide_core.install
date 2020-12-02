@@ -1005,3 +1005,11 @@ function tide_core_update_8041() {
     user_role_grant_permissions(Role::load($role)->id(), $permissions);
   }
 }
+
+/**
+ * Updates site_admin permissions.
+ */
+function tide_core_update_8042() {
+  $permissions = ['administer nodes', 'bypass node access'];
+  user_role_grant_permissions(Role::load('site_admin')->id(), $permissions);
+}
