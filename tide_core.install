@@ -17,6 +17,8 @@ use Drupal\scheduled_transitions\ScheduledTransitionsPermissions;
 use Drupal\user\Entity\Role;
 use Drupal\user\UserInterface;
 use Drupal\node\Entity\NodeType;
+use Drupal\views\Views;
+use Symfony\Component\Yaml\Yaml;
 
 /**
  * Implements hook_install().
@@ -1012,4 +1014,27 @@ function tide_core_update_8041() {
 function tide_core_update_8042() {
   $permissions = ['administer nodes', 'bypass node access'];
   user_role_grant_permissions(Role::load('site_admin')->id(), $permissions);
+}
+
+/**
+ * Updates files view.
+ */
+function tide_core_update_8043() {
+  $view = Views::getView('files');
+  if ($view) {
+    $display = &$view->storage->getDisplay('page_1');
+    $config_path = drupal_get_path('module', 'tide_core') . '/config/optional/views.view.files.yml';
+    $data = Yaml::parse(file_get_contents($config_path));
+    $defaults = $data['display']['page_1']['display_options']['defaults'];
+    $relationships = $data['display']['page_1']['display_options']['relationships'];
+    $fields = $data['display']['page_1']['display_options']['fields'];
+    $filters = $data['display']['page_1']['display_options']['filters'];
+    $filter_groups = $data['display']['page_1']['display_options']['filter_groups'];
+    $display['display_options']['defaults'] = $defaults;
+    $display['display_options']['relationships'] = $relationships;
+    $display['display_options']['fields'] = $fields;
+    $display['display_options']['filters'] = $filters;
+    $display['display_options']['filter_groups'] = $filter_groups;
+    $view->save();
+  }
 }
