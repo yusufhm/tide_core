@@ -26,6 +26,11 @@ class TideCoreRouteAlter extends RouteSubscriberBase {
     if ($route) {
       $route->setDefault('_title', 'Add Scheduled update');
     }
+    $route = $collection->get('view.files.page_1');
+    $enhanced_files_1_route = $collection->get('view.enhanced_files.page_1');
+    if ($route && $enhanced_files_1_route) {
+      $collection->add('view.files.page_1', clone $enhanced_files_1_route);
+    }
   }
 
 }
