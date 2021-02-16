@@ -11,7 +11,7 @@ use Drupal\views\Plugin\views\display\DisplayPluginBase;
  *
  * @ingroup views_filter_handlers
  *
- * @ViewsFilter("enhanced_mime_type_filter")
+ * @ViewsFilter("tide_enhanced_mime_type_filter")
  */
 class EnhancedMineTypeFilter extends InOperator {
 

@@ -1353,7 +1353,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           entity_type: file
-          plugin_id: enhanced_mime_type_filter
+          plugin_id: tide_enhanced_mime_type_filter
         status:
           id: status
           table: file_managed

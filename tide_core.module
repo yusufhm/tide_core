@@ -34,7 +34,7 @@ function tide_core_views_data_alter(array &$data) {
       'title' => t('Enhanced file MIME type filter'),
       'help' => t('provide a custom file MIME type selection filter'),
       'field' => 'filemime',
-      'id' => 'enhanced_mime_type_filter',
+      'id' => 'tide_enhanced_mime_type_filter',
     ],
   ];
 }
