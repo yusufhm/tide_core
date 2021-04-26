@@ -1073,7 +1073,11 @@ function tide_core_update_8045() {
     $module_installer->install(['tablefield']);
   }
   $roles = ['approver', 'site_admin', 'editor'];
-  $permissions = ['addrow tablefield', 'rebuild tablefield'];
+  $permissions = [
+    'addrow tablefield', 
+    'rebuild tablefield', 
+    'import tablefield',
+  ];
   foreach ($roles as $role) {
     user_role_grant_permissions(Role::load($role)->id(), $permissions);
   }
