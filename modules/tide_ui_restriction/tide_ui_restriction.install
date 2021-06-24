@@ -63,7 +63,7 @@ function _tide_ui_restriction_tighten_permissions() {
     'access admin_config pages' => $admin_only,
 
     'administer taxonomy' => $site_admin_only,
-    'administer user' => $site_admin_only,
+    'administer users' => $site_admin_only,
     'access event log track' => $site_admin_only,
     'administer pathauto' => $site_admin_only,
     'administer redirect settings' => $site_admin_only,
