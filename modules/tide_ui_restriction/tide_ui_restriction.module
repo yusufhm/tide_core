@@ -12,6 +12,31 @@ function tide_ui_restriction_menu_links_discovered_alter(&$links) {
   if (isset($links['system.modules_list'])) {
     unset($links['system.modules_list']);
   }
+
+  if (isset($links['entity.user.collection'])) {
+    if (\Drupal::moduleHandler()->moduleExists('admin_audit_trail')) {
+      $links['tide_ui_restriction.admin_audit_trail.report_form'] = [
+        'title' => t('Admin audit trail'),
+        'description' => t('Get report about cud operation performed by the user on the website.'),
+        'provider' => 'tide_ui_restriction',
+        'route_name' => 'admin_audit_trail.report_form',
+        'menu_name' => 'admin',
+        'parent' => 'entity.user.collection',
+        'weight' => 100,
+      ];
+    }
+    if (\Drupal::moduleHandler()->moduleExists('event_log_track')) {
+      $links['tide_ui_restriction.event_log_track.report_form'] = [
+        'title' => t('Events Log Track'),
+        'description' => t('Get report about cud operation performed by the user on the website.'),
+        'provider' => 'tide_ui_restriction',
+        'route_name' => 'event_log_track.report_form',
+        'menu_name' => 'admin',
+        'parent' => 'entity.user.collection',
+        'weight' => 101,
+      ];
+    }
+  }
 }
 
 /**
