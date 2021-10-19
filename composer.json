@@ -31,6 +31,7 @@
         "drupal/entity_reference_revisions": "~1.6.0",
         "drupal/entity_embed": "^1.0.0-beta2",
         "drupal/environment_indicator": "^3.5",
+        "drupal/admin_audit_trail": "^1.0",
         "drupal/events_log_track": "^1.1",
         "drupal/fakeobjects": "^1.0",
         "drupal/fast_404": "^1.0-alpha4",
@@ -74,7 +75,8 @@
         "drupal/token": "^1.7",
         "drupal/username_enumeration_prevention": "^1.1",
         "drupal/quick_node_clone": "^1.13",
-        "drupal/content_lock": "^2.2"
+        "drupal/content_lock": "^2.2",
+        "drupal/block_inactive_users": "^2.0"
     },
     "repositories": {
         "drupal": {
@@ -208,7 +210,7 @@
                 "Make the DateTime input format and descriptive text consistent - https://www.drupal.org/project/drupal/issues/2791693#comment-13024583": "https://www.drupal.org/files/issues/2019-03-16/2791693-38.patch",
                 "Content types are ordered by machine name on node/add - https://www.drupal.org/project/drupal/issues/2693485": "https://www.drupal.org/files/issues/2021-02-04/2693485-144.patch",
                 "Poor performance when using moderation state views filter - https://www.drupal.org/project/drupal/issues/3097303#comment-13559283": "https://www.drupal.org/files/issues/2020-04-17/3097303-9.patch",
-                "Refactor Xss::attributes() to allow filtering of style attribute values - https://www.drupal.org/project/drupal/issues/3109650#comment-14068224": "https://www.drupal.org/files/issues/2021-04-21/refactor_xss_attributes-3109650-24.patch"
+                "Refactor Xss::attributes() to allow filtering of style attribute values - https://www.drupal.org/project/drupal/issues/3109650#comment-14220629": "https://www.drupal.org/files/issues/2021-09-16/refactor_xss_attributes-3109650-42_0.patch"
             },
             "drupal/entity_embed": {
                 "More defensive handling of data-entity-embed-display-settings - https://www.drupal.org/project/entity_embed/issues/3010942": "https://www.drupal.org/files/issues/2019-12-11/3077225-10.reduce-invalid-config-logs.patch"
