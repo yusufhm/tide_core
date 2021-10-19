@@ -1280,3 +1280,21 @@ function tide_core_update_8051() {
     ->set('register', UserInterface::REGISTER_ADMINISTRATORS_ONLY)
     ->save(TRUE);
 }
+
+/**
+ * Create new role and assign audit trail permission.
+ */
+function tide_core_update_8052() {
+  $role = Role::load('site_auditor');
+  if (!$role) {
+    $auditor_role = Role::create([
+      'id' => 'site_auditor',
+      'label' => 'Site Auditor',
+      'permissions' => [
+        'access admin audit trail',
+        'access site reports',
+      ],
+    ]);
+    $auditor_role->save();
+  }
+}
