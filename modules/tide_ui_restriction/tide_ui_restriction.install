@@ -5,6 +5,8 @@
  * Install file.
  */
 
+use Drupal\taxonomy\TaxonomyPermissions;
+
 /**
  * Implements hook_install().
  */
@@ -21,18 +23,24 @@ function tide_ui_restriction_update_8001() {
   }
 
   module_load_include('inc', 'tide_core', 'includes/helpers');
-  try {
-    $config_location = [
-      drupal_get_path('module', 'tide_ui_restriction') . '/config/install',
-    ];
-    $config = 'config_perms.custom_perms_entity.administer_custom_block_types';
-    $config_read = _tide_read_config($config, $config_location, TRUE);
-    $storage = \Drupal::entityTypeManager()->getStorage('custom_perms_entity');
-    $config_entity = $storage->createFromStorageRecord($config_read);
-    $config_entity->save();
-  }
-  catch (\Exception $exception) {
-    watchdog_exception('tide_ui_restriction', $exception);
+  $config_location = [
+    drupal_get_path('module', 'tide_ui_restriction') . '/config/install',
+  ];
+  $configs = [
+    'config_perms.custom_perms_entity.administer_custom_block_types',
+    'config_perms.custom_perms_entity.bulk_update_url_aliases',
+  ];
+  foreach ($configs as $config) {
+    try {
+      $config_read = _tide_read_config($config, $config_location, TRUE);
+      $storage = \Drupal::entityTypeManager()
+        ->getStorage('custom_perms_entity');
+      $config_entity = $storage->createFromStorageRecord($config_read);
+      $config_entity->save();
+    }
+    catch (\Exception $exception) {
+      watchdog_exception('tide_ui_restriction', $exception);
+    }
   }
 
   _tide_ui_restriction_tighten_permissions();
@@ -48,6 +56,7 @@ function tide_ui_restriction_update_8001() {
 function _tide_ui_restriction_tighten_permissions() {
   $admin_only = ['administrator'];
   $site_admin_only = ['administrator', 'site_admin'];
+  $approver_only = ['administrator', 'site_admin', 'approver'];
   $editor_only = ['administrator', 'site_admin', 'approver', 'editor'];
 
   $custom_perms = [
@@ -59,9 +68,11 @@ function _tide_ui_restriction_tighten_permissions() {
     'administer paragraphs types' => $admin_only,
     'administer themes' => $admin_only,
     'administer modules' => $admin_only,
+
     'access site reports' => $admin_only,
     'access admin_config pages' => $admin_only,
 
+    'access taxonomy overview' => $site_admin_only,
     'administer taxonomy' => $site_admin_only,
     'administer users' => $site_admin_only,
     'access admin audit trail' => $site_admin_only,
@@ -69,10 +80,21 @@ function _tide_ui_restriction_tighten_permissions() {
     'administer pathauto' => $site_admin_only,
     'administer redirect settings' => $site_admin_only,
 
+    'Bulk update url aliases' => $approver_only,
+
     'access administration pages' => $editor_only,
-    'administer url aliases' => $editor_only,
     'administer redirects' => $editor_only,
+    'administer url aliases' => $editor_only,
+    'create url aliases' => $editor_only,
   ];
+
+  /** @var \Drupal\taxonomy\TaxonomyPermissions $taxonomy_perm */
+  $taxonomy_perm = \Drupal::classResolver(TaxonomyPermissions::class);
+  if ($taxonomy_perm instanceof TaxonomyPermissions) {
+    foreach (array_keys($taxonomy_perm->permissions()) as $permission) {
+      $custom_perms[$permission] = $site_admin_only;
+    }
+  }
 
   /** @var \Drupal\user\RoleInterface[] $roles */
   $roles = \Drupal::entityTypeManager()->getStorage('user_role')->loadMultiple();
