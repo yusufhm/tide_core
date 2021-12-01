@@ -15,3 +15,9 @@ sticky_node_form_sidebar:
   css:
     theme:
       css/sticky_node_form_sidebar.css: {}
+
+tide_autocomplate:
+  version: VERSION
+  css:
+    theme:
+      css/tide_autocomplate.css: {}

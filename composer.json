@@ -75,7 +75,8 @@
         "drupal/inline_entity_form": "^1.0",
         "drupal/jquery_ui_touch_punch": "^1.0",
         "drupal/admin_audit_trail": "^1.0",
-        "drupal/block_inactive_users": "^2.0"
+        "drupal/block_inactive_users": "^2.0",
+        "drupal/anchor_link":"^2.5"
     },
     "repositories": {
         "drupal": {

@@ -269,6 +269,7 @@ function tide_core_form_content_moderation_entity_moderation_form_alter(&$form, 
  */
 function tide_core_preprocess_page(&$variables) {
   $variables['#attached']['library'][] = 'tide_core/ckeditor_stylesheets';
+  $variables['#attached']['library'][] = 'tide_core/tide_autocomplate';
 }
 
 /**
