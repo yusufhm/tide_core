@@ -1332,6 +1332,7 @@ function tide_core_update_8054() {
   }
 }
 
+
 /**
  * Install anchor_link module.
  *
