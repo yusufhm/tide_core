@@ -106,11 +106,17 @@ class TideNodeSelection extends NodeSelection
         $bundle_str = '[' . strtoupper($bundle) . '] ';
       }
 
-      $status = $this->tide_entity_get_status($entity);
-      if ($status) {
-        $status = ' (' . strtoupper($status) . ')';
+      $site_names = $this->getSitesName($entity);
+      $status = $this->getEntityStatus($entity);
+
+      if (!empty($site_names)) {
+        $append_str = '(' . strtoupper($status) . ' - ' . strtoupper($site_names) . ')';
       }
-      $options[$bundle][$entity_id] = $bundle_str . Html::escape($this->entityRepository->getTranslationFromContext($entity)->label()) . $status;
+      else {
+        $append_str = ' (' . strtoupper($status) . ')';
+      }
+
+      $options[$bundle][$entity_id] = $bundle_str . Html::escape($this->entityRepository->getTranslationFromContext($entity)->label()) . $append_str;
     }
 
     return $options;
@@ -153,7 +159,7 @@ class TideNodeSelection extends NodeSelection
    * @return string
    *   The status.
    */
-  protected function tide_entity_get_status(ContentEntityInterface $entity) {
+  protected function getEntityStatus(ContentEntityInterface $entity) {
     $status = 'published';
     if ($entity->hasField('moderation_state') && !$entity->get('moderation_state')->isEmpty()) {
       $status = $entity->get('moderation_state')->value;
@@ -163,5 +169,39 @@ class TideNodeSelection extends NodeSelection
       }
     }
     return $status;
+
   }
+
+  /**
+   * Get all sites name for an entity.
+   *
+   * Trim down the sub domain in the site for site name
+   * if the site name has domain name like covid.vic.gov.au.
+   *
+   * @param \Drupal\Core\Entity\ContentEntityInterface $entity
+   *   The entity object.
+   *
+   * @return string
+   *   The sites name.
+   */
+  protected function getSitesName(ContentEntityInterface $entity) {
+    $site_names = [];
+    if ($entity->hasField('field_node_site')) {
+      foreach ($entity->field_node_site as $reference) {
+        if (strpos($reference->entity->name->value, '.')) {
+          $site_names[] =  substr($reference->entity->name->value, 0, strpos($reference->entity->name->value, '.'));
+        }
+        else {
+          $site_names[] = $reference->entity->name->value;
+        }
+      }
+    }
+    if ($site_names) {
+      return implode(', ', $site_names);
+    }
+    else {
+      return '';
+    }
+  }
+
 }
