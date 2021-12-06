@@ -7,7 +7,7 @@ use Drupal\Component\Utility\Tags;
 use Drupal\Core\Entity\EntityAutocompleteMatcher as CoreEntityAutocompleteMatcher;
 
 /**
- * Class EntityAutocompleteMatcher.
+ * Using to create Tide custom EntityAutocompleteMatcher.
  */
 class EntityAutocompleteMatcher extends CoreEntityAutocompleteMatcher {
 

@@ -11,7 +11,6 @@ use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Session\AccountInterface;
-use Drupal\node\NodeInterface;
 use Drupal\node\Plugin\EntityReferenceSelection\NodeSelection;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -27,8 +26,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   base_plugin_label = "Tide"
  * )
  */
-class TideNodeSelection extends NodeSelection
-{
+class TideNodeSelection extends NodeSelection {
 
   /**
    * The BorooEntityAutocomplete service.
@@ -40,8 +38,7 @@ class TideNodeSelection extends NodeSelection
   /**
    * {@inheritdoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_manager, ModuleHandlerInterface $module_handler, AccountInterface $current_user, EntityFieldManagerInterface $entity_field_manager, EntityTypeBundleInfoInterface $entity_type_bundle_info, EntityRepositoryInterface $entity_repository, TideEntityAutocomplete $tide_entity_autocomplete)
-  {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_manager, ModuleHandlerInterface $module_handler, AccountInterface $current_user, EntityFieldManagerInterface $entity_field_manager, EntityTypeBundleInfoInterface $entity_type_bundle_info, EntityRepositoryInterface $entity_repository, TideEntityAutocomplete $tide_entity_autocomplete) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $entity_manager, $module_handler, $current_user, $entity_field_manager, $entity_type_bundle_info, $entity_repository);
     $this->tideCoreEntityAutocomplete = $tide_entity_autocomplete;
   }
@@ -49,8 +46,7 @@ class TideNodeSelection extends NodeSelection
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition)
-  {
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(
       $configuration,
       $plugin_id,
@@ -70,8 +66,7 @@ class TideNodeSelection extends NodeSelection
    *
    * @see DefaultSelection::getReferenceableEntities()
    */
-  public function getReferenceableEntities($match = NULL, $match_operator = 'CONTAINS', $limit = 0)
-  {
+  public function getReferenceableEntities($match = NULL, $match_operator = 'CONTAINS', $limit = 0) {
     $target_type = $this->getConfiguration()['target_type'];
 
     $query = $this->buildEntityQuery($match, $match_operator);
@@ -125,8 +120,7 @@ class TideNodeSelection extends NodeSelection
   /**
    * {@inheritdoc}
    */
-  protected function buildEntityQuery($match = NULL, $match_operator = 'CONTAINS')
-  {
+  protected function buildEntityQuery($match = NULL, $match_operator = 'CONTAINS') {
     $configuration = $this->getConfiguration();
     $target_type = $configuration['target_type'];
     $entity_type = $this->entityTypeManager->getDefinition($target_type);
@@ -139,12 +133,14 @@ class TideNodeSelection extends NodeSelection
       if ($configuration['handler_settings']['target_bundles'] === []) {
         $query->condition($entity_type->getKey('id'), NULL, '=');
         return $query;
-      } else {
+      }
+      else {
         $query->condition($entity_type->getKey('bundle'), $configuration['handler_settings']['target_bundles'], 'IN');
       }
     }
     $query->sort('status', 'DESC');
     return $query;
+
   }
 
   /**
@@ -163,7 +159,8 @@ class TideNodeSelection extends NodeSelection
     $status = 'published';
     if ($entity->hasField('moderation_state') && !$entity->get('moderation_state')->isEmpty()) {
       $status = $entity->get('moderation_state')->value;
-    } elseif ($entity->hasField('status')) {
+    }
+    elseif ($entity->hasField('status')) {
       if ($entity->get('status')->value == '0') {
         $status = 'draft';
       }
@@ -189,7 +186,7 @@ class TideNodeSelection extends NodeSelection
     if ($entity->hasField('field_node_site')) {
       foreach ($entity->field_node_site as $reference) {
         if (strpos($reference->entity->name->value, '.')) {
-          $site_names[] =  substr($reference->entity->name->value, 0, strpos($reference->entity->name->value, '.'));
+          $site_names[] = substr($reference->entity->name->value, 0, strpos($reference->entity->name->value, '.'));
         }
         else {
           $site_names[] = $reference->entity->name->value;

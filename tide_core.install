@@ -1332,7 +1332,6 @@ function tide_core_update_8054() {
   }
 }
 
-
 /**
  * Install anchor_link module.
  *
@@ -1342,7 +1341,6 @@ function tide_core_update_8055() {
   $module_installer = \Drupal::service('module_installer');
   $module_installer->install(['anchor_link']);
 }
-
 
 /**
  * Add link and unlink buttons to editor toolbar.
@@ -1374,7 +1372,7 @@ function tide_core_update_8056() {
 
     // Link group exist, add anchor links to the group.
     if ($links_group = array_search('Links', array_column($toolbar_groups, 'name'))) {
-      $toolbar_groups[$links_group]['items'] = array_unique(array_merge($toolbar_groups[$links_group]['items'] , $link_buttons));
+      $toolbar_groups[$links_group]['items'] = array_unique(array_merge($toolbar_groups[$links_group]['items'], $link_buttons));
     }
     else {
       $toolbar_groups[] = [
