@@ -1,0 +1,5 @@
+services:
+  tide_core.commands:
+    class: \Drupal\tide_core\Commands\UpdateEditorLinks
+    tags:
+      - { name: drush.command }

@@ -105,7 +105,7 @@ class TideNodeSelection extends NodeSelection {
       $status = $this->getEntityStatus($entity);
 
       if (!empty($site_names)) {
-        $append_str = '(' . strtoupper($status) . ' - ' . strtoupper($site_names) . ')';
+        $append_str = ' (' . strtoupper($status) . ' - ' . strtoupper($site_names) . ')';
       }
       else {
         $append_str = ' (' . strtoupper($status) . ')';
