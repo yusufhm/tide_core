@@ -9,22 +9,24 @@ use Drush\Commands\DrushCommands;
  *
  * @package Drupal\tide_core\Commands
  */
-class UpdateEditorLinks {
+class UpdateEditorLinks extends DrushCommands {
 
   /**
-   * Drush command update ck editor links.
+   * Install anchor_link module and add settings.
    *
    * @command tide-core:update-editor-links
    * @aliases update-editor-links
    * @usage tide-core:update-editor-links
    */
-  public function updateEditorLinks() {
-    // Install anchor_link module
+  public function update() {
+    // Install anchor_link module.
     if (\Drupal::service('module_handler')->moduleExists('anchor_link')) {
       return;
     }
     $module_installer = \Drupal::service('module_installer');
     $module_installer->install(['anchor_link']);
+
+    $this->output()->writeln('Successfully installed: anchor_link');
 
     $config_factory = \Drupal::configFactory();
     $editor_formats = [
@@ -52,7 +54,8 @@ class UpdateEditorLinks {
       // Link group exist, add anchor links to the group.
       if ($links_group = array_search('Links', array_column($toolbar_groups, 'name'))) {
         $toolbar_groups[$links_group]['items'] = array_unique(array_merge($toolbar_groups[$links_group]['items'], $link_buttons));
-      } else {
+      }
+      else {
         $toolbar_groups[] = [
           'name' => 'Links',
           'items' => $link_buttons,
@@ -62,6 +65,9 @@ class UpdateEditorLinks {
       $editable_config->set('settings.toolbar.rows.0', $toolbar_groups);
       $editable_config->save();
     }
+
+    $this->output()->writeln('Successfully imported anchor_link configurations');
+
   }
 
 }
