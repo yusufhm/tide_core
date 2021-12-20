@@ -37,6 +37,8 @@ function tide_dashboard_user_login($account) {
   $destination = \Drupal::service('redirect.destination')->get();
   if (!(strpos($destination, '/oauth/authorize') !== FALSE)) {
     $request = \Drupal::service('request_stack')->getCurrentRequest();
-    $request->query->set('destination', '/admin/workbench');
+    if (($request->query->has('destination')) === FALSE) {
+      $request->query->set('destination', '/admin/workbench');
+    }
   }
 }
