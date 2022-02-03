@@ -455,3 +455,45 @@ function tide_core_system_breadcrumb_alter(Breadcrumb &$breadcrumb, RouteMatchIn
     }
   }
 }
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function tide_core_node_presave(NodeInterface $node) {
+  $node_state = $node->get('moderation_state')->getValue()[0]['value'];
+
+  if ($node_state === 'published') {
+    $log = [
+      /*
+       * Term the 'type' => 'node' as 'type' => 'page'
+       * to improve log readability.
+       */
+      'type' => 'page',
+      'operation' => 'published',
+      'description' => t('%type: %title - New page created with workflow state %new_state', [
+        '%type' => $node->getType(),
+        '%title' => $node->getTitle(),
+        '%new_state' => $node_state,
+      ]),
+      'ref_numeric' => $node->id(),
+      'ref_char' => $node->getTitle(),
+    ];
+
+    // Add the log to the "admin_audit_trail" table.
+    if (function_exists('admin_audit_trail_insert')) {
+      admin_audit_trail_insert($log);
+    }
+  }
+}
+
+/**
+ * Implements hook_admin_audit_trail_handlers().
+ */
+function tide_core_admin_audit_trail_handlers() {
+  // Page event log handler.
+  $handlers = [];
+  $handlers['page'] = [
+    'title' => t('Page'),
+  ];
+  return $handlers;
+}
