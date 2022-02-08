@@ -7,7 +7,7 @@
     "prefer-stable": true,
     "require": {
         "ckeditor/fakeobjects": "4.16.1",
-        "ckeditor/iframe": "4.5.11",
+        "ckeditor/iframe": "4.17.1",
         "ckeditor/liststyle": "4.8.0",
         "ckeditor/autogrow": "4.16.1",
         "ckeditor/codemirror": "v1.17.12",
