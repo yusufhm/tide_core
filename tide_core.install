@@ -1333,18 +1333,12 @@ function tide_core_update_8054() {
 }
 
 /**
- * Check if the "tide_cms_support" module is installed
+ * Enable "tide_cms_support" module, if not enabled.
  */
 function tide_core_update_8055() {
-  $module_handler = \Drupal::module_handler();
-  $module_exist = $module_handler->moduleExists('tide_cms_support');
-
-  $modules = [
-    'tide_cms_support'
-  ];
-
-  if (!$moduleExists) {
+  if (!\Drupal::moduleHandler()->moduleExists('tide_cms_support')) {
+    /** @var \Drupal\Core\Extension\ModuleInstallerInterface $module_installer */
     $module_installer = \Drupal::service('module_installer');
-    $module_installer->install($modules);
+    $module_installer->install(['tide_cms_support']);
   }
 }
