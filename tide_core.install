@@ -1331,3 +1331,20 @@ function tide_core_update_8054() {
     $config->set('cardinality', -1)->save();
   }
 }
+
+/**
+ * Check if the "tide_cms_support" module is installed
+ */
+function tide_core_update_8055() {
+  $module_handler = \Drupal::module_handler();
+  $module_exist = $module_handler->moduleExists('tide_cms_support');
+
+  $modules = [
+    'tide_cms_support'
+  ];
+
+  if (!$moduleExists) {
+    $module_installer = \Drupal::service('module_installer');
+    $module_installer->install($modules);
+  }
+}
