@@ -2,7 +2,7 @@
 
 /**
  * @file
- * tide_spell_checker installation.
+ * Installation for tide_spell_checker.
  */
 
 /**
@@ -25,17 +25,17 @@ function tide_spell_checker_install() {
     }
 
     $editable_config->set('settings.toolbar.rows.0', $updated_rows);
-    $editable_config->save();   
+    $editable_config->save();
   }
   // Setting Scayt plugins and customer id.
   $plugins = $editable_config->get('settings.plugins');
   if (isset($plugins)) {
     $plugins['customconfig'] = [
-      'ckeditor_custom_config' => 'config.scayt_customerId = "3bb17MzSBa5KT9O"'
+      'ckeditor_custom_config' => '',
     ];
     $plugins['scayt'] = [
       'scayt_autoStartup' => 1,
-      'scayt_sLang' => 'en_AU',
+      'scayt_sLang' => 'en_US',
       'scayt_disableOptionsStorage' => 'all',
     ];
     $editable_config->set('settings.plugins', $plugins);
@@ -48,10 +48,11 @@ function tide_spell_checker_install() {
     'seckit_xss.csp.script-src',
     'seckit_xss.csp.default-src',
     'seckit_xss.csp.style-src',
+    'seckit_xss.csp.img-src',
   ];
   foreach ($srcs as $src) {
     $seckit_str = $seckit_config->get($src);
-    if (strpos($seckit_str, $domain) === false) {
+    if (strpos($seckit_str, $domain) === FALSE) {
       $seckit_config->set($src, $seckit_str . ' ' . $domain);
       $seckit_config->save();
     }
