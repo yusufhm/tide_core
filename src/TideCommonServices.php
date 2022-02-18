@@ -10,8 +10,10 @@ namespace Drupal\tide_core;
 class TideCommonServices {
 
   /**
-   * Helper to sanitise spaces in filename with option to include replacement
-   * as part of  regular expression.
+   * Helper to sanitise spaces in filename.
+   *
+   * Option to include replacement as part of regular expression.
+   *
    * @param string $filename
    *   Entity type to create the field for.
    * @param string $replacement
@@ -22,8 +24,9 @@ class TideCommonServices {
    * @return string
    *   Sanitised filename.
    */
-  public function sanitiseFileName($filename, $replacement, $include_in_pattern = true) {
+  public function sanitiseFileName($filename, $replacement, $include_in_pattern = TRUE) {
     $pattern = $include_in_pattern ? '/[\s' . $replacement . ']+/' : '/[\s]+/';
-        return preg_replace($pattern, $replacement, $filename);
+    return preg_replace($pattern, $replacement, $filename);
   }
+
 }
