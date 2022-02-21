@@ -20,12 +20,12 @@ class TideCommonServicesTest extends UnitTestCase {
     $this->assertEquals($expected, $filename);
   }
 
-  /**
-  * Data provider of test sanitise.
-  *
-  * @return array
-  *   Array of values.
-  */
+   /**
+   * Data provider of test sanitise.
+   *
+   * @return array
+   *   Array of values.
+   */
   public function fileNameProvider() {
     return [
       [
