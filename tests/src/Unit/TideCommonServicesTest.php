@@ -20,7 +20,7 @@ class TideCommonServicesTest extends UnitTestCase {
     $this->assertEquals($expected, $filename);
   }
 
-   /**
+  /**
    * Data provider of test sanitise.
    *
    * @return array
