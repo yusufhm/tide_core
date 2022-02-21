@@ -73,7 +73,7 @@ class TideCommonServicesTest extends UnitTestCase {
       [
         'value' => 'site/2020-02/files/file - with - spaces - only.pdf',
         'replacement' => '-',
-        'include_in_pattern' => FALSE,
+        'include_in_pattern' => TRUE,
         'expected' => 'site/2020-02/files/file-with-spaces-only.pdf',
       ],
     ];
