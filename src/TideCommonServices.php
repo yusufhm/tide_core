@@ -15,11 +15,11 @@ class TideCommonServices {
    * Option to include replacement as part of regular expression.
    *
    * @param string $filename
-   *   Entity type to create the field for.
+   *   Filename to sanitise.
    * @param string $replacement
-   *   Entity bundle to create the field for.
+   *   Value to replace spaces in the filename.
    * @param bool $include_in_pattern
-   *   Flag to create form display. Defaults to TRUE.
+   *   Flag to include replacement value in sanitise. Defaults to TRUE.
    *
    * @return string
    *   Sanitised filename.
