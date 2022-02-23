@@ -2,7 +2,7 @@
 
 /**
  * @file
- * tide_spell_checker CKEditor configuration file.
+ * CKEditor configuration file tide_spell_checker.
  */
 
 // Create ckeditor custom config array.
@@ -11,7 +11,7 @@ $array_of_config = [];
 $envVars = getenv();
 foreach ($envVars as $var => $value) {
   if (str_contains($var, 'CKEDITOR_')) {
-    $var = strtolower(trim(str_replace('CKEDITOR_','',$var)));
+    $var = strtolower(trim(str_replace('CKEDITOR_', '', $var)));
     $var = ($var == 'scayt_slang') ? 'scayt_sLang' : $var;
     $array_of_config[$var] = $value;
   }
