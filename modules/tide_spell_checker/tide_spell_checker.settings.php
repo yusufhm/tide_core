@@ -8,7 +8,7 @@
 // Create ckeditor custom config array.
 $ckeditor_config = '';
 $array_of_config = [];
-$envVars = getenv();
+$env_vars = getenv();
 foreach ($envVars as $var => $value) {
   if (str_contains($var, 'CKEDITOR_')) {
     $var = strtolower(trim(str_replace('CKEDITOR_', '', $var)));

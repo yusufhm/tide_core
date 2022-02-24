@@ -35,7 +35,7 @@ function tide_spell_checker_install() {
     ];
     $plugins['scayt'] = [
       'scayt_autoStartup' => 1,
-      'scayt_sLang' => 'en_US',
+      'scayt_sLang' => 'en_GB',
       'scayt_disableOptionsStorage' => 'all',
     ];
     $editable_config->set('settings.plugins', $plugins);
