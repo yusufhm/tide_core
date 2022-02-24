@@ -9,11 +9,13 @@
 $ckeditor_config = '';
 $array_of_config = [];
 $env_vars = getenv();
-foreach ($envVars as $var => $value) {
-  if (str_contains($var, 'CKEDITOR_')) {
-    $var = strtolower(trim(str_replace('CKEDITOR_', '', $var)));
-    $var = ($var == 'scayt_slang') ? 'scayt_sLang' : $var;
-    $array_of_config[$var] = $value;
+if ($env_vars) {
+  foreach ($env_vars as $var => $value) {
+    if (str_contains($var, 'CKEDITOR_')) {
+      $var = strtolower(trim(str_replace('CKEDITOR_', '', $var)));
+      $var = ($var == 'scayt_slang') ? 'scayt_sLang' : $var;
+      $array_of_config[$var] = $value;
+    }
   }
 }
 if (isset($array_of_config)) {
